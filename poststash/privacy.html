@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PostStash — Privacy Policy</title>
+    <meta name="description" content="Privacy Policy for PostStash on iOS.">
+    <style>
+        :root {
+            --bg: #ffffff;
+            --fg: #1a1a1a;
+            --muted: #666666;
+            --accent: #f28a26;
+            --card: #f5f5f7;
+            --border: #e5e5e7;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #121419;
+                --fg: #f5f5f7;
+                --muted: #9a9a9a;
+                --accent: #ff9a3a;
+                --card: #1c1f25;
+                --border: #2a2d34;
+            }
+        }
+        * { box-sizing: border-box; }
+        html { -webkit-text-size-adjust: 100%; }
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+            background: var(--bg);
+            color: var(--fg);
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+        }
+        .container { max-width: 720px; margin: 0 auto; padding: 48px 24px 96px; }
+        .back { display: inline-block; color: var(--muted); text-decoration: none; font-size: 0.9rem; margin-bottom: 32px; }
+        .back:hover { color: var(--accent); }
+        h1 { font-size: 2rem; margin: 0 0 8px; letter-spacing: -0.02em; }
+        .meta { color: var(--muted); margin: 0 0 40px; font-size: 0.95rem; }
+        h2 { font-size: 1.2rem; margin: 36px 0 12px; letter-spacing: -0.01em; }
+        p { color: var(--fg); }
+        ul { padding-left: 22px; }
+        li { margin-bottom: 6px; }
+        a { color: var(--accent); }
+        .callout { background: var(--card); border: 1px solid var(--border); border-left: 3px solid var(--accent); padding: 16px 20px; border-radius: 8px; margin: 24px 0; }
+        .callout p { margin: 0; }
+        footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.85rem; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a class="back" href="./">&larr; PostStash Support</a>
+
+        <h1>PostStash Privacy Policy</h1>
+        <p class="meta">Effective 29 May 2026 &middot; Last updated 29 May 2026</p>
+
+        <div class="callout">
+            <p><strong>Summary:</strong> PostStash collects no personal data, has no servers, no analytics, no advertising, and no third-party SDKs. All processing happens on your device. The optional Instagram sign-in uses Instagram&rsquo;s own login page and only stores the resulting session cookie locally.</p>
+        </div>
+
+        <h2>1. Information we collect</h2>
+        <p><strong>None.</strong> PostStash does not ask for, collect, transmit, or store any personally identifiable information on any server. We operate no backend.</p>
+
+        <h2>2. Information stored locally on your device</h2>
+        <p>PostStash stores the following data on your device only, using iOS&rsquo;s standard storage mechanisms, so the app remembers it between launches:</p>
+        <ul>
+            <li>Your settings (auto-save, haptics, iCloud backup on/off, Photos album mode) &mdash; in <em>UserDefaults</em> and (when iCloud is enabled) <em>NSUbiquitousKeyValueStore</em>.</li>
+            <li>A local list of the items you&rsquo;ve already saved (CDN filename or Instagram media id, source URL, thumbnail URL, date) so &quot;skip already-downloaded&quot; works during account backup &mdash; in <em>UserDefaults</em> and (when iCloud is enabled) <em>NSUbiquitousKeyValueStore</em>.</li>
+            <li>Downloaded media files in your <em>Photos</em> library and, if you enable iCloud backup, in your <em>iCloud Drive &rsaquo; PostStash &rsaquo; Downloads</em> folder.</li>
+            <li>Instagram session cookies (if you sign in) &mdash; stored in iOS&rsquo;s persistent web data store (<em>WKWebsiteDataStore</em>) the same way Safari stores cookies. PostStash never sees your Instagram password.</li>
+            <li>Your Instagram username (if you signed in) &mdash; cached so the account menu can show which account is active. Removed when you sign out.</li>
+        </ul>
+        <p>This data never leaves your device except via the iCloud mechanisms above, which are end-to-end synced by Apple between your devices. It is automatically removed if you delete the app, and you can clear the in-app history at any time using <em>Download history &rsaquo; Clear</em>.</p>
+
+        <h2>3. Network activity</h2>
+        <p>PostStash makes network requests only to Instagram and its CDNs (instagram.com, cdninstagram.com, fbcdn.net) in order to:</p>
+        <ul>
+            <li>Load the public Instagram pages you ask it to extract media from.</li>
+            <li>Download the resulting media files for saving.</li>
+            <li>If you sign in, replay your session cookies on the same domains to fetch authenticated content (videos, reels, stories, your own posts).</li>
+        </ul>
+        <p>PostStash makes no requests to any server operated by MW Supply Limited or any third party.</p>
+
+        <h2>4. Third-party services</h2>
+        <p>PostStash contains no third-party SDKs, no analytics frameworks, no advertising networks, and no crash reporting other than Apple&rsquo;s first-party crash reporting (which is governed by Apple&rsquo;s privacy policy and only runs if you have opted in to Share With App Developers in iOS Settings &rarr; Privacy &amp; Security &rarr; Analytics &amp; Improvements).</p>
+
+        <h2>5. iCloud</h2>
+        <p>If you enable iCloud backup, your settings, download history, and downloaded media files are uploaded to your personal iCloud account using Apple&rsquo;s standard iCloud Drive and iCloud Key-Value Storage APIs. MW Supply Limited has no access to your iCloud data. iCloud is governed by Apple&rsquo;s privacy policy.</p>
+
+        <h2>6. Permissions</h2>
+        <p>PostStash requests the following iOS permissions only when they are needed:</p>
+        <ul>
+            <li><strong>Photos &mdash; Add Only</strong> (default): the minimum permission needed to save a downloaded file to your camera roll. PostStash never asks for full read access unless you opt in to the &quot;album&quot; mode in Settings.</li>
+            <li><strong>Photos &mdash; Read/Write</strong> (opt-in): only if you turn on the &quot;Save into 'Instagram Downloads' album&quot; setting, which requires full access to manage a named album.</li>
+        </ul>
+
+        <h2>7. Children</h2>
+        <p>PostStash is rated 17+ on the App Store because downloaded content can come from public Instagram posts, which Instagram itself does not moderate for child-safety. The app collects no data of any kind from any user.</p>
+
+        <h2>8. Changes to this policy</h2>
+        <p>If we change how PostStash handles data, we will update this page and the &quot;Last updated&quot; date above. Material changes will also be reflected in the App Store privacy nutrition labels for the affected version of the app.</p>
+
+        <h2>9. Contact</h2>
+        <p>Questions about this privacy policy can be sent to <a href="mailto:mwsupplylimited@gmail.com?subject=PostStash%20privacy">mwsupplylimited@gmail.com</a>.</p>
+
+        <footer>
+            &copy; 2026 MW Supply Limited
+        </footer>
+    </div>
+</body>
+</html>
