@@ -7,20 +7,25 @@ Published via GitHub Pages at <https://mwsupplylimited.github.io>.
 
 ## Pages
 
+Per-app pages live in their own folder so each app has its own URL namespace.
+
 | File | URL | Purpose |
 |---|---|---|
-| `index.html` | `/` | Company landing — apps list & contact. |
-| `scicalc.html` | `/scicalc.html` | SciCalc support page (used as Support URL on the App Store). |
-| `scicalc-privacy.html` | `/scicalc-privacy.html` | SciCalc privacy policy (used as Privacy Policy URL on the App Store). |
+| `index.html` | `/` | Company landing — list of apps & contact. |
+| `scicalc/index.html` | `/scicalc/` | SciCalc support page (App Store Support URL). |
+| `scicalc/privacy.html` | `/scicalc/privacy.html` | SciCalc privacy policy (App Store Privacy URL). |
 
 ## Editing
 
 Pages are hand-written HTML with inline CSS — no build step, no dependencies.
 Edit the file and push to `main`; GitHub Pages rebuilds within a minute.
 
-To add a new app:
+To add a new app, mirror the SciCalc structure:
 
-1. Add a card to the `<h2>Apps</h2>` section in `index.html`.
-2. Create `appname.html` (support) and `appname-privacy.html` (privacy),
-   copying the SciCalc files as templates.
-3. Update the contact email if support routing changes.
+1. Create an `<appname>/` folder at the repo root.
+2. Copy `scicalc/index.html` → `<appname>/index.html` (support page) and
+   `scicalc/privacy.html` → `<appname>/privacy.html`, then edit for the new app.
+3. Add a card linking to `<appname>/` in the `<h2>Apps</h2>` section of the
+   root `index.html`.
+4. URLs become `https://mwsupplylimited.github.io/<appname>/` (support) and
+   `https://mwsupplylimited.github.io/<appname>/privacy.html` (privacy).
