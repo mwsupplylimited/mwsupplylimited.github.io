@@ -14,6 +14,8 @@ Per-app pages live in their own folder so each app has its own URL namespace.
 | `index.html` | `/` | Company landing — list of apps & contact. |
 | `scicalc/index.html` | `/scicalc/` | SciCalc support page (App Store Support URL). |
 | `scicalc/privacy.html` | `/scicalc/privacy.html` | SciCalc privacy policy (App Store Privacy URL). |
+| `videoframeexport/index.html` | `/videoframeexport/` | Video Frame Export support page. |
+| `videoframeexport/privacy.html` | `/videoframeexport/privacy.html` | Video Frame Export privacy policy. |
 
 ## Editing
 
