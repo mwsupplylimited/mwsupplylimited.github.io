@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MW Supply Limited</title>
+    <meta name="description" content="MW Supply Limited — independent iOS app studio.">
+    <style>
+        :root {
+            --bg: #ffffff;
+            --fg: #1a1a1a;
+            --muted: #666666;
+            --accent: #f28a26;
+            --card: #f5f5f7;
+            --border: #e5e5e7;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #121419;
+                --fg: #f5f5f7;
+                --muted: #9a9a9a;
+                --accent: #ff9a3a;
+                --card: #1c1f25;
+                --border: #2a2d34;
+            }
+        }
+        * { box-sizing: border-box; }
+        html { -webkit-text-size-adjust: 100%; }
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+            background: var(--bg);
+            color: var(--fg);
+            line-height: 1.55;
+            -webkit-font-smoothing: antialiased;
+        }
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 64px 24px 96px;
+        }
+        h1 {
+            font-size: 2.2rem;
+            margin: 0 0 8px;
+            letter-spacing: -0.02em;
+        }
+        .tag {
+            color: var(--muted);
+            font-size: 1.05rem;
+            margin: 0 0 48px;
+        }
+        h2 {
+            font-size: 1.05rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--muted);
+            font-weight: 600;
+            margin: 48px 0 16px;
+        }
+        .app {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 20px 24px;
+            margin-bottom: 12px;
+            transition: transform 0.15s, border-color 0.15s;
+        }
+        .app:hover {
+            transform: translateY(-2px);
+            border-color: var(--accent);
+        }
+        .app-name {
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin: 0 0 4px;
+        }
+        .app-desc {
+            color: var(--muted);
+            margin: 0;
+            font-size: 0.95rem;
+        }
+        footer {
+            margin-top: 80px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
+            color: var(--muted);
+            font-size: 0.85rem;
+        }
+        a { color: var(--accent); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>MW Supply Limited</h1>
+        <p class="tag">Independent iOS app studio. Small, fast, ad-free apps.</p>
+
+        <h2>Apps</h2>
+
+        <a class="app" href="scicalc.html">
+            <p class="app-name">SciCalc — Scientific Calculator</p>
+            <p class="app-desc">A clean scientific calculator with real expression parsing, a scrolling tape, and a dedicated landscape keypad. No ads, no accounts, no data collection.</p>
+        </a>
+
+        <h2>Contact</h2>
+        <p>For support or business enquiries: <a href="mailto:matthewwong971017@gmail.com">matthewwong971017@gmail.com</a></p>
+
+        <footer>
+            &copy; 2026 MW Supply Limited
+        </footer>
+    </div>
+</body>
+</html>
