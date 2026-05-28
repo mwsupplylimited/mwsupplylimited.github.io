@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chronograde — Support</title>
+    <meta name="description" content="Support page for Chronograde — track your watch's accuracy with NTP-synced atomic time.">
+    <style>
+        :root {
+            --bg: #ffffff;
+            --fg: #1a1a1a;
+            --muted: #666666;
+            --accent: #e66230;
+            --card: #f5f5f7;
+            --border: #e5e5e7;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #121419;
+                --fg: #f5f5f7;
+                --muted: #9a9a9a;
+                --accent: #ff7d45;
+                --card: #1c1f25;
+                --border: #2a2d34;
+            }
+        }
+        * { box-sizing: border-box; }
+        html { -webkit-text-size-adjust: 100%; }
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+            background: var(--bg);
+            color: var(--fg);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 48px 24px 96px;
+        }
+        .back {
+            display: inline-block;
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-bottom: 32px;
+        }
+        .back:hover { color: var(--accent); }
+        h1 {
+            font-size: 2.2rem;
+            margin: 0 0 8px;
+            letter-spacing: -0.02em;
+        }
+        .subtitle {
+            color: var(--muted);
+            margin: 0 0 40px;
+        }
+        h2 {
+            font-size: 1.3rem;
+            margin: 40px 0 12px;
+            letter-spacing: -0.01em;
+        }
+        h3 {
+            font-size: 1rem;
+            margin: 24px 0 6px;
+            font-weight: 600;
+        }
+        p, li { color: var(--fg); }
+        .muted { color: var(--muted); }
+        ul { padding-left: 22px; }
+        li { margin-bottom: 6px; }
+        a { color: var(--accent); }
+        code {
+            background: var(--card);
+            padding: 1px 6px;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+        .pill {
+            display: inline-block;
+            background: var(--card);
+            border: 1px solid var(--border);
+            padding: 3px 10px;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            color: var(--muted);
+        }
+        footer {
+            margin-top: 64px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
+            color: var(--muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a class="back" href="../">&larr; MW Supply Limited</a>
+
+        <h1>Chronograde</h1>
+        <p class="subtitle">Track how fast or slow your watch runs. <span class="pill">Version 1.0</span></p>
+
+        <h2>About</h2>
+        <p>Chronograde measures and logs the accuracy of your mechanical, quartz, or smart watches against true atomic time. Record a reading when your watch reads a target HH:MM, and Chronograde compares it to NTP-synced time to compute a signed offset and a rate in seconds per day. Add as many watches as you like, see drift over time on a chart, log wear and service history, and export everything to CSV or Excel. No accounts, no ads, no tracking.</p>
+
+        <h2>Getting started</h2>
+        <ul>
+            <li><strong>Add a watch</strong> with the + button. Brand and model are required; everything else (reference, serial, caliber, purchase price, photo) is optional.</li>
+            <li><strong>Pull-to-sync</strong> atomic time from the toolbar. Chronograde talks to public NTP servers (time.apple.com, time.google.com, pool.ntp.org) to correct for any device-clock drift.</li>
+            <li><strong>Tap Record Measurement.</strong> Pick the time your watch is about to show (e.g. <code>14:30</code>) and press the red RECORD button at that instant.</li>
+            <li><strong>Watch the drift chart fill in</strong> after your second measurement. Average rate per day and current offset are computed automatically.</li>
+            <li><strong>Log wear</strong> with one tap on the detail screen. The wear log tracks days worn over time. <strong>Log service</strong> with type, provider, cost, and notes &mdash; set a service interval and the detail screen will show when the next one is due.</li>
+            <li><strong>Switch themes</strong> under Settings &rarr; Theme Shop. Two themes are free; the rest are one-time purchases.</li>
+        </ul>
+
+        <h2>FAQ</h2>
+
+        <h3>What counts as an "accurate" measurement?</h3>
+        <p>Chronograde uses SNTP (RFC 4330) to query the network time service and applies the resulting offset to your device's clock. In practice this is accurate to well under a tenth of a second &mdash; far finer than the human eye can read off a watch dial. The bottleneck is your reaction time pressing RECORD at the moment the second hand touches the target. Press it consistently and the math averages out over multiple readings.</p>
+
+        <h3>What's a good rate?</h3>
+        <p>It depends on the watch. COSC chronometer-certified mechanical watches must run within &minus;4/+6 seconds per day. ETA standard movements typically run &plusmn;10&ndash;30 s/day. Quartz watches usually run &plusmn;0.5 s/day or better. Chronograde colors the rate green up to &plusmn;10 s/day, orange up to &plusmn;30, and red beyond that.</p>
+
+        <h3>The sync button shows "Could not reach a time server."</h3>
+        <p>Chronograde uses UDP on port 123 for SNTP queries. Some corporate, hotel, or captive Wi-Fi networks block outbound UDP. Try a different network or use cellular, then tap the sync icon in the top-right of the Watches tab. Without a successful sync, measurements fall back to the device clock and are marked accordingly.</p>
+
+        <h3>How does the Pro unlock work?</h3>
+        <p>You can record up to 10 measurements across all watches for free. The one-time <strong>Watch Accuracy Pro</strong> in-app purchase removes that cap forever, with no subscription. Tap Restore Purchases in Settings if you've bought it before on the same Apple ID.</p>
+
+        <h3>Does it sync between my iPhone and iPad?</h3>
+        <p>If iCloud (CloudKit) is enabled for Chronograde and you're signed in with the same Apple ID on both devices, your watches, measurements, wear log, and service history will sync automatically. Settings &rarr; iCloud shows the current status.</p>
+
+        <h3>Can I export my data?</h3>
+        <p>Yes. From the Watches tab menu, choose <em>Export to Excel</em> (workbook with Watches, Measurements, Wear, Service sheets) or <em>Export to CSV</em>. You can also import a watches CSV the same way; Chronograde detects duplicates by serial number or brand + model + nickname.</p>
+
+        <h3>I found a bug or have a feature request.</h3>
+        <p>Please email <a href="mailto:mwsupplylimited@gmail.com?subject=Chronograde%20feedback">mwsupplylimited@gmail.com</a> with your iOS version, device, and steps to reproduce. We read every message.</p>
+
+        <h2>Contact</h2>
+        <p>For support: <a href="mailto:mwsupplylimited@gmail.com?subject=Chronograde%20support">mwsupplylimited@gmail.com</a></p>
+
+        <h2>Privacy</h2>
+        <p>See the <a href="privacy.html">Chronograde Privacy Policy</a>.</p>
+
+        <footer>
+            &copy; 2026 MW Supply Limited
+        </footer>
+    </div>
+</body>
+</html>

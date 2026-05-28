@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chronograde — Privacy Policy</title>
+    <meta name="description" content="Privacy Policy for Chronograde — watch accuracy tracker for iOS.">
+    <style>
+        :root {
+            --bg: #ffffff;
+            --fg: #1a1a1a;
+            --muted: #666666;
+            --accent: #e66230;
+            --card: #f5f5f7;
+            --border: #e5e5e7;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #121419;
+                --fg: #f5f5f7;
+                --muted: #9a9a9a;
+                --accent: #ff7d45;
+                --card: #1c1f25;
+                --border: #2a2d34;
+            }
+        }
+        * { box-sizing: border-box; }
+        html { -webkit-text-size-adjust: 100%; }
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+            background: var(--bg);
+            color: var(--fg);
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+        }
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 48px 24px 96px;
+        }
+        .back {
+            display: inline-block;
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-bottom: 32px;
+        }
+        .back:hover { color: var(--accent); }
+        h1 {
+            font-size: 2rem;
+            margin: 0 0 8px;
+            letter-spacing: -0.02em;
+        }
+        .meta {
+            color: var(--muted);
+            margin: 0 0 40px;
+            font-size: 0.95rem;
+        }
+        h2 {
+            font-size: 1.2rem;
+            margin: 36px 0 12px;
+            letter-spacing: -0.01em;
+        }
+        p { color: var(--fg); }
+        ul { padding-left: 22px; }
+        li { margin-bottom: 6px; }
+        a { color: var(--accent); }
+        .callout {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-left: 3px solid var(--accent);
+            padding: 16px 20px;
+            border-radius: 8px;
+            margin: 24px 0;
+        }
+        .callout p { margin: 0; }
+        footer {
+            margin-top: 64px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
+            color: var(--muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a class="back" href="./">&larr; Chronograde Support</a>
+
+        <h1>Chronograde Privacy Policy</h1>
+        <p class="meta">Effective 28 May 2026 &middot; Last updated 28 May 2026</p>
+
+        <div class="callout">
+            <p><strong>Summary:</strong> Chronograde has no account system, no analytics, no advertising, and no third-party trackers. Your watch data lives on your device (and in your own iCloud, if you choose to enable sync). The app makes one kind of outbound network request only: a stateless time query to public NTP servers, which never identifies you to us.</p>
+        </div>
+
+        <h2>1. Information we collect</h2>
+        <p><strong>None on our servers.</strong> MW Supply Limited operates no servers that receive Chronograde data. There is no account, no login, no user profile, and no analytics SDK.</p>
+
+        <h2>2. Information stored on your device</h2>
+        <p>Chronograde stores the records you create with the app locally using Apple's SwiftData framework:</p>
+        <ul>
+            <li>Watches you've added (brand, model, optional nickname, reference number, serial number, caliber, crystal, movement type, notes, optional purchase price and date, optional photo).</li>
+            <li>Measurements (target time, accurate time, computed offset, optional note).</li>
+            <li>Wear log entries (date, optional note).</li>
+            <li>Service history entries (date, type, provider, cost, notes).</li>
+            <li>Your selected theme, sort preference, and reminder settings.</li>
+        </ul>
+        <p>This data is yours. It is removed automatically if you delete the app. You can also export it at any time via the Watches tab menu (CSV or XLSX).</p>
+
+        <h2>3. iCloud sync (optional)</h2>
+        <p>If iCloud is enabled for Chronograde on your device, the same records described above are synchronized through your private CloudKit container (<code>iCloud.com.edfd.WatchAccuracy</code>) so they appear on your other devices signed in to the same Apple ID. We have no access to this data &mdash; it is stored under your Apple ID in Apple's iCloud infrastructure and is governed by Apple's privacy policy. You can turn iCloud off for Chronograde at any time in iOS Settings &rarr; [your name] &rarr; iCloud.</p>
+
+        <h2>4. Network activity</h2>
+        <p>Chronograde makes one type of outbound network request: a stateless SNTP (RFC&nbsp;4330) UDP query, on port&nbsp;123, to one of the public NTP servers <code>time.apple.com</code>, <code>time.google.com</code>, or <code>pool.ntp.org</code>. The query contains no personal information and is used only to compute how far the device clock has drifted from atomic time so that your measurements are accurate. We have no relationship with the operators of these public time services and we do not log the request ourselves.</p>
+        <p>Chronograde contacts no other server. There are no analytics calls, no advertising calls, no crash-reporting calls, no remote configuration calls, and no calls to anything owned by MW Supply Limited.</p>
+
+        <h2>5. In-app purchases</h2>
+        <p>The Pro unlock and theme purchases are processed entirely by Apple's StoreKit framework. We never see your payment card or Apple ID. Apple tells the app only whether a given product ID is currently entitled to your Apple ID; that entitlement is what unlocks the relevant feature. Apple's privacy policy governs the purchase itself.</p>
+
+        <h2>6. Third-party services</h2>
+        <p>Chronograde contains no third-party SDKs. There are no analytics frameworks, advertising networks, or crash-reporting services other than Apple's own first-party crash reporting (which is governed entirely by Apple's privacy policy and only runs if you have opted in to <em>Share With App Developers</em> in iOS Settings &rarr; Privacy &amp; Security &rarr; Analytics &amp; Improvements).</p>
+
+        <h2>7. Notifications</h2>
+        <p>If you turn on the optional daily reminder in Settings, Chronograde schedules a local notification on your device at the chosen time. These notifications are generated entirely on-device using iOS's UserNotifications framework. No notification content is sent to any server.</p>
+
+        <h2>8. Children</h2>
+        <p>Chronograde is rated 4+ on the App Store. Because the app collects no personal data, it complies with the Children's Online Privacy Protection Act (COPPA) and similar regulations worldwide.</p>
+
+        <h2>9. Changes to this policy</h2>
+        <p>If we ever change how Chronograde handles data, we will update this page and the "Last updated" date above. Material changes will also be reflected in the App Store privacy nutrition labels for the affected version of the app.</p>
+
+        <h2>10. Contact</h2>
+        <p>Questions about this privacy policy can be sent to <a href="mailto:mwsupplylimited@gmail.com?subject=Chronograde%20privacy">mwsupplylimited@gmail.com</a>.</p>
+
+        <footer>
+            &copy; 2026 MW Supply Limited
+        </footer>
+    </div>
+</body>
+</html>
