@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClipVault — Privacy Policy</title>
+    <meta name="description" content="Privacy Policy for ClipVault: Media Saver on iOS.">
+    <style>
+        :root {
+            --bg: #ffffff;
+            --fg: #1a1a1a;
+            --muted: #666666;
+            --accent: #f28a26;
+            --card: #f5f5f7;
+            --border: #e5e5e7;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #121419;
+                --fg: #f5f5f7;
+                --muted: #9a9a9a;
+                --accent: #ff9a3a;
+                --card: #1c1f25;
+                --border: #2a2d34;
+            }
+        }
+        * { box-sizing: border-box; }
+        html { -webkit-text-size-adjust: 100%; }
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+            background: var(--bg);
+            color: var(--fg);
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+        }
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 48px 24px 96px;
+        }
+        .back {
+            display: inline-block;
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-bottom: 32px;
+        }
+        .back:hover { color: var(--accent); }
+        h1 {
+            font-size: 2rem;
+            margin: 0 0 8px;
+            letter-spacing: -0.02em;
+        }
+        .meta {
+            color: var(--muted);
+            margin: 0 0 40px;
+            font-size: 0.95rem;
+        }
+        h2 {
+            font-size: 1.2rem;
+            margin: 36px 0 12px;
+            letter-spacing: -0.01em;
+        }
+        p { color: var(--fg); }
+        ul { padding-left: 22px; }
+        li { margin-bottom: 6px; }
+        a { color: var(--accent); }
+        .callout {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-left: 3px solid var(--accent);
+            padding: 16px 20px;
+            border-radius: 8px;
+            margin: 24px 0;
+        }
+        .callout p { margin: 0; }
+        footer {
+            margin-top: 64px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
+            color: var(--muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a class="back" href="./">&larr; ClipVault Support</a>
+
+        <h1>ClipVault Privacy Policy</h1>
+        <p class="meta">Effective 29 May 2026 · Last updated 29 May 2026</p>
+
+        <div class="callout">
+            <p><strong>Summary:</strong> ClipVault does not collect personal data, contains no advertising, and uses no analytics or third-party SDKs. Everything happens on your device, or inside your own private iCloud. We never see your login, and we never receive a copy of anything you save.</p>
+        </div>
+
+        <h2>1. Information we collect</h2>
+        <p><strong>None.</strong> ClipVault does not ask for, collect, transmit, or store any personally identifiable information on any server we operate. We do not operate a server at all. The app has no developer account system and no user profile.</p>
+
+        <h2>2. Photos &amp; videos</h2>
+        <p>The app saves media with the minimum permissions iOS provides:</p>
+        <ul>
+            <li><strong>Saving an item</strong> uses iOS's "Add Only" Photos authorization (NSPhotoLibraryAddUsageDescription) by default. The app can add a photo or video to your library but cannot read your existing photos.</li>
+            <li><strong>The optional "ClipVault album" setting</strong> uses full Photos access only so the app can place saved items into a named album. This is off by default, and the app requests full access only if you turn it on.</li>
+            <li>Downloaded files are written to a temporary location on your device only long enough to be saved, then removed.</li>
+        </ul>
+
+        <h2>3. Logging in to a content platform</h2>
+        <p>ClipVault offers an optional login so you can back up posts and stories you have published yourself. This login is handled entirely on your device:</p>
+        <ul>
+            <li>You sign in through the platform's own standard web login, displayed inside the app.</li>
+            <li>ClipVault <strong>never sees, asks for, or stores your password.</strong> Only the resulting session cookie is kept, in the app's own protected storage on your device, so you stay signed in between launches.</li>
+            <li>The publicly visible username you type is stored locally only so the app can show which account is active. It is never transmitted to us.</li>
+            <li>Your session is used solely to fetch the media you ask for, directly between your device and the platform. It is never sent to MW Supply Limited or any third party. You can log out at any time to clear it.</li>
+        </ul>
+
+        <h2>4. iCloud sync</h2>
+        <p>ClipVault uses your own private iCloud in two optional ways:</p>
+        <ul>
+            <li><strong>Settings sync</strong> — your in-app preferences are mirrored across your devices using Apple's iCloud key-value store.</li>
+            <li><strong>iCloud Drive backup</strong> — if enabled, a copy of each saved item is written to an <em>iCloud Drive &rarr; ClipVault</em> folder.</li>
+        </ul>
+        <p>All of this data lives exclusively in <em>your</em> iCloud, under your Apple ID. MW Supply Limited has no access to it and never receives a copy. iCloud follows Apple's own privacy practices.</p>
+
+        <h2>5. Network activity</h2>
+        <p>ClipVault makes no network requests to servers owned by MW Supply Limited. The app communicates only with (a) the content platform you paste links from or log in to, directly from your device, in order to retrieve the media you request, and (b) Apple-operated services for Photos and iCloud. We are never an intermediary in any of this traffic.</p>
+
+        <h2>6. Third-party services</h2>
+        <p>The app contains no third-party SDKs, no analytics frameworks, no advertising networks, and no crash reporting services other than Apple's own first-party crash reporting (which only runs if you have opted in to Share With App Developers in iOS Settings &rarr; Privacy &amp; Security &rarr; Analytics &amp; Improvements).</p>
+
+        <h2>7. Your responsibility for content</h2>
+        <p>ClipVault is a tool for saving and backing up media you own or have the rights to use. You are responsible for ensuring you have the right to download and store any content you save with the app, and for complying with copyright law and the terms of service of any platform you use it with.</p>
+
+        <h2>8. Children</h2>
+        <p>Because the app collects no data of any kind, it complies with the Children's Online Privacy Protection Act (COPPA) and similar regulations worldwide. The App Store age rating reflects that the app can access third-party content.</p>
+
+        <h2>9. Changes to this policy</h2>
+        <p>If we change how ClipVault handles data, we will update this page and the "Last updated" date above. Material changes will also be reflected in the App Store privacy nutrition labels for the affected version of the app.</p>
+
+        <h2>10. Contact</h2>
+        <p>Questions about this privacy policy can be sent to <a href="mailto:mwsupplylimited@gmail.com?subject=ClipVault%20privacy">mwsupplylimited@gmail.com</a>.</p>
+
+        <footer>
+            &copy; 2026 MW Supply Limited
+        </footer>
+    </div>
+</body>
+</html>

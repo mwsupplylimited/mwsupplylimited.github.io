@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClipVault — Support</title>
+    <meta name="description" content="Support page for ClipVault: Media Saver on iOS.">
+    <style>
+        :root {
+            --bg: #ffffff;
+            --fg: #1a1a1a;
+            --muted: #666666;
+            --accent: #f28a26;
+            --card: #f5f5f7;
+            --border: #e5e5e7;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #121419;
+                --fg: #f5f5f7;
+                --muted: #9a9a9a;
+                --accent: #ff9a3a;
+                --card: #1c1f25;
+                --border: #2a2d34;
+            }
+        }
+        * { box-sizing: border-box; }
+        html { -webkit-text-size-adjust: 100%; }
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+            background: var(--bg);
+            color: var(--fg);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 48px 24px 96px;
+        }
+        .back {
+            display: inline-block;
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-bottom: 32px;
+        }
+        .back:hover { color: var(--accent); }
+        h1 {
+            font-size: 2.2rem;
+            margin: 0 0 8px;
+            letter-spacing: -0.02em;
+        }
+        .subtitle {
+            color: var(--muted);
+            margin: 0 0 40px;
+        }
+        h2 {
+            font-size: 1.3rem;
+            margin: 40px 0 12px;
+            letter-spacing: -0.01em;
+        }
+        h3 {
+            font-size: 1rem;
+            margin: 24px 0 6px;
+            font-weight: 600;
+        }
+        p, li { color: var(--fg); }
+        .muted { color: var(--muted); }
+        ul { padding-left: 22px; }
+        li { margin-bottom: 6px; }
+        a { color: var(--accent); }
+        .pill {
+            display: inline-block;
+            background: var(--card);
+            border: 1px solid var(--border);
+            padding: 3px 10px;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            color: var(--muted);
+        }
+        .callout {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-left: 3px solid var(--accent);
+            padding: 16px 20px;
+            border-radius: 8px;
+            margin: 24px 0;
+        }
+        .callout p { margin: 0; }
+        footer {
+            margin-top: 64px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
+            color: var(--muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a class="back" href="../">&larr; MW Supply Limited</a>
+
+        <h1>ClipVault</h1>
+        <p class="subtitle">Save and back up the photos and videos you own. iPhone &amp; iPad. <span class="pill">Version 1.0</span></p>
+
+        <h2>About</h2>
+        <p>ClipVault is a personal media saver and backup tool. Paste a link to a photo or video you own or have the rights to use, and ClipVault downloads it straight to your Photos library and, if you like, mirrors a copy into your own iCloud Drive. Log in with your own account to back up the posts and stories you've published yourself, all in one tap.</p>
+
+        <div class="callout">
+            <p>ClipVault is an independent app. It is not affiliated with, endorsed by, or sponsored by Instagram or Meta. Only save content you own or have the rights to use, and respect copyright and the terms of the platforms you use.</p>
+        </div>
+
+        <h2>Getting started</h2>
+        <ul>
+            <li><strong>Paste a link</strong> to a photo or video into the box and tap the download button.</li>
+            <li><strong>Review what was found</strong>, then tap <em>Save</em> on an item, or <em>Save All</em> to grab everything at once.</li>
+            <li>Saved media lands in your Photos library. If iCloud backup is on, a copy is also written to <em>iCloud Drive &rarr; ClipVault &rarr; Downloads</em>.</li>
+        </ul>
+
+        <h2>Backing up your own account</h2>
+        <p>Tap the account icon (top-left) to log in with your own account using the standard web login. Once you're signed in you can:</p>
+        <ul>
+            <li><strong>Back up your own posts &amp; stories</strong> in one tap — ClipVault skips anything you've already saved.</li>
+            <li>Save videos as well as photos.</li>
+        </ul>
+        <p>Your login stays on your device. ClipVault never sees or stores your password, and your session is never sent to us. See the <a href="privacy.html">Privacy Policy</a> for details.</p>
+
+        <h2>Settings</h2>
+        <ul>
+            <li><strong>Auto-save on fetch</strong> — save everything automatically as soon as a link is loaded.</li>
+            <li><strong>Save into a "ClipVault" album</strong> — keep saved media in its own album (requires full Photos access). Off by default, so ClipVault only needs add-only permission.</li>
+            <li><strong>iCloud backup</strong> — mirror every save into your own iCloud Drive folder.</li>
+            <li><strong>Haptics</strong> and confirmation prompts can be toggled to taste.</li>
+        </ul>
+
+        <h2>FAQ</h2>
+
+        <h3>Where do saved files go?</h3>
+        <p>Into your Photos library. With the album setting on, they also go into a "ClipVault" album. With iCloud backup on, a copy is written to <em>iCloud Drive &rarr; ClipVault &rarr; Downloads</em> so it's available across your devices.</p>
+
+        <h3>Why does saving a video need me to log in?</h3>
+        <p>Video sources are only reliably reachable from an authenticated session. Logging in with your own account lets ClipVault fetch the full-quality video file.</p>
+
+        <h3>A link didn't work.</h3>
+        <p>Content that is private, removed, or rate-limited by the source platform can't be retrieved. If you're logged in, try again in a few minutes. ClipVault depends on the public structure of the pages it reads, which can change without notice.</p>
+
+        <h3>Does ClipVault upload my data anywhere?</h3>
+        <p>No. Everything happens on your device or inside your own private iCloud. We don't run a server, collect analytics, or receive a copy of anything you save. See the <a href="privacy.html">Privacy Policy</a>.</p>
+
+        <h3>I found a bug or have a feature request.</h3>
+        <p>Please email <a href="mailto:mwsupplylimited@gmail.com?subject=ClipVault%20feedback">mwsupplylimited@gmail.com</a> with your iOS version, device, and steps to reproduce. We read every message.</p>
+
+        <h2>Contact</h2>
+        <p>For support: <a href="mailto:mwsupplylimited@gmail.com?subject=ClipVault%20support">mwsupplylimited@gmail.com</a></p>
+
+        <h2>Privacy</h2>
+        <p>See the <a href="privacy.html">ClipVault Privacy Policy</a>.</p>
+
+        <footer>
+            &copy; 2026 MW Supply Limited
+        </footer>
+    </div>
+</body>
+</html>
