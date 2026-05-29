@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Money Flow: Finance Analysis — Support</title>
+    <meta name="description" content="Support page for Money Flow: Finance Analysis on iOS: track expenses and income with charts, widgets, iCloud sync, and CSV/Excel import & export.">
+    <style>
+        :root {
+            --bg: #ffffff;
+            --fg: #1a1a1a;
+            --muted: #666666;
+            --accent: #1f9d57;
+            --card: #f5f5f7;
+            --border: #e5e5e7;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #121419;
+                --fg: #f5f5f7;
+                --muted: #9a9a9a;
+                --accent: #34d27f;
+                --card: #1c1f25;
+                --border: #2a2d34;
+            }
+        }
+        * { box-sizing: border-box; }
+        html { -webkit-text-size-adjust: 100%; }
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+            background: var(--bg);
+            color: var(--fg);
+            line-height: 1.55;
+            -webkit-font-smoothing: antialiased;
+        }
+        .container { max-width: 720px; margin: 0 auto; padding: 48px 24px 96px; }
+        .back { display: inline-block; color: var(--muted); text-decoration: none; font-size: 0.9rem; margin-bottom: 32px; }
+        .back:hover { color: var(--accent); }
+        h1 { font-size: 2rem; margin: 0 0 8px; letter-spacing: -0.02em; }
+        .subtitle { color: var(--muted); margin: 0 0 40px; font-size: 1.05rem; }
+        .pill { display: inline-block; padding: 2px 10px; border-radius: 999px; background: var(--card); border: 1px solid var(--border); font-size: 0.8rem; color: var(--muted); }
+        h2 { font-size: 1.2rem; margin: 36px 0 12px; letter-spacing: -0.01em; }
+        h3 { font-size: 1.02rem; margin: 24px 0 6px; }
+        p { color: var(--fg); }
+        ul { padding-left: 22px; }
+        li { margin-bottom: 6px; }
+        a { color: var(--accent); }
+        code { background: var(--card); border: 1px solid var(--border); padding: 1px 5px; border-radius: 4px; font-size: 0.9em; }
+        footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.85rem; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a class="back" href="../">&larr; MW Supply Limited</a>
+
+        <h1>Money Flow: Finance Analysis</h1>
+        <p class="subtitle">Track your spending and income, see where your money goes with clean charts, and keep everything private on your device and your own iCloud. <span class="pill">Version 1.0</span></p>
+
+        <h2>About</h2>
+        <p>Money Flow is a fast, private personal-finance tracker for iPhone and iPad. Log expenses and income in seconds, organize them with customizable categories and accounts, and understand your habits through dashboards and insights built with Swift Charts. There are no accounts to create, no ads, and no data collection &mdash; your finances stay yours.</p>
+
+        <h2>Getting started</h2>
+        <ul>
+            <li><strong>Add a transaction.</strong> Tap the <em>+</em> button, enter an amount, pick expense or income, and choose a category and account. Add an optional note and date.</li>
+            <li><strong>Customize categories and accounts.</strong> The app starts with sensible defaults (Groceries, Dining, Rent, Salary, Checking, Savings, and more). Edit names, icons, and colors, or add your own in <em>Settings</em>.</li>
+            <li><strong>See your insights.</strong> The Dashboard and Insights tabs break down spending by category and over time so you can spot trends at a glance.</li>
+            <li><strong>Add the widget.</strong> Long-press your Home or Lock Screen, tap <em>+</em>, and add the Money Flow widget to see your balance and recent activity without opening the app.</li>
+            <li><strong>Quick add with Siri &amp; Shortcuts.</strong> Money Flow supports "Add Expense" and "Add Income" actions you can run from Shortcuts.</li>
+        </ul>
+
+        <h2>iCloud sync</h2>
+        <p>When you are signed in to iCloud and the toggle in <em>Settings &rarr; iCloud</em> is on, your transactions, categories, accounts, and settings sync automatically across your iPhone and iPad through your own private iCloud account. Because the data lives in your iCloud, it also comes back if you reinstall the app on a new or reset device. If you prefer to keep everything on a single device, just leave iCloud sync off &mdash; the app works fully offline.</p>
+
+        <h2>Importing &amp; exporting</h2>
+        <p>You can bring existing records in from a <code>.csv</code> file and export your data as CSV or Excel at any time from <em>Settings</em>. Exports go wherever you choose through the standard iOS share sheet &mdash; Files, Mail, AirDrop, and so on.</p>
+
+        <h2>FAQ</h2>
+
+        <h3>Where is my data stored?</h3>
+        <p>On your device, in Apple&rsquo;s standard on-device database. If you enable iCloud sync, a copy is mirrored to your personal iCloud account so it stays in sync across your devices. We never receive or store your financial data.</p>
+
+        <h3>Will my data survive if I delete and reinstall the app?</h3>
+        <p>If iCloud sync was enabled, yes &mdash; your data is restored from your iCloud account when you reinstall and sign in to the same Apple Account. If iCloud sync was off, the data is stored only on the device and is removed when you delete the app, so export a backup first if you plan to delete it.</p>
+
+        <h3>Does it sync between my iPhone and iPad?</h3>
+        <p>Yes. With iCloud sync enabled on both devices and the same Apple Account signed in, changes flow between them automatically.</p>
+
+        <h3>Do I need an account or internet connection?</h3>
+        <p>No. Money Flow has no sign-in and works completely offline. iCloud sync is the only feature that uses the network, and it is optional.</p>
+
+        <h3>What file formats can I import and export?</h3>
+        <p>Import accepts CSV files. Export produces CSV and Excel (.xlsx) files.</p>
+
+        <h3>I found a bug or have a feature request.</h3>
+        <p>Email <a href="mailto:mwsupplylimited@gmail.com?subject=Money%20Flow%20feedback">mwsupplylimited@gmail.com</a> with your iOS version, device, and steps to reproduce.</p>
+
+        <h2>Contact</h2>
+        <p>For support: <a href="mailto:mwsupplylimited@gmail.com?subject=Money%20Flow%20support">mwsupplylimited@gmail.com</a></p>
+
+        <h2>Privacy</h2>
+        <p>See the <a href="privacy.html">Money Flow Privacy Policy</a>.</p>
+
+        <footer>
+            &copy; 2026 MW Supply Limited
+        </footer>
+    </div>
+</body>
+</html>
