@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sensor Data — Support</title>
+    <meta name="description" content="Support page for Sensor Data: a live read-out of every sensor in your iPhone or iPad.">
+    <style>
+        :root {
+            --bg: #ffffff;
+            --fg: #1a1a1a;
+            --muted: #666666;
+            --accent: #1487d2;
+            --card: #f5f5f7;
+            --border: #e5e5e7;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #121419;
+                --fg: #f5f5f7;
+                --muted: #9a9a9a;
+                --accent: #38b6ff;
+                --card: #1c1f25;
+                --border: #2a2d34;
+            }
+        }
+        * { box-sizing: border-box; }
+        html { -webkit-text-size-adjust: 100%; }
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+            background: var(--bg);
+            color: var(--fg);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 48px 24px 96px;
+        }
+        .back {
+            display: inline-block;
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-bottom: 32px;
+        }
+        .back:hover { color: var(--accent); }
+        h1 {
+            font-size: 2.2rem;
+            margin: 0 0 8px;
+            letter-spacing: -0.02em;
+        }
+        .subtitle {
+            color: var(--muted);
+            margin: 0 0 40px;
+        }
+        h2 {
+            font-size: 1.3rem;
+            margin: 40px 0 12px;
+            letter-spacing: -0.01em;
+        }
+        h3 {
+            font-size: 1rem;
+            margin: 24px 0 6px;
+            font-weight: 600;
+        }
+        p, li { color: var(--fg); }
+        .muted { color: var(--muted); }
+        ul { padding-left: 22px; }
+        li { margin-bottom: 6px; }
+        a { color: var(--accent); }
+        code { background: var(--card); padding: 1px 6px; border-radius: 4px; font-size: 0.9em; }
+        .pill {
+            display: inline-block;
+            background: var(--card);
+            border: 1px solid var(--border);
+            padding: 3px 10px;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            color: var(--muted);
+        }
+        footer {
+            margin-top: 64px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
+            color: var(--muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a class="back" href="../">&larr; MW Supply Limited</a>
+
+        <h1>Sensor Data</h1>
+        <p class="subtitle">Live readout of every sensor in your iPhone &amp; iPad. <span class="pill">Version 1.0</span></p>
+
+        <h2>About</h2>
+        <p>Sensor Data is a live dashboard of every sensor in your device. Motion (accelerometer, gyroscope, magnetometer, attitude, compass, barometer, pedometer), positioning (GPS, speed, heading, altitude), power (battery, thermal state), system performance (CPU, memory, storage, network) and hardware facts &mdash; all on five tabs with live graphs. No accounts, no ads, no servers. Everything you see is read directly from your device, in real time.</p>
+
+        <h2>The tabs</h2>
+        <ul>
+            <li><strong>Motion</strong> &mdash; fused attitude indicator (roll/pitch/yaw), gyroscope, accelerometer and magnetometer charts, compass, barometric pressure and altitude with history, plus today's pedometer.</li>
+            <li><strong>GPS</strong> &mdash; live map, horizontal-accuracy gauge, coordinates (with altitude in metres &amp; feet), speed (m/s, km/h, mph), course with cardinal direction, session distance and speed history.</li>
+            <li><strong>Battery</strong> &mdash; charge ring, in-session level history, charging state, Low Power Mode and a four-step thermal scale.</li>
+            <li><strong>System</strong> &mdash; device-wide CPU usage with history graph, full memory breakdown (active / wired / compressed / inactive / free) with usage graph, storage bar, network type with IPv4/IPv6, current Wi-Fi name and signal, IP addresses for every active interface, uptime.</li>
+            <li><strong>Device</strong> &mdash; proximity sensor, screen brightness, availability of every sensor, model identifier, OS build, region and screen geometry.</li>
+        </ul>
+
+        <h2>FAQ</h2>
+
+        <h3>Why does the GPS tab not show a list of GPS satellites?</h3>
+        <p>iOS doesn't expose any per-satellite GNSS data to apps (no count, no SNR, no azimuth/elevation), unlike Android. The system fuses GPS, GLONASS, Galileo, BeiDou, Wi-Fi and cellular into a single fix. The Fix Quality gauge on the GPS tab uses the horizontal-accuracy figure, which is the closest available indicator of signal quality.</p>
+
+        <h3>Why is the Battery tab showing only "Nominal/Fair/Serious/Critical" instead of a real temperature?</h3>
+        <p>iOS doesn't give apps a numeric battery or CPU temperature &mdash; only the coarse four-level <em>thermal state</em>. A real &deg;C reading lives behind private system keys that aren't allowed for App Store apps. The thermal section shows the level plus a description of what the system is doing at that level.</p>
+
+        <h3>Why isn't there a list of which apps are using the most energy?</h3>
+        <p>Apps on iOS are sandboxed from one another's CPU and energy usage. The per-app battery breakdown in Settings &rarr; Battery is a system-only privilege with no public API. Sensor Data shows its own CPU and memory in the System tab &mdash; that's the only per-process figure any third-party app can read.</p>
+
+        <h3>Why doesn't the Wi-Fi SSID show up in the System tab?</h3>
+        <p>Sensor Data needs the iOS <em>Location</em> permission to read the SSID &mdash; that's how Apple guards Wi-Fi info on iOS 13+. Grant Location once and the SSID, BSSID and signal will appear. If you decline Location the rest of the network section still works (connection type, IPv4/IPv6, IP addresses).</p>
+
+        <h3>Why are some sensors marked "Unavailable" on the iOS Simulator?</h3>
+        <p>The Simulator doesn't have an accelerometer, gyroscope, magnetometer, barometer, real battery telemetry or a proximity sensor. The app degrades gracefully and shows an "Unavailable" badge for each. Run on a real device to see live data everywhere.</p>
+
+        <h3>Where is my data sent?</h3>
+        <p>Nowhere. Sensor Data makes no network requests of its own. See the <a href="privacy.html">Privacy Policy</a> for full details.</p>
+
+        <h3>I found a bug or have a feature request.</h3>
+        <p>Please email <a href="mailto:mwsupplylimited@gmail.com?subject=Sensor%20Data%20feedback">mwsupplylimited@gmail.com</a> with your iOS version, device and steps to reproduce. We read every message.</p>
+
+        <h2>Contact</h2>
+        <p>For support: <a href="mailto:mwsupplylimited@gmail.com?subject=Sensor%20Data%20support">mwsupplylimited@gmail.com</a></p>
+
+        <h2>Privacy</h2>
+        <p>See the <a href="privacy.html">Sensor Data Privacy Policy</a>.</p>
+
+        <footer>
+            &copy; 2026 MW Supply Limited
+        </footer>
+    </div>
+</body>
+</html>

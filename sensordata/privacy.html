@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sensor Data — Privacy Policy</title>
+    <meta name="description" content="Privacy Policy for Sensor Data on iOS.">
+    <style>
+        :root {
+            --bg: #ffffff;
+            --fg: #1a1a1a;
+            --muted: #666666;
+            --accent: #1487d2;
+            --card: #f5f5f7;
+            --border: #e5e5e7;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #121419;
+                --fg: #f5f5f7;
+                --muted: #9a9a9a;
+                --accent: #38b6ff;
+                --card: #1c1f25;
+                --border: #2a2d34;
+            }
+        }
+        * { box-sizing: border-box; }
+        html { -webkit-text-size-adjust: 100%; }
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+            background: var(--bg);
+            color: var(--fg);
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+        }
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 48px 24px 96px;
+        }
+        .back {
+            display: inline-block;
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-bottom: 32px;
+        }
+        .back:hover { color: var(--accent); }
+        h1 {
+            font-size: 2rem;
+            margin: 0 0 8px;
+            letter-spacing: -0.02em;
+        }
+        .meta {
+            color: var(--muted);
+            margin: 0 0 40px;
+            font-size: 0.95rem;
+        }
+        h2 {
+            font-size: 1.2rem;
+            margin: 36px 0 12px;
+            letter-spacing: -0.01em;
+        }
+        p { color: var(--fg); }
+        ul { padding-left: 22px; }
+        li { margin-bottom: 6px; }
+        a { color: var(--accent); }
+        .callout {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-left: 3px solid var(--accent);
+            padding: 16px 20px;
+            border-radius: 8px;
+            margin: 24px 0;
+        }
+        .callout p { margin: 0; }
+        footer {
+            margin-top: 64px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
+            color: var(--muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a class="back" href="./">&larr; Sensor Data Support</a>
+
+        <h1>Sensor Data Privacy Policy</h1>
+        <p class="meta">Effective 30 May 2026 &middot; Last updated 30 May 2026</p>
+
+        <div class="callout">
+            <p><strong>Summary:</strong> Sensor Data collects no personal data, makes no network requests, contains no advertising, and uses no analytics or third-party SDKs. Every reading you see is shown only on your device.</p>
+        </div>
+
+        <h2>1. Information we collect</h2>
+        <p><strong>None.</strong> Sensor Data does not ask for, collect, transmit or store any personally identifiable information. The app has no account system, no login, no user profile.</p>
+
+        <h2>2. Sensor and location data &mdash; on-device only</h2>
+        <p>Sensor Data reads from your device's sensors in real time and shows the values on screen. Specifically:</p>
+        <ul>
+            <li><strong>Motion sensors</strong> (accelerometer, gyroscope, magnetometer, attitude, barometer, pedometer) &mdash; read live from the iOS Core Motion framework.</li>
+            <li><strong>Location</strong> (latitude, longitude, altitude, speed, course, heading) &mdash; read live from the iOS Core Location framework while the app is open. Used only to display the current fix and to compute the in-session distance. Not recorded across launches, not transmitted anywhere.</li>
+            <li><strong>Wi-Fi network info</strong> (SSID, BSSID, signal) &mdash; read live via NEHotspotNetwork.fetchCurrent when iOS allows it. Reading this requires Location authorization &mdash; that's an Apple platform requirement, not a Sensor Data choice. Not transmitted anywhere.</li>
+            <li><strong>Battery, thermal, CPU, memory, storage, uptime, network interfaces</strong> &mdash; read live from the standard system APIs (UIDevice, ProcessInfo, host_statistics, NWPathMonitor, getifaddrs). Not transmitted anywhere.</li>
+        </ul>
+        <p>None of this data is saved to disk, sent to any server we operate, or shared with any third party. When you close the app the readings are gone.</p>
+
+        <h2>3. Information stored locally on your device</h2>
+        <p>Sensor Data stores no settings or history between launches. There is no UserDefaults state, no CoreData store, no iCloud container, no exported files.</p>
+
+        <h2>4. Network activity</h2>
+        <p>Sensor Data makes no network requests of any kind. The app does not contact any server owned by MW Supply Limited or any third party. The "Network" section of the System tab inspects your device's connection state and the IP addresses iOS has assigned to its interfaces &mdash; it does not transmit them.</p>
+
+        <h2>5. Third-party services</h2>
+        <p>Sensor Data contains no third-party SDKs, no analytics frameworks, no advertising networks, and no crash reporting services other than Apple's own first-party crash reporting (which is governed entirely by Apple's privacy policy and only runs if you have opted in to Share With App Developers in iOS Settings &rarr; Privacy &amp; Security &rarr; Analytics &amp; Improvements).</p>
+
+        <h2>6. Maps</h2>
+        <p>The "Live Position" map on the GPS tab is rendered by Apple Maps (MapKit), running locally inside the app under your Apple ID. Map-tile requests go from your device to Apple under Apple's own privacy terms; Sensor Data does not see, log or relay them.</p>
+
+        <h2>7. Children</h2>
+        <p>Sensor Data is suitable for all ages and is rated 4+ on the App Store. Because the app collects no data of any kind, it complies with the Children's Online Privacy Protection Act (COPPA) and similar regulations worldwide.</p>
+
+        <h2>8. Changes to this policy</h2>
+        <p>If we ever change how Sensor Data handles data, we will update this page and the "Last updated" date above. Material changes will also be reflected in the App Store privacy nutrition labels for the affected version of the app.</p>
+
+        <h2>9. Contact</h2>
+        <p>Questions about this privacy policy can be sent to <a href="mailto:mwsupplylimited@gmail.com?subject=Sensor%20Data%20privacy">mwsupplylimited@gmail.com</a>.</p>
+
+        <footer>
+            &copy; 2026 MW Supply Limited
+        </footer>
+    </div>
+</body>
+</html>
