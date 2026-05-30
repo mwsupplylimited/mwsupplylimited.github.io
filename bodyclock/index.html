@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Body Clock — Support</title>
+    <meta name="description" content="Support page for Body Clock, a jet-lag and circadian adjustment planner for iPhone and iPad.">
+    <style>
+        :root {
+            --bg: #ffffff;
+            --fg: #1a1a1a;
+            --muted: #666666;
+            --accent: #f28a26;
+            --card: #f5f5f7;
+            --border: #e5e5e7;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #121419;
+                --fg: #f5f5f7;
+                --muted: #9a9a9a;
+                --accent: #ff9a3a;
+                --card: #1c1f25;
+                --border: #2a2d34;
+            }
+        }
+        * { box-sizing: border-box; }
+        html { -webkit-text-size-adjust: 100%; }
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+            background: var(--bg);
+            color: var(--fg);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 48px 24px 96px;
+        }
+        .back {
+            display: inline-block;
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-bottom: 32px;
+        }
+        .back:hover { color: var(--accent); }
+        h1 {
+            font-size: 2.2rem;
+            margin: 0 0 8px;
+            letter-spacing: -0.02em;
+        }
+        .subtitle {
+            color: var(--muted);
+            margin: 0 0 40px;
+        }
+        h2 {
+            font-size: 1.3rem;
+            margin: 40px 0 12px;
+            letter-spacing: -0.01em;
+        }
+        h3 {
+            font-size: 1rem;
+            margin: 24px 0 6px;
+            font-weight: 600;
+        }
+        p, li { color: var(--fg); }
+        .muted { color: var(--muted); }
+        ul { padding-left: 22px; }
+        li { margin-bottom: 6px; }
+        a { color: var(--accent); }
+        .pill {
+            display: inline-block;
+            background: var(--card);
+            border: 1px solid var(--border);
+            padding: 3px 10px;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            color: var(--muted);
+        }
+        footer {
+            margin-top: 64px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
+            color: var(--muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a class="back" href="../">&larr; MW Supply Limited</a>
+
+        <h1>Body Clock</h1>
+        <p class="subtitle">Beat jet lag before it beats you. iPhone &amp; iPad. <span class="pill">Version 1.0</span></p>
+
+        <h2>About</h2>
+        <p>Body Clock is a jet-lag planner for pilots, crew, and frequent travellers. Tell it where you're flying and when, and it works out whether you should shift your body clock at all — and if so, gives you a day-by-day plan of when to seek light, when to avoid it, when to sleep, and when a low dose of melatonin can help. Every recommendation is grounded in published circadian-rhythm research, and all of the planning happens on your device.</p>
+
+        <h2>Getting started</h2>
+        <ul>
+            <li><strong>Add a trip</strong> from the Trips tab: pick your origin and destination cities, then set your departure and arrival times.</li>
+            <li><strong>Set your usual sleep</strong> — your habitual bedtime and wake time — so the plan is built around <em>your</em> clock, not an average.</li>
+            <li><strong>Open the plan</strong> to see the recommendation and a day-by-day schedule leading up to and through your trip.</li>
+            <li><strong>Check the Today tab</strong> each day for what to do right now, and let optional reminders nudge you at the key moments.</li>
+        </ul>
+
+        <h2>What it does</h2>
+        <h3>Should you even shift?</h3>
+        <p>For short trips, fully adapting to the destination and then reversing can leave you jet-lagged the whole time. Body Clock compares your trip length with how long adaptation would actually take and tells you whether to <strong>stay anchored to home time</strong>, <strong>partly shift</strong>, or <strong>fully shift</strong>.</p>
+
+        <h3>The right direction</h3>
+        <p>Flying east you must advance your clock; flying west you delay it. Because the human clock drifts slightly longer than 24 hours, delays come easier than advances — so for some large eastward trips Body Clock will suggest delaying "the long way round" if that gets you there in fewer days.</p>
+
+        <h3>A day-by-day plan</h3>
+        <p>Each day in your plan lists clear actions: <strong>seek bright light</strong> and <strong>avoid light</strong> windows (the single strongest lever on your clock), target <strong>sleep and wake</strong> times, an optional <strong>melatonin</strong> time, and a <strong>caffeine cut-off</strong>. The light windows are timed around your core-body-temperature minimum so you push your clock the right way instead of the wrong way.</p>
+
+        <h3>Today, at a glance</h3>
+        <p>The Today tab pulls out the current day's actions and a simple timeline so you always know the next thing to do, without scrolling through the whole plan.</p>
+
+        <h3>Learn</h3>
+        <p>A built-in Learn section explains the science in plain language — what jet lag is, why east and west differ, how light timing works, and how melatonin, caffeine, and meal timing fit in — with references to the research it's based on.</p>
+
+        <h2>Apple Health</h2>
+        <p>Connecting Apple Health is optional. If you allow it, Body Clock <strong>reads</strong> recent sleep (and, if available, resting heart rate and heart-rate variability) to estimate your real bedtime and wake time and tailor the plan to them. The app only ever reads this data — it never writes to Health, and your health data never leaves your device. You can use the entire app without granting Health access.</p>
+
+        <h2>Reminders</h2>
+        <p>Body Clock can schedule local notifications for the upcoming light, sleep, and melatonin actions in your plan. These are ordinary on-device reminders — nothing is sent to a server. Turn them on or off in iOS Settings &rarr; Notifications &rarr; Body Clock.</p>
+
+        <h2>iCloud backup</h2>
+        <p>Your trips are stored on your device and, if you're signed in to iCloud, backed up to your own private iCloud so they're there on your other devices. The data lives in your personal iCloud account under your Apple ID — MW Supply Limited never receives a copy.</p>
+
+        <h2>FAQ</h2>
+
+        <h3>Is Body Clock free?</h3>
+        <p>Yes. Body Clock is completely free. There's no subscription, no in-app purchase, no ads, and no accounts.</p>
+
+        <h3>Do I have to connect Apple Health?</h3>
+        <p>No. Health access is optional and only used to personalise your plan. Without it, the app uses the habitual sleep times you enter yourself.</p>
+
+        <h3>Does my data go anywhere?</h3>
+        <p>No. All planning runs on your device. Your trips back up only to your own private iCloud, and your Health data is never transmitted off the device at all.</p>
+
+        <h3>Is this medical advice?</h3>
+        <p>No. Body Clock offers general educational guidance based on published circadian research. It is not medical advice. Talk to a clinician before using melatonin or if you have a sleep or health condition.</p>
+
+        <h3>I found a bug or have a feature request.</h3>
+        <p>Please email <a href="mailto:mwsupplylimited@gmail.com?subject=Body%20Clock%20feedback">mwsupplylimited@gmail.com</a> with your iOS version, device, and steps to reproduce. We read every message.</p>
+
+        <h2>Contact</h2>
+        <p>For support: <a href="mailto:mwsupplylimited@gmail.com?subject=Body%20Clock%20support">mwsupplylimited@gmail.com</a></p>
+
+        <h2>Privacy</h2>
+        <p>See the <a href="privacy.html">Body Clock Privacy Policy</a>.</p>
+
+        <footer>
+            &copy; 2026 MW Supply Limited
+        </footer>
+    </div>
+</body>
+</html>
