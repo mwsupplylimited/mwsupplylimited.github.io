@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Scanner — Support</title>
+    <meta name="description" content="Support page for PDF Scanner: scan, edit and search PDFs on iOS.">
+    <style>
+        :root {
+            --bg: #ffffff;
+            --fg: #1a1a1a;
+            --muted: #666666;
+            --accent: #2b6dfb;
+            --card: #f5f5f7;
+            --border: #e5e5e7;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #121419;
+                --fg: #f5f5f7;
+                --muted: #9a9a9a;
+                --accent: #5a9bff;
+                --card: #1c1f25;
+                --border: #2a2d34;
+            }
+        }
+        * { box-sizing: border-box; }
+        html { -webkit-text-size-adjust: 100%; }
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+            background: var(--bg);
+            color: var(--fg);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 48px 24px 96px;
+        }
+        .back {
+            display: inline-block;
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-bottom: 32px;
+        }
+        .back:hover { color: var(--accent); }
+        h1 {
+            font-size: 2.2rem;
+            margin: 0 0 8px;
+            letter-spacing: -0.02em;
+        }
+        .subtitle {
+            color: var(--muted);
+            margin: 0 0 40px;
+        }
+        h2 {
+            font-size: 1.3rem;
+            margin: 40px 0 12px;
+            letter-spacing: -0.01em;
+        }
+        h3 {
+            font-size: 1rem;
+            margin: 24px 0 6px;
+            font-weight: 600;
+        }
+        p, li { color: var(--fg); }
+        .muted { color: var(--muted); }
+        ul { padding-left: 22px; }
+        li { margin-bottom: 6px; }
+        a { color: var(--accent); }
+        code {
+            background: var(--card);
+            border: 1px solid var(--border);
+            padding: 1px 6px;
+            border-radius: 5px;
+            font-size: 0.92em;
+        }
+        .pill {
+            display: inline-block;
+            background: var(--card);
+            border: 1px solid var(--border);
+            padding: 3px 10px;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            color: var(--muted);
+            margin-left: 6px;
+        }
+        footer {
+            margin-top: 64px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
+            color: var(--muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a class="back" href="../">&larr; MW Supply Limited</a>
+
+        <h1>PDF Scanner</h1>
+        <p class="subtitle">Scan, edit and search PDFs on iPhone &amp; iPad. <span class="pill">Version 1.0</span></p>
+
+        <h2>About</h2>
+        <p>PDF Scanner turns your camera into a fast, accurate document scanner and gives you a full PDF editor in the same app. Scans are automatically OCR'd so you can search every word — even your own handwriting and printouts — and the editor lets you reorder pages, mark them up with Apple Pencil, add a signature, and fill PDF form fields. No ads, no accounts, no data collection.</p>
+
+        <h2>Getting started</h2>
+        <ul>
+            <li><strong>Tap <em>Scan</em></strong> in the top right of Documents to open the camera scanner. Capture as many pages as you like, then tap <em>Save</em>. PDF Scanner auto-runs OCR so the resulting PDF is fully searchable in the app, in Files, and in Preview.</li>
+            <li><strong>Tap <em>Import</em></strong> to bring in any existing PDF from Files or iCloud Drive.</li>
+            <li><strong>Open a document</strong> and use the bottom bar to switch between <em>View</em>, <em>Pages</em>, <em>Markup</em>, <em>Sign</em>, and <em>Forms</em>.</li>
+            <li><strong>Search inside a document</strong> by tapping the magnifying-glass in the top toolbar while in View mode. Matches are highlighted; use the chevrons to step through them.</li>
+            <li><strong>Search and sort the document list</strong> from the Documents screen — pull down to reveal the search field, and use the sort menu to order by date or name.</li>
+        </ul>
+
+        <h2>FAQ</h2>
+
+        <h3>Does scanning work on iPad?</h3>
+        <p>Yes. PDF Scanner is a universal app and uses Apple's built-in document camera, which gives you the same edge-detection, perspective-correction and filters you'd get in Notes — on both iPhone and iPad.</p>
+
+        <h3>How accurate is the OCR?</h3>
+        <p>PDF Scanner uses Apple's on-device Vision text recognition at its highest accuracy setting, with language correction enabled. Recognition runs entirely on your device — nothing is uploaded.</p>
+
+        <h3>I marked up a page and now I can't search the text on it anymore.</h3>
+        <p>That's expected for now. To make sure your ink stays exactly where you placed it in the saved file, PDF Scanner flattens the marked-up page into an image when you tap <em>Apply</em>. Pages you don't mark up keep their searchable text layer untouched.</p>
+
+        <h3>How do I get a scan into iCloud Drive?</h3>
+        <p>Tap the share icon in the editor (or long-press a document in the list and choose <em>Share</em>) and pick <em>Save to Files → iCloud Drive</em>. PDF Scanner also stores documents directly in the app's own iCloud Drive folder so they appear in the Files app under <em>iCloud Drive → PDF Scanner</em>.</p>
+
+        <h3>Will my signature be reused on the next document?</h3>
+        <p>Yes. The first time you tap <em>Sign</em>, you draw your signature once and PDF Scanner saves it locally. From then on you just drag and resize it onto each page. Tap <em>Redraw</em> any time to replace it.</p>
+
+        <h3>Where is my data sent?</h3>
+        <p>Nowhere automatically. PDF Scanner makes no network requests. Documents stay on your device or in your own iCloud Drive, and only leave via Share actions that you initiate. See the <a href="privacy.html">Privacy Policy</a> for full details.</p>
+
+        <h3>I found a bug or have a feature request.</h3>
+        <p>Please email <a href="mailto:mwsupplylimited@gmail.com?subject=PDF%20Scanner%20feedback">mwsupplylimited@gmail.com</a> with your iOS version, device, and steps to reproduce. We read every message.</p>
+
+        <h2>Contact</h2>
+        <p>For support: <a href="mailto:mwsupplylimited@gmail.com?subject=PDF%20Scanner%20support">mwsupplylimited@gmail.com</a></p>
+
+        <h2>Privacy</h2>
+        <p>See the <a href="privacy.html">PDF Scanner Privacy Policy</a>.</p>
+
+        <footer>
+            &copy; 2026 MW Supply Limited
+        </footer>
+    </div>
+</body>
+</html>
