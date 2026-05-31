@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dancing Music Player — Support</title>
+    <meta name="description" content="Support page for Dancing Music Player, a real-time speed-adjustable music player for dancers and musicians.">
+    <style>
+        :root {
+            --bg: #ffffff;
+            --fg: #1a1a1a;
+            --muted: #666666;
+            --accent: #f54c5b;
+            --card: #f5f5f7;
+            --border: #e5e5e7;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #121419;
+                --fg: #f5f5f7;
+                --muted: #9a9a9a;
+                --accent: #ff6470;
+                --card: #1c1f25;
+                --border: #2a2d34;
+            }
+        }
+        * { box-sizing: border-box; }
+        html { -webkit-text-size-adjust: 100%; }
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+            background: var(--bg);
+            color: var(--fg);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 48px 24px 96px;
+        }
+        .back {
+            display: inline-block;
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-bottom: 32px;
+        }
+        .back:hover { color: var(--accent); }
+        h1 {
+            font-size: 2.2rem;
+            margin: 0 0 8px;
+            letter-spacing: -0.02em;
+        }
+        .subtitle {
+            color: var(--muted);
+            margin: 0 0 40px;
+        }
+        h2 {
+            font-size: 1.3rem;
+            margin: 40px 0 12px;
+            letter-spacing: -0.01em;
+        }
+        h3 {
+            font-size: 1rem;
+            margin: 24px 0 6px;
+            font-weight: 600;
+        }
+        p, li { color: var(--fg); }
+        .muted { color: var(--muted); }
+        ul { padding-left: 22px; }
+        li { margin-bottom: 6px; }
+        a { color: var(--accent); }
+        .pill {
+            display: inline-block;
+            background: var(--card);
+            border: 1px solid var(--border);
+            padding: 3px 10px;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            color: var(--muted);
+        }
+        footer {
+            margin-top: 64px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
+            color: var(--muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a class="back" href="../">&larr; MW Supply Limited</a>
+
+        <h1>Dancing Music Player</h1>
+        <p class="subtitle">A real-time speed-adjustable music player for dancers, choreographers, and musicians. iPhone. <span class="pill">Version 1.0</span></p>
+
+        <h2>About</h2>
+        <p>Dancing Music Player plays any song you own on your iPhone, with a giant on-screen knob (and a slider, +/&minus; buttons, presets, and a tap-to-type field) that changes the playback tempo in real time — from a quarter-speed crawl to triple-speed. A toggle keeps the original pitch intact while you change tempo, so you can slow a difficult passage down to learn the steps without it sounding like an old vinyl winding down. Turn the toggle off and the pitch moves with the speed for that classic "record speed" effect.</p>
+
+        <h2>Getting started</h2>
+        <ul>
+            <li><strong>Tap "Open a song"</strong> on the main screen to pick any audio file from Files, iCloud Drive, or another connected location (MP3, M4A/AAC, WAV, AIFF).</li>
+            <li><strong>Tap "Try the demo"</strong> to play a built-in eight-second beat so you can feel what the speed control does before importing anything.</li>
+            <li><strong>Hit play</strong> &mdash; then change the speed any way you like:</li>
+        </ul>
+
+        <h2>How to change the speed</h2>
+        <ul>
+            <li><strong>The knob</strong> &mdash; drag in a circle around it. The number in the middle updates live.</li>
+            <li><strong>The slider</strong> &mdash; drag the bar below the transport controls.</li>
+            <li><strong>+ and &minus; buttons</strong> &mdash; each tap moves the speed by 0.05&times;.</li>
+            <li><strong>Type a value</strong> &mdash; tap the number in the middle and type any speed between 0.25 and 3.00. Tap Done.</li>
+            <li><strong>Presets</strong> &mdash; tap 0.5&times;, 0.75&times;, 1&times;, 1.25&times;, 1.5&times;, or 2&times;.</li>
+            <li><strong>Reset</strong> &mdash; tap "Reset to 1.00&times;" under the slider.</li>
+        </ul>
+
+        <h2>Keep original pitch</h2>
+        <p>The pitch-lock toggle at the bottom decides what happens to the <em>sound</em> when you change the speed:</p>
+        <ul>
+            <li><strong>On (default).</strong> The tempo changes, but the music plays in its original key. Best for practising a routine to a slower tempo or learning a part.</li>
+            <li><strong>Off.</strong> Pitch follows speed &mdash; faster sounds higher (chipmunk) and slower sounds lower (slow-mo). Best for sound design or matching a specific effect.</li>
+        </ul>
+
+        <h2>Tips for dancers</h2>
+        <ul>
+            <li>For drilling choreography, set speed somewhere between 0.5&times;–0.75&times; with pitch lock on. The musicality stays intact so the cues sound right.</li>
+            <li>For a performance warm-up, ramp from 0.85&times; up to 1&times; over a few play-throughs &mdash; tap "Reset to 1.00&times;" when you're ready for the real thing.</li>
+            <li>For comp prep, use the + / &minus; buttons to find the exact speed your judge will play at, then type that number in to lock it.</li>
+        </ul>
+
+        <h2>Supported audio</h2>
+        <p>Anything iOS can open: MP3, M4A / AAC, WAV, AIFF, and most other common audio types. DRM-protected tracks (such as those streamed from Apple Music) cannot be opened &mdash; you need a file you own. The app uses Apple's Files picker, so anything in <em>On My iPhone</em>, <em>iCloud Drive</em>, or a connected service like Dropbox or Google Drive shows up.</p>
+
+        <h2>FAQ</h2>
+
+        <h3>Is the app free?</h3>
+        <p>Yes. Dancing Music Player is completely free. There's no subscription, no in-app purchase, no advertising, and no accounts.</p>
+
+        <h3>Does it support Apple Music or Spotify streams?</h3>
+        <p>No. Streaming services protect their catalogue with DRM, which prevents third-party apps from reading the audio. You can use any audio file you own &mdash; including songs you exported from your DAW, downloaded purchases, podcasts, or your own recordings.</p>
+
+        <h3>iPad version?</h3>
+        <p>The first release is iPhone-only. An iPad version is planned for the next update.</p>
+
+        <h3>Does the speed knob work while a Bluetooth speaker is connected?</h3>
+        <p>Yes. The app uses the system audio session, so playback follows whatever route iOS is currently using &mdash; AirPods, headphones, the built-in speaker, or any Bluetooth audio device.</p>
+
+        <h3>I found a bug or have a feature request.</h3>
+        <p>Please email <a href="mailto:mwsupplylimited@gmail.com?subject=Dancing%20Music%20Player%20feedback">mwsupplylimited@gmail.com</a> with your iOS version, device, and steps to reproduce. We read every message.</p>
+
+        <h2>Contact</h2>
+        <p>For support: <a href="mailto:mwsupplylimited@gmail.com?subject=Dancing%20Music%20Player%20support">mwsupplylimited@gmail.com</a></p>
+
+        <h2>Privacy</h2>
+        <p>See the <a href="privacy.html">Dancing Music Player Privacy Policy</a>.</p>
+
+        <footer>
+            &copy; 2026 MW Supply Limited
+        </footer>
+    </div>
+</body>
+</html>
