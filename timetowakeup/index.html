@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time to Wake Up — Support</title>
+    <meta name="description" content="Support for Time to Wake Up: Arrival Reminder — a location alarm that wakes you when you reach your stop on the bus, train, or coach.">
+    <style>
+        :root {
+            --bg: #ffffff;
+            --fg: #1a1a1a;
+            --muted: #666666;
+            --accent: #2e6bf2;
+            --card: #f5f5f7;
+            --border: #e5e5e7;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #0f1217;
+                --fg: #f5f5f7;
+                --muted: #9a9a9a;
+                --accent: #5b8cff;
+                --card: #1a1d24;
+                --border: #2a2d34;
+            }
+        }
+        * { box-sizing: border-box; }
+        html { -webkit-text-size-adjust: 100%; }
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+            background: var(--bg);
+            color: var(--fg);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        .container { max-width: 720px; margin: 0 auto; padding: 48px 24px 96px; }
+        .back { display: inline-block; color: var(--muted); text-decoration: none; font-size: 0.9rem; margin-bottom: 32px; }
+        .back:hover { color: var(--accent); }
+        h1 { font-size: 2.2rem; margin: 0 0 8px; letter-spacing: -0.02em; }
+        .subtitle { color: var(--muted); margin: 0 0 40px; }
+        h2 { font-size: 1.3rem; margin: 40px 0 12px; letter-spacing: -0.01em; }
+        h3 { font-size: 1rem; margin: 24px 0 6px; font-weight: 600; }
+        p, li { color: var(--fg); }
+        ul { padding-left: 22px; }
+        li { margin-bottom: 6px; }
+        a { color: var(--accent); }
+        .pill { display: inline-block; background: var(--card); border: 1px solid var(--border); padding: 3px 10px; border-radius: 999px; font-size: 0.8rem; color: var(--muted); }
+        .callout { background: var(--card); border: 1px solid var(--border); border-left: 3px solid var(--accent); padding: 16px 20px; border-radius: 8px; margin: 24px 0; }
+        .callout p { margin: 0; }
+        footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.85rem; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a class="back" href="../">&larr; MW Supply Limited</a>
+
+        <h1>Time to Wake Up</h1>
+        <p class="subtitle">A location alarm that wakes you when you're arriving — so you can rest on the bus, train, or coach without missing your stop. <span class="pill">Version 1.0</span></p>
+
+        <h2>What it does</h2>
+        <p>Set the place you want to get off on a map, choose a wake-up zone around it, and start your trip. Time to Wake Up keeps watch in the background and sounds a loud alarm — or a gentle notification, your choice — the moment you come within your wake-up zone. Then relax: nap, read, or zone out.</p>
+
+        <h2>How to use it</h2>
+        <ul>
+            <li><strong>Choose your stop.</strong> Tap <em>Choose your stop</em>, search for a station or address, or pan the map so the pin is on your destination.</li>
+            <li><strong>Set the wake-up zone.</strong> Drag the radius slider (or tap a preset). The alarm goes off when you reach the edge of this zone, so a larger zone wakes you earlier — handy if you need a few minutes to get ready.</li>
+            <li><strong>Pick your alert.</strong> Choose <em>Alarm</em> (a loud, looping sound with vibration) or <em>Notification</em> (a gentle banner with a sound), and a tone you like.</li>
+            <li><strong>Start the trip.</strong> Lock your phone and rest. A live screen shows how far you are from your stop.</li>
+            <li><strong>Save your regular stops</strong> for one-tap trips next time.</li>
+        </ul>
+
+        <h2>Permissions</h2>
+        <h3>Location</h3>
+        <p>The app needs your location to know when you reach your stop. We recommend choosing <strong>Always</strong>: this lets the alarm wake you reliably even if your phone locks or iOS closes the app during a long trip. If you choose <em>While Using</em>, keep the app open for the most reliable results. Your location is used only on your device to trigger your alarm — it is never sent to us or anyone else.</p>
+        <h3>Notifications</h3>
+        <p>Allow notifications so the wake-up alert can appear on your lock screen.</p>
+
+        <h2>Will the alarm wake me if my phone is on silent?</h2>
+        <p>In <strong>Alarm</strong> mode, the wake-up sound plays through the media channel, so it is heard even when the Ring/Silent switch is set to silent — just like a clock alarm. Turn your volume up before you nap. For the loudest, most reliable wake-up, use Alarm mode and grant <em>Always</em> location.</p>
+
+        <h2>Tips for a reliable wake-up</h2>
+        <ul>
+            <li>Grant <strong>Always</strong> location and <strong>Notifications</strong>.</li>
+            <li>Turn the volume up; use <strong>Alarm</strong> mode for napping.</li>
+            <li>Pick a wake-up zone that gives you enough warning (e.g. 400–800 m for a train).</li>
+            <li>Keep the phone out of a thick bag if GPS is weak underground or in tunnels.</li>
+        </ul>
+
+        <h2>Battery</h2>
+        <p>While a trip is active the app uses GPS continuously, which uses more battery than usual. That's normal for a location alarm and only lasts for your trip — end the trip when you arrive and battery use returns to normal.</p>
+
+        <h2>Your stops &amp; iCloud</h2>
+        <p>Your saved stops and settings are stored on your device. If you're signed in to iCloud, your saved stops are also backed up to your own private iCloud so they restore on a new device or after reinstalling. We never see this data — it lives only in your Apple Account.</p>
+
+        <h2>FAQ</h2>
+        <h3>The alarm didn't go off.</h3>
+        <p>Check that location is set to <strong>Always</strong> (Settings &rarr; Time to Wake Up &rarr; Location), notifications are allowed, and your volume is up. In <em>While Using</em> mode, keep the app open during the trip. Make sure the wake-up zone is large enough for GPS to detect — very small zones (under ~150 m) can be missed at speed.</p>
+        <h3>Can I snooze?</h3>
+        <p>Yes. When the alarm fires, tap <strong>Snooze</strong> to silence it and be reminded again after a few minutes (you can set the snooze length in Settings).</p>
+        <h3>Does it work on the subway / underground?</h3>
+        <p>It works wherever your phone can get a location fix. In long tunnels GPS may be unavailable until the train surfaces or reaches a station with signal, so leave a larger wake-up zone for underground routes.</p>
+        <h3>Does it work on iPad?</h3>
+        <p>Yes — Time to Wake Up works on iPhone and iPad.</p>
+
+        <h2>Contact</h2>
+        <p>Questions, bugs, or ideas? Email <a href="mailto:mwsupplylimited@gmail.com?subject=Time%20to%20Wake%20Up%20support">mwsupplylimited@gmail.com</a> with your device and iOS version. We read every message.</p>
+
+        <h2>Privacy</h2>
+        <p>See the <a href="privacy.html">Time to Wake Up Privacy Policy</a>.</p>
+
+        <footer>
+            &copy; 2026 MW Supply Limited
+        </footer>
+    </div>
+</body>
+</html>
