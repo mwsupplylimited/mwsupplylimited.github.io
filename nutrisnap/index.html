@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NutriSnap — Support</title>
+    <meta name="description" content="Support for NutriSnap — snap a photo of your meal to log calories and nutrients, track calories in and out with Apple Health, and follow a personal plan for your goal.">
+    <style>
+        :root {
+            --bg: #ffffff;
+            --fg: #1a1a1a;
+            --muted: #666666;
+            --accent: #18a83a;
+            --card: #f5f5f7;
+            --border: #e5e5e7;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #0f1512;
+                --fg: #f5f5f7;
+                --muted: #9a9a9a;
+                --accent: #46c45c;
+                --card: #18201b;
+                --border: #283029;
+            }
+        }
+        * { box-sizing: border-box; }
+        html { -webkit-text-size-adjust: 100%; }
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+            background: var(--bg);
+            color: var(--fg);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        .container { max-width: 720px; margin: 0 auto; padding: 48px 24px 96px; }
+        .back { display: inline-block; color: var(--muted); text-decoration: none; font-size: 0.9rem; margin-bottom: 32px; }
+        .back:hover { color: var(--accent); }
+        h1 { font-size: 2.2rem; margin: 0 0 8px; letter-spacing: -0.02em; }
+        .subtitle { color: var(--muted); margin: 0 0 40px; }
+        h2 { font-size: 1.3rem; margin: 40px 0 12px; letter-spacing: -0.01em; }
+        h3 { font-size: 1rem; margin: 24px 0 6px; font-weight: 600; }
+        p, li { color: var(--fg); }
+        ul { padding-left: 22px; }
+        li { margin-bottom: 6px; }
+        a { color: var(--accent); }
+        .pill { display: inline-block; background: var(--card); border: 1px solid var(--border); padding: 3px 10px; border-radius: 999px; font-size: 0.8rem; color: var(--muted); }
+        .callout { background: var(--card); border: 1px solid var(--border); border-left: 3px solid var(--accent); padding: 16px 20px; border-radius: 8px; margin: 24px 0; }
+        .callout p { margin: 0; }
+        footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.85rem; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a class="back" href="../">&larr; MW Supply Limited</a>
+
+        <h1>NutriSnap</h1>
+        <p class="subtitle">Snap a photo of your meal to log its calories and nutrients, track the calories you burn with Apple Health, and follow a personal plan for your goal — on iPhone and iPad. <span class="pill">Version 1.0</span></p>
+
+        <h2>What it does</h2>
+        <p>NutriSnap makes food tracking fast. Point your camera at a meal and it identifies the food on your device and suggests matches — pick one, set the amount, and it's logged with calories, protein, carbs, fat and more. It reads the energy you burn from Apple Health, so you always see calories in <em>and</em> out, and it builds calorie and nutrient targets around your goal: losing weight, maintaining, gaining, or building muscle.</p>
+
+        <h2>How to use it</h2>
+        <ul>
+            <li><strong>Set your goal.</strong> On first launch, choose your goal and enter your sex, age, height, weight and activity level (or import them from Apple Health). NutriSnap calculates a daily calorie and macro target for you.</li>
+            <li><strong>Snap a meal.</strong> Open the <em>Scan</em> tab, take a photo or choose one from your library, and tap one of the suggested foods. Set the portion with the slider or quick buttons, pick the meal, and add it.</li>
+            <li><strong>Or search.</strong> Prefer to type? Search the built-in food database, or create a custom food with your own numbers.</li>
+            <li><strong>See your day.</strong> The <em>Today</em> screen shows calories remaining, your macros, the calories you've burned, your meals and your weight trend at a glance.</li>
+            <li><strong>Get coaching.</strong> The <em>Coach</em> tab turns your day into personal tips — what to eat to hit your protein, or a quick walk to balance an over-budget day.</li>
+        </ul>
+
+        <h2>Apple Health</h2>
+        <p>NutriSnap works best with Apple Health, but it's optional. When you connect it:</p>
+        <ul>
+            <li>It <strong>reads</strong> your active and resting energy, steps and exercise so the app can show the calories you burn and add them to your budget.</li>
+            <li>It <strong>reads</strong> your body measurements (weight, height, age, sex) — only to personalise your targets — if you choose to import them.</li>
+            <li>It <strong>writes</strong> the food you log (calories, protein, carbs, fat, fiber, sugar, sodium) back to Health so your nutrition stays in one place and is available to your other apps.</li>
+        </ul>
+        <p>You control every permission in <em>Settings &rarr; Health &rarr; Data Access &amp; Devices &rarr; NutriSnap</em>, and you can turn the "add burned calories" and "write food to Health" options off in the app's Profile tab at any time. Your health data stays on your device and in Apple Health — it is never sent to us.</p>
+
+        <h2>How accurate is photo recognition?</h2>
+        <p>Food recognition runs entirely on your device and is meant as a fast starting point, not a lab measurement. NutriSnap suggests the most likely foods and always lets you confirm or change the match and the portion before logging. For packaged foods or anything it doesn't recognise, search the database or add a custom food. Nutrition values are typical reference figures per serving and will vary with brand and recipe.</p>
+
+        <h2>Your data &amp; iCloud</h2>
+        <p>Your food log, weight history and settings are stored on your device. If you're signed in to iCloud, they also sync through your own private iCloud so the same diary appears on your iPhone and iPad and is restored on a new device. We never see this data — it lives only in your Apple Account. Photos you scan are processed on your device and are not uploaded or saved by the app.</p>
+
+        <h2>Goals &amp; targets</h2>
+        <p>NutriSnap estimates the calories your body needs using the Mifflin–St Jeor formula (your sex, age, height, weight and activity level), then adjusts for your goal and chosen pace. Protein, carbs and fat targets are set from your goal and bodyweight. You can fine-tune everything — or set your own calorie goal — under <strong>Profile &rarr; Adjust goal &amp; body data</strong>.</p>
+
+        <h2>FAQ</h2>
+        <h3>It didn't recognise my food.</h3>
+        <p>Recognition works best on clear, well-lit photos of a single dish. If there's no confident match, tap <em>Search manually</em> and type the food, or add it as a custom food. Your choice is logged exactly the same way.</p>
+        <h3>The calories burned show zero.</h3>
+        <p>Connect Apple Health (Profile tab or the prompt on Today) and make sure your iPhone is recording activity. On a brand-new device or simulator there may be no energy data yet. NutriSnap uses your active + resting energy when available.</p>
+        <h3>Does it work on iPad?</h3>
+        <p>Yes — NutriSnap is universal and your diary syncs between iPhone and iPad through your private iCloud.</p>
+        <h3>My diary isn't syncing to my other device.</h3>
+        <p>Both devices need to be signed in to the <em>same</em> iCloud account with iCloud Drive on. Open the app on each device and give it a moment to sync.</p>
+        <h3>Is this medical advice?</h3>
+        <p>No. NutriSnap is a general wellness and food-tracking tool, not a medical device, and its estimates are not a substitute for advice from a doctor or dietitian. If you have a medical condition or specific dietary needs, talk to a professional.</p>
+
+        <h2>Contact</h2>
+        <p>Questions, bugs, or ideas? Email <a href="mailto:mwsupplylimited@gmail.com?subject=NutriSnap%20support">mwsupplylimited@gmail.com</a> with your device and iOS version. We read every message.</p>
+
+        <h2>Privacy</h2>
+        <p>See the <a href="privacy.html">NutriSnap Privacy Policy</a>.</p>
+
+        <footer>
+            &copy; 2026 MW Supply Limited
+        </footer>
+    </div>
+</body>
+</html>
