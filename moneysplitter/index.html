@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Money Splitter — Support</title>
+    <meta name="description" content="Support for Money Splitter — split trip and group bills fairly with friends. Create a trip, share a code, add expenses, and see who owes who.">
+    <style>
+        :root {
+            --bg: #ffffff;
+            --fg: #1a1a1a;
+            --muted: #666666;
+            --accent: #1e965c;
+            --card: #f5f5f7;
+            --border: #e5e5e7;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #0f1217;
+                --fg: #f5f5f7;
+                --muted: #9a9a9a;
+                --accent: #34c882;
+                --card: #1a1d24;
+                --border: #2a2d34;
+            }
+        }
+        * { box-sizing: border-box; }
+        html { -webkit-text-size-adjust: 100%; }
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+            background: var(--bg);
+            color: var(--fg);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        .container { max-width: 720px; margin: 0 auto; padding: 48px 24px 96px; }
+        .back { display: inline-block; color: var(--muted); text-decoration: none; font-size: 0.9rem; margin-bottom: 32px; }
+        .back:hover { color: var(--accent); }
+        h1 { font-size: 2.2rem; margin: 0 0 8px; letter-spacing: -0.02em; }
+        .subtitle { color: var(--muted); margin: 0 0 40px; }
+        h2 { font-size: 1.3rem; margin: 40px 0 12px; letter-spacing: -0.01em; }
+        h3 { font-size: 1rem; margin: 24px 0 6px; font-weight: 600; }
+        p, li { color: var(--fg); }
+        ul { padding-left: 22px; }
+        li { margin-bottom: 6px; }
+        a { color: var(--accent); }
+        .pill { display: inline-block; background: var(--card); border: 1px solid var(--border); padding: 3px 10px; border-radius: 999px; font-size: 0.8rem; color: var(--muted); }
+        .callout { background: var(--card); border: 1px solid var(--border); border-left: 3px solid var(--accent); padding: 16px 20px; border-radius: 8px; margin: 24px 0; }
+        .callout p { margin: 0; }
+        footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.85rem; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a class="back" href="../">&larr; MW Supply Limited</a>
+
+        <h1>Money Splitter</h1>
+        <p class="subtitle">Split trip and group bills fairly. Create a trip, share the code with friends, and everyone adds what they paid — Money Splitter does the math and shows who owes who. <span class="pill">Version 1.0</span></p>
+
+        <h2>What it does</h2>
+        <p>When a group of friends travels or shares costs, someone usually pays for things on behalf of the group. Money Splitter keeps track of every expense — what it was for, how much, who paid, and who it's shared among — and then works out the simplest set of payments to settle everyone up. No spreadsheets, no awkward maths.</p>
+
+        <h2>Getting started</h2>
+        <ul>
+            <li><strong>Create a trip.</strong> Tap <em>+</em> &rarr; <em>Create a Trip</em>, give it a name and currency.</li>
+            <li><strong>Add the people.</strong> Open <em>People</em> and add everyone in the group. People who don't use the app can still be added by name.</li>
+            <li><strong>Share the code.</strong> Tap the share button to send the 8-character trip code (e.g. <code>ABCD-EFGH</code>) or a join link. Friends open Money Splitter, tap <em>Join with a Code</em>, and they'll see the same trip.</li>
+            <li><strong>Add expenses.</strong> Tap <em>+</em> on the expenses list. Enter what it was for and the amount, choose who paid, and how to split it.</li>
+            <li><strong>Settle up.</strong> Open <em>Balances</em> to see who owes who and the fewest payments to clear all debts. Tap <em>Settle</em> when a payment is made to record it.</li>
+        </ul>
+
+        <h2>Ways to split an expense</h2>
+        <ul>
+            <li><strong>Equally</strong> — divide evenly among the people you choose. Any odd cent is distributed fairly so the totals always add up exactly.</li>
+            <li><strong>Exact amounts</strong> — type each person's share (they must add up to the total).</li>
+            <li><strong>Percentages</strong> — give each person a percentage (they must add up to 100%).</li>
+            <li><strong>Shares</strong> — weight the split, e.g. 2 shares for one person and 1 each for the others.</li>
+        </ul>
+        <div class="callout"><p>You can also split a single bill among more than one payer — turn on <em>Multiple people paid</em> when adding the expense.</p></div>
+
+        <h2>Settling up</h2>
+        <p>The <em>Balances</em> tab shows each person's net position — how much they're owed or how much they owe — and a suggested list of payments that clears everything with the fewest transfers. When someone actually pays another person back, tap <em>Settle</em> (or use <em>Record a Payment</em>) so the balances update for everyone.</p>
+
+        <h2>Syncing with your group</h2>
+        <p>Money Splitter uses Apple iCloud to keep a trip in sync across everyone in the group. For syncing to work, each person should be <strong>signed in to iCloud</strong> on their device (Settings &rarr; your name &rarr; iCloud). Your own trips also sync across your own iPhone and iPad. Changes appear when the app is opened or refreshed (pull down to refresh).</p>
+        <div class="callout"><p><strong>Privacy note:</strong> anyone who has a trip's invite code can view and edit that trip. Only share the code with people you want in the group.</p></div>
+
+        <h2>Frequently asked questions</h2>
+        <h3>Does it work on iPad?</h3>
+        <p>Yes — Money Splitter works on iPhone and iPad, and your trips sync across both.</p>
+        <h3>Can I split with people who don't have the app?</h3>
+        <p>Yes. Add them by name in <em>People</em>. You can record what they paid and what they owe; you just won't sync live with them until they join with the code.</p>
+        <h3>Can anyone in the trip edit an expense?</h3>
+        <p>Yes — every member of a trip can add, edit, or delete expenses and record payments, so the group can keep things accurate together.</p>
+        <h3>Is the math reliable?</h3>
+        <p>Yes. All amounts are handled in whole cents and the splitting logic is extensively tested, so totals always reconcile exactly — no missing or extra pennies.</p>
+        <h3>How do I leave a trip?</h3>
+        <p>Open the trip &rarr; <em>•••</em> &rarr; <em>Leave Trip</em>. It stays available to the other members, and you can rejoin anytime with the code.</p>
+        <h3>Why do I see ads?</h3>
+        <p>Money Splitter is free and supported by ads. You'll be asked once whether to allow tracking; you can decline and still use every feature — you'll just see less relevant ads.</p>
+
+        <h2>Contact</h2>
+        <p>Questions, bugs, or ideas? Email <a href="mailto:mwsupplylimited@gmail.com?subject=Money%20Splitter%20Support">mwsupplylimited@gmail.com</a> with your device and iOS version. We read every message.</p>
+
+        <h2>Privacy</h2>
+        <p>See the <a href="privacy.html">Money Splitter Privacy Policy</a>.</p>
+
+        <footer>
+            &copy; 2026 MW Supply Limited
+        </footer>
+    </div>
+</body>
+</html>
