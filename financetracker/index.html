@@ -55,10 +55,22 @@
         <a class="back" href="../">&larr; MW Supply Limited</a>
 
         <h1>Money Flow: Finance Analysis</h1>
-        <p class="subtitle">Track your spending and income, see where your money goes with clean charts, and keep everything private on your device and your own iCloud. <span class="pill">Version 1.0</span></p>
+        <p class="subtitle">Track your spending and income, see where your money goes with clean charts, and keep everything private on your device and your own iCloud. <span class="pill">Version 1.1</span></p>
 
         <h2>About</h2>
-        <p>Money Flow is a fast, private personal-finance tracker for iPhone and iPad. Log expenses and income in seconds, organize them with customizable categories and accounts, and understand your habits through dashboards and insights built with Swift Charts. There are no accounts to create, no ads, and no data collection &mdash; your finances stay yours.</p>
+        <p>Money Flow is a fast, private personal-finance tracker for iPhone and iPad. Log expenses, income, and transfers in seconds, organize them with customizable categories and accounts, set budgets and savings goals, and understand your habits through dashboards and insights built with Swift Charts. There are no accounts to create, no ads, and no data collection &mdash; your finances stay yours.</p>
+
+        <h2>What&rsquo;s new in version 1.1</h2>
+        <ul>
+            <li><strong>Account transfers &amp; live balances.</strong> Move money between accounts with a dedicated Transfer type, and see each account&rsquo;s current balance on the Dashboard and in Manage Accounts.</li>
+            <li><strong>Per-category budgets.</strong> Set a monthly limit on any category and track spending against it with progress bars and over-budget alerts in the new Budgets screen.</li>
+            <li><strong>Recurring transactions.</strong> Add subscriptions and regular bills once and let Money Flow log them automatically on schedule, including any that came due while the app was closed.</li>
+            <li><strong>Savings goals.</strong> Set targets (like a vacation fund) and track your progress, adding or withdrawing funds as you go.</li>
+            <li><strong>Face ID / passcode lock.</strong> Optionally require Face ID, Touch ID, or your passcode to open the app.</li>
+            <li><strong>Advanced filters &amp; sorting.</strong> Filter the transaction list by type, category, account, date range, and amount, and sort by date or amount.</li>
+            <li><strong>Receipt photos.</strong> Attach a photo of a receipt to any transaction and view it later.</li>
+            <li><strong>Daily reminder.</strong> Turn on an optional daily notification to remind you to log your spending at a time you choose.</li>
+        </ul>
 
         <h2>Getting started</h2>
         <ul>
@@ -70,7 +82,7 @@
         </ul>
 
         <h2>iCloud sync</h2>
-        <p>When you are signed in to iCloud and the toggle in <em>Settings &rarr; iCloud</em> is on, your transactions, categories, accounts, and settings sync automatically across your iPhone and iPad through your own private iCloud account. Because the data lives in your iCloud, it also comes back if you reinstall the app on a new or reset device. If you prefer to keep everything on a single device, just leave iCloud sync off &mdash; the app works fully offline.</p>
+        <p>When you are signed in to iCloud and the toggle in <em>Settings &rarr; iCloud</em> is on, your transactions, categories, accounts, budgets, savings goals, recurring items, and settings sync automatically across your iPhone and iPad through your own private iCloud account. Because the data lives in your iCloud, it also comes back if you reinstall the app on a new or reset device. If you prefer to keep everything on a single device, just leave iCloud sync off &mdash; the app works fully offline.</p>
 
         <h2>Importing &amp; exporting</h2>
         <p>You can bring existing records in from a <code>.csv</code> file and export your data as CSV or Excel at any time from <em>Settings</em>. Exports go wherever you choose through the standard iOS share sheet &mdash; Files, Mail, AirDrop, and so on.</p>
@@ -91,6 +103,18 @@
 
         <h3>What file formats can I import and export?</h3>
         <p>Import accepts CSV files. Export produces CSV and Excel (.xlsx) files.</p>
+
+        <h3>How do recurring transactions work?</h3>
+        <p>In <em>Settings &rarr; Recurring Transactions</em>, add an item with an amount, category, account, and how often it repeats (daily, weekly, monthly, or yearly). Money Flow posts each one automatically when it&rsquo;s due &mdash; including any that came due while the app was closed &mdash; and you can pause, edit, or delete a rule at any time.</p>
+
+        <h3>How do transfers and account balances work?</h3>
+        <p>Choose <em>Transfer</em> when adding a transaction to move money from one account to another. Transfers don&rsquo;t count as income or expense; they simply adjust each account&rsquo;s balance. Current balances appear on the Dashboard and in <em>Settings &rarr; Manage Accounts</em>, calculated from each account&rsquo;s starting balance plus its activity.</p>
+
+        <h3>How do I lock the app?</h3>
+        <p>Turn on <em>Settings &rarr; Security</em> to require Face ID, Touch ID, or your device passcode each time you open Money Flow. Authentication is handled entirely by iOS; the app never sees your passcode or biometric data.</p>
+
+        <h3>Where are receipt photos stored?</h3>
+        <p>Receipt photos you attach are stored on your device alongside the transaction, and &mdash; if iCloud sync is on &mdash; in your own private iCloud. They are never sent to us or anyone else.</p>
 
         <h3>I found a bug or have a feature request.</h3>
         <p>Email <a href="mailto:mwsupplylimited@gmail.com?subject=Money%20Flow%20feedback">mwsupplylimited@gmail.com</a> with your iOS version, device, and steps to reproduce.</p>
