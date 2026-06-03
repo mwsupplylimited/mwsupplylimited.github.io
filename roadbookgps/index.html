@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Roadbook GPS — Support</title>
-    <meta name="description" content="Support page for Roadbook GPS on iOS.">
+    <title>RoadBook: GPS Trip Tracker — Support</title>
+    <meta name="description" content="Support page for RoadBook on iOS.">
     <style>
         :root {
             --bg: #ffffff;
@@ -100,20 +100,20 @@
     <div class="container">
         <a class="back" href="../">&larr; MW Supply Limited</a>
 
-        <h1>Roadbook GPS</h1>
+        <h1>RoadBook</h1>
         <p class="subtitle">A simple, private trip logger for iPhone. <span class="pill">Version 1.0</span></p>
 
         <h2>About</h2>
-        <p>Roadbook GPS turns your iPhone into a personal trip logger. It records the route, distance, duration, speed and elevation of every drive, can start and stop itself automatically when you set off and arrive, and keeps a bird's-eye view of everywhere you've ever driven. Everything stays on your device, or in your own iCloud account. No accounts, no advertising, no tracking.</p>
+        <p>RoadBook turns your iPhone into a personal trip logger. It records the route, distance, duration, speed and elevation of every drive, can start and stop itself automatically when you set off and arrive, and keeps a bird's-eye view of everywhere you've ever driven. Everything stays on your device, or in your own iCloud account. No accounts, no advertising, no tracking.</p>
 
         <h2>Getting started</h2>
         <ul>
-            <li><strong>Grant location "While Using"</strong> the first time you open the app to record a drive manually. To use auto&#8209;start, grant <strong>"Allow Always"</strong> instead &mdash; iOS needs that to wake the app when you start driving.</li>
-            <li><strong>Tap Start on the Record tab</strong> to begin recording. The big number is your live speed; the grid below tracks distance, duration, altitude, max and average speed, and elevation gain.</li>
-            <li><strong>Leave the app or lock the phone &mdash; recording keeps going.</strong> Roadbook GPS records in the background.</li>
-            <li><strong>Auto&#8209;start &amp; auto&#8209;stop</strong> can be toggled and tuned in Settings. By default, recording starts when you exceed a threshold for two consecutive samples and stops after sitting below the stop speed for a few seconds.</li>
-            <li><strong>Trips tab</strong> lists every saved drive. Tap one to see the route on a map and full stats, and to <strong>export it as GPX or JSON</strong>.</li>
-            <li><strong>Explore tab</strong> shows every trip overlaid on a single world map plus a list of countries and cities you've driven through.</li>
+            <li><strong>Grant location "While Using"</strong> the first time you open the app to record a drive manually. For background auto&#8209;start, grant <strong>"Allow Always"</strong> &mdash; iOS needs that to wake the app when you start driving (the app shows a reminder if it's still set to "While Using").</li>
+            <li><strong>Tap Start Recording on the Record tab</strong> to begin. The big number is your live speed; the grid below tracks distance, duration, altitude, max and average speed, and elevation gain.</li>
+            <li><strong>Leave the app or lock the phone &mdash; recording keeps going.</strong> RoadBook records in the background.</li>
+            <li><strong>Auto&#8209;start</strong> has three choices in Settings: <strong>Off</strong> (record manually), <strong>Only While Open</strong> (starts on its own while the app is open), or <strong>In the Background</strong> (starts even when the app is closed). For background mode, pick <strong>Battery Saver</strong> (lightest on battery) or <strong>Full Accuracy</strong> (captures a drive from the very first metre). Auto&#8209;stop saves the trip once you've been parked a while.</li>
+            <li><strong>Trips tab</strong> lists every saved drive. Tap one for the route map, full stats, and interactive <strong>Speed&#8209;over&#8209;time and Altitude&#8209;over&#8209;time charts</strong> (drag sideways to replay your drive). Export any trip as <strong>GPX or JSON</strong>, and expand the map to full screen.</li>
+            <li><strong>Explore tab</strong> overlays every trip on one world map. <strong>Move and zoom with two fingers</strong>; with one finger, <strong>tap or drag a route</strong> to see which trips passed through that spot. It also lists the countries and cities you've driven through, and the map expands to full screen.</li>
         </ul>
 
         <h2>iCloud Backup</h2>
@@ -128,7 +128,7 @@
         <p>Average speed is computed over <em>elapsed recording time</em>, including any time you spent stationary (red lights, traffic). It's never higher than your max speed by construction.</p>
 
         <h3>Auto&#8209;start didn't fire when I started driving.</h3>
-        <p>Auto&#8209;start needs the location permission set to <strong>Always</strong>, not just While Using. iOS uses significant-location-change monitoring to wake the app, which can take a minute or two after you start moving. You can also tune the start threshold in Settings, or just tap Start manually.</p>
+        <p>Make sure Auto&#8209;start is set to <strong>In the Background</strong> in Settings, and that location access is <strong>Always</strong> (not just While Using) &mdash; iOS needs that to wake the app. In <strong>Battery Saver</strong> mode the app relies on iOS significant-location-change monitoring, which can take a short distance after you set off before recording kicks in; choose <strong>Full Accuracy</strong> to capture from the very first metre. You can also pick <strong>Only While Open</strong>, or just tap Start Recording manually.</p>
 
         <h3>Where is my trip data sent?</h3>
         <p>Nowhere we control. Trips live on your device, and (if enabled) inside your personal iCloud account &mdash; we never receive them. See the <a href="privacy.html">Privacy Policy</a> for details.</p>
@@ -137,16 +137,16 @@
         <p>Open a trip from the Trips tab and use <strong>Export GPX</strong> (for mapping tools like Google Earth, Strava, RideWithGPS) or <strong>Export JSON</strong> (for raw data). Either option opens the standard iOS share sheet, so you can send to Files, Mail, AirDrop, or any compatible app.</p>
 
         <h3>Will it drain my battery?</h3>
-        <p>While recording, the app uses GPS continuously, which is energy-intensive. When you're not driving, the only background work is significant-location-change monitoring (only if auto&#8209;start is on), which is designed by Apple to be very low power.</p>
+        <p>While recording, the app uses GPS continuously, which is energy-intensive. When you're not driving, it depends on your background mode: <strong>Battery Saver</strong> keeps GPS off and relies on Apple's very-low-power significant-location-change wake-up, while <strong>Full Accuracy</strong> keeps GPS active so it never misses the start of a drive (at a higher battery cost). With auto&#8209;start Off or set to Only While Open, nothing runs in the background at all.</p>
 
         <h3>I found a bug or have a feature request.</h3>
-        <p>Please email <a href="mailto:mwsupplylimited@gmail.com?subject=Roadbook%20GPS%20feedback">mwsupplylimited@gmail.com</a> with your iOS version, device, and steps to reproduce. We read every message.</p>
+        <p>Please email <a href="mailto:mwsupplylimited@gmail.com?subject=RoadBook%20feedback">mwsupplylimited@gmail.com</a> with your iOS version, device, and steps to reproduce. We read every message.</p>
 
         <h2>Contact</h2>
-        <p>For support: <a href="mailto:mwsupplylimited@gmail.com?subject=Roadbook%20GPS%20support">mwsupplylimited@gmail.com</a></p>
+        <p>For support: <a href="mailto:mwsupplylimited@gmail.com?subject=RoadBook%20support">mwsupplylimited@gmail.com</a></p>
 
         <h2>Privacy</h2>
-        <p>See the <a href="privacy.html">Roadbook GPS Privacy Policy</a>.</p>
+        <p>See the <a href="privacy.html">RoadBook Privacy Policy</a>.</p>
 
         <footer>
             &copy; 2026 MW Supply Limited
