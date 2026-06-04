@@ -54,14 +54,14 @@
         <a class="back" href="./">&larr; Money Flow Support</a>
 
         <h1>Money Flow Privacy Policy</h1>
-        <p class="meta">Effective 29 May 2026 &middot; Last updated 3 June 2026</p>
+        <p class="meta">Effective 29 May 2026 &middot; Last updated 4 June 2026</p>
 
         <div class="callout">
-            <p><strong>Summary:</strong> Money Flow collects no personal data, has no servers, no analytics, no advertising, and no third-party SDKs. Everything you enter stays on your device, and &mdash; only if you choose &mdash; syncs through your own private iCloud account. We never see your financial data.</p>
+            <p><strong>Summary:</strong> Your financial data stays on your device and &mdash; only if you choose &mdash; syncs through your own private iCloud account. We never see it and we run no servers. The free version of Money Flow shows ads from Google AdMob, which collects limited device and ad-interaction data to serve those ads. Upgrading to <strong>Money Flow Pro</strong> removes all ads.</p>
         </div>
 
-        <h2>1. Information we collect</h2>
-        <p><strong>None.</strong> Money Flow does not ask for, collect, transmit, or store any personally identifiable information on any server. We operate no backend and have no account system &mdash; you can use every feature without signing in.</p>
+        <h2>1. Who we are</h2>
+        <p>Money Flow is developed by MW Supply Limited (&ldquo;we&rdquo;). This policy explains what data the app handles, what stays on your device, and what is processed by the limited third-party services we use to show ads and offer an optional subscription. We have no account system and operate no backend &mdash; you can use every feature without signing in to us.</p>
 
         <h2>2. Information stored locally on your device</h2>
         <p>Money Flow stores the data you enter on your device only, using Apple&rsquo;s standard on-device database (SwiftData/SQLite), so the app remembers it between launches:</p>
@@ -71,22 +71,43 @@
             <li>Your savings goals and recurring transaction rules.</li>
             <li>Your settings (currency, monthly budget, default account, the app-lock and daily-reminder preferences, and the iCloud sync toggle).</li>
         </ul>
-        <p>The database lives in a private app container shared with the Money Flow widget so the widget can display your totals. This data never leaves your device except via the iCloud mechanism described below, and it is automatically removed if you delete the app.</p>
+        <p>The database lives in a private app container shared with the Money Flow widget so the widget can display your totals. This data never leaves your device except via the iCloud mechanism described below, and it is automatically removed if you delete the app. We have no access to it.</p>
 
         <h2>3. iCloud sync</h2>
         <p>If iCloud is signed in on your device and the sync toggle in <em>Settings</em> is on, your transactions (including any receipt photos), categories, accounts, budgets, savings goals, recurring rules, and settings are mirrored to your personal iCloud account using Apple&rsquo;s CloudKit <em>private database</em>. This keeps your data in sync across your iPhone and iPad and lets it return after you reinstall the app. The data is stored in your own iCloud account &mdash; MW Supply Limited has no access to it, and iCloud is governed by <a href="https://www.apple.com/legal/privacy/">Apple&rsquo;s privacy policy</a>. If you turn iCloud sync off or are not signed in to iCloud, all data simply stays on the device.</p>
 
-        <h2>4. Network activity</h2>
-        <p>Money Flow makes <strong>no network requests of its own</strong>. It has no servers to talk to. The only network activity is Apple&rsquo;s own iCloud synchronization, which happens at the operating-system level when you enable iCloud sync.</p>
+        <h2>4. Advertising (free version)</h2>
+        <p>The free version of Money Flow is supported by ads. It shows banner ads and occasional full-screen (interstitial) ads served by <strong>Google AdMob</strong> (the Google Mobile Ads SDK). To serve these ads, Google may collect and process information including:</p>
+        <ul>
+            <li>Your device&rsquo;s advertising identifier (IDFA) &mdash; only if you allow tracking when iOS asks (see below);</li>
+            <li>A non-personal device/usage identifier, device type, operating-system version and settings;</li>
+            <li>Your IP address and the approximate (coarse) region derived from it;</li>
+            <li>Information about how you interact with ads (for example, that an ad was shown or tapped).</li>
+        </ul>
+        <p>This information is collected and used by Google, not by us. It is handled under <a href="https://policies.google.com/privacy">Google&rsquo;s Privacy Policy</a> and as described in <a href="https://support.google.com/admob/answer/6128543">How Google uses information from sites or apps that use its services</a>. MW Supply Limited only receives aggregate, non-identifying reports such as the number of ad impressions and estimated revenue. Your financial data is never shared with Google or used to target ads.</p>
+        <p><strong>App Tracking Transparency.</strong> iOS asks whether Money Flow may track you across other companies&rsquo; apps and websites. If you choose &ldquo;Ask App Not to Track,&rdquo; the advertising identifier is not used and you will see only non-personalized ads.</p>
+        <p><strong>Consent (EEA, UK &amp; other regions).</strong> Where required by law, Money Flow uses Google&rsquo;s User Messaging Platform to ask for your consent before personalized ads are shown, and respects your choice.</p>
+        <p><strong>Removing ads.</strong> Subscribing to Money Flow Pro removes all banner and interstitial ads. While you are a Pro subscriber, the app does not request or display ads.</p>
 
-        <h2>5. Importing and exporting data</h2>
+        <h2>5. Money Flow Pro subscription</h2>
+        <p>Money Flow Pro is an optional auto-renewing subscription (available monthly or yearly, with a free trial on the yearly plan) that removes all ads and unlocks premium features such as advanced insights, custom accent themes, and alternate app icons. Purchases, billing, renewals, and refunds are handled entirely by <strong>Apple</strong> through your App Store account &mdash; we never see or store your name, your payment-card details, or your Apple ID. To unlock Pro features, the app checks your purchase entitlement directly with the App Store on your device; this check does not identify you to us. You can view, change, or cancel your subscription at any time in the App Store under <em>Settings &rarr; [your name] &rarr; Subscriptions</em>.</p>
+
+        <h2>6. Network activity</h2>
+        <p>Apart from the advertising and subscription services described above, Money Flow makes no network requests of its own and has no servers to talk to. The other network activity is Apple&rsquo;s own iCloud synchronization, which happens at the operating-system level when you enable iCloud sync.</p>
+
+        <h2>7. Importing and exporting data</h2>
         <p>Money Flow can import transactions from a CSV file you choose, and export your data as CSV or Excel files. Imported files are read locally; exported files are saved or shared only to the destination you pick through the standard iOS document and share sheets. These files are under your control and are never sent to us.</p>
 
-        <h2>6. Third-party services</h2>
-        <p>Money Flow contains no third-party SDKs, no analytics frameworks, no advertising networks, and no crash reporting other than Apple&rsquo;s first-party crash reporting (which is governed by Apple&rsquo;s privacy policy and only runs if you have opted in to Share With App Developers in iOS Settings &rarr; Privacy &amp; Security &rarr; Analytics &amp; Improvements).</p>
+        <h2>8. Third-party services</h2>
+        <p>To show ads in the free version, Money Flow includes two SDKs, both from Google:</p>
+        <ul>
+            <li><strong>Google Mobile Ads SDK (AdMob)</strong> &mdash; serves the banner and interstitial ads.</li>
+            <li><strong>Google User Messaging Platform</strong> &mdash; manages the ad-consent prompt where it is legally required.</li>
+        </ul>
+        <p>Both are governed by <a href="https://policies.google.com/privacy">Google&rsquo;s Privacy Policy</a>. Money Flow contains no analytics frameworks and no crash reporting other than Apple&rsquo;s first-party crash reporting (which is governed by Apple&rsquo;s privacy policy and only runs if you opted in to Share With App Developers in iOS Settings &rarr; Privacy &amp; Security &rarr; Analytics &amp; Improvements). Money Flow Pro subscribers are not shown ads, and the app does not request ads for them.</p>
 
-        <h2>7. Permissions</h2>
-        <p>Money Flow does not access your location, microphone, contacts, or health data, and uses no advertising identifier. The few system features it can use are all optional and stay on your device:</p>
+        <h2>9. Permissions and identifiers</h2>
+        <p>Money Flow does not access your location, microphone, contacts, or health data. The advertising identifier is used only for ads in the free version, and only if you allow tracking as described in section 4. The other system features the app can use are optional and stay on your device:</p>
         <ul>
             <li><strong>Face ID / Touch ID.</strong> If you turn on app lock, authentication is performed by iOS. The app only receives a yes/no result and never sees your passcode or biometric data.</li>
             <li><strong>Photos.</strong> If you attach a receipt, you pick the image through Apple&rsquo;s system photo picker, which runs separately from the app and shares only the single photo you select &mdash; the app is not granted access to your photo library.</li>
@@ -94,13 +115,13 @@
             <li><strong>Files.</strong> Importing or exporting uses the system document picker, which grants access only to the specific file you choose.</li>
         </ul>
 
-        <h2>8. Children</h2>
-        <p>Money Flow is rated 4+ and is suitable for all ages. It collects no data of any kind from any user, including children.</p>
+        <h2>10. Children</h2>
+        <p>Money Flow is a general-audience budgeting app and is not directed at children. It does not knowingly collect personal information from children. Because the free version shows ads, we instruct Google to serve only family-appropriate (maximum content rating G) ads, but it is not designed for use by children under the age of digital consent without a parent or guardian. Subscribing to Money Flow Pro removes all ads.</p>
 
-        <h2>9. Changes to this policy</h2>
+        <h2>11. Changes to this policy</h2>
         <p>If we change how Money Flow handles data, we will update this page and the &quot;Last updated&quot; date above. Material changes will also be reflected in the App Store privacy nutrition labels for the affected version of the app.</p>
 
-        <h2>10. Contact</h2>
+        <h2>12. Contact</h2>
         <p>Questions about this privacy policy can be sent to <a href="mailto:mwsupplylimited@gmail.com?subject=Money%20Flow%20privacy">mwsupplylimited@gmail.com</a>.</p>
 
         <footer>
