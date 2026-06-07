@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duplikit — Support</title>
+    <meta name="description" content="Support for Duplikit — run multiple instances of the same Mac app, each signed into a different account.">
+    <style>
+        :root {
+            --bg: #ffffff;
+            --fg: #1a1a1a;
+            --muted: #666666;
+            --accent: #4f5bd5;
+            --card: #f5f5f7;
+            --border: #e5e5e7;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #0f1217;
+                --fg: #f5f5f7;
+                --muted: #9a9a9a;
+                --accent: #8a93ff;
+                --card: #1a1d24;
+                --border: #2a2d34;
+            }
+        }
+        * { box-sizing: border-box; }
+        html { -webkit-text-size-adjust: 100%; }
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+            background: var(--bg);
+            color: var(--fg);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        .container { max-width: 720px; margin: 0 auto; padding: 48px 24px 96px; }
+        .back { display: inline-block; color: var(--muted); text-decoration: none; font-size: 0.9rem; margin-bottom: 32px; }
+        .back:hover { color: var(--accent); }
+        h1 { font-size: 2.2rem; margin: 0 0 8px; letter-spacing: -0.02em; }
+        .subtitle { color: var(--muted); margin: 0 0 40px; }
+        h2 { font-size: 1.3rem; margin: 40px 0 12px; letter-spacing: -0.01em; }
+        h3 { font-size: 1rem; margin: 24px 0 6px; font-weight: 600; }
+        p, li { color: var(--fg); }
+        ul { padding-left: 22px; }
+        li { margin-bottom: 6px; }
+        a { color: var(--accent); }
+        code { background: var(--card); padding: 1px 6px; border-radius: 5px; font-size: 0.9em; }
+        .pill { display: inline-block; background: var(--card); border: 1px solid var(--border); padding: 3px 10px; border-radius: 999px; font-size: 0.8rem; color: var(--muted); }
+        .callout { background: var(--card); border: 1px solid var(--border); border-left: 3px solid var(--accent); padding: 16px 20px; border-radius: 8px; margin: 24px 0; }
+        .callout p { margin: 0; }
+        footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.85rem; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a class="back" href="../">&larr; MW Supply Limited</a>
+
+        <h1>Duplikit</h1>
+        <p class="subtitle">Run multiple copies of the same Mac app — each signed into a different account. Keep work and personal Claude, WhatsApp, Slack, Chrome and more open side by side. <span class="pill">Version 1.0</span></p>
+
+        <h2>What it does</h2>
+        <p>Many Mac apps only let you sign in to one account at a time. Duplikit creates an extra copy — a small launcher — that opens the app with its <strong>own private profile</strong>, so a second copy can sign in to a completely different account. Your work and personal accounts run at the same time, in separate windows, on the same Mac.</p>
+        <p>Duplikit never modifies or copies the original app. It simply launches it with a separate data folder, so the original keeps working and updating exactly as before.</p>
+
+        <h2>Getting started</h2>
+        <ul>
+            <li><strong>Add an app.</strong> Click <em>+ Add App</em> and choose an app from your Applications folder.</li>
+            <li><strong>Name the instance.</strong> Give it a name like &ldquo;Claude (Work)&rdquo; so you can tell your copies apart.</li>
+            <li><strong>Create it.</strong> Duplikit builds a launcher for that copy.</li>
+            <li><strong>Approve it once.</strong> The first time you open a new copy, macOS asks you to approve it (see below). You only do this once per copy.</li>
+            <li><strong>Launch.</strong> Click <em>Launch</em> any time to open that copy with its own account.</li>
+        </ul>
+
+        <h2>The one-time approval</h2>
+        <p>Because Duplikit is sandboxed for your safety, macOS marks each new launcher as &ldquo;newly created&rdquo; and asks you to approve it the first time — exactly as it does for any app you build yourself. To approve a copy:</p>
+        <div class="callout"><p><strong>Right-click</strong> (or Control-click) the launcher in Finder and choose <strong>Open</strong>, then click <strong>Open</strong> in the dialog. After that, the copy launches instantly every time. Duplikit shows you these steps and can reveal the launcher in Finder for you.</p></div>
+
+        <h2>Which apps can have a separate account?</h2>
+        <p>Most popular apps work great with a fully separate account, including apps built on Electron, Chromium and ToDesktop:</p>
+        <ul>
+            <li><strong>Separate account supported</strong> — Claude, Slack, Discord, Google Chrome, Microsoft Edge, Brave, VS Code, Cursor, Notion and many more.</li>
+            <li><strong>Extra window only</strong> — A few apps (for example apps from the Mac App Store, and the current Mac Catalyst build of WhatsApp) keep their data locked to the original copy by macOS. Duplikit can still open them as an extra window, but those copies share the original account. Duplikit always tells you up front which kind an app is when you add it.</li>
+        </ul>
+        <div class="callout"><p><strong>Tip:</strong> If an app you want is &ldquo;extra window only&rdquo;, check whether the developer offers a direct download from their website — those versions can usually have a separate account.</p></div>
+
+        <h2>Subscription</h2>
+        <p>Duplikit is a subscription with a <strong>7-day free trial</strong>. After the trial it&rsquo;s <strong>Monthly</strong> or <strong>Annual</strong> (the Annual plan is the best value). One subscription covers everything Duplikit does — unlimited copies, separate accounts, custom names and icons, and future updates.</p>
+        <ul>
+            <li><strong>Manage or cancel</strong> any time from <em>Membership</em> in the app, or in <em>App Store &rarr; your name &rarr; Subscriptions</em>. Cancel at least 24 hours before the trial ends to avoid being charged.</li>
+            <li><strong>Restore Purchases</strong> from the <em>Membership</em> page if you reinstall or use another Mac with the same Apple Account.</li>
+        </ul>
+
+        <h2>Frequently asked questions</h2>
+        <h3>Does Duplikit copy or change the original app?</h3>
+        <p>No. It creates a tiny separate launcher that opens your existing app with its own data folder. The original app is untouched and keeps updating normally.</p>
+        <h3>Will the copies stay logged in?</h3>
+        <p>Yes. Each copy keeps its own login and data between launches, just like the original.</p>
+        <h3>Can I give each copy its own icon and name?</h3>
+        <p>Yes — each copy has its own name, and you can tell them apart in the Dock.</p>
+        <h3>Is my data private?</h3>
+        <p>Completely. Everything stays on your Mac. Duplikit has no servers and collects no personal data. See the <a href="privacy.html">Privacy Policy</a>.</p>
+        <h3>Why did macOS warn me about a new launcher?</h3>
+        <p>That&rsquo;s the normal one-time approval for newly created apps (see &ldquo;The one-time approval&rdquo; above). Right-click the launcher and choose Open the first time.</p>
+        <h3>An app only opens an extra window and shares the account — why?</h3>
+        <p>That app stores its data in a location macOS keeps locked to the original copy (common for Mac App Store and Mac Catalyst apps). A separate account isn&rsquo;t possible for those; Duplikit tells you when you add the app.</p>
+
+        <h2>Contact</h2>
+        <p>Questions, bugs, or ideas? Email <a href="mailto:mwsupplylimited@gmail.com?subject=Duplikit%20Support">mwsupplylimited@gmail.com</a> with your macOS version and the app you were duplicating. We read every message.</p>
+
+        <h2>Privacy</h2>
+        <p>See the <a href="privacy.html">Duplikit Privacy Policy</a>.</p>
+
+        <footer>
+            &copy; 2026 MW Supply Limited
+        </footer>
+    </div>
+</body>
+</html>
