@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Windrose — Support</title>
+    <meta name="description" content="Support for Windrose: Weather Radar — live precipitation radar plus general, marine and aviation weather for everyone, on land, at sea and in the air.">
+    <style>
+        :root {
+            --bg: #ffffff; --fg: #1a1a1a; --muted: #666666; --accent: #2e76d6;
+            --card: #f5f5f7; --border: #e5e5e7;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root { --bg: #0f1217; --fg: #f5f5f7; --muted: #9a9a9a; --accent: #6fb1f0; --card: #1a1d24; --border: #2a2d34; }
+        }
+        * { box-sizing: border-box; }
+        html { -webkit-text-size-adjust: 100%; }
+        body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+               background: var(--bg); color: var(--fg); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+        .container { max-width: 720px; margin: 0 auto; padding: 48px 24px 96px; }
+        .back { display: inline-block; color: var(--muted); text-decoration: none; font-size: 0.9rem; margin-bottom: 32px; }
+        .back:hover { color: var(--accent); }
+        h1 { font-size: 2.2rem; margin: 0 0 8px; letter-spacing: -0.02em; }
+        .subtitle { color: var(--muted); margin: 0 0 40px; }
+        h2 { font-size: 1.3rem; margin: 40px 0 12px; letter-spacing: -0.01em; }
+        h3 { font-size: 1rem; margin: 24px 0 6px; font-weight: 600; }
+        p, li { color: var(--fg); }
+        ul { padding-left: 22px; } li { margin-bottom: 6px; }
+        a { color: var(--accent); }
+        .pill { display: inline-block; background: var(--card); border: 1px solid var(--border); padding: 3px 10px; border-radius: 999px; font-size: 0.8rem; color: var(--muted); }
+        .callout { background: var(--card); border: 1px solid var(--border); border-left: 3px solid var(--accent); padding: 16px 20px; border-radius: 8px; margin: 24px 0; }
+        .callout p { margin: 0; }
+        footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.85rem; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a class="back" href="../">&larr; MW Supply Limited</a>
+
+        <h1>Windrose</h1>
+        <p class="subtitle">Live precipitation radar and complete weather for everyone — on land, at sea, and in the air. One app, three modes: General, Marine and Aviation. <span class="pill">Version 1.0</span></p>
+
+        <h2>What it does</h2>
+        <p>Windrose shows you the weather the way you need to see it. Watch an animated precipitation radar loop to see exactly where the rain is and where it's heading. Get a clear, colour-coded safety summary for wherever you are. And switch between three modes built for three very different people:</p>
+        <ul>
+            <li><strong>General</strong> — current conditions, a friendly “will the rain reach you?” nowcast, hourly and multi-day forecasts, UV, air quality and pollen, sunrise &amp; sunset.</li>
+            <li><strong>Marine</strong> — wave height, swell, sea state, sea-surface temperature, currents and wind for boating and sailing.</li>
+            <li><strong>Aviation</strong> — decoded METARs and TAFs, colour-coded flight categories for nearby airports, winds and temperatures aloft, SIGMET hazards and a density-altitude calculator. Built for general-aviation pilots who don't have weather radar in the cockpit.</li>
+        </ul>
+
+        <div class="callout"><p><strong>Important:</strong> Windrose is an informational aid and a supplement to — not a replacement for — official sources. Do not use it as the primary means of weather decision-making for flight, marine navigation, or any safety-critical activity. Always consult certified briefings and official warnings.</p></div>
+
+        <h2>How to use it</h2>
+        <ul>
+            <li><strong>Pick your mode.</strong> Tap General, Marine or Aviation at the top to reshape the dashboard for what you're doing.</li>
+            <li><strong>Watch the radar.</strong> Open the Radar tab and press play to animate the precipitation loop. Scrub the timeline, switch colour schemes, and (with Pro) see the future nowcast and cloud/satellite layers.</li>
+            <li><strong>Add places.</strong> Search any city or place and switch between your saved locations. Your current location is detected automatically.</li>
+            <li><strong>Read the safety line.</strong> The colour-coded summary at the top of each mode tells you, in one sentence, whether conditions are good, need caution, or are dangerous.</li>
+        </ul>
+
+        <h2>Windrose Pro</h2>
+        <p>Windrose is free to use: current conditions, a 7-day forecast, the basic radar loop, severe-weather alerts and two saved places are all included. <strong>Windrose Pro</strong> is an optional subscription that unlocks the full toolkit:</p>
+        <ul>
+            <li><strong>Aviation mode</strong> — METARs, TAFs, winds aloft, SIGMETs and the density-altitude calculator.</li>
+            <li><strong>Marine mode</strong> — waves, swell, sea state, sea temperature and currents.</li>
+            <li><strong>Full live radar</strong> — future nowcast frames plus cloud &amp; satellite layers.</li>
+            <li><strong>16-day forecast</strong> with detailed hourly conditions.</li>
+            <li><strong>Unlimited saved places.</strong></li>
+            <li>Available as a <strong>monthly</strong> or <strong>yearly</strong> plan (the yearly plan is the best value), each with a <strong>7-day free trial</strong>.</li>
+            <li>The subscription renews automatically unless you cancel at least 24 hours before the period ends. Manage or cancel anytime in <em>Settings &rarr; your name &rarr; Subscriptions</em> on your device, or from the Membership screen in the app.</li>
+            <li>Reinstalled or got a new device? Tap <strong>Restore Purchases</strong> in the app — your subscription is tied to your Apple Account.</li>
+        </ul>
+
+        <h2>Frequently asked questions</h2>
+        <h3>Where does the radar and weather data come from?</h3>
+        <p>Forecasts, marine and air-quality data come from <a href="https://open-meteo.com">Open-Meteo</a>; the live precipitation radar and satellite imagery from <a href="https://www.rainviewer.com">RainViewer</a>; aviation reports (METAR/TAF/SIGMET) from the <a href="https://aviationweather.gov">NOAA Aviation Weather Center</a>; and U.S. severe-weather alerts from the <a href="https://www.weather.gov">National Weather Service</a>.</p>
+        <h3>Why does it ask for my location?</h3>
+        <p>Your location is used to show the weather, radar and conditions where you are. Your coordinates are sent to the weather data providers above only to retrieve the forecast for that spot — they are never stored on our servers, linked to your identity, or used for advertising. You can also just search for places by name.</p>
+        <h3>Is the radar available everywhere?</h3>
+        <p>The precipitation radar is a global composite and covers most populated areas. Coverage and resolution vary by region. The future nowcast and cloud layers are part of Windrose Pro.</p>
+        <h3>Is Marine data available inland?</h3>
+        <p>No — marine data (waves, swell, sea state) is only available for coastal and offshore locations. Inland, Windrose will let you know.</p>
+        <h3>How accurate is the aviation data?</h3>
+        <p>METARs, TAFs and SIGMETs come directly from the NOAA Aviation Weather Center; winds aloft are computed from numerical weather models. Windrose is for situational awareness only and is <strong>not</strong> a certified source for flight planning. Always obtain an official weather briefing.</p>
+        <h3>Does it work on iPad?</h3>
+        <p>Yes — Windrose works on iPhone and iPad.</p>
+        <h3>How do I cancel Windrose Pro?</h3>
+        <p>Manage or cancel anytime on your device under <em>Settings &rarr; your name &rarr; Subscriptions</em>. Your Pro features stay active until the end of the period you've already paid for.</p>
+
+        <h2>Contact</h2>
+        <p>Questions, bugs, or ideas? Email <a href="mailto:mwsupplylimited@gmail.com?subject=Windrose%20Support">mwsupplylimited@gmail.com</a> with your device and iOS version. We read every message.</p>
+
+        <h2>Privacy</h2>
+        <p>See the <a href="privacy.html">Windrose Privacy Policy</a>.</p>
+
+        <footer>&copy; 2026 MW Supply Limited</footer>
+    </div>
+</body>
+</html>
