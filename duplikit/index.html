@@ -3,117 +3,215 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Duplikit — Support</title>
-    <meta name="description" content="Support for Duplikit — run multiple instances of the same Mac app, each signed into a different account.">
+    <title>Duplikit — Two accounts in one Mac app</title>
+    <meta name="description" content="Run a second copy of Claude, Slack, Chrome and more on your Mac — each signed into a different account. Direct download for macOS.">
+    <!--
+      ───────────────────────────────────────────────────────────────────────
+      TODO before going live (replace the placeholder links):
+        • DOWNLOAD_URL  → upload the notarized Duplikit.dmg next to this file
+                          (currently linked as ./Duplikit.dmg)
+        • CHECKOUT_MONTHLY / CHECKOUT_ANNUAL / CHECKOUT_LIFETIME
+                          → your Lemon Squeezy checkout URLs
+        • MANAGE_URL    → your Lemon Squeezy customer portal URL
+      Search this file for "CHANGEME" to find each spot.
+      ───────────────────────────────────────────────────────────────────────
+    -->
     <style>
         :root {
-            --bg: #ffffff;
-            --fg: #1a1a1a;
-            --muted: #666666;
-            --accent: #4f5bd5;
-            --card: #f5f5f7;
-            --border: #e5e5e7;
+            --bg: #ffffff; --fg: #1a1a1a; --muted: #666; --accent: #4f5bd5;
+            --accent2:#8a93ff; --card: #f5f5f7; --border: #e5e5e7;
         }
         @media (prefers-color-scheme: dark) {
-            :root {
-                --bg: #0f1217;
-                --fg: #f5f5f7;
-                --muted: #9a9a9a;
-                --accent: #8a93ff;
-                --card: #1a1d24;
-                --border: #2a2d34;
-            }
+            :root { --bg:#0f1217; --fg:#f5f5f7; --muted:#9a9a9a; --accent:#8a93ff; --accent2:#6f79e6; --card:#1a1d24; --border:#2a2d34; }
         }
         * { box-sizing: border-box; }
-        html { -webkit-text-size-adjust: 100%; }
-        body {
-            margin: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
-            background: var(--bg);
-            color: var(--fg);
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-        }
-        .container { max-width: 720px; margin: 0 auto; padding: 48px 24px 96px; }
-        .back { display: inline-block; color: var(--muted); text-decoration: none; font-size: 0.9rem; margin-bottom: 32px; }
-        .back:hover { color: var(--accent); }
-        h1 { font-size: 2.2rem; margin: 0 0 8px; letter-spacing: -0.02em; }
-        .subtitle { color: var(--muted); margin: 0 0 40px; }
-        h2 { font-size: 1.3rem; margin: 40px 0 12px; letter-spacing: -0.01em; }
-        h3 { font-size: 1rem; margin: 24px 0 6px; font-weight: 600; }
-        p, li { color: var(--fg); }
-        ul { padding-left: 22px; }
-        li { margin-bottom: 6px; }
+        html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+        body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Arial,sans-serif;
+               background:var(--bg); color:var(--fg); line-height:1.6; -webkit-font-smoothing:antialiased; }
+        .container { max-width: 860px; margin: 0 auto; padding: 0 24px; }
         a { color: var(--accent); }
-        code { background: var(--card); padding: 1px 6px; border-radius: 5px; font-size: 0.9em; }
-        .pill { display: inline-block; background: var(--card); border: 1px solid var(--border); padding: 3px 10px; border-radius: 999px; font-size: 0.8rem; color: var(--muted); }
-        .callout { background: var(--card); border: 1px solid var(--border); border-left: 3px solid var(--accent); padding: 16px 20px; border-radius: 8px; margin: 24px 0; }
-        .callout p { margin: 0; }
-        footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.85rem; }
+        .nav { display:flex; align-items:center; justify-content:space-between; padding:20px 0; font-size:.92rem; }
+        .nav .brand { font-weight:700; color:var(--fg); text-decoration:none; display:flex; align-items:center; gap:10px; }
+        .nav .brand img { width:28px; height:28px; border-radius:7px; }
+        .nav .links a { color:var(--muted); text-decoration:none; margin-left:20px; }
+        .nav .links a:hover { color:var(--accent); }
+
+        .hero { text-align:center; padding: 40px 0 16px; }
+        .hero img.icon { width:104px; height:104px; border-radius:24px; box-shadow:0 12px 40px rgba(79,91,213,.25); }
+        .hero h1 { font-size: 2.6rem; letter-spacing:-.03em; margin:24px 0 8px; }
+        .hero p.tag { font-size:1.25rem; color:var(--muted); max-width:580px; margin:0 auto 28px; }
+        .btn { display:inline-block; background:var(--accent); color:#fff; text-decoration:none; font-weight:600;
+               padding:14px 28px; border-radius:12px; font-size:1.05rem; transition:transform .08s ease, background .2s; }
+        .btn:hover { background:var(--accent2); transform:translateY(-1px); }
+        .btn.secondary { background:transparent; color:var(--accent); border:1px solid var(--border); }
+        .hero .meta { color:var(--muted); font-size:.9rem; margin-top:14px; }
+
+        .shot { margin:40px auto 8px; max-width:760px; }
+        .shot img { width:100%; border-radius:14px; border:1px solid var(--border); box-shadow:0 10px 40px rgba(0,0,0,.18); }
+
+        section { padding: 44px 0; border-top:1px solid var(--border); }
+        section:first-of-type { border-top:none; }
+        h2 { font-size:1.7rem; letter-spacing:-.02em; margin:0 0 6px; text-align:center; }
+        .lead { color:var(--muted); text-align:center; max-width:600px; margin:0 auto 30px; }
+
+        .grid3 { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+        .step { background:var(--card); border:1px solid var(--border); border-radius:14px; padding:22px; }
+        .step .n { width:30px;height:30px;border-radius:8px;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;margin-bottom:12px; }
+        .step h3 { margin:0 0 6px; font-size:1.05rem; }
+        .step p { margin:0; color:var(--muted); font-size:.95rem; }
+
+        .compat { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+        .compat .box { background:var(--card); border:1px solid var(--border); border-radius:14px; padding:22px; }
+        .compat h3 { margin:0 0 10px; font-size:1.05rem; }
+        .compat ul { margin:0; padding-left:20px; color:var(--muted); }
+        .compat li { margin-bottom:4px; }
+
+        .prices { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; align-items:stretch; }
+        .price { background:var(--card); border:1px solid var(--border); border-radius:16px; padding:26px 22px; text-align:center; display:flex; flex-direction:column; }
+        .price.featured { border-color:var(--accent); box-shadow:0 8px 30px rgba(79,91,213,.18); }
+        .price .badge { display:inline-block; background:var(--accent); color:#fff; font-size:.72rem; font-weight:700; padding:3px 10px; border-radius:999px; margin-bottom:10px; }
+        .price h3 { margin:0 0 4px; font-size:1.15rem; }
+        .price .amt { font-size:2rem; font-weight:800; letter-spacing:-.02em; }
+        .price .per { color:var(--muted); font-size:.9rem; }
+        .price .sub { color:var(--muted); font-size:.85rem; min-height:1.4em; margin:6px 0 16px; }
+        .price .btn { margin-top:auto; width:100%; padding:11px 0; font-size:.98rem; }
+
+        .callout { background:var(--card); border:1px solid var(--border); border-left:3px solid var(--accent); padding:16px 20px; border-radius:10px; margin:22px 0; }
+        .callout p { margin:0; }
+        .faq h3 { margin:22px 0 4px; font-size:1.05rem; }
+        .faq p { margin:0 0 4px; color:var(--muted); }
+        footer { border-top:1px solid var(--border); padding:28px 0 60px; color:var(--muted); font-size:.85rem; text-align:center; }
+        footer a { color:var(--muted); margin:0 10px; }
+        @media (max-width:680px){ .grid3,.compat,.prices{grid-template-columns:1fr;} .hero h1{font-size:2.1rem;} }
     </style>
 </head>
 <body>
-    <div class="container">
-        <a class="back" href="../">&larr; MW Supply Limited</a>
+<div class="container">
 
-        <h1>Duplikit</h1>
-        <p class="subtitle">Run multiple copies of the same Mac app — each signed into a different account. Keep work and personal Claude, WhatsApp, Slack, Chrome and more open side by side. <span class="pill">Version 1.0</span></p>
+    <nav class="nav">
+        <a class="brand" href="../"><img src="shots/icon.png" alt="" onerror="this.style.display='none'">Duplikit</a>
+        <div class="links">
+            <a href="#how">How it works</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#faq">FAQ</a>
+            <a href="#download" class="dl">Download</a>
+        </div>
+    </nav>
 
-        <h2>What it does</h2>
-        <p>Many Mac apps only let you sign in to one account at a time. Duplikit creates an extra copy — a small launcher — that opens the app with its <strong>own private profile</strong>, so a second copy can sign in to a completely different account. Your work and personal accounts run at the same time, in separate windows, on the same Mac.</p>
-        <p>Duplikit never modifies or copies the original app. It simply launches it with a separate data folder, so the original keeps working and updating exactly as before.</p>
+    <header class="hero" id="download">
+        <img class="icon" src="shots/icon.png" alt="Duplikit icon" onerror="this.style.display='none'">
+        <h1>Two accounts in one Mac app</h1>
+        <p class="tag">Run a second copy of Claude, Slack, Discord, Chrome and more — each signed into a different account. Keep work and personal open side by side.</p>
+        <!-- CHANGEME: upload the notarized DMG here as ./Duplikit.dmg -->
+        <a class="btn" href="./Duplikit.dmg">Download for Mac</a>
+        <p class="meta">Free 7-day trial · macOS 14 Sonoma or later · Apple Silicon &amp; Intel</p>
+    </header>
 
-        <h2>Getting started</h2>
-        <ul>
-            <li><strong>Add an app.</strong> Click <em>+ Add App</em> and choose an app from your Applications folder.</li>
-            <li><strong>Name the instance.</strong> Give it a name like &ldquo;Claude (Work)&rdquo; so you can tell your copies apart.</li>
-            <li><strong>Create it.</strong> Duplikit builds a launcher for that copy.</li>
-            <li><strong>Approve it once.</strong> The first time you open a new copy, macOS asks you to approve it (see below). You only do this once per copy.</li>
-            <li><strong>Launch.</strong> Click <em>Launch</em> any time to open that copy with its own account.</li>
-        </ul>
+    <div class="shot">
+        <img src="shots/1_main.jpg" alt="Duplikit running multiple app instances" onerror="this.closest('.shot').style.display='none'">
+    </div>
 
-        <h2>The one-time approval</h2>
-        <p>Because Duplikit is sandboxed for your safety, macOS marks each new launcher as &ldquo;newly created&rdquo; and asks you to approve it the first time — exactly as it does for any app you build yourself. To approve a copy:</p>
-        <div class="callout"><p><strong>Right-click</strong> (or Control-click) the launcher in Finder and choose <strong>Open</strong>, then click <strong>Open</strong> in the dialog. After that, the copy launches instantly every time. Duplikit shows you these steps and can reveal the launcher in Finder for you.</p></div>
+    <section id="how">
+        <h2>How it works</h2>
+        <p class="lead">Duplikit never copies or modifies the original app. It opens your installed app with its own private profile — so a second copy can sign in to a completely different account.</p>
+        <div class="grid3">
+            <div class="step"><div class="n">1</div><h3>Add an app</h3><p>Pick any app from your Applications folder — Claude, Slack, Chrome, and many more.</p></div>
+            <div class="step"><div class="n">2</div><h3>Name the copy</h3><p>Call it “Claude (Work)” or “Slack (Client)” so you always know which is which.</p></div>
+            <div class="step"><div class="n">3</div><h3>Launch it</h3><p>Open the copy with its own private login. Both accounts run at once, on the same Mac.</p></div>
+        </div>
+    </section>
 
-        <h2>Which apps can have a separate account?</h2>
-        <p>Most popular apps work great with a fully separate account, including apps built on Electron, Chromium and ToDesktop:</p>
-        <ul>
-            <li><strong>Separate account supported</strong> — Claude, Slack, Discord, Google Chrome, Microsoft Edge, Brave, VS Code, Cursor, Notion and many more.</li>
-            <li><strong>Extra window only</strong> — A few apps (for example apps from the Mac App Store, and the current Mac Catalyst build of WhatsApp) keep their data locked to the original copy by macOS. Duplikit can still open them as an extra window, but those copies share the original account. Duplikit always tells you up front which kind an app is when you add it.</li>
-        </ul>
-        <div class="callout"><p><strong>Tip:</strong> If an app you want is &ldquo;extra window only&rdquo;, check whether the developer offers a direct download from their website — those versions can usually have a separate account.</p></div>
+    <section id="works">
+        <h2>Works with your favourite apps</h2>
+        <p class="lead">Apps built on Electron, Chromium and ToDesktop get a fully separate account.</p>
+        <div class="compat">
+            <div class="box">
+                <h3>✅ Separate account</h3>
+                <ul>
+                    <li>Claude</li><li>Slack &amp; Discord</li><li>Google Chrome, Edge, Brave</li>
+                    <li>VS Code &amp; Cursor</li><li>Notion</li><li>…and many more Electron / Chromium apps</li>
+                </ul>
+            </div>
+            <div class="box">
+                <h3>↗︎ Extra window only</h3>
+                <ul>
+                    <li>Apps from the Mac App Store</li>
+                    <li>The Mac Catalyst build of WhatsApp</li>
+                    <li>Most plain native Mac apps</li>
+                </ul>
+                <p style="color:var(--muted);font-size:.9rem;margin:10px 0 0;">macOS keeps these apps’ data locked to the original copy, so copies share one account. Duplikit tells you up front when you add the app.</p>
+            </div>
+        </div>
+        <div class="callout"><p><strong>Tip:</strong> If an app is “extra window only”, check whether the developer offers a direct download from their website — those versions usually <em>can</em> have a separate account.</p></div>
+    </section>
 
-        <h2>Subscription</h2>
-        <p>Duplikit is a subscription with a <strong>7-day free trial</strong>. After the trial it&rsquo;s <strong>Monthly</strong> or <strong>Annual</strong> (the Annual plan is the best value). One subscription covers everything Duplikit does — unlimited copies, separate accounts, custom names and icons, and future updates.</p>
-        <ul>
-            <li><strong>Manage or cancel</strong> any time from <em>Membership</em> in the app, or in <em>App Store &rarr; your name &rarr; Subscriptions</em>. Cancel at least 24 hours before the trial ends to avoid being charged.</li>
-            <li><strong>Restore Purchases</strong> from the <em>Membership</em> page if you reinstall or use another Mac with the same Apple Account.</li>
-        </ul>
+    <section id="pricing">
+        <h2>Simple pricing</h2>
+        <p class="lead">Start with a 7-day free trial. One plan unlocks everything — unlimited copies, separate accounts and future updates.</p>
+        <div class="prices">
+            <div class="price">
+                <h3>Monthly</h3>
+                <div class="amt">$2.99</div><div class="per">per month</div>
+                <div class="sub">7-day free trial</div>
+                <!-- CHANGEME: Lemon Squeezy monthly checkout URL -->
+                <a class="btn" href="#get">Start free trial</a>
+            </div>
+            <div class="price featured">
+                <span class="badge">BEST VALUE · SAVE 58%</span>
+                <h3>Annual</h3>
+                <div class="amt">$14.99</div><div class="per">per year</div>
+                <div class="sub">Just $1.25 / month</div>
+                <!-- CHANGEME: Lemon Squeezy annual checkout URL -->
+                <a class="btn" href="#get">Start free trial</a>
+            </div>
+            <div class="price">
+                <h3>Lifetime</h3>
+                <div class="amt">$29.99</div><div class="per">one-time</div>
+                <div class="sub">Pay once, yours forever</div>
+                <!-- CHANGEME: Lemon Squeezy lifetime checkout URL -->
+                <a class="btn secondary" href="#get">Buy Lifetime</a>
+            </div>
+        </div>
+        <div class="callout" id="get"><p><strong>How licensing works:</strong> after you subscribe, you’ll get a license key by email. Download Duplikit, click <em>“I already have a license key”</em> on the welcome screen, and paste it in. No account or sign-in needed — your key is verified right on your Mac.</p></div>
+    </section>
 
+    <section id="manage">
+        <h2>Manage your subscription</h2>
+        <p class="lead">Cancel or update your plan any time — there’s a link in your purchase receipt, and you can also reach the billing portal below. Your access continues until the end of the paid period.</p>
+        <p style="text-align:center;">
+            <!-- CHANGEME: Lemon Squeezy customer portal URL -->
+            <a class="btn secondary" href="#manage">Open billing portal</a>
+        </p>
+    </section>
+
+    <section id="faq" class="faq">
         <h2>Frequently asked questions</h2>
         <h3>Does Duplikit copy or change the original app?</h3>
-        <p>No. It creates a tiny separate launcher that opens your existing app with its own data folder. The original app is untouched and keeps updating normally.</p>
+        <p>No. It opens your existing app with its own private data folder. The original is untouched and keeps updating normally.</p>
         <h3>Will the copies stay logged in?</h3>
         <p>Yes. Each copy keeps its own login and data between launches, just like the original.</p>
-        <h3>Can I give each copy its own icon and name?</h3>
-        <p>Yes — each copy has its own name, and you can tell them apart in the Dock.</p>
+        <h3>How are the copies shown in the Dock?</h3>
+        <p>Because Duplikit runs the genuine app, every copy shares the original app’s Dock icon and name. You manage and launch your named copies from inside Duplikit.</p>
         <h3>Is my data private?</h3>
         <p>Completely. Everything stays on your Mac. Duplikit has no servers and collects no personal data. See the <a href="privacy.html">Privacy Policy</a>.</p>
-        <h3>Why did macOS warn me about a new launcher?</h3>
-        <p>That&rsquo;s the normal one-time approval for newly created apps (see &ldquo;The one-time approval&rdquo; above). Right-click the launcher and choose Open the first time.</p>
-        <h3>An app only opens an extra window and shares the account — why?</h3>
-        <p>That app stores its data in a location macOS keeps locked to the original copy (common for Mac App Store and Mac Catalyst apps). A separate account isn&rsquo;t possible for those; Duplikit tells you when you add the app.</p>
+        <h3>Why isn’t Duplikit on the Mac App Store?</h3>
+        <p>The App Store sandbox prevents an app from giving another app a separate profile, so a sandboxed version literally can’t do what Duplikit does. Distributing directly (notarized by Apple) is the only way it works — and it’s just as safe.</p>
+        <h3>Do I need the other app installed?</h3>
+        <p>Yes — Duplikit launches apps you already have. Install Claude, Slack, Chrome, etc. the normal way first, then add them in Duplikit.</p>
+        <h3>Can I use one license on more than one Mac?</h3>
+        <p>Yes — your license works on your Macs. Just paste the key on each one.</p>
+    </section>
 
-        <h2>Contact</h2>
-        <p>Questions, bugs, or ideas? Email <a href="mailto:mwsupplylimited@gmail.com?subject=Duplikit%20Support">mwsupplylimited@gmail.com</a> with your macOS version and the app you were duplicating. We read every message.</p>
+    <section id="contact">
+        <h2>Support</h2>
+        <p class="lead">Questions, bugs or ideas? Email <a href="mailto:mwsupplylimited@gmail.com?subject=Duplikit%20Support">mwsupplylimited@gmail.com</a> with your macOS version and the app you were duplicating. We read every message.</p>
+    </section>
 
-        <h2>Privacy</h2>
-        <p>See the <a href="privacy.html">Duplikit Privacy Policy</a>.</p>
+    <footer>
+        <div><a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Use</a> · <a href="mailto:mwsupplylimited@gmail.com">Contact</a></div>
+        <p>&copy; 2026 MW Supply Limited</p>
+    </footer>
 
-        <footer>
-            &copy; 2026 MW Supply Limited
-        </footer>
-    </div>
+</div>
 </body>
 </html>
