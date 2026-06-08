@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vivace — Support</title>
+    <meta name="description" content="Support for Vivace, a high-resolution lossless music player for audiophiles on iPhone and iPad. Plays FLAC, ALAC, WAV, AIFF, DSD and more, with gapless playback, an equalizer, synced lyrics and CUE sheets.">
+    <style>
+        :root {
+            --bg: #ffffff; --fg: #1a1a1a; --muted: #666666;
+            --accent: #b07d22; --card: #f5f5f7; --border: #e5e5e7;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #0a0a0c; --fg: #f5f5f7; --muted: #9a9a9a;
+                --accent: #e2a84a; --card: #16161b; --border: #26262e;
+            }
+        }
+        * { box-sizing: border-box; }
+        html { -webkit-text-size-adjust: 100%; }
+        body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+               background: var(--bg); color: var(--fg); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+        .container { max-width: 720px; margin: 0 auto; padding: 48px 24px 96px; }
+        .back { display: inline-block; color: var(--muted); text-decoration: none; font-size: 0.9rem; margin-bottom: 32px; }
+        .back:hover { color: var(--accent); }
+        h1 { font-size: 2.2rem; margin: 0 0 8px; letter-spacing: -0.02em; }
+        .subtitle { color: var(--muted); margin: 0 0 40px; }
+        h2 { font-size: 1.3rem; margin: 40px 0 12px; letter-spacing: -0.01em; }
+        h3 { font-size: 1rem; margin: 24px 0 6px; font-weight: 600; }
+        p, li { color: var(--fg); }
+        .muted { color: var(--muted); }
+        ul { padding-left: 22px; }
+        li { margin-bottom: 6px; }
+        a { color: var(--accent); }
+        code { background: var(--card); border: 1px solid var(--border); border-radius: 5px; padding: 1px 6px; font-size: 0.9em; }
+        footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.85rem; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a class="back" href="../">&larr; MW Supply Limited</a>
+
+        <h1>Vivace</h1>
+        <p class="subtitle">A high-resolution, lossless music player for audiophiles. Play the files you own &mdash; FLAC, ALAC, WAV, AIFF, DSD and more &mdash; the way they were meant to sound. For iPhone &amp; iPad.</p>
+
+        <h2>About</h2>
+        <p>Vivace is a local music player built for people who care about sound quality. It plays your own high-resolution and lossless files with a clean signal path, shows the true source format and bit depth of every track (&ldquo;FLAC 24-bit/96kHz&rdquo;, &ldquo;DSD64&rdquo;), and organises your collection by album, artist, genre, folder and playlist. No streaming, no accounts &mdash; just your library, sounding its best.</p>
+
+        <h2>Supported formats</h2>
+        <p>Vivace plays <strong>FLAC, Apple Lossless (ALAC), WAV, AIFF, CAF, AAC, MP3, Apple&nbsp;M4A and Opus</strong> natively, and <strong>DSD</strong> (<code>.dsf</code> and uncompressed <code>.dff</code>, DSD64) by decoding it to high-rate PCM for playback. DRM-protected tracks (for example Apple Music streams) can&rsquo;t be opened &mdash; you need a file you own.</p>
+
+        <h2>Getting started</h2>
+        <ul>
+            <li><strong>Add your music.</strong> Tap <strong>+</strong> in the Library and pick files or a whole folder from the Files app (On My iPhone, iCloud Drive, or a connected drive/server such as Synology/SMB). Folder structure is preserved.</li>
+            <li><strong>Open in Vivace.</strong> From any other app or the Files app, choose <strong>Share &rsaquo; Vivace</strong> (or &ldquo;Open in Vivace&rdquo;) to import audio. You can also drop files into Vivace over a cable using Finder&rsquo;s <em>Files</em> tab.</li>
+            <li><strong>Browse and play.</strong> Switch between Songs, Albums, Artists, Genres, Folders and Playlists at the top of the Library, then tap any track to play.</li>
+        </ul>
+
+        <h2>Now Playing</h2>
+        <ul>
+            <li>A large artwork view, a precise scrubber, and full transport (shuffle, previous, play/pause, next, repeat).</li>
+            <li>A <strong>format badge</strong> showing the true source resolution of the track.</li>
+            <li>An <strong>output picker</strong> to send audio to AirPlay, Bluetooth, headphones or a connected USB DAC.</li>
+            <li><strong>Up Next</strong> queue and <strong>Lyrics</strong>, one tap away.</li>
+            <li>Full <strong>background playback</strong> and <strong>lock-screen / Control Center</strong> controls, and Now Playing on CarPlay-capable systems.</li>
+        </ul>
+
+        <h2>Gapless &amp; last-position memory</h2>
+        <p>Tracks within an album of the same format play back-to-back with no silence. Vivace remembers where you stopped in each track and offers to resume it next time &mdash; great for long mixes, live sets and audiobooks.</p>
+
+        <h2>Equalizer</h2>
+        <p>A 10-band graphic equalizer with a preamp and a set of presets (Rock, Jazz, Classical, Bass Boost, Vocal and more) is included free for everyone.</p>
+
+        <h2>CUE sheets</h2>
+        <p>Drop a single-file album (one big <code>.flac</code>/<code>.wav</code> plus a <code>.cue</code>) into a folder and import it &mdash; Vivace reads the cue sheet and splits it into proper, individually-playable tracks, with the titles and timings from the cue. This is included free.</p>
+
+        <h2>Lyrics</h2>
+        <p>Vivace shows lyrics embedded in your files, including time-synced lyrics that highlight line-by-line as the song plays. If a track has no embedded lyrics, <strong>Vivace Pro</strong> can look them up online from <a href="https://lrclib.net">LRCLIB</a>, a free community lyrics database. Only the track title, artist, album and duration are sent to look up lyrics &mdash; never anything personal.</p>
+
+        <h2>DSD (Pro)</h2>
+        <p>Vivace Pro plays 1-bit <strong>DSD</strong> files by decoding them to high-resolution PCM on-device. The Now Playing badge always shows the original DSD rate. For bit-perfect 1-bit output you&rsquo;ll want an external USB DAC; on-device playback uses the iPhone/iPad audio output.</p>
+
+        <h2>Vivace Free &amp; Vivace Pro</h2>
+        <p>Vivace is <strong>free</strong> to use as a full-featured local player: all formats and hi-res PCM, browsing, gapless, the 10-band equalizer, CUE-sheet albums, embedded &amp; synced lyrics, the queue, and background playback. The free version shows occasional ads on the browse screens &mdash; never over the music or the player.</p>
+        <p><strong>Vivace Pro</strong> removes all ads and unlocks DSD playback, automatic online lyrics, ReplayGain loudness normalization, every theme and accent colour, and unlimited playlists. Pro is available as a <strong>monthly</strong> or <strong>annual</strong> subscription (with a free trial) or a one-time <strong>Lifetime</strong> purchase. Manage or cancel anytime in your Apple Account; the membership page is in Settings.</p>
+
+        <h2>FAQ</h2>
+        <h3>Does Vivace stream from Spotify or Apple Music?</h3>
+        <p>No. Streaming catalogues are DRM-protected and can&rsquo;t be opened by third-party players. Vivace plays files you own &mdash; purchased downloads, your own rips, DAW exports, and so on.</p>
+        <h3>Why decode DSD to PCM?</h3>
+        <p>iOS has no native 1-bit DSD playback path and the built-in outputs are PCM. Vivace decodes DSD to high-rate PCM so it plays on any output, and always shows you the original DSD rate. A USB DAC is required for true bit-perfect 1-bit output.</p>
+        <h3>Where are my files stored?</h3>
+        <p>Inside Vivace&rsquo;s private storage on your device. Nothing is uploaded to us. See the <a href="privacy.html">Privacy Policy</a>.</p>
+        <h3>It says &ldquo;DSD requires Pro&rdquo; / a feature is locked.</h3>
+        <p>DSD playback, automatic online lyrics, ReplayGain, every theme and accent colour, and unlimited playlists are part of Vivace Pro &mdash; which also removes ads. The 10-band equalizer, CUE-sheet albums and embedded &amp; synced lyrics are free for everyone.</p>
+        <h3>I found a bug or have a request.</h3>
+        <p>Please email <a href="mailto:mwsupplylimited@gmail.com?subject=Vivace%20feedback">mwsupplylimited@gmail.com</a> with your iOS version, device, the file format involved, and steps to reproduce.</p>
+
+        <h2>Contact</h2>
+        <p>Support: <a href="mailto:mwsupplylimited@gmail.com?subject=Vivace%20support">mwsupplylimited@gmail.com</a></p>
+
+        <h2>Privacy</h2>
+        <p>See the <a href="privacy.html">Vivace Privacy Policy</a>.</p>
+
+        <footer>&copy; 2026 MW Supply Limited &middot; Vivace</footer>
+    </div>
+</body>
+</html>
