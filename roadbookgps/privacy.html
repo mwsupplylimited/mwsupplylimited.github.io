@@ -89,30 +89,30 @@
         <a class="back" href="./">&larr; RoadBook Support</a>
 
         <h1>RoadBook Privacy Policy</h1>
-        <p class="meta">Effective 28 May 2026 &middot; Last updated 28 May 2026</p>
+        <p class="meta">Effective 9 June 2026 &middot; Last updated 9 June 2026</p>
 
         <div class="callout">
-            <p><strong>Summary:</strong> RoadBook records your drives entirely on your iPhone. We never receive your location, your trip data, or any other personal information. Your trips stay on your device or, if you are signed in to iCloud, inside your own iCloud account. The app contains no advertising, no analytics, and no third-party SDKs.</p>
+            <p><strong>Summary:</strong> RoadBook records your drives entirely on your device. MW Supply Limited operates no servers and never receives your location or trip data &mdash; your trips stay on your device or, if you are signed in to iCloud, inside your own iCloud account. RoadBook is free with ads; on the free plan a third-party advertising provider (Google AdMob) is used to show ads and may collect device and ad-interaction data as described below. The optional <strong>RoadBook Pro</strong> subscription removes all ads.</p>
         </div>
 
-        <h2>1. Information we collect</h2>
-        <p><strong>None.</strong> MW Supply Limited operates no servers and receives no data from RoadBook. The app has no account system, no login, no user profile, and makes no network requests of its own.</p>
+        <h2>1. Information MW Supply Limited collects</h2>
+        <p><strong>None directly.</strong> We operate no servers and receive no personal data from RoadBook. The app has no account system, no login, and no user profile, and the app itself makes no network requests to us. Your trips, routes and preferences are never sent to MW Supply Limited.</p>
+        <p>The one exception is the third-party advertising provider on the free plan (Section 7), which collects data under Google&rsquo;s control &mdash; not ours &mdash; to deliver ads.</p>
 
         <h2>2. Information the app records on your device</h2>
-        <p>While you are recording a drive, RoadBook reads your location from iOS Core Location and stores each trip on your device as a list of GPS samples (latitude, longitude, altitude, speed, course, timestamp, and Apple's reported accuracy). Each finished trip is saved as a single JSON file in the app's own sandbox. From those samples the app computes distance, duration, max and average speed, elevation gain, and the route polyline you see on the map.</p>
-        <p>RoadBook also stores your in-app preferences (units, auto-start/auto-stop thresholds and toggles) using iOS's standard UserDefaults mechanism.</p>
+        <p>While you are recording a drive, RoadBook reads your location from iOS Core Location and stores each trip on your device as a list of GPS samples (latitude, longitude, altitude, speed, course, timestamp, and Apple&rsquo;s reported accuracy). Each finished trip is saved as a single JSON file in the app&rsquo;s own sandbox. From those samples the app computes distance, duration, max and average speed, elevation gain, and the route polyline you see on the map.</p>
+        <p>RoadBook also stores your in-app preferences (units, auto-start/auto-stop thresholds and toggles) using iOS&rsquo;s standard UserDefaults mechanism.</p>
 
         <h2>3. iCloud</h2>
-        <p>If you are signed in to iCloud on the device and have iCloud Drive enabled, RoadBook stores trip files in your own iCloud Documents container (<code>iCloud.com.edfd.DrivingRecorder</code>). This is Apple's CloudKit Documents feature: the files are stored under <em>your</em> Apple ID, synchronised between <em>your</em> own devices by Apple, and are not accessible to MW Supply Limited. If iCloud is not available, trips are stored only on the device.</p>
-        <p>You can see which storage is active from <strong>Settings &rarr; iCloud Backup</strong> inside the app.</p>
+        <p>If you are signed in to iCloud on the device and have iCloud Drive enabled, RoadBook stores trip files in your own iCloud Documents container (<code>iCloud.com.edfd.DrivingRecorder</code>). This is Apple&rsquo;s CloudKit Documents feature: the files are stored under <em>your</em> Apple ID, synchronised between <em>your</em> own devices by Apple, and are not accessible to MW Supply Limited. (Cross-device iCloud sync is part of RoadBook Pro.) If iCloud is not available, trips are stored only on the device.</p>
 
         <h2>4. Location permission</h2>
         <p>Recording a drive requires location access. The app uses the lowest-privacy permission that gets the job done:</p>
         <ul>
             <li><strong>While Using:</strong> enough to start and run a recording while the app is in the foreground.</li>
-            <li><strong>Always:</strong> required only if you want auto-start &mdash; iOS uses significant-location-change monitoring to wake the app when you start driving, then RoadBook begins recording in the background. You can disable auto-start in Settings to avoid needing this permission.</li>
+            <li><strong>Always:</strong> required only if you want background auto-start &mdash; iOS uses significant-location-change monitoring to wake the app when you start driving, then RoadBook begins recording in the background. You can disable auto-start in Settings to avoid needing this permission.</li>
         </ul>
-        <p>Background location is used for one purpose only: recording your current drive. We do not collect, transmit, or share your location.</p>
+        <p>Your precise location is used for one purpose only: recording your current drive on your device. MW Supply Limited does not collect, transmit, or share your location. Your location is not used for advertising.</p>
 
         <h2>5. Notifications</h2>
         <p>With your permission, the app posts local notifications when it auto-starts and auto-stops a recording. These are generated and delivered entirely on-device by iOS.</p>
@@ -120,28 +120,39 @@
         <h2>6. Exports</h2>
         <p>You can export a finished trip as a GPX or JSON file from the Trip detail screen. The destination of that export (Files, Mail, AirDrop, etc.) is chosen by you through the iOS share sheet. We are not involved in that transfer.</p>
 
-        <h2>7. Network activity</h2>
-        <p>RoadBook makes no network requests of its own. The only background system services it uses are first-party Apple services on your device: Core Location, MapKit (to draw maps), CLGeocoder (to label countries and cities visited on the Explore tab), and iCloud / CloudKit Documents (to back up your trips inside your own account). These run under your iCloud account and Apple's privacy terms, not ours.</p>
+        <h2>7. Advertising (free plan) and App Tracking Transparency</h2>
+        <p>On the free plan, RoadBook shows ads using the <strong>Google Mobile Ads SDK (Google AdMob)</strong>: a banner on the Trips screen and an occasional short video ad when you save a manually recorded drive. To select, deliver, measure and cap the frequency of these ads and to prevent fraud, the Google SDK may collect device and usage information &mdash; including a device advertising identifier (IDFA, only with your consent), an IP address (and the coarse region derived from it), and information about your interaction with the ads.</p>
+        <p>The first time you open the app, iOS shows Apple&rsquo;s <strong>App Tracking Transparency</strong> prompt:</p>
+        <ul>
+            <li>If you <strong>allow</strong> tracking, the advertising identifier may be used to show you personalized ads, which can involve combining this data with data from other apps and websites for advertising &mdash; &ldquo;tracking&rdquo; as Apple defines it.</li>
+            <li>If you <strong>ask the app not to track</strong> (or take no action), you still see ads, but <em>non-personalized</em> ones, and the advertising identifier is not used to track you across other companies&rsquo; apps and websites.</li>
+        </ul>
+        <p>This advertising data is collected and processed by <strong>Google</strong> as an independent controller, not by MW Supply Limited. We never receive it. Google&rsquo;s handling of this data is governed by the <a href="https://policies.google.com/privacy">Google Privacy Policy</a> and <a href="https://policies.google.com/technologies/partner-sites">How Google uses information from sites or apps that use our services</a>. You can change your tracking choice at any time in iOS Settings &rarr; Privacy &amp; Security &rarr; Tracking.</p>
+        <p><strong>RoadBook Pro removes all ads.</strong> While you are a Pro subscriber the app does not display ads, does not load the advertising SDK for ad serving, and the App Tracking Transparency choice has no effect on you.</p>
 
-        <h2>8. Third-party services</h2>
-        <p>None. The app contains no third-party SDKs, no analytics frameworks, no advertising networks, and no crash reporting services other than Apple's own first-party crash reporting (which runs only if you have opted in to <em>Share With App Developers</em> in iOS Settings &rarr; Privacy &amp; Security &rarr; Analytics &amp; Improvements).</p>
+        <h2>8. Subscriptions (RoadBook Pro)</h2>
+        <p>RoadBook Pro is an auto-renewable subscription (Monthly or Yearly) sold through Apple&rsquo;s In-App Purchase. Your purchase, payment and renewals are handled entirely by Apple under your Apple Account; MW Supply Limited never receives your name, your Apple ID, or any payment details. Apple provides us only with aggregate, non-identifying sales and subscription reports. Subscriptions are managed and cancelled in iOS Settings &rarr; [your name] &rarr; Subscriptions.</p>
 
-        <h2>9. Children</h2>
-        <p>RoadBook is intended for adults who drive. Because the app collects no data of any kind, it complies with COPPA and similar regulations worldwide.</p>
+        <h2>9. Third-party services</h2>
+        <p>The only third-party SDK in RoadBook is the <strong>Google Mobile Ads SDK (AdMob)</strong>, used solely to show ads on the free plan (Section 7). The app contains no analytics frameworks and no crash-reporting services other than Apple&rsquo;s own first-party crash reporting (which runs only if you have opted in to <em>Share With App Developers</em> in iOS Settings &rarr; Privacy &amp; Security &rarr; Analytics &amp; Improvements). All other services it uses are first-party Apple services on your device: Core Location, MapKit, CLGeocoder (to label countries and cities on the Explore tab), iCloud / CloudKit Documents, and StoreKit (for subscriptions).</p>
 
-        <h2>10. Your control</h2>
-        <p>Because every byte of trip data is on your device or in your own iCloud account, you are in full control:</p>
+        <h2>10. Children</h2>
+        <p>RoadBook is intended for adults who drive. We do not knowingly direct the app to, or collect personal data from, children.</p>
+
+        <h2>11. Your control</h2>
+        <p>You stay in control of your data:</p>
         <ul>
             <li>Delete a trip from the Trips list to remove it.</li>
             <li>Disable iCloud Drive for the app in iOS Settings &rarr; [your name] &rarr; iCloud to stop syncing.</li>
             <li>Delete the app to remove all on-device data. iCloud copies can be removed separately from iOS Settings &rarr; [your name] &rarr; iCloud &rarr; Manage Account Storage.</li>
             <li>Revoke or limit location access at any time from iOS Settings &rarr; Privacy &amp; Security &rarr; Location Services &rarr; RoadBook.</li>
+            <li>Change your advertising/tracking choice in iOS Settings &rarr; Privacy &amp; Security &rarr; Tracking, or subscribe to RoadBook Pro to remove ads entirely.</li>
         </ul>
 
-        <h2>11. Changes to this policy</h2>
-        <p>If we ever change how RoadBook handles data, we will update this page and the "Last updated" date above. Material changes will also be reflected in the App Store privacy nutrition labels for the affected version of the app.</p>
+        <h2>12. Changes to this policy</h2>
+        <p>If we ever change how RoadBook handles data, we will update this page and the &ldquo;Last updated&rdquo; date above. Material changes will also be reflected in the App Store privacy labels for the affected version of the app.</p>
 
-        <h2>12. Contact</h2>
+        <h2>13. Contact</h2>
         <p>Questions about this privacy policy can be sent to <a href="mailto:mwsupplylimited@gmail.com?subject=RoadBook%20privacy">mwsupplylimited@gmail.com</a>.</p>
 
         <footer>

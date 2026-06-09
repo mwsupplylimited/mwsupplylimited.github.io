@@ -101,10 +101,11 @@
         <a class="back" href="../">&larr; MW Supply Limited</a>
 
         <h1>RoadBook</h1>
-        <p class="subtitle">A simple, private trip logger for iPhone. <span class="pill">Version 1.0</span></p>
+        <p class="subtitle">A simple, private GPS trip &amp; mileage logger. <span class="pill">Version 1.0</span></p>
 
         <h2>About</h2>
-        <p>RoadBook turns your iPhone into a personal trip logger. It records the route, distance, duration, speed and elevation of every drive, can start and stop itself automatically when you set off and arrive, and keeps a bird's-eye view of everywhere you've ever driven. Everything stays on your device, or in your own iCloud account. No accounts, no advertising, no tracking.</p>
+        <p>RoadBook is a personal trip logger for your drives. It records the route, distance, duration, speed and elevation of every drive, can start and stop itself automatically when you set off and arrive, and keeps a bird's-eye view of everywhere you've ever driven. Your trips stay on your device, or in your own iCloud account &mdash; we never receive them.</p>
+        <p>RoadBook is free with ads. The optional <strong>RoadBook Pro</strong> subscription removes all ads and unlocks automatic recording, the interactive Speed/Altitude charts, GPX/JSON export, the Explore world map, and iCloud sync across your devices.</p>
 
         <h2>Getting started</h2>
         <ul>
@@ -117,12 +118,12 @@
         </ul>
 
         <h2>iCloud Backup</h2>
-        <p>If you are signed in to iCloud and have iCloud Drive enabled, your trips are stored in your own iCloud Documents container (<code>iCloud.com.edfd.DrivingRecorder</code>) and follow you across your iPhones and iPads automatically. There is no separate account or password &mdash; iOS uses your Apple ID. You can see the current backup state and force a refresh from <strong>Settings &rarr; iCloud Backup</strong> inside the app. If iCloud is not available, trips are kept on the device.</p>
+        <p>With <strong>RoadBook Pro</strong>, if you are signed in to iCloud and have iCloud Drive enabled, your trips are stored in your own iCloud Documents container (<code>iCloud.com.edfd.DrivingRecorder</code>) and follow you across your devices automatically. There is no separate account or password &mdash; iOS uses your Apple ID. You can see the current backup state and force a refresh from <strong>Settings &rarr; iCloud Backup</strong> inside the app. If iCloud is not available, trips are kept on the device.</p>
 
         <h2>FAQ</h2>
 
         <h3>Why is altitude / elevation gain showing 0?</h3>
-        <p>iPhone altitude comes from a combination of GPS and the device's built-in barometer. The iOS Simulator has no barometer and reports only latitude and longitude, so altitude reads 0 there. On a real iPhone outdoors, altitude populates within a few seconds of the first GPS fix.</p>
+        <p>Altitude comes from a combination of GPS and the device's built-in barometer. The iOS Simulator has no barometer and reports only latitude and longitude, so altitude reads 0 there. On a real device outdoors, altitude populates within a few seconds of the first GPS fix.</p>
 
         <h3>Why is my average speed lower than I expected?</h3>
         <p>Average speed is computed over <em>elapsed recording time</em>, including any time you spent stationary (red lights, traffic). It's never higher than your max speed by construction.</p>
@@ -138,6 +139,12 @@
 
         <h3>Will it drain my battery?</h3>
         <p>While recording, the app uses GPS continuously, which is energy-intensive. When you're not driving, it depends on your background mode: <strong>Battery Saver</strong> keeps GPS off and relies on Apple's very-low-power significant-location-change wake-up, while <strong>Full Accuracy</strong> keeps GPS active so it never misses the start of a drive (at a higher battery cost). With auto&#8209;start Off or set to Only While Open, nothing runs in the background at all.</p>
+
+        <h3>What does RoadBook Pro include, and how much is it?</h3>
+        <p>RoadBook Pro is an auto-renewable subscription &mdash; <strong>$2.99 / month</strong> or <strong>$19.99 / year</strong> (prices may vary by region). It removes all ads and unlocks automatic recording, the Speed/Altitude charts, GPX/JSON export, the Explore world map, and iCloud sync. You can subscribe from <strong>Settings &rarr; Upgrade to RoadBook Pro</strong>. Payment is charged to your Apple Account at confirmation; the subscription renews automatically unless cancelled at least 24 hours before the period ends. Manage or cancel anytime in iOS Settings &rarr; [your name] &rarr; Subscriptions, or restore a previous purchase from the Membership page.</p>
+
+        <h3>Why am I seeing ads, and what is the tracking prompt?</h3>
+        <p>On the free plan RoadBook shows ads through Google AdMob &mdash; a banner on the Trips screen and a short video ad when you save a manually recorded drive (your drive always saves, even if no ad is available). On first launch iOS asks whether RoadBook may track you: choosing <em>Allow</em> permits personalized ads, while <em>Ask App Not to Track</em> still shows ads but non-personalized ones. Subscribe to RoadBook Pro to remove ads entirely. See the <a href="privacy.html">Privacy Policy</a> for the details.</p>
 
         <h3>I found a bug or have a feature request.</h3>
         <p>Please email <a href="mailto:mwsupplylimited@gmail.com?subject=RoadBook%20feedback">mwsupplylimited@gmail.com</a> with your iOS version, device, and steps to reproduce. We read every message.</p>
