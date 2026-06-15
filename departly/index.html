@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Departly — Support</title>
+    <meta name="description" content="Support for Departly — fast Hong Kong bus arrivals (KMB, LWB, Citybus) with live ETAs, nearby stops, favourites, and a get-off reminder that alerts you before your stop.">
+    <style>
+        :root {
+            --bg: #ffffff; --fg: #1a1a1a; --muted: #666666; --accent: #1788f0;
+            --card: #f5f5f7; --border: #e5e5e7;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root { --bg: #0f1217; --fg: #f5f5f7; --muted: #9a9a9a; --accent: #5b8cff; --card: #1a1d24; --border: #2a2d34; }
+        }
+        * { box-sizing: border-box; }
+        html { -webkit-text-size-adjust: 100%; }
+        body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif; background: var(--bg); color: var(--fg); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+        .container { max-width: 720px; margin: 0 auto; padding: 48px 24px 96px; }
+        h1 { font-size: 2rem; margin: 0 0 8px; }
+        h2 { font-size: 1.25rem; margin: 40px 0 12px; }
+        .tagline { color: var(--muted); font-size: 1.05rem; margin: 0 0 32px; }
+        .card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 20px 22px; margin: 16px 0; }
+        ul { padding-left: 20px; }
+        li { margin: 6px 0; }
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .muted { color: var(--muted); font-size: 0.9rem; }
+        .badge { display: inline-block; background: var(--accent); color: #fff; border-radius: 8px; padding: 2px 10px; font-size: 0.8rem; font-weight: 600; }
+        footer { margin-top: 56px; border-top: 1px solid var(--border); padding-top: 20px; color: var(--muted); font-size: 0.85rem; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <span class="badge">Departly</span>
+        <h1>Departly — Support</h1>
+        <p class="tagline">Hong Kong bus arrivals, done right. Live ETAs for KMB, LWB and Citybus, nearby stops, favourites, and a reminder that wakes you before your stop.</p>
+
+        <h2>Features</h2>
+        <div class="card">
+            <ul>
+                <li><strong>Search any route</strong> by number (1A, 269D, N269) or destination, across KMB · LWB · Citybus.</li>
+                <li><strong>Live arrival times</strong> for every stop on a route, refreshed automatically.</li>
+                <li><strong>Nearby stops</strong> — see the stops closest to you and a live departure board for each.</li>
+                <li><strong>Favourites</strong> — pin the routes and stops you use, synced across your devices with iCloud.</li>
+                <li><strong>Get-off reminder</strong> — Departly alerts you as you approach your destination stop, even with the screen locked, so you can relax on the journey.</li>
+                <li><strong>English, 繁體中文 and 简体中文.</strong></li>
+            </ul>
+        </div>
+
+        <h2>Using the get-off reminder</h2>
+        <div class="card">
+            <p>Open a stop (from a route or the Nearby tab) and tap <em>Remind me to get off here</em>. Departly watches your location in the background and sounds an alarm as you get close. Allow location access (“While Using” is enough; “Always” lets the reminder fire even if the app was closed) and notifications for the most reliable alert.</p>
+        </div>
+
+        <h2>Departly Pro</h2>
+        <div class="card">
+            <p>Departly is free, with all route search, live ETAs and the get-off reminder available to everyone. <strong>Departly Pro</strong> (a monthly or yearly subscription) removes ads and adds unlimited favourites, Home- and Lock-Screen widgets, Live Activities and recurring commute reminders. Manage or cancel anytime in your Apple Account settings.</p>
+        </div>
+
+        <h2>Frequently asked</h2>
+        <div class="card">
+            <p><strong>Why is an arrival showing “—”?</strong><br>That route has no live prediction right now — often a peak-only or night route that isn’t currently running.</p>
+            <p><strong>Are the times official?</strong><br>Departly shows the same real-time estimates the operators publish as Hong Kong public sector information. Times are estimates and can change with traffic.</p>
+            <p><strong>Is Departly affiliated with KMB / Citybus?</strong><br>No. Departly is an independent app and is not affiliated with, endorsed by, or operated by any transport operator or the Government of the HKSAR.</p>
+        </div>
+
+        <h2>Contact</h2>
+        <div class="card">
+            <p>Questions, bugs or feedback: <a href="mailto:mwsupplylimited@gmail.com">mwsupplylimited@gmail.com</a></p>
+            <p><a href="privacy.html">Privacy Policy</a></p>
+        </div>
+
+        <footer>
+            <p>Departly uses real-time and route data obtained from <a href="https://data.gov.hk/">DATA.GOV.HK</a>, provided by the Transport Department, KMB and Citybus. Intellectual property rights of the data belong to the respective providers.</p>
+            <p>© 2026 mwsupplylimited. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
