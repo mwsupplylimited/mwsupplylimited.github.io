@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 2,
+  "core": {
+    "version": "2026.06.16",
+    "minAppSchema": 2,
+    "files": [
+      {
+        "role": "db",
+        "url": "https://mwsupplylimited.github.io/nutrisnap/data/foods-2026.06.16.sqlite",
+        "sha256": "1fd6880d2cf9bc38ade8e8bd64d537b26699ce30339352ea6365e568fb2d1fae",
+        "bytes": 3964928
+      },
+      {
+        "role": "embeddings",
+        "url": "https://mwsupplylimited.github.io/nutrisnap/data/food_text_embeddings-2026.06.16.bin",
+        "sha256": "c255718948c6bbe6263aa54aa054c701a5e3b2e417b8c487877081e47d251bcb",
+        "bytes": 20150784
+      },
+      {
+        "role": "embeddingIDs",
+        "url": "https://mwsupplylimited.github.io/nutrisnap/data/food_embedding_ids-2026.06.16.json",
+        "sha256": "0722fbea6956c018d1bf360de5f5edd82106af5329687c9a13b2afc45934a638",
+        "bytes": 110383
+      }
+    ]
+  },
+  "branded": {
+    "version": "2025.12.18",
+    "minAppSchema": 2,
+    "files": [
+      {
+        "role": "db",
+        "url": "https://github.com/mwsupplylimited/mwsupplylimited.github.io/releases/download/nutrisnap-data/branded-2025.12.18.sqlite",
+        "sha256": "0b28c2237225523008a8136a40407e27b9a2b5ac31f0d14b6c275a061a5857ba",
+        "bytes": 64045056
+      }
+    ]
+  }
+}
