@@ -117,8 +117,14 @@
         <h2>5. Notifications</h2>
         <p>With your permission, the app posts local notifications when it auto-starts and auto-stops a recording. These are generated and delivered entirely on-device by iOS.</p>
 
-        <h2>6. Exports</h2>
+        <h2>6. Exports and sharing trips</h2>
         <p>You can export a finished trip as a GPX or JSON file from the Trip detail screen. The destination of that export (Files, Mail, AirDrop, etc.) is chosen by you through the iOS share sheet. We are not involved in that transfer.</p>
+        <p>You can also share a trip with another person in two ways. Both are started explicitly by you, and MW Supply Limited is never part of the transfer:</p>
+        <ul>
+            <li><strong>As a RoadBook trip file.</strong> The app writes the trip to a small <code>.roadbooktrip</code> file (the same trip data, in JSON) and hands it to the iOS share sheet, so you can send it via AirDrop, Messages, Mail, or save it to Files. Whoever you send it to can open it in RoadBook. The transfer happens through whichever app you pick; it does not pass through us.</li>
+            <li><strong>Through iCloud (a live shared copy).</strong> Using Apple&rsquo;s CloudKit sharing, the app places a copy of the trip in your own iCloud account and invites the people you choose. Apple delivers the invitation and the shared copy to those people; the data stays inside Apple&rsquo;s iCloud and is never accessible to MW Supply Limited. Only the trip you choose is shared, and only with the people you invite.</li>
+        </ul>
+        <p>So that a recipient knows who a trip came from, the optional display name you set in Settings &rarr; Sharing is included with any trip you share. It is shown only to the people you share a trip with; it is never sent to us. Trips that other people share with you appear in your Trips list under &ldquo;Shared with you,&rdquo; tagged with the sender&rsquo;s name, and you can remove them at any time.</p>
 
         <h2>7. Advertising (free plan) and App Tracking Transparency</h2>
         <p>On the free plan, RoadBook shows ads using the <strong>Google Mobile Ads SDK (Google AdMob)</strong>: a banner on the Trips screen and an occasional short video ad when you save a manually recorded drive. To select, deliver, measure and cap the frequency of these ads and to prevent fraud, the Google SDK may collect device and usage information &mdash; including a device advertising identifier (IDFA, only with your consent), an IP address (and the coarse region derived from it), and information about your interaction with the ads.</p>
