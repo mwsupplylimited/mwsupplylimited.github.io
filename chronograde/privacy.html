@@ -89,50 +89,77 @@
         <a class="back" href="./">&larr; Chronograde Support</a>
 
         <h1>Chronograde Privacy Policy</h1>
-        <p class="meta">Effective 28 May 2026 &middot; Last updated 28 May 2026</p>
+        <p class="meta">Effective 28 May 2026 &middot; Last updated 20 June 2026</p>
 
         <div class="callout">
-            <p><strong>Summary:</strong> Chronograde has no account system, no analytics, no advertising, and no third-party trackers. Your watch data lives on your device (and in your own iCloud, if you choose to enable sync). The app makes one kind of outbound network request only: a stateless time query to public NTP servers, which never identifies you to us.</p>
+            <p><strong>Summary:</strong> Your watch data stays on your device (and in your own iCloud, if you enable sync) &mdash; MW Supply Limited operates no servers that receive it and has no account system. Chronograde is free to use and is supported by ads from Google AdMob shown to users who are not subscribed to Chronograde Pro. To serve those ads, Google&rsquo;s advertising SDK collects device and usage information as described below. Subscribing to Pro removes all ads. The app also queries public NTP time servers to keep your measurements accurate.</p>
         </div>
 
-        <h2>1. Information we collect</h2>
-        <p><strong>None on our servers.</strong> MW Supply Limited operates no servers that receive Chronograde data. There is no account, no login, no user profile, and no analytics SDK.</p>
+        <h2>1. Who we are</h2>
+        <p>Chronograde is published by MW Supply Limited (&ldquo;we&rdquo;, &ldquo;us&rdquo;). This policy explains what data the app handles, what stays on your device, and what is shared with Apple and Google to provide payments and advertising. Questions: <a href="mailto:mwsupplylimited@gmail.com?subject=Chronograde%20privacy">mwsupplylimited@gmail.com</a>.</p>
 
-        <h2>2. Information stored on your device</h2>
-        <p>Chronograde stores the records you create with the app locally using Apple's SwiftData framework:</p>
+        <h2>2. Data you create (stored on your device)</h2>
+        <p>Chronograde stores the records you create locally using Apple&rsquo;s SwiftData framework. We never receive this data on any server of ours:</p>
         <ul>
-            <li>Watches you've added (brand, model, optional nickname, reference number, serial number, caliber, crystal, movement type, notes, optional purchase price and date, optional photo).</li>
-            <li>Measurements (target time, accurate time, computed offset, optional note).</li>
-            <li>Wear log entries (date, optional note).</li>
-            <li>Service history entries (date, type, provider, cost, notes).</li>
-            <li>Your selected theme, sort preference, and reminder settings.</li>
+            <li>Watches you&rsquo;ve added (brand, model, optional nickname, reference number, serial number, caliber, crystal, movement type, notes, optional purchase price and date, optional photo).</li>
+            <li>Measurements (target time, accurate time, computed offset/rate, and Timegrapher readings &mdash; rate, beat error, amplitude &mdash; with optional notes).</li>
+            <li>Wear log entries and service history entries (date, type, provider, cost, notes).</li>
+            <li>App preferences (selected theme, sort order, reminder settings, and your Crown token balance).</li>
         </ul>
-        <p>This data is yours. It is removed automatically if you delete the app. You can also export it at any time via the Watches tab menu (CSV or XLSX).</p>
+        <p>This data is yours. It is removed when you delete the app, and you can export it at any time from the Watches tab menu (CSV or XLSX).</p>
 
         <h2>3. iCloud sync (optional)</h2>
-        <p>If iCloud is enabled for Chronograde on your device, the same records described above are synchronized through your private CloudKit container (<code>iCloud.com.edfd.WatchAccuracy</code>) so they appear on your other devices signed in to the same Apple ID. We have no access to this data &mdash; it is stored under your Apple ID in Apple's iCloud infrastructure and is governed by Apple's privacy policy. You can turn iCloud off for Chronograde at any time in iOS Settings &rarr; [your name] &rarr; iCloud.</p>
+        <p>If iCloud is enabled for Chronograde on your device, the records above are synchronized through your private CloudKit container (<code>iCloud.com.edfd.WatchAccuracy</code>) so they appear on your other devices signed in to the same Apple ID. We have no access to this data &mdash; it is stored under your Apple ID in Apple&rsquo;s infrastructure and is governed by <a href="https://www.apple.com/legal/privacy/">Apple&rsquo;s Privacy Policy</a>. You can turn iCloud off for Chronograde at any time in iOS Settings &rarr; [your name] &rarr; iCloud.</p>
 
-        <h2>4. Network activity</h2>
-        <p>Chronograde makes one type of outbound network request: a stateless SNTP (RFC&nbsp;4330) UDP query, on port&nbsp;123, to one of the public NTP servers <code>time.apple.com</code>, <code>time.google.com</code>, or <code>pool.ntp.org</code>. The query contains no personal information and is used only to compute how far the device clock has drifted from atomic time so that your measurements are accurate. We have no relationship with the operators of these public time services and we do not log the request ourselves.</p>
-        <p>Chronograde contacts no other server. There are no analytics calls, no advertising calls, no crash-reporting calls, no remote configuration calls, and no calls to anything owned by MW Supply Limited.</p>
+        <h2>4. Microphone (the Timegrapher)</h2>
+        <p>The Timegrapher feature listens to your watch ticking to measure its rate, beat error, and amplitude. Audio is processed <strong>live, on your device only</strong>, to detect tick timing. No audio recording is saved, transmitted, or sent to any server &mdash; only the computed numeric results are stored, and only if you choose to save the reading. The microphone is used solely while the Timegrapher screen is active and you have started a measurement.</p>
 
-        <h2>5. In-app purchases and subscription</h2>
-        <p>The Watch Accuracy Pro monthly subscription and the optional theme purchases are processed entirely by Apple's StoreKit framework. We never see your payment card or Apple ID. Apple tells the app only whether a given product ID is currently entitled to your Apple ID; that entitlement is what unlocks the relevant feature. Apple's privacy policy governs the purchase itself.</p>
-        <p>Pro is an auto-renewable subscription that renews monthly until cancelled. New subscribers may receive a 7-day free trial. You can manage or cancel anytime from iOS Settings &rarr; [your name] &rarr; Subscriptions; cancelling stops future renewals but does not affect the current paid period.</p>
+        <h2>5. Advertising (Google AdMob)</h2>
+        <p>Chronograde is free and is supported by advertising shown to users who do not have an active Chronograde Pro subscription. Ads are served by <strong>Google AdMob</strong> and consist of a banner above the tab bar and an optional &ldquo;rewarded&rdquo; video you may choose to watch to earn bonus measurements or Crown tokens. <strong>Subscribers to Chronograde Pro see no ads at all.</strong></p>
+        <p>To deliver and measure ads and to prevent fraud, Google&rsquo;s advertising SDK may collect and process:</p>
+        <ul>
+            <li>Device identifiers, including the advertising identifier (IDFA) when you grant App Tracking Transparency permission, and Google&rsquo;s own identifiers;</li>
+            <li>Coarse/approximate location (derived from IP address), device type, OS version, and language;</li>
+            <li>Ad-interaction and usage data (which ads were shown, viewed, or tapped).</li>
+        </ul>
+        <p>Google acts as an independent controller of this data; its use is governed by the <a href="https://policies.google.com/privacy">Google Privacy Policy</a> and the <a href="https://policies.google.com/technologies/partner-sites">How Google uses information from sites or apps that use our services</a> page. Apple&rsquo;s <strong>SKAdNetwork</strong> is also used for privacy-preserving ad attribution.</p>
 
-        <h2>6. Third-party services</h2>
-        <p>Chronograde contains no third-party SDKs. There are no analytics frameworks, advertising networks, or crash-reporting services other than Apple's own first-party crash reporting (which is governed entirely by Apple's privacy policy and only runs if you have opted in to <em>Share With App Developers</em> in iOS Settings &rarr; Privacy &amp; Security &rarr; Analytics &amp; Improvements).</p>
+        <h2>6. App Tracking Transparency &amp; consent</h2>
+        <p>The first time ads are shown, free users see Apple&rsquo;s <strong>App Tracking Transparency</strong> prompt. If you <em>allow</em> tracking, ads may be personalized using the advertising identifier. If you <em>ask the app not to track</em>, ads are still shown but are <strong>non-personalized</strong>. Where required (for example in the EEA and the UK), Google&rsquo;s <strong>User Messaging Platform</strong> first presents a consent dialog covering ad personalization under GDPR. You can change your tracking choice anytime in iOS Settings &rarr; Privacy &amp; Security &rarr; Tracking, and you can remove ads entirely by subscribing to Pro.</p>
 
-        <h2>7. Notifications</h2>
-        <p>If you turn on the optional daily reminder in Settings, Chronograde schedules a local notification on your device at the chosen time. These notifications are generated entirely on-device using iOS's UserNotifications framework. No notification content is sent to any server.</p>
+        <h2>7. Purchases, subscriptions &amp; Crown tokens</h2>
+        <p>All purchases are processed entirely by Apple&rsquo;s StoreKit. We never see your payment card or Apple ID; Apple only tells the app which product IDs your Apple ID is entitled to. Chronograde offers:</p>
+        <ul>
+            <li><strong>Chronograde Pro</strong> &mdash; an auto-renewable subscription (monthly and annual options, with an introductory 7-day free trial for new subscribers) that removes ads and unlocks unlimited measurements and Pro features. It renews automatically until cancelled; manage or cancel anytime in iOS Settings &rarr; [your name] &rarr; Subscriptions. Cancelling stops future renewals but does not refund the current period.</li>
+            <li><strong>Theme unlocks</strong> &mdash; one-time non-consumable purchases for premium app themes.</li>
+            <li><strong>Crown token packs</strong> &mdash; consumable in-app purchases. Crowns are an optional in-app currency that free users can also earn for free (a starter grant, streaks, and the rewarded ad). Crowns can be spent on extra measurements or premium themes. They are tracked on your device and have no cash value.</li>
+        </ul>
+        <p>Purchase records and entitlements are governed by Apple&rsquo;s privacy policy.</p>
 
-        <h2>8. Children</h2>
-        <p>Chronograde is rated 4+ on the App Store. Because the app collects no personal data, it complies with the Children's Online Privacy Protection Act (COPPA) and similar regulations worldwide.</p>
+        <h2>8. Network activity</h2>
+        <p>Chronograde makes outbound network requests for only three purposes: (a) stateless SNTP (RFC&nbsp;4330) time queries to public servers (<code>time.apple.com</code>, <code>time.google.com</code>, <code>pool.ntp.org</code>) to compute clock drift &mdash; these contain no personal information; (b) Apple StoreKit calls for purchases; and (c) for non-subscribers only, Google AdMob and User Messaging Platform calls to fetch ads and consent information as described above. There are no analytics SDKs or crash-reporting SDKs other than Apple&rsquo;s own first-party reporting (which runs only if you opted in under iOS Settings &rarr; Privacy &amp; Security &rarr; Analytics &amp; Improvements).</p>
 
-        <h2>9. Changes to this policy</h2>
-        <p>If we ever change how Chronograde handles data, we will update this page and the "Last updated" date above. Material changes will also be reflected in the App Store privacy nutrition labels for the affected version of the app.</p>
+        <h2>9. Third-party services</h2>
+        <p>The app includes Google&rsquo;s <strong>Mobile Ads SDK</strong> and <strong>User Messaging Platform</strong> (used only for non-subscribers, to show and govern ads). It uses Apple&rsquo;s StoreKit, SwiftData/CloudKit, and UserNotifications frameworks, which are first-party Apple services. No other third-party SDKs are included.</p>
 
-        <h2>10. Contact</h2>
+        <h2>10. Notifications</h2>
+        <p>If you turn on the optional daily reminder in Settings, Chronograde schedules a <strong>local</strong> notification on your device using iOS&rsquo;s UserNotifications framework. No notification content is sent to any server.</p>
+
+        <h2>11. Children</h2>
+        <p>Chronograde is a general-audience utility intended for adult watch owners and is not directed to children. Because it serves advertising, we do not knowingly collect personal information from children, and ads are configured as non-personalized where tracking is not permitted. If you believe a child has used the app, contact us and we will assist.</p>
+
+        <h2>12. Your choices</h2>
+        <ul>
+            <li><strong>Remove ads and tracking:</strong> subscribe to Chronograde Pro.</li>
+            <li><strong>Limit ad personalization:</strong> decline the App Tracking Transparency prompt, or turn off Allow Apps to Request to Track in iOS Settings.</li>
+            <li><strong>Reset your advertising identifier:</strong> iOS Settings &rarr; Privacy &amp; Security &rarr; Tracking / Apple Advertising.</li>
+            <li><strong>Delete your data:</strong> delete records in-app, or delete the app to remove all local data; disable iCloud to stop sync.</li>
+        </ul>
+
+        <h2>13. Changes to this policy</h2>
+        <p>If we change how Chronograde handles data, we will update this page and the &ldquo;Last updated&rdquo; date above. Material changes will also be reflected in the App Store privacy labels for the affected version of the app.</p>
+
+        <h2>14. Contact</h2>
         <p>Questions about this privacy policy can be sent to <a href="mailto:mwsupplylimited@gmail.com?subject=Chronograde%20privacy">mwsupplylimited@gmail.com</a>.</p>
 
         <footer>

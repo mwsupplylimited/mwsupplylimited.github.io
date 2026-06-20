@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chronograde — Support</title>
-    <meta name="description" content="Support page for Chronograde — track your watch's accuracy with NTP-synced atomic time.">
+    <meta name="description" content="Support page for Chronograde — turn your iPhone into a timegrapher and track your watch's accuracy against atomic time.">
     <style>
         :root {
             --bg: #ffffff;
@@ -100,25 +100,34 @@
         <a class="back" href="../">&larr; MW Supply Limited</a>
 
         <h1>Chronograde</h1>
-        <p class="subtitle">Track how fast or slow your watch runs. <span class="pill">Version 1.0</span></p>
+        <p class="subtitle">Turn your iPhone into a timegrapher and track your watch's accuracy against atomic time. <span class="pill">Version 1.1</span></p>
 
         <h2>About</h2>
-        <p>Chronograde measures and logs the accuracy of your mechanical, quartz, or smart watches against true atomic time. Record a reading when your watch reads a target HH:MM, and Chronograde compares it to NTP-synced time to compute a signed offset and a rate in seconds per day. Add as many watches as you like, see drift over time on a chart, log wear and service history, and export everything to CSV or Excel. No accounts, no ads, no tracking.</p>
+        <p>Chronograde measures how a mechanical watch is running &mdash; live rate and beat error read acoustically through the iPhone microphone &mdash; and tracks each watch's daily drift against true atomic time over days and weeks. Add as many watches as you like, log wear and service history, set your watch against an NTP-corrected clock, and export everything to CSV or Excel. Chronograde is free to use with ads; an optional <strong>Chronograde Pro</strong> subscription removes ads and unlocks unlimited measurements and the full feature set. Your watch data stays on your device and, if you choose, your own iCloud.</p>
 
         <h2>Getting started</h2>
         <ul>
             <li><strong>Add a watch</strong> with the + button. Brand and model are required; everything else (reference, serial, caliber, purchase price, photo) is optional.</li>
-            <li><strong>Pull-to-sync</strong> atomic time from the toolbar. Chronograde talks to public NTP servers (time.apple.com, time.google.com, pool.ntp.org) to correct for any device-clock drift.</li>
-            <li><strong>Tap Record Measurement.</strong> Pick the time your watch is about to show (e.g. <code>14:30</code>) and press the red RECORD button at that instant.</li>
-            <li><strong>Watch the drift chart fill in</strong> after your second measurement. Average rate per day and current offset are computed automatically.</li>
-            <li><strong>Log wear</strong> with one tap on the detail screen. The wear log tracks days worn over time. <strong>Log service</strong> with type, provider, cost, and notes &mdash; set a service interval and the detail screen will show when the next one is due.</li>
-            <li><strong>Switch themes</strong> under Settings &rarr; Theme Shop. Two themes are free; the rest are one-time purchases.</li>
+            <li><strong>Measure the rate (Timegrapher tab).</strong> Rest the phone on the caseback so it can hear the balance wheel, and watch the live rate and beat error settle. Use AUTO beat-rate detection or set the BPH yourself.</li>
+            <li><strong>Track drift over time.</strong> Tap <em>Record Measurement</em>, pick the time your watch is about to show (e.g. <code>14:30</code>), and press RECORD the instant the second hand touches it. After your second reading the drift chart and average rate per day fill in automatically.</li>
+            <li><strong>Pull-to-sync</strong> atomic time from the toolbar. Chronograde talks to public NTP servers (time.apple.com, time.google.com, pool.ntp.org) to correct for device-clock drift.</li>
+            <li><strong>Log wear</strong> with one tap, and <strong>log service</strong> with type, provider, cost, and notes &mdash; set a service interval and the detail screen shows when the next one is due.</li>
+            <li><strong>Personalize</strong> under Settings &rarr; Theme Shop. Two themes are free; premium themes can be unlocked with a one-time purchase or with Crowns.</li>
         </ul>
 
         <h2>FAQ</h2>
 
+        <h3>How is Chronograde free? Why do I see ads?</h3>
+        <p>Chronograde is free to download and use, and is supported by a small banner ad (shown above the tab bar so it never blocks the app) plus an <em>optional</em> rewarded video you can choose to watch to earn bonus measurements or Crowns. Ads are served by Google AdMob. If you'd rather have no ads at all, subscribe to <strong>Chronograde Pro</strong> &mdash; Pro removes every ad.</p>
+
+        <h3>What are Crowns?</h3>
+        <p>Crowns are an optional in-app currency for users on the free tier. You can earn them for free (a welcome grant, daily streaks, and the rewarded ad) or buy a pack, and spend them on extra measurements beyond the free allowance or on premium themes. Crowns are entirely optional and never lock a feature that is otherwise free. Pro subscribers don't need Crowns.</p>
+
+        <h3>How does Chronograde Pro work?</h3>
+        <p>You can record up to 10 measurements across all watches for free. <strong>Chronograde Pro</strong> removes ads and unlocks unlimited measurements and Pro features. It's available as a <strong>monthly</strong> or <strong>annual</strong> auto-renewable subscription, and new subscribers start with a <strong>7-day free trial</strong>. It renews automatically until cancelled. Manage or cancel anytime from iOS Settings &rarr; [your name] &rarr; Subscriptions, and tap <em>Restore Purchases</em> on the membership screen if you've subscribed before on the same Apple ID.</p>
+
         <h3>What counts as an "accurate" measurement?</h3>
-        <p>Chronograde uses SNTP (RFC 4330) to query the network time service and applies the resulting offset to your device's clock. In practice this is accurate to well under a tenth of a second &mdash; far finer than the human eye can read off a watch dial. The bottleneck is your reaction time pressing RECORD at the moment the second hand touches the target. Press it consistently and the math averages out over multiple readings.</p>
+        <p>For drift tracking, Chronograde uses SNTP (RFC 4330) to query a public time service and applies the offset to your device's clock &mdash; accurate to well under a tenth of a second. The bottleneck is your reaction time pressing RECORD as the second hand touches the target; press it consistently and the math averages out over multiple readings. For the acoustic Timegrapher, rest the phone firmly on the caseback in a quiet room and let the reading stabilize for a few seconds.</p>
 
         <h3>What's a good rate?</h3>
         <p>It depends on the watch. COSC chronometer-certified mechanical watches must run within &minus;4/+6 seconds per day. ETA standard movements typically run &plusmn;10&ndash;30 s/day. Quartz watches usually run &plusmn;0.5 s/day or better. Chronograde colors the rate green up to &plusmn;10 s/day, orange up to &plusmn;30, and red beyond that.</p>
@@ -126,14 +135,11 @@
         <h3>The sync button shows "Could not reach a time server."</h3>
         <p>Chronograde uses UDP on port 123 for SNTP queries. Some corporate, hotel, or captive Wi-Fi networks block outbound UDP. Try a different network or use cellular, then tap the sync icon in the top-right of the Watches tab. Without a successful sync, measurements fall back to the device clock and are marked accordingly.</p>
 
-        <h3>How does Watch Accuracy Pro work?</h3>
-        <p>You can record up to 10 measurements across all watches for free. <strong>Watch Accuracy Pro</strong> is a monthly subscription that removes the cap. New subscribers get a 7-day free trial, then it renews at $1.99 per month until cancelled. Manage or cancel anytime from iOS Settings &rarr; [your name] &rarr; Subscriptions. Tap <em>Restore Purchases</em> in the app if you've subscribed before on the same Apple ID.</p>
-
         <h3>Does it sync between my iPhone and iPad?</h3>
-        <p>If iCloud (CloudKit) is enabled for Chronograde and you're signed in with the same Apple ID on both devices, your watches, measurements, wear log, and service history will sync automatically. Settings &rarr; iCloud shows the current status.</p>
+        <p>If iCloud (CloudKit) is enabled for Chronograde and you're signed in with the same Apple ID on both devices, your watches, measurements, wear log, and service history sync automatically. Settings &rarr; iCloud shows the current status.</p>
 
         <h3>Can I export my data?</h3>
-        <p>Yes. From the Watches tab menu, choose <em>Export to Excel</em> (workbook with Watches, Measurements, Wear, Service sheets) or <em>Export to CSV</em>. You can also import a watches CSV the same way; Chronograde detects duplicates by serial number or brand + model + nickname.</p>
+        <p>Yes. From the Watches tab menu, choose <em>Export to Excel</em> (a workbook with Watches, Measurements, Wear, and Service sheets) or <em>Export to CSV</em>. You can also import a watches CSV the same way; Chronograde detects duplicates by serial number or brand + model + nickname.</p>
 
         <h3>I found a bug or have a feature request.</h3>
         <p>Please email <a href="mailto:mwsupplylimited@gmail.com?subject=Chronograde%20feedback">mwsupplylimited@gmail.com</a> with your iOS version, device, and steps to reproduce. We read every message.</p>
