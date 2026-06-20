@@ -34,54 +34,19 @@
             line-height: 1.65;
             -webkit-font-smoothing: antialiased;
         }
-        .container {
-            max-width: 720px;
-            margin: 0 auto;
-            padding: 48px 24px 96px;
-        }
-        .back {
-            display: inline-block;
-            color: var(--muted);
-            text-decoration: none;
-            font-size: 0.9rem;
-            margin-bottom: 32px;
-        }
+        .container { max-width: 720px; margin: 0 auto; padding: 48px 24px 96px; }
+        .back { display: inline-block; color: var(--muted); text-decoration: none; font-size: 0.9rem; margin-bottom: 32px; }
         .back:hover { color: var(--accent); }
-        h1 {
-            font-size: 2rem;
-            margin: 0 0 8px;
-            letter-spacing: -0.02em;
-        }
-        .meta {
-            color: var(--muted);
-            margin: 0 0 40px;
-            font-size: 0.95rem;
-        }
-        h2 {
-            font-size: 1.2rem;
-            margin: 36px 0 12px;
-            letter-spacing: -0.01em;
-        }
+        h1 { font-size: 2rem; margin: 0 0 8px; letter-spacing: -0.02em; }
+        .meta { color: var(--muted); margin: 0 0 40px; font-size: 0.95rem; }
+        h2 { font-size: 1.2rem; margin: 36px 0 12px; letter-spacing: -0.01em; }
         p { color: var(--fg); }
         ul { padding-left: 22px; }
         li { margin-bottom: 6px; }
         a { color: var(--accent); }
-        .callout {
-            background: var(--card);
-            border: 1px solid var(--border);
-            border-left: 3px solid var(--accent);
-            padding: 16px 20px;
-            border-radius: 8px;
-            margin: 24px 0;
-        }
+        .callout { background: var(--card); border: 1px solid var(--border); border-left: 3px solid var(--accent); padding: 16px 20px; border-radius: 8px; margin: 24px 0; }
         .callout p { margin: 0; }
-        footer {
-            margin-top: 64px;
-            padding-top: 24px;
-            border-top: 1px solid var(--border);
-            color: var(--muted);
-            font-size: 0.85rem;
-        }
+        footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.85rem; }
     </style>
 </head>
 <body>
@@ -89,38 +54,68 @@
         <a class="back" href="./">&larr; PDF Scanner Support</a>
 
         <h1>PDF Scanner Privacy Policy</h1>
-        <p class="meta">Effective 31 May 2026 · Last updated 31 May 2026</p>
+        <p class="meta">Effective 31 May 2026 &middot; Last updated 20 June 2026</p>
 
         <div class="callout">
-            <p><strong>Summary:</strong> PDF Scanner collects no personal data, makes no network requests, contains no advertising, and uses no analytics or third-party SDKs. Your documents and the text recognized from them stay on your device or in your own iCloud Drive.</p>
+            <p><strong>Summary:</strong> Your documents stay on your device and &mdash; when iCloud Drive is enabled &mdash; in your own private iCloud account. Scanning and text recognition run entirely on your device; we never see your files and we run no servers. The free version of PDF Scanner shows ads from Google AdMob, which collects limited device and ad-interaction data to serve those ads. Upgrading to <strong>PDF Scanner Pro</strong> removes all ads and the export watermark.</p>
         </div>
 
-        <h2>1. Information we collect</h2>
-        <p><strong>None.</strong> PDF Scanner does not ask for, collect, transmit, or store any personally identifiable information. The app has no account system, no login, no user profile, and contacts no servers operated by MW Supply Limited or any third party.</p>
+        <h2>1. Who we are</h2>
+        <p>PDF Scanner is developed by MW Supply Limited (&ldquo;we&rdquo;). This policy explains what data the app handles, what stays on your device, and what is processed by the limited third-party services we use to show ads and offer an optional upgrade. We have no account system and operate no backend &mdash; you can use every feature without signing in to us.</p>
 
-        <h2>2. Documents and text recognition</h2>
-        <p>Documents you scan or import are stored on your device, and — when iCloud Drive is enabled on your Apple ID — in the app's iCloud Drive folder (<em>iCloud Drive → PDF Scanner</em>). iCloud is a service provided by Apple under <a href="https://www.apple.com/legal/privacy/">Apple's privacy policy</a>; only you can read your own iCloud Drive content.</p>
-        <p>Text recognition (OCR) runs entirely on-device using Apple's Vision framework. No image, page or recognized text is ever sent off your device by PDF Scanner.</p>
+        <h2>2. Your documents</h2>
+        <p>The documents you scan or import &mdash; the page images, the resulting PDFs, the searchable text recognized from them, any markup, signatures or form entries you add, and the signature you save for reuse &mdash; are stored on your device. When iCloud Drive is enabled on your Apple ID, they are also kept in the app&rsquo;s iCloud Drive folder (<em>iCloud Drive &rarr; PDF Scanner</em>) so they are backed up and available across your devices (see section 3). If iCloud Drive is unavailable, everything stays in the app&rsquo;s local storage instead. This content never leaves your device or your iCloud account except via a Share action you initiate, and it is removed if you delete the app (local copies) or delete the documents. We have no access to it.</p>
 
-        <h2>3. Camera</h2>
-        <p>The Scan feature uses your device camera to capture document pages, via Apple's VisionKit document camera. Captured images are processed locally into a PDF and saved to your documents folder. Nothing is uploaded.</p>
+        <h2>3. iCloud Drive</h2>
+        <p>PDF Scanner stores its documents in your personal iCloud Drive using Apple&rsquo;s iCloud document storage. This keeps your scans in sync across your iPhone and iPad and lets them return after you reinstall the app. The data is held in your own iCloud account &mdash; MW Supply Limited has no access to it, and iCloud is governed by <a href="https://www.apple.com/legal/privacy/">Apple&rsquo;s privacy policy</a>. If you are not signed in to iCloud, your documents simply stay on the device.</p>
 
-        <h2>4. Sharing</h2>
-        <p>You can choose to share or export documents from PDF Scanner using the system Share sheet (for example, to Files, Mail, Messages, or AirDrop). Where the file goes from there is controlled entirely by the destination you pick. PDF Scanner does not transmit your documents anywhere on its own.</p>
+        <h2>4. Camera and text recognition</h2>
+        <p>The Scan feature uses your device camera, through Apple&rsquo;s VisionKit document camera, to capture document pages, with edge detection and perspective correction. Optical character recognition (OCR), which makes your scans searchable, runs entirely on your device using Apple&rsquo;s Vision framework. No image, page, or recognized text is ever sent off your device by PDF Scanner.</p>
 
-        <h2>5. Network activity</h2>
-        <p>PDF Scanner makes no network requests of its own. The app does not contact any server owned by MW Supply Limited or any third party.</p>
+        <h2>5. Advertising (free version)</h2>
+        <p>The free version of PDF Scanner is supported by ads. It shows banner ads, occasional full-screen (interstitial) ads, and an optional rewarded video you can choose to watch to remove the watermark from a single export. These ads are served by <strong>Google AdMob</strong> (the Google Mobile Ads SDK). To serve them, Google may collect and process information including:</p>
+        <ul>
+            <li>Your device&rsquo;s advertising identifier (IDFA) &mdash; only if you allow tracking when iOS asks (see below);</li>
+            <li>A non-personal device/usage identifier, device type, operating-system version and settings;</li>
+            <li>Your IP address and the approximate (coarse) region derived from it;</li>
+            <li>Information about how you interact with ads (for example, that an ad was shown or tapped).</li>
+        </ul>
+        <p>This information is collected and used by Google, not by us. It is handled under <a href="https://policies.google.com/privacy">Google&rsquo;s Privacy Policy</a> and as described in <a href="https://support.google.com/admob/answer/6128543">How Google uses information from sites or apps that use its services</a>. MW Supply Limited only receives aggregate, non-identifying reports such as the number of ad impressions and estimated revenue. Your documents and their contents are never shared with Google or used to target ads.</p>
+        <p><strong>App Tracking Transparency.</strong> iOS asks whether PDF Scanner may track you across other companies&rsquo; apps and websites. If you choose &ldquo;Ask App Not to Track,&rdquo; the advertising identifier is not used and you will see only non-personalized ads. You can use the app fully either way.</p>
+        <p><strong>Consent (EEA, UK &amp; other regions).</strong> Where required by law, PDF Scanner uses Google&rsquo;s User Messaging Platform to ask for your consent before personalized ads are shown, and respects your choice.</p>
+        <p><strong>Removing ads.</strong> Upgrading to PDF Scanner Pro removes all banner, interstitial, and rewarded ads. While you are a Pro member, the app does not request or display ads.</p>
 
-        <h2>6. Third-party services</h2>
-        <p>PDF Scanner contains no third-party SDKs, no analytics frameworks, no advertising networks, and no crash reporting services other than Apple's own first-party crash reporting (which is governed entirely by Apple's privacy policy and only runs if you have opted in to Share With App Developers in iOS Settings &rarr; Privacy &amp; Security &rarr; Analytics &amp; Improvements).</p>
+        <h2>6. PDF Scanner Pro</h2>
+        <p>PDF Scanner Pro is an optional upgrade that removes all ads and the export watermark and unlocks the full app (unlimited pages per scan, all enhancement filters, markup, signing, and form filling). It is available as an auto-renewing subscription (monthly or yearly) or a one-time lifetime purchase. Purchases, billing, renewals, and refunds are handled entirely by <strong>Apple</strong> through your App Store account &mdash; we never see or store your name, your payment-card details, or your Apple ID. To unlock Pro features, the app checks your purchase entitlement directly with the App Store on your device; this check does not identify you to us. You can view, change, or cancel a subscription at any time in the App Store under <em>Settings &rarr; [your name] &rarr; Subscriptions</em>.</p>
 
-        <h2>7. Children</h2>
-        <p>PDF Scanner is suitable for all ages and is rated 4+ on the App Store. Because the app collects no data of any kind, it complies with the Children's Online Privacy Protection Act (COPPA) and similar regulations worldwide.</p>
+        <h2>7. Network activity</h2>
+        <p>Apart from the advertising and purchase services described above, PDF Scanner makes no network requests of its own and has no servers to talk to. The other network activity is Apple&rsquo;s own iCloud synchronization, which happens at the operating-system level when iCloud Drive is enabled.</p>
 
-        <h2>8. Changes to this policy</h2>
-        <p>If we ever change how PDF Scanner handles data, we will update this page and the "Last updated" date above. Material changes will also be reflected in the App Store privacy nutrition labels for the affected version of the app.</p>
+        <h2>8. Sharing and exporting</h2>
+        <p>You can share or export documents using the standard iOS Share sheet (for example, to Files, Mail, Messages, or AirDrop). Where a file goes from there is controlled entirely by the destination you pick. PDF Scanner does not transmit your documents anywhere on its own.</p>
 
-        <h2>9. Contact</h2>
+        <h2>9. Third-party services</h2>
+        <p>To show ads in the free version, PDF Scanner includes two SDKs, both from Google:</p>
+        <ul>
+            <li><strong>Google Mobile Ads SDK (AdMob)</strong> &mdash; serves the banner, interstitial, and rewarded ads.</li>
+            <li><strong>Google User Messaging Platform</strong> &mdash; manages the ad-consent prompt where it is legally required.</li>
+        </ul>
+        <p>Both are governed by <a href="https://policies.google.com/privacy">Google&rsquo;s Privacy Policy</a>. PDF Scanner contains no analytics frameworks and no crash reporting other than Apple&rsquo;s first-party crash reporting (which is governed by Apple&rsquo;s privacy policy and only runs if you opted in to Share With App Developers in iOS Settings &rarr; Privacy &amp; Security &rarr; Analytics &amp; Improvements). PDF Scanner Pro members are not shown ads, and the app does not request ads for them.</p>
+
+        <h2>10. Permissions and identifiers</h2>
+        <p>PDF Scanner does not access your location, microphone, contacts, or health data. The advertising identifier is used only for ads in the free version, and only if you allow tracking as described in section 5. The other system features the app uses are optional and stay on your device:</p>
+        <ul>
+            <li><strong>Camera.</strong> Used only when you scan a document; capture and text recognition happen on your device and the results stay there.</li>
+            <li><strong>Files.</strong> Importing a PDF or saving an export uses the system document picker, which grants access only to the specific file you choose.</li>
+        </ul>
+
+        <h2>11. Children</h2>
+        <p>PDF Scanner is a general-audience productivity app and is not directed at children. It does not knowingly collect personal information from children. Because the free version shows ads, we instruct Google to serve only family-appropriate (maximum content rating G) ads, but the app is not designed for use by children under the age of digital consent without a parent or guardian. Upgrading to PDF Scanner Pro removes all ads.</p>
+
+        <h2>12. Changes to this policy</h2>
+        <p>If we change how PDF Scanner handles data, we will update this page and the &quot;Last updated&quot; date above. Material changes will also be reflected in the App Store privacy nutrition labels for the affected version of the app.</p>
+
+        <h2>13. Contact</h2>
         <p>Questions about this privacy policy can be sent to <a href="mailto:mwsupplylimited@gmail.com?subject=PDF%20Scanner%20privacy">mwsupplylimited@gmail.com</a>.</p>
 
         <footer>
