@@ -20,6 +20,10 @@
         .callout { background:var(--card); border:1px solid var(--border); border-left:3px solid var(--accent); padding:16px 20px; border-radius:8px; margin:24px 0; }
         .callout p { margin:0; }
         ul { padding-left:22px; } li { margin-bottom:6px; }
+        .dl { display:inline-block; background:var(--accent); color:#fff; text-decoration:none; font-weight:600; padding:14px 28px; border-radius:10px; font-size:1.05rem; }
+        .dl:hover { filter:brightness(1.08); }
+        .meta { color:var(--muted); font-size:.85rem; margin:10px 0 0; }
+        ol { padding-left:22px; } ol li { margin-bottom:8px; }
         footer { margin-top:64px; padding-top:24px; border-top:1px solid var(--border); color:var(--muted); font-size:.85rem; }
     </style>
 </head>
@@ -30,8 +34,17 @@
         <p class="subtitle">A free companion that unlocks exact temperatures &amp; fan speeds.</p>
 
         <div class="callout">
-            <p><strong>Coming soon.</strong> The Sensor Helper is a small, free, Apple-notarized companion app. We&rsquo;ll post it here as a free download — check back shortly, or email us to be notified.</p>
+            <p><a class="dl" href="./CorynxSensorHelper.zip" download>Download Sensor Helper</a></p>
+            <p class="meta">Free &middot; Apple-notarized &middot; macOS 14 or later &middot; Apple silicon &middot; ~64&nbsp;KB</p>
         </div>
+
+        <h2>Install</h2>
+        <ol>
+            <li><strong>Download</strong> the file above and open it &mdash; it unzips to <strong>CorynxSensorHelper.app</strong> (drag it to your Applications folder if you like).</li>
+            <li><strong>Double-click</strong> CorynxSensorHelper to launch it. It&rsquo;s notarized by Apple, so it opens normally and runs quietly as a menu-bar item &mdash; no window, no dock icon.</li>
+            <li>Open <strong>Corynx</strong>. Exact CPU/GPU temperatures and live fan speeds now appear on the Sensors and detail screens.</li>
+        </ol>
+        <p class="meta">To remove it later, just quit it from its menu-bar icon and move the app to the Trash.</p>
 
         <h2>Why a separate helper?</h2>
         <p>macOS does not allow a sandboxed Mac App Store app to read the System Management Controller (SMC), where precise component temperatures and fan RPM come from. On its own, Corynx shows the system <em>thermal-pressure level</em> (Nominal &rarr; Critical). The Sensor Helper reads the SMC locally and hands the readings to Corynx on your Mac, so you get exact &deg;C and live fan speeds.</p>
@@ -43,8 +56,8 @@
             <li>Free — it simply adds the sensor readings to Corynx Pro.</li>
         </ul>
 
-        <h2>Get notified</h2>
-        <p>Email <a href="mailto:mwsupplylimited@gmail.com?subject=Corynx%20Sensor%20Helper">mwsupplylimited@gmail.com</a> and we&rsquo;ll let you know the moment it&rsquo;s available.</p>
+        <h2>Questions?</h2>
+        <p>Email <a href="mailto:mwsupplylimited@gmail.com?subject=Corynx%20Sensor%20Helper">mwsupplylimited@gmail.com</a> if you need a hand getting set up.</p>
 
         <footer>&copy; 2026 MW Supply Limited</footer>
     </div>
