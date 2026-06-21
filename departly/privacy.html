@@ -34,11 +34,13 @@
         <div class="card">
             <p>With your permission, Departly uses your device location to (1) show the bus stops nearest you and (2) power the optional get-off reminder, which alerts you as you approach your destination stop. For these features your location is processed <strong>on your device</strong> to measure distance to a stop, and is not sent anywhere. You can use route search and live arrivals without granting location access.</p>
             <p><strong>Live Bus (optional crowdsourcing).</strong> If you choose to tap “I’m on this bus — share live position” on a route, Departly shares an anonymous, temporary <em>projected position along that route</em> — never your raw GPS coordinates, and with no account name or identifier — to the app’s iCloud (CloudKit) public database, so other riders waiting for that route can see a live bus. Each report expires within about 90 seconds, sharing stops automatically when you leave the route or close the screen, and nothing is ever shared unless you opt in for that trip.</p>
+            <p><strong>Motion &amp; Fitness (optional, for the get-off reminder).</strong> When a get-off reminder is active, Departly can use your device’s motion activity (whether you appear to be in a vehicle or on foot), together with speed and your distance from the route, to notice when you have likely gotten off and ask whether to end the reminder. This is processed <strong>entirely on your device</strong>, is never sent anywhere or stored, and the feature can be turned off in Settings (“Detect when I get off”). Departly works fully without granting Motion access.</p>
         </div>
 
         <h2>Real-time transport data</h2>
         <div class="card">
             <p>To show arrivals, Departly requests public route, stop and estimated-arrival data from Hong Kong government open-data services (DATA.GOV.HK). These requests contain only the route or stop you are viewing — <strong>no location, identifier, or personal information about you is sent.</strong></p>
+            <p>Departly also periodically downloads updated <strong>route, stop, station and fare reference files</strong> from our own server (mwsupplylimited.github.io) so the trip planner and fares stay current without an app update. These are plain public transit-data files — the download sends <strong>no information about you</strong>.</p>
         </div>
 
         <h2>Place search (Plan a Trip)</h2>
