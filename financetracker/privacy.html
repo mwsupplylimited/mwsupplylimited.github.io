@@ -54,7 +54,7 @@
         <a class="back" href="./">&larr; Money Flow Support</a>
 
         <h1>Money Flow Privacy Policy</h1>
-        <p class="meta">Effective 29 May 2026 &middot; Last updated 16 June 2026</p>
+        <p class="meta">Effective 29 May 2026 &middot; Last updated 21 June 2026</p>
 
         <div class="callout">
             <p><strong>Summary:</strong> Your financial data stays on your device and &mdash; only if you choose &mdash; syncs through your own private iCloud account. We never see it and we run no servers. The free version of Money Flow shows ads from Google AdMob, which collects limited device and ad-interaction data to serve those ads. Upgrading to <strong>Money Flow Pro</strong> removes all ads.</p>
@@ -93,7 +93,10 @@
         <p>Money Flow Pro is an optional auto-renewing subscription (available monthly or yearly, with a free trial on the yearly plan) that removes all ads and unlocks premium features such as advanced insights, custom accent themes, and alternate app icons. Purchases, billing, renewals, and refunds are handled entirely by <strong>Apple</strong> through your App Store account &mdash; we never see or store your name, your payment-card details, or your Apple ID. To unlock Pro features, the app checks your purchase entitlement directly with the App Store on your device; this check does not identify you to us. You can view, change, or cancel your subscription at any time in the App Store under <em>Settings &rarr; [your name] &rarr; Subscriptions</em>.</p>
 
         <h2>6. Network activity</h2>
-        <p>Apart from the advertising and subscription services described above, Money Flow makes no network requests of its own and has no servers to talk to. The other network activity is Apple&rsquo;s own iCloud synchronization, which happens at the operating-system level when you enable iCloud sync.</p>
+        <p>Money Flow has no servers of its own. Besides the advertising and subscription services described above and Apple&rsquo;s own iCloud synchronization, the app makes one kind of request of its own: to fetch <strong>currency exchange rates</strong> (see below). It sends no personal or financial data with that request.</p>
+
+        <h2>6a. Exchange rates (multi-currency)</h2>
+        <p>If you record transactions in more than one currency, Money Flow converts them to your chosen display currency. To do this it downloads daily exchange rates from a third-party provider, <a href="https://www.exchangerate-api.com">open.er-api.com</a> (ExchangeRate-API&rsquo;s free, key-less endpoint). The request contains <em>no</em> account, identifier, or transaction data &mdash; only a standard web request for the public rate table, which necessarily includes your device&rsquo;s IP address as with any internet request. The rates are cached on your device so the feature works offline, and the app ships with a built-in fallback table. We do not send your financial data anywhere, and no personal data is shared with the rate provider.</p>
 
         <h2>7. Importing and exporting data</h2>
         <p>Money Flow can import transactions from a CSV file you choose, and export your data as CSV or Excel files. Imported files are read locally; exported files are saved or shared only to the destination you pick through the standard iOS document and share sheets. These files are under your control and are never sent to us.</p>
