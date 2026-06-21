@@ -23,5 +23,17 @@
         "bytes": 110383
       }
     ]
+  },
+  "branded": {
+    "version": "2025.12.18",
+    "minAppSchema": 2,
+    "files": [
+      {
+        "role": "db",
+        "url": "https://github.com/mwsupplylimited/mwsupplylimited.github.io/releases/download/nutrisnap-data/branded-2025.12.18.sqlite",
+        "sha256": "0b28c2237225523008a8136a40407e27b9a2b5ac31f0d14b6c275a061a5857ba",
+        "bytes": 64045056
+      }
+    ]
   }
 }
