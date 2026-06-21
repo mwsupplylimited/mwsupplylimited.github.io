@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Helmward — Support</title>
+    <meta name="description" content="Support for Helmward, a private, Apple-native remote desktop: see and control your Mac at home from your iPhone, iPad, or another Mac.">
+    <style>
+        :root {
+            --bg: #ffffff; --fg: #1a1a1a; --muted: #666666;
+            --accent: #4361ee; --card: #f5f5f7; --border: #e5e5e7;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root { --bg: #121419; --fg: #f5f5f7; --muted: #9a9a9a;
+                --accent: #7c8cff; --card: #1c1f25; --border: #2a2d34; }
+        }
+        * { box-sizing: border-box; }
+        html { -webkit-text-size-adjust: 100%; }
+        body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+            background: var(--bg); color: var(--fg); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+        .container { max-width: 720px; margin: 0 auto; padding: 48px 24px 96px; }
+        .back { display: inline-block; color: var(--muted); text-decoration: none; font-size: 0.9rem; margin-bottom: 32px; }
+        .back:hover { color: var(--accent); }
+        h1 { font-size: 2.2rem; margin: 0 0 8px; letter-spacing: -0.02em; }
+        .subtitle { color: var(--muted); margin: 0 0 40px; }
+        h2 { font-size: 1.3rem; margin: 40px 0 12px; letter-spacing: -0.01em; }
+        h3 { font-size: 1rem; margin: 24px 0 6px; font-weight: 600; }
+        p, li { color: var(--fg); }
+        ul { padding-left: 22px; }
+        li { margin-bottom: 6px; }
+        a { color: var(--accent); }
+        .pill { display: inline-block; background: var(--card); border: 1px solid var(--border); padding: 3px 10px; border-radius: 999px; font-size: 0.8rem; color: var(--muted); margin-left: 6px; }
+        .callout { background: var(--card); border: 1px solid var(--border); border-left: 3px solid var(--accent);
+            padding: 16px 20px; border-radius: 8px; margin: 24px 0; }
+        .callout p { margin: 0; }
+        footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.85rem; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a class="back" href="../">&larr; MW Supply Limited</a>
+
+        <h1>Helmward</h1>
+        <p class="subtitle">See and control your Mac at home — from anywhere. <span class="pill">Coming soon</span></p>
+
+        <div class="callout">
+            <p><strong>Helmward is in development.</strong> This page is the home for setup help and support. App Store and Mac download links will appear here when Helmward launches.</p>
+        </div>
+
+        <h2>About</h2>
+        <p>Helmward is a private, Apple-native remote desktop. Leave your Mac at home, and reach its screen from your iPhone, iPad, or another Mac while you travel — see the live screen and control the mouse and keyboard as if you were sitting in front of it. Helmward is built for <strong>people, not licensing departments</strong>: no false “commercial use” lockouts, no session time limits, and end-to-end encryption so the connection relay never sees your screen.</p>
+
+        <h2>How it works</h2>
+        <ul>
+            <li><strong>On the Mac you want to reach:</strong> install the free <strong>Helmward Host</strong> (a notarized Mac download). Grant Screen Recording and Accessibility when asked, and note the <strong>Host ID</strong> and <strong>password</strong> it shows.</li>
+            <li><strong>On your iPhone, iPad, or other Mac:</strong> open the <strong>Helmward</strong> app, enter that Host ID and password, and connect.</li>
+            <li><strong>Keep the home Mac awake and logged in</strong> while you're away so it stays reachable. Helmward keeps it from sleeping while it's connectable.</li>
+        </ul>
+
+        <h2>Two parts</h2>
+        <ul>
+            <li><strong>Helmward</strong> — the app you connect <em>from</em> (iPhone &amp; iPad, on the App Store; and a Mac viewer).</li>
+            <li><strong>Helmward Host</strong> — the free app on the Mac you connect <em>to</em>. Because controlling a whole Mac needs Screen Recording, Accessibility, and a background helper that Apple's App Sandbox doesn't allow, the Host is distributed as a notarized direct download (just like other professional remote-desktop tools), not through the Mac App Store. It is signed and notarized by Apple.</li>
+        </ul>
+
+        <h2>Plans &amp; ads</h2>
+        <p>Helmward is free to download. The <strong>free tier</strong> is a genuinely useful remote desktop — unlimited session length, two paired devices, low-latency video, and clipboard text sync — supported by occasional ads on the connection screen. <strong>Ads are never shown over your live remote session.</strong></p>
+        <p><strong>Helmward Pro</strong> (<strong>$4.99/month</strong> or <strong>$34.99/year</strong>, with a <strong>3-day free trial</strong>) unlocks:</p>
+        <ul>
+            <li><strong>Unlimited</strong> paired devices</li>
+            <li><strong>Multi-monitor</strong> viewing &amp; switching</li>
+            <li>Full-speed <strong>HD</strong> streaming</li>
+            <li><strong>File transfer</strong> and clipboard file sync</li>
+            <li><strong>Wake-on-LAN</strong>, remote audio, and priority relays</li>
+            <li>A completely <strong>ad-free</strong> app</li>
+        </ul>
+        <p>Subscriptions are sold through Apple and renew automatically until cancelled; manage or cancel any time in <strong>iOS Settings &rarr; [your name] &rarr; Subscriptions</strong>. Prices are always shown in the app in your local currency.</p>
+
+        <h2>FAQ</h2>
+
+        <h3>Is it secure?</h3>
+        <p>Yes. The screen and control data are <strong>end-to-end encrypted</strong> between your own devices. When a direct connection isn't possible, traffic is forwarded through a relay — but the relay only sees encrypted packets it cannot read. Pairing is protected by your Host ID and password.</p>
+
+        <h3>Can I control my iPhone from my Mac?</h3>
+        <p>Helmward controls <strong>Macs and PCs</strong>. Because of Apple platform restrictions, an iPhone or iPad can connect out to a computer, but cannot itself be remotely controlled.</p>
+
+        <h3>Does it work over cellular / away from home Wi-Fi?</h3>
+        <p>Yes — Helmward is designed for exactly that. It connects your devices over the internet (cellular or any Wi-Fi), finding the most direct path it can and falling back to a secure relay when networks are strict.</p>
+
+        <h3>Will I ever be flagged for “commercial use”?</h3>
+        <p>No. Helmward does not police how you use it and will never lock you out with a false commercial-use flag.</p>
+
+        <h3>I found a bug or have a feature request.</h3>
+        <p>Please email <a href="mailto:mwsupplylimited@gmail.com?subject=Helmward%20support">mwsupplylimited@gmail.com</a> with your device, OS version, and steps to reproduce. We read every message.</p>
+
+        <h2>Contact</h2>
+        <p>For support: <a href="mailto:mwsupplylimited@gmail.com?subject=Helmward%20support">mwsupplylimited@gmail.com</a></p>
+
+        <h2>Privacy</h2>
+        <p>See the <a href="privacy.html">Helmward Privacy Policy</a>.</p>
+
+        <footer>
+            &copy; 2026 MW Supply Limited
+        </footer>
+    </div>
+</body>
+</html>

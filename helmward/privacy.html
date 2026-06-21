@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Helmward — Privacy Policy</title>
+    <meta name="description" content="Privacy Policy for Helmward, a private remote desktop for Apple platforms.">
+    <style>
+        :root {
+            --bg: #ffffff; --fg: #1a1a1a; --muted: #666666;
+            --accent: #4361ee; --card: #f5f5f7; --border: #e5e5e7;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root { --bg: #121419; --fg: #f5f5f7; --muted: #9a9a9a;
+                --accent: #7c8cff; --card: #1c1f25; --border: #2a2d34; }
+        }
+        * { box-sizing: border-box; }
+        html { -webkit-text-size-adjust: 100%; }
+        body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+            background: var(--bg); color: var(--fg); line-height: 1.65; -webkit-font-smoothing: antialiased; }
+        .container { max-width: 720px; margin: 0 auto; padding: 48px 24px 96px; }
+        .back { display: inline-block; color: var(--muted); text-decoration: none; font-size: 0.9rem; margin-bottom: 32px; }
+        .back:hover { color: var(--accent); }
+        h1 { font-size: 2rem; margin: 0 0 8px; letter-spacing: -0.02em; }
+        .meta { color: var(--muted); margin: 0 0 40px; font-size: 0.95rem; }
+        h2 { font-size: 1.2rem; margin: 36px 0 12px; letter-spacing: -0.01em; }
+        p, li { color: var(--fg); }
+        ul { padding-left: 22px; }
+        li { margin-bottom: 6px; }
+        a { color: var(--accent); }
+        .callout { background: var(--card); border: 1px solid var(--border); border-left: 3px solid var(--accent);
+            padding: 16px 20px; border-radius: 8px; margin: 24px 0; }
+        .callout p { margin: 0; }
+        footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.85rem; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a class="back" href="./">&larr; Helmward Support</a>
+
+        <h1>Helmward Privacy Policy</h1>
+        <p class="meta">Effective 21 June 2026 &middot; Last updated 21 June 2026</p>
+
+        <div class="callout">
+            <p><strong>Summary:</strong> Helmward connects your own devices to each other. The remote screen and your mouse/keyboard control are <strong>end-to-end encrypted</strong> and are never stored on, or readable by, our servers. We run no account system to use the app, and we do not collect your screen contents, keystrokes, or files. The free tier shows ads on iOS (Google AdMob) and asks for App Tracking Transparency permission first.</p>
+        </div>
+
+        <h2>1. What Helmward does with your data</h2>
+        <p>Helmward is a remote-desktop tool. Its core job — showing one of your devices the screen of another and relaying your mouse and keyboard input — happens in an <strong>end-to-end encrypted</strong> session directly between your devices. MW Supply Limited does not receive, store, or have the ability to decrypt your screen contents, keystrokes, clipboard, or transferred files. There is no account required to use Helmward; devices are paired with a Host ID and password.</p>
+
+        <h2>2. Connection &amp; relay metadata</h2>
+        <p>To help two of your devices find each other across the internet, Helmward uses a <strong>signaling service</strong> and, when a direct connection isn't possible, a <strong>relay (TURN) service</strong>, operated for us by Cloudflare. These services process the minimum needed to set up and carry the connection: the Host ID being connected to, network address (IP) information, and timing/volume of traffic. The relay forwards only <strong>encrypted</strong> session data that it cannot read. This metadata is used solely to operate the connection and is not used to build a profile of you or sold to anyone.</p>
+
+        <h2>3. Screen Recording &amp; Accessibility (Mac Host)</h2>
+        <p>On the Mac you connect to, Helmward Host requires macOS <strong>Screen Recording</strong> permission (to capture the screen you asked to share) and <strong>Accessibility</strong> permission (to move the mouse and type on your behalf when you control it remotely). These capabilities are used <strong>only</strong> while you are connected, only to provide the remote session, and the captured screen and injected input are never sent to MW Supply Limited. You grant these in macOS System Settings and can revoke them at any time.</p>
+
+        <h2>4. Clipboard, files &amp; audio</h2>
+        <p>When you sync clipboard text/files, transfer files, or use remote audio, that content travels inside the same end-to-end encrypted session, directly between your devices. It is not copied to our servers.</p>
+
+        <h2>5. Subscriptions &amp; payments</h2>
+        <p>Helmward Pro is an auto-renewable subscription sold through Apple's In-App Purchase using <strong>StoreKit</strong>. Your purchase, payment, and renewals are handled entirely by Apple under your Apple Account; MW Supply Limited never sees your name, your Apple ID, or your card or payment details. Subscriptions can be managed or cancelled any time in your Apple Account settings.</p>
+
+        <h2>6. Advertising (free tier, iOS only)</h2>
+        <p>The free tier of the Helmward iOS app shows advertising provided by <strong>Google AdMob</strong> on the connection/dashboard screens — never over a live remote session. If you subscribe to Helmward Pro, the app shows <strong>no ads at all</strong> and the AdMob SDK is not started. (The Mac apps show no ads.)</p>
+        <ul>
+            <li><strong>What AdMob may process:</strong> a device advertising identifier, approximate (coarse) device information, IP address, and ad-interaction data, used to serve and measure ads and to prevent fraud.</li>
+            <li><strong>Your consent:</strong> the app asks for Apple's <strong>App Tracking Transparency</strong> permission before any identifier is used for personalised ads, and shows a consent form where required (for example in the EEA/UK). If you decline, you still get ads — just non-personalised ones, and the app remains fully functional.</li>
+            <li><strong>Managing your choices:</strong> change tracking permission in iOS Settings &rarr; Privacy &amp; Security &rarr; Tracking.</li>
+            <li>This advertising data is collected and processed by Google as an independent controller, not by MW Supply Limited. See <a href="https://policies.google.com/privacy" rel="noopener">Google's privacy policy</a> and <a href="https://policies.google.com/technologies/ads" rel="noopener">Google's advertising policy</a>.</li>
+        </ul>
+
+        <h2>7. Children</h2>
+        <p>Helmward is not directed to children under 13 and is rated 4+. The free tier uses Google AdMob with age-appropriate ad settings where required, and the app collects no personal data itself, consistent with the Children's Online Privacy Protection Act (COPPA) and similar regulations worldwide.</p>
+
+        <h2>8. Changes to this policy</h2>
+        <p>If we change how Helmward handles data, we will update this page and the “Last updated” date above. Material changes will also be reflected in the App Store privacy labels for the affected version of the app.</p>
+
+        <h2>9. Contact</h2>
+        <p>Questions about this privacy policy can be sent to <a href="mailto:mwsupplylimited@gmail.com?subject=Helmward%20privacy">mwsupplylimited@gmail.com</a>.</p>
+
+        <footer>
+            &copy; 2026 MW Supply Limited
+        </footer>
+    </div>
+</body>
+</html>
