@@ -34,6 +34,12 @@
             padding: 16px 20px; border-radius: 8px; margin: 24px 0; }
         .callout p { margin: 0; }
         footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.85rem; }
+        .downloads { display: flex; flex-wrap: wrap; gap: 12px; margin: 8px 0; }
+        .btn { display: inline-block; padding: 12px 20px; border-radius: 10px; text-decoration: none; font-weight: 600; font-size: 0.95rem; }
+        .btn-primary { background: var(--accent); color: #fff; }
+        .btn-host { background: var(--card); color: var(--fg); border: 1px solid var(--border); }
+        .btn:hover { opacity: 0.9; }
+        .dlnote { color: var(--muted); font-size: 0.85rem; margin: 4px 0 8px; }
     </style>
 </head>
 <body>
@@ -41,11 +47,13 @@
         <a class="back" href="../">&larr; MW Supply Limited</a>
 
         <h1>Helmward</h1>
-        <p class="subtitle">See and control your Mac at home — from anywhere. <span class="pill">Coming soon</span></p>
+        <p class="subtitle">See and control your Mac at home — from anywhere.</p>
 
-        <div class="callout">
-            <p><strong>Helmward is in development.</strong> This page is the home for setup help and support. App Store and Mac download links will appear here when Helmward launches.</p>
+        <div class="downloads">
+            <a class="btn btn-primary" href="https://apps.apple.com/app/id6782744454">Get Helmward on the App Store</a>
+            <a class="btn btn-host" href="Helmward-Host.dmg" download>Download Helmward Host for Mac</a>
         </div>
+        <p class="dlnote">Free Mac Host — signed &amp; notarized by Apple, macOS 14+. Install it on the Mac you want to reach, then connect from the Helmward app on your iPhone, iPad, or another Mac.</p>
 
         <h2>About</h2>
         <p>Helmward is a private, Apple-native remote desktop. Leave your Mac at home, and reach its screen from your iPhone, iPad, or another Mac while you travel — see the live screen and control the mouse and keyboard as if you were sitting in front of it. Helmward is built for <strong>people, not licensing departments</strong>: no false “commercial use” lockouts, no session time limits, and end-to-end encryption so the connection relay never sees your screen.</p>
@@ -64,15 +72,12 @@
         </ul>
 
         <h2>Plans &amp; ads</h2>
-        <p>Helmward is free to download. The <strong>free tier</strong> is a genuinely useful remote desktop — unlimited session length, two paired devices, low-latency video, and clipboard text sync — supported by occasional ads on the connection screen. <strong>Ads are never shown over your live remote session.</strong></p>
-        <p><strong>Helmward Pro</strong> (<strong>$4.99/month</strong> or <strong>$34.99/year</strong>, with a <strong>3-day free trial</strong>) unlocks:</p>
+        <p>Helmward is free to download and genuinely useful for free — unlimited session length, low-latency HEVC video, full mouse &amp; keyboard control, and connections over your local network or the internet by Host ID — supported by occasional ads on the connection screen only. <strong>Ads are never shown over your live remote session.</strong></p>
+        <p><strong>Helmward Pro</strong> (<strong>$4.99/month</strong> or <strong>$34.99/year</strong>, with a <strong>3-day free trial</strong> for new subscribers) gives you:</p>
         <ul>
-            <li><strong>Unlimited</strong> paired devices</li>
-            <li><strong>Multi-monitor</strong> viewing &amp; switching</li>
-            <li>Full-speed <strong>HD</strong> streaming</li>
-            <li><strong>File transfer</strong> and clipboard file sync</li>
-            <li><strong>Wake-on-LAN</strong>, remote audio, and priority relays</li>
-            <li>A completely <strong>ad-free</strong> app</li>
+            <li>A completely <strong>ad-free</strong> app — no banners, ever</li>
+            <li>Support for independent, privacy-first development</li>
+            <li>Every future Pro feature, automatically included</li>
         </ul>
         <p>Subscriptions are sold through Apple and renew automatically until cancelled; manage or cancel any time in <strong>iOS Settings &rarr; [your name] &rarr; Subscriptions</strong>. Prices are always shown in the app in your local currency.</p>
 
