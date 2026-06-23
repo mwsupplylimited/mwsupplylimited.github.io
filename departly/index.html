@@ -3,76 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Departly — Support</title>
-    <meta name="description" content="Support for Departly — fast Hong Kong bus arrivals (KMB, LWB, Citybus) with live ETAs, nearby stops, favourites, and a get-off reminder that alerts you before your stop.">
+    <title>Departly — One app for every Hong Kong commute</title>
+    <meta name="description" content="Departly — one Hong Kong transit app for bus, minibus, rail, Light Rail and tram. Live arrivals, door-to-door trip planning with transfers and fares, and a get-off reminder that works even underground.">
+    <link rel="canonical" href="https://mwsupplylimited.github.io/departly/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Departly — One app for every Hong Kong commute">
+    <meta property="og:description" content="Bus, minibus, rail, Light Rail and tram in one app. Live arrivals, door-to-door planning, and a get-off reminder that works even underground.">
+    <meta property="og:url" content="https://mwsupplylimited.github.io/departly/">
+    <meta property="og:image" content="https://mwsupplylimited.github.io/departly/assets/shot_home.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Departly — One app for every Hong Kong commute">
+    <meta name="twitter:description" content="Bus, minibus, rail, Light Rail and tram in one app. Live arrivals, door-to-door planning, get-off reminders.">
+    <meta name="twitter:image" content="https://mwsupplylimited.github.io/departly/assets/shot_home.jpg">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%231788f0'/><text y='72' x='50' font-size='64' text-anchor='middle' fill='white' font-family='Arial'>D</text></svg>">
     <style>
         :root {
             --bg: #ffffff; --fg: #1a1a1a; --muted: #666666; --accent: #1788f0;
             --card: #f5f5f7; --border: #e5e5e7;
+            --brandA: #1788f0; --brandB: #0c3fa9;
         }
         @media (prefers-color-scheme: dark) {
             :root { --bg: #0f1217; --fg: #f5f5f7; --muted: #9a9a9a; --accent: #5b8cff; --card: #1a1d24; --border: #2a2d34; }
         }
         * { box-sizing: border-box; }
-        html { -webkit-text-size-adjust: 100%; }
+        html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
         body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif; background: var(--bg); color: var(--fg); line-height: 1.6; -webkit-font-smoothing: antialiased; }
-        .container { max-width: 720px; margin: 0 auto; padding: 48px 24px 96px; }
-        h1 { font-size: 2rem; margin: 0 0 8px; }
-        h2 { font-size: 1.25rem; margin: 40px 0 12px; }
-        .tagline { color: var(--muted); font-size: 1.05rem; margin: 0 0 32px; }
-        .card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 20px 22px; margin: 16px 0; }
-        ul { padding-left: 20px; }
-        li { margin: 6px 0; }
+        .container { max-width: 880px; margin: 0 auto; padding: 0 24px; }
         a { color: var(--accent); text-decoration: none; }
         a:hover { text-decoration: underline; }
         .muted { color: var(--muted); font-size: 0.9rem; }
-        .badge { display: inline-block; background: var(--accent); color: #fff; border-radius: 8px; padding: 2px 10px; font-size: 0.8rem; font-weight: 600; }
-        footer { margin-top: 56px; border-top: 1px solid var(--border); padding-top: 20px; color: var(--muted); font-size: 0.85rem; }
+
+        .hero { background: linear-gradient(150deg, var(--brandA), var(--brandB)); color: #fff; padding: 64px 0 76px; text-align: center; }
+        .hero .badge { display: inline-block; background: rgba(255,255,255,0.18); border-radius: 999px; padding: 4px 14px; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.02em; }
+        .hero h1 { font-size: 2.6rem; line-height: 1.1; margin: 18px 0 10px; font-weight: 800; }
+        .hero p.lead { font-size: 1.2rem; max-width: 620px; margin: 0 auto 28px; color: rgba(255,255,255,0.94); }
+        .store { display: inline-flex; align-items: center; gap: 9px; background: #000; color: #fff; border-radius: 13px; padding: 11px 22px; font-weight: 600; }
+        .store:hover { text-decoration: none; opacity: 0.9; }
+        .store svg { width: 22px; height: 22px; fill: #fff; }
+        .store small { display: block; font-size: 0.68rem; font-weight: 400; line-height: 1.1; opacity: 0.85; }
+        .store .big { font-size: 1.05rem; line-height: 1.1; }
+        .free { display: block; margin-top: 12px; font-size: 0.85rem; color: rgba(255,255,255,0.82); }
+
+        .shots { display: flex; gap: 18px; justify-content: center; flex-wrap: wrap; margin: -44px 0 8px; }
+        .shots img { width: 220px; max-width: 42vw; border-radius: 22px; box-shadow: 0 14px 40px rgba(0,0,0,0.22); border: 1px solid var(--border); background: #fff; }
+
+        section { padding: 40px 0; }
+        h2 { font-size: 1.5rem; margin: 0 0 18px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+        .card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 20px 22px; }
+        .card h3 { margin: 0 0 6px; font-size: 1.08rem; }
+        .card p { margin: 0; color: var(--muted); font-size: 0.96rem; }
+        footer { margin-top: 24px; border-top: 1px solid var(--border); padding: 24px 0 64px; color: var(--muted); font-size: 0.85rem; }
     </style>
 </head>
 <body>
+    <div class="hero">
+        <div class="container">
+            <span class="badge">Departly</span>
+            <h1>One app for every Hong&nbsp;Kong commute</h1>
+            <p class="lead">Bus, minibus, rail, Light Rail and tram — live arrivals, door-to-door trip planning, and a get-off reminder that works even underground.</p>
+            <a class="store" href="https://apps.apple.com/app/id6780520462" aria-label="Download Departly on the App Store">
+                <svg viewBox="0 0 384 512" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C73.3 141.2 24 184.8 24 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+                <span><small>Download on the</small><span class="big">App Store</span></span>
+            </a>
+            <span class="free">Free, with optional Departly Pro · English · 繁體中文 · 简体中文</span>
+        </div>
+    </div>
+
     <div class="container">
-        <span class="badge">Departly</span>
-        <h1>Departly — Support</h1>
-        <p class="tagline">Hong Kong bus arrivals, done right. Live ETAs for KMB, LWB and Citybus, nearby stops, favourites, and a reminder that wakes you before your stop.</p>
-
-        <h2>Features</h2>
-        <div class="card">
-            <ul>
-                <li><strong>Search any route</strong> by number (1A, 269D, N269) or destination, across KMB · LWB · Citybus.</li>
-                <li><strong>Live arrival times</strong> for every stop on a route, refreshed automatically.</li>
-                <li><strong>Nearby stops</strong> — see the stops closest to you and a live departure board for each.</li>
-                <li><strong>Favourites</strong> — pin the routes and stops you use, synced across your devices with iCloud.</li>
-                <li><strong>Get-off reminder</strong> — Departly alerts you as you approach your destination stop, even with the screen locked, so you can relax on the journey.</li>
-                <li><strong>English, 繁體中文 and 简体中文.</strong></li>
-            </ul>
+        <div class="shots">
+            <img src="assets/shot_home.jpg" alt="Departly Home with the Plan a Trip hero" loading="lazy" width="552" height="1200">
+            <img src="assets/shot_train.jpg" alt="Nearest station with the next trains each direction" loading="lazy" width="552" height="1200">
+            <img src="assets/shot_tram.jpg" alt="Nearest tram stops by direction" loading="lazy" width="552" height="1200">
         </div>
 
-        <h2>Using the get-off reminder</h2>
-        <div class="card">
-            <p>Open a stop (from a route or the Nearby tab) and tap <em>Remind me to get off here</em>. Departly watches your location in the background and sounds an alarm as you get close. Allow location access (“While Using” is enough; “Always” lets the reminder fire even if the app was closed) and notifications for the most reliable alert.</p>
-        </div>
+        <section>
+            <h2>Everything that moves Hong Kong, in one place</h2>
+            <div class="grid">
+                <div class="card"><h3>Plan a trip, door to door</h3><p>Enter where you are and where you're going. Departly compares franchised buses, New Lantau Bus, green minibuses, heavy rail, Light Rail and trams, and works out the transfers and fare for you.</p></div>
+                <div class="card"><h3>Live arrivals for every mode</h3><p>Real-time arrivals for buses, minibuses, rail and Light Rail, refreshed automatically — and the next several departures at each stop, not just one.</p></div>
+                <div class="card"><h3>Get off at the right stop</h3><p>Set a get-off reminder and relax. Departly alerts you as you approach your stop — even with the screen locked, and even underground.</p></div>
+                <div class="card"><h3>Fares up front</h3><p>See the fare for your whole journey before you go, with Adult, Child, Elderly and Student options.</p></div>
+                <div class="card"><h3>Nearby, at a glance</h3><p>Your nearest stops and stations with a live departure board, plus favourites for the routes you use most.</p></div>
+                <div class="card"><h3>Widgets &amp; Apple&nbsp;Watch</h3><p>Home- and Lock-Screen widgets, Live Activities, and an Apple Watch app keep your next departure one glance away.</p></div>
+            </div>
+        </section>
 
-        <h2>Departly Pro</h2>
-        <div class="card">
-            <p>Departly is free, with all route search, live ETAs and the get-off reminder available to everyone. <strong>Departly Pro</strong> (a monthly or yearly subscription) removes ads and adds unlimited favourites, Home- and Lock-Screen widgets, Live Activities and recurring commute reminders. Manage or cancel anytime in your Apple Account settings.</p>
-        </div>
+        <section>
+            <h2>Get-off reminder — how it works</h2>
+            <div class="card">
+                <p style="color:var(--fg)">Open a stop or station and tap <em>Remind me to get off</em>. Departly alerts you as you get close. For buses, allow location (“While Using” is enough; “Always” lets it fire even if the app was closed). For rail it's clock-based, so it works underground with no GPS. Notifications give the most reliable alert.</p>
+            </div>
+        </section>
 
-        <h2>Frequently asked</h2>
-        <div class="card">
-            <p><strong>Why is an arrival showing “—”?</strong><br>That route has no live prediction right now — often a peak-only or night route that isn’t currently running.</p>
-            <p><strong>Are the times official?</strong><br>Departly shows the same real-time estimates the operators publish as Hong Kong public sector information. Times are estimates and can change with traffic.</p>
-            <p><strong>Is Departly affiliated with KMB / Citybus?</strong><br>No. Departly is an independent app and is not affiliated with, endorsed by, or operated by any transport operator or the Government of the HKSAR.</p>
-        </div>
+        <section>
+            <h2>Departly Pro</h2>
+            <div class="card">
+                <p style="color:var(--fg)">Departly is free, with trip planning, live arrivals and the get-off reminder for everyone. <strong>Departly Pro</strong> (a monthly or yearly auto-renewable subscription) removes ads and unlocks extras; free users can also earn or buy tokens to unlock individual Pro features without subscribing. Subscriptions renew automatically unless cancelled at least 24 hours before the period ends — manage or cancel anytime in your account settings.</p>
+            </div>
+        </section>
 
-        <h2>Contact</h2>
-        <div class="card">
-            <p>Questions, bugs or feedback: <a href="mailto:mwsupplylimited@gmail.com">mwsupplylimited@gmail.com</a></p>
-            <p><a href="privacy.html">Privacy Policy</a></p>
-        </div>
+        <section>
+            <h2>Questions</h2>
+            <div class="card" style="margin-bottom:12px">
+                <p style="color:var(--fg)"><strong>Why does an arrival show “no live time”?</strong><br>That route has no live prediction right now — often the next bus hasn't left its terminus yet, or it's a peak-only/night route. Departly shows the scheduled frequency or first bus where available.</p>
+            </div>
+            <div class="card" style="margin-bottom:12px">
+                <p style="color:var(--fg)"><strong>Are the times official?</strong><br>Departly shows the real-time estimates operators publish as Hong Kong public sector information. Times and fares are estimates and can change with traffic.</p>
+            </div>
+            <div class="card">
+                <p style="color:var(--fg)"><strong>Is Departly affiliated with the transport operators?</strong><br>No. Departly is an independent app and is not affiliated with, endorsed by, or operated by any transport operator or the Government of the HKSAR.</p>
+            </div>
+        </section>
+
+        <section style="padding-top:8px">
+            <h2>Contact</h2>
+            <div class="card"><p style="color:var(--fg)">Questions, bugs or feedback: <a href="mailto:mwsupplylimited@gmail.com">mwsupplylimited@gmail.com</a> &nbsp;·&nbsp; <a href="privacy.html">Privacy Policy</a></p></div>
+        </section>
 
         <footer>
-            <p>Departly uses real-time and route data obtained from <a href="https://data.gov.hk/">DATA.GOV.HK</a>, provided by the Transport Department, KMB and Citybus. Intellectual property rights of the data belong to the respective providers.</p>
+            <p>Departly uses real-time and route data obtained from <a href="https://data.gov.hk/">DATA.GOV.HK</a>, provided by the Transport Department, MTR Corporation (heavy rail, Light Rail and MTR Bus), KMB, Long Win Bus, Citybus, New Lantau Bus, the green minibus operators and Hong Kong Tramways. Intellectual property rights of the data belong to the respective providers.</p>
             <p>© 2026 mwsupplylimited. All rights reserved.</p>
         </footer>
     </div>
