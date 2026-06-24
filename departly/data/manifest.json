@@ -1,5 +1,5 @@
 {
-  "version": "50bc74a61a76",
+  "version": "02c2dc9970a4",
   "files": [
     {
       "name": "kmb_stops.json",
@@ -63,12 +63,12 @@
     },
     {
       "name": "mtr_fares.json",
-      "sha": "32336758009ebeaaf3fec57e6a37855d7b3dcd27bcfd2cea3b8f1c6ef3eccab0",
+      "sha": "7177b115fb75965637d846b7c471c3249ffb1c962f1811758215a00dcdb95276",
       "url": "https://mwsupplylimited.github.io/departly/data/mtr_fares.json"
     },
     {
       "name": "lrt_fares.json",
-      "sha": "ae460fbc46885eab0b361f47be0cfb97490f91d5674325ef4202dda1df0f9c9a",
+      "sha": "c3ea39b8699bfb729b0113066f23e5f997ddc792a47e4d265ba7076c6bdbbe47",
       "url": "https://mwsupplylimited.github.io/departly/data/lrt_fares.json"
     },
     {
