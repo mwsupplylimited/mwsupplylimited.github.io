@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corynx Fan Helper</title>
+    <meta name="description" content="Boost-only fan control for Corynx — run your Mac's fans harder under load, with automatic safety revert.">
+    <style>
+        :root { --bg:#ffffff; --fg:#1a1a1a; --muted:#666; --accent:#129e88; --card:#f5f5f7; --border:#e5e5e7; --warn:#b25000; }
+        @media (prefers-color-scheme: dark) { :root { --bg:#121419; --fg:#f5f5f7; --muted:#9a9a9a; --accent:#3ad9c0; --card:#1c1f25; --border:#2a2d34; --warn:#ffb37a; } }
+        * { box-sizing:border-box; }
+        body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Arial,sans-serif; background:var(--bg); color:var(--fg); line-height:1.6; -webkit-font-smoothing:antialiased; }
+        .container { max-width:720px; margin:0 auto; padding:48px 24px 96px; }
+        .back { display:inline-block; color:var(--muted); text-decoration:none; font-size:.9rem; margin-bottom:32px; }
+        .back:hover { color:var(--accent); }
+        h1 { font-size:2rem; margin:0 0 8px; letter-spacing:-.02em; }
+        .subtitle { color:var(--muted); margin:0 0 32px; }
+        h2 { font-size:1.2rem; margin:34px 0 12px; }
+        a { color:var(--accent); }
+        .callout { background:var(--card); border:1px solid var(--border); border-left:3px solid var(--accent); padding:16px 20px; border-radius:8px; margin:24px 0; }
+        .callout.warn { border-left-color:var(--warn); }
+        .callout p { margin:0; }
+        ul { padding-left:22px; } li { margin-bottom:6px; }
+        .dl { display:inline-block; background:var(--accent); color:#fff; text-decoration:none; font-weight:600; padding:14px 28px; border-radius:10px; font-size:1.05rem; }
+        .dl:hover { filter:brightness(1.08); }
+        .meta { color:var(--muted); font-size:.85rem; margin:10px 0 0; }
+        ol { padding-left:22px; } ol li { margin-bottom:8px; }
+        code { background:var(--card); border:1px solid var(--border); border-radius:5px; padding:1px 6px; font-size:.9em; }
+        footer { margin-top:64px; padding-top:24px; border-top:1px solid var(--border); color:var(--muted); font-size:.85rem; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a class="back" href="./">&larr; Corynx Support</a>
+        <h1>Corynx Fan Helper</h1>
+        <p class="subtitle">Take manual control of your Mac's fans &mdash; <strong>boost-only</strong>, with automatic safety revert.</p>
+
+        <div class="callout">
+            <p><a class="dl" href="./CorynxFanHelper.zip" download>Download Fan Helper</a></p>
+            <p class="meta">Free with Corynx Pro &middot; Apple-notarized &middot; macOS 14 or later &middot; Apple silicon</p>
+        </div>
+
+        <div class="callout warn">
+            <p><strong>Boost-only &amp; safe.</strong> The Fan Helper can only make your fans spin <em>faster</em> than macOS would &mdash; it never sets them below your Mac's minimum and never turns them off. macOS still forces full cooling if things get hot. Everything returns to automatic the moment you turn it off, quit Corynx, or restart your Mac.</p>
+        </div>
+
+        <h2>Install</h2>
+        <ol>
+            <li><strong>Download</strong> the file above and unzip it (you'll get a <strong>CorynxFanHelper</strong> folder).</li>
+            <li><strong>Right-click <code>install.command</code> &rarr; Open</strong> (right-click the first time, so macOS lets you run it), then click <strong>Open</strong> again to confirm.</li>
+            <li>Enter your <strong>Mac password</strong> when prompted &mdash; this installs a small background helper that runs as a system service.</li>
+            <li>Open <strong>Corynx &rarr; Fans</strong>. Switch on <strong>Manual boost</strong> and set each fan's speed.</li>
+        </ol>
+
+        <h2>Restore automatic control</h2>
+        <p>Any one of these hands your fans straight back to macOS:</p>
+        <ul>
+            <li>In Corynx, turn <strong>Manual boost</strong> off (or click <strong>Return to Automatic</strong>).</li>
+            <li>Quit Corynx &mdash; the helper reverts to automatic on its own within a few seconds.</li>
+            <li><strong>Restart your Mac</strong> &mdash; the helper starts each boot in automatic and applies nothing until you ask.</li>
+            <li>Run <code>uninstall.command</code> (from the same folder) to remove the helper entirely.</li>
+        </ul>
+
+        <h2>Why a separate helper?</h2>
+        <p>Controlling fans means writing to the System Management Controller (SMC), which macOS does not allow a sandboxed Mac App Store app to do. The Fan Helper is a small, notarized background service that performs those writes locally and takes commands only from Corynx on your Mac.</p>
+
+        <h2>Private &amp; safe by design</h2>
+        <ul>
+            <li>Runs entirely on your Mac with <strong>no network connections</strong>.</li>
+            <li>Boost-only: an error can only ever make your Mac <em>cooler</em>, never hotter.</li>
+            <li>A built-in safety override forces fans to maximum if any sensor approaches a thermal limit.</li>
+        </ul>
+
+        <h2>Questions?</h2>
+        <p>Email <a href="mailto:mwsupplylimited@gmail.com?subject=Corynx%20Fan%20Helper">mwsupplylimited@gmail.com</a>.</p>
+
+        <footer>&copy; 2026 MW Supply Limited</footer>
+    </div>
+</body>
+</html>
