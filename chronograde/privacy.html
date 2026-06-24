@@ -102,7 +102,7 @@
         <p>Chronograde stores the records you create locally using Apple&rsquo;s SwiftData framework. We never receive this data on any server of ours:</p>
         <ul>
             <li>Watches you&rsquo;ve added (brand, model, optional nickname, reference number, serial number, caliber, crystal, movement type, notes, optional purchase price and date, optional photo).</li>
-            <li>Measurements (target time, accurate time, computed offset/rate, and Timegrapher readings &mdash; rate, beat error, amplitude &mdash; with optional notes).</li>
+            <li>Measurements (target time, accurate time, computed offset/rate, and Timegrapher readings &mdash; rate and beat error &mdash; with optional notes).</li>
             <li>Wear log entries and service history entries (date, type, provider, cost, notes).</li>
             <li>App preferences (selected theme, sort order, reminder settings, and your Crown token balance).</li>
         </ul>
@@ -112,7 +112,7 @@
         <p>If iCloud is enabled for Chronograde on your device, the records above are synchronized through your private CloudKit container (<code>iCloud.com.edfd.WatchAccuracy</code>) so they appear on your other devices signed in to the same Apple ID. We have no access to this data &mdash; it is stored under your Apple ID in Apple&rsquo;s infrastructure and is governed by <a href="https://www.apple.com/legal/privacy/">Apple&rsquo;s Privacy Policy</a>. You can turn iCloud off for Chronograde at any time in iOS Settings &rarr; [your name] &rarr; iCloud.</p>
 
         <h2>4. Microphone (the Timegrapher)</h2>
-        <p>The Timegrapher feature listens to your watch ticking to measure its rate, beat error, and amplitude. Audio is processed <strong>live, on your device only</strong>, to detect tick timing. No audio recording is saved, transmitted, or sent to any server &mdash; only the computed numeric results are stored, and only if you choose to save the reading. The microphone is used solely while the Timegrapher screen is active and you have started a measurement.</p>
+        <p>The Timegrapher feature listens to your watch ticking to measure its rate and beat error. Audio is processed <strong>live, on your device only</strong>, to detect tick timing. No audio recording is saved, transmitted, or sent to any server &mdash; only the computed numeric results are stored, and only if you choose to save the reading. The microphone is used solely while the Timegrapher screen is active and you have started a measurement.</p>
 
         <h2>5. Advertising (Google AdMob)</h2>
         <p>Chronograde is free and is supported by advertising shown to users who do not have an active Chronograde Pro subscription. Ads are served by <strong>Google AdMob</strong> and consist of a banner above the tab bar and an optional &ldquo;rewarded&rdquo; video you may choose to watch to earn bonus measurements or Crown tokens. <strong>Subscribers to Chronograde Pro see no ads at all.</strong></p>
@@ -131,6 +131,7 @@
         <p>All purchases are processed entirely by Apple&rsquo;s StoreKit. We never see your payment card or Apple ID; Apple only tells the app which product IDs your Apple ID is entitled to. Chronograde offers:</p>
         <ul>
             <li><strong>Chronograde Pro</strong> &mdash; an auto-renewable subscription (monthly and annual options, with an introductory 7-day free trial for new subscribers) that removes ads and unlocks unlimited measurements and Pro features. It renews automatically until cancelled; manage or cancel anytime in iOS Settings &rarr; [your name] &rarr; Subscriptions. Cancelling stops future renewals but does not refund the current period.</li>
+            <li><strong>Chronograde Pro &mdash; Lifetime</strong> &mdash; a one-time non-consumable purchase that unlocks all Pro features permanently. It does not auto-renew.</li>
             <li><strong>Theme unlocks</strong> &mdash; one-time non-consumable purchases for premium app themes.</li>
             <li><strong>Crown token packs</strong> &mdash; consumable in-app purchases. Crowns are an optional in-app currency that free users can also earn for free (a starter grant, streaks, and the rewarded ad). Crowns can be spent on extra measurements or premium themes. They are tracked on your device and have no cash value.</li>
         </ul>
