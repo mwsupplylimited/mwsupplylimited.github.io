@@ -1,0 +1,14 @@
+{
+  "normal": {
+    "version": "1.0",
+    "build": 3,
+    "url": "https://mwsupplylimited.github.io/helmward/Helmward-Host.dmg",
+    "notes": "Stable release."
+  },
+  "beta": {
+    "version": "1.0",
+    "build": 3,
+    "url": "https://mwsupplylimited.github.io/helmward/Helmward-Host.dmg",
+    "notes": "Beta channel — newest features first, less tested."
+  }
+}
