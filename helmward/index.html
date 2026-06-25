@@ -27,6 +27,11 @@
   .brand{display:flex; align-items:center; gap:10px; font-weight:700; font-size:1.05rem; letter-spacing:-.01em; color:var(--fg);}
   .brand .dot{width:26px; height:26px; border-radius:7px; background:linear-gradient(135deg,var(--accent),var(--accent2)); display:inline-block;}
   .nav a.small{color:var(--muted); font-size:.9rem; font-weight:500;}
+  .navbar{position:sticky; top:0; z-index:50; backdrop-filter:saturate(180%) blur(12px); -webkit-backdrop-filter:saturate(180%) blur(12px); background:color-mix(in srgb,var(--bg) 80%,transparent); border-bottom:1px solid var(--border);}
+  .nav-right{display:flex; align-items:center; gap:16px;}
+  .btn-nav{background:linear-gradient(135deg,var(--accent),var(--accent2)); color:#fff; font-size:.85rem; font-weight:650; padding:8px 15px; border-radius:10px; white-space:nowrap;}
+  .btn-nav:hover{transform:translateY(-1px); transition:transform .15s;}
+  @media (max-width:430px){ .nav a.small{display:none;} }
 
   /* hero */
   .hero{text-align:center; padding:56px 24px 36px;}
@@ -105,10 +110,15 @@
 </style>
 </head>
 <body>
-  <nav class="nav">
-    <span class="brand"><span class="dot"></span> Helmward</span>
-    <a class="small" href="../">MW Supply Limited</a>
-  </nav>
+  <div class="navbar">
+    <nav class="nav">
+      <span class="brand"><span class="dot"></span> Helmward</span>
+      <span class="nav-right">
+        <a class="small" href="../">MW Supply Limited</a>
+        <a class="btn-nav" href="Helmward-Host.dmg" download>Download for Mac ↓</a>
+      </span>
+    </nav>
+  </div>
 
   <header class="hero">
     <svg class="hero-art" viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -151,7 +161,7 @@
         <svg class="ico" viewBox="0 0 48 48" fill="none"><rect x="6" y="11" width="36" height="24" rx="3" stroke="url(#g)" stroke-width="3"/><path d="M3 39h42" stroke="url(#g)" stroke-width="3" stroke-linecap="round"/></svg>
         <h3>Helmward Host</h3>
         <p>The free app on the Mac you connect <em>to</em>. A notarized direct download — Apple's sandbox doesn't allow screen control on the App Store.</p>
-        <span class="tag">Download above</span>
+        <a class="tag" href="Helmward-Host.dmg" download style="text-decoration:none;">↓ Download free</a>
       </div>
     </div>
   </section>
@@ -174,7 +184,7 @@
     <p class="eyebrow">Get started</p>
     <h2>Connected in three steps</h2>
     <div class="steps">
-      <div class="step"><span class="n">1</span><div><h3>Install Helmward Host on your Mac</h3><p>Download it above, open it, and grant Screen Recording + Accessibility when asked (a one-time macOS step). Sign in to your account.</p></div></div>
+      <div class="step"><span class="n">1</span><div><h3>Install Helmward Host on your Mac</h3><p>Open it and grant Screen Recording + Accessibility when asked (a one-time macOS step), then sign in to your account.</p><a class="btn btn-primary" href="Helmward-Host.dmg" download style="margin-top:12px; padding:11px 20px; font-size:.92rem;">Download Helmward Host ↓</a></div></div>
       <div class="step"><span class="n">2</span><div><h3>Get Helmward on your iPhone or iPad</h3><p>From the App Store, then sign in to the <em>same</em> account.</p></div></div>
       <div class="step"><span class="n">3</span><div><h3>Tap your Mac and connect</h3><p>Your Mac appears under "My Macs." Tap it, enter the password shown on the Mac, and you're in control. (Or connect manually by Host ID on any network.)</p></div></div>
     </div>
