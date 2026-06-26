@@ -1,13 +1,13 @@
 {
   "normal": {
     "version": "1.0",
-    "build": 14,
+    "build": 15,
     "url": "https://mwsupplylimited.github.io/helmward/Helmward-Host.dmg",
-    "notes": "Adds an instant local-pointer dot when controlling another Mac, so you see where you're pointing with zero lag while the remote cursor catches up."
+    "notes": "New: choose a streaming quality mode (Data Saver / Smooth / Balanced / Sharp / Maximum) right from the session toolbar \u2014 changes apply instantly."
   },
   "beta": {
     "version": "1.0",
-    "build": 14,
+    "build": 15,
     "url": "https://mwsupplylimited.github.io/helmward/Helmward-Host.dmg",
     "notes": "Beta channel \u2014 newest features first, less tested."
   }
