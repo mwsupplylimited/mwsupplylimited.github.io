@@ -1,13 +1,13 @@
 {
   "normal": {
     "version": "1.0",
-    "build": 17,
+    "build": 18,
     "url": "https://mwsupplylimited.github.io/helmward/Helmward-Host.dmg",
-    "notes": "New: choose a streaming quality mode (Data Saver / Smooth / Balanced / Sharp / Maximum) right from the session toolbar \u2014 changes apply instantly."
+    "notes": "Saves battery: the host no longer encodes video while nobody is connected."
   },
   "beta": {
     "version": "1.0",
-    "build": 17,
+    "build": 18,
     "url": "https://mwsupplylimited.github.io/helmward/Helmward-Host.dmg",
     "notes": "Beta channel \u2014 newest features first, less tested."
   }
