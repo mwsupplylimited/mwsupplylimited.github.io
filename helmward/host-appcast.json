@@ -1,13 +1,13 @@
 {
   "normal": {
     "version": "1.0",
-    "build": 6,
+    "build": 7,
     "url": "https://mwsupplylimited.github.io/helmward/Helmward-Host.dmg",
-    "notes": "Mac-to-Mac control now feels like a desktop session: one cursor (your local pointer hides so you see only the controlled Mac's cursor following you), absolute, no modes."
+    "notes": "Setup no longer gets stuck: Screen Recording is detected the moment you grant it (no relaunch needed), and Continue is never blocked."
   },
   "beta": {
     "version": "1.0",
-    "build": 6,
+    "build": 7,
     "url": "https://mwsupplylimited.github.io/helmward/Helmward-Host.dmg",
     "notes": "Beta channel — newest features first, less tested."
   }
