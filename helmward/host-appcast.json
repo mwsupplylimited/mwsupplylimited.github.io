@@ -1,13 +1,13 @@
 {
   "normal": {
     "version": "1.0",
-    "build": 13,
+    "build": 14,
     "url": "https://mwsupplylimited.github.io/helmward/Helmward-Host.dmg",
-    "notes": "Same-account Macs now connect with NO password (passwordless pairing), plus all Mac-to-Mac cursor/keyboard fixes."
+    "notes": "Adds an instant local-pointer dot when controlling another Mac, so you see where you're pointing with zero lag while the remote cursor catches up."
   },
   "beta": {
     "version": "1.0",
-    "build": 13,
+    "build": 14,
     "url": "https://mwsupplylimited.github.io/helmward/Helmward-Host.dmg",
     "notes": "Beta channel \u2014 newest features first, less tested."
   }
