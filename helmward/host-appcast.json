@@ -1,13 +1,13 @@
 {
   "normal": {
     "version": "1.0",
-    "build": 11,
+    "build": 12,
     "url": "https://mwsupplylimited.github.io/helmward/Helmward-Host.dmg",
-    "notes": "Mac-to-Mac: the controlled Mac's cursor now follows your cursor on plain hover (no need to hold the mouse button)."
+    "notes": "Mac-to-Mac: the controlled Mac's cursor follows your cursor on plain hover (no button needed), plus reliability hardening for input control."
   },
   "beta": {
     "version": "1.0",
-    "build": 11,
+    "build": 12,
     "url": "https://mwsupplylimited.github.io/helmward/Helmward-Host.dmg",
     "notes": "Beta channel \u2014 newest features first, less tested."
   }
