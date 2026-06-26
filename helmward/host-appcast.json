@@ -1,13 +1,13 @@
 {
   "normal": {
     "version": "1.0",
-    "build": 4,
+    "build": 5,
     "url": "https://mwsupplylimited.github.io/helmward/Helmward-Host.dmg",
-    "notes": "Mac-to-Mac control: the controlled Mac's cursor now follows yours, and the keyboard drives the remote while Helmward is focused."
+    "notes": "Mac-to-Mac: a Mac you disconnect from no longer lingers as offline — My Macs stays live. Plus cursor-follow + keyboard control."
   },
   "beta": {
     "version": "1.0",
-    "build": 4,
+    "build": 5,
     "url": "https://mwsupplylimited.github.io/helmward/Helmward-Host.dmg",
     "notes": "Beta channel — newest features first, less tested."
   }
