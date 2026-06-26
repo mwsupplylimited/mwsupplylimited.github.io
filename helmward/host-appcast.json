@@ -1,13 +1,13 @@
 {
   "normal": {
     "version": "1.0",
-    "build": 7,
+    "build": 8,
     "url": "https://mwsupplylimited.github.io/helmward/Helmward-Host.dmg",
-    "notes": "Setup no longer gets stuck: Screen Recording is detected the moment you grant it (no relaunch needed), and Continue is never blocked."
+    "notes": "Mac-to-Mac control rebuilt to reliably capture your mouse + keyboard, with on-screen counters so any remaining issue is obvious at a glance."
   },
   "beta": {
     "version": "1.0",
-    "build": 7,
+    "build": 8,
     "url": "https://mwsupplylimited.github.io/helmward/Helmward-Host.dmg",
     "notes": "Beta channel — newest features first, less tested."
   }
