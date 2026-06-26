@@ -1,14 +1,14 @@
 {
   "normal": {
     "version": "1.0",
-    "build": 8,
+    "build": 9,
     "url": "https://mwsupplylimited.github.io/helmward/Helmward-Host.dmg",
-    "notes": "Mac-to-Mac control rebuilt to reliably capture your mouse + keyboard, with on-screen counters so any remaining issue is obvious at a glance."
+    "notes": "Mac-to-Mac control: pointer no longer dropped before the video sizes; reliable capture + on-screen counters. If the controlled Mac shows 'Accessibility is OFF', use Reset & re-enable."
   },
   "beta": {
     "version": "1.0",
-    "build": 8,
+    "build": 9,
     "url": "https://mwsupplylimited.github.io/helmward/Helmward-Host.dmg",
-    "notes": "Beta channel — newest features first, less tested."
+    "notes": "Beta channel \u2014 newest features first, less tested."
   }
 }
