@@ -1,13 +1,13 @@
 {
   "normal": {
     "version": "1.0",
-    "build": 20,
+    "build": 21,
     "url": "https://mwsupplylimited.github.io/helmward/Helmward-Host.dmg",
     "notes": "Relay is now Pro-only (cost control)."
   },
   "beta": {
     "version": "1.0",
-    "build": 20,
+    "build": 21,
     "url": "https://mwsupplylimited.github.io/helmward/Helmward-Host.dmg",
     "notes": "Beta channel \u2014 newest features first, less tested."
   }
