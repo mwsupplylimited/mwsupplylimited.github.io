@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Overhand — control your Mac from your iPhone, privately</title>
-<meta name="description" content="Overhand is a private, Apple-native remote desktop: leave your Mac at home and see + control it from your iPhone, iPad, or another Mac. End-to-end encrypted, with the Mac's audio on your phone.">
+<meta name="description" content="Overhand is a private, Apple-native remote desktop. It comes in two parts: Overhand on your iPhone/iPad, and the free Overhand Host on the Mac you want to control. End-to-end encrypted, with the Mac's audio on your phone.">
 <style>
   :root{
     --bg:#ffffff; --fg:#10131a; --muted:#5b6472; --faint:#8a93a3;
@@ -42,7 +42,7 @@
   @keyframes p{70%{box-shadow:0 0 0 7px rgba(52,199,89,0)}100%{box-shadow:0 0 0 0 rgba(52,199,89,0)}}
   h1{font-size:clamp(2.1rem,5.5vw,3.4rem); line-height:1.08; letter-spacing:-.03em; margin:0 0 16px; font-weight:800;}
   h1 .grad{background:linear-gradient(120deg,var(--accent),var(--accent2)); -webkit-background-clip:text; background-clip:text; color:transparent;}
-  .lede{font-size:clamp(1.05rem,2.4vw,1.3rem); color:var(--muted); max-width:620px; margin:0 auto 30px;}
+  .lede{font-size:clamp(1.05rem,2.4vw,1.3rem); color:var(--muted); max-width:640px; margin:0 auto 30px;}
   .cta{display:flex; gap:14px; justify-content:center; flex-wrap:wrap;}
   .btn{display:inline-flex; align-items:center; gap:9px; padding:14px 24px; border-radius:13px; font-weight:650; font-size:1rem; border:1px solid transparent; cursor:pointer;}
   .btn-primary{background:linear-gradient(135deg,var(--accent),var(--accent2)); color:#fff; box-shadow:0 8px 24px rgba(67,97,238,.35);}
@@ -54,17 +54,21 @@
   section{padding:46px 0;}
   .eyebrow{text-align:center; color:var(--accent); font-weight:700; font-size:.8rem; letter-spacing:.08em; text-transform:uppercase; margin:0 0 10px;}
   h2{font-size:clamp(1.5rem,3.4vw,2.1rem); text-align:center; letter-spacing:-.02em; margin:0 0 8px; font-weight:750;}
-  .sec-sub{text-align:center; color:var(--muted); max-width:600px; margin:0 auto 34px;}
+  .sec-sub{text-align:center; color:var(--muted); max-width:640px; margin:0 auto 34px;}
 
   /* the two parts */
   .pair{display:grid; grid-template-columns:1fr auto 1fr; gap:18px; align-items:stretch; max-width:760px; margin:0 auto;}
-  .pcard{background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:26px; text-align:center; box-shadow:var(--shadow);}
+  .pcard{background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:26px; text-align:center; box-shadow:var(--shadow); position:relative;}
+  .pcard.host{border-color:color-mix(in srgb,var(--accent) 55%,var(--border)); box-shadow:0 10px 34px rgba(67,97,238,.18);}
   .pcard .ico{width:54px;height:54px;margin:0 auto 14px;}
   .pcard h3{margin:0 0 4px; font-size:1.15rem;}
+  .pcard .role{display:block; font-size:.74rem; font-weight:700; letter-spacing:.05em; text-transform:uppercase; color:var(--faint); margin-bottom:10px;}
   .pcard p{margin:0; color:var(--muted); font-size:.94rem;}
-  .pcard .tag{display:inline-block; margin-top:12px; font-size:.78rem; font-weight:600; color:var(--accent); background:color-mix(in srgb,var(--accent) 12%,transparent); padding:4px 11px; border-radius:999px;}
+  .pcard .tag{display:inline-block; margin-top:14px; font-size:.78rem; font-weight:600; color:var(--accent); background:color-mix(in srgb,var(--accent) 12%,transparent); padding:5px 12px; border-radius:999px;}
+  .pcard .req{position:absolute; top:-11px; left:50%; transform:translateX(-50%); white-space:nowrap; font-size:.72rem; font-weight:700; letter-spacing:.03em; color:#fff; background:linear-gradient(135deg,var(--accent),var(--accent2)); padding:4px 12px; border-radius:999px;}
   .arrow{display:flex; align-items:center; justify-content:center; color:var(--faint); font-weight:700;}
   @media (max-width:620px){ .pair{grid-template-columns:1fr;} .arrow{transform:rotate(90deg); padding:2px 0;} }
+  .pairnote{max-width:620px; margin:22px auto 0; text-align:center; color:var(--muted); font-size:.92rem; background:var(--card); border:1px solid var(--border); border-radius:14px; padding:14px 18px;}
 
   /* features */
   .grid{display:grid; grid-template-columns:repeat(3,1fr); gap:16px;}
@@ -79,6 +83,7 @@
   /* steps */
   .steps{max-width:680px; margin:0 auto; display:grid; gap:14px;}
   .step{display:flex; gap:18px; align-items:flex-start; background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:22px 24px;}
+  .step.key{border-color:color-mix(in srgb,var(--accent) 50%,var(--border)); box-shadow:0 8px 26px rgba(67,97,238,.14);}
   .step .n{flex:none; width:34px;height:34px;border-radius:50%; background:linear-gradient(135deg,var(--accent),var(--accent2)); color:#fff; font-weight:700; display:flex;align-items:center;justify-content:center;}
   .step h3{margin:0 0 3px; font-size:1.05rem;}
   .step p{margin:0; color:var(--muted); font-size:.93rem;}
@@ -115,7 +120,7 @@
       <span class="brand"><span class="dot"></span> Overhand</span>
       <span class="nav-right">
         <a class="small" href="../">MW Supply Limited</a>
-        <a class="btn-nav" href="Helmward-Host.dmg" download>Download for Mac ↓</a>
+        <a class="btn-nav" href="Helmward-Host.dmg" download>Get Overhand Host ↓</a>
       </span>
     </nav>
   </div>
@@ -137,33 +142,37 @@
     </svg>
     <span class="badge"><span class="pulse"></span> End-to-end encrypted · Apple-native</span>
     <h1>Your Mac, in your pocket.<br><span class="grad">Private remote control.</span></h1>
-    <p class="lede">Leave your Mac at home and see &amp; control its full screen — and hear its audio — from your iPhone, iPad, or another Mac. No accounts to harvest, no "commercial use" lockouts, no session timers.</p>
+    <p class="lede">See, hear &amp; control your Mac from your iPhone, iPad, or another Mac — end-to-end encrypted. Overhand comes in <strong>two parts, and you need both</strong>: <strong>Overhand</strong> on the device you control <em>from</em>, and the free <strong>Overhand&nbsp;Host</strong> on the Mac you want to reach.</p>
     <div class="cta">
-      <a class="btn btn-primary" href="https://apps.apple.com/app/id6782744454">Get Overhand on the App Store</a>
-      <a class="btn btn-ghost" href="Helmward-Host.dmg" download>Download Overhand for Mac ↓</a>
+      <a class="btn btn-primary" href="https://apps.apple.com/app/id6782744454">Get Overhand — iPhone &amp; iPad</a>
+      <a class="btn btn-ghost" href="Helmward-Host.dmg" download>Download Overhand Host — Mac ↓</a>
     </div>
-    <p class="hero-note">Free · Mac Host is signed &amp; notarized by Apple · macOS 14+ · iOS 17+</p>
+    <p class="hero-note">Free · Overhand Host is signed &amp; notarized by Apple · macOS 14+ · iOS 17+</p>
   </header>
 
-  <section>
-    <p class="eyebrow">How it pairs</p>
-    <h2>Two simple parts</h2>
-    <p class="sec-sub">Like every remote-desktop tool, software runs on both ends: the remote control on your phone, and a small host on the Mac you want to reach.</p>
+  <section class="wrap">
+    <p class="eyebrow">Start here</p>
+    <h2>Overhand is two apps — install both</h2>
+    <p class="sec-sub">Like every remote-desktop tool, software runs on <em>both</em> ends. To control a Mac, you must install the free <strong>Overhand Host</strong> on that Mac first — the iPhone/iPad app connects <em>to</em> it. There's nothing to connect to without it.</p>
     <div class="pair">
       <div class="pcard">
         <svg class="ico" viewBox="0 0 48 48" fill="none"><rect x="13" y="4" width="22" height="40" rx="5" stroke="url(#g)" stroke-width="3"/><rect x="17" y="9" width="14" height="26" rx="1.5" fill="url(#g)" opacity=".18"/></svg>
+        <span class="role">You control from this</span>
         <h3>Overhand</h3>
-        <p>The remote control — on your iPhone &amp; iPad (and a Mac viewer). This is what you tap to see and drive your Mac.</p>
-        <span class="tag">App Store</span>
+        <p>On your iPhone or iPad (or another Mac). The remote control you tap to see and drive your Mac.</p>
+        <a class="tag" href="https://apps.apple.com/app/id6782744454">App Store · free</a>
       </div>
       <div class="arrow">→</div>
-      <div class="pcard">
+      <div class="pcard host">
+        <span class="req">Required on the Mac</span>
         <svg class="ico" viewBox="0 0 48 48" fill="none"><rect x="6" y="11" width="36" height="24" rx="3" stroke="url(#g)" stroke-width="3"/><path d="M3 39h42" stroke="url(#g)" stroke-width="3" stroke-linecap="round"/></svg>
-        <h3>Overhand</h3>
-        <p>The free app on the Mac you connect <em>to</em>. A notarized direct download — Apple's sandbox doesn't allow screen control on the App Store.</p>
+        <span class="role">Install on the Mac you control</span>
+        <h3>Overhand Host</h3>
+        <p>The free app you install on the Mac you want to reach. A notarized direct download — Apple's App Store can't allow whole-Mac control, so it isn't in the store.</p>
         <a class="tag" href="Helmward-Host.dmg" download style="text-decoration:none;">↓ Download free</a>
       </div>
     </div>
+    <p class="pairnote"><strong>Controlling one Mac from another Mac?</strong> Install <strong>Overhand Host</strong> on <em>both</em> Macs — one shares its screen, the other does the controlling. (You don't need the iPhone app for Mac-to-Mac.)</p>
   </section>
 
   <section class="wrap">
@@ -184,7 +193,7 @@
     <p class="eyebrow">Get started</p>
     <h2>Connected in three steps</h2>
     <div class="steps">
-      <div class="step"><span class="n">1</span><div><h3>Install Overhand on your Mac</h3><p>Open it and grant Screen Recording + Accessibility when asked (a one-time macOS step), then sign in to your account.</p><a class="btn btn-primary" href="Helmward-Host.dmg" download style="margin-top:12px; padding:11px 20px; font-size:.92rem;">Download Overhand ↓</a></div></div>
+      <div class="step key"><span class="n">1</span><div><h3>Install Overhand Host on the Mac you want to control</h3><p>Download it, open it, and grant Screen Recording + Accessibility when asked (a one-time macOS step). Then sign in to your account. <strong>This is the step people miss — without Overhand Host on the Mac, there's nothing to connect to.</strong></p><a class="btn btn-primary" href="Helmward-Host.dmg" download style="margin-top:12px; padding:11px 20px; font-size:.92rem;">Download Overhand Host ↓</a></div></div>
       <div class="step"><span class="n">2</span><div><h3>Get Overhand on your iPhone or iPad</h3><p>From the App Store, then sign in to the <em>same</em> account.</p></div></div>
       <div class="step"><span class="n">3</span><div><h3>Tap your Mac and connect</h3><p>Your Mac appears under "My Macs." Tap it, enter the password shown on the Mac, and you're in control. (Or connect manually by Host ID on any network.)</p></div></div>
     </div>
@@ -214,7 +223,8 @@
     <p class="eyebrow">Questions</p>
     <h2>FAQ</h2>
     <div class="faq">
-      <details><summary>Why is there a separate Mac app?</summary><p>To control a whole Mac, the host needs Screen Recording, Accessibility, and a background helper — capabilities Apple's App Sandbox forbids, and every App Store app must be sandboxed. So the Mac host ships as a notarized direct download (just like TeamViewer, AnyDesk, and Chrome Remote Desktop). The iPhone app is the remote control, which is the right place for it.</p></details>
+      <details open><summary>What do I install, and where?</summary><p>Two apps. On the <strong>Mac you want to control</strong>, install <strong>Overhand Host</strong> — the free download on this page. On the <strong>iPhone or iPad</strong> you'll use as the remote, install <strong>Overhand</strong> from the App Store. Sign both in to the same account and your Mac appears automatically. To control one Mac from another Mac, install <strong>Overhand Host</strong> on both — you don't need the iPhone app for that.</p></details>
+      <details><summary>Why is there a separate Mac app (Overhand Host)?</summary><p>To control a whole Mac, the host needs Screen Recording, Accessibility, and a background helper — capabilities Apple's App Sandbox forbids, and every App Store app must be sandboxed. So Overhand Host ships as a notarized direct download (just like TeamViewer, AnyDesk, and Chrome Remote Desktop). The iPhone app is the remote control, which is the right place for it.</p></details>
       <details><summary>Is it secure?</summary><p>Yes. The screen, audio, and control data are end-to-end encrypted between your own devices. Pairing is protected by a password shown on your Mac — knowing the Host ID alone is not enough to connect.</p></details>
       <details><summary>Can I control my iPhone from my Mac?</summary><p>Overhand controls Macs. Because of Apple platform restrictions, an iPhone or iPad can connect out to a computer but cannot itself be remotely controlled.</p></details>
       <details><summary>Does it work over cellular?</summary><p>Yes — it's designed for exactly that. It connects over cellular or any Wi‑Fi, finding the most direct path and falling back to a secure relay when networks are strict.</p></details>
@@ -224,7 +234,7 @@
   </section>
 
   <footer>
-    <div><a href="Helmward-Host.dmg" download>Download Mac Host</a> · <a href="privacy.html">Privacy</a> · <a href="mailto:mwsupplylimited@gmail.com?subject=Overhand%20support">Support</a></div>
+    <div><a href="Helmward-Host.dmg" download>Download Overhand Host</a> · <a href="https://apps.apple.com/app/id6782744454">Overhand on the App Store</a> · <a href="privacy.html">Privacy</a> · <a href="mailto:mwsupplylimited@gmail.com?subject=Overhand%20support">Support</a></div>
     <p style="margin-top:14px;">&copy; 2026 MW Supply Limited</p>
   </footer>
 </body>
