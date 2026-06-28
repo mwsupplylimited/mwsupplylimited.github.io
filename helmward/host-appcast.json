@@ -1,4 +1,4 @@
 {
-  "normal": { "version": "1.0", "build": 27, "url": "https://mwsupplylimited.github.io/helmward/Overhand-Host.dmg", "notes": "The app is now named Overhand Host." },
-  "beta": { "version": "1.0", "build": 27, "url": "https://mwsupplylimited.github.io/helmward/Overhand-Host.dmg", "notes": "Beta channel — newest features first, less tested." }
+  "normal": { "version": "1.0", "build": 28, "url": "https://mwsupplylimited.github.io/helmward/Overhand-Host.dmg", "notes": "Relay-data usage metering." },
+  "beta": { "version": "1.0", "build": 28, "url": "https://mwsupplylimited.github.io/helmward/Overhand-Host.dmg", "notes": "Beta channel — newest features first, less tested." }
 }
