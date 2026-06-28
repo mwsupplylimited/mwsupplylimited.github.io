@@ -1,4 +1,4 @@
 {
-  "normal": { "version": "1.0", "build": 25, "url": "https://mwsupplylimited.github.io/helmward/Helmward-Host.dmg", "notes": "The app now says “Overhand Host” consistently throughout." },
-  "beta": { "version": "1.0", "build": 25, "url": "https://mwsupplylimited.github.io/helmward/Helmward-Host.dmg", "notes": "Beta channel — newest features first, less tested." }
+  "normal": { "version": "1.0", "build": 26, "url": "https://mwsupplylimited.github.io/helmward/Helmward-Host.dmg", "notes": "Auto-updater reliability improvements." },
+  "beta": { "version": "1.0", "build": 26, "url": "https://mwsupplylimited.github.io/helmward/Helmward-Host.dmg", "notes": "Beta channel — newest features first, less tested." }
 }
