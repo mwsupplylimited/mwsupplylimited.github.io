@@ -1,4 +1,4 @@
 {
-  "normal": { "version": "1.0", "build": 31, "url": "https://mwsupplylimited.github.io/helmward/Overhand-Host.dmg", "notes": "Reliability fixes for a black screen after the controlling app is backgrounded and reopened." },
-  "beta": { "version": "1.0", "build": 31, "url": "https://mwsupplylimited.github.io/helmward/Overhand-Host.dmg", "notes": "Beta channel — newest features first, less tested." }
+  "normal": { "version": "1.0", "build": 33, "url": "https://mwsupplylimited.github.io/helmward/Overhand-Host.dmg", "notes": "Buy relay data or upgrade to Pro by card, right from the Mac app." },
+  "beta": { "version": "1.0", "build": 33, "url": "https://mwsupplylimited.github.io/helmward/Overhand-Host.dmg", "notes": "Beta channel — newest features first, less tested." }
 }
