@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Relay data &amp; Pro · Overhand</title>
+<style>
+  :root { --bg:#0b0c10; --card:#15171e; --line:#262a36; --fg:#f2f4f8; --mut:#9aa3b2; --accent:#5b8cff; }
+  @media (prefers-color-scheme: light) { :root { --bg:#f6f7fb; --card:#fff; --line:#e6e8ef; --fg:#11141a; --mut:#5b6472; --accent:#2f6bff; } }
+  * { box-sizing:border-box; } body { margin:0; background:var(--bg); color:var(--fg);
+    font:16px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; }
+  main { max-width:560px; margin:0 auto; padding:40px 20px 60px; }
+  h1 { font-size:28px; margin:0 0 6px; } .sub { color:var(--mut); margin:0 0 22px; }
+  .acct { font-size:13px; color:var(--mut); background:var(--card); border:1px solid var(--line);
+    border-radius:10px; padding:10px 14px; margin-bottom:22px; word-break:break-all; }
+  .acct.bad { color:#ff6b6b; border-color:#ff6b6b55; }
+  .group-title { font-size:13px; text-transform:uppercase; letter-spacing:.04em; color:var(--mut);
+    margin:26px 4px 10px; }
+  a.card { display:flex; align-items:center; gap:14px; text-decoration:none; color:inherit;
+    background:var(--card); border:1px solid var(--line); border-radius:14px; padding:16px 18px; margin-bottom:10px;
+    transition:border-color .15s, transform .05s; }
+  a.card:hover { border-color:var(--accent); } a.card:active { transform:scale(.99); }
+  a.card[aria-disabled="true"] { opacity:.45; pointer-events:none; }
+  .ic { width:40px;height:40px;border-radius:10px;background:color-mix(in srgb,var(--accent) 16%,transparent);
+    display:grid;place-items:center;font-size:20px;flex:none; }
+  .grow { flex:1; } .name { font-weight:650; } .desc { font-size:13px; color:var(--mut); }
+  .price { font-weight:700; color:var(--accent); white-space:nowrap; }
+  .note { font-size:12px; color:var(--mut); margin-top:24px; }
+  .note a { color:var(--accent); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Relay data &amp; Pro</h1>
+  <p class="sub">Top up “connect from anywhere” relay data, or subscribe to Overhand Pro — paid by card, applied to your Overhand account.</p>
+  <div id="acct" class="acct"></div>
+
+  <div class="group-title">Relay data packs (one-time)</div>
+  <a class="card" data-link="data5"><div class="ic">💾</div><div class="grow"><div class="name">5 GB relay data</div><div class="desc">One-time top-up</div></div><div class="price">$4.99</div></a>
+  <a class="card" data-link="data15"><div class="ic">💾</div><div class="grow"><div class="name">15 GB relay data</div><div class="desc">One-time top-up</div></div><div class="price">$12.99</div></a>
+  <a class="card" data-link="data50"><div class="ic">💾</div><div class="grow"><div class="name">50 GB relay data</div><div class="desc">One-time top-up</div></div><div class="price">$39.99</div></a>
+
+  <div class="group-title">Overhand Pro (subscription)</div>
+  <a class="card" data-link="proMonthly"><div class="ic">⭐</div><div class="grow"><div class="name">Pro — Monthly</div><div class="desc">Unlimited Macs · ad-free · 50 GB/mo relay</div></div><div class="price">$19.99/mo</div></a>
+  <a class="card" data-link="proYearly"><div class="ic">⭐</div><div class="grow"><div class="name">Pro — Yearly</div><div class="desc">Unlimited Macs · ad-free · 50 GB/mo relay</div></div><div class="price">$149/yr</div></a>
+
+  <p class="note">Only relayed (“connect from anywhere”) traffic uses data — same-network and direct connections are always unlimited. Purchases apply to the Overhand account shown above and sync to your iPhone and every Mac. <a href="privacy.html">Privacy</a></p>
+</main>
+<script>
+  // ===================== CONFIG: paste your Stripe Payment Link URLs here =====================
+  // Create each product in the Stripe Dashboard (Products), add a Payment Link, and paste its URL below.
+  // For the data packs, set the price/link metadata key `gb` = 5 / 15 / 50 so the webhook credits the right
+  // amount. The page appends ?client_reference_id=<account> automatically so the purchase lands on the right
+  // account. Leave a value as "" to grey that option out.
+  const LINKS = {
+    data5:      "",   // e.g. https://buy.stripe.com/xxxxxxxx   (metadata gb=5)
+    data15:     "",   // metadata gb=15
+    data50:     "",   // metadata gb=50
+    proMonthly: "",   // subscription price $19.99/mo
+    proYearly:  "",   // subscription price $149/yr
+  };
+  // ===========================================================================================
+  const p = new URLSearchParams(location.search);
+  const acct = (p.get("acct") || "").trim();
+  const email = (p.get("email") || "").trim();
+  const acctEl = document.getElementById("acct");
+  if (acct) {
+    acctEl.textContent = "Account: " + (email || acct);
+  } else {
+    acctEl.textContent = "Open this page from the Overhand app (Mac) so your purchase applies to your account.";
+    acctEl.classList.add("bad");
+  }
+  document.querySelectorAll("a.card").forEach((el) => {
+    const base = LINKS[el.dataset.link];
+    if (!base || !acct) { el.setAttribute("aria-disabled", "true"); el.removeAttribute("href"); return; }
+    const sep = base.includes("?") ? "&" : "?";
+    let url = base + sep + "client_reference_id=" + encodeURIComponent(acct);
+    if (email) url += "&prefilled_email=" + encodeURIComponent(email);
+    el.setAttribute("href", url);
+  });
+</script>
+</body>
+</html>
