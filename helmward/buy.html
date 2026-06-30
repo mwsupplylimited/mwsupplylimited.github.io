@@ -53,12 +53,14 @@
   // amount. The page appends ?client_reference_id=<account> automatically so the purchase lands on the right
   // account. Leave a value as "" to grey that option out.
   const LINKS = {
-    data5:      "",   // e.g. https://buy.stripe.com/xxxxxxxx   (metadata gb=5)
-    data15:     "",   // metadata gb=15
-    data50:     "",   // metadata gb=50
-    proMonthly: "",   // subscription price $19.99/mo
-    proYearly:  "",   // subscription price $149/yr
+    data5:      "https://buy.stripe.com/test_cNicN75Xd4ZGcC82RFao800",   // metadata gb=5
+    data15:     "https://buy.stripe.com/test_14A6oJ0CT3VC8lS2RFao801",   // metadata gb=15
+    data50:     "https://buy.stripe.com/test_5kQbJ35Xd63K7hOak7ao802",   // metadata gb=50
+    proMonthly: "https://buy.stripe.com/test_00w9AV5XdeAgau03VJao803",   // Pro $19.99/mo
+    proYearly:  "https://buy.stripe.com/test_bJe00ladt77O7hO2RFao804",   // Pro $149/yr
   };
+  // NOTE: these are Stripe TEST links (test_…). When you go live, re-run tools/setup_stripe.py with your
+  // sk_live_ key, paste the new live URLs here, and update the Worker secrets to live values.
   // ===========================================================================================
   const p = new URLSearchParams(location.search);
   const acct = (p.get("acct") || "").trim();
