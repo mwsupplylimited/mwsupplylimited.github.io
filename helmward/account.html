@@ -87,6 +87,14 @@
         <div class="row"><span class="mut">Internet data this month</span><b>${used} / ${limit} GB</b></div>
         <p class="mut sm">Everything over the internet counts — direct or relay, at the same rate. Same-network (Wi-Fi/LAN) connections are free, and nothing counts while no one is connected.</p>
         <a class="btn" href="buy.html?acct=${encodeURIComponent(acct)}&email=${encodeURIComponent(email)}">Buy internet data or go Pro</a>
+        ${isPro ? `<button id="portal" class="btn ghost">Manage subscription</button><div id="porterr" class="mut sm"></div>` : ``}
+      </div>
+      <div class="card col">
+        <b>Change email</b>
+        <input id="nem" type="email" placeholder="New email" autocomplete="email">
+        <input id="ecur" type="password" placeholder="Current password" autocomplete="current-password">
+        <div id="eerr" class="err"></div><div id="eok" class="ok"></div>
+        <button id="chgem" class="btn ghost">Change email</button>
       </div>
       <div class="card col">
         <b>Change password</b>
@@ -97,7 +105,30 @@
       </div>
       <button id="out" class="btn ghost">Sign out</button>`;
     $("chg").onclick = doChangePw;
+    $("chgem").onclick = doChangeEmail;
+    if (isPro && $("portal")) $("portal").onclick = doPortal;
     $("out").onclick = signOut;
+  }
+  async function doChangeEmail() {
+    $("eerr").textContent = ""; $("eok").textContent = "";
+    try {
+      const r = await api("POST", "/v1/auth/change-email", { newEmail: $("nem").value.trim(), currentPassword: $("ecur").value }, true);
+      email = r.email || $("nem").value.trim(); sessionStorage.setItem("oh_email", email);
+      $("eok").textContent = "Email changed. Sign in with it on your other devices.";
+      $("nem").value = ""; $("ecur").value = ""; render();
+    } catch (e) { $("eerr").textContent = e.message; }
+  }
+  async function doPortal() {
+    $("porterr").textContent = "Opening…";
+    try {
+      const r = await api("POST", "/v1/stripe/portal", { returnUrl: location.href }, true);
+      if (r && r.url) { location.href = r.url; return; }
+      $("porterr").textContent = "Couldn't open the billing portal.";
+    } catch (e) {
+      $("porterr").textContent = (e.message || "").includes("card subscription")
+        ? "This Pro was bought on the App Store — manage it on your iPhone (Settings → your name → Subscriptions)."
+        : e.message;
+    }
   }
   async function doChangePw() {
     $("perr").textContent = ""; $("pok").textContent = "";
