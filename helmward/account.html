@@ -47,7 +47,7 @@
     if (!r.ok) { const e = new Error(data.error || ("Request failed (" + r.status + ")")); e.status = r.status; throw e; }
     return data;
   }
-  const gb = (b) => (Number(b) / 1e9).toFixed(1);
+  const gb = (b) => (Number(b) / 1e9).toFixed(3);   // 3 decimals so small usage (0.003 GB) is visible
 
   function render() { token ? renderAccount() : renderLogin(); }
 
