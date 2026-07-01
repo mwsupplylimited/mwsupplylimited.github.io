@@ -1,4 +1,4 @@
 {
-  "normal": { "version": "1.0", "build": 34, "url": "https://mwsupplylimited.github.io/helmward/Overhand-Host.dmg", "notes": "Your relay-data usage and limit now always show on the Host — signed in or not." },
-  "beta": { "version": "1.0", "build": 34, "url": "https://mwsupplylimited.github.io/helmward/Overhand-Host.dmg", "notes": "Beta channel — newest features first, less tested." }
+  "normal": { "version": "1.0", "build": 35, "url": "https://mwsupplylimited.github.io/helmward/Overhand-Host.dmg", "notes": "Account sign-in is now at the top of the window; change your password from the Host; fixes a black screen on connect." },
+  "beta":   { "version": "1.0", "build": 35, "url": "https://mwsupplylimited.github.io/helmward/Overhand-Host.dmg", "notes": "Beta channel." }
 }
