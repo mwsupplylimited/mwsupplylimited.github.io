@@ -1,4 +1,4 @@
 {
-  "normal": { "version": "1.0", "build": 40, "url": "https://mwsupplylimited.github.io/helmward/Overhand-Host.dmg", "notes": "No more re-login after updates, plus small fixes." },
-  "beta": { "version": "1.0", "build": 40, "url": "https://mwsupplylimited.github.io/helmward/Overhand-Host.dmg", "notes": "Beta channel — newest features first, less tested." }
+  "normal": { "version": "1.0", "build": 42, "url": "https://mwsupplylimited.github.io/helmward/Overhand-Host.dmg", "notes": "Important fix: the app could fail to open after updating. Please install this version." },
+  "beta": { "version": "1.0", "build": 42, "url": "https://mwsupplylimited.github.io/helmward/Overhand-Host.dmg", "notes": "Important fix: the app could fail to open after updating." }
 }
