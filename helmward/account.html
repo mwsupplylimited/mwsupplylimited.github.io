@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your account · Overhand</title>
+<style>
+  :root { --bg:#0b0c10; --card:#15171e; --line:#262a36; --fg:#f2f4f8; --mut:#9aa3b2; --accent:#5b8cff; --ok:#3ecf8e; --err:#ff6b6b; }
+  @media (prefers-color-scheme: light) { :root { --bg:#f6f7fb; --card:#fff; --line:#e6e8ef; --fg:#11141a; --mut:#5b6472; --accent:#2f6bff; } }
+  * { box-sizing:border-box; } body { margin:0; background:var(--bg); color:var(--fg);
+    font:16px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; }
+  main { max-width:480px; margin:0 auto; padding:40px 20px 60px; }
+  h1 { font-size:26px; margin:0 0 20px; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:18px; margin-bottom:14px; }
+  .col { display:flex; flex-direction:column; gap:12px; }
+  .row { display:flex; align-items:center; justify-content:space-between; gap:12px; }
+  .mut { color:var(--mut); } .sm { font-size:13px; } b { font-weight:650; }
+  input { background:transparent; color:var(--fg); border:1px solid var(--line); border-radius:10px;
+    padding:12px 14px; font-size:16px; width:100%; }
+  input:focus { outline:none; border-color:var(--accent); }
+  .btn { display:block; text-align:center; text-decoration:none; cursor:pointer; border:none;
+    background:var(--accent); color:#fff; border-radius:10px; padding:13px 16px; font-size:16px; font-weight:650; width:100%; }
+  .btn.ghost { background:transparent; color:var(--accent); border:1px solid var(--line); }
+  .pill { font-size:12px; font-weight:700; padding:4px 10px; border-radius:999px; background:color-mix(in srgb,var(--mut) 22%,transparent); color:var(--mut); }
+  .pill.pro { background:color-mix(in srgb,var(--accent) 20%,transparent); color:var(--accent); }
+  .err { color:var(--err); font-size:14px; } .ok { color:var(--ok); font-size:14px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Your Overhand account</h1>
+  <div id="app"></div>
+</main>
+<script>
+  const API = "https://helmward-signaling.mwsupplylimited.workers.dev";
+  const $ = (id) => document.getElementById(id);
+  let token = sessionStorage.getItem("oh_token") || "";
+  let acct  = sessionStorage.getItem("oh_acct")  || "";
+  let email = sessionStorage.getItem("oh_email") || "";
+
+  async function api(method, path, body, authed) {
+    const headers = {};
+    if (body) headers["Content-Type"] = "application/json";
+    if (authed && token) headers["Authorization"] = "Bearer " + token;
+    const r = await fetch(API + path, { method, headers, body: body ? JSON.stringify(body) : undefined });
+    let data = {}; try { data = JSON.parse(await r.text()); } catch {}
+    if (!r.ok) { const e = new Error(data.error || ("Request failed (" + r.status + ")")); e.status = r.status; throw e; }
+    return data;
+  }
+  const gb = (b) => (Number(b) / 1e9).toFixed(1);
+
+  function render() { token ? renderAccount() : renderLogin(); }
+
+  function renderLogin() {
+    $("app").innerHTML = `
+      <div class="card col">
+        <p class="mut sm">Sign in with your Overhand account — the email + password you use in the app. This is <b>not</b> your Apple ID.</p>
+        <input id="email" type="email" placeholder="Email" autocomplete="username">
+        <input id="pw" type="password" placeholder="Password" autocomplete="current-password">
+        <div id="err" class="err"></div>
+        <button id="signin" class="btn">Sign In</button>
+      </div>`;
+    $("signin").onclick = doLogin;
+    $("pw").addEventListener("keydown", (e) => { if (e.key === "Enter") doLogin(); });
+  }
+  async function doLogin() {
+    $("err").textContent = "Signing in…";
+    try {
+      const r = await api("POST", "/v1/auth/login", { email: $("email").value.trim(), password: $("pw").value }, false);
+      token = r.token; acct = r.accountId; email = $("email").value.trim().toLowerCase();
+      sessionStorage.setItem("oh_token", token); sessionStorage.setItem("oh_acct", acct); sessionStorage.setItem("oh_email", email);
+      render();
+    } catch (e) { $("err").textContent = e.message; }
+  }
+
+  async function renderAccount() {
+    $("app").innerHTML = `<div class="card"><p class="mut">Loading…</p></div>`;
+    let s = null;
+    try { s = await api("GET", "/v1/relay/status", null, true); }
+    catch (e) { if (e.status === 401) return signOut(); $("app").innerHTML = `<div class="card"><p class="err">${e.message}</p></div>`; return; }
+    const isPro = !!(s && s.isPro);
+    const used = gb(s.monthlyUsedBytes);
+    const limit = gb(Number(s.monthlyUsedBytes) + Math.max(0, Number(s.monthlyLimitBytes) - Number(s.monthlyUsedBytes)) + Number(s.dataBalanceBytes));
+    $("app").innerHTML = `
+      <div class="card col">
+        <div class="row"><b>${email}</b><span class="pill ${isPro ? 'pro' : ''}">${isPro ? 'Overhand Pro' : 'Free'}</span></div>
+        <div class="row"><span class="mut">Relay data this month</span><b>${used} / ${limit} GB</b></div>
+        <p class="mut sm">Only “connect from anywhere” relay traffic counts. Same-network + direct connections are unlimited.</p>
+        <a class="btn" href="buy.html?acct=${encodeURIComponent(acct)}&email=${encodeURIComponent(email)}">Buy relay data or go Pro</a>
+      </div>
+      <div class="card col">
+        <b>Change password</b>
+        <input id="cur" type="password" placeholder="Current password" autocomplete="current-password">
+        <input id="npw" type="password" placeholder="New password (8+ characters)" autocomplete="new-password">
+        <div id="perr" class="err"></div><div id="pok" class="ok"></div>
+        <button id="chg" class="btn ghost">Change password</button>
+      </div>
+      <button id="out" class="btn ghost">Sign out</button>`;
+    $("chg").onclick = doChangePw;
+    $("out").onclick = signOut;
+  }
+  async function doChangePw() {
+    $("perr").textContent = ""; $("pok").textContent = "";
+    try {
+      await api("POST", "/v1/auth/change-password", { currentPassword: $("cur").value, newPassword: $("npw").value }, true);
+      $("pok").textContent = "Password changed. Your other devices were signed out.";
+      $("cur").value = ""; $("npw").value = "";
+    } catch (e) { $("perr").textContent = e.message; }
+  }
+  function signOut() {
+    fetch(API + "/v1/auth/logout", { method: "POST", headers: { "Authorization": "Bearer " + token } }).catch(() => {});
+    token = acct = email = ""; sessionStorage.clear(); render();
+  }
+
+  render();
+</script>
+</body>
+</html>
