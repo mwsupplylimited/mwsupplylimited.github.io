@@ -1,4 +1,4 @@
 {
-  "normal": { "version": "1.0", "build": 43, "url": "https://mwsupplylimited.github.io/helmward/Overhand-Host.dmg", "notes": "New: your data meter now shows all internet-data usage. Connecting over the internet (direct or relay) counts toward your data at the same rate; same-network (Wi-Fi/LAN) connections stay free, and nothing counts while no one is connected. Reliability improvements." },
-  "beta": { "version": "1.0", "build": 43, "url": "https://mwsupplylimited.github.io/helmward/Overhand-Host.dmg", "notes": "New: your data meter now shows all internet-data usage. Connecting over the internet (direct or relay) counts at the same rate; same-network stays free. Reliability improvements." }
+  "normal": { "version": "1.0", "build": 44, "url": "https://mwsupplylimited.github.io/helmward/Overhand-Host.dmg", "notes": "New: when the Overhand app on your iPhone is minimized during a session, this Mac now pauses the video to save your data (audio and control stay live), and resumes instantly when you return. Reliability improvements." },
+  "beta": { "version": "1.0", "build": 44, "url": "https://mwsupplylimited.github.io/helmward/Overhand-Host.dmg", "notes": "New: pauses video when the iPhone app is minimized (saves data); audio + control stay live and resume instantly. Reliability improvements." }
 }
