@@ -1,4 +1,4 @@
 {
-  "normal": { "version": "1.0", "build": 42, "url": "https://mwsupplylimited.github.io/helmward/Overhand-Host.dmg", "notes": "Important fix: the app could fail to open after updating. Please install this version." },
-  "beta": { "version": "1.0", "build": 42, "url": "https://mwsupplylimited.github.io/helmward/Overhand-Host.dmg", "notes": "Important fix: the app could fail to open after updating." }
+  "normal": { "version": "1.0", "build": 43, "url": "https://mwsupplylimited.github.io/helmward/Overhand-Host.dmg", "notes": "New: your data meter now shows all internet-data usage. Connecting over the internet (direct or relay) counts toward your data at the same rate; same-network (Wi-Fi/LAN) connections stay free, and nothing counts while no one is connected. Reliability improvements." },
+  "beta": { "version": "1.0", "build": 43, "url": "https://mwsupplylimited.github.io/helmward/Overhand-Host.dmg", "notes": "New: your data meter now shows all internet-data usage. Connecting over the internet (direct or relay) counts at the same rate; same-network stays free. Reliability improvements." }
 }

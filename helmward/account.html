@@ -84,9 +84,9 @@
     $("app").innerHTML = `
       <div class="card col">
         <div class="row"><b>${email}</b><span class="pill ${isPro ? 'pro' : ''}">${isPro ? 'Overhand Pro' : 'Free'}</span></div>
-        <div class="row"><span class="mut">Relay data this month</span><b>${used} / ${limit} GB</b></div>
-        <p class="mut sm">Only “connect from anywhere” relay traffic counts. Same-network + direct connections are unlimited.</p>
-        <a class="btn" href="buy.html?acct=${encodeURIComponent(acct)}&email=${encodeURIComponent(email)}">Buy relay data or go Pro</a>
+        <div class="row"><span class="mut">Internet data this month</span><b>${used} / ${limit} GB</b></div>
+        <p class="mut sm">Everything over the internet counts — direct or relay, at the same rate. Same-network (Wi-Fi/LAN) connections are free, and nothing counts while no one is connected.</p>
+        <a class="btn" href="buy.html?acct=${encodeURIComponent(acct)}&email=${encodeURIComponent(email)}">Buy internet data or go Pro</a>
       </div>
       <div class="card col">
         <b>Change password</b>
