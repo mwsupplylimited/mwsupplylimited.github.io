@@ -1,4 +1,4 @@
 {
-  "normal": { "version": "1.0", "build": 38, "url": "https://mwsupplylimited.github.io/helmward/Overhand-Host.dmg", "notes": "Relay data now shows finer detail, plus small fixes." },
-  "beta": { "version": "1.0", "build": 38, "url": "https://mwsupplylimited.github.io/helmward/Overhand-Host.dmg", "notes": "Beta channel — newest features first, less tested." }
+  "normal": { "version": "1.0", "build": 39, "url": "https://mwsupplylimited.github.io/helmward/Overhand-Host.dmg", "notes": "More accurate relay-data metering, plus small fixes." },
+  "beta": { "version": "1.0", "build": 39, "url": "https://mwsupplylimited.github.io/helmward/Overhand-Host.dmg", "notes": "Beta channel — newest features first, less tested." }
 }
