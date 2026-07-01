@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Delete account · Overhand</title>
+<style>
+  :root { --bg:#0b0c10; --card:#15171e; --line:#262a36; --fg:#f2f4f8; --mut:#9aa3b2; --danger:#ff5b5b; }
+  @media (prefers-color-scheme: light) { :root { --bg:#f6f7fb; --card:#fff; --line:#e6e8ef; --fg:#11141a; --mut:#5b6472; --danger:#d92d2d; } }
+  * { box-sizing:border-box; } body { margin:0; background:var(--bg); color:var(--fg);
+    font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; }
+  main { max-width:480px; margin:0 auto; padding:56px 22px; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:26px; }
+  h1 { font-size:24px; margin:0 0 10px; } p { color:var(--mut); }
+  b { color:var(--fg); }
+  button { width:100%; border:0; border-radius:12px; padding:14px; font-size:16px; font-weight:700;
+    color:#fff; background:var(--danger); cursor:pointer; margin-top:18px; }
+  button:disabled { opacity:.5; cursor:default; }
+  .msg { margin-top:18px; font-weight:600; }
+  .ok { color:#33c06a; } .bad { color:var(--danger); }
+  .fine { font-size:13px; margin-top:16px; }
+</style>
+</head>
+<body>
+<main>
+  <div class="card">
+    <h1>Delete your Overhand account</h1>
+    <p>This permanently erases <b>every registered Mac</b>, your <b>Pro &amp; relay data</b>, and all sessions.
+       <b>It cannot be undone.</b></p>
+    <button id="btn">Permanently delete my account</button>
+    <div id="msg" class="msg"></div>
+    <p class="fine">Didn't mean to do this? Just close this page — nothing is deleted until you press the button.</p>
+  </div>
+</main>
+<script>
+  const API = "https://helmward-signaling.mwsupplylimited.workers.dev/v1/account/confirm-deletion";
+  const token = (new URLSearchParams(location.search).get("token") || "").trim();
+  const btn = document.getElementById("btn");
+  const msg = document.getElementById("msg");
+  if (!token) {
+    btn.disabled = true;
+    msg.className = "msg bad";
+    msg.textContent = "This link is missing its confirmation code. Start deletion again from the Overhand app.";
+  }
+  btn.onclick = async () => {
+    btn.disabled = true; msg.className = "msg"; msg.textContent = "Deleting…";
+    try {
+      const r = await fetch(API, { method: "POST", headers: { "Content-Type": "application/json" },
+                                   body: JSON.stringify({ token }) });
+      const d = await r.json().catch(() => ({}));
+      if (r.ok && d.deleted) {
+        btn.style.display = "none";
+        msg.className = "msg ok";
+        msg.textContent = "Your Overhand account has been permanently deleted. You can close this page.";
+      } else {
+        msg.className = "msg bad";
+        msg.textContent = d.error || "Couldn't delete the account. The link may have expired — try again from the app.";
+        btn.disabled = false;
+      }
+    } catch (_) {
+      msg.className = "msg bad";
+      msg.textContent = "Network error — please try again.";
+      btn.disabled = false;
+    }
+  };
+</script>
+</body>
+</html>
