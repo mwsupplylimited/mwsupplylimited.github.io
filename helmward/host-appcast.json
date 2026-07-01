@@ -1,4 +1,4 @@
 {
-  "normal": { "version": "1.0", "build": 45, "url": "https://mwsupplylimited.github.io/helmward/Overhand-Host.dmg", "notes": "You can now change your account email and manage or cancel your subscription right from the Mac app. Reliability improvements." },
-  "beta": { "version": "1.0", "build": 45, "url": "https://mwsupplylimited.github.io/helmward/Overhand-Host.dmg", "notes": "Change email + manage/cancel subscription from the Mac app. Reliability improvements." }
+  "normal": { "version": "1.0", "build": 46, "url": "https://mwsupplylimited.github.io/helmward/Overhand-Host.dmg", "notes": "Internet-data enforcement: when your account is out of data, connecting to this Mac over the internet now stops (top up to keep going). Connecting on the same Wi-Fi as this Mac is always free. Reliability improvements." },
+  "beta": { "version": "1.0", "build": 46, "url": "https://mwsupplylimited.github.io/helmward/Overhand-Host.dmg", "notes": "Out-of-data internet sessions are now stopped; same-Wi-Fi stays free. Reliability improvements." }
 }
