@@ -36,8 +36,8 @@
         <p class="subtitle">Take manual control of your Mac's fans &mdash; <strong>boost-only</strong>, with automatic safety revert.</p>
 
         <div class="callout">
-            <p><a class="dl" href="./CorynxFanHelper.zip" download>Download Fan Helper</a></p>
-            <p class="meta">Free with Corynx Pro &middot; Apple-notarized &middot; macOS 14 or later &middot; Apple silicon</p>
+            <p><a class="dl" href="./CorynxFanHelper.pkg" download>Download Fan Helper</a></p>
+            <p class="meta">One-click installer &middot; Free with Corynx Pro &middot; Apple-notarized &middot; macOS 14 or later &middot; Apple silicon</p>
         </div>
 
         <div class="callout warn">
@@ -46,11 +46,12 @@
 
         <h2>Install</h2>
         <ol>
-            <li><strong>Download</strong> the file above and unzip it (you'll get a <strong>CorynxFanHelper</strong> folder).</li>
-            <li><strong>Right-click <code>install.command</code> &rarr; Open</strong> (right-click the first time, so macOS lets you run it), then click <strong>Open</strong> again to confirm.</li>
-            <li>Enter your <strong>Mac password</strong> when prompted &mdash; this installs a small background helper that runs as a system service.</li>
-            <li>Open <strong>Corynx &rarr; Fans</strong>. Switch on <strong>Manual boost</strong> and set each fan's speed.</li>
+            <li><strong>Download</strong> the installer above (<code>CorynxFanHelper.pkg</code>).</li>
+            <li><strong>Double-click it</strong> and follow the prompts &mdash; it's Apple-notarized, so it opens without any warning.</li>
+            <li>Enter your <strong>Mac password</strong> once when asked &mdash; the installer sets up the background helper <em>and starts it for you</em> (no Terminal).</li>
+            <li>Open <strong>Corynx &rarr; Fans</strong>. Switch on <strong>Manual boost</strong> and set each fan's speed &mdash; Corynx detects the helper automatically within a couple of seconds.</li>
         </ol>
+        <p class="meta">Prefer to install by hand? <a href="./CorynxFanHelper.zip" download>Download the .zip</a> instead &mdash; it has a script-based installer and an uninstaller.</p>
 
         <h2>Restore automatic control</h2>
         <p>Any one of these hands your fans straight back to macOS:</p>
@@ -58,7 +59,7 @@
             <li>In Corynx, turn <strong>Manual boost</strong> off (or click <strong>Return to Automatic</strong>).</li>
             <li>Quit Corynx &mdash; the helper reverts to automatic on its own within a few seconds.</li>
             <li><strong>Restart your Mac</strong> &mdash; the helper starts each boot in automatic and applies nothing until you ask.</li>
-            <li>Run <code>uninstall.command</code> (from the same folder) to remove the helper entirely.</li>
+            <li>To remove the helper entirely, <a href="./CorynxFanHelper.zip" download>download the .zip</a> and run its <code>uninstall.command</code>.</li>
         </ul>
 
         <h2>Why a separate helper?</h2>
