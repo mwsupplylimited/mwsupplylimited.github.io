@@ -1,4 +1,4 @@
 {
-  "normal": { "version": "1.0", "build": 48, "url": "https://mwsupplylimited.github.io/helmward/Overhand-Host.dmg", "notes": "Fix: you can no longer accidentally connect to the very Mac you're using (that caused an inescapable screen-and-control loop). Sharing this Mac requires signing in. Reliability improvements." },
-  "beta": { "version": "1.0", "build": 48, "url": "https://mwsupplylimited.github.io/helmward/Overhand-Host.dmg", "notes": "Can't connect to the Mac you're using (no more control loop); sharing requires sign-in. Reliability improvements." }
+  "normal": { "version": "1.0", "build": 49, "url": "https://mwsupplylimited.github.io/helmward/Overhand-Host.dmg", "notes": "Much lower CPU + memory: while a Mac is shared but no one is connected, screen capture no longer runs — it spins up the instant a viewer connects and stops again when they leave. Reliability improvements." },
+  "beta": { "version": "1.0", "build": 49, "url": "https://mwsupplylimited.github.io/helmward/Overhand-Host.dmg", "notes": "Idle shared Mac now uses far less CPU/RAM (capture only runs while a viewer is connected). Reliability improvements." }
 }
