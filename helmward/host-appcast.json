@@ -1,4 +1,4 @@
 {
-  "normal": { "version": "1.0", "build": 51, "url": "https://mwsupplylimited.github.io/helmward/Overhand-Host.dmg", "notes": "Fixes a black screen: after a viewer minimized the app and reconnected (or connected from away), the Mac could keep the video paused and never send it. Keeps this Mac awake + reachable while shared. Adds an internet-data meter while you're controlling another Mac. Please update." },
-  "beta": { "version": "1.0", "build": 51, "url": "https://mwsupplylimited.github.io/helmward/Overhand-Host.dmg", "notes": "Black-screen fix (stale video-pause) + keep Mac awake while shared + internet-data meter on the viewer screen." }
+  "normal": { "version": "1.0", "build": 52, "url": "https://mwsupplylimited.github.io/helmward/Overhand-Host.dmg", "notes": "Fixes a black screen after reconnecting or connecting from away, keeps this Mac awake + reachable while shared, and shows an internet-data meter while you control another Mac. Reliability fixes for running out of data mid-session. Please update." },
+  "beta": { "version": "1.0", "build": 52, "url": "https://mwsupplylimited.github.io/helmward/Overhand-Host.dmg", "notes": "Black-screen + keep-awake fixes, viewer-screen data meter, and the host now re-registers correctly after running out of data." }
 }
