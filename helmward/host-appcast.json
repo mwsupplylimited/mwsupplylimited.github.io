@@ -1,4 +1,4 @@
 {
-  "normal": { "version": "1.0", "build": 49, "url": "https://mwsupplylimited.github.io/helmward/Overhand-Host.dmg", "notes": "Much lower CPU + memory: while a Mac is shared but no one is connected, screen capture no longer runs — it spins up the instant a viewer connects and stops again when they leave. Reliability improvements." },
-  "beta": { "version": "1.0", "build": 49, "url": "https://mwsupplylimited.github.io/helmward/Overhand-Host.dmg", "notes": "Idle shared Mac now uses far less CPU/RAM (capture only runs while a viewer is connected). Reliability improvements." }
+  "normal": { "version": "1.0", "build": 50, "url": "https://mwsupplylimited.github.io/helmward/Overhand-Host.dmg", "notes": "Fixes a black screen: after a viewer minimized the app and reconnected (or connected from away), the Mac could keep the video paused and never send it. Also keeps this Mac awake + reachable while shared. Please update." },
+  "beta": { "version": "1.0", "build": 50, "url": "https://mwsupplylimited.github.io/helmward/Overhand-Host.dmg", "notes": "Fix black screen on reconnect/away (stale video-pause); keep Mac awake while shared." }
 }
