@@ -1,4 +1,4 @@
 {
-  "normal": { "version": "1.0", "build": 52, "url": "https://mwsupplylimited.github.io/helmward/Overhand-Host.dmg", "notes": "Fixes a black screen after reconnecting or connecting from away, keeps this Mac awake + reachable while shared, and shows an internet-data meter while you control another Mac. Reliability fixes for running out of data mid-session. Please update." },
-  "beta": { "version": "1.0", "build": 52, "url": "https://mwsupplylimited.github.io/helmward/Overhand-Host.dmg", "notes": "Black-screen + keep-awake fixes, viewer-screen data meter, and the host now re-registers correctly after running out of data." }
+  "normal": { "version": "1.0", "build": 53, "url": "https://mwsupplylimited.github.io/helmward/Overhand-Host.dmg", "notes": "Stay signed in across updates — the app no longer asks you to log in again after each auto-update. Plus the recent black-screen, keep-awake, and data-meter fixes. Please update (you may sign in one last time on this update, then it sticks)." },
+  "beta": { "version": "1.0", "build": 53, "url": "https://mwsupplylimited.github.io/helmward/Overhand-Host.dmg", "notes": "Session now survives auto-updates (durable token mirror) — no more re-login every update." }
 }
