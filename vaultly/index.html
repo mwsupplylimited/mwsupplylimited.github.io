@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vaultly — Support</title>
+    <meta name="description" content="Support for Vaultly, a private, end-to-end-encrypted photo and video vault for iPhone and iPad. Keep photos and videos in an AES-256 encrypted vault, separate from Apple Photos, locked behind Face ID, with optional private iCloud sync.">
+    <style>
+        :root {
+            --bg: #ffffff; --fg: #1a1a1a; --muted: #666666; --accent: #5b4be0; --card: #f5f5f7; --border: #e5e5e7;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root { --bg: #0d0e13; --fg: #f5f5f7; --muted: #9a9a9a; --accent: #8f83ff; --card: #1a1c22; --border: #2a2d34; }
+        }
+        * { box-sizing: border-box; }
+        html { -webkit-text-size-adjust: 100%; }
+        body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif; background: var(--bg); color: var(--fg); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+        .container { max-width: 720px; margin: 0 auto; padding: 48px 24px 96px; }
+        .back { display: inline-block; color: var(--muted); text-decoration: none; font-size: 0.9rem; margin-bottom: 32px; }
+        .back:hover { color: var(--accent); }
+        h1 { font-size: 2.2rem; margin: 0 0 8px; letter-spacing: -0.02em; }
+        .subtitle { color: var(--muted); margin: 0 0 40px; }
+        h2 { font-size: 1.3rem; margin: 40px 0 12px; letter-spacing: -0.01em; }
+        h3 { font-size: 1rem; margin: 24px 0 6px; font-weight: 600; }
+        p, li { color: var(--fg); }
+        a { color: var(--accent); }
+        .muted { color: var(--muted); }
+        .pill { display: inline-block; font-size: 0.75rem; padding: 2px 10px; border-radius: 999px; background: var(--card); color: var(--muted); border: 1px solid var(--border); vertical-align: middle; }
+        .callout { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 16px 20px; margin: 24px 0; }
+        .callout p { margin: 0; }
+        footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.85rem; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a class="back" href="../">&larr; MW Supply Limited</a>
+
+        <h1>Vaultly</h1>
+        <p class="subtitle">A private, encrypted album — separate from Apple Photos. <span class="pill">Version 1.0</span></p>
+
+        <h2>About</h2>
+        <p>Vaultly is a private photo and video vault for iPhone and iPad. Everything you add is <strong>encrypted on your device with AES-256</strong> and kept <strong>completely separate from Apple Photos</strong>, so your personal media isn't sitting in the one album a thief goes straight for. The whole app is locked behind <strong>Face ID</strong>, and with Vaultly Pro your vault syncs privately across your own devices through iCloud &mdash; where even Apple only ever stores ciphertext.</p>
+
+        <div class="callout">
+            <p>Vaultly protects your media two ways: <strong>encryption</strong> keeps the files unreadable on disk and off your device, and <strong>Face ID</strong> keeps the app itself locked. It is not a cloud service you upload to us &mdash; there is no account, and we never see your photos or videos.</p>
+        </div>
+
+        <h2>Getting started</h2>
+        <ul>
+            <li>Open Vaultly and unlock with <strong>Face ID</strong> (or your device passcode).</li>
+            <li>Tap <strong>+</strong> and choose <strong>From Photos</strong> or <strong>From Files</strong> to bring media in. Each item is encrypted as it's imported.</li>
+            <li>Tap any item to view or play it &mdash; pinch to zoom photos, and edit with filters, crop, rotate, or trim.</li>
+            <li>Use <strong>Share</strong> or <strong>Save to Photos</strong> to export a copy, or delete items you no longer want.</li>
+        </ul>
+
+        <h2>Features</h2>
+        <ul>
+            <li><strong>AES-256 encrypted vault</strong> &mdash; every photo and video is encrypted on device</li>
+            <li><strong>Separate from Apple Photos</strong> &mdash; your vault never appears in the Photos app</li>
+            <li><strong>Face ID lock</strong> on the whole app, with app-switcher redaction</li>
+            <li><strong>Viewer &amp; editor</strong> &mdash; zoom, play, filters, adjust, crop/rotate, video trim &amp; mute</li>
+            <li><strong>Import &amp; export</strong> from Photos and Files; share via the system share sheet</li>
+            <li>Optional <strong>private iCloud sync</strong> across your own devices (Pro)</li>
+        </ul>
+
+        <h2>Plans &amp; ads</h2>
+        <p>Vaultly is free to download. The encrypted vault, viewer, and editor are <strong>free</strong> for up to 200 items; the free version is supported by a single small banner ad.</p>
+        <p><strong>Vaultly Pro</strong> (<strong>$3.99/month</strong> or <strong>$23.99/year</strong>, with a <strong>3-day free trial</strong>) unlocks:</p>
+        <ul>
+            <li><strong>Unlimited</strong> encrypted photos and videos</li>
+            <li><strong>Private iCloud sync</strong> across your own devices</li>
+            <li>A completely <strong>ad-free</strong> app</li>
+        </ul>
+        <p>Subscriptions are sold through Apple and renew automatically until cancelled; manage or cancel any time in <strong>iOS Settings &rarr; [your name] &rarr; Subscriptions</strong>. Prices are always shown in the app in your local currency.</p>
+
+        <h2>FAQ</h2>
+
+        <h3>How is my media protected?</h3>
+        <p>Every photo and video is encrypted on your device using <strong>AES-256-GCM</strong> before it is written to storage, with a key held in the iOS <strong>Keychain</strong>. The files are unreadable without your key, and Vaultly keeps them out of unencrypted device backups. On top of that, the app is gated by <strong>Face ID</strong> and hides your content in the app switcher.</p>
+
+        <h3>Is it really separate from Apple Photos?</h3>
+        <p>Yes. Imported media lives only inside Vaultly's encrypted vault and never appears in the Photos app unless <em>you</em> choose to export a copy back to Photos. If your phone is lost or stolen, your Vaultly media isn't in the place most people look first.</p>
+
+        <h3>What does Face ID protect versus encryption?</h3>
+        <p><strong>Face ID</strong> locks the app so someone with your unlocked phone still can't open your vault. <strong>Encryption</strong> protects the files themselves &mdash; on disk and when synced &mdash; so they're unreadable even if someone bypasses the app. Vaultly is honest about this: we don't claim to be &ldquo;unhackable,&rdquo; we give you a strong second lock and real at-rest encryption.</p>
+
+        <h3>How does iCloud sync work?</h3>
+        <p>With Pro, Vaultly syncs your vault across your own devices through your private iCloud. Media is <strong>encrypted before it leaves your device</strong>, and the encryption key rides Apple's end-to-end-encrypted iCloud Keychain, so <strong>even Apple only stores ciphertext</strong>. You can turn sync off any time in the app's Settings.</p>
+
+        <h3>Do I need an account?</h3>
+        <p>No. Vaultly has no account and no sign-up. Your media stays on your device (and, if you turn on iCloud sync, in your own iCloud).</p>
+
+        <h3>I found a bug or have a feature request.</h3>
+        <p>Please email <a href="mailto:mwsupplylimited@gmail.com?subject=Vaultly%20support">mwsupplylimited@gmail.com</a> with your iOS version, device, and steps to reproduce. We read every message.</p>
+
+        <h2>Contact</h2>
+        <p>For support: <a href="mailto:mwsupplylimited@gmail.com?subject=Vaultly%20support">mwsupplylimited@gmail.com</a></p>
+
+        <h2>Privacy</h2>
+        <p>See the <a href="privacy.html">Vaultly Privacy Policy</a>.</p>
+
+        <footer>
+            &copy; 2026 MW Supply Limited
+        </footer>
+    </div>
+</body>
+</html>
