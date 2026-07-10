@@ -1,0 +1,13 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["6RZ8YV42XZ.com.edfd.DrivingRecorder"],
+        "components": [
+          { "/": "/roadbookgps/join", "?": { "g": "?*" }, "comment": "RoadBook leaderboard invite with a group id" },
+          { "/": "/roadbookgps/join", "comment": "RoadBook leaderboard invite landing" }
+        ]
+      }
+    ]
+  }
+}
