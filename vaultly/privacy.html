@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vaultly — Privacy Policy</title>
+    <meta name="description" content="Privacy policy for Vaultly, a private, end-to-end-encrypted photo and video vault for iPhone and iPad.">
+    <style>
+        :root {
+            --bg: #ffffff; --fg: #1a1a1a; --muted: #666666; --accent: #5b4be0; --card: #f5f5f7; --border: #e5e5e7;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root { --bg: #0d0e13; --fg: #f5f5f7; --muted: #9a9a9a; --accent: #8f83ff; --card: #1a1c22; --border: #2a2d34; }
+        }
+        * { box-sizing: border-box; }
+        html { -webkit-text-size-adjust: 100%; }
+        body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif; background: var(--bg); color: var(--fg); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+        .container { max-width: 720px; margin: 0 auto; padding: 48px 24px 96px; }
+        .back { display: inline-block; color: var(--muted); text-decoration: none; font-size: 0.9rem; margin-bottom: 32px; }
+        .back:hover { color: var(--accent); }
+        h1 { font-size: 2.2rem; margin: 0 0 8px; letter-spacing: -0.02em; }
+        h2 { font-size: 1.3rem; margin: 40px 0 12px; letter-spacing: -0.01em; }
+        p, li { color: var(--fg); }
+        a { color: var(--accent); }
+        .meta { color: var(--muted); font-size: 0.9rem; margin: 0 0 32px; }
+        .callout { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 16px 20px; margin: 24px 0; }
+        .callout p { margin: 0; }
+        footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.85rem; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a class="back" href="./">&larr; Vaultly Support</a>
+
+        <h1>Vaultly Privacy Policy</h1>
+        <p class="meta">Effective 11 July 2026 &middot; Last updated 11 July 2026</p>
+
+        <div class="callout">
+            <p><strong>Summary:</strong> Vaultly has no account and no first-party analytics, and MW Supply Limited runs no servers that receive your media. Your photos and videos are <strong>encrypted on your device with AES-256</strong> and stay there (and, if you turn on iCloud sync, in your own end-to-end-encrypted iCloud). The free version shows a single banner ad through Google AdMob and asks App Tracking Transparency permission before using an advertising identifier.</p>
+        </div>
+
+        <h2>1. Information we collect</h2>
+        <p>Vaultly has no account system, no login to us, and no first-party analytics, and MW Supply Limited operates no servers that receive your data. Your photos and videos are stored <strong>encrypted</strong> in the app's own storage and are <em>not</em> uploaded to us. The only data processing beyond your own device is done by the advertising provider on the free version, described in section&nbsp;5.</p>
+
+        <h2>2. How your media is protected</h2>
+        <p>Every photo and video you add is encrypted on your device using <strong>AES-256-GCM</strong> before it is written to storage. The encryption key is generated on your device and stored in the iOS <strong>Keychain</strong>; it is never sent to us. The vault is kept out of unencrypted device backups, and the whole app is gated by <strong>Face ID</strong> (or your device passcode) with content hidden in the app switcher. Face ID controls access to the app; encryption protects the files themselves, on disk and when synced.</p>
+
+        <h2>3. Importing &amp; exporting</h2>
+        <p>You bring media in by choosing it from the <strong>Files</strong> app or your <strong>Photos</strong> library; Vaultly copies each selected item into its encrypted vault. When you import from Photos, access is limited to the items you pick &mdash; Vaultly does not read the rest of your photo library. You can export a decrypted copy of any item to <strong>Apple Photos</strong> or the <strong>Files</strong> app, or share it through the system share sheet; Photos access is requested as <strong>add-only</strong> by default. No media is ever sent to MW Supply Limited.</p>
+
+        <h2>4. iCloud sync (Pro)</h2>
+        <p>If you enable iCloud sync (a Pro feature), Vaultly syncs your vault across your own devices signed in to the same Apple ID using your <strong>private iCloud (CloudKit) database</strong>. Media is <strong>encrypted on your device before it is uploaded</strong>, and the encryption key rides Apple's end-to-end-encrypted <strong>iCloud Keychain</strong> &mdash; so iCloud stores only ciphertext and neither Apple nor MW Supply Limited can read your media. This data lives in your own iCloud account, is governed by <a href="https://www.apple.com/legal/privacy/" rel="noopener">Apple's privacy policy</a>, and is not accessible to us. You can turn iCloud sync off any time in the app's Settings.</p>
+
+        <h2>5. Advertising (free version only)</h2>
+        <p>The free version of Vaultly shows a single banner advertisement provided by <strong>Google AdMob</strong>. If you subscribe to Vaultly Pro, the app shows <strong>no ads at all</strong> and the AdMob SDK is not started. Ads are never shown over your photos, videos, the editor, or the lock screen &mdash; only as a small strip on the main library.</p>
+        <ul>
+            <li><strong>What AdMob may process:</strong> a device advertising identifier, approximate (coarse) device information, IP address, and ad-interaction data (which ads were shown or tapped), used to serve and measure ads and to prevent fraud. Your photos and videos are never shared with the advertising provider.</li>
+            <li><strong>Your consent:</strong> the app asks for Apple's <strong>App Tracking Transparency</strong> permission before any identifier is used for personalised ads, and shows a consent form where required (for example in the EEA/UK). If you decline, you still get ads &mdash; just non-personalised ones.</li>
+            <li><strong>Managing your choices:</strong> you can change tracking permission in iOS Settings &rarr; Privacy &amp; Security &rarr; Tracking.</li>
+            <li>This advertising data is collected and processed by Google as an independent controller, not by MW Supply Limited. Google's practices are described in <a href="https://policies.google.com/privacy" rel="noopener">Google's privacy policy</a> and <a href="https://policies.google.com/technologies/ads" rel="noopener">Google's advertising policy</a>.</li>
+        </ul>
+
+        <h2>6. Subscriptions &amp; payments</h2>
+        <p>Vaultly Pro is an auto-renewable subscription sold through Apple's In-App Purchase using <strong>StoreKit</strong>. Your purchase, payment, and renewals are handled entirely by Apple under your Apple Account; MW Supply Limited never sees your name, your Apple ID, or your card or payment details. Subscriptions can be managed or cancelled any time in your Apple Account settings.</p>
+
+        <h2>7. Your content &amp; responsibility</h2>
+        <p>Vaultly is a personal vault for media you already have on your device. You are responsible for ensuring you have the right to store the photos and videos you import, in accordance with applicable law.</p>
+
+        <h2>8. Children</h2>
+        <p>Vaultly is not directed to children under 13. The free version uses Google AdMob with age-appropriate ad settings where required, and the app collects no personal data itself, consistent with the Children's Online Privacy Protection Act (COPPA) and similar regulations worldwide.</p>
+
+        <h2>9. Changes to this policy</h2>
+        <p>If we change how Vaultly handles data, we will update this page and the &ldquo;Last updated&rdquo; date above. Material changes will also be reflected in the App Store privacy labels for the affected version of the app.</p>
+
+        <h2>10. Contact</h2>
+        <p>Questions about this privacy policy can be sent to <a href="mailto:mwsupplylimited@gmail.com?subject=Vaultly%20privacy">mwsupplylimited@gmail.com</a>.</p>
+
+        <footer>
+            &copy; 2026 MW Supply Limited
+        </footer>
+    </div>
+</body>
+</html>
