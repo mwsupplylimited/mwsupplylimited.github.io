@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FollowLens — Support</title>
+    <meta name="description" content="Support page for FollowLens, an iPhone app that tracks your Instagram follower and following changes over time from your own official data export — no login, no password.">
+    <style>
+        :root {
+            --bg: #ffffff;
+            --fg: #1a1a1a;
+            --muted: #666666;
+            --accent: #7b5cff;
+            --card: #f5f5f7;
+            --border: #e5e5e7;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #101018;
+                --fg: #f5f5f7;
+                --muted: #9a9aab;
+                --accent: #9d85ff;
+                --card: #1a1a24;
+                --border: #2a2a36;
+            }
+        }
+        * { box-sizing: border-box; }
+        html { -webkit-text-size-adjust: 100%; }
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+            background: var(--bg);
+            color: var(--fg);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 48px 24px 96px;
+        }
+        .back {
+            display: inline-block;
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-bottom: 32px;
+        }
+        .back:hover { color: var(--accent); }
+        h1 {
+            font-size: 2.2rem;
+            margin: 0 0 8px;
+            letter-spacing: -0.02em;
+        }
+        .subtitle {
+            color: var(--muted);
+            margin: 0 0 40px;
+        }
+        h2 {
+            font-size: 1.3rem;
+            margin: 40px 0 12px;
+            letter-spacing: -0.01em;
+        }
+        h3 {
+            font-size: 1rem;
+            margin: 24px 0 6px;
+            font-weight: 600;
+        }
+        p, li { color: var(--fg); }
+        .muted { color: var(--muted); }
+        ul, ol { padding-left: 22px; }
+        li { margin-bottom: 6px; }
+        a { color: var(--accent); }
+        .pill {
+            display: inline-block;
+            background: var(--card);
+            border: 1px solid var(--border);
+            padding: 3px 10px;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            color: var(--muted);
+        }
+        .callout {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-left: 3px solid var(--accent);
+            padding: 16px 20px;
+            border-radius: 8px;
+            margin: 24px 0;
+        }
+        .callout p { margin: 0; }
+        footer {
+            margin-top: 64px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
+            color: var(--muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a class="back" href="../">&larr; MW Supply Limited</a>
+
+        <h1>FollowLens</h1>
+        <p class="subtitle">See exactly how your Instagram followers and following change over time — from your own official data export, on your own iPhone. No login, no password. <span class="pill">Version 1.0</span></p>
+
+        <h2>About</h2>
+        <p>FollowLens turns Instagram's own “Download your information” export into a clear picture of who followed you, who unfollowed you, and who never followed you back. You import the <strong>Followers and following</strong> file that Instagram gives you, and FollowLens compares each import to the ones before it — so every time you bring in a fresh export, you get a running history of what actually changed. Everything runs on your device from a file you already own. FollowLens does <strong>not</strong> ask for your Instagram username or password, and it never logs in or connects to your account.</p>
+
+        <div class="callout">
+            <p><strong>The big idea:</strong> Instagram lets you download your own data. FollowLens reads that export and <strong>diffs</strong> one import against the next, so you can see new followers, unfollowers, and the gaps between who you follow and who follows you — without ever handing over your login.</p>
+        </div>
+
+        <h2>What FollowLens shows you</h2>
+        <ul>
+            <li><strong>New followers</strong> — accounts that started following you since your last import.</li>
+            <li><strong>Unfollowers</strong> — accounts that followed you before and don't anymore.</li>
+            <li><strong>Ghosts</strong> — people you follow who don't follow you back.</li>
+            <li><strong>Fans</strong> — people who follow you that you don't follow back.</li>
+            <li><strong>Mutuals</strong> — the accounts you and they both follow.</li>
+            <li><strong>Follower-count trends</strong> — how your totals move over time across your snapshots.</li>
+        </ul>
+        <p>Each import becomes a dated <strong>snapshot</strong>. Keep importing over the weeks and months and FollowLens builds the timeline for you.</p>
+
+        <h2>How to download your Instagram data</h2>
+        <p>You get the file straight from Instagram — this is the only thing FollowLens needs. On the Instagram app or on the web:</p>
+        <ol>
+            <li>Open <strong>Accounts Center</strong> (Instagram &rarr; your profile &rarr; menu &rarr; <em>Accounts Center</em>).</li>
+            <li>Tap <strong>Your information and permissions</strong>.</li>
+            <li>Tap <strong>Download your information</strong>, then <strong>Download or transfer information</strong>.</li>
+            <li>Choose your account, then under the information to download, select <strong>“Followers and following”</strong> (you can deselect everything else to keep the file small).</li>
+            <li>For format, choose <strong>JSON</strong> (not HTML). Pick <strong>All time</strong> for the date range.</li>
+            <li>Submit the request. Instagram prepares the file and emails you (or notifies you in-app) when it's ready to download — this can take from a few minutes to a while.</li>
+            <li>Download the ZIP from Instagram, then open FollowLens and tap <strong>Import</strong> to select the file. FollowLens reads the followers and following lists and creates a snapshot.</li>
+        </ol>
+        <div class="callout">
+            <p><strong>Tip:</strong> Choose <strong>JSON</strong> as the format and include <strong>Followers and following</strong> — that's what FollowLens reads. To track changes, request a fresh export from Instagram every so often and import each one; FollowLens does the comparison automatically.</p>
+        </div>
+
+        <h2>Getting started</h2>
+        <ul>
+            <li><strong>Request your export</strong> from Instagram using the steps above and download the ZIP to your iPhone.</li>
+            <li><strong>Open FollowLens</strong> and tap <strong>Import</strong>, then pick the file you downloaded.</li>
+            <li>Your first import becomes your <strong>baseline</strong> snapshot — the lists (ghosts, fans, mutuals) are available right away.</li>
+            <li><strong>Import again later</strong> with a newer export to reveal your new followers, unfollowers, and count trends between the two.</li>
+        </ul>
+
+        <h2 id="plans">Free &amp; Pro</h2>
+        <p>FollowLens is free to download and use. The free tier shows a small banner ad and covers the essentials. <strong>FollowLens Pro</strong> removes ads and unlocks the full toolkit:</p>
+        <ul>
+            <li><strong>Unlimited snapshot history &amp; trend charts</strong> — keep every import and see your follower counts graphed over time.</li>
+            <li><strong>Every insight list in full</strong> — complete, unfiltered lists of new followers, unfollowers, ghosts, fans, and mutuals.</li>
+            <li><strong>Multiple accounts</strong> — track more than one Instagram export side by side.</li>
+            <li><strong>CSV export</strong> — take your lists out of the app as spreadsheets.</li>
+            <li><strong>iCloud backup &amp; cross-device sync</strong> — your snapshots follow you across your own devices through your private iCloud.</li>
+            <li><strong>No ads.</strong></li>
+        </ul>
+        <p><strong>Pricing:</strong> FollowLens Pro is <strong>US$4.99 / month</strong> or <strong>US$29.99 / year</strong>, and the annual plan comes with a <strong>3-day free trial</strong>. Subscriptions are billed to your Apple Account and renew automatically until cancelled. Payment is charged at confirmation of purchase; a free trial converts to the paid plan unless cancelled at least 24 hours before it ends. Prices are shown in the app in your local currency. Manage, switch, or cancel your plan any time in <strong>iOS Settings &rarr; [your name] &rarr; Subscriptions</strong>.</p>
+
+        <h2>Your privacy</h2>
+        <p>FollowLens is built to work entirely on your own device and your own data.</p>
+        <ul>
+            <li>The follower and following usernames from your export stay <strong>on your iPhone</strong>, and — with Pro — in <strong>your own private iCloud</strong>. They are <strong>never</strong> transmitted to us. We operate <strong>no server and no backend</strong>.</li>
+            <li>FollowLens never asks for your Instagram login and never connects to your account. It only reads the export file you choose to import.</li>
+            <li>On the free tier, ads are served by <strong>Google AdMob</strong>. AdMob may access a device advertising identifier (IDFA) — only if you allow it through Apple's <strong>App Tracking Transparency</strong> prompt — plus coarse usage and diagnostics, to serve ads. Google AdMob is the third party involved; you'll see the App Tracking Transparency prompt before any ad personalization.</li>
+            <li>Purchases and subscriptions are processed by <strong>Apple</strong>.</li>
+        </ul>
+        <p>Full details are in the <a href="privacy.html">FollowLens Privacy Policy</a>.</p>
+
+        <h2>FAQ</h2>
+
+        <h3>Is my data private?</h3>
+        <p>Yes. The usernames from your Instagram export stay on your device, and with Pro they sync only through your own private iCloud. Nothing about who you follow or who follows you is ever sent to us — we run no server and have no way to see it. The only data leaving your phone is what Google AdMob needs to show ads on the free tier, and only after you allow it through the App Tracking Transparency prompt.</p>
+
+        <h3>Do I need to log in to Instagram?</h3>
+        <p>No. FollowLens never asks for your Instagram username or password and never signs in to your account. It works purely from the official “Followers and following” file you download from Instagram yourself.</p>
+
+        <h3>Why import a file instead of connecting live?</h3>
+        <p>Because it keeps you safe and in control. Using Instagram's own official data export means there's no login to hand over, nothing scraped, and no risk to your account. You decide when to pull a fresh export, and FollowLens simply compares each one to the last to show you what changed.</p>
+
+        <h3>How do I see changes over time?</h3>
+        <p>Request a new export from Instagram whenever you want an update and import it. Each import is a dated snapshot; FollowLens compares the newest one to the previous ones so your new followers, unfollowers, and count trends appear automatically. The more often you import, the finer your history.</p>
+
+        <h3>How do I cancel my subscription?</h3>
+        <p>Open <strong>iOS Settings &rarr; [your name] &rarr; Subscriptions</strong>, select FollowLens, and tap Cancel. Subscriptions renew automatically until cancelled; cancelling stops the next renewal and you keep Pro access until the current period ends. You can restore a purchase on a new device from the app's paywall or settings with <strong>Restore purchases</strong>.</p>
+
+        <h3>I found a bug or have a feature request.</h3>
+        <p>Please email <a href="mailto:mwsupplylimited@gmail.com?subject=FollowLens%20feedback">mwsupplylimited@gmail.com</a> with your iOS version, device, and what happened. We read every message.</p>
+
+        <h2>Not affiliated with Instagram</h2>
+        <p>FollowLens is an independent app made by MW Supply Limited. It is <strong>not affiliated with, endorsed by, or sponsored by Instagram or Meta Platforms, Inc.</strong> “Instagram” is a trademark of Meta Platforms, Inc., used here only to describe the data export the app works with. FollowLens does not access your Instagram account and works solely with the data file you export from Instagram yourself.</p>
+
+        <h2>Contact</h2>
+        <p>For support: <a href="mailto:mwsupplylimited@gmail.com?subject=FollowLens%20support">mwsupplylimited@gmail.com</a></p>
+
+        <h2>Privacy</h2>
+        <p>See the <a href="privacy.html">FollowLens Privacy Policy</a>.</p>
+
+        <footer>
+            &copy; 2026 MW Supply Limited
+        </footer>
+    </div>
+</body>
+</html>
