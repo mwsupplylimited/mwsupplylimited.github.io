@@ -1,4 +1,4 @@
 {
-  "normal": { "version": "1.0", "build": 53, "url": "https://mwsupplylimited.github.io/helmward/Overhand-Host.dmg", "notes": "Stay signed in across updates — the app no longer asks you to log in again after each auto-update. Plus the recent black-screen, keep-awake, and data-meter fixes. Please update (you may sign in one last time on this update, then it sticks)." },
-  "beta": { "version": "1.0", "build": 53, "url": "https://mwsupplylimited.github.io/helmward/Overhand-Host.dmg", "notes": "Session now survives auto-updates (durable token mirror) — no more re-login every update." }
+  "normal": { "version": "1.0", "build": 54, "url": "https://mwsupplylimited.github.io/helmward/Overhand-Host.dmg", "notes": "Internet-data metering accuracy: never lose or double-count a partial interval at session end, and defer (not drop) an over-cap report. Reliability fixes. Please update." },
+  "beta": { "version": "1.0", "build": 54, "url": "https://mwsupplylimited.github.io/helmward/Overhand-Host.dmg", "notes": "Metering accuracy at teardown (carry-forward clamp + idempotent tail-flush)." }
 }
