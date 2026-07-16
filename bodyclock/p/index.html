@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Body Clock — jet lag, planned</title>
+    <meta name="description" content="Someone shared a flight with you. See what it does to your body clock — and get the day-by-day light, sleep and melatonin plan to beat the jet lag.">
+    <meta name="theme-color" content="#11123B">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Body Clock">
+    <meta property="og:url" content="https://mwsupplylimited.github.io/bodyclock/p/">
+    <meta property="og:title" content="A flight was shared with you — Body Clock">
+    <meta property="og:description" content="See the time-zone shift this flight costs your body clock, and get the day-by-day plan to beat the jet lag. Free on iPhone &amp; iPad.">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="A flight was shared with you — Body Clock">
+    <meta name="twitter:description" content="See the time-zone shift this flight costs your body clock, and get the day-by-day plan to beat the jet lag. Free on iPhone &amp; iPad.">
+    <style>
+        :root {
+            --bg: #ffffff;
+            --fg: #1a1a1a;
+            --muted: #666666;
+            --accent: #f28a26;
+            --card: #f5f5f7;
+            --border: #e5e5e7;
+            --night: #11123B;
+            --twilight: #3A2E73;
+            --dawn: #FC8F5A;
+            --on-night: #f3f2fb;
+            --on-night-muted: #a9a6c9;
+            --on-night-line: rgba(255, 255, 255, 0.14);
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #121419;
+                --fg: #f5f5f7;
+                --muted: #9a9a9a;
+                --accent: #ff9a3a;
+                --card: #1c1f25;
+                --border: #2a2d34;
+            }
+        }
+        * { box-sizing: border-box; }
+        html { -webkit-text-size-adjust: 100%; }
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+            background: var(--bg);
+            color: var(--fg);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        .container {
+            max-width: 560px;
+            margin: 0 auto;
+            padding: 40px 20px 72px;
+        }
+        .wordmark {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            margin-bottom: 28px;
+        }
+        .mark {
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            flex: 0 0 auto;
+            background: linear-gradient(150deg, var(--night) 0%, var(--twilight) 55%, var(--dawn) 100%);
+        }
+        .wordmark span {
+            font-size: 0.95rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+        }
+        h1 {
+            font-size: 1.75rem;
+            margin: 0 0 8px;
+            letter-spacing: -0.02em;
+            line-height: 1.25;
+        }
+        .subtitle {
+            color: var(--muted);
+            margin: 0 0 28px;
+        }
+        p { margin: 0 0 16px; }
+        a { color: var(--accent); }
+
+        /* ---- shared-flight card (always night gradient, both themes) ---- */
+        .pass {
+            background: linear-gradient(158deg, var(--night) 0%, var(--twilight) 100%);
+            border-radius: 20px;
+            padding: 22px 20px;
+            color: var(--on-night);
+            margin: 0 0 24px;
+            overflow: hidden;
+        }
+        .eyebrow {
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.09em;
+            text-transform: uppercase;
+            color: var(--dawn);
+            margin: 0 0 6px;
+        }
+        .trip-title {
+            font-size: 1.15rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            line-height: 1.35;
+            margin: 0 0 4px;
+            overflow-wrap: anywhere;
+        }
+        .route {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            align-items: center;
+            gap: 10px;
+            margin: 14px 0 4px;
+        }
+        .route .city {
+            font-size: clamp(1.15rem, 5.6vw, 1.6rem);
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            overflow-wrap: anywhere;
+        }
+        .route .to { text-align: right; }
+        .plane { color: var(--dawn); display: block; }
+        .rule {
+            border: 0;
+            border-top: 1px dashed var(--on-night-line);
+            margin: 18px 0;
+        }
+        .leg + .leg { margin-top: 18px; }
+        .leg-head {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 10px;
+        }
+        .leg-label {
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.07em;
+            text-transform: uppercase;
+            color: var(--on-night-muted);
+            overflow-wrap: anywhere;
+        }
+        .daybadge {
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: var(--night);
+            background: var(--dawn);
+            border-radius: 999px;
+            padding: 1px 8px;
+            flex: 0 0 auto;
+        }
+        .leg-time {
+            font-size: 1.5rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            line-height: 1.3;
+            font-variant-numeric: tabular-nums;
+        }
+        .leg-zone {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--on-night-muted);
+            margin-left: 6px;
+            letter-spacing: 0;
+        }
+        .leg-date {
+            font-size: 0.9rem;
+            color: var(--on-night-muted);
+        }
+        .stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+        .stat-label {
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.07em;
+            text-transform: uppercase;
+            color: var(--on-night-muted);
+        }
+        .stat-value {
+            font-size: 1.05rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            overflow-wrap: anywhere;
+        }
+        .gap-note {
+            font-size: 0.85rem;
+            color: var(--on-night-muted);
+            margin: 14px 0 0;
+            overflow-wrap: anywhere;
+        }
+
+        /* ---- pitch + CTA ---- */
+        .pitch { margin: 0 0 24px; }
+        .cta {
+            display: block;
+            text-align: center;
+            background: var(--accent);
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1.05rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            padding: 15px 20px;
+            border-radius: 14px;
+        }
+        .cta:hover { filter: brightness(1.06); }
+        .cta-note {
+            text-align: center;
+            color: var(--muted);
+            font-size: 0.85rem;
+            margin: 10px 0 32px;
+        }
+        .points {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 18px 20px 18px 20px;
+            margin: 0 0 28px;
+        }
+        .points h2 {
+            font-size: 1rem;
+            margin: 0 0 10px;
+            letter-spacing: -0.01em;
+        }
+        .points ul { padding-left: 20px; margin: 0; }
+        .points li { margin-bottom: 6px; }
+        .points li:last-child { margin-bottom: 0; }
+        .points .fine {
+            color: var(--muted);
+            font-size: 0.85rem;
+            margin: 12px 0 0;
+        }
+        footer {
+            margin-top: 40px;
+            padding-top: 22px;
+            border-top: 1px solid var(--border);
+            color: var(--muted);
+            font-size: 0.85rem;
+        }
+        footer a { color: var(--muted); }
+        footer a:hover { color: var(--accent); }
+        .foot-links { margin: 0 0 6px; }
+        .foot-links a { margin-right: 14px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="wordmark">
+            <div class="mark" aria-hidden="true"></div>
+            <span>Body Clock</span>
+        </div>
+
+        <!-- Shared-flight view. Hidden until JS validates the query string, so
+             crawlers and no-JS visitors get the generic install page below. -->
+        <div id="flight" hidden>
+            <h1 id="f-heading">A flight was shared with you</h1>
+            <p class="subtitle">Here's what it does to your body clock.</p>
+
+            <div class="pass">
+                <p class="eyebrow">Shared flight</p>
+                <p class="trip-title" id="f-title" hidden></p>
+
+                <div class="route">
+                    <div class="city" id="f-from"></div>
+                    <svg class="plane" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+                        <path d="M21 15.5v-1.7a.9.9 0 0 0-.45-.78L14 9.2V4.4a1.9 1.9 0 0 0-3.8 0v4.8l-6.55 3.82a.9.9 0 0 0-.45.78v1.7l7-2.1v4.05l-2.1 1.35v1.2l4-.95 4 .95v-1.2L14 17.45V13.4z"/>
+                    </svg>
+                    <div class="city to" id="f-to"></div>
+                </div>
+
+                <hr class="rule">
+
+                <div class="leg">
+                    <div class="leg-head">
+                        <div class="leg-label" id="f-dep-label"></div>
+                    </div>
+                    <div class="leg-time"><span id="f-dep-time"></span><span class="leg-zone" id="f-dep-zone"></span></div>
+                    <div class="leg-date" id="f-dep-date"></div>
+                </div>
+
+                <div class="leg">
+                    <div class="leg-head">
+                        <div class="leg-label" id="f-arr-label"></div>
+                        <div class="daybadge" id="f-arr-day" hidden></div>
+                    </div>
+                    <div class="leg-time"><span id="f-arr-time"></span><span class="leg-zone" id="f-arr-zone"></span></div>
+                    <div class="leg-date" id="f-arr-date"></div>
+                </div>
+
+                <hr class="rule">
+
+                <div class="stats">
+                    <div>
+                        <div class="stat-label">Flight time</div>
+                        <div class="stat-value" id="f-duration"></div>
+                    </div>
+                    <div>
+                        <div class="stat-label">Time zone gap</div>
+                        <div class="stat-value" id="f-gap"></div>
+                    </div>
+                </div>
+
+                <p class="gap-note" id="f-gap-note"></p>
+            </div>
+
+            <p class="pitch" id="f-pitch"></p>
+        </div>
+
+        <!-- Generic install page: the default state, and the fallback for
+             missing or unparseable parameters. -->
+        <div id="generic">
+            <h1>Body Clock — jet lag, planned</h1>
+            <p class="subtitle">Beat jet lag before it beats you. iPhone &amp; iPad.</p>
+            <p>Tell Body Clock where you're flying and when, and it works out whether you should shift your body clock at all — and if so, gives you a day-by-day plan of when to seek light, when to avoid it, when to sleep, and when a low dose of melatonin can help.</p>
+            <p>Every recommendation is grounded in published circadian-rhythm research, and all of the planning happens on your device.</p>
+        </div>
+
+        <a class="cta" href="https://apps.apple.com/app/id6774922882">Get Body Clock — free</a>
+        <p class="cta-note">Free on the App Store. iPhone &amp; iPad, iOS 17+.</p>
+
+        <div class="points">
+            <h2>What you get</h2>
+            <ul>
+                <li><strong>Should you even shift?</strong> For short trips, adapting and reversing can leave you jet-lagged the whole time. Body Clock tells you whether to stay on home time, partly shift, or fully shift.</li>
+                <li><strong>A day-by-day plan.</strong> Seek-light and avoid-light windows, target sleep and wake times, melatonin timing, and a caffeine cut-off.</li>
+                <li><strong>Today, at a glance.</strong> The current day's actions and the next thing to do, with optional reminders.</li>
+                <li><strong>Built on the research.</strong> A Learn section explains the science in plain language, with references.</li>
+            </ul>
+            <p class="fine">Planning runs on your device. Not medical advice — talk to a clinician before using melatonin or if you have a sleep or health condition.</p>
+        </div>
+
+        <footer>
+            <p class="foot-links">
+                <a href="../">Support</a>
+                <a href="../privacy.html">Privacy</a>
+                <a href="../../">MW Supply Limited</a>
+            </p>
+            &copy; 2026 MW Supply Limited
+        </footer>
+    </div>
+
+    <script>
+    (function () {
+        'use strict';
+
+        // Sanity bounds. Epoch seconds outside these are garbage (a common one:
+        // milliseconds pasted into a seconds field), and would otherwise render
+        // as "Invalid Date".
+        var MIN_EPOCH = 946684800;   // 2000-01-01T00:00:00Z
+        var MAX_EPOCH = 4102444800;  // 2100-01-01T00:00:00Z
+        var MIN_DURATION = 60;       // 1 minute
+        var MAX_DURATION = 604800;   // 7 days
+
+        function el(id) { return document.getElementById(id); }
+
+        // The ONLY way query-string-derived data reaches the page. textContent
+        // never parses markup, so `t` cannot create an element or run script.
+        function setText(id, text) {
+            var node = el(id);
+            if (node) node.textContent = text;
+        }
+
+        function param(name) {
+            try {
+                return new URLSearchParams(window.location.search).get(name);
+            } catch (e) {
+                return null;
+            }
+        }
+
+        function isValidZone(tz) {
+            if (typeof tz !== 'string' || tz.length === 0 || tz.length > 80) return false;
+            // IANA shape only: Area/Location, optionally Area/Sub/Location.
+            if (!/^[A-Za-z0-9_+-]+(?:\/[A-Za-z0-9_+-]+)*$/.test(tz)) return false;
+            try {
+                new Intl.DateTimeFormat('en-US', { timeZone: tz });
+                return true;
+            } catch (e) {
+                return false;
+            }
+        }
+
+        function parseEpoch(raw) {
+            if (typeof raw !== 'string') return null;
+            var s = raw.trim();
+            if (!/^\d{1,12}$/.test(s)) return null; // strict: no "abc", "1.5", "1e9", "12abc"
+            var n = Number(s);
+            if (!isFinite(n) || n < MIN_EPOCH || n > MAX_EPOCH) return null;
+            return n;
+        }
+
+        function cityName(tz) {
+            var parts = tz.split('/');
+            return parts[parts.length - 1].replace(/_/g, ' ');
+        }
+
+        function zonedParts(tz, date) {
+            var dtf = new Intl.DateTimeFormat('en-US', {
+                timeZone: tz, hourCycle: 'h23',
+                year: 'numeric', month: '2-digit', day: '2-digit',
+                hour: '2-digit', minute: '2-digit', second: '2-digit'
+            });
+            var out = {};
+            var parts = dtf.formatToParts(date);
+            for (var i = 0; i < parts.length; i++) out[parts[i].type] = parts[i].value;
+            return out;
+        }
+
+        // Minutes that `tz` is offset from UTC at this instant (DST-correct).
+        function offsetMinutes(tz, date) {
+            var p = zonedParts(tz, date);
+            var h = Number(p.hour);
+            if (h === 24) h = 0; // some engines emit 24 for midnight
+            var asUTC = Date.UTC(Number(p.year), Number(p.month) - 1, Number(p.day),
+                                 h, Number(p.minute), Number(p.second));
+            return Math.round((asUTC - date.getTime()) / 60000);
+        }
+
+        // Days since epoch for the calendar date shown in `tz` at this instant.
+        function dayIndex(tz, date) {
+            var p = zonedParts(tz, date);
+            return Math.round(Date.UTC(Number(p.year), Number(p.month) - 1, Number(p.day)) / 86400000);
+        }
+
+        function fmtDate(tz, date) {
+            return new Intl.DateTimeFormat(undefined, {
+                timeZone: tz, weekday: 'short', day: 'numeric', month: 'short', year: 'numeric'
+            }).format(date);
+        }
+
+        function fmtTime(tz, date) {
+            return new Intl.DateTimeFormat(undefined, {
+                timeZone: tz, hour: 'numeric', minute: '2-digit'
+            }).format(date);
+        }
+
+        function fmtZoneAbbr(tz, date) {
+            try {
+                var parts = new Intl.DateTimeFormat('en-US', {
+                    timeZone: tz, timeZoneName: 'short', hour: 'numeric'
+                }).formatToParts(date);
+                for (var i = 0; i < parts.length; i++) {
+                    if (parts[i].type === 'timeZoneName') return parts[i].value;
+                }
+            } catch (e) { /* abbreviation is decoration only */ }
+            return '';
+        }
+
+        function fmtHM(totalMinutes) {
+            var h = Math.floor(totalMinutes / 60);
+            var m = totalMinutes % 60;
+            if (h === 0) return m + 'm';
+            return m === 0 ? h + 'h' : h + 'h ' + m + 'm';
+        }
+
+        // Display hygiene for an attacker-controlled string: strip control and
+        // bidi-override characters, collapse whitespace, cap length. This is
+        // NOT the XSS control (textContent is) — it keeps the layout sane.
+        function cleanTitle(raw) {
+            if (typeof raw !== 'string') return '';
+            var s = raw
+                .replace(/[\u0000-\u001F\u007F\u200B\u200E\u200F\u2028\u2029\u202A-\u202E\u2066-\u2069]/g, ' ')
+                .replace(/\s+/g, ' ')
+                .trim();
+            var chars = Array.from ? Array.from(s) : s.split('');
+            if (chars.length > 80) s = chars.slice(0, 79).join('').trim() + '…';
+            return s;
+        }
+
+        function render() {
+            var o = param('o');
+            var d = param('d');
+            if (!isValidZone(o) || !isValidZone(d)) return false;
+
+            var dep = parseEpoch(param('dep'));
+            var arr = parseEpoch(param('arr'));
+            if (dep === null || arr === null) return false;
+
+            var duration = arr - dep;
+            if (duration < MIN_DURATION || duration > MAX_DURATION) return false;
+
+            var depDate = new Date(dep * 1000);
+            var arrDate = new Date(arr * 1000);
+            if (isNaN(depDate.getTime()) || isNaN(arrDate.getTime())) return false;
+
+            var fromCity = cityName(o);
+            var toCity = cityName(d);
+
+            setText('f-from', fromCity);
+            setText('f-to', toCity);
+
+            var title = cleanTitle(param('t'));
+            if (title) {
+                setText('f-title', title);
+                el('f-title').hidden = false;
+            }
+
+            // Every clock is labelled with the city it belongs to.
+            setText('f-dep-label', 'Departs · ' + fromCity + ' local time');
+            setText('f-dep-time', fmtTime(o, depDate));
+            setText('f-dep-zone', fmtZoneAbbr(o, depDate));
+            setText('f-dep-date', fmtDate(o, depDate));
+
+            setText('f-arr-label', 'Arrives · ' + toCity + ' local time');
+            setText('f-arr-time', fmtTime(d, arrDate));
+            setText('f-arr-zone', fmtZoneAbbr(d, arrDate));
+            setText('f-arr-date', fmtDate(d, arrDate));
+
+            // Boarding-pass style "+1" when you land on a later calendar day.
+            var dayDelta = dayIndex(d, arrDate) - dayIndex(o, depDate);
+            if (dayDelta !== 0) {
+                var badge = el('f-arr-day');
+                setText('f-arr-day', (dayDelta > 0 ? '+' : '−') + Math.abs(dayDelta) + ' day' + (Math.abs(dayDelta) === 1 ? '' : 's'));
+                badge.hidden = false;
+            }
+
+            setText('f-duration', fmtHM(Math.round(duration / 60)));
+
+            // Clock difference between the two cities, measured at arrival.
+            var gapMin = offsetMinutes(d, arrDate) - offsetMinutes(o, arrDate);
+            if (gapMin === 0) {
+                setText('f-gap', 'None');
+                setText('f-gap-note', (fromCity === toCity ? 'Both ends keep' : fromCity + ' and ' + toCity + ' keep') +
+                    ' the same clock, so there’s no time shift to absorb.');
+                setText('f-pitch', 'No jet lag to plan around — but Body Clock still helps you sleep on the flight and land usable. It’s free.');
+            } else {
+                var ahead = gapMin > 0;
+                setText('f-gap', fmtHM(Math.abs(gapMin)) + (ahead ? ' ahead' : ' behind'));
+                setText('f-gap-note', toCity + ' is ' + fmtHM(Math.abs(gapMin)) + ' ' + (ahead ? 'ahead of ' : 'behind ') + fromCity + '.');
+
+                // The body only ever moves the short way round a 24h clock, so
+                // the shift it actually faces is min(gap, 24h - gap).
+                var absMin = Math.abs(gapMin) % 1440;
+                var shiftMin = Math.min(absMin, 1440 - absMin);
+                if (shiftMin === 0) {
+                    setText('f-pitch', 'Body Clock builds the day-by-day light, sleep and melatonin plan for this trip — free, and all worked out on your device.');
+                } else {
+                    setText('f-pitch', 'That’s a ' + fmtHM(shiftMin) + ' body-clock shift. Body Clock works out whether to advance or delay it — and gives ' +
+                        'you the day-by-day light, sleep and melatonin plan to land on ' + toCity + ' time instead of losing days to jet lag.');
+                }
+            }
+
+            document.title = fromCity + ' → ' + toCity + ' — Body Clock';
+            return true;
+        }
+
+        var ok = false;
+        try {
+            ok = render();
+        } catch (e) {
+            ok = false; // any surprise falls back to the generic install page
+        }
+        if (ok) {
+            el('generic').hidden = true;
+            el('flight').hidden = false;
+        }
+    })();
+    </script>
+</body>
+</html>
