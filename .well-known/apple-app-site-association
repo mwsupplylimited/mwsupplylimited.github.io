@@ -7,6 +7,13 @@
           { "/": "/roadbookgps/join", "?": { "g": "?*" }, "comment": "RoadBook leaderboard invite with a group id" },
           { "/": "/roadbookgps/join", "comment": "RoadBook leaderboard invite landing" }
         ]
+      },
+      {
+        "appIDs": ["6RZ8YV42XZ.com.mwsupplylimited.bodyclock"],
+        "components": [
+          { "/": "/bodyclock/p/", "comment": "Body Clock shared flight link" },
+          { "/": "/bodyclock/p", "comment": "Body Clock shared flight link (no trailing slash)" }
+        ]
       }
     ]
   }

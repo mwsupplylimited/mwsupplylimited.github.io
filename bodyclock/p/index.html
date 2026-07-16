@@ -544,7 +544,14 @@
                 if (shiftMin === 0) {
                     setText('f-pitch', 'Body Clock builds the day-by-day light, sleep and melatonin plan for this trip — free, and all worked out on your device.');
                 } else {
-                    setText('f-pitch', 'That’s a ' + fmtHM(shiftMin) + ' body-clock shift. Body Clock works out whether to advance or delay it — and gives ' +
+                    // The duration is computed, so the article has to be: "an 8h shift", "a 5h shift".
+                    // Only 8/8.5/11h read with "an" among the values min(gap, 24-gap) can produce.
+                    var shiftText = fmtHM(shiftMin);
+                    // NOT \b — there is no word boundary between "8" and "h", so /^8\b/ never
+                    // matches "8h". Guard on "not followed by another digit" instead, which is what
+                    // separates 8/11 from 18/110 (unreachable here: the shift caps at 12h).
+                    var article = /^(8|11)(?![0-9])/.test(shiftText) ? 'an' : 'a';
+                    setText('f-pitch', 'That’s ' + article + ' ' + shiftText + ' body-clock shift. Body Clock works out whether to advance or delay it — and gives ' +
                         'you the day-by-day light, sleep and melatonin plan to land on ' + toCity + ' time instead of losing days to jet lag.');
                 }
             }
