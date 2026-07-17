@@ -1,4 +1,4 @@
 {
-  "normal": { "version": "1.0", "build": 54, "url": "https://mwsupplylimited.github.io/helmward/Overhand-Host.dmg", "notes": "Internet-data metering accuracy: never lose or double-count a partial interval at session end, and defer (not drop) an over-cap report. Reliability fixes. Please update." },
-  "beta": { "version": "1.0", "build": 54, "url": "https://mwsupplylimited.github.io/helmward/Overhand-Host.dmg", "notes": "Metering accuracy at teardown (carry-forward clamp + idempotent tail-flush)." }
+  "normal": { "version": "1.0", "build": 55, "url": "https://mwsupplylimited.github.io/helmward/Overhand-Host.dmg", "notes": "Internet data now shows your plan allowance and any extra data you've bought as two separate figures, so you can see which one a session is drawing on. Overhand always uses your plan data first — extra data waits until the plan runs out, and never expires. Please update." },
+  "beta": { "version": "1.0", "build": 55, "url": "https://mwsupplylimited.github.io/helmward/Overhand-Host.dmg", "notes": "Two-pot internet-data meter (plan vs extra) with a 'Used first' badge on whichever pot a session draws from." }
 }
