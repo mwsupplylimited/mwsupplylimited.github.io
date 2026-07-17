@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BugWatch — Privacy Policy</title>
+    <meta name="description" content="Privacy Policy for BugWatch — Tick &amp; Mosquito on iOS.">
+    <style>
+        :root { --bg:#ffffff; --fg:#1a1a1a; --muted:#666666; --accent:#2e8540; --card:#f5f5f7; --border:#e5e5e7; }
+        @media (prefers-color-scheme: dark) {
+            :root { --bg:#121419; --fg:#f5f5f7; --muted:#9a9a9a; --accent:#42b152; --card:#1c1f25; --border:#2a2d34; }
+        }
+        * { box-sizing: border-box; }
+        html { -webkit-text-size-adjust: 100%; }
+        body { margin:0; font-family:-apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+               background:var(--bg); color:var(--fg); line-height:1.65; -webkit-font-smoothing:antialiased; }
+        .container { max-width:720px; margin:0 auto; padding:48px 24px 96px; }
+        .back { display:inline-block; color:var(--muted); text-decoration:none; font-size:0.9rem; margin-bottom:32px; }
+        .back:hover { color:var(--accent); }
+        h1 { font-size:2rem; margin:0 0 8px; letter-spacing:-0.02em; }
+        .meta { color:var(--muted); margin:0 0 40px; font-size:0.95rem; }
+        h2 { font-size:1.2rem; margin:36px 0 12px; letter-spacing:-0.01em; }
+        p { color:var(--fg); }
+        ul { padding-left:22px; }
+        li { margin-bottom:6px; }
+        a { color:var(--accent); }
+        .callout { background:var(--card); border:1px solid var(--border); border-left:3px solid var(--accent);
+                   padding:16px 20px; border-radius:8px; margin:24px 0; }
+        .callout p { margin:0; }
+        footer { margin-top:64px; padding-top:24px; border-top:1px solid var(--border); color:var(--muted); font-size:0.85rem; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a class="back" href="./">&larr; BugWatch Support</a>
+
+        <h1>BugWatch Privacy Policy</h1>
+        <p class="meta">Effective 17 July 2026 · Last updated 17 July 2026</p>
+
+        <div class="callout">
+            <p><strong>Summary:</strong> BugWatch has no account, no sign-in, and no analytics. The repellent database is bundled inside the app, so looking up a product sends nothing anywhere. Your location is used only to fetch local conditions &mdash; it is <em>not</em> stored by us, not sold, and no location history is kept. Weather comes from Apple Weather, which Apple's terms forbid us from keeping: we fetch it, display it, and discard it. The <em>free</em> tier is supported by advertising (Google AdMob), which may use a device identifier only with the consent iOS and the app ask you for &mdash; and you can always say no. BugWatch Pro shows no ads and never starts the ads SDK.</p>
+        </div>
+
+        <h2>1. Information we collect</h2>
+        <p>BugWatch itself does not ask for, collect, transmit, or store any personally identifiable information. There is no account system, no login, and no first-party analytics. We do not know who you are. The only data processing beyond your own device is the weather and surveillance lookups described in sections&nbsp;3 and&nbsp;5, and the advertising provider on the free tier (section&nbsp;7).</p>
+
+        <h2>2. Location</h2>
+        <p>If you grant location access, BugWatch uses your device's location for two things: fetching the current conditions where you are, and working out which tick and mosquito species are active in your area. Your coordinates are processed on your device and sent to Apple's weather service as part of an ordinary weather request. They are <strong>not sent to MW Supply Limited, not stored by us, not linked to your identity, and never used for advertising</strong> &mdash; and <strong>no location history is retained</strong>, because there is nowhere for one to accumulate. You can use the repellent advisor, protection timers, Protection Schedules, and the standing-water audit with location turned off entirely. Change or revoke the permission any time in iOS Settings &rarr; Privacy &amp; Security &rarr; Location Services.</p>
+
+        <h2>3. Weather data</h2>
+        <p>Conditions come from <strong>Apple Weather</strong> (WeatherKit). A request contains the coordinates needed to return weather for that point and nothing about you. Apple's terms for this data expressly forbid us from caching or storing it, so BugWatch <strong>fetches it, displays it, and discards it</strong> &mdash; there is no weather history in the app and no weather database on our side. Apple's handling of these requests is governed by <a href="https://www.apple.com/legal/privacy/" rel="noopener">Apple's privacy policy</a>.</p>
+
+        <h2>4. Repellent and product data</h2>
+        <p>The US EPA's registered-repellent data and the published protection times are <strong>bundled inside the app</strong>. Searching for a product, choosing an active ingredient, or reading a safety warning happens entirely on your device &mdash; no lookup leaves it, and we have no way of knowing what you searched for or what you put on your skin. The underlying data is US Environmental Protection Agency material in the public domain.</p>
+
+        <h2>5. Disease surveillance data</h2>
+        <p>When you open local surveillance, the app makes a request to the CDC's public open-data service (<strong>data.cdc.gov</strong>) for your state's published arbovirus counts. The request contains the state and nothing about you; no account, identifier, or precise location is involved. The CDC may log ordinary technical request metadata such as an IP address under its own policies. This is public-domain surveillance data, reported with a lag, shown for information only &mdash; BugWatch draws no conclusion from it about your health.</p>
+
+        <h2>6. Data stored on your device</h2>
+        <p>Your protection timers, Protection Schedules, saved locations, family profiles, bite log, and settings are stored on your device and are not transmitted to us. Deleting the app deletes all of it. If you export your bite log to CSV (a Pro feature), the file goes wherever you choose to send it &mdash; that copy is yours, and we never see it.</p>
+
+        <h2>7. Advertising (free tier only)</h2>
+        <p>The free tier shows a single banner (via <strong>Google AdMob</strong>) on the <em>Now</em> (conditions) tab only. It never appears beside repellent or safety guidance, on a protection timer or expiry alert, or on the paywall &mdash; a deliberate limit, not an oversight. Subscribing to BugWatch Pro removes it, and the ads SDK is not started at all.</p>
+        <ul>
+            <li><strong>What AdMob may process:</strong> a device advertising identifier, approximate device information (model, OS version, language), IP address, and ad-interaction data, used to serve and measure ads and prevent fraud. BugWatch never shares your precise location with the ads SDK.</li>
+            <li><strong>Your consent:</strong> the app asks for App Tracking Transparency permission before any identifier is used for personalised ads, and shows a consent form where required (for example in the EEA/UK). If you decline, you still get ads &mdash; just non-personalised ones.</li>
+            <li><strong>Managing your choices:</strong> change tracking permission in iOS Settings &rarr; Privacy &amp; Security &rarr; Tracking. Google's practices: <a href="https://policies.google.com/technologies/ads" rel="noopener">advertising policy</a> and <a href="https://policies.google.com/privacy" rel="noopener">privacy policy</a>.</li>
+        </ul>
+
+        <h2>8. Purchases</h2>
+        <p>BugWatch Pro &mdash; Annual, Monthly, and the one-time Lifetime unlock &mdash; is processed entirely by Apple through your Apple Account. We never see your payment details. Entitlements are verified on-device using Apple's StoreKit. Subscriptions can be managed or cancelled any time in your Apple Account settings; the Lifetime unlock is a one-time purchase with nothing to cancel.</p>
+
+        <h2>9. Children</h2>
+        <p>BugWatch is not directed at children, though its safety guidance covers repellent use <em>on</em> children &mdash; for example the under-3 restriction on oil of lemon eucalyptus. The app collects no personal data itself. The free tier uses Google AdMob with age-appropriate ad settings where required, consistent with COPPA and similar regulations worldwide.</p>
+
+        <h2>10. Changes to this policy</h2>
+        <p>If we change how BugWatch handles data, we will update this page and the &ldquo;Last updated&rdquo; date above. Material changes will also be reflected in the App Store privacy labels for the affected version.</p>
+
+        <h2>11. Contact</h2>
+        <p>Questions about this privacy policy can be sent to <a href="mailto:mwsupplylimited@gmail.com?subject=BugWatch%20privacy">mwsupplylimited@gmail.com</a>.</p>
+
+        <footer>&copy; 2026 MW Supply Limited</footer>
+    </div>
+</body>
+</html>
