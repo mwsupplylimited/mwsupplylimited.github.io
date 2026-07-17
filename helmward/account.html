@@ -48,6 +48,16 @@
     return data;
   }
   const gb = (b) => (Number(b) / 1e9).toFixed(3);   // 3 decimals so small usage (0.003 GB) is visible
+  const wholeGB = (b) => Math.round(Number(b) / 1e9);   // round numbers for prose ("50 GB this month")
+
+  // The plan allowance refills at 00:00 UTC on the 1st of next month, matching the Worker's `YYYY-MM`
+  // UTC month bucket (`monthKey`). Rendered in the visitor's own time zone, so someone west of UTC
+  // correctly sees the local date that instant actually falls on.
+  const planResetLabel = () => {
+    const n = new Date();
+    return new Date(Date.UTC(n.getUTCFullYear(), n.getUTCMonth() + 1, 1))
+      .toLocaleDateString(undefined, { day: "numeric", month: "short" });
+  };
 
   function render() { token ? renderAccount() : renderLogin(); }
 
@@ -79,14 +89,41 @@
     try { s = await api("GET", "/v1/relay/status", null, true); }
     catch (e) { if (e.status === 401) return signOut(); $("app").innerHTML = `<div class="card"><p class="err">${e.message}</p></div>`; return; }
     const isPro = !!(s && s.isPro);
-    const used = gb(s.monthlyUsedBytes);
-    const limit = gb(Number(s.monthlyUsedBytes) + Math.max(0, Number(s.monthlyLimitBytes) - Number(s.monthlyUsedBytes)) + Number(s.dataBalanceBytes));
+    // The account's TWO pots, kept apart. The Worker always spends the monthly plan allowance first and
+    // debits the bought/earned balance only with the overflow (`reportRelayUsage`:
+    // fromBalance = max(0, bytes - allowanceRemaining)), and buckets usage per UTC month so the allowance
+    // refills on its own. This page used to merge both into one "used / limit" figure, which hid that
+    // order AND filed the never-expiring balance under "this month".
+    const planLimit = Number(s.monthlyLimitBytes) || 0;
+    const rawUsed   = Number(s.monthlyUsedBytes) || 0;
+    // Clamp: raw usage keeps climbing past the allowance once extra data is being spent, so it must
+    // never be shown against the allowance unclamped (else "60.000 / 50.000 GB").
+    const planUsed  = Math.min(rawUsed, planLimit);
+    const planLeft  = Math.max(0, planLimit - rawUsed);
+    const extra     = Number(s.dataBalanceBytes) || 0;
+    const onExtra   = planLeft <= 0;               // which pot a session draws on right now
+    const reset     = planResetLabel();
+    // "Used first", NOT "In use now": this card also promises nothing is metered while no one is
+    // connected, so a present-tense badge would read as "your data is draining right now" and
+    // contradict it. "Used first" states the ORDER, which is what's actually being claimed.
+    const badge     = `<span class="pill pro">Used first</span>`;
+    const order = onExtra && extra <= 0
+      ? `You've used all your internet data. Your plan data refills on ${reset}, or add extra data to reconnect now. Same-network (Wi-Fi/LAN) connections still work, free.`
+      : onExtra
+        ? `This month's plan data is used up, so sessions are using your extra data now. When your plan data refills on ${reset}, Overhand goes straight back to it and leaves the rest of your extra data alone until it's needed again.`
+        : extra > 0
+          ? `Overhand always uses your plan data first, so your ${gb(extra)} GB of extra data is untouched until this month's plan data runs out. It refills on ${reset} — your extra data just waits, and never expires.`
+          : `Overhand always uses your plan data first. Extra data you buy is only spent once the month's plan data runs out — it never expires.`;
     $("app").innerHTML = `
       <div class="card col">
         <div class="row"><b>${email}</b><span class="pill ${isPro ? 'pro' : ''}">${isPro ? 'Overhand Pro' : 'Free'}</span></div>
-        <div class="row"><span class="mut">Internet data this month</span><b>${used} / ${limit} GB</b></div>
+        <div class="row"><span class="mut">Plan data ${onExtra ? '' : badge}</span><b>${gb(planUsed)} / ${gb(planLimit)} GB</b></div>
+        <p class="mut sm">Included with your plan — ${wholeGB(planLimit)} GB this month. Refills ${reset}.</p>
+        <div class="row"><span class="mut">Extra data ${onExtra && extra > 0 ? badge : ''}</span><b>${gb(extra)} GB</b></div>
+        <p class="mut sm">Data packs and converted tokens. ${extra > 0 ? 'Never expires.' : 'Nothing here yet.'}</p>
+        <p class="mut sm">${order}</p>
         <p class="mut sm">Everything over the internet counts — direct or relay, at the same rate. Same-network (Wi-Fi/LAN) connections are free, and nothing counts while no one is connected.</p>
-        <a class="btn" href="buy.html?acct=${encodeURIComponent(acct)}&email=${encodeURIComponent(email)}">Buy internet data or go Pro</a>
+        <a class="btn" href="buy.html?acct=${encodeURIComponent(acct)}&email=${encodeURIComponent(email)}">Buy extra data or go Pro</a>
         ${isPro ? `<button id="portal" class="btn ghost">Manage subscription</button><div id="porterr" class="mut sm"></div>` : ``}
       </div>
       <div class="card col">
