@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currio — Privacy Policy</title>
+    <meta name="description" content="Privacy Policy for Currio: Currency Converter on iOS.">
+    <style>
+        :root {
+            --bg: #ffffff;
+            --fg: #1a1a1a;
+            --muted: #666666;
+            --accent: #2276f4;
+            --card: #f5f5f7;
+            --border: #e5e5e7;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #121419;
+                --fg: #f5f5f7;
+                --muted: #9a9a9a;
+                --accent: #5a9bff;
+                --card: #1c1f25;
+                --border: #2a2d34;
+            }
+        }
+        * { box-sizing: border-box; }
+        html { -webkit-text-size-adjust: 100%; }
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+            background: var(--bg);
+            color: var(--fg);
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+        }
+        .container { max-width: 720px; margin: 0 auto; padding: 48px 24px 96px; }
+        .back { display: inline-block; color: var(--muted); text-decoration: none; font-size: 0.9rem; margin-bottom: 32px; }
+        .back:hover { color: var(--accent); }
+        h1 { font-size: 2rem; margin: 0 0 8px; letter-spacing: -0.02em; }
+        .meta { color: var(--muted); margin: 0 0 40px; font-size: 0.95rem; }
+        h2 { font-size: 1.2rem; margin: 36px 0 12px; letter-spacing: -0.01em; }
+        p { color: var(--fg); }
+        ul { padding-left: 22px; }
+        li { margin-bottom: 6px; }
+        a { color: var(--accent); }
+        .callout { background: var(--card); border: 1px solid var(--border); border-left: 3px solid var(--accent); padding: 16px 20px; border-radius: 8px; margin: 24px 0; }
+        .callout p { margin: 0; }
+        footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.85rem; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a class="back" href="./">&larr; Currio Support</a>
+
+        <h1>Currio Privacy Policy</h1>
+        <p class="meta">Effective 23 July 2026 · Last updated 23 July 2026</p>
+
+        <div class="callout">
+            <p><strong>Summary:</strong> Currio has no account system and we run no servers of our own. Your currency list and settings stay on your device and, when you're signed in to iCloud, sync through your own private iCloud (Apple's CloudKit). To show live rates, Currio fetches an exchange-rate table over the internet without sending any personal information. The <strong>free</strong> version shows a banner ad from Google AdMob, which collects limited device and ad-interaction data to serve it. Upgrading to <strong>Currio Pro</strong> removes all ads.</p>
+        </div>
+
+        <h2>1. Who we are</h2>
+        <p>Currio is developed by MW Supply Limited (&ldquo;we&rdquo;). This policy explains what stays on your device, what is fetched from public rate services, and what is processed by the limited third-party services we use to show ads (free version) and to offer an optional Pro upgrade. The app has no account system and no backend of ours — you can use every feature without signing in to us.</p>
+
+        <h2>2. Information stored on your device &amp; iCloud</h2>
+        <p>Currio stores the following so the app remembers it between launches:</p>
+        <ul>
+            <li>Your chosen currencies, their order, and your input/base currency;</li>
+            <li>Your settings (theme, accent, digit grouping, refresh preference);</li>
+            <li>Any rate alerts you create (a currency pair and a target value);</li>
+            <li>A cached copy of the most recent exchange-rate table, so conversion works offline.</li>
+        </ul>
+        <p>This is stored on your device with Apple's on-device storage. When you are signed in to iCloud, your currency list, settings, and alerts also sync through your own private iCloud database using Apple's CloudKit, so they stay in sync across your devices and are restored when you set up a new device. This data lives in your personal iCloud account under your Apple ID — it is visible only to you, handled under Apple's iCloud terms and privacy policy, and we never receive it or have access to it. You can remove it by deleting the app and, if you wish, deleting Currio's iCloud data in iOS Settings → Apple Account → iCloud.</p>
+
+        <h2>3. Exchange-rate data (network)</h2>
+        <p>To show live rates, Currio fetches a table of exchange rates from a free, public exchange-rate service (open.er-api.com). Historical charts (Pro) fetch published European Central Bank reference rates from a public service (frankfurter.dev). These requests contain only the currency codes needed for the lookup and standard technical information such as your IP address; they include <strong>no</strong> account, name, location, or list data, and we do not receive them. Exchange rates are indicative and provided for everyday reference only.</p>
+
+        <h2>4. Advertising (free version)</h2>
+        <p>The free version of Currio is supported by a single banner ad shown at the bottom of the screen. It is served by <strong>Google AdMob</strong> (the Google Mobile Ads SDK). To serve it, Google may collect and process information including:</p>
+        <ul>
+            <li>Your device's advertising identifier (IDFA) — <em>only</em> if you allow tracking when iOS asks (see below);</li>
+            <li>A non-personal device/usage identifier, device type, operating-system version and settings;</li>
+            <li>Your IP address and the approximate (coarse) region derived from it;</li>
+            <li>Information about how you interact with ads (for example, that an ad was shown or tapped).</li>
+        </ul>
+        <p>This information is collected and used by <strong>Google</strong>, not by us, under <a href="https://policies.google.com/privacy">Google's Privacy Policy</a> and as described in <a href="https://support.google.com/admob/answer/6128543">How Google uses information from sites or apps that use its services</a>. MW Supply Limited only receives aggregate, non-identifying reports such as ad impressions and estimated revenue. Your currency list and amounts are never shared with Google or used to target ads.</p>
+        <p><strong>App Tracking Transparency.</strong> iOS asks whether Currio may track you across other companies' apps and websites. If you choose &ldquo;Ask App Not to Track,&rdquo; the advertising identifier is not used and you will see only non-personalized ads. You can use the app fully either way.</p>
+        <p><strong>Consent (EEA, UK &amp; other regions).</strong> Where required by law, Currio uses Google's User Messaging Platform to ask for your consent before personalized ads are shown, and respects your choice. You can change it later in Settings → Privacy Options.</p>
+        <p><strong>Removing ads.</strong> Upgrading to Currio Pro removes the banner entirely. While you are a Pro member, the app does not request or display ads.</p>
+
+        <h2>5. Currio Pro &amp; payments</h2>
+        <p>Currio Pro is an optional auto-renewable subscription (monthly or annual) that removes all ads and unlocks historical charts, rate alerts, Home-Screen widgets, unlimited currencies, and premium themes. Purchases, billing, renewals, and refunds are handled entirely by <strong>Apple</strong> through the App Store using StoreKit — we never see or store your name, card number, or Apple ID. To unlock Pro, the app checks your purchase entitlement directly with the App Store on your device; this check does not identify you to us. Manage or cancel anytime in iOS Settings → Apple Account → Subscriptions.</p>
+
+        <h2>6. Notifications</h2>
+        <p>If you create a rate alert (Pro) and grant notification permission, Currio schedules a local notification on your device when a rate crosses your target. Alerts are evaluated on your device from the rate data described in section 3; no notification data is sent to us or to any third party.</p>
+
+        <h2>7. Third-party services</h2>
+        <p>To show ads in the free version, Currio includes two SDKs, both from Google:</p>
+        <ul>
+            <li><strong>Google Mobile Ads SDK (AdMob)</strong> — serves the banner ad.</li>
+            <li><strong>Google User Messaging Platform</strong> — manages the ad-consent prompt where it is legally required.</li>
+        </ul>
+        <p>Both are governed by <a href="https://policies.google.com/privacy">Google's Privacy Policy</a>. Currio contains no analytics frameworks and no crash reporting other than Apple's own first-party reporting (governed by Apple's privacy policy, and only if you opted in to Share With App Developers in iOS Settings → Privacy &amp; Security → Analytics &amp; Improvements). Currio Pro members are not shown ads, and the app does not request ads for them.</p>
+
+        <h2>8. Permissions and identifiers</h2>
+        <p>Currio does not access your location, camera, microphone, contacts, or health data. The advertising identifier is used only for ads in the free version, and only if you allow tracking as described in section 4. Notification permission is requested only if you choose to create a rate alert.</p>
+
+        <h2>9. Children</h2>
+        <p>Currio is a general-audience utility rated 4+ on the App Store. Because the free version shows ads, we instruct Google to serve only family-appropriate (maximum content rating G) ads. We do not knowingly collect personal information from children. Upgrading to Currio Pro removes all ads.</p>
+
+        <h2>10. Changes to this policy</h2>
+        <p>If we change how Currio handles data, we will update this page and the "Last updated" date above. Material changes will also be reflected in the App Store privacy nutrition labels for the affected version.</p>
+
+        <h2>11. Contact</h2>
+        <p>Questions about this privacy policy can be sent to <a href="mailto:mwsupplylimited@gmail.com?subject=Currio%20privacy">mwsupplylimited@gmail.com</a>.</p>
+
+        <footer>&copy; 2026 MW Supply Limited</footer>
+    </div>
+</body>
+</html>
