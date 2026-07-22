@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Days Counter — Shared Countdown</title>
+<meta name="description" content="A countdown shared from Days Counter.">
+<meta name="robots" content="noindex">
+<style>
+  :root { --sf: -apple-system, BlinkMacSystemFont, "SF Pro Rounded", "SF Pro Text", system-ui, sans-serif; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { height: 100%; }
+  body {
+    font-family: var(--sf);
+    background: #0b0b0f;
+    color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    min-height: 100dvh; padding: 20px;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { width: 100%; max-width: 420px; }
+  .card {
+    position: relative; overflow: hidden;
+    border-radius: 28px; padding: 30px 26px 26px;
+    min-height: 440px;
+    display: flex; flex-direction: column;
+    box-shadow: 0 24px 60px rgba(0,0,0,.45);
+    background: linear-gradient(135deg, #6D5EF7, #8B7DFF);
+  }
+  .card::after {
+    content: ""; position: absolute; inset: 0; pointer-events: none;
+    background: linear-gradient(to bottom, rgba(0,0,0,.05) 0%, rgba(0,0,0,0) 42%, rgba(0,0,0,.45) 100%);
+  }
+  .card > * { position: relative; z-index: 1; }
+  .glyph { font-size: 40px; line-height: 1; }
+  .glyph svg { width: 40px; height: 40px; }
+  .title { margin-top: 14px; font-size: 26px; font-weight: 700; letter-spacing: -.02em; overflow-wrap: anywhere; }
+  .spacer { flex: 1; }
+  .number { font-size: 92px; font-weight: 800; letter-spacing: -.04em; line-height: .95; font-variant-numeric: tabular-nums; }
+  .number.today { font-size: 60px; }
+  .caption { margin-top: 4px; font-size: 15px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; opacity: .92; }
+  .date { margin-top: 6px; font-size: 14px; opacity: .82; }
+  .tick { margin-top: 12px; font-size: 15px; font-variant-numeric: tabular-nums; opacity: .9; }
+  .wordmark { margin-top: 18px; display: flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; opacity: .82; }
+  .wordmark svg { width: 15px; height: 15px; }
+  .actions { margin-top: 18px; display: grid; gap: 10px; }
+  .btn {
+    display: block; text-align: center; text-decoration: none;
+    padding: 15px 18px; border-radius: 15px; font-size: 16px; font-weight: 600;
+    background: #fff; color: #16161c;
+  }
+  .btn.secondary { background: rgba(255,255,255,.16); color: #fff; }
+  .err { text-align: center; padding: 40px 20px; }
+  .err h1 { font-size: 22px; margin-bottom: 10px; }
+  .err p { opacity: .8; margin-bottom: 24px; }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+<div class="wrap" id="root"></div>
+<script>
+"use strict";
+
+// ---- 17 gradients — MUST mirror DaysCounterShared/Theme.swift Palette (append-only) ----
+var PALETTE = {
+  indigo:["#6D5EF7","#8B7DFF"], violet:["#9B5CF6","#B385FF"], blue:["#3B82F6","#60A5FA"],
+  sky:["#0EA5E9","#38BDF8"], teal:["#0D9488","#2DD4BF"], emerald:["#059669","#34D399"],
+  candy:["#FC466B","#3F5EFB"], aurora:["#00C9FF","#59D89B"], amber:["#F59E0B","#FBBF24"],
+  gold:["#E7B23C","#F5CC6B"], coral:["#FB7185","#FDA4AF"], sunset:["#FF5E62","#FF9966"],
+  pink:["#EC4899","#F472B6"], rose:["#F43F5E","#FB7185"], flame:["#F83600","#FE8C00"],
+  slate:["#475569","#64748B"], midnight:["#232526","#414345"]
+};
+function gradient(id){ return PALETTE[id] || PALETTE.indigo; }
+
+// ---- base64url decode → JSON (mirrors CountdownLink.decodeFragment) ----
+function decodePayload(frag){
+  if(!frag || frag.length > 2048) return null;
+  try {
+    var b64 = frag.replace(/-/g,"+").replace(/_/g,"/");
+    while(b64.length % 4) b64 += "=";
+    var bin = atob(b64);
+    // atob gives a binary string; decode UTF-8 (emoji-safe)
+    var bytes = Uint8Array.from(bin, function(c){ return c.charCodeAt(0); });
+    var json = new TextDecoder("utf-8").decode(bytes);
+    var o = JSON.parse(json);
+    if(typeof o.d !== "number") return null;               // date required
+    return {
+      version: o.v|0,
+      title: String(o.t||"").slice(0,80),
+      target: new Date(o.d*1000),                            // .secondsSince1970
+      includeTime: !!o.it,
+      direction: o.dir||"automatic",
+      unit: o.u||"auto",
+      repeat: o.r||"none",
+      gradientID: o.g||"indigo",
+      emoji: o.e||"",
+      symbol: o.s||""
+    };
+  } catch(e){ return null; }
+}
+
+// ---- EventMath reproduction (whole CALENDAR days, .strict repeat resolution) ----
+function startOfDay(d){ return new Date(d.getFullYear(), d.getMonth(), d.getDate()); }
+function daysInMonth(y,m){ return new Date(y, m+1, 0).getDate(); }
+function dayDiff(a,b){ return Math.round((startOfDay(b) - startOfDay(a)) / 86400000); }
+
+// next occurrence at-or-after `today`, mirroring Calendar.nextDate(matching:.strict)
+function effectiveDate(anchor, rule, today){
+  if(rule === "none") return anchor;
+  if(startOfDay(anchor) >= today) return anchor;
+  var cand = new Date(anchor), guard = 0;
+  if(rule === "weekly"){
+    while(startOfDay(cand) < today && guard++ < 4000) cand.setDate(cand.getDate()+7);
+    return cand;
+  }
+  var day = anchor.getDate(), month = anchor.getMonth();
+  var hh = anchor.getHours(), mm = anchor.getMinutes(), ss = anchor.getSeconds();
+  if(rule === "monthly"){
+    var y = anchor.getFullYear(), m = anchor.getMonth();
+    while(startOfDay(cand) < today && guard++ < 4000){
+      m++; if(m>11){ m=0; y++; }
+      if(day <= daysInMonth(y,m)) cand = new Date(y,m,day,hh,mm,ss); // else skip (strict)
+    }
+    return cand;
+  }
+  if(rule === "yearly"){
+    var yr = anchor.getFullYear();
+    while(startOfDay(cand) < today && guard++ < 4000){
+      yr++;
+      if(day <= daysInMonth(yr,month)) cand = new Date(yr,month,day,hh,mm,ss); // Feb-29 skips non-leap
+    }
+    return cand;
+  }
+  return anchor;
+}
+
+// y/m/d breakdown between two ordered days (mirrors dateComponents([.year,.month,.day]))
+function ymd(earlier, later){
+  var y = later.getFullYear()-earlier.getFullYear();
+  var m = later.getMonth()-earlier.getMonth();
+  var d = later.getDate()-earlier.getDate();
+  if(d < 0){ m--; d += daysInMonth(later.getFullYear(), (later.getMonth()+11)%12); }
+  if(m < 0){ y--; m += 12; }
+  return {years:y, months:m, days:d};
+}
+
+function unitNoun(v, unit){
+  var n = unit==="weeks"?"week":unit==="months"?"month":unit==="years"?"year":"day";
+  return v===1 ? n : n+"s";
+}
+function primaryValue(c, unit){
+  var abs = Math.abs(c.signedDays);
+  if(unit==="weeks") return Math.floor(abs/7);
+  if(unit==="months") return c.years*12 + c.months;
+  if(unit==="years") return c.years;
+  return abs; // auto/days
+}
+function caption(c, dir, unit){
+  if(c.isToday) return "Today";
+  var noun = unitNoun(primaryValue(c,unit), unit);
+  if(dir==="countup") return noun+" since";
+  if(dir==="countdown") return c.isPast ? noun+" since" : noun+" to go";
+  return c.isPast ? noun+" since" : noun+" to go"; // automatic
+}
+
+function compute(p, now){
+  var rule = p.direction==="countup" ? "none" : p.repeat; // count-up ignores repeat
+  var eff = effectiveDate(p.target, rule, startOfDay(now));
+  var signed = dayDiff(now, eff);
+  var earlier = startOfDay(eff) >= startOfDay(now) ? startOfDay(now) : startOfDay(eff);
+  var later   = startOfDay(eff) >= startOfDay(now) ? startOfDay(eff) : startOfDay(now);
+  var b = ymd(earlier, later);
+  return { signedDays: signed, isToday: signed===0, isPast: signed<0,
+           years:b.years, months:b.months, days:b.days, effective: eff };
+}
+
+// ---- render ----
+function el(html){ var t=document.createElement("template"); t.innerHTML=html.trim(); return t.content.firstElementChild; }
+var CAL = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="3"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>';
+
+function fmtDate(d, withTime){
+  var o = {year:"numeric", month:"short", day:"numeric"};
+  if(withTime){ o.hour="numeric"; o.minute="2-digit"; }
+  try { return d.toLocaleDateString(undefined, o); } catch(e){ return d.toDateString(); }
+}
+function pad(n){ return (n<10?"0":"")+n; }
+
+function renderError(){
+  document.getElementById("root").innerHTML =
+    '<div class="err"><h1>This countdown link looks broken</h1>'+
+    '<p>It may be incomplete or from a newer version.</p>'+
+    '<a class="btn" href="https://apps.apple.com/app/id6788633434">Get Days Counter</a></div>';
+}
+
+var payload = decodePayload(location.hash.slice(1) || (new URLSearchParams(location.search).get("data")||""));
+if(!payload){ renderError(); }
+else {
+  var g = gradient(payload.gradientID);
+  var glyph = payload.emoji ? '<div class="glyph">'+escapeHtml(payload.emoji)+'</div>'
+                            : '<div class="glyph">'+CAL+'</div>';
+  var card = el(
+    '<div class="wrap"><div class="card" style="background:linear-gradient(135deg,'+g[0]+','+g[1]+')">'+
+      glyph+
+      '<div class="title">'+escapeHtml(payload.title||"Countdown")+'</div>'+
+      '<div class="spacer"></div>'+
+      '<div class="number" id="num">–</div>'+
+      '<div class="caption" id="cap"></div>'+
+      '<div class="date">'+escapeHtml(fmtDate(payload.target, payload.includeTime))+'</div>'+
+      '<div class="tick" id="tick"></div>'+
+      '<div class="wordmark">'+CAL+' Days Counter</div>'+
+      '<div class="actions">'+
+        '<a class="btn" id="open">Open in Days Counter</a>'+
+        '<a class="btn secondary" href="https://apps.apple.com/app/id6788633434">Get Days Counter</a>'+
+      '</div>'+
+    '</div></div>');
+  document.getElementById("root").replaceWith(card);
+  document.getElementById("open").href = "dayscounter://import#" + (location.hash.slice(1) || "");
+
+  function tick(){
+    var now = new Date();
+    var c = compute(payload, now);
+    var val = primaryValue(c, payload.unit);
+    var num = document.getElementById("num");
+    if(c.isToday){ num.textContent = "Today"; num.classList.add("today"); }
+    else { num.textContent = val.toLocaleString(); num.classList.remove("today"); }
+    document.getElementById("cap").textContent = c.isToday ? "" : caption(c, payload.direction, payload.unit).toUpperCase();
+    // secondary live H:M:S to the effective moment when near / timed
+    var t = document.getElementById("tick");
+    var ms = c.effective - now;
+    if(!c.isToday && !c.isPast && ms > 0 && ms < 86400000*2){
+      var s = Math.floor(ms/1000);
+      var h = Math.floor(s/3600), mi = Math.floor((s%3600)/60), se = s%60;
+      t.textContent = pad(h)+":"+pad(mi)+":"+pad(se);
+    } else { t.textContent = ""; }
+  }
+  tick();
+  setInterval(tick, 1000);
+}
+
+function escapeHtml(s){ return String(s).replace(/[&<>"']/g, function(c){
+  return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]; }); }
+</script>
+</body>
+</html>
