@@ -57,7 +57,7 @@
         <p class="meta">Effective 23 July 2026 · Last updated 23 July 2026</p>
 
         <div class="callout">
-            <p><strong>Summary:</strong> Currio has no account system and we run no servers of our own. Your currency list and settings stay on your device and, when you're signed in to iCloud, sync through your own private iCloud (Apple's CloudKit). To show live rates, Currio fetches an exchange-rate table over the internet without sending any personal information. The <strong>free</strong> version shows a banner ad from Google AdMob, which collects limited device and ad-interaction data to serve it. Upgrading to <strong>Currio Pro</strong> removes all ads.</p>
+            <p><strong>Summary:</strong> Currio has no account system and we run no servers of our own. Your currency list and settings stay on your device and, when you're signed in to iCloud, sync through your own private iCloud (Apple's iCloud key-value storage). To show live rates, Currio fetches an exchange-rate table over the internet without sending any personal information. The <strong>free</strong> version shows a banner ad from Google AdMob, which collects limited device and ad-interaction data to serve it. Upgrading to <strong>Currio Pro</strong> removes all ads.</p>
         </div>
 
         <h2>1. Who we are</h2>
@@ -71,7 +71,7 @@
             <li>Any rate alerts you create (a currency pair and a target value);</li>
             <li>A cached copy of the most recent exchange-rate table, so conversion works offline.</li>
         </ul>
-        <p>This is stored on your device with Apple's on-device storage. When you are signed in to iCloud, your currency list, settings, and alerts also sync through your own private iCloud database using Apple's CloudKit, so they stay in sync across your devices and are restored when you set up a new device. This data lives in your personal iCloud account under your Apple ID — it is visible only to you, handled under Apple's iCloud terms and privacy policy, and we never receive it or have access to it. You can remove it by deleting the app and, if you wish, deleting Currio's iCloud data in iOS Settings → Apple Account → iCloud.</p>
+        <p>This is stored on your device with Apple's on-device storage. When you are signed in to iCloud, your currency list, settings, and alerts also sync through your own private iCloud database using Apple's iCloud key-value storage, so they stay in sync across your devices and are restored when you set up a new device. This data lives in your personal iCloud account under your Apple ID — it is visible only to you, handled under Apple's iCloud terms and privacy policy, and we never receive it or have access to it. You can remove it by deleting the app and, if you wish, deleting Currio's iCloud data in iOS Settings → Apple Account → iCloud.</p>
 
         <h2>3. Exchange-rate data (network)</h2>
         <p>To show live rates, Currio fetches a table of exchange rates from a free, public exchange-rate service (open.er-api.com). Historical charts (Pro) fetch published European Central Bank reference rates from a public service (frankfurter.dev). These requests contain only the currency codes needed for the lookup and standard technical information such as your IP address; they include <strong>no</strong> account, name, location, or list data, and we do not receive them. Exchange rates are indicative and provided for everyday reference only.</p>
