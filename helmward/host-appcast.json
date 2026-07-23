@@ -1,4 +1,4 @@
 {
-  "normal": { "version": "1.0", "build": 55, "url": "https://mwsupplylimited.github.io/helmward/Overhand-Host.dmg", "notes": "Internet data now shows your plan allowance and any extra data you've bought as two separate figures, so you can see which one a session is drawing on. Overhand always uses your plan data first — extra data waits until the plan runs out, and never expires. Please update." },
-  "beta": { "version": "1.0", "build": 55, "url": "https://mwsupplylimited.github.io/helmward/Overhand-Host.dmg", "notes": "Two-pot internet-data meter (plan vs extra) with a 'Used first' badge on whichever pot a session draws from." }
+  "normal": { "version": "1.0", "build": 56, "url": "https://mwsupplylimited.github.io/helmward/Overhand-Host.dmg", "notes": "Fixes a bug that could make this Mac show as “offline” on your iPhone even while it was awake and sharing — presence is no longer tied to which screen the app is showing. Sharing now also resumes by itself after a restart, crash or update, so a Mac you left shared stays reachable. Please update." },
+  "beta": { "version": "1.0", "build": 56, "url": "https://mwsupplylimited.github.io/helmward/Overhand-Host.dmg", "notes": "Presence moved out of the host view's lifecycle (heartbeats no longer stop when you navigate Back while sharing) + sharing resumes after any relaunch." }
 }
