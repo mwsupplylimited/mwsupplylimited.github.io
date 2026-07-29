@@ -1,24 +1,40 @@
-# app-ads.txt — MW Supply Limited
-# Publish at: https://mwsupplylimited.github.io/app-ads.txt
-# (root of the domain used as the Developer Website / Marketing URL on every
-#  App Store listing — currently https://mwsupplylimited.github.io/rostra/)
+# app-ads.txt — MW Supply Limited (mwsupplylimited.github.io)
 #
-# Generated 2026-07-29 from the Unity dashboard's "missing authorized sellers"
-# list for org 1375973128454 (mwsupplylimited).
+# THIS FILE IS DOMAIN-LEVEL. It authorizes sellers for EVERY MW Supply app whose
+# App Store listing points its Marketing URL at this domain — not for one app.
 #
-# IMPORTANT — the previous contents of this file were:
-#     google.com, pub-9269785449468392, DIRECT, f08c47fec0942fa0
-# That is the TERMINATED AdMob publisher account. It has been removed: leaving a
-# DIRECT authorisation for a banned account serves no purpose and misrepresents
-# who may sell this inventory. The google.com RESELLER lines below are different
-# publisher IDs — they are Unity's own demand partners and ARE required.
+# REMOVED 2026-07-24 — google.com, pub-9269785449468392, DIRECT, f08c47fec0942fa0
+# ------------------------------------------------------------------------------
+# That AdMob publisher account was BANNED ACCOUNT-WIDE for invalid traffic and the
+# appeal was unsuccessful. The line is therefore dead for every app it used to
+# cover (Overhand, Blackout Camera <=1.5.1, PDF Scanner <=1.0.8): a banned
+# publisher cannot sell inventory, so the line authorized nothing and only
+# misstated who may sell. This is the one case where removing rather than adding
+# is correct — the seller no longer exists.
 #
-# Unity warns this list changes; re-check the dashboard periodically.
+# Do NOT re-add it. Future Google demand can only arrive through a mediation
+# partner's own seller line — see the google.com RESELLER entries below, which
+# belong to Unity's demand partners, NOT to this account.
+#
+# Authorized sellers — Unity LevelPlay (ironSource) mediation
+# ----------------------------------------------------------
+# PDF Scanner 1.0.9+ and Blackout Camera 1.5.3+ are monetized through Unity
+# LevelPlay mediating Unity Ads and ironSource Ads. The block below is the list
+# Unity's own dashboard reports as required for this account
+# (Unity Cloud -> Monetization -> Settings -> App-ads.txt, "missing authorized
+# sellers"), so it is emitted rather than hand-written.
+#
+# When further networks are enabled in LevelPlay (AppLovin, Meta, Mintegral,
+# Liftoff/Vungle), APPEND that network's emitted block too; LevelPlay -> Setup ->
+# app-ads.txt gives the combined list for whatever is enabled.
+#
+# Unity currently reports this file as failing verification ("badUrlForm"): the
+# Unity org's Developer website field is empty, and crawlers reach this file only
+# via the App Store listing's Marketing URL. Both must point at
+# https://mwsupplylimited.github.io/ before demand will flow.
 
-# ---- Unity (DIRECT) ----
 unity.com, 139443200, DIRECT, 96cabb5fbdde37a7
 
-# ---- Unity demand partners (RESELLER) ----
 anzu.io, 691e95644e633a6eee2567ee, RESELLER
 appads.in, 106246, RESELLER
 appnexus.com, 11826, RESELLER, f5ab79cb980f11d1
