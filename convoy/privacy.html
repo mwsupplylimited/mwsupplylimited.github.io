@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convoy — Privacy Policy</title>
+    <meta name="description" content="Privacy Policy for Convoy on iOS.">
+    <style>
+        :root {
+            --bg: #ffffff;
+            --fg: #1a1a1a;
+            --muted: #666666;
+            --accent: #0c8f86;
+            --card: #f5f5f7;
+            --border: #e5e5e7;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #121419;
+                --fg: #f5f5f7;
+                --muted: #9a9a9a;
+                --accent: #34d3c0;
+                --card: #1c1f25;
+                --border: #2a2d34;
+            }
+        }
+        * { box-sizing: border-box; }
+        html { -webkit-text-size-adjust: 100%; }
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+            background: var(--bg);
+            color: var(--fg);
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+        }
+        .container { max-width: 720px; margin: 0 auto; padding: 48px 24px 96px; }
+        .back { display: inline-block; color: var(--muted); text-decoration: none; font-size: 0.9rem; margin-bottom: 32px; }
+        .back:hover { color: var(--accent); }
+        h1 { font-size: 2rem; margin: 0 0 8px; letter-spacing: -0.02em; }
+        .meta { color: var(--muted); margin: 0 0 40px; font-size: 0.95rem; }
+        h2 { font-size: 1.2rem; margin: 36px 0 12px; letter-spacing: -0.01em; }
+        p { color: var(--fg); }
+        ul { padding-left: 22px; }
+        li { margin-bottom: 6px; }
+        a { color: var(--accent); }
+        code { background: var(--card); border: 1px solid var(--border); border-radius: 5px; padding: 1px 5px; font-size: 0.92em; }
+        .callout { background: var(--card); border: 1px solid var(--border); border-left: 3px solid var(--accent); padding: 16px 20px; border-radius: 8px; margin: 24px 0; }
+        .callout p { margin: 0; }
+        footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.85rem; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a class="back" href="./">&larr; Convoy Support</a>
+
+        <h1>Convoy Privacy Policy</h1>
+        <p class="meta">Effective 13 July 2026 &middot; Last updated 29 July 2026</p>
+
+        <div class="callout">
+            <p><strong>Summary:</strong> Convoy&rsquo;s whole purpose is to let the people driving together see each other. While you are in a convoy, your live location, heading and speed are shared with the other members of <em>that</em> convoy, relayed in real time through a backend service (Google Firebase). This live data is temporary and convoy-scoped &mdash; it is cleared when you leave or the convoy ends, and nothing is shared when you are not in an active convoy. Your own trip history, saved routes, car profile and settings are stored in <em>your</em> personal iCloud account, not on our servers. Convoy is free with ads (Google AdMob) on the free plan; Convoy Pro removes them.</p>
+        </div>
+
+        <h2>1. Who we are</h2>
+        <p>Convoy is published by MW Supply Limited. This policy explains what data the app handles, where it goes, and your choices. Questions: <a href="mailto:mwsupplylimited@gmail.com?subject=Convoy%20privacy">mwsupplylimited@gmail.com</a>.</p>
+
+        <h2>2. What is shared while you are in a convoy</h2>
+        <p>A convoy is a temporary group you create or join with a short code. While you are a member of an active convoy, the app shares the following with the other members of that convoy so the shared map and features work:</p>
+        <ul>
+            <li>Your <strong>live location</strong> (latitude/longitude), <strong>heading</strong> and <strong>speed</strong>, updated continuously while the convoy is active.</li>
+            <li>Your <strong>display name</strong> and chosen <strong>car color / avatar</strong>.</li>
+            <li>Any <strong>chat messages</strong> and <strong>preset messages</strong> you send to the convoy.</li>
+            <li>Any <strong>hazard / police / camera pins</strong> you drop, with their location.</li>
+            <li>If you are the leader: the <strong>route</strong> and <strong>checkpoints</strong> you set; and, as members arrive, checkpoint <strong>arrival times and order</strong> used for the leaderboard.</li>
+        </ul>
+        <p>This is inherent to what Convoy does: a location-sharing convoy app cannot show the group to each other without sharing it. You control it by choosing whether to be in a convoy, and you can leave at any time.</p>
+
+        <h2>3. The backend that relays convoy data</h2>
+        <p>To deliver that live data between members within a second or two, Convoy uses <strong>Google Firebase Realtime Database</strong> and <strong>Firebase Cloud Messaging</strong> as a real-time relay and notification service. The items listed in Section 2 pass through Firebase so they can reach the other members of your convoy. This convoy data is:</p>
+        <ul>
+            <li><strong>Convoy-scoped</strong> &mdash; readable only by members of the same convoy, enforced by server-side security rules; a member can write only their own live position and profile, and only the leader can set the route and checkpoints.</li>
+            <li><strong>Temporary</strong> &mdash; your live node is removed when you disconnect or leave, and a convoy&rsquo;s data is cleared when it ends. It is not a permanent record and is not used to build a history of your movements.</li>
+        </ul>
+        <p>Convoy signs you in to the backend anonymously (no email or password) purely to enforce those rules; this identifier is not linked to your real-world identity by us. Google processes this data as our service provider under the <a href="https://firebase.google.com/support/privacy">Firebase Privacy and Security terms</a> and the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>. MW Supply Limited does not sell this data or use it for advertising.</p>
+
+        <h2>4. Location permission</h2>
+        <p>Placing you on the shared map requires location access. Convoy uses the lowest-privacy permission that works:</p>
+        <ul>
+            <li><strong>While Using:</strong> enough to share your position while the app is open.</li>
+            <li><strong>Background updates during an active convoy:</strong> so the group still sees you when your screen is off, the app continues location updates <em>while a convoy is active</em>, shown by the iOS blue status indicator. Convoy does <strong>not</strong> request &ldquo;Always&rdquo; location and does not track you when no convoy is active.</li>
+        </ul>
+        <p>You can revoke or limit location access at any time in iOS Settings &rarr; Privacy &amp; Security &rarr; Location Services &rarr; Convoy.</p>
+
+        <h2>4a. Crews and referral codes</h2>
+        <p>Beyond a single drive, Convoy has two optional features that use the same relay described in Section 3:</p>
+        <ul>
+            <li><strong>Crews</strong> &mdash; a named standing group you can create or join with a short crew code. If you use it, the crew&rsquo;s id, code, name and member list are stored on the relay so members can find each other. Leaving a crew removes you from it.</li>
+            <li><strong>Referral codes</strong> &mdash; if you open the Referral screen, the app registers a short code for you and records which codes have been claimed, so that a code cannot be claimed twice or by its own owner. A claim record contains the claiming account&rsquo;s anonymous identifier and nothing more; it is not linked to your real-world identity by us and is never used for advertising.</li>
+        </ul>
+        <p>Both are optional. If you never open those screens, no crew or referral data is created for you.</p>
+
+        <h2>4b. Sign in with Apple (optional)</h2>
+        <p>Convoy works fully without any account. You may optionally use <strong>Sign in with Apple</strong> to attach a durable identity to your profile so it follows you across your own devices. If you do, Convoy stores only the identifier Apple gives the app and the display name you choose to share, and it stores them <em>on your device and in your own iCloud account</em> &mdash; not on our servers. Apple does not give us your Apple Account password, and you may use Apple&rsquo;s Hide My Email option. Tapping <strong>Sign out</strong> on the account row deletes that stored identifier and name from Convoy immediately; deleting the app removes the rest.</p>
+
+        <h2>5. Your own data in iCloud</h2>
+        <p>Separately from the live convoy relay, Convoy stores <em>your</em> durable data &mdash; your trip history, saved routes, car profile and app settings &mdash; using Apple&rsquo;s SwiftData with CloudKit in your own iCloud account (container <code>iCloud.com.edfd.Convoy</code>), if you are signed in to iCloud. This is stored under <em>your</em> Apple ID, synced between <em>your</em> devices by Apple, and is not accessible to MW Supply Limited. If iCloud is unavailable, this data stays on the device.</p>
+
+        <h2>6. Messages and user content</h2>
+        <p>Messages and pins you send are relayed to your convoy as described above and are not moderated by us in advance. Convoy provides in-app tools to <strong>mute</strong>, <strong>block</strong> and <strong>report</strong> a member and their content; reports are sent to us at <a href="mailto:mwsupplylimited@gmail.com?subject=Convoy%20report">mwsupplylimited@gmail.com</a> so we can act on abuse. Do not share content that is illegal or violates others&rsquo; rights.</p>
+
+        <h2>7. Group audio calls and navigation hand-off</h2>
+        <p>The one-tap group call uses Apple&rsquo;s <strong>Group FaceTime Audio</strong>; the call is carried by Apple, not by us. When you choose to open a route in <strong>Apple Maps, Google Maps or Waze</strong> for full voice navigation, you leave Convoy and that other app&rsquo;s own privacy policy applies. Convoy does not read data from, or send your convoy data to, Waze or Google Maps.</p>
+
+        <h2>8. Advertising (free plan) and App Tracking Transparency</h2>
+        <p>On the free plan, Convoy shows ads using the <strong>Google Mobile Ads SDK (Google AdMob)</strong> &mdash; an anchored banner that adapts to your device and never covers the app&rsquo;s controls. To select, deliver, measure and cap these ads and to prevent fraud, the Google SDK may collect device and usage information, including a device advertising identifier (IDFA, only with your consent), an IP address (and the coarse region derived from it), and your interaction with the ads.</p>
+        <p>On first launch iOS shows Apple&rsquo;s <strong>App Tracking Transparency</strong> prompt. If you <strong>allow</strong> tracking, the advertising identifier may be used for personalized ads; if you <strong>ask the app not to track</strong>, you still see ads, but non-personalized ones. This advertising data is collected and processed by <strong>Google</strong> as an independent controller, not by MW Supply Limited; we never receive it. See the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>. You can change your choice in iOS Settings &rarr; Privacy &amp; Security &rarr; Tracking. <strong>Convoy Pro removes all ads</strong>, and while you are a subscriber the ad SDK is not used to serve ads.</p>
+
+        <h2>9. Purchases (Convoy Pro and Fuel)</h2>
+        <p>Convoy Pro is an auto-renewable subscription (Monthly or Yearly) sold through Apple&rsquo;s In-App Purchase. Convoy also sells <strong>Fuel</strong>, a consumable in-app currency used only to unlock cosmetic items inside the app; Fuel has no cash value, cannot be transferred or refunded for money, and never affects safety alerts or any driving feature. Your purchase, payment and renewals are handled entirely by Apple under your Apple Account; MW Supply Limited never receives your name, Apple ID, or payment details &mdash; only aggregate, non-identifying sales reports. Your Fuel balance and owned cosmetics are stored with your own profile data (Section 5), not on our servers. Subscriptions are managed and cancelled in iOS Settings &rarr; [your name] &rarr; Subscriptions.</p>
+
+        <h2>10. Third-party services</h2>
+        <p>The third-party services Convoy relies on are: <strong>Google Firebase</strong> (Realtime Database + Cloud Messaging) to relay live convoy data (Section 3), and the <strong>Google Mobile Ads SDK (AdMob)</strong> for ads on the free plan (Section 8). First-party Apple services used on your device include Core Location, MapKit, CloudKit, StoreKit and FaceTime. Convoy contains no other analytics or crash-reporting SDKs beyond Apple&rsquo;s own first-party crash reporting (which runs only if you opted in under iOS Settings &rarr; Privacy &amp; Security &rarr; Analytics &amp; Improvements).</p>
+
+        <h2>11. Children</h2>
+        <p>Convoy is intended for adults who drive. We do not knowingly direct the app to, or collect personal data from, children.</p>
+
+        <h2>12. Your control</h2>
+        <ul>
+            <li><strong>Leave a convoy</strong> at any time to stop sharing your live location immediately.</li>
+            <li><strong>Mute, block or report</strong> a member from the roster or a message.</li>
+            <li><strong>Revoke location</strong> in iOS Settings &rarr; Privacy &amp; Security &rarr; Location Services &rarr; Convoy.</li>
+            <li><strong>Sign out of Apple</strong> from the account row in the app to delete the stored Apple identifier and display name immediately.</li>
+            <li><strong>Leave a crew</strong> to remove yourself from its member list.</li>
+            <li><strong>Delete your data</strong> by deleting the app; your iCloud copy can be removed from iOS Settings &rarr; [your name] &rarr; iCloud &rarr; Manage Account Storage.</li>
+            <li><strong>Change tracking</strong> in iOS Settings &rarr; Privacy &amp; Security &rarr; Tracking, or subscribe to Convoy Pro to remove ads.</li>
+        </ul>
+
+        <h2>13. Changes to this policy</h2>
+        <p>If we change how Convoy handles data, we will update this page and the &ldquo;Last updated&rdquo; date above. Material changes are also reflected in the App Store privacy labels for the affected version.</p>
+
+        <h2>14. Contact</h2>
+        <p>Questions about this privacy policy: <a href="mailto:mwsupplylimited@gmail.com?subject=Convoy%20privacy">mwsupplylimited@gmail.com</a>.</p>
+
+        <footer>&copy; 2026 MW Supply Limited</footer>
+    </div>
+</body>
+</html>
