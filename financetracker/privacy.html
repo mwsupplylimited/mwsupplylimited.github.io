@@ -54,10 +54,10 @@
         <a class="back" href="./">&larr; Money Flow Support</a>
 
         <h1>Money Flow Privacy Policy</h1>
-        <p class="meta">Effective 29 May 2026 &middot; Last updated 21 June 2026</p>
+        <p class="meta">Effective 29 May 2026 &middot; Last updated 29 July 2026</p>
 
         <div class="callout">
-            <p><strong>Summary:</strong> Your financial data stays on your device and &mdash; only if you choose &mdash; syncs through your own private iCloud account. We never see it and we run no servers. The free version of Money Flow shows ads from Google AdMob, which collects limited device and ad-interaction data to serve those ads. Upgrading to <strong>Money Flow Pro</strong> removes all ads.</p>
+            <p><strong>Summary:</strong> Your financial data stays on your device and &mdash; only if you choose &mdash; syncs through your own private iCloud account. We never see it and we run no servers. The free version of Money Flow shows ads supplied by <strong>Unity LevelPlay (ironSource)</strong> mediation, with Unity Ads as the linked demand network, which collects limited device and ad-interaction data to serve those ads. Ads are non-personalised unless you turn on <em>Personalized Ads</em> in Settings. Upgrading to <strong>Money Flow Pro</strong> removes all ads.</p>
         </div>
 
         <h2>1. Who we are</h2>
@@ -77,16 +77,16 @@
         <p>If iCloud is signed in on your device and the sync toggle in <em>Settings</em> is on, your transactions (including any receipt photos), categories, accounts, budgets, savings goals, recurring rules, and settings are mirrored to your personal iCloud account using Apple&rsquo;s CloudKit <em>private database</em>. This keeps your data in sync across your iPhone and iPad and lets it return after you reinstall the app. The data is stored in your own iCloud account &mdash; MW Supply Limited has no access to it, and iCloud is governed by <a href="https://www.apple.com/legal/privacy/">Apple&rsquo;s privacy policy</a>. If you turn iCloud sync off or are not signed in to iCloud, all data simply stays on the device.</p>
 
         <h2>4. Advertising (free version)</h2>
-        <p>The free version of Money Flow is supported by ads. It shows banner ads and occasional full-screen (interstitial) ads served by <strong>Google AdMob</strong> (the Google Mobile Ads SDK). To serve these ads, Google may collect and process information including:</p>
+        <p>The free version of Money Flow is supported by ads. It shows banner ads and occasional full-screen (interstitial) ads served through <strong>Unity LevelPlay (ironSource)</strong> mediation, currently with <strong>Unity Ads</strong> as the only linked network. To serve these ads, Unity may collect and process information including:</p>
         <ul>
             <li>Your device&rsquo;s advertising identifier (IDFA) &mdash; only if you allow tracking when iOS asks (see below);</li>
             <li>A non-personal device/usage identifier, device type, operating-system version and settings;</li>
             <li>Your IP address and the approximate (coarse) region derived from it;</li>
             <li>Information about how you interact with ads (for example, that an ad was shown or tapped).</li>
         </ul>
-        <p>This information is collected and used by Google, not by us. It is handled under <a href="https://policies.google.com/privacy">Google&rsquo;s Privacy Policy</a> and as described in <a href="https://support.google.com/admob/answer/6128543">How Google uses information from sites or apps that use its services</a>. MW Supply Limited only receives aggregate, non-identifying reports such as the number of ad impressions and estimated revenue. Your financial data is never shared with Google or used to target ads.</p>
+        <p>This information is collected and used by Unity Technologies as an independent data controller, not by us. It is handled under <a href="https://unity.com/legal/game-player-and-app-user-privacy-policy">Unity&rsquo;s Game Player and App User Privacy Policy</a>. MW Supply Limited only receives aggregate, non-identifying reports such as the number of ad impressions and estimated revenue. Your financial data is never shared with Unity or used to target ads.</p>
         <p><strong>App Tracking Transparency.</strong> iOS asks whether Money Flow may track you across other companies&rsquo; apps and websites. If you choose &ldquo;Ask App Not to Track,&rdquo; the advertising identifier is not used and you will see only non-personalized ads.</p>
-        <p><strong>Consent (EEA, UK &amp; other regions).</strong> Where required by law, Money Flow uses Google&rsquo;s User Messaging Platform to ask for your consent before personalized ads are shown, and respects your choice.</p>
+        <p><strong>Personalised ads and consent.</strong> Money Flow presents no in-app consent dialog. By default the app reports <em>no</em> consent to personalised advertising and asserts the &ldquo;do not sell / do not share&rdquo; signal for California residents, so ads are non-personalised for everyone unless you affirmatively opt in. The opt-in is the <em>Personalized Ads</em> switch under <em>Settings &rarr; Ad Privacy</em>, which is off until you turn it on and which you can turn back off at any time; your choice is sent to the ad network immediately. Note that this is separate from the App Tracking Transparency prompt above &mdash; allowing tracking does not by itself turn personalised ads on.</p>
         <p><strong>Removing ads.</strong> Subscribing to Money Flow Pro removes all banner and interstitial ads. While you are a Pro subscriber, the app does not request or display ads.</p>
 
         <h2>5. Money Flow Pro subscription</h2>
@@ -102,12 +102,11 @@
         <p>Money Flow can import transactions from a CSV file you choose, and export your data as CSV or Excel files. Imported files are read locally; exported files are saved or shared only to the destination you pick through the standard iOS document and share sheets. These files are under your control and are never sent to us.</p>
 
         <h2>8. Third-party services</h2>
-        <p>To show ads in the free version, Money Flow includes two SDKs, both from Google:</p>
+        <p>To show ads in the free version, Money Flow includes one advertising SDK:</p>
         <ul>
-            <li><strong>Google Mobile Ads SDK (AdMob)</strong> &mdash; serves the banner and interstitial ads.</li>
-            <li><strong>Google User Messaging Platform</strong> &mdash; manages the ad-consent prompt where it is legally required.</li>
+            <li><strong>Unity LevelPlay (ironSource) mediation SDK, with the Unity Ads adapter</strong> &mdash; serves the banner and interstitial ads.</li>
         </ul>
-        <p>Both are governed by <a href="https://policies.google.com/privacy">Google&rsquo;s Privacy Policy</a>. Money Flow contains no analytics frameworks and no crash reporting other than Apple&rsquo;s first-party crash reporting (which is governed by Apple&rsquo;s privacy policy and only runs if you opted in to Share With App Developers in iOS Settings &rarr; Privacy &amp; Security &rarr; Analytics &amp; Improvements). Money Flow Pro subscribers are not shown ads, and the app does not request ads for them.</p>
+        <p>It is governed by <a href="https://unity.com/legal/game-player-and-app-user-privacy-policy">Unity&rsquo;s Game Player and App User Privacy Policy</a>. Google&rsquo;s Mobile Ads SDK and Google&rsquo;s User Messaging Platform, used by earlier versions of Money Flow, have been removed from the app entirely. Money Flow contains no analytics frameworks and no crash reporting other than Apple&rsquo;s first-party crash reporting (which is governed by Apple&rsquo;s privacy policy and only runs if you opted in to Share With App Developers in iOS Settings &rarr; Privacy &amp; Security &rarr; Analytics &amp; Improvements). Money Flow Pro subscribers are not shown ads, and the app does not request ads for them.</p>
 
         <h2>9. Permissions and identifiers</h2>
         <p>Money Flow does not access your location, microphone, contacts, or health data. The camera is used only when you choose to scan a receipt, and all processing happens on your device (see below). The advertising identifier is used only for ads in the free version, and only if you allow tracking as described in section 4. The other system features the app can use are optional and stay on your device:</p>
@@ -120,7 +119,7 @@
         </ul>
 
         <h2>10. Children</h2>
-        <p>Money Flow is a general-audience budgeting app and is not directed at children. It does not knowingly collect personal information from children. Because the free version shows ads, we instruct Google to serve only family-appropriate (maximum content rating G) ads, but it is not designed for use by children under the age of digital consent without a parent or guardian. Subscribing to Money Flow Pro removes all ads.</p>
+        <p>Money Flow is a general-audience budgeting app and is not directed at children. It does not knowingly collect personal information from children. The app declares itself to the ad partner as a general-audience, not child-directed app, and it is not designed for use by children under the age of digital consent without a parent or guardian. Subscribing to Money Flow Pro removes all ads.</p>
 
         <h2>11. Changes to this policy</h2>
         <p>If we change how Money Flow handles data, we will update this page and the &quot;Last updated&quot; date above. Material changes will also be reflected in the App Store privacy nutrition labels for the affected version of the app.</p>
