@@ -1,5 +1,7 @@
 # app-ads.txt — MW Supply Limited (mwsupplylimited.github.io)
 #
+# Publish at: https://mwsupplylimited.github.io/app-ads.txt
+#
 # THIS FILE IS DOMAIN-LEVEL. It authorizes sellers for EVERY MW Supply app whose
 # App Store listing points its Marketing URL at this domain — not for one app.
 #
@@ -19,12 +21,13 @@
 # Authorized sellers — Unity LevelPlay (ironSource) mediation
 # ----------------------------------------------------------
 # PDF Scanner 1.0.9+, Blackout Camera 1.5.3+ and Money Flow 1.11+ are monetized
-# through Unity LevelPlay mediating Unity Ads and ironSource Ads. Money Flow
-# 1.10 and earlier used the banned AdMob account above and is superseded. The
-# block below is the list
-# Unity's own dashboard reports as required for this account
-# (Unity Cloud -> Monetization -> Settings -> App-ads.txt, "missing authorized
-# sellers"), so it is emitted rather than hand-written.
+# through Unity LevelPlay mediating Unity Ads and ironSource Ads. Money Flow 1.10
+# and earlier used the banned AdMob account above and is superseded.
+#
+# The block below was GENERATED 2026-07-29 from the Unity dashboard's "missing
+# authorized sellers" list for org 1375973128454 (mwsupplylimited)
+# (Unity Cloud -> Monetization -> Settings -> App-ads.txt) — it is emitted, not
+# hand-written. Unity warns the list changes; re-check the dashboard periodically.
 #
 # When further networks are enabled in LevelPlay (AppLovin, Meta, Mintegral,
 # Liftoff/Vungle), APPEND that network's emitted block too; LevelPlay -> Setup ->
