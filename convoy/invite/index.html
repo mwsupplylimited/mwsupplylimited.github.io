@@ -53,12 +53,17 @@
         .btn {
             display: inline-block;
             text-decoration: none;
+            font-family: inherit;
+            font-size: 1rem;
             font-weight: 600;
+            line-height: 1.6;
             padding: 14px 28px;
+            border: 0;
             border-radius: 999px;
             background: var(--accent);
             color: #ffffff;
             margin: 0 6px 12px;
+            cursor: pointer;
         }
         .btn.secondary { background: transparent; color: var(--accent); border: 1px solid var(--border); }
         .steps { text-align: left; margin: 40px 0 0; color: var(--muted); font-size: 0.95rem; }
@@ -72,16 +77,18 @@
         <p class="tag">Road trips in separate cars, on one shared live map.</p>
 
         <p class="code" id="code">&mdash;</p>
-        <p class="hint" id="hint">Enter this referral code in Convoy after you install it.</p>
+        <p class="hint" id="hint">Install Convoy, then come back and tap Open in Convoy to apply the code.</p>
 
         <p>
             <a class="btn" id="open" href="#">Open in Convoy</a>
+            <button class="btn secondary" id="copy" type="button">Copy code</button>
             <a class="btn secondary" href="https://apps.apple.com/app/id6791054278">Get Convoy</a>
         </p>
 
         <div class="steps">
-            <p><strong>Already have Convoy?</strong> Tap <em>Open in Convoy</em>. If nothing happens, open the app, go to Referral, and enter the code above.</p>
-            <p><strong>New here?</strong> Install Convoy first, then enter the code on the Referral screen.</p>
+            <p><strong>Already have Convoy?</strong> Tap <em>Open in Convoy</em> and the code is applied for you.</p>
+            <p><strong>New here?</strong> Install Convoy first, then return to this page and tap <em>Open in Convoy</em> — that is what credits your friend.</p>
+            <p><strong>Reading this inside another app</strong> (WhatsApp, Instagram, Messenger)? Its built-in browser can&rsquo;t open Convoy for you. Tap <em>Copy code</em>, then open this link again in Safari.</p>
         </div>
 
         <footer>
@@ -92,26 +99,73 @@
 
     <script>
         (function () {
+            // Mirrors ReferralCode in the app: exactly 7 characters from the same
+            // confusable-free alphabet as an invite code (no O/0, no I/1). The
+            // length is deliberately different from a 6-character invite code so
+            // the two can never cross over on the shared convoy:// scheme.
+            var ALPHABET = 'ABCDEFGHJKMNPQRSTUVWXYZ23456789';
+            var LENGTH = 7;
+
             var params = new URLSearchParams(window.location.search);
-            var code = (params.get('ref') || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
+            var code = (params.get('ref') || '').toUpperCase().replace(/\s+/g, '');
             var codeEl = document.getElementById('code');
             var hintEl = document.getElementById('hint');
             var openEl = document.getElementById('open');
+            var copyEl = document.getElementById('copy');
+
+            function isValid(c) {
+                if (c.length !== LENGTH) { return false; }
+                for (var i = 0; i < c.length; i++) {
+                    if (ALPHABET.indexOf(c.charAt(i)) === -1) { return false; }
+                }
+                return true;
+            }
+
+            function unusable(label, message) {
+                codeEl.textContent = label;
+                hintEl.textContent = message;
+                openEl.style.display = 'none';
+                copyEl.style.display = 'none';
+            }
 
             if (!code) {
-                codeEl.textContent = 'No code';
-                hintEl.textContent = 'This link is missing its referral code. Ask for a new one, or just install Convoy and start a convoy of your own.';
-                openEl.style.display = 'none';
+                unusable('No code', 'This link is missing its referral code. Ask for a new one, or just install Convoy and start a convoy of your own.');
+                return;
+            }
+            if (!isValid(code)) {
+                unusable('Bad code', 'That referral code isn’t valid — codes are 7 characters and never use O, 0, I or 1. Ask for a new link, or just install Convoy and start a convoy of your own.');
                 return;
             }
 
             codeEl.textContent = code;
-            var deepLink = 'convoy://refer?ref=' + encodeURIComponent(code);
-            openEl.setAttribute('href', deepLink);
+            openEl.setAttribute('href', 'convoy://refer?ref=' + encodeURIComponent(code));
 
-            if (/iPhone|iPad|iPod/.test(navigator.userAgent)) {
-                window.location.href = deepLink;
-            }
+            // Deliberately NO automatic redirect — see the note on the join page.
+            // It mattered more here: a referral link's whole audience is people who
+            // do NOT have the app yet, and every one of them was being bounced to
+            // Safari's "address is invalid" alert instead of this page.
+            copyEl.addEventListener('click', function () {
+                function copied() {
+                    copyEl.textContent = 'Copied';
+                    setTimeout(function () { copyEl.textContent = 'Copy code'; }, 2000);
+                }
+                function legacyCopy() {
+                    var field = document.createElement('textarea');
+                    field.value = code;
+                    field.setAttribute('readonly', '');
+                    field.style.position = 'absolute';
+                    field.style.left = '-9999px';
+                    document.body.appendChild(field);
+                    field.select();
+                    try { document.execCommand('copy'); copied(); } catch (e) { /* the code stays on screen to type */ }
+                    document.body.removeChild(field);
+                }
+                if (navigator.clipboard && navigator.clipboard.writeText) {
+                    navigator.clipboard.writeText(code).then(copied, legacyCopy);
+                } else {
+                    legacyCopy();
+                }
+            });
         })();
     </script>
 </body>

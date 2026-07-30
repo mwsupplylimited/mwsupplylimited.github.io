@@ -53,12 +53,17 @@
         .btn {
             display: inline-block;
             text-decoration: none;
+            font-family: inherit;
+            font-size: 1rem;
             font-weight: 600;
+            line-height: 1.6;
             padding: 14px 28px;
+            border: 0;
             border-radius: 999px;
             background: var(--accent);
             color: #ffffff;
             margin: 0 6px 12px;
+            cursor: pointer;
         }
         .btn.secondary { background: transparent; color: var(--accent); border: 1px solid var(--border); }
         .steps { text-align: left; margin: 40px 0 0; color: var(--muted); font-size: 0.95rem; }
@@ -76,12 +81,14 @@
 
         <p>
             <a class="btn" id="open" href="#">Open in Convoy</a>
+            <button class="btn secondary" id="copy" type="button">Copy code</button>
             <a class="btn secondary" href="https://apps.apple.com/app/id6791054278">Get Convoy</a>
         </p>
 
         <div class="steps">
-            <p><strong>Already have Convoy?</strong> Tap <em>Open in Convoy</em>. If nothing happens, open the app, tap <em>Join</em>, and type the code above.</p>
-            <p><strong>New here?</strong> Install Convoy, then enter the code on the Join screen.</p>
+            <p><strong>Already have Convoy?</strong> Tap <em>Open in Convoy</em>. If nothing happens, tap <em>Copy code</em>, open the app, tap <em>Join</em> and paste it.</p>
+            <p><strong>New here?</strong> Tap <em>Copy code</em> first, then install Convoy, tap <em>Join</em> and paste the code.</p>
+            <p><strong>Reading this inside another app</strong> (WhatsApp, Instagram, Messenger)? Its built-in browser can&rsquo;t open Convoy for you. Tap <em>Copy code</em> here, then switch to Convoy yourself.</p>
         </div>
 
         <footer>
@@ -92,28 +99,75 @@
 
     <script>
         (function () {
+            // Mirrors InviteCode in the app: exactly 6 characters drawn from a
+            // confusable-free alphabet (no O/0, no I/1), whitespace forgiven.
+            // Validating here matters — the old page stripped every non-alphanumeric
+            // and enforced no length, so ?code=OOOOOO rendered as a real-looking
+            // code and then died silently in the app, which rejects O outright.
+            var ALPHABET = 'ABCDEFGHJKMNPQRSTUVWXYZ23456789';
+            var LENGTH = 6;
+
             var params = new URLSearchParams(window.location.search);
-            var code = (params.get('code') || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
+            var code = (params.get('code') || '').toUpperCase().replace(/\s+/g, '');
             var codeEl = document.getElementById('code');
             var hintEl = document.getElementById('hint');
             var openEl = document.getElementById('open');
+            var copyEl = document.getElementById('copy');
+
+            function isValid(c) {
+                if (c.length !== LENGTH) { return false; }
+                for (var i = 0; i < c.length; i++) {
+                    if (ALPHABET.indexOf(c.charAt(i)) === -1) { return false; }
+                }
+                return true;
+            }
+
+            function unusable(label, message) {
+                codeEl.textContent = label;
+                hintEl.textContent = message;
+                openEl.style.display = 'none';
+                copyEl.style.display = 'none';
+            }
 
             if (!code) {
-                codeEl.textContent = 'No code';
-                hintEl.textContent = 'This link is missing its convoy code. Ask for a new one, or open Convoy and join with the code directly.';
-                openEl.style.display = 'none';
+                unusable('No code', 'This link is missing its convoy code. Ask for a new one, or open Convoy and join with the code directly.');
+                return;
+            }
+            if (!isValid(code)) {
+                unusable('Bad code', 'That convoy code isn’t valid — codes are 6 characters and never use O, 0, I or 1. Ask for a new link, or open Convoy and join with the code directly.');
                 return;
             }
 
             codeEl.textContent = code;
-            var deepLink = 'convoy://join?code=' + encodeURIComponent(code);
-            openEl.setAttribute('href', deepLink);
+            openEl.setAttribute('href', 'convoy://join?code=' + encodeURIComponent(code));
 
-            // Try to hand off to the app straight away on iOS; the page stays as
-            // the fallback if the app is not installed.
-            if (/iPhone|iPad|iPod/.test(navigator.userAgent)) {
-                window.location.href = deepLink;
-            }
+            // Deliberately NO automatic redirect. It fired for every iOS visitor,
+            // so a guest without the app got Safari's "address is invalid" alert
+            // instead of this page, and inside an in-app browser (WhatsApp,
+            // Instagram) no hand-off works at all — Copy code is the only path
+            // there, which is why it is now the second button.
+            copyEl.addEventListener('click', function () {
+                function copied() {
+                    copyEl.textContent = 'Copied';
+                    setTimeout(function () { copyEl.textContent = 'Copy code'; }, 2000);
+                }
+                function legacyCopy() {
+                    var field = document.createElement('textarea');
+                    field.value = code;
+                    field.setAttribute('readonly', '');
+                    field.style.position = 'absolute';
+                    field.style.left = '-9999px';
+                    document.body.appendChild(field);
+                    field.select();
+                    try { document.execCommand('copy'); copied(); } catch (e) { /* the code stays on screen to type */ }
+                    document.body.removeChild(field);
+                }
+                if (navigator.clipboard && navigator.clipboard.writeText) {
+                    navigator.clipboard.writeText(code).then(copied, legacyCopy);
+                } else {
+                    legacyCopy();
+                }
+            });
         })();
     </script>
 </body>
