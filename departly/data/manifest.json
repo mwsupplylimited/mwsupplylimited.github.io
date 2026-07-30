@@ -1,5 +1,5 @@
 {
-  "version": "06545862d3a8",
+  "version": "014a0baec5e8",
   "files": [
     {
       "name": "kmb_stops.json",
@@ -78,7 +78,7 @@
     },
     {
       "name": "mtr_stations.json",
-      "sha": "7088467b096ce43d34c294d8d8b132e3f39fe6ecb6c1140636e8467b777fc189",
+      "sha": "1aed6f745ee616b0d79672f3c868ac9b62abe555e81ea45cb3146aec5b6f15b5",
       "url": "https://mwsupplylimited.github.io/departly/data/mtr_stations.json"
     },
     {
