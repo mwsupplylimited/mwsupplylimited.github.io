@@ -16,6 +16,19 @@
           { "/": "/bodyclock/p/", "comment": "Body Clock shared flight link" },
           { "/": "/bodyclock/p", "comment": "Body Clock shared flight link (no trailing slash)" }
         ]
+      },
+      {
+        "appIDs": ["6RZ8YV42XZ.com.edfd.Convoy"],
+        "components": [
+          { "/": "/convoy/join", "?": { "code": "?*" }, "comment": "Convoy invite carrying a convoy code" },
+          { "/": "/convoy/join", "comment": "Convoy invite landing" },
+          { "/": "/convoy/join/", "?": { "code": "?*" }, "comment": "Convoy invite carrying a convoy code (trailing slash)" },
+          { "/": "/convoy/join/", "comment": "Convoy invite landing (trailing slash)" },
+          { "/": "/convoy/invite", "?": { "ref": "?*" }, "comment": "Convoy referral carrying a referral code" },
+          { "/": "/convoy/invite", "comment": "Convoy referral landing" },
+          { "/": "/convoy/invite/", "?": { "ref": "?*" }, "comment": "Convoy referral carrying a referral code (trailing slash)" },
+          { "/": "/convoy/invite/", "comment": "Convoy referral landing (trailing slash)" }
+        ]
       }
     ]
   }
