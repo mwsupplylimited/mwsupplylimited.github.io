@@ -35,10 +35,10 @@
         <a class="back" href="./">&larr; SentryBlack Support</a>
 
         <h1>SentryBlack Privacy Policy</h1>
-        <p class="meta">Effective 13 July 2026 · Last updated 13 July 2026</p>
+        <p class="meta">Effective 13 July 2026 · Last updated 3 August 2026</p>
 
         <div class="callout">
-            <p><strong>Summary:</strong> SentryBlack keeps your video on <em>your</em> devices and <em>your</em> own iCloud — never a third-party (or our) server. Live video is sent directly device-to-device and is end-to-end encrypted. There are no accounts and no analytics. The <em>free</em> tier is supported by advertising (Google AdMob on iPhone/iPad), which may use a device identifier only with the consent iOS and the app ask you for — and you can always say no.</p>
+            <p><strong>Summary:</strong> SentryBlack keeps your video on <em>your</em> devices and <em>your</em> own iCloud — never on a server we operate. Live video goes device-to-device and is end-to-end encrypted; if your network blocks a direct connection, you can optionally add a relay server of your own choosing, which forwards the encrypted video without being able to decrypt it. There are no accounts and no analytics. The <em>free</em> tier is supported by advertising (Google AdMob on iPhone/iPad), which may use a device identifier only with the consent iOS and the app ask you for — and you can always say no.</p>
         </div>
 
         <h2>1. Information we collect</h2>
@@ -55,6 +55,8 @@
 
         <h2>5. Live video streaming</h2>
         <p>Live view is sent <strong>directly between your own devices</strong> using WebRTC and is <strong>end-to-end encrypted</strong> (DTLS-SRTP). We operate no video servers, and your live video never passes through MW Supply Limited. To set up a direct connection, the app exchanges small connection-setup messages through your own private iCloud, and may use a public STUN server to discover your network address (this reveals only a network address, never any video). On the same Wi‑Fi network, the connection stays entirely on your local network.</p>
+
+        <p><strong>Optional relay server (TURN).</strong> Some mobile and corporate networks block direct connections between devices. For those cases you can enter, in Settings, the address and credentials of a TURN relay server that you run or rent. SentryBlack provides no relay server and this setting is empty and off unless you fill it in. When a relay is in use, your video travels through that server as end-to-end encrypted data (DTLS-SRTP) which the relay operator has no key to decrypt; the operator can, however, see your two devices' IP addresses and how much data is transferred, and their own privacy policy applies to that. The relay address and username are stored on that device; the relay password is stored only in that device's Keychain and is never uploaded to iCloud, to us, or to anyone else. While a live view is running, the LIVE badge shows RELAY whenever the session is actually being relayed.</p>
 
         <h2>6. Advertising (free tier only, iPhone/iPad)</h2>
         <p>The free tier shows a small banner (via <strong>Google AdMob</strong>) on non-camera screens only — never over the live view, a recording, or the black-screen state. Subscribing to SentryBlack Pro removes all ads and the ad SDK is not started. Ads are not shown in the macOS app.</p>
