@@ -33,10 +33,12 @@
 # Liftoff/Vungle), APPEND that network's emitted block too; LevelPlay -> Setup ->
 # app-ads.txt gives the combined list for whatever is enabled.
 #
-# Unity currently reports this file as failing verification ("badUrlForm"): the
-# Unity org's Developer website field is empty, and crawlers reach this file only
-# via the App Store listing's Marketing URL. Both must point at
-# https://mwsupplylimited.github.io/ before demand will flow.
+# VERIFIED 2026-08-05. Unity Cloud -> Monetization -> Settings -> Organization now
+# reports: "Your app-ads.txt file is up-to-date. No action needed at this time."
+# The org's Developer website field is set to https://mwsupplylimited.github.io and
+# the App-ads URL resolves to https://mwsupplylimited.github.io/app-ads.txt (HTTP 200).
+# The earlier "badUrlForm" failure — caused by an empty Developer website field — is
+# resolved. Re-check after any Unity network is added, since the seller list changes.
 
 unity.com, 139443200, DIRECT, 96cabb5fbdde37a7
 
