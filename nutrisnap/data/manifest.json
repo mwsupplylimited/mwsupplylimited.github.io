@@ -1,24 +1,24 @@
 {
   "schemaVersion": 2,
   "core": {
-    "version": "2026.06.22",
+    "version": "2026.08.05",
     "minAppSchema": 2,
     "files": [
       {
         "role": "db",
-        "url": "https://mwsupplylimited.github.io/nutrisnap/data/foods-2026.06.22.sqlite",
-        "sha256": "1fd6880d2cf9bc38ade8e8bd64d537b26699ce30339352ea6365e568fb2d1fae",
-        "bytes": 3964928
+        "url": "https://mwsupplylimited.github.io/nutrisnap/data/foods-2026.08.05.sqlite",
+        "sha256": "970acb5243d0c6ecca89905395633f8d3264d801f726c623494c57718c5205e2",
+        "bytes": 4497408
       },
       {
         "role": "embeddings",
-        "url": "https://mwsupplylimited.github.io/nutrisnap/data/food_text_embeddings-2026.06.22.bin",
+        "url": "https://mwsupplylimited.github.io/nutrisnap/data/food_text_embeddings-2026.08.05.bin",
         "sha256": "384da833aad0867f08b497eb754ce9104d24e7926a61b29f7eeb7e131562a5ac",
         "bytes": 20150784
       },
       {
         "role": "embeddingIDs",
-        "url": "https://mwsupplylimited.github.io/nutrisnap/data/food_embedding_ids-2026.06.22.json",
+        "url": "https://mwsupplylimited.github.io/nutrisnap/data/food_embedding_ids-2026.08.05.json",
         "sha256": "0722fbea6956c018d1bf360de5f5edd82106af5329687c9a13b2afc45934a638",
         "bytes": 110383
       }
