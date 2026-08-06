@@ -20,9 +20,14 @@
 #
 # Authorized sellers — Unity LevelPlay (ironSource) mediation
 # ----------------------------------------------------------
-# PDF Scanner 1.0.9+, Blackout Camera 1.5.3+ and Money Flow 1.11+ are monetized
-# through Unity LevelPlay mediating Unity Ads and ironSource Ads. Money Flow 1.10
-# and earlier used the banned AdMob account above and is superseded.
+# PDF Scanner 1.0.9+, Blackout Camera 1.5.3+, Money Flow 1.11+ and Body Clock
+# 1.0.5+ are monetized through Unity LevelPlay mediating Unity Ads and ironSource
+# Ads. Money Flow 1.10 and earlier used the banned AdMob account above and is
+# superseded.
+#
+# This file is DOMAIN-level, so it already covered Body Clock the moment that
+# app's Marketing URL pointed here — the line above is documentation catching up,
+# not a new authorization.
 #
 # The block below was GENERATED 2026-07-29 from the Unity dashboard's "missing
 # authorized sellers" list for org 1375973128454 (mwsupplylimited)
