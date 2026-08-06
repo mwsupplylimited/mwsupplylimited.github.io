@@ -89,17 +89,17 @@
         <a class="back" href="./">&larr; Body Clock Support</a>
 
         <h1>Body Clock Privacy Policy</h1>
-        <p class="meta">Effective 30 May 2026 · Last updated 17 June 2026</p>
+        <p class="meta">Effective 30 May 2026 · Last updated 6 August 2026</p>
 
         <div class="callout">
-            <p><strong>Summary:</strong> Your sleep plans are computed on your device, and Body Clock has no account or login. The app does not sell your personal data. The <strong>free</strong> version shows ads supplied by Google AdMob, and the AdMob SDK collects limited device and usage data to serve those ads (and, only with your permission, to personalise them). You can avoid personalised ads by declining tracking, and you can remove ads entirely by subscribing to Body Clock Pro. Any Apple Health data you choose to share is read-only, used only on your device, and never transmitted off it.</p>
+            <p><strong>Summary:</strong> Your sleep plans are computed on your device, and Body Clock has no account or login. The app does not sell your personal data. The <strong>free</strong> version shows ads supplied through Unity LevelPlay (ironSource) mediation, and that SDK collects limited device and usage data to serve those ads (and, only with your permission, to personalise them). You can avoid personalised ads by declining tracking, and you can remove ads entirely by subscribing to Body Clock Pro. Any Apple Health data you choose to share is read-only, used only on your device, and never transmitted off it.</p>
         </div>
 
         <h2>1. Who we are</h2>
-        <p>Body Clock is published by MW Supply Limited ("we", "us"). Body Clock has no account system, no login, and no user profile. We do not ourselves operate servers that receive your personal data; the data collection described below is performed by Google's advertising SDK on our behalf when you use the free, ad-supported version.</p>
+        <p>Body Clock is published by MW Supply Limited ("we", "us"). Body Clock has no account system, no login, and no user profile. We do not ourselves operate servers that receive your personal data; the data collection described below is performed by our advertising partner's SDK on our behalf when you use the free, ad-supported version.</p>
 
         <h2>2. Advertising (free version)</h2>
-        <p>The free version of Body Clock displays ads through <strong>Google AdMob</strong>. To request and show ads, and to measure and prevent fraud, the Google Mobile Ads SDK may collect and process:</p>
+        <p>The free version of Body Clock displays ads through <strong>Unity LevelPlay</strong> (ironSource) mediation, with <strong>Unity Ads</strong> as the demand source. To request and show ads, and to measure and prevent fraud, the LevelPlay SDK and the ad networks it mediates may collect and process:</p>
         <ul>
             <li><strong>Device identifiers</strong> (such as the Identifier for Advertisers / IDFA, where permitted, and other device identifiers)</li>
             <li><strong>Coarse location</strong> (for example, country or region inferred from your IP address)</li>
@@ -107,7 +107,7 @@
             <li><strong>Advertising data</strong> (the ads shown to you and how you interact with them)</li>
             <li><strong>Diagnostics</strong> (crash and performance data related to ad delivery)</li>
         </ul>
-        <p>How this data is used depends on your tracking choice (see Section 3). Google acts as an independent party for ad delivery; its handling of data is governed by Google's policies. You can learn more at <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">how Google uses information from sites or apps that use its services</a> and <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">the Google Privacy Policy</a>.</p>
+        <p>How this data is used depends on your tracking choice (see Section 3). Unity and the networks it mediates act as independent parties for ad delivery; their handling of data is governed by their own policies. You can learn more in <a href="https://unity.com/legal/game-player-and-app-user-privacy-policy" target="_blank" rel="noopener">Unity's Player and App User Privacy Policy</a> and <a href="https://unity.com/legal/privacy-policy" target="_blank" rel="noopener">the Unity Privacy Policy</a>.</p>
 
         <h2>3. App Tracking Transparency &amp; personalised ads</h2>
         <p>On first use of the ad-supported version, iOS will ask whether Body Clock may track you across apps and websites (Apple's App Tracking Transparency prompt).</p>
@@ -115,7 +115,7 @@
             <li>If you <strong>allow</strong> tracking, ads may be <em>personalised</em> using your advertising identifier.</li>
             <li>If you <strong>decline</strong> (or take no action), Body Clock requests <em>non-personalised</em> ads, which are based only on coarse, non-identifying context rather than your advertising identifier.</li>
         </ul>
-        <p>You can change this any time in iOS Settings &rarr; Privacy &amp; Security &rarr; Tracking. Where required (for example in the EEA and UK), you will also be shown a consent message from Google's User Messaging Platform before ads are served, and you can review or change your choice from within the app.</p>
+        <p>You can change this any time in iOS Settings &rarr; Privacy &amp; Security &rarr; Tracking; that system setting is the single place your choice is recorded, and the app reads it rather than keeping a separate consent screen of its own. Your answer is also what we pass to our advertising partner as your privacy signal: allowing tracking permits personalised ads, while declining, taking no action, or having tracking restricted is passed on as a refusal of consent and as a "do not sell or share" signal, so that only non-personalised ads are requested.</p>
 
         <h2>4. Remove ads with Pro</h2>
         <p>Subscribing to Body Clock Pro removes all ads. When you are a Pro subscriber, the ad SDK does not request ads and the ad-related data collection in Section 2 does not occur. Subscriptions are processed by Apple; we do not receive your payment-card details.</p>
@@ -138,13 +138,13 @@
         <p>Body Clock can schedule local notifications to remind you about upcoming actions in your plan. These reminders are created and delivered entirely on your device by iOS. No notification content is sent to or through any server operated by MW Supply Limited.</p>
 
         <h2>9. Third-party services</h2>
-        <p>The free version uses <strong>Google AdMob</strong> (the Google Mobile Ads SDK) and Google's User Messaging Platform for consent, as described above. Apart from Google's advertising services and Apple's own first-party services (App Store / StoreKit for subscriptions, iCloud, HealthKit, and crash reporting you opt into via Share With App Developers), Body Clock contains no other analytics frameworks, advertising networks, or third-party SDKs.</p>
+        <p>The free version uses <strong>Unity LevelPlay</strong> (the ironSource mediation SDK) together with the <strong>Unity Ads</strong> adapter and Unity's Ad Quality component, as described above. The app also embeds ZIPFoundation, an open-source library used purely on your device to read boarding-pass files you choose to import; it performs no data collection and makes no network requests. Apart from those, and Apple's own first-party services (App Store / StoreKit for subscriptions, iCloud, HealthKit, and crash reporting you opt into via Share With App Developers), Body Clock contains no other analytics frameworks, advertising networks, or third-party SDKs.</p>
 
         <h2>10. Children</h2>
         <p>Body Clock is intended for a general audience and is not directed at children. We do not knowingly enable the collection of personal data from children. Because the free version serves ads, families who prefer an ad-free experience can subscribe to Pro to remove ads.</p>
 
         <h2>11. Your choices &amp; rights</h2>
-        <p>You can: decline or revoke app tracking (Section 3); subscribe to Pro to remove ads and ad data collection (Section 4); reset your advertising identifier in iOS Settings; and revoke Health access at any time. Depending on where you live, you may have rights to access, correct, or delete personal data held about you; for the limited data Google processes for ads, please refer to Google's privacy controls, and you may also contact us at the address below.</p>
+        <p>You can: decline or revoke app tracking (Section 3); subscribe to Pro to remove ads and ad data collection (Section 4); reset your advertising identifier in iOS Settings; and revoke Health access at any time. Depending on where you live, you may have rights to access, correct, or delete personal data held about you; for the limited data Unity and its mediated networks process for ads, please refer to Unity's privacy controls, and you may also contact us at the address below.</p>
 
         <h2>12. Medical disclaimer</h2>
         <p>Body Clock provides general educational guidance based on published circadian-rhythm research. It is not medical advice and is not a medical device. Consult a qualified clinician before using melatonin or if you have a sleep, cardiac, or other health condition.</p>
