@@ -1,0 +1,6 @@
+# mwsupplylimited.github.io — MW Supply Limited app sites.
+# Everything here is public marketing/support content and is meant to be indexed.
+User-agent: *
+Allow: /
+
+Sitemap: https://mwsupplylimited.github.io/sitemap.xml
