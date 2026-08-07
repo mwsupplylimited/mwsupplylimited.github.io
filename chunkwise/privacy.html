@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chunkwise — Privacy Policy</title>
+    <meta name="description" content="Privacy Policy for Chunkwise on iOS.">
+    <style>
+        :root {
+            --bg: #ffffff;
+            --fg: #1a1a1a;
+            --muted: #666666;
+            --accent: #1a8f56;
+            --card: #f4f7f5;
+            --border: #e2e8e4;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #0e1512;
+                --fg: #f1f6f3;
+                --muted: #9ab0a6;
+                --accent: #37d888;
+                --card: #17231d;
+                --border: #253a30;
+            }
+        }
+        * { box-sizing: border-box; }
+        html { -webkit-text-size-adjust: 100%; }
+        body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif; background: var(--bg); color: var(--fg); line-height: 1.65; -webkit-font-smoothing: antialiased; }
+        .container { max-width: 720px; margin: 0 auto; padding: 48px 24px 96px; }
+        .back { display: inline-block; color: var(--muted); text-decoration: none; font-size: 0.9rem; margin-bottom: 32px; }
+        .back:hover { color: var(--accent); }
+        h1 { font-size: 2rem; margin: 0 0 8px; letter-spacing: -0.02em; }
+        .meta { color: var(--muted); margin: 0 0 40px; font-size: 0.95rem; }
+        h2 { font-size: 1.2rem; margin: 36px 0 12px; letter-spacing: -0.01em; }
+        h3 { font-size: 1.02rem; margin: 26px 0 8px; letter-spacing: -0.01em; }
+        p { color: var(--fg); }
+        ul { padding-left: 22px; }
+        li { margin-bottom: 6px; }
+        a { color: var(--accent); }
+        .callout { background: var(--card); border: 1px solid var(--border); border-left: 3px solid var(--accent); padding: 16px 20px; border-radius: 8px; margin: 24px 0; }
+        .callout p { margin: 0; }
+        .disclaimer { font-size: 0.82rem; }
+        footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.85rem; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a class="back" href="./">&larr; Chunkwise Support</a>
+
+        <h1>Chunkwise Privacy Policy</h1>
+        <p class="meta">Effective 8 August 2026 &middot; Last updated 8 August 2026</p>
+
+        <div class="callout">
+            <p><strong>Summary:</strong> Chunkwise has no account and no servers of its own. Your saved servers, waypoints and notes stay on your device (and, if you enable it with Pro, in your own private iCloud). The app connects only to the game servers and web maps <em>you</em> enter, and to Mojang&rsquo;s public service to draw player faces. RCON passwords are kept only in your device Keychain and are never synced. The free version shows ads served by <strong>Unity LevelPlay (ironSource)</strong>, mediating <strong>Unity Ads</strong> and <strong>ironSource Ads</strong>; no Google advertising code is in the app. Upgrading to <strong>Chunkwise Pro</strong> removes all ads.</p>
+        </div>
+
+        <h2>1. Who we are</h2>
+        <p>Chunkwise is developed by MW Supply Limited (&ldquo;we&rdquo;). This policy explains what data the app handles, what stays on your device, and what the limited third-party services we use process. We have no account system and operate no backend &mdash; you can use every feature without signing in to us. Chunkwise is an independent companion app; it is not affiliated with, endorsed by, or sponsored by Mojang or Microsoft.</p>
+
+        <h2>2. What stays on your device</h2>
+        <p>The servers you save (a label, host and port), the waypoints and world notes you create, your settings, and your age-check answer are stored on your device. If you enable iCloud sync (a Chunkwise Pro feature), your servers, waypoints and notes are also kept in <strong>your own private iCloud database</strong> through Apple&rsquo;s CloudKit, so they sync across your devices; that data lives in your Apple account and we cannot read it. Nothing here is sent to us.</p>
+
+        <h2>3. RCON passwords</h2>
+        <p>If you connect to a server you own using RCON (Admin Mode), the RCON password is stored <strong>only in your device&rsquo;s Keychain</strong>, marked available on this device only and <strong>not</strong> synchronised to iCloud or anywhere else. It is used solely to connect to the server address you entered, over the connection you configured. We never receive it, and it is removed if you delete the server or the app. RCON traffic is not encrypted by the protocol itself, so only use it on servers and networks you trust.</p>
+
+        <h2>4. Connecting to servers and maps</h2>
+        <p>To show server status and live maps, Chunkwise connects directly from your device to the addresses <em>you</em> enter:</p>
+        <ul>
+            <li><strong>Server status</strong> uses the standard Minecraft server-list ping and, where the server enables it, the Query protocol (Java), or the standard RakNet ping (Bedrock).</li>
+            <li><strong>Live maps</strong> are fetched from the Dynmap, BlueMap or squaremap web address you provide &mdash; the same public page you could open in a browser.</li>
+            <li><strong>RCON</strong> (Admin Mode) connects to a server you own, using the address and password you enter.</li>
+        </ul>
+        <p>These connections go to the servers you chose, not to us. We do not log, proxy, or receive them.</p>
+
+        <h2>5. Player faces (skins)</h2>
+        <p>To draw a player&rsquo;s face on the live map, Chunkwise fetches that player&rsquo;s public skin from Mojang&rsquo;s session service and Mojang&rsquo;s texture host, using the player&rsquo;s public identifier, and renders the face on your device. A skin is the player&rsquo;s own public content, provided by Mojang; these requests are governed by <a href="https://www.minecraft.net/en-us/privacy">Mojang&rsquo;s privacy policy</a>. Results are cached on your device to keep requests to a minimum. No account or login is involved, and we never ask for your Microsoft or Minecraft credentials.</p>
+
+        <h2>6. Advertising</h2>
+        <p>The free version of Chunkwise is supported by ads. Upgrading to Chunkwise Pro removes all ads, and the app does not request ads for Pro members. Your servers, waypoints and notes are never shared with an advertising company or used to target ads.</p>
+        <p>Ads are served by <strong>Unity LevelPlay</strong> &mdash; the ironSource mediation platform, part of <strong>Unity Technologies</strong> &mdash; which chooses between the advertising networks connected to it; today those are <strong>Unity Ads</strong> and <strong>ironSource Ads</strong>. <strong>No Google advertising code ships in Chunkwise.</strong> The free version shows a banner and an optional rewarded video you can choose to watch. There are no full-screen interstitial ads, and ads never appear on the live map or next to a control.</p>
+        <p>To serve these ads, Unity and its advertising partners may collect and process information including:</p>
+        <ul>
+            <li>Your device&rsquo;s advertising identifier (IDFA) &mdash; only if you allow tracking when iOS asks (see below);</li>
+            <li>A non-personal device/usage identifier, device type, operating-system version and settings;</li>
+            <li>Your IP address and the approximate (coarse) region derived from it;</li>
+            <li>Information about how you interact with ads (for example, that an ad was shown, watched, or tapped);</li>
+            <li>Limited device performance and diagnostic signals used to detect ad fraud and invalid traffic.</li>
+        </ul>
+        <p>This information is collected and used by Unity and the networks it mediates, not by us, under <a href="https://unity.com/legal/game-player-and-app-user-privacy-policy">Unity&rsquo;s Game Player and App User Privacy Policy</a>, which also covers ironSource. We only receive aggregate, non-identifying reports such as impression counts and estimated revenue.</p>
+
+        <h3>Age check, App Tracking Transparency &amp; consent</h3>
+        <p>When you first open Chunkwise it asks, neutrally, when you were born. This is used only to keep ads age-appropriate and is stored on your device (never synced). Based on it:</p>
+        <ul>
+            <li>Under 13: ads are limited to non-personalised, contextual ads (the COPPA child-directed signal is set), no advertising identifier is used, and iOS&rsquo;s tracking prompt is not shown.</li>
+            <li>13&ndash;15: ads are non-personalised, and the tracking prompt is not shown.</li>
+            <li>16 and over: iOS asks, once and before the advertising SDK starts, whether Chunkwise may track you across other companies&rsquo; apps and websites. If you allow it, the advertising identifier may be used and you may see personalised ads; if you choose &ldquo;Ask App Not to Track,&rdquo; the identifier is not used and you see only non-personalised ads.</li>
+        </ul>
+        <p>Unity LevelPlay does not provide a consent dialog of its own, so Chunkwise shows no separate ad-consent form. Unless a 16-or-over user has affirmatively allowed tracking, the app signals to the advertising SDK that consent to personalised advertising is not given and that personal information must not be sold or shared (the GDPR and CCPA/US-privacy signals). You can change the &ldquo;Personalized ads&rdquo; switch any time in <em>Settings</em> inside Chunkwise. Pro members are never asked and see no ads.</p>
+
+        <h2>7. Chunkwise Pro</h2>
+        <p>Chunkwise Pro is an optional auto-renewing subscription (monthly or yearly, with a 7-day free trial on the yearly plan) that removes ads and unlocks the full app. Purchases, billing, renewals and refunds are handled entirely by <strong>Apple</strong> through your Apple Account &mdash; we never see or store your name, payment details, or Apple ID. To unlock Pro features the app checks your purchase entitlement directly with the App Store on your device; this check does not identify you to us. Manage or cancel any time under <em>Settings &rarr; [your name] &rarr; Subscriptions</em>.</p>
+
+        <h2>8. Third-party services and analytics</h2>
+        <p>The only third-party code bundled in Chunkwise is the advertising code: the <strong>Unity LevelPlay (ironSource) SDK</strong>, which serves the banner and rewarded ads and mediates Unity Ads and ironSource Ads, together with ironSource&rsquo;s ad-quality component used to detect ad fraud and invalid traffic. All are governed by <a href="https://unity.com/legal/game-player-and-app-user-privacy-policy">Unity&rsquo;s privacy policy</a>. Chunkwise contains no analytics frameworks and no crash reporting other than Apple&rsquo;s first-party crash reporting, which only runs if you opted in under iOS <em>Settings &rarr; Privacy &amp; Security &rarr; Analytics &amp; Improvements</em>. Pro members are shown no ads and the app requests none for them.</p>
+
+        <h2>9. Permissions and identifiers</h2>
+        <p>Chunkwise does not access your location, camera, microphone, photos, contacts or health data. The advertising identifier is used only for ads in the free version, and only for a 16-or-over user who allows tracking, as described in section 6.</p>
+
+        <h2>10. Children</h2>
+        <p>Chunkwise is rated for ages 13 and up and is not in the Kids Category. It shows content it does not control &mdash; server names (MOTDs), player names, and, in Admin Mode, server console output &mdash; which is why it is not directed at younger children. It includes a text filter for that content and a way to report or block. For users who tell us they are under 13, the app sets the child-directed advertising signal and serves only non-personalised, contextual ads. Upgrading to Pro removes all ads.</p>
+
+        <h2>11. Changes to this policy</h2>
+        <p>If we change how Chunkwise handles data, we will update this page and the &ldquo;Last updated&rdquo; date above. Material changes will also be reflected in the App Store privacy labels.</p>
+
+        <h2>12. Contact</h2>
+        <p>Questions about this policy: <a href="mailto:mwsupplylimited@gmail.com?subject=Chunkwise%20privacy">mwsupplylimited@gmail.com</a>.</p>
+
+        <p class="disclaimer"><strong>NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.</strong> Minecraft is a trademark of Mojang Synergies AB.</p>
+
+        <footer>
+            &copy; 2026 MW Supply Limited
+        </footer>
+    </div>
+</body>
+</html>
