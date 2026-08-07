@@ -20,14 +20,16 @@
 #
 # Authorized sellers — Unity LevelPlay (ironSource) mediation
 # ----------------------------------------------------------
-# PDF Scanner 1.0.9+, Blackout Camera 1.5.3+, Money Flow 1.11+ and Body Clock
-# 1.0.5+ are monetized through Unity LevelPlay mediating Unity Ads and ironSource
-# Ads. Money Flow 1.10 and earlier used the banned AdMob account above and is
-# superseded.
+# PDF Scanner 1.0.9+, Blackout Camera 1.5.3+, Money Flow 1.11+, Body Clock 1.0.5+
+# and Rostra 1.2.0+ are monetized through Unity LevelPlay mediating Unity Ads and
+# ironSource Ads. Money Flow 1.10 and earlier used the banned AdMob account above
+# and is superseded.
 #
-# This file is DOMAIN-level, so it already covered Body Clock the moment that
-# app's Marketing URL pointed here — the line above is documentation catching up,
-# not a new authorization.
+# This file is DOMAIN-level, so it already covered Body Clock and Rostra the moment
+# each app's Marketing URL pointed here — the lines above are documentation catching
+# up, not a new authorization. Rostra (app key 2760bc7ed) ships Unity LevelPlay with
+# ironSource + UnityAds bidding on its banner and rewarded units, and its Marketing
+# URL is https://mwsupplylimited.github.io/rostra/, on this domain.
 #
 # The block below was GENERATED 2026-07-29 from the Unity dashboard's "missing
 # authorized sellers" list for org 1375973128454 (mwsupplylimited)
