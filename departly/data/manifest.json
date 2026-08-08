@@ -1,44 +1,44 @@
 {
-  "version": "35425fc06d23",
+  "version": "0dd604e843c2",
   "files": [
     {
       "name": "kmb_stops.json",
-      "sha": "04084c4124012183003a4ada1039c07a33de4b80e86f7de4d19f870dc7e76060",
+      "sha": "a13476a6233ad8c1a808b01268e8f6a0da00bca4991ea399f9f558d0cbb57b19",
       "url": "https://mwsupplylimited.github.io/departly/data/kmb_stops.json"
     },
     {
       "name": "kmb_routes.json",
-      "sha": "e8a8b1fdeff6a6b511cfeedc114f05056d9e652b0ccdd169f82e124e00df7238",
+      "sha": "0c0481b036813e71fc3454f62deddcd6774f1fbae5ae09d324b5a39176534ab5",
       "url": "https://mwsupplylimited.github.io/departly/data/kmb_routes.json"
     },
     {
       "name": "ctb_stops.json",
-      "sha": "269a40a2a7409e59784ad41473d9e41993bb655a440db50d8a8370f0dbe028bf",
+      "sha": "5ebe06bfc6274ae59e5c094c7cb1b0cb4cff51c3a2cc125d57897b78c1a21511",
       "url": "https://mwsupplylimited.github.io/departly/data/ctb_stops.json"
     },
     {
       "name": "ctb_routes.json",
-      "sha": "66e9d173ba174ba80b616f23e0493d78c6928157b08cf55a737d4771fb7f55ad",
+      "sha": "ca590e8112b838f7ea6d4f26bc91b61ca12285e5fa487de33f36ce33744af034",
       "url": "https://mwsupplylimited.github.io/departly/data/ctb_routes.json"
     },
     {
       "name": "gmb_stops.json",
-      "sha": "6a50905e96db663383162853b241a37c2220d9701b33b4f1c8968c7a6d869942",
+      "sha": "99d76799f37a3aa2a1c347b06515094bd82b34da9775f81cdd49cfcbbe1c7742",
       "url": "https://mwsupplylimited.github.io/departly/data/gmb_stops.json"
     },
     {
       "name": "gmb_routes.json",
-      "sha": "db31ef1b244e500e585fe39e8f1c765f550dfb2e597740133b15d8b326fd6834",
+      "sha": "ff95602f250c3028bf3f89c8abd7614a597b5fad1151702073b6189cea7b63b5",
       "url": "https://mwsupplylimited.github.io/departly/data/gmb_routes.json"
     },
     {
       "name": "nlb_stops.json",
-      "sha": "0215ea56a7df391975b272a3169115ae7d634a5e729316dcd75c5c2ad30af179",
+      "sha": "022fb637680cd0714be38645375631f46068a94974378af7c8ad244eed26f789",
       "url": "https://mwsupplylimited.github.io/departly/data/nlb_stops.json"
     },
     {
       "name": "nlb_routes.json",
-      "sha": "f2d223930e301bbe639af6e7c64bc7d8c0cada070b8ea3dc18a7ec935d8bb2c2",
+      "sha": "772fea9a1d6954f093ae79ea603e38df1427b170d0c392440fc69834d21a3771",
       "url": "https://mwsupplylimited.github.io/departly/data/nlb_routes.json"
     },
     {
@@ -73,32 +73,32 @@
     },
     {
       "name": "bus_schedule.json",
-      "sha": "87f25e95682134c14252cd748f15bb5a4e97f12b2bfaf11ce7ab3ce59260efb4",
+      "sha": "571f324c080779ad9299a6ba8693a64b15bd0c39e32a30f0d85448aae4a8d880",
       "url": "https://mwsupplylimited.github.io/departly/data/bus_schedule.json"
     },
     {
       "name": "departures.json",
-      "sha": "b7ff0fe1c4f7a92f4465922f5b55f035cdec29d8e1599d9aba3a3a32f586266d",
+      "sha": "a9865ffee55e566299096d2a3226e3c55210f0c3d4ce79c416331162b7da3880",
       "url": "https://mwsupplylimited.github.io/departly/data/departures.json"
     },
     {
       "name": "stop_offsets.json",
-      "sha": "54c76c12fdbffd4be2ef41a9599f9df1b38c483542e6e50f6d766f5c487927e7",
+      "sha": "27631959ddf47952151c3ba5d830676f77ac2b6bb9d2a6a49757aebfc2a857fc",
       "url": "https://mwsupplylimited.github.io/departly/data/stop_offsets.json"
     },
     {
       "name": "service_calendar.json",
-      "sha": "d87c7d8fdd5920240d071a6ac7c2658d5ca84684092be6efd0a59f4df5333958",
+      "sha": "85cf093b6f1483f387d80bd2a21b5bb989c9f519344d3dac88bde86d25ff472a",
       "url": "https://mwsupplylimited.github.io/departly/data/service_calendar.json"
     },
     {
       "name": "fares_od.json",
-      "sha": "f3ed5006b7592bbe65d56a89e619008e199735d2664546dbe072e0a04414c1a1",
+      "sha": "926a63ff9d13bc8f974dd71d87032ffc1e2b678920d22bc1a0c32c9a584ae732",
       "url": "https://mwsupplylimited.github.io/departly/data/fares_od.json"
     },
     {
       "name": "mtr_stations.json",
-      "sha": "c68d3bf70f2c57d8d532678626f21cd72eb130a36bdf7b0064d7c90ebfc12772",
+      "sha": "15053c6ad089221412b8b9858e8ffc8b80b0a654f115c6ca9ca09690d9e3c238",
       "url": "https://mwsupplylimited.github.io/departly/data/mtr_stations.json"
     },
     {
