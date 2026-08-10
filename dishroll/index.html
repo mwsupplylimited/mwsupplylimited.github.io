@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dishroll — Support</title>
+    <meta name="description" content="Support page for Dishroll, a random restaurant picker for iPhone and iPad that decides where to eat near you.">
+    <style>
+        :root {
+            --bg: #ffffff;
+            --fg: #1a1a1a;
+            --muted: #666666;
+            --accent: #ef673d;
+            --card: #f7f5f4;
+            --border: #e8e3e0;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #17120f;
+                --fg: #f7f3f1;
+                --muted: #a39793;
+                --accent: #ff8a66;
+                --card: #221a16;
+                --border: #342a25;
+            }
+        }
+        * { box-sizing: border-box; }
+        html { -webkit-text-size-adjust: 100%; }
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+            background: var(--bg);
+            color: var(--fg);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 48px 24px 96px;
+        }
+        .back {
+            display: inline-block;
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-bottom: 32px;
+        }
+        .back:hover { color: var(--accent); }
+        h1 {
+            font-size: 2.2rem;
+            margin: 0 0 8px;
+            letter-spacing: -0.02em;
+        }
+        .subtitle {
+            color: var(--muted);
+            margin: 0 0 40px;
+        }
+        h2 {
+            font-size: 1.3rem;
+            margin: 40px 0 12px;
+            letter-spacing: -0.01em;
+        }
+        h3 {
+            font-size: 1rem;
+            margin: 24px 0 6px;
+            font-weight: 600;
+        }
+        p, li { color: var(--fg); }
+        .muted { color: var(--muted); }
+        ul { padding-left: 22px; }
+        li { margin-bottom: 6px; }
+        a { color: var(--accent); }
+        .pill {
+            display: inline-block;
+            background: var(--card);
+            border: 1px solid var(--border);
+            padding: 3px 10px;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            color: var(--muted);
+            margin-left: 6px;
+        }
+        .callout {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-left: 3px solid var(--accent);
+            padding: 16px 20px;
+            border-radius: 8px;
+            margin: 24px 0;
+        }
+        .callout p { margin: 0; }
+        footer {
+            margin-top: 64px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
+            color: var(--muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a class="back" href="../">&larr; MW Supply Limited</a>
+
+        <h1>Dishroll</h1>
+        <p class="subtitle">What to eat near me &mdash; random restaurant roulette. iPhone &amp; iPad. <span class="pill">Version 1.0</span></p>
+
+        <div class="callout">
+            <p><strong>What Dishroll does:</strong> you set a pool &mdash; how far you&rsquo;ll go, which cuisines, which kinds of place &mdash; and tap <strong>Draw</strong>. A wheel spins over a live map of the candidates and lands on <em>one</em> restaurant. If it isn&rsquo;t quite right, you nudge the result along an axis (<em>Closer</em>, <em>Different food</em>, <em>Somewhere new</em>, <em>Sit-down</em>) instead of re-rolling into the same pool. Everything it can send you to is a real place to eat, and it never repeats somewhere it has just sent you.</p>
+        </div>
+
+        <h2>About</h2>
+        <p>Dishroll is a decision engine, not a restaurant directory. It exists for the ten minutes you and whoever you&rsquo;re with spend saying &ldquo;I don&rsquo;t mind, you choose.&rdquo; Places, distances and the map come from <strong>Apple Maps</strong>, and every candidate is drawn only from Apple&rsquo;s food categories &mdash; restaurants, cafés, bakeries, fast food and the like &mdash; so a draw can never land on a nail salon, a vape shop or a mattress showroom. Your favourites, your history and your own ratings stay on your device (and, with Pro, in your own private iCloud).</p>
+
+        <h2>Getting started</h2>
+        <ul>
+            <li><strong>Allow location</strong> (optional) so Dishroll knows where &ldquo;near me&rdquo; is &mdash; or skip it and <strong>search any address, neighbourhood or city</strong> instead. The app is fully usable with location permission denied.</li>
+            <li><strong>Set your pool</strong>: the distance you&rsquo;re willing to travel, the cuisines you&rsquo;re open to, and the kinds of place you want.</li>
+            <li><strong>Tap Draw.</strong> The wheel spins over the live map of candidates and settles on one place.</li>
+            <li><strong>Go, or nudge.</strong> Get directions, or push the result <em>Closer</em>, to <em>Different food</em>, to <em>Somewhere new</em>, or to a <em>Sit-down</em> place.</li>
+            <li><strong>Keep what you liked</strong>: favourite it, rate it, or send a place to <em>Never again</em> so it&rsquo;s excluded from every future draw.</li>
+        </ul>
+
+        <h2>Setting the pool</h2>
+        <h3>Distance</h3>
+        <p>Set how far you&rsquo;re prepared to go. Everything outside that radius is simply not in the draw. If a pool comes back too small, Dishroll tells you rather than quietly widening the search behind your back.</p>
+
+        <h3>Cuisines</h3>
+        <p>Include or exclude cuisines &mdash; useful for &ldquo;anything but pizza tonight&rdquo; as much as for &ldquo;ramen or nothing&rdquo;. Cuisine comes from the place&rsquo;s Apple Maps category, so it is as good as Apple&rsquo;s own data; a place Apple lists only as &ldquo;Restaurant&rdquo; will be treated as unspecified rather than guessed at.</p>
+
+        <h3>Kinds of place</h3>
+        <p>Filter by the sort of venue you actually want &mdash; sit-down restaurant, café, bakery, quick counter service and so on &mdash; so a coffee shop doesn&rsquo;t turn up when you want dinner.</p>
+
+        <h3>Presets</h3>
+        <p>Save a pool you use often (&ldquo;lunch near the office&rdquo;, &ldquo;Friday, 20 minutes, anything but the usual&rdquo;) and reload it with one tap. The free tier keeps a small number of presets; Dishroll Pro makes them unlimited.</p>
+
+        <h2>The draw</h2>
+        <p>Dishroll has two draw modes, and it will tell you on screen which one is running. Neither one buries a restaurant.</p>
+        <h3>Pure random</h3>
+        <p><strong>Exactly uniform.</strong> Every venue that survives your filters has precisely the same chance as every other one. A tiny unknown noodle bar and the busiest place in the neighbourhood are exactly equally likely.</p>
+        <h3>Popular first</h3>
+        <p>Gently favours more prominent places, so the draw feels a little more like a recommendation &mdash; but with a hard floor: <strong>every venue in the pool keeps at least a quarter of an equal chance</strong>. If there are 40 candidates, an equal chance would be 1 in 40, and the least-favoured place in the pool still has at least a 1-in-160 chance on every single draw. Nothing is ever excluded, and nothing is ever reduced to a rounding error.</p>
+        <p class="muted">The only things that remove a place from a draw are your own filters, your <em>Never again</em> list, and the no-repeat window described below.</p>
+
+        <h2>Refining a result</h2>
+        <p>Re-rolling the same pool tends to hand you the same handful of places. Instead, Dishroll lets you push the result along one axis at a time:</p>
+        <ul>
+            <li><strong>Closer</strong> &mdash; same idea, less travel.</li>
+            <li><strong>Different food</strong> &mdash; keep the distance, change the cuisine.</li>
+            <li><strong>Somewhere new</strong> &mdash; skip the places you&rsquo;ve already been sent to.</li>
+            <li><strong>Sit-down</strong> &mdash; trade the quick counter for a table.</li>
+        </ul>
+        <p>Each nudge draws again from a pool shifted in that direction, so you converge on what you actually feel like rather than spinning in circles.</p>
+
+        <h2>Memory: no repeats, favourites and history</h2>
+        <h3>The no-repeat window</h3>
+        <p>Anywhere Dishroll has recently sent you is <strong>skipped entirely</strong> for the length of your no-repeat window &mdash; not merely made less likely. That is the difference between a picker you can use twice a week and one you stop trusting. Pro lets you set the window to any length you like.</p>
+        <h3>Favourites and Never again</h3>
+        <p>Favourite the places you want to come back to, and put the ones that disappointed you (or closed, or turned out to be the wrong sort of place) on <strong>Never again</strong> &mdash; they are excluded from every future draw until you take them off the list. Both lists live in <strong>Saved</strong>.</p>
+        <h3>History</h3>
+        <p>Every draw you acted on is kept with its date, so you can see where you actually ate. The free tier keeps your recent history; Pro keeps all of it.</p>
+
+        <h2>Food passport</h2>
+        <p>The passport is the long view: everywhere Dishroll has sent you, the cuisines you&rsquo;ve tried, your week-by-week streaks, and your own star ratings. It&rsquo;s built entirely from your own activity in the app &mdash; nothing is imported and nothing is shared.</p>
+
+        <h2>Group Pick</h2>
+        <p>For deciding with other people in the room. One person starts a Group Pick and everyone nearby joins <strong>over the local network</strong>. Each person adds what they can&rsquo;t or won&rsquo;t eat and vetoes places they don&rsquo;t want, and the draw then runs over whatever is left. There is <strong>no account and no server</strong> &mdash; it&rsquo;s peer-to-peer between the devices in the room, so everyone needs to be on the same Wi-Fi or close enough for a direct connection, and iOS will ask each person for local network permission the first time. Group Pick is on the free tier; Pro makes it unlimited.</p>
+
+        <h2>Directions and place details</h2>
+        <p>Tap through from a result for walking or driving directions, and open the place in Apple Maps for the authoritative detail &mdash; phone number, website, menu links and whatever else Apple holds for it. Dishroll deliberately doesn&rsquo;t copy that information into its own screens where it could go stale.</p>
+
+        <h2>Opening hours</h2>
+        <p>Where opening hours are shown, they come from <strong>OpenStreetMap</strong> (&copy; OpenStreetMap contributors). OSM&rsquo;s coverage is excellent in some places and thin in others, so when there are no hours for a venue Dishroll says <strong>&ldquo;hours unknown&rdquo;</strong> rather than guessing. Always check with the restaurant if you&rsquo;re making a special trip.</p>
+
+        <h2>Dishroll Pro &amp; Remove Ads</h2>
+        <p>The free tier is genuinely usable: <strong>unlimited draws</strong>, all the filters, directions, favourites and Group Pick, supported by a single banner ad that never covers content and is never placed where you might tap it by accident.</p>
+        <h3>Dishroll Pro</h3>
+        <p><strong>$6.99 monthly</strong> or <strong>$29.99 annually</strong>, with a <strong>7-day free trial</strong> on the annual plan. Pro adds iCloud sync across your devices, Collections, unlimited Group Picks, unlimited presets and favourites, your full history, any no-repeat window you like, and all widgets. It also removes ads.</p>
+        <h3>Remove Ads</h3>
+        <p><strong>$4.99, once</strong>, for people who will never want a subscription. It removes the banner and the ad-related data collection that goes with it, and nothing else changes.</p>
+        <h3>Manage, cancel or restore</h3>
+        <p>Subscriptions are billed by Apple through your Apple Account and renew automatically until cancelled. Cancel any time in <em>Settings &rarr; [your name] &rarr; Subscriptions</em> on your device; Pro then continues to the end of the period you&rsquo;ve paid for. New device, or reinstalled the app? Tap <strong>Restore purchases</strong> on the Membership screen.</p>
+
+        <h2>FAQ</h2>
+
+        <h3>Why don&rsquo;t I see star ratings or review counts?</h3>
+        <p>Because Apple doesn&rsquo;t publish them. Dishroll gets its places from Apple Maps through MapKit, and MapKit provides no ratings, no price levels and no photos &mdash; so Dishroll would have to invent them, and it won&rsquo;t. The only star rating anywhere in the app is <strong>your own</strong>, on places you&rsquo;ve actually been to. What you get instead is a draw that is honest about its odds, a memory that stops it repeating itself, and a tap through to the Apple Maps place card, which is the authoritative source for a venue&rsquo;s details.</p>
+
+        <h3>Why does it say &ldquo;hours unknown&rdquo;?</h3>
+        <p>Opening hours come from OpenStreetMap, whose coverage varies by area, and no hours exist for that venue in OSM. We&rsquo;d rather tell you we don&rsquo;t know than show you a confident guess and send you to a closed restaurant. If you know the real hours, adding them to OpenStreetMap helps everyone, including the next Dishroll user.</p>
+
+        <h3>It suggested somewhere that&rsquo;s closed down / no longer exists.</h3>
+        <p>Put it on <strong>Never again</strong> from the result screen or from Saved, and Dishroll will never draw it again for you. The place data itself comes from Apple Maps, so the lasting fix is to report it to Apple &mdash; open the place in Apple Maps and use <em>Report an Issue</em>. We have no way to edit Apple&rsquo;s map data on your behalf.</p>
+
+        <h3>Can I use it without giving it my location?</h3>
+        <p>Yes, completely. Decline the location prompt and search any address, neighbourhood or city by name instead &mdash; which is also how you plan meals for a trip before you get there. No feature is locked behind location permission.</p>
+
+        <h3>How is the draw actually random?</h3>
+        <p>Two modes, both stated in the app. <strong>Pure random</strong> is exactly uniform: after your filters, every remaining venue has an identical chance. <strong>Popular first</strong> gently weights the draw towards more prominent places, but guarantees a floor &mdash; every venue keeps <strong>at least 25% of an equal chance</strong>, so with 40 candidates the least-favoured place is still at worst a 1-in-160 shot on every draw. There is no hidden promotion: no restaurant has ever paid to appear, to appear more often, or to appear first.</p>
+
+        <h3>Why do I keep getting the same few places?</h3>
+        <p>Usually the pool is small &mdash; a tight radius plus a narrow cuisine filter can leave only a handful of candidates. Widen the distance, add cuisines, or lengthen your no-repeat window so recent results are excluded for longer.</p>
+
+        <h3>What do I get for Pro?</h3>
+        <p>iCloud sync across your devices, Collections, unlimited Group Picks, unlimited presets and favourites, your full history, a no-repeat window of any length, and all widgets &mdash; and ads are removed as well.</p>
+
+        <h3>What&rsquo;s the difference between Pro and Remove Ads?</h3>
+        <p><strong>Remove Ads</strong> ($4.99, one-time) does exactly one thing: it removes the ads. <strong>Pro</strong> ($6.99/month or $29.99/year) is the feature upgrade &mdash; sync, Collections, unlimited Group Picks, unlimited presets and favourites, full history, any no-repeat window, all widgets &mdash; and removing ads comes with it. If features are what you&rsquo;re after, Pro; if you just want the banner gone for good and nothing else, Remove Ads.</p>
+
+        <h3>How do I cancel Pro?</h3>
+        <p>On your iPhone or iPad, open <em>Settings &rarr; [your name] &rarr; Subscriptions</em>, tap <strong>Dishroll</strong>, then <strong>Cancel Subscription</strong>. You keep Pro until the end of the period you&rsquo;ve already paid for. Subscriptions are billed and managed entirely by Apple &mdash; <strong>MW Supply Limited cannot cancel or refund a subscription for you</strong>. For refunds, use <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener">reportaproblem.apple.com</a>.</p>
+
+        <h3>Group Pick can&rsquo;t find anyone.</h3>
+        <p>Everyone needs the app open on the Group Pick screen, on the same Wi-Fi network (or close by), and must have allowed <em>Local Network</em> access for Dishroll in iOS Settings. Group Pick never goes through a server, so if the devices can&rsquo;t see each other directly there&rsquo;s nothing to fall back on.</p>
+
+        <h3>Does my data go anywhere?</h3>
+        <p>Your precise location is used on your device only, to ask Apple&rsquo;s search and directions services what&rsquo;s nearby &mdash; it is never sent to MW Supply Limited and never shared with advertisers. Your saved places, history and ratings stay on your device and, with Pro, in your own private iCloud container, which we cannot read. The one exception is ads: on the free tier the Unity LevelPlay SDK collects limited device and ad-interaction data to serve the banner, and personalises it only if you allow tracking. Pro or Remove Ads removes ads and that collection with them. Full detail is in the <a href="privacy.html">Privacy Policy</a>.</p>
+
+        <h3>I found a bug or have a feature request.</h3>
+        <p>Please email <a href="mailto:mwsupplylimited@gmail.com?subject=Dishroll%20feedback">mwsupplylimited@gmail.com</a> with your iOS version, device, and what you were doing. We read every message.</p>
+
+        <h2>Contact</h2>
+        <p>For support: <a href="mailto:mwsupplylimited@gmail.com?subject=Dishroll%20support">mwsupplylimited@gmail.com</a></p>
+
+        <h2>Privacy</h2>
+        <p>See the <a href="privacy.html">Dishroll Privacy Policy</a>.</p>
+
+        <p class="muted">Map, place and directions data &copy; Apple Maps. Opening hours, where shown, &copy; OpenStreetMap contributors, available under the Open Database License. Dishroll is an independent app and is not affiliated with, endorsed by or sponsored by any restaurant, chain or listing service.</p>
+
+        <footer>
+            &copy; 2026 MW Supply Limited
+        </footer>
+    </div>
+</body>
+</html>
