@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flightward — Privacy Policy</title>
+    <meta name="description" content="Privacy policy for Flightward. No advertising, no tracking, no analytics, and no server.">
+    <style>
+        :root {
+            --bg: #ffffff;
+            --fg: #1a1a1a;
+            --muted: #666666;
+            --accent: #13b3ab;
+            --card: #f5f5f7;
+            --border: #e5e5e7;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #121419;
+                --fg: #f5f5f7;
+                --muted: #9a9a9a;
+                --accent: #2ee0d6;
+                --card: #1c1f25;
+                --border: #2a2d34;
+            }
+        }
+        * { box-sizing: border-box; }
+        html { -webkit-text-size-adjust: 100%; }
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+            background: var(--bg);
+            color: var(--fg);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 48px 24px 96px;
+        }
+        .back {
+            display: inline-block;
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-bottom: 32px;
+        }
+        .back:hover { color: var(--accent); }
+        h1 {
+            font-size: 2.2rem;
+            margin: 0 0 8px;
+            letter-spacing: -0.02em;
+        }
+        .subtitle {
+            color: var(--muted);
+            margin: 0 0 40px;
+        }
+        h2 {
+            font-size: 1.3rem;
+            margin: 40px 0 12px;
+            letter-spacing: -0.01em;
+        }
+        h3 {
+            font-size: 1rem;
+            margin: 24px 0 6px;
+            font-weight: 600;
+        }
+        p, li { color: var(--fg); }
+        .muted { color: var(--muted); }
+        ul { padding-left: 22px; }
+        li { margin-bottom: 6px; }
+        a { color: var(--accent); }
+        .pill {
+            display: inline-block;
+            background: var(--card);
+            border: 1px solid var(--border);
+            padding: 3px 10px;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            color: var(--muted);
+        }
+        .callout {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-left: 3px solid var(--accent);
+            padding: 16px 20px;
+            border-radius: 8px;
+            margin: 24px 0;
+        }
+        .callout p { margin: 0; }
+        footer {
+            margin-top: 64px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
+            color: var(--muted);
+            font-size: 0.85rem;
+        }
+    </style>
+    
+<style>
+    .lede { font-size: 1.15rem; color: var(--muted); }
+    .updated { color: var(--muted); font-size: 0.92rem; margin-top: -8px; }
+    .card { background: var(--card); border: 1px solid var(--border);
+            border-radius: 14px; padding: 18px 20px; margin: 24px 0; }
+    .card p { margin: 0; }
+    h2 { margin-top: 40px; }
+    footer { margin-top: 56px; padding-top: 24px; border-top: 1px solid var(--border);
+             color: var(--muted); font-size: 0.9rem; }
+    a { color: var(--accent); }
+</style>
+</head>
+<body>
+    <div class="container">
+<a class="back" href="index.html">&larr; Flightward Support</a>
+<h1>Privacy Policy</h1>
+<p class="updated">Effective 10 August 2026</p>
+
+<p>Flightward is written by <strong>Matthew Wong</strong>, one person, working alone in Hong Kong SAR. There is no company behind it, no team, no server room, and — importantly for this page — <strong>no server</strong>. I do not run one. That single fact explains most of what follows: there is nowhere for your data to go, because I have built nowhere for it to go.</p>
+
+<h2>The short version</h2>
+<div class="card">
+    <ul>
+        <li><strong>No advertising.</strong> No ad SDK, no ad network, no sponsored content, in any tier, ever.</li>
+        <li><strong>No tracking.</strong> No advertising identifier, no device identifier, no cross-app or cross-site tracking, and no App Tracking Transparency prompt because there is nothing to track you with.</li>
+        <li><strong>No analytics.</strong> No analytics SDK, no crash reporter, no telemetry, no usage events.</li>
+        <li><strong>No data brokers, and no sale or sharing of your data</strong> — I have no data to sell.</li>
+        <li><strong>No account.</strong> No sign-up, no sign-in, no name, email, password or phone number anywhere in the app.</li>
+        <li><strong>Your position never leaves your device.</strong> Not once, not in any form.</li>
+    </ul>
+    <p>Flightward's App Store privacy label says <strong>Data Not Collected</strong>, and this page is the long explanation of why that is literally true.</p>
+</div>
+
+<h2>Your location, altitude and speed</h2>
+<div class="card">
+    <p>Flightward asks for location the first time you open the <strong>Map</strong> tab — not at launch, so the reason for the prompt is on screen when you see it. It uses your position, altitude, groundspeed and track to draw your aircraft on the moving map, to work out distance and bearing to nearby airports, and to decide when to speak an advisory about airspace, altitude or terrain.</p>
+    <p><strong>All of that happens inside your phone, and stays inside your phone.</strong> The position readings go into memory, get read about once a second by the advisory logic, and are then replaced by the next reading. Flightward writes no track log, no breadcrumb trail and no flight path file. Your position is never written to disk, never put into an iCloud record, and never included in any request to any server. There is no version of this app that uploads where you flew.</p>
+    <p><strong>Background use.</strong> So that spoken advisories keep working with your phone locked or another app in front, Flightward can continue receiving position updates in the background while a flight session is running. iOS shows the blue location indicator the whole time this is happening. Flightward asks only for <em>While Using the App</em> permission — it never asks for <em>Always</em>.</p>
+    <p><strong>Motion &amp; Fitness</strong> is used for one thing: reading this device's barometer, so Flightward can show pressure altitude and density altitude. The reading is used in memory and stored nowhere. No step counts, no activity history, no other motion data of any kind.</p>
+    <p>You can decline both permissions, and you can withdraw either one later in <em>Settings &rarr; Privacy &amp; Security</em>. Flightward still works — search an airport by identifier and you get its data, frequencies, weather and planning tools.</p>
+</div>
+
+<h2>Every network request Flightward makes</h2>
+<div class="card">
+    <p>There are only three, and none of them goes to me:</p>
+    <ul>
+        <li><strong>Weather</strong> — to a United States government weather service, when you open an airport.</li>
+        <li><strong>Chart packs</strong> — to a public file host, when you choose to download one.</li>
+        <li><strong>Apple</strong> — iCloud sync of your own records, and the subscription check, both handled by iOS itself rather than by any code of mine.</li>
+    </ul>
+    <p>That is the whole list. There is no Flightward server for any of it to reach, no analytics endpoint, no logging endpoint, and no third-party service of any kind. Flightward keeps a diagnostic log using the ordinary iOS logging facility; that log stays on your device and is never uploaded.</p>
+    <p><strong>Local network.</strong> Flightward carries an iOS local-network purpose string, for reading a portable ADS-B receiver on your own Wi-Fi in a later version. Nothing in the app contacts your local network today, and when that support arrives the receiver's data will be used on the device and sent nowhere — this page will say so before the feature ships.</p>
+</div>
+
+<h2>Weather</h2>
+<div class="card">
+    <p>When you open an airport's page, Flightward fetches that airport's METAR and TAF from <strong>aviationweather.gov</strong>, the Aviation Weather Center run by the United States National Weather Service. It is the only weather source the app contacts, and the only place any live data comes from.</p>
+    <p>The request contains <strong>the identifier of the airport you opened, and nothing else</strong> — no coordinates, no device identifier, no user identifier, no cookies. It also carries a plain description of the app and <em>my own</em> contact address, which is the customary courtesy that keeps a public service from filtering the request; that is my email, not yours.</p>
+    <p>Being honest about the unavoidable part: like any web request, this one shows the receiving server your device's <strong>IP address</strong>, and the airport code you looked up is a rough hint at where you are interested in flying. That is how the internet delivers a reply. I receive none of it — the request goes from your device straight to a US government service, with no stop at anything of mine. Weather that comes back is held in memory only and is gone when you close the app.</p>
+    <p>Weather is fetched only when you open an airport. Flightward never polls for it in the background, and never fetches it from the map.</p>
+</div>
+
+<h2>Charts and the aeronautical database</h2>
+<div class="card">
+    <p>The airport, airspace and frequency database ships inside the app. It is opened read-only and never written to. Every airspace lookup, every airport search and every frequency you see is computed on your device, offline. Nothing you search for is sent anywhere.</p>
+    <p><strong>The map contacts nothing.</strong> It is drawn entirely from files already on your device — chart packs you downloaded plus the bundled database. Flightward uses no online basemap, no tile service and no map API key, which is why the map works in Airplane Mode.</p>
+    <p>Chart packs are large files of public-domain FAA raster charts. When you download one, Flightward fetches it from a <strong>public file host on Cloudflare's network</strong>. That download is an ordinary, unauthenticated request for a public file: <strong>no account, no login, no identifier, no location and nothing about you is attached to it.</strong> The app holds no credentials of any kind for that host — there is no key in the app to leak. As with any file download, the host sees your device's IP address and which file you requested; that, and only that, is what an ordinary web request reveals. Packs already on your device are read from local storage with no request at all.</p>
+    <p>Downloaded charts live in the app's private Application Support folder and are marked to stay out of your backups so they do not bloat them. They contain public chart imagery, never anything of yours. You can see what is installed, and how much space it uses, under <em>Map &rarr; Charts</em>.</p>
+</div>
+
+<h2>Your own records, and iCloud sync</h2>
+<div class="card">
+    <p>The things you type — aircraft profiles and weight-and-balance figures, saved routes, checklists, and logbook entries (date, aircraft, from and to, route, times, landings, approaches, remarks) — are stored on your device.</p>
+    <p>If you are signed in to iCloud on your device, these records also sync through <strong>your own private iCloud database</strong>, so they appear on your other devices. This is your personal Apple storage inside your own Apple Account. <strong>I cannot read it.</strong> I hold no key to it, have no console for it, and receive no copy of it. It is closer to a backup of your own files than to sending me anything.</p>
+    <p>Sync is optional in the plain sense that it depends on your iCloud state: sign out of iCloud, or turn Flightward off in <em>Settings &rarr; your name &rarr; iCloud</em>, and everything stays on the device and keeps working. If iCloud is unavailable for any reason the app simply keeps your records locally, and tells you which of the two is actually happening under <em>More &rarr; Backup</em> — because a pilot who believes their logbook is backed up when it is not has been misled. Nothing in the app requires an account, and iCloud sync is the only thing an Apple Account touches.</p>
+    <p>What never syncs, by design: chart packs, the aeronautical database, weather, and position data of any kind.</p>
+</div>
+
+<h2>Settings stored on your device</h2>
+<div class="card">
+    <p>A handful of preferences are saved locally so the app remembers them: your aircraft registration and type for the radio, whether spoken advisories are on, whether you acknowledged the safety notice, your checklist mode, and your last planning figures (route, cruise speed, fuel burn, reserve, cruise altitude). These stay on the device. They do not sync and they are not sent anywhere.</p>
+</div>
+
+<h2>Subscriptions</h2>
+<div class="card">
+    <p>Flightward Pro is an auto-renewable subscription — <strong>$49.99/year with a 14-day free trial</strong>, <strong>$6.99/month</strong>, or <strong>$79.99/year household</strong> for up to four pilots. Every safety advisory is free forever and always will be. Plans are shown under <em>More &rarr; Membership</em>.</p>
+    <p>Purchases are handled entirely by Apple. I never see your payment details, your name or your Apple Account. The app checks whether a subscription is active by reading Apple's answer on the device; that answer is not sent to me or to anyone else, no receipt goes to any server, and no identifier is attached to a purchase. Manage or cancel in <em>Settings &rarr; your name &rarr; Subscriptions</em>.</p>
+</div>
+
+<h2>Exporting your logbook</h2>
+<div class="card">
+    <p>You can export your logbook as a CSV file at any time, free, including after a subscription ends — <em>More &rarr; Your flying &rarr; Logbook &rarr; Export CSV</em>. The file is written only where you choose to put it in the system file picker. It is never uploaded anywhere.</p>
+</div>
+
+<h2>What Flightward does not do</h2>
+<div class="card">
+    <ul>
+        <li>No advertising of any kind, and no ad or attribution SDK is present in the app.</li>
+        <li>No analytics, telemetry, crash reporting or usage events.</li>
+        <li>No advertising identifier, vendor identifier, device ID or generated user ID.</li>
+        <li>No push notifications or push tokens, no camera, no microphone, no contacts, no photos, no calendar, no health data.</li>
+        <li>The only outside code in the app is an open-source map renderer (MapLibre), bundled in and drawing only from files on your device — it contacts no server and collects nothing.</li>
+        <li>No booking, ticketing, fares, seats, dispatch or arranging of flights, and no matching of pilots with passengers. Flightward is a personal reference and awareness tool for the pilot flying — which is also why it needs no identity from you.</li>
+    </ul>
+</div>
+
+<h2>How long anything is kept</h2>
+<div class="card">
+    <p>Position, altitude and speed: a second or so, in memory, then overwritten. Weather: in memory until you close the app. Your records and settings: until you delete them. Chart packs: until you remove them. I hold nothing, so on my side there is no retention period — there is no store to have one.</p>
+</div>
+
+<h2>Deleting everything</h2>
+<div class="card">
+    <ul>
+        <li><strong>Individual records</strong> — delete aircraft, routes, checklists or logbook entries in the app. Deletions sync out of iCloud too.</li>
+        <li><strong>Everything at once</strong> — delete the Flightward app. That removes the local database, your settings and every downloaded chart pack.</li>
+        <li><strong>The iCloud copy</strong> — go to <em>Settings &rarr; your name &rarr; iCloud &rarr; Manage Account Storage</em>, choose Flightward and delete its data. Because this data lives in your Apple Account and not with me, only you can do this, and you do not need my permission or cooperation.</li>
+    </ul>
+    <p>There is no "delete my account" request to send, because there is no account and I hold no copy of anything. If you want that confirmed in writing, email me and I will confirm it.</p>
+</div>
+
+<h2>Where data goes internationally</h2>
+<div class="card">
+    <p>Your own records go to Apple's iCloud infrastructure, wherever Apple stores your account's data, under <a href="https://www.apple.com/legal/privacy/">Apple's privacy policy</a>. Weather requests go to a United States government service. Chart downloads go to a global content network operated by Cloudflare. None of those requests carry your identity, and none of them come to me — I am in Hong Kong SAR and receive no personal data from this app at all, so there is no international transfer of your data by me to describe.</p>
+</div>
+
+<h2>Your rights — GDPR, UK GDPR and CCPA/CPRA</h2>
+<div class="card">
+    <p>For the purposes of these laws the data controller is <strong>Matthew Wong</strong>, an individual developer in Hong Kong SAR, reachable at <a href="mailto:mwsupplylimited@gmail.com">mwsupplylimited@gmail.com</a>.</p>
+    <p>Where the law gives you rights of <strong>access, correction, erasure, portability, restriction and objection</strong>, they apply — but in practice this app hands them to you directly rather than through me:</p>
+    <ul>
+        <li><strong>Access and portability:</strong> all your data is already on your device, and the logbook exports to a standard CSV file whenever you want.</li>
+        <li><strong>Correction and erasure:</strong> edit or delete anything in the app, or delete the app, as above. I cannot delete your data for you because I never had it.</li>
+        <li><strong>Consent and objection:</strong> location and motion access are granted by you in iOS and can be withdrawn at any time in <em>Settings &rarr; Privacy &amp; Security</em>. Withdrawing them turns off the features that need them; everything else keeps working.</li>
+    </ul>
+    <p>Legal bases, where GDPR asks for them: your consent, given through the iOS permission prompts, for location and motion; performance of the agreement between you and me for delivering the app and any subscription you buy; and my legitimate interest in fetching the weather you asked to see.</p>
+    <p><strong>For California residents:</strong> I do not collect, sell or share personal information, and I have not done so in the preceding twelve months. I do not use or disclose sensitive personal information for any purpose beyond what is permitted without a right to limit. There is no financial incentive programme, and nobody is treated differently for exercising a privacy right. Requests under the CCPA can be sent to the address below; expect a reply saying there is nothing held, which you can verify from the sections above.</p>
+    <p>If you are in the EEA or the UK, you also have the right to complain to your national supervisory authority.</p>
+</div>
+
+<h2>Children</h2>
+<div class="card">
+    <p>Flightward is a tool for pilots and is not directed at children. It is not designed for or marketed to children under 13 (or the equivalent minimum age where you live), and it knowingly collects no data from anyone of any age.</p>
+</div>
+
+<h2>Changes to this policy</h2>
+<div class="card">
+    <p>If Flightward ever gains a feature that changes any of the above, I will update this page and change the effective date before that feature ships — not after. Substantial changes will also be noted in the app's release notes. This policy will never be quietly loosened to permit advertising or tracking; those are ruled out for the life of the product.</p>
+</div>
+
+<h2>Contact</h2>
+<div class="card">
+    <p>Questions, corrections, or a privacy request of any kind: <a href="mailto:mwsupplylimited@gmail.com">mwsupplylimited@gmail.com</a> — a personal address, read by me, the one person who makes this app. It reaches me directly, and I answer.</p>
+</div>
+
+<footer>
+    <p>Flightward provides advisory information only. It is not certified avionics and it is not for navigation. It is a supplement to, never a replacement for, your aircraft's approved instruments, current official aeronautical publications, an official weather briefing, and your own judgement as pilot in command. Everything it shows may be inaccurate, incomplete or out of date, and advisories may be late, may be wrong, and may not appear at all. Aeronautical data is derived from public sources including the FAA and OurAirports; weather is from the National Weather Service Aviation Weather Center. Flightward is an independent app and is not affiliated with, endorsed by, or operated by any government agency or aviation authority.</p>
+    <p>&copy; 2026 Matthew Wong</p>
+</footer>
+    </div>
+</body>
+</html>

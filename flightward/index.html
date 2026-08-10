@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flightward — Support</title>
+    <meta name="description" content="Support, setup and FAQ for Flightward, a general aviation flight assistant for iPhone and iPad.">
+    <style>
+        :root {
+            --bg: #ffffff;
+            --fg: #1a1a1a;
+            --muted: #666666;
+            --accent: #13b3ab;
+            --card: #f5f5f7;
+            --border: #e5e5e7;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #121419;
+                --fg: #f5f5f7;
+                --muted: #9a9a9a;
+                --accent: #2ee0d6;
+                --card: #1c1f25;
+                --border: #2a2d34;
+            }
+        }
+        * { box-sizing: border-box; }
+        html { -webkit-text-size-adjust: 100%; }
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+            background: var(--bg);
+            color: var(--fg);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 48px 24px 96px;
+        }
+        .back {
+            display: inline-block;
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-bottom: 32px;
+        }
+        .back:hover { color: var(--accent); }
+        h1 {
+            font-size: 2.2rem;
+            margin: 0 0 8px;
+            letter-spacing: -0.02em;
+        }
+        .subtitle {
+            color: var(--muted);
+            margin: 0 0 40px;
+        }
+        h2 {
+            font-size: 1.3rem;
+            margin: 40px 0 12px;
+            letter-spacing: -0.01em;
+        }
+        h3 {
+            font-size: 1rem;
+            margin: 24px 0 6px;
+            font-weight: 600;
+        }
+        p, li { color: var(--fg); }
+        .muted { color: var(--muted); }
+        ul { padding-left: 22px; }
+        li { margin-bottom: 6px; }
+        a { color: var(--accent); }
+        .pill {
+            display: inline-block;
+            background: var(--card);
+            border: 1px solid var(--border);
+            padding: 3px 10px;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            color: var(--muted);
+        }
+        .callout {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-left: 3px solid var(--accent);
+            padding: 16px 20px;
+            border-radius: 8px;
+            margin: 24px 0;
+        }
+        .callout p { margin: 0; }
+        footer {
+            margin-top: 64px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
+            color: var(--muted);
+            font-size: 0.85rem;
+        }
+    </style>
+    
+<style>
+    .lede { font-size: 1.15rem; color: var(--muted); }
+    .updated { color: var(--muted); font-size: 0.92rem; margin-top: -8px; }
+    .card { background: var(--card); border: 1px solid var(--border);
+            border-radius: 14px; padding: 18px 20px; margin: 24px 0; }
+    .card p { margin: 0; }
+    h2 { margin-top: 40px; }
+    footer { margin-top: 56px; padding-top: 24px; border-top: 1px solid var(--border);
+             color: var(--muted); font-size: 0.9rem; }
+    a { color: var(--accent); }
+</style>
+</head>
+<body>
+    <div class="container">
+<h1>Flightward Support</h1>
+
+<p class="lede">Flightward is a flight assistant for general aviation pilots. It follows the phase of flight you are actually in, speaks airspace and altitude advisories, shows the frequency you need right now, draws a moving map that works with no signal, and keeps your route planning, weight and balance, checklists and logbook in one place. It is an aid to situational awareness and preflight planning only. It is not certified avionics and it is not for navigation. Everything it shows may be inaccurate, incomplete or out of date; alerts are advisory, may be late, may be wrong, and may not appear at all. Always use official sources — a current briefing, current charts, current NOTAMs and your aircraft's approved flight manual. The pilot in command is solely responsible for the safe conduct of the flight.</p>
+
+<p>Flightward sells nothing but its own subscription, books nothing, carries nobody, and needs no account for any feature. It carries no advertising of any kind, no analytics SDK and no trackers.</p>
+
+<h2>Getting started</h2>
+
+<ol>
+  <li><strong>Read the disclaimer on first launch.</strong> Flightward opens on a full-screen notice explaining what it is and what it is not. There is one button — <em>I Understand</em> — and you cannot swipe past it. You can re-read the same wording any time under <strong>More &rarr; Legal &amp; safety</strong>, in the About section.</li>
+
+  <li><strong>Look up an airport.</strong> The app opens on the <strong>Airports</strong> tab. Search by identifier or name and you get runways, frequencies, elevation and weather for that field. This works immediately, with no signal and no setup, because the aeronautical database is already inside the app.</li>
+
+  <li><strong>Open the Map tab and allow location.</strong> Flightward asks for location the first time you open <strong>Map</strong>, not at launch, so the reason for the prompt is on screen when you see it. Choose <em>While Using the App</em> — that is the only level Flightward asks for. It does not ask for <em>Always</em>. Once granted, advisories keep running with the app in the background or the screen off, and iOS shows the blue location indicator the whole time so it is never a surprise. If you tapped the wrong button, fix it in <strong>iOS Settings &rarr; Flightward &rarr; Location</strong> and set <em>Precise Location</em> on.</li>
+
+  <li><strong>Turn on spoken advisories and test them.</strong> Go to <strong>More &rarr; Aural alerts</strong>, in the In flight section. <em>Spoken advisories</em> is on by default. Tap <strong>Test aural alert</strong> with your headset plugged in or paired <em>before</em> you taxi, so you know the audio route works and the volume is right. The same screen explains the three alert tiers and carries the <em>Mute for this flight</em> control.</li>
+
+  <li><strong>Check your charts.</strong> On the <strong>Map</strong> tab, tap the chart button at the top right to open <strong>Charts</strong>. It shows which chart packs are installed, what edition each one is, when it expires, and how much space they are using. The map is fully usable before any chart is installed — airports, runways, frequencies and airspace all come from the database already on your device — so a missing chart is a missing background layer, not a broken app.</li>
+
+  <li><strong>Set up the rest at your own pace.</strong> Aircraft profiles and weight and balance live under <strong>More &rarr; Aircraft &amp; weight and balance</strong>; checklists under <strong>More &rarr; Checklists</strong>; your logbook under <strong>More &rarr; Logbook</strong>. Routes are built on the <strong>Plan</strong> tab. None of it requires an account.</li>
+</ol>
+
+<h2>Frequently asked questions</h2>
+
+<h3>Which advisories does Flightward actually speak?</h3>
+<p>Being precise about this matters more than sounding impressive, because the one thing you must never do is expect a callout that cannot come. In this version Flightward speaks:</p>
+<ul>
+  <li><strong>Airspace</strong> — approaching a controlled or special-use volume, and entering one.</li>
+  <li><strong>Height above the field</strong> — altitude callouts on the way down.</li>
+  <li><strong>Descent rate</strong> — an excessive rate of descent.</li>
+  <li><strong>Transition altitude</strong> — a reminder to reset the altimeter.</li>
+  <li><strong>Density altitude</strong> — during run-up and taxi, when it will hurt your takeoff performance.</li>
+  <li><strong>Carburettor icing risk</strong> — from the reported temperature and dewpoint.</li>
+</ul>
+<p>Anything not on that list is not being watched for you. Treat the list as the complete set, not as examples.</p>
+
+<h3>Does Flightward work offline?</h3>
+<p>Mostly, yes — deliberately. The aeronautical database (72,455 airports, 43,973 runways, 28,425 frequencies and 7,616 airspace volumes) ships inside the app and is read from the device, never fetched. The moving map has no online basemap at all: chart tiles come from packs installed on the device and airspace comes from the bundled database, so the map works in Airplane Mode. Advisories, the radio strip, checklists, weight and balance, the nav log and your logbook all work with no signal. The parts that genuinely need a connection are weather (METAR and TAF are fetched live), chart downloads, and iCloud sync.</p>
+
+<h3>Do I need an account?</h3>
+<p>No. There is no Flightward account, no sign-up, no email required, and no feature at all is behind a login. The only thing that touches an account is iCloud sync of your own aircraft, routes, checklists and logbook, which uses <em>your</em> Apple Account through iCloud — Flightward never sees a password and never operates a user database.</p>
+
+<h3>Why does it need to keep using my location in the background?</h3>
+<p>Because the advisories are the product, and they are worthless if they stop the moment you turn the screen off or switch to another app — which is exactly what pilots do in cruise to save battery. Flightward asks only for <em>While Using the App</em> and then uses an iOS background activity session to keep the position stream alive, which keeps the blue location indicator visible the entire time. It never asks for <em>Always</em>. Your position is used on the device to draw ownship, compute distance and bearing, and decide which advisories to issue. It is not uploaded to a Flightward server, not sold, and not shared with anyone — see the <a href="privacy.html">Privacy Policy</a>.</p>
+
+<h3>Why does it speak over my music, and will it talk over ATC?</h3>
+<p>Flightward speaks through whatever audio route you are using, because an advisory you cannot hear is not an advisory. It is configured to <em>mix with and briefly duck</em> other audio rather than interrupt it, so music and radio audio drop in volume for the length of the phrase and then come straight back up. It does not take the audio session away from other apps. Headsets with audio prioritisation, such as Bose A30 or Lightspeed ComPriority, will additionally duck Flightward underneath incoming radio calls, which is the behaviour you want. If you would rather it stayed quiet, turn <em>Spoken advisories</em> off under <strong>More &rarr; Aural alerts</strong>, or tap <em>Mute for this flight</em> on the same screen — that mute is scoped to the current flight only and clears itself when the next one starts, so it can never silently carry over into a flight where you wanted it.</p>
+
+<h3>What do the FAA chart packs include?</h3>
+<p>VFR Sectionals and Terminal Area Charts, built from the FAA's own published raster charts, which are a work of the U.S. Government and in the public domain. They are the same depiction you are used to reading — shelf altitudes, hatching, labels and all. Each pack is roughly 26 MB and downloads over Wi-Fi by default. FAA VFR charts are published on a 56-day cycle, so fetch them at home rather than on a phone connection on the ramp. Packs carry their edition and expiry date, and Flightward shows an amber banner on the map when the soonest-expiring installed chart is close to its date and a red one once it has passed, because a superseded sectional in a pilot's hands is worse than no sectional: it still looks authoritative. Approach plates and airport diagrams are not included.</p>
+
+<h3>Which regions are covered?</h3>
+<p>Coverage is deliberately uneven, and Flightward tells you which band you are in rather than pretending otherwise.</p>
+<ul>
+  <li><strong>United States</strong> — full depth. FAA raster charts and airspace alerting, covering Class B, C, D and E, Restricted, Prohibited, Warning and Alert areas, MOAs, National Security Areas and the Mode C veil, plus airports, frequencies and weather.</li>
+  <li><strong>Everywhere else</strong> — airports, runways and frequencies worldwide from OurAirports, across 247 countries, plus METAR and TAF wherever they are published. There is no airspace polygon coverage outside the United States in this version, so airspace alerting is inactive and the map shows a persistent <em>"No airspace data for this region — alerting inactive"</em> banner. That includes Hong Kong, where Flightward is written. Mainland China has no legally accessible free airspace dataset and is a documented no-coverage region.</li>
+</ul>
+<p>Wherever data is missing, Flightward says so on screen. An empty map is never allowed to read as clear sky.</p>
+
+<h3>How do I stop a specific advisory?</h3>
+<p>There are three levers, and one deliberate limitation.</p>
+<ul>
+  <li><strong>Dismiss one banner.</strong> Tap the ellipsis on an alert banner and choose <em>Dismiss</em>.</li>
+  <li><strong>Tell it that alert was wrong.</strong> Same menu, <em>Not right</em>. That alert will not be issued again for the rest of the flight, and it feeds the tuning.</li>
+  <li><strong>Silence everything for this flight.</strong> <strong>More &rarr; Aural alerts &rarr; Mute for this flight</strong>, or switch <em>Spoken advisories</em> off entirely.</li>
+</ul>
+<p>What you cannot do is permanently switch off one category of alert. That is on purpose: a per-alert kill switch gets used once in irritation and is then forgotten for a year, which turns a safety feature into a silent one. Two other rules are also fixed and not adjustable — only one advisory is ever spoken at a time, and below 1,000 ft above the field and during the takeoff roll, flare and landing roll only Warning-tier alerts may speak at all. Those are the seconds where a chime is a distraction rather than a service. If an advisory is firing when it should not, use <em>Not right</em> and then email me; that report is how the thresholds get better.</p>
+
+<h3>How accurate is the altitude?</h3>
+<p>Treat it as awareness, never as your altimeter. The altitude Flightward reasons about comes from GNSS as reported by iOS, already corrected from the raw ellipsoidal height to mean sea level. Vertical accuracy from satellite fixes is always meaningfully worse than horizontal, and it degrades further under poor satellite geometry and inside a metal airframe. Your aircraft's altimeter, set to the current setting, remains the reference for every altitude decision — including anything with a Class B shelf in it. Separately, Flightward reads the device's own barometer to compute pressure altitude and density altitude for takeoff performance. That sensor measures <em>cabin</em> pressure, so in a pressurised aircraft it reflects cabin altitude, not aircraft altitude, and Flightward labels it as such.</p>
+
+<h3>Can my passenger use it?</h3>
+<p>Yes. There is no account and no per-device sign-in, so anyone can install Flightward on their own iPhone or iPad and use the free features immediately — the moving map, airport information, plain-English weather and the frequency strip. In practice the most useful thing you can do is hand someone in the back a spare iPad so they can see where you are and what you are flying over. Note that the spoken advisories are written for the person flying, not for a passenger, so if you are showing someone the app on the ground you may want to turn them off first. Flightward does not do seat sharing, cost sharing, ride matching or anything of that kind, and never will.</p>
+
+<h3>How do I export my logbook?</h3>
+<p>Open <strong>More &rarr; Logbook</strong>, tap the ellipsis at the top right and choose <strong>Export CSV</strong>. iOS then lets you save the file anywhere — Files, iCloud Drive, email it to yourself, or drop it straight into another logbook app. The file is plain comma-separated text with one row per flight, so nothing is locked up in a proprietary format.</p>
+
+<h3>What happens to my logbook if I cancel Pro?</h3>
+<p>Nothing. Your logbook stays fully readable, editable and exportable forever, including after a subscription lapses. Those are your hours, not mine, and holding them hostage would be indefensible in a safety app. The same free-forever promise covers every safety advisory Flightward issues, the nearest-airport list and the frequencies that go with it, the radio strip and its scripts, worldwide airport data, runways and frequencies, and plain-English weather. What you lose on cancelling is the Pro layer: offline chart packs, route briefing and the wind-corrected nav log, unlimited aircraft profiles, logbook sync across devices, weather alerts, automatic track logging and custom checklists.</p>
+
+<h3>How do I cancel, or get a refund?</h3>
+<p>Apple handles all billing for Flightward, so both go through Apple rather than through me — I never see your payment details and cannot charge, refund or cancel anything on your behalf.</p>
+<ul>
+  <li><strong>Cancel:</strong> <strong>iOS Settings &rarr; your name &rarr; Subscriptions &rarr; Flightward</strong>, then <em>Cancel Subscription</em>. Cancel at least 24 hours before the period ends, or that period renews. You keep Pro until the end of the period you have already paid for. Flightward also opens the same Apple sheet directly from <strong>More &rarr; Membership &rarr; Manage or cancel subscription</strong>.</li>
+  <li><strong>Refund:</strong> request it from Apple at <a href="https://reportaproblem.apple.com" rel="noopener">reportaproblem.apple.com</a>, or via <a href="https://support.apple.com/en-us/HT204084" rel="noopener">Apple's guide to requesting a refund</a>. Apple decides refunds under their terms. If the reason is something Flightward did wrong, email me as well — it helps to have it fixed.</li>
+</ul>
+
+<h3>I paid, but Pro is not showing. What now?</h3>
+<p>Go to <strong>More &rarr; Membership</strong> and tap <strong>Restore purchases</strong>. Flightward tells you plainly whether it found a subscription or not, rather than leaving you guessing. Make sure you are signed into the same Apple Account that made the purchase. If it still does not appear, email me with the date of purchase and I will help you work out where it went.</p>
+
+<h3>Can I use Flightward instead of a briefing or current charts?</h3>
+<p>No, and it is not built to be used that way. It has no NOTAM feed, no approach plates, no filing, and its weather is a live METAR and TAF fetch with plain-English decoding, not a briefing. Get a proper briefing, check current NOTAMs and carry current charts. Flightward's job is the part between those: reducing how much you have to hold in your head while you are actually flying. It never passes judgement on whether a flight should go — that decision is yours alone.</p>
+
+<h3>Why is the airspace outline missing on the map when I have a chart installed?</h3>
+<p>Because the sectional underneath already draws it, and draws it better — with the shelf altitudes, hatching and labels you were trained to read. Painting a second set of outlines on top produces exactly the clutter this app exists to reduce. So the vector airspace layer is a fallback: it appears where no chart covers the view, and steps aside where one does. Airspace <em>alerting</em> is unaffected either way — it runs off the database, not off what is drawn.</p>
+
+<h3>Where does the data come from, and how current is it?</h3>
+<p>Airports, runways and frequencies come from OurAirports, which is public domain and updated daily. United States airspace, runway and taxiway geometry comes from the Federal Aviation Administration, a work of the U.S. Government in the public domain. Weather comes from the NOAA/NWS Aviation Weather Center. The build date of the database on your device is shown under <strong>More &rarr; Data</strong>, and the full list is under <strong>More &rarr; Data sources &amp; attribution</strong>. Flightward is not endorsed by or affiliated with the FAA.</p>
+
+<h3>Does it run on iPad, and does one subscription cover both my devices?</h3>
+<p>Flightward is universal — the same app runs on iPhone and iPad, and it supports iOS and iPadOS 17 and later. Pro Annual and Pro Monthly are tied to your Apple Account, so they cover every device signed into that account; just tap <em>Restore purchases</em> on the second device if it does not appear straight away. Pro Household is the one that covers other people: it is shared through Apple's Family Sharing, so the other pilots need to be in your Apple Family group, each using their own Apple Account.</p>
+
+<h3>Will it drain my battery?</h3>
+<p>Continuous position updates and a live map use real power, so plan on having a charger in the aircraft for anything over about an hour. You can cut the draw substantially by turning the screen off — advisories keep speaking, which is how the app is designed to be used in cruise. Fetching chart packs on Wi-Fi at home rather than in flight also helps.</p>
+
+<h2>Subscription</h2>
+
+<p>Flightward has one paid tier, <strong>Flightward Pro</strong>, sold three ways. Every safety feature is free forever regardless of which one you choose, or whether you choose any.</p>
+
+<ul>
+  <li><strong>Pro Annual — $49.99 per year</strong>, with a <strong>14-day free trial</strong>. Works out at about $4.17 a month.</li>
+  <li><strong>Pro Monthly — $6.99 per month.</strong> No trial; the trial belongs to the annual plan.</li>
+  <li><strong>Pro Household — $79.99 per year</strong>, for up to four pilots or one tail number. This is the one plan that is shareable through Apple's Family Sharing.</li>
+</ul>
+
+<p>Prices are in US dollars; your local price is shown in the app and set by Apple for your storefront. The three plans are alternatives, not tiers — you can move between them freely. The free trial applies to the annual plan only, once per Apple Account, and Flightward only offers it when you are actually eligible, so the app never advertises a trial the App Store will not grant.</p>
+
+<p><strong>Pro adds:</strong> offline FAA chart packs, route briefing and the wind-corrected nav log, unlimited aircraft profiles with saved weight and balance, logbook sync and currency across your devices, weather alerts for your airports, automatic track logging and debrief, shareable live-tracking links, and custom checklists.</p>
+
+<p><strong>Free forever, whatever happens:</strong> every safety advisory Flightward issues, now and any added later; the nearest-airport list and the frequencies that go with it; the radio strip and what-to-say scripts; worldwide airport data, runways and frequencies; plain-English weather; an aircraft profile with weight and balance; and your logbook, readable and exportable, always, even after cancelling. Weight and balance itself is never paid — Pro is what lets you keep more than one aircraft, sync it and export it. Your price also never goes up while you stay subscribed.</p>
+
+<p><strong>Billing.</strong> Apple handles all billing. Subscriptions are charged to your Apple Account and renew automatically unless cancelled at least 24 hours before the current period ends. Payment is taken within 24 hours before each renewal. I never see or store your payment details.</p>
+
+<p><strong>Manage or cancel.</strong> <strong>iOS Settings &rarr; your name &rarr; Subscriptions &rarr; Flightward</strong>, or from inside the app at <strong>More &rarr; Membership &rarr; Manage or cancel subscription</strong>. That screen also shows your current plan, its price, and the date it next renews or ends.</p>
+
+<p><strong>Restore.</strong> New device, or reinstalled the app? <strong>More &rarr; Membership &rarr; Restore purchases</strong>, signed into the Apple Account that made the purchase.</p>
+
+<h2>Contact</h2>
+
+<p>Flightward is built by Matthew Wong, a sole individual developer based in Hong Kong SAR. Email <a href="mailto:mwsupplylimited@gmail.com">mwsupplylimited@gmail.com</a> and you will reach the person who wrote the code.</p>
+
+<p>Expect a reply within <strong>two business days</strong>, and usually sooner. Hong Kong is UTC+8, so if you are in North America a message sent in your afternoon is typically answered by your next morning. This is one person, not a support desk, so replies are slower at weekends and during holidays — but they are real answers, not a script.</p>
+
+<p>It helps enormously if you include:</p>
+<ul>
+  <li>your iPhone or iPad model and iOS version;</li>
+  <li>the Flightward version from <strong>More &rarr; Version</strong>, in the About section;</li>
+  <li>the airport identifier or rough position where it happened;</li>
+  <li>what you expected and what you saw instead, with a screenshot if you have one.</li>
+</ul>
+
+<p>Reports of an advisory that fired when it should not have, or failed to fire when it should have, are the most valuable mail I get. Please send them.</p>
+
+<h2>Legal</h2>
+
+<p><a href="privacy.html">Privacy Policy</a> &middot; <a href="terms.html">Terms of Use</a></p>
+
+<p class="disclaimer">Flightward is an aid to situational awareness and preflight planning only. It is not certified avionics and it is not for navigation. All data is presented for reference only and may be inaccurate, incomplete or out of date. Alerts are advisory, may be late, may be wrong, and may not appear at all. Always consult official sources — a current briefing, current charts, current NOTAMs and your aircraft's approved flight manual. The pilot in command is solely responsible for the safe conduct of the flight. Flightward is not endorsed by or affiliated with the Federal Aviation Administration.</p>
+    </div>
+</body>
+</html>
