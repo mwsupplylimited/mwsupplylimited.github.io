@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Voltway — Support</title>
-    <meta name="description" content="Support for Voltway: a live power-flow diagram and battery forensics for Mac, plus charge alerts and Shortcuts automation for iPhone and iPad.">
+    <title>Voltway for Mac — Support</title>
+    <meta name="description" content="Support for Voltway: a live power-flow diagram, deep battery forensics and real charge control for Mac.">
     <style>
         :root {
             --bg: #ffffff; --fg: #11181c; --muted: #5c6b73; --accent: #00857a;
@@ -46,49 +46,32 @@
     <a class="back" href="../">&larr; MW Supply Limited</a>
 
     <h1>Voltway</h1>
-    <p class="subtitle">Battery charge management and power intelligence for Mac, iPhone&nbsp;and&nbsp;iPad.</p>
+    <p class="subtitle">Battery charge management and power intelligence for&nbsp;Mac.</p>
 
     <h2>What Voltway does</h2>
-    <p><strong>On Mac</strong>, Voltway draws a live power-flow diagram — how many watts are coming out of the wall, how many the Mac is using, and whether the battery is charging or supplying — and opens up battery forensics the system never shows you: learned capacity per cell, cell voltages, impedance trend, cycle count, and how long the pack has been sitting at a high state of charge.</p>
-    <p><strong>On iPhone and iPad</strong>, Voltway keeps an honest charge timeline over the last 24 hours, fires alert rules when the level crosses a threshold you set, and gives Shortcuts a set of actions so you can automate around your charging.</p>
+    <p>Voltway draws a live power-flow diagram of your Mac — how many watts are coming out of the wall, how many the Mac is using, and whether the battery is charging or supplying — and opens up the battery data macOS keeps to itself: learned capacity per cell, cell voltages, impedance trend, cycle count, and how long the pack has been sitting at a high state of charge.</p>
+    <p>With the optional helper it also controls charging: hold a limit below 80%, set separate stop and resume levels, or run from the adapter without charging at all.</p>
 
-    <h2>Things Voltway is careful not to claim</h2>
     <div class="callout">
-        <p><strong>No iPhone or iPad app can limit charging.</strong> Apple provides no way for a third-party app to stop, slow or delay charging, so Voltway does not pretend to &mdash; it alerts you, and you unplug. Newer iPhones have a built-in charge limit in Settings &rsaquo; Battery &rsaquo; Charging.</p>
-        <p><strong>iOS reports the battery level in 5% steps.</strong> Since iOS 17 that is all any app is given, so every gauge and alert threshold in Voltway sits on a 5% grid. A threshold like 82% is simply not observable.</p>
-        <p><strong>iOS exposes no battery health data to apps</strong> — no cycle count, capacity, voltage or temperature. Those readouts exist only in the Mac app, where the system does provide them.</p>
-        <p><strong>No Mac lets software set a charging speed.</strong> There is no charge-rate control on any Mac, so Voltway offers scheduled and delayed charging instead, which achieves the same goals — less heat and less time parked at a high charge.</p>
+        <p><strong>Voltway is a Mac app.</strong> There is no iPhone or iPad version, and that is deliberate: Apple provides no way for any third-party app to limit, stop or slow charging on iOS, and iOS exposes no battery health data to apps at all. An iPhone app could only have watched a 5%-rounded number and nagged you, so we did not ship one. Newer iPhones have a built-in charge limit in Settings &rsaquo; Battery &rsaquo; Charging.</p>
+        <p><strong>No Mac lets software set a charging speed.</strong> There is no charge-rate control on any Mac, so Voltway does not claim one.</p>
     </div>
-
-    <h2>Getting alerts when Voltway is closed <span class="pill">iPhone &amp; iPad</span></h2>
-    <p>iOS never lets an app watch the battery in the background — that applies to every app, not just Voltway. What does work is a Shortcuts personal automation, which you create once:</p>
-    <ol>
-        <li>Open <strong>Shortcuts</strong> and tap the <strong>Automation</strong> tab.</li>
-        <li>Tap <strong>+</strong>, then choose <strong>Battery Level</strong>.</li>
-        <li>Set the slider to your level, pick <strong>Rises Above</strong>, and choose <strong>Run Immediately</strong>.</li>
-        <li>Tap <strong>Next</strong>, search for <strong>Voltway</strong>, and add the <strong>Check Charge Alerts</strong> action.</li>
-        <li>Tap <strong>Done</strong>.</li>
-    </ol>
-    <p class="muted">Apps cannot create personal automations for you — Apple requires you to build it yourself. Without it, alerts fire while Voltway is open or on the next refresh the system grants, which is not guaranteed.</p>
 
     <h2>Charge control on Mac <span class="pill">optional</span></h2>
     <p>Limiting charge means writing to your Mac's system power controller, which needs privileges a Mac App Store app is not allowed to have. Rather than ask for them, Voltway keeps that work in a small, separate, notarized helper that you install yourself. The App Store app never escalates and never installs anything.</p>
     <p>See the <a href="helper.html">Voltway charge helper</a> page for the download and instructions.</p>
 
     <h2>Voltway Pro</h2>
-    <p>Voltway is free to use. The Mac app's entire read-only side &mdash; the power-flow diagram and the battery forensics &mdash; is free forever, and on iPhone you get the charge timeline, one alert rule, and all the Shortcuts actions.</p>
-    <p>Voltway Pro adds unlimited alert rules, quiet hours and repeat reminders, plus the advanced Mac charge tools &mdash; limits below 80%, separate stop and resume levels, and running on the adapter without charging. One purchase covers Mac, iPhone and iPad.</p>
+    <p>Voltway is free to use. The entire read-only side &mdash; the power-flow diagram, the battery forensics and the history &mdash; is free forever. No helper, no privileges, no nagging.</p>
+    <p>Voltway Pro adds the charge-control tools &mdash; limits below 80%, separate stop and resume levels, and running on the adapter without charging &mdash; plus unlimited alert rules, quiet hours and repeat reminders.</p>
 
     <h3>Managing or cancelling</h3>
-    <p>On iPhone or iPad: Settings &rsaquo; your name &rsaquo; Subscriptions. On Mac: App&nbsp;Store &rsaquo; your name &rsaquo; Account Settings &rsaquo; Subscriptions. You can also tap <strong>Manage Subscription</strong> on Voltway's Membership screen. Subscriptions renew automatically unless cancelled at least 24 hours before the period ends.</p>
+    <p>App&nbsp;Store &rsaquo; your name &rsaquo; Account Settings &rsaquo; Subscriptions. You can also use <strong>Manage Subscription</strong> on Voltway's Membership screen. Subscriptions renew automatically unless cancelled at least 24 hours before the period ends.</p>
 
     <h3>Restoring a purchase</h3>
     <p>Open Voltway's Membership screen and tap <strong>Restore Purchases</strong>. Make sure you are signed in with the same Apple Account you bought with — a purchase cannot be moved between Apple Accounts.</p>
 
     <h2>Common questions</h2>
-
-    <h3>Why does the level jump 80% &rarr; 85% and never show 82%?</h3>
-    <p>Because iOS only reports 5% steps. This is a platform limit, not a bug, and it applies to every app.</p>
 
     <h3>Why does my Mac show three different battery health numbers?</h3>
     <p>Because macOS genuinely reports three. Apple's figure is smoothed and rounded to a whole percent; the other two come straight from the fuel gauge. Voltway shows all three rather than hiding the ones that disagree — track the trend, not any single reading.</p>
