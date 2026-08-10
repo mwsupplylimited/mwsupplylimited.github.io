@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voltway Charge Helper</title>
+    <meta name="description" content="The optional Voltway charge helper for Mac: what it does, why it is separate from the App Store app, and how to install or remove it.">
+    <style>
+        :root {
+            --bg: #ffffff; --fg: #11181c; --muted: #5c6b73; --accent: #00857a;
+            --card: #f2f7f6; --border: #dfe8e6;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #0c0f11; --fg: #f2f6f8; --muted: #93a4ad; --accent: #2bd9c0;
+                --card: #161b1e; --border: #2a3237;
+            }
+        }
+        * { box-sizing: border-box; }
+        html { -webkit-text-size-adjust: 100%; }
+        body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif; background: var(--bg); color: var(--fg); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+        .container { max-width: 720px; margin: 0 auto; padding: 48px 24px 96px; }
+        .back { display: inline-block; color: var(--muted); text-decoration: none; font-size: 0.9rem; margin-bottom: 32px; }
+        .back:hover { color: var(--accent); }
+        h1 { font-size: 2.2rem; margin: 0 0 8px; letter-spacing: -0.02em; }
+        .subtitle { color: var(--muted); margin: 0 0 40px; }
+        h2 { font-size: 1.3rem; margin: 40px 0 12px; letter-spacing: -0.01em; }
+        h3 { font-size: 1rem; margin: 24px 0 6px; font-weight: 600; }
+        p, li { color: var(--fg); }
+        .muted { color: var(--muted); }
+        ul { padding-left: 22px; }
+        li { margin-bottom: 6px; }
+        a { color: var(--accent); }
+        code { background: var(--card); border: 1px solid var(--border); padding: 1px 6px; border-radius: 5px; font-size: 0.92em; }
+        .pill { display: inline-block; background: var(--card); border: 1px solid var(--border); padding: 3px 10px; border-radius: 999px; font-size: 0.8rem; color: var(--muted); margin-left: 6px; }
+        .callout { background: var(--card); border: 1px solid var(--border); border-left: 3px solid var(--accent); padding: 16px 20px; border-radius: 8px; margin: 24px 0; }
+        .callout p { margin: 0; }
+        .callout p + p { margin-top: 10px; }
+        ol { padding-left: 22px; }
+        ol li { margin-bottom: 8px; }
+        footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.88rem; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <a class="back" href="index.html">&larr; Voltway Support</a>
+
+    <h1>Voltway Charge Helper</h1>
+    <p class="subtitle">An optional download that lets Voltway control charging on your Mac.</p>
+
+    <div class="callout">
+        <p><strong>You do not need this to use Voltway.</strong> The power-flow diagram, the battery forensics and the history all work without it. The helper only adds charge <em>control</em>.</p>
+    </div>
+
+    <h2>Why is it a separate download?</h2>
+    <p>Limiting charge means writing to your Mac's System Management Controller — the chip that actually runs the charger. That requires administrator privileges, and Mac App Store apps are not permitted to request them (App Store Review Guideline 2.4.5(v)).</p>
+    <p>So rather than ask for privileges it is not allowed to have, Voltway keeps that work in a small, separate program that you install yourself and can remove at any time. <strong>The App Store app never escalates and never installs anything.</strong></p>
+
+    <h2>What it does</h2>
+    <ul>
+        <li>Holds your battery at a limit you choose, including limits below 80%</li>
+        <li>Separate upper and lower thresholds, so the pack is not constantly topped up</li>
+        <li>Runs your Mac from the adapter without charging, or from the battery while plugged in</li>
+        <li>Scheduled and delayed charging</li>
+    </ul>
+
+    <h2>How it keeps your Mac safe</h2>
+    <p>This program can stop a Mac charging, so it is built to fail in the safe direction:</p>
+    <ul>
+        <li>It writes the <strong>safe state first</strong> every time it starts, before reading any of your settings. A crash and restart can never leave you unable to charge.</li>
+        <li>If Voltway stops talking to it for more than a few seconds, it <strong>releases the limit by itself</strong>.</li>
+        <li>If the battery falls below 20%, or gets too hot, it <strong>opens the gate regardless of your settings</strong>.</li>
+        <li>It restores normal charging on quit, on shutdown, and even if it crashes.</li>
+        <li>If it cannot reach Voltway at all, it leaves charging <strong>on</strong> rather than holding a limit nobody can release.</li>
+    </ul>
+
+    <h2>Requirements</h2>
+    <ul>
+        <li>A Mac notebook with Apple silicon, running macOS 14 or later</li>
+        <li>An administrator password at install time (macOS asks, not Voltway)</li>
+    </ul>
+    <p class="muted">Some Macs do not expose a charge-control interface at all. Voltway detects this and tells you plainly rather than pretending the setting worked.</p>
+
+    <h2>Install</h2>
+    <p class="muted">The signed and notarized installer is published here with the Mac app's first release. Until then, Voltway's Charging screen will simply report that the helper is not installed.</p>
+
+    <h2>Remove it</h2>
+    <p>Open Voltway, go to <strong>Charging</strong>, and choose <strong>Restore normal charging</strong>, then run the uninstaller. Removing the helper always restores normal charging first and verifies it before it finishes.</p>
+
+    <h2>Contact</h2>
+    <p><a href="mailto:mwsupplylimited@gmail.com">mwsupplylimited@gmail.com</a></p>
+
+    <footer>
+        MW Supply Limited &middot; <a href="index.html">Voltway Support</a> &middot; <a href="privacy.html">Privacy Policy</a>
+    </footer>
+</div>
+</body>
+</html>

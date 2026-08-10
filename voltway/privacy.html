@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voltway — Privacy Policy</title>
+    <meta name="description" content="Privacy policy for Voltway: battery charge management and power intelligence for Mac, iPhone and iPad.">
+    <style>
+        :root {
+            --bg: #ffffff; --fg: #11181c; --muted: #5c6b73; --accent: #00857a;
+            --card: #f2f7f6; --border: #dfe8e6;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #0c0f11; --fg: #f2f6f8; --muted: #93a4ad; --accent: #2bd9c0;
+                --card: #161b1e; --border: #2a3237;
+            }
+        }
+        * { box-sizing: border-box; }
+        html { -webkit-text-size-adjust: 100%; }
+        body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif; background: var(--bg); color: var(--fg); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+        .container { max-width: 720px; margin: 0 auto; padding: 48px 24px 96px; }
+        .back { display: inline-block; color: var(--muted); text-decoration: none; font-size: 0.9rem; margin-bottom: 32px; }
+        .back:hover { color: var(--accent); }
+        h1 { font-size: 2.2rem; margin: 0 0 8px; letter-spacing: -0.02em; }
+        .subtitle { color: var(--muted); margin: 0 0 40px; }
+        h2 { font-size: 1.3rem; margin: 40px 0 12px; letter-spacing: -0.01em; }
+        h3 { font-size: 1rem; margin: 24px 0 6px; font-weight: 600; }
+        p, li { color: var(--fg); }
+        .muted { color: var(--muted); }
+        ul { padding-left: 22px; }
+        li { margin-bottom: 6px; }
+        a { color: var(--accent); }
+        code { background: var(--card); border: 1px solid var(--border); padding: 1px 6px; border-radius: 5px; font-size: 0.92em; }
+        .callout { background: var(--card); border: 1px solid var(--border); border-left: 3px solid var(--accent); padding: 16px 20px; border-radius: 8px; margin: 24px 0; }
+        .callout p { margin: 0; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95rem; }
+        th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+        th { color: var(--muted); font-weight: 600; }
+        .big { font-size: 1.1rem; font-weight: 600; }
+        footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.88rem; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <a class="back" href="../">&larr; MW Supply Limited</a>
+
+    <h1>Voltway Privacy Policy</h1>
+    <p class="subtitle">Last updated: 10 August 2026</p>
+
+    <div class="callout">
+        <p class="big">Voltway does not collect your data.</p>
+        <p class="muted" style="margin-top:8px">Everything Voltway measures about your battery stays on your device. There is no Voltway account, no Voltway server, and no analytics SDK. We could not look at your battery history even if we wanted to.</p>
+    </div>
+
+    <h2>What stays on your device</h2>
+    <p>Voltway records information about your own battery so it can show you a timeline and trends. All of it is written to your device's local storage and never leaves it, except through Apple's iCloud if you turn that on (see below).</p>
+    <ul>
+        <li>Charge level readings over time, and whether the device was plugged in</li>
+        <li>Charge session history (when charging started and stopped)</li>
+        <li>Your alert rules and app settings</li>
+        <li>On Mac: battery telemetry read from the operating system — capacity, cycle count, cell voltages, temperature, adapter details and power flow</li>
+    </ul>
+
+    <h2>What we never collect</h2>
+    <ul>
+        <li>No name, email address, phone number or account of any kind</li>
+        <li>No location data. Voltway never requests location permission</li>
+        <li>No contacts, photos, calendars, messages or files</li>
+        <li>No advertising identifier, unless you use the free tier with ads and explicitly allow tracking (see below)</li>
+        <li>No analytics, crash-reporting or telemetry SDK reporting your usage to us</li>
+    </ul>
+
+    <h2>iCloud sync (optional)</h2>
+    <p>If you enable iCloud sync, your Voltway history and settings are stored in <strong>your own private iCloud database</strong> using Apple's CloudKit. This is your personal iCloud account. MW Supply Limited has no access to it, cannot read it, and receives no copy. You can turn sync off at any time in Voltway's settings, or remove the data in iOS Settings under your Apple Account &rsaquo; iCloud.</p>
+
+    <h2>Purchases</h2>
+    <p>Voltway Pro is sold through Apple's In-App Purchase. Apple processes the payment; we never see your payment details, card number or billing address. Voltway checks your purchase entitlement directly with Apple on your device to decide whether Pro features are unlocked.</p>
+
+    <h2>Advertising in the free tier</h2>
+    <p>The free tier of the iPhone and iPad app may show ads supplied by <strong>Unity LevelPlay (ironSource)</strong>. Ads are not shown to Voltway Pro subscribers, and they are never shown on the Mac app.</p>
+    <p>Voltway does not track you across other apps and websites. Our privacy manifest declares <code>NSPrivacyTracking = false</code> with an empty tracking-domain list. If Apple's App Tracking Transparency prompt appears and you decline, ads are still shown but are non-personalised.</p>
+    <p>Unity is an independent company with its own privacy policy: <a href="https://unity.com/legal/game-player-and-app-user-privacy-policy" rel="noopener">unity.com/legal/game-player-and-app-user-privacy-policy</a>.</p>
+
+    <h2>HomeKit and smart plugs</h2>
+    <p>If you choose to use Voltway's smart-plug features, Voltway asks for HomeKit permission so it can switch an outlet you select. Home data is handled entirely by Apple's HomeKit framework on your device. Voltway does not upload, store or transmit your home configuration anywhere, and it can only control the accessory you pick.</p>
+
+    <h2>The Voltway charge helper (Mac)</h2>
+    <p>The optional Voltway charge helper is a small program you download and install yourself on your Mac. It runs locally and communicates with the Voltway app only over your Mac's own loopback interface (<code>127.0.0.1</code>) — that traffic never leaves your computer. The helper has no networking beyond that, sends nothing to us, and can be removed at any time.</p>
+
+    <h2>Apple's App Privacy summary</h2>
+    <table>
+        <tr><th>Category</th><th>Voltway</th></tr>
+        <tr><td>Data used to track you</td><td>None</td></tr>
+        <tr><td>Data linked to you</td><td>None</td></tr>
+        <tr><td>Data not linked to you</td><td>Identifiers (advertising identifier) &mdash; free tier with ads only, and only with your permission</td></tr>
+    </table>
+    <p class="muted">If you subscribe to Voltway Pro, no data at all is collected.</p>
+
+    <h2>Children</h2>
+    <p>Voltway is not directed at children under 13 and does not knowingly collect information from them.</p>
+
+    <h2>Your rights</h2>
+    <p>Because Voltway stores its data only on your device, you are in direct control of it. Deleting the app removes everything it stored locally. If you used iCloud sync, you can additionally delete the data from your iCloud account in system settings. There is no server-side copy for us to delete, and no request you need to send us.</p>
+
+    <h2>Changes</h2>
+    <p>If this policy changes, the revised version will be posted on this page with a new date. Material changes will also be noted in the app's release notes.</p>
+
+    <h2>Contact</h2>
+    <p>Questions about privacy in Voltway: <a href="mailto:mwsupplylimited@gmail.com">mwsupplylimited@gmail.com</a></p>
+
+    <footer>
+        MW Supply Limited &middot; <a href="index.html">Voltway Support</a> &middot; <a href="../">All apps</a>
+    </footer>
+</div>
+</body>
+</html>
