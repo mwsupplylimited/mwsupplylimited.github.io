@@ -82,10 +82,14 @@
     <p class="muted">Some Macs do not expose a charge-control interface at all. Voltway detects this and tells you plainly rather than pretending the setting worked.</p>
 
     <h2>Install</h2>
-    <p class="muted">The signed and notarized installer is published here with the Mac app's first release. Until then, Voltway's Charging screen will simply report that the helper is not installed.</p>
+    <p><a href="VoltwayChargeHelper.pkg"><strong>Download Voltway Charge Helper 1.0</strong></a> &middot; 156&nbsp;KB &middot; macOS 14 or later, Apple silicon</p>
+    <p>Open the downloaded <code>.pkg</code> and follow the installer. macOS will ask for your administrator password &mdash; that prompt comes from the system installer, not from Voltway, and it is what allows the helper to talk to the charger.</p>
+    <p class="muted">Signed with a Developer ID certificate and notarized by Apple, so Gatekeeper will open it without warnings. SHA-256: <code>b0af6806fd9c2f5a622c89d4a9c015beaa2e9abff41f049350791152ad573c28</code></p>
 
     <h2>Remove it</h2>
-    <p>Open Voltway, go to <strong>Charging</strong>, and choose <strong>Restore normal charging</strong>, then run the uninstaller. Removing the helper always restores normal charging first and verifies it before it finishes.</p>
+    <p>Run this in Terminal:</p>
+    <p><code>sudo voltway-helper-uninstall</code></p>
+    <p>It restores normal charging <em>first</em>, verifies by reading the setting back, and only then stops and removes the helper. If it cannot verify that charging was restored it refuses to report success, so you are never left with a Mac that will not charge.</p>
 
     <h2>Contact</h2>
     <p><a href="mailto:mwsupplylimited@gmail.com">mwsupplylimited@gmail.com</a></p>
