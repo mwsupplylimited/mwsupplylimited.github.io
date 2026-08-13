@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Surf — Support</title>
-    <meta name="description" content="Support page for Surf, a fast, private web browser for iPhone and iPad with tabs, ad & tracker blocking, and bookmarks and history kept on your device.">
+    <meta name="description" content="Support page for Surf, a private web browser with a file manager built in, for iPhone, iPad and Mac — tabs, ad & tracker blocking, Reader, and a Face ID-locked private area.">
+    <!-- Shows Safari's Smart App Banner to anyone reaching this page on iOS. The page had no link to
+         the App Store at all, so someone arriving from a search result — or from the "Developer
+         Website" link on the product page — could not get to the app. -->
+    <meta name="apple-itunes-app" content="app-id=6789680426">
     <style>
         :root {
             --bg: #ffffff;
@@ -80,6 +84,17 @@
             font-size: 0.8rem;
             color: var(--muted);
         }
+        .appstore {
+            display: inline-block;
+            background: var(--accent);
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 11px 22px;
+            border-radius: 10px;
+            margin: 4px 0 8px;
+        }
+        .appstore:hover { opacity: 0.9; }
         .callout {
             background: var(--card);
             border: 1px solid var(--border);
@@ -103,13 +118,15 @@
         <a class="back" href="../">&larr; MW Supply Limited</a>
 
         <h1>Surf</h1>
-        <p class="subtitle">A fast, private web browser for iPhone &amp; iPad. <span class="pill">Version 1.0</span></p>
+        <p class="subtitle">A private web browser with a file manager built in, for iPhone, iPad &amp; Mac. <span class="pill">Version 1.6</span></p>
+
+        <p><a class="appstore" href="https://apps.apple.com/app/id6789680426">Download Surf on the App Store</a></p>
 
         <h2>About</h2>
-        <p>Surf is a private web browser for iPhone and iPad. Browse with multiple tabs, block ads and trackers, and keep your bookmarks, history, and Top Sites on your device. A secure-connection indicator shows when a site is encrypted, and a one-tap <strong>Clear Data</strong> wipes your browsing data whenever you want. There is no account and no sign-up, and nothing you browse is sent to MW Supply Limited.</p>
+        <p>Surf is a private web browser for iPhone, iPad, and Mac, with a real file manager inside it. Browse with multiple tabs, block ads and trackers, read articles without the clutter, and keep your files in folders with tags and search — including a private area locked behind Face ID. A secure-connection indicator shows when a site is encrypted, and a one-tap <strong>Clear Data</strong> wipes your browsing data whenever you want. There is no account and no sign-up, and nothing you browse is sent to MW Supply Limited.</p>
 
         <div class="callout">
-            <p>Surf keeps your browsing on your device. Your tabs, bookmarks, history, and Top Sites live only on your iPhone or iPad — MW Supply Limited runs no servers that receive them, and there is no account to sign in to.</p>
+            <p>Surf keeps your browsing on your device. Your tabs, bookmarks, history, and Top Sites live only on your iPhone, iPad, or Mac — MW Supply Limited runs no servers that receive them, and there is no account to sign in to. Your file library stays on your device, or in your own iCloud account if you leave iCloud sync on.</p>
         </div>
 
         <h2>Getting started</h2>
@@ -125,16 +142,22 @@
             <li>Private web browser with multiple tabs and a grid tab switcher</li>
             <li>Private tabs that keep no history and clear their session when you close them</li>
             <li>Bookmarks and folders, plus history and Top Sites — all kept on your device</li>
-            <li>Optional ad &amp; tracker blocking for a cleaner, faster web</li>
+            <li>Optional ad &amp; tracker blocking for a cleaner, faster web, with per-site exceptions</li>
+            <li>A file manager with folders, tags, search, favourites, and Recently Deleted</li>
+            <li>A private area locked behind Face ID, Touch ID, or your device passcode</li>
+            <li>Compress and uncompress ZIP archives</li>
+            <li>Reader mode with themes and text size, plus a reading list you can read offline</li>
+            <li>Your library on every device with iCloud sync — and in Finder on a Mac</li>
+            <li>Per-site settings: text size, desktop mode, and ad-block exceptions</li>
             <li>Secure-connection (HTTPS) indicator in the address bar</li>
             <li>Choice of search engine: Google, DuckDuckGo, or Bing</li>
             <li>One-tap Clear Data to wipe your history, cookies, and cache</li>
         </ul>
 
-        <h2>Plans &amp; ads</h2>
-        <p>Surf is free to download and use, supported by ads on the <strong>free tier</strong>.</p>
-        <p><strong>Surf Pro</strong> (<strong>$4.99/month</strong> or <strong>$29.99/year</strong>, with a <strong>3-day free trial</strong>) unlocks a completely <strong>ad-free</strong> browser.</p>
-        <p>Subscriptions are sold through Apple and renew automatically until cancelled; manage or cancel any time in <strong>iOS Settings &rarr; [your name] &rarr; Subscriptions</strong>. Prices are always shown in the app in your local currency.</p>
+        <h2>Plans</h2>
+        <p>Surf is free to download and use, and <strong>shows no advertising</strong>. The free plan is a complete browser: unlimited tabs, private tabs, ad &amp; tracker blocking, bookmarks, history, Reader, and the file manager.</p>
+        <p><strong>Surf Pro</strong> (<strong>$4.99/month</strong> or <strong>$29.99/year</strong>, with a <strong>3-day free trial</strong>) lifts the free plan's limits: unlimited saved articles instead of 5, no daily download limit, several transfers at once instead of one, and per-site settings that persist. On iPhone and iPad it also adds a sleep timer and audio &amp; subtitle track selection in the player. One subscription covers iPhone, iPad, and Mac.</p>
+        <p>Subscriptions are sold through Apple and renew automatically until cancelled; manage or cancel any time in <strong>Settings &rarr; [your name] &rarr; Subscriptions</strong>. Prices are always shown in the app in your local currency.</p>
 
         <h2>FAQ</h2>
 
@@ -142,7 +165,7 @@
         <p>Yes. The pages you visit, your cookies, and anything you type — including logins you enter on websites — are handled by Apple's WebKit and stay on your device. They are never sent to us, and there is no account to sign in to. You can clear everything any time in Settings.</p>
 
         <h3>Does Surf block ads and trackers?</h3>
-        <p>Yes, with an optional on-device content blocker that removes many ads and known trackers from the web pages you load, for a cleaner and faster web. It runs entirely on your device and reports nothing about the sites you visit. (The app's own free-tier ads are separate — see <strong>Plans &amp; ads</strong> above.)</p>
+        <p>Yes, with an optional on-device content blocker that removes many ads and known trackers from the web pages you load, for a cleaner and faster web. It runs entirely on your device and reports nothing about the sites you visit. Surf itself shows no advertising on any plan.</p>
 
         <h3>What is a private tab?</h3>
         <p>A private tab keeps no history, and its cookies and site data are held only in memory and cleared when you close your private tabs — so it leaves nothing behind on your device. Open one from the tab switcher or the browser menu. Private browsing keeps this activity off your device, but it doesn't make you anonymous to the sites you visit, your network, or your internet provider.</p>
