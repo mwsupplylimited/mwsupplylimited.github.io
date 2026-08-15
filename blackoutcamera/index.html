@@ -103,7 +103,7 @@
         <a class="back" href="../">&larr; MW Supply Limited</a>
 
         <h1>Blackout Camera</h1>
-        <p class="subtitle">A camera for the dark. Shoot photos and video on iPhone and iPad while the screen stays completely black. <span class="pill">Version 1.5.4</span></p>
+        <p class="subtitle">A camera for the dark. Shoot photos and video on iPhone and iPad while the screen stays completely black. <span class="pill">Version 1.5.5</span></p>
 
         <h2>About</h2>
         <p>Blackout Camera is a professional camera built for dark environments — astrophotography, meteor showers, the aurora, long-exposure landscapes, observatories, night wildlife, and anywhere a glowing phone screen would ruin the moment or other people's shots. It records like the standard camera, but with one tap (or automatically the instant you start recording) the screen goes <strong>fully black</strong> while the camera keeps shooting. There's also a red night-vision mode and a full set of manual controls for serious low-light work. It's free to download and use for photos and video; the signature black-screen mode and the pro tools are described under <a href="#plans">Plans, tokens &amp; ads</a> below.</p>
@@ -171,6 +171,25 @@
         <h2>Your in-app Library</h2>
         <p>Tap the thumbnail in the bottom-left corner to open the <strong>Library</strong> — a gallery of everything you've captured with Blackout Camera, grouped by day with a photo/video filter. Tap any item for a full-screen viewer with pinch-to-zoom, video playback, share, and per-item info (date, size, resolution, duration, and location). Swipe up for the info panel, swipe down to close. The Library keeps the app's <strong>own copies</strong> of your captures, separate from Apple Photos — so removing something here only removes the app's copy and never touches your Photos library.</p>
 
+        <h2>Where your captures are saved</h2>
+        <p>Open <strong>Settings &rarr; Slate &amp; Saving</strong> and tick any combination of destinations under <strong>Save to</strong>. Each capture is saved to <em>every</em> destination you tick, and at least one must stay on:</p>
+        <ul>
+            <li><strong>Apple Photos</strong> — your device's photo library, the same place the built-in Camera saves to. The app uses “Add Only” access, so it can add new captures but cannot see your existing photos.</li>
+            <li><strong>In-App Library</strong> — the app's own copy, browsable on the Library screen. Removing something here never touches Apple Photos.</li>
+            <li><strong>Private Folder</strong> <span class="pill">Pro</span> — a locked folder inside the app. See below.</li>
+        </ul>
+        <p>Ticking both Apple Photos and the In-App Library keeps two copies, so it uses roughly twice the space. If Apple Photos is off, your captures exist only inside the app — and in-app copies are removed if you delete the app, so back up anything important.</p>
+
+        <h2>Private Folder <span class="pill">Pro</span></h2>
+        <p>From <strong>version 1.5.5</strong>, Blackout Pro adds a <strong>Private Folder</strong>: a locked folder inside Blackout Camera that new captures can be saved into instead of your photo library. Opening it needs <strong>Face ID</strong> (or Touch ID), and if that fails, iOS offers your iPhone passcode — the same fallback you get everywhere else on the system. It re-locks whenever you leave the app.</p>
+        <p>It leads the <strong>Library</strong> screen as a labelled card, and it is also reachable from <strong>Settings &rarr; Slate &amp; Saving</strong>. You can <strong>move existing captures in or out</strong> of it from the Library — moving in takes the file with it rather than leaving a copy behind in the unlocked Library.</p>
+        <ul>
+            <li><strong>Hidden means only there.</strong> When the Private Folder is the <em>only</em> destination you have ticked, the capture is never added to Apple Photos and no preview appears on the camera screen's thumbnail button. If you also tick Apple Photos or the In-App Library, the same capture exists in an unlocked place too — so it is <em>not</em> hidden. The app says this in Settings as you tick the boxes.</li>
+            <li><strong>It is the only copy.</strong> Nothing in the Private Folder was ever saved to Apple Photos, so deleting an item there is permanent. The folder <em>is</em> included in your iCloud backup, but like the rest of the app's storage it is removed if you delete the app.</li>
+            <li><strong>If your subscription lapses, you keep your files.</strong> Saving <em>new</em> captures to the Private Folder needs Pro, and the app quietly moves that setting to the In-App Library if Pro ends — never to Apple Photos, so nothing you deliberately hid gets published. Opening the folder, viewing, exporting and moving items out are never gated: what you put there stays yours and stays reachable.</li>
+            <li><strong>A passcode is required for the lock to mean anything.</strong> On an iPhone with no passcode set, nothing can authenticate, so the folder opens rather than stranding your media — the app tells you, and asks you to set a passcode in <strong>iOS Settings &rarr; Face ID &amp; Passcode</strong>.</li>
+        </ul>
+
         <h2>Quick record — widget &amp; Control Center</h2>
         <p>Add the <strong>Blackout Camera widget</strong> to your Home Screen, or the <strong>control</strong> to Control Center or the Lock Screen, and one tap opens the app and starts a black-screen recording immediately — ideal for pocket-to-recording moments. By default it uses your current camera settings; you can give quick recordings their own resolution, frame rate, and stabilization in <strong>Settings &rarr; Quick Record</strong>.</p>
 
@@ -190,7 +209,7 @@
         <p>Blackout Camera is free to download. Photo and video capture are free for everyone. A single Pro subscription and a token system unlock the signature black-screen mode and the pro tools:</p>
         <ul>
             <li><strong>Free</strong> — full photo &amp; video. The black-screen mode and premium video options (4K, 60 fps, stronger stabilization) cost <strong>tokens</strong> per session. Claim a daily bonus, buy a token pack, or — in versions up to 1.5.1 and again from 1.5.3 — earn tokens by watching an optional rewarded ad in the <strong>Earn Tokens</strong> tab. (Version 1.5.2 shows no ads at all, so the daily bonus and token packs are its only sources.) The exact token cost of each option is shown right next to it in Settings before you record.</li>
-            <li><strong>Blackout Pro</strong> — unlimited black-screen recording with no tokens, an ad-free app wherever ads run, and all the manual and cinema tools: manual ISO / shutter / focus / white balance, the Night preset, ProRes, Apple Log, HDR, and the hardware Camera Control.</li>
+            <li><strong>Blackout Pro</strong> — unlimited black-screen recording with no tokens, an ad-free app wherever ads run, the <strong>Private Folder</strong> (from 1.5.5), and all the manual and cinema tools: manual ISO / shutter / focus / white balance, the Night preset, ProRes, Apple Log, HDR, and the hardware Camera Control.</li>
         </ul>
         <p>Blackout Pro comes as a <strong>monthly</strong> or <strong>annual</strong> subscription with a free trial, and subscribers never see ads. Manage your plan — renewal date, switching between monthly and annual, restoring purchases, or cancelling — on the <strong>Membership</strong> page in Settings (cancellation is also available any time in your Apple Account settings). Prices are always shown in the app in your local currency.</p>
 
@@ -215,7 +234,10 @@
         <p>If you record during a phone call, iOS gives the call exclusive use of the microphone, so the video records without audio. The app shows a dim red <strong>“No audio”</strong> warning while this happens, and the clip stays silent for its whole length even if the call ends partway through. End the call before recording to capture sound.</p>
 
         <h3>Where are my photos and videos saved?</h3>
-        <p>Directly to your device's Photos library. The app uses “Add Only” access, so it can save new captures but cannot see your existing photos.</p>
+        <p>Wherever you choose in <strong>Settings &rarr; Slate &amp; Saving &rarr; Save to</strong>: your device's <strong>Apple Photos</strong> library, the app's own <strong>In-App Library</strong>, the <strong>Private Folder</strong> on Pro, or any combination of them. Apple Photos is the default. The app uses “Add Only” Photos access, so it can add new captures but cannot see your existing photos. At least one destination must stay ticked — the app will not let you switch the last one off, because that would silently discard the shot you just took.</p>
+
+        <h3>What is the Private Folder, and is a capture really hidden?</h3>
+        <p>The Private Folder is a Pro feature that saves captures into a locked folder inside Blackout Camera instead of your photo library, opened with Face ID or your iPhone passcode. A capture is only hidden when the Private Folder is the <em>sole</em> destination you have ticked — if Apple Photos or the In-App Library is also on, the same capture exists in an unlocked place as well. Because private captures are never copied to Apple Photos, the folder holds the only copy: deleting an item there is permanent. If your Pro subscription ends you keep full access to everything already inside, including exporting it and moving it back out; only saving new captures there needs Pro.</p>
 
         <h3>The screen is very dark even after I wake it.</h3>
         <p>Blackout Camera lowers screen brightness while you're in black or night-vision mode and restores it when you leave. If brightness ever seems stuck, exit the app and adjust brightness in Control Center; it is always restored when you close the app.</p>
