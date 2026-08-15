@@ -89,14 +89,15 @@
         <a class="back" href="./">&larr; Video Frame Export Support</a>
 
         <h1>Video Frame Export Privacy Policy</h1>
-        <p class="meta">Effective 28 May 2026 · Last updated 14 August 2026</p>
+        <p class="meta">Effective 28 May 2026 · Last updated 15 August 2026</p>
 
         <div class="callout">
-            <p><strong>Summary:</strong> Video Frame Export does not collect personal data itself — there is no account, no login, and no analytics. Your videos and exported frames stay on your device, or inside your own private iCloud database. The app is free with ads: on the free plan a third-party advertising provider (Unity LevelPlay, formerly ironSource) shows ads and may collect device and ad-interaction data as described in Section&nbsp;5. The optional <strong>Pro</strong> upgrade removes all ads.</p>
+            <p><strong>Summary:</strong> Video Frame Export does not collect personal data &mdash; there is no account and no login. It does record anonymous product analytics (which screens are used, whether a purchase completed) tied to a random identifier that is not linked to you or your device, described in Section&nbsp;6. Your videos and exported frames stay on your device, or inside your own private iCloud database. The app is free with ads: on the free plan a third-party advertising provider (Unity LevelPlay, formerly ironSource) shows ads and may collect device and ad-interaction data as described in Section&nbsp;5. The optional <strong>Pro</strong> upgrade removes all ads.</p>
         </div>
 
         <h2>1. Information we collect</h2>
-        <p><strong>None directly.</strong> Video Frame Export does not ask for, collect, transmit, or store any personally identifiable information. The app has no account system, no login, and no user profile. The one exception is the third-party advertising provider on the free plan (Section&nbsp;5), which collects data under Unity&rsquo;s control &mdash; not ours &mdash; to deliver ads.</p>
+        <p><strong>No personal data.</strong> Video Frame Export does not ask for, collect, transmit, or store any personally identifiable information. The app has no account system, no login, and no user profile.</p>
+        <p>Two things do leave the device, and neither identifies you: anonymous product analytics that we collect ourselves (Section&nbsp;6), and, on the free plan only, data collected by the third-party advertising provider under Unity&rsquo;s control rather than ours (Section&nbsp;5).</p>
 
         <h2>2. Photos &amp; videos</h2>
         <p>The app reads videos and writes photos with the minimum permissions iOS provides:</p>
@@ -129,19 +130,27 @@
         <p>This advertising data is collected and processed by <strong>Unity Technologies</strong> (which operates LevelPlay and ironSource) as an independent controller, not by MW Supply Limited. We never receive it. Unity&rsquo;s handling of this data is governed by the <a href="https://unity.com/legal/game-player-and-app-user-privacy-policy">Unity Game Player and App User Privacy Policy</a>. You can change your tracking choice at any time in iOS Settings &rarr; Privacy &amp; Security &rarr; Tracking.</p>
         <p><strong>Pro removes all ads.</strong> While you have Pro the app does not display ads, does not start the advertising SDK at all, and never shows the App Tracking Transparency prompt.</p>
 
-        <h2>6. Network activity</h2>
-        <p>Video Frame Export makes no network requests to servers owned by MW Supply Limited. The app's network activity is Apple-operated traffic for the Photos picker, StoreKit (subscription verification), and CloudKit (Pro Library sync) &mdash; plus, on the free plan only, ad requests made by the Unity LevelPlay SDK (Section&nbsp;5).</p>
+        <h2>6. Anonymous product analytics</h2>
+        <p>We record a small number of events about how the app is used &mdash; for example that a screen was opened, that an export finished, or that a purchase completed or was cancelled. We use these only to understand which parts of the app work and which do not.</p>
+        <p><strong>What identifies these events.</strong> Each installation generates a <strong>random identifier</strong> the first time the app runs. It is not your Apple Account, not the advertising identifier (IDFA), not the vendor identifier (IDFV), and not derived from your device or from you in any way. It exists so we can tell &ldquo;one person opened this screen five times&rdquo; from &ldquo;five people opened it once&rdquo;. Because it is random and ours alone, it cannot be matched against any other company&rsquo;s data, and deleting and reinstalling the app produces a new one.</p>
+        <p><strong>What is never included.</strong> No name, email address, or account. No contents of your videos or exported photos. No file names. No location. No advertising identifier.</p>
+        <p><strong>Who processes it.</strong> Analytics are processed on our behalf by <strong>TelemetryDeck GmbH</strong> (Germany), acting as our data processor under the <a href="https://telemetrydeck.com/privacy/">TelemetryDeck privacy policy</a>. There is no analytics SDK in the app; the events are sent by our own code, so nothing else travels with them.</p>
+        <p><strong>This is not &ldquo;tracking&rdquo;.</strong> Apple defines tracking as linking your data with data from other companies for advertising or sharing it with data brokers. We do neither, so these analytics are not covered by the App Tracking Transparency prompt in Section&nbsp;5 and are not affected by your answer to it.</p>
+        <p>Analytics are sent only from real App Store and TestFlight installations &mdash; never from a developer build or the Simulator.</p>
 
-        <h2>7. Third-party services</h2>
-        <p>The only third-party SDKs in Video Frame Export are <strong>Unity LevelPlay</strong> and the <strong>Unity Ads</strong> adapter, used solely to show ads on the free plan (Section&nbsp;5). The app contains no analytics frameworks and no crash-reporting services other than Apple's own first-party crash reporting (which only runs if you have opted in to Share With App Developers in iOS Settings &rarr; Privacy &amp; Security &rarr; Analytics &amp; Improvements).</p>
+        <h2>7. Network activity</h2>
+        <p>Video Frame Export makes no network requests to servers owned by MW Supply Limited. The app's network activity is Apple-operated traffic for the Photos picker, StoreKit (subscription verification), and CloudKit (Pro Library sync); the anonymous analytics events in Section&nbsp;6; and, on the free plan only, ad requests made by the Unity LevelPlay SDK (Section&nbsp;5).</p>
 
-        <h2>8. Children</h2>
+        <h2>8. Third-party services</h2>
+        <p>The only third-party SDKs in Video Frame Export are <strong>Unity LevelPlay</strong> and the <strong>Unity Ads</strong> adapter, used solely to show ads on the free plan (Section&nbsp;5). There is deliberately <strong>no analytics SDK</strong>: the anonymous events in Section&nbsp;6 are sent by our own code, and TelemetryDeck receives nothing beyond them. There are no crash-reporting services other than Apple's own first-party crash reporting (which only runs if you have opted in to Share With App Developers in iOS Settings &rarr; Privacy &amp; Security &rarr; Analytics &amp; Improvements).</p>
+
+        <h2>9. Children</h2>
         <p>Video Frame Export is suitable for all ages and is rated 4+ on the App Store. The app itself collects no personal information from anyone, including children, and it is not directed at children. Ads on the free plan are served through Unity LevelPlay; the app is declared as not directed to children, and unless you have both granted tracking permission and turned on the Personalised ads switch, it requests non-personalised ads only.</p>
 
-        <h2>9. Changes to this policy</h2>
+        <h2>10. Changes to this policy</h2>
         <p>If we change how Video Frame Export handles data, we will update this page and the "Last updated" date above. Material changes will also be reflected in the App Store privacy nutrition labels for the affected version of the app.</p>
 
-        <h2>10. Contact</h2>
+        <h2>11. Contact</h2>
         <p>Questions about this privacy policy can be sent to <a href="mailto:mwsupplylimited@gmail.com?subject=Video%20Frame%20Export%20privacy">mwsupplylimited@gmail.com</a>.</p>
 
         <footer>
