@@ -110,6 +110,10 @@
         </ol>
         <p><strong>Already have it?</strong> Install this version over the top — same steps, and your existing setup is kept. Surf 1.9 needs it: the newer connector is what lets Surf refuse a click whose position was measured before you resized the window, and what makes full-page captures possible. Surf tells you in Add-Ons when a connected session is running an older one. As above, quit Claude and open it again afterwards, or the session will keep using the copy it already started.</p>
 
+        <h2>Other assistants</h2>
+        <p>The connector is an ordinary <strong>MCP server</strong> and nothing in it is specific to Claude, so any tool that speaks MCP can drive Surf the same way &mdash; OpenCode, Zed and others. Point that tool at <code>/usr/local/lib/surf/surf-connector</code> as a local <em>stdio</em> server with <strong>no arguments</strong>, then start it fresh. Surf&rsquo;s setup buttons write the config file Claude uses, so for anything else you add that one line to its own config yourself.</p>
+        <p>Everything below applies whichever assistant you use &mdash; the same refusals, the same switch, the same per-session tabs. Surf names each connected session by the project it is working in <em>and</em> by the tool, so two different assistants in the same project are told apart.</p>
+
         <h2>What it can and cannot do</h2>
         <p>While you have the feature switched on, Claude can read the address, visible text and elements of a page it is working with — including anything already typed into an ordinary form field on it — take a picture of it, and see the messages and network requests that page made. It can also click, type, scroll, go back and forward, open and close its own tabs, and resize the Surf window. Surf hands anything over only when asked.</p>
         <p>Surf refuses some things in its own code, whatever it is asked. <strong>Private tabs are never exposed.</strong> Password fields are never filled, and Surf refuses any field it recognises as a card, security code or one-time code. What you typed into one is never read either: it is left out of what Claude is told, and Surf hides it for the moment a screenshot is taken, so it is not in the picture either. Recognising a card field depends on how the site marks it up, so treat it as a strong safeguard rather than a guarantee. A session can only touch tabs it opened, or a tab you have handed to it deliberately.</p>
@@ -120,7 +124,7 @@
         <h2>Check what you downloaded</h2>
         <p>The installer is signed by MW Supply Limited and notarized by Apple, so macOS verifies it for you before it will open. The certificate reads <code>Developer ID Installer: Matthew Wong (6RZ8YV42XZ)</code> — that is us; Apple issues these in the account holder&rsquo;s name. If you would rather check it yourself:</p>
         <p><code>shasum -a 256 SurfConnector.pkg</code></p>
-        <p><code>fd9324cbdd069d1cc17feb3cd3993af848d5c9e368583bef3c17879089177f32</code></p>
+        <p><code>a3e8277ef45c74802378a30e00d62adb7e927558c7bde5c6c959f67e88964695</code></p>
         <p><code>spctl --assess --type install -v SurfConnector.pkg</code> should answer <code>accepted &middot; source=Notarized Developer ID</code>.</p>
 
         <h2>Remove it</h2>
