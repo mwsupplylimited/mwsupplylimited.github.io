@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surf Connector — for Surf on Mac</title>
+    <meta name="description" content="The Surf Connector lets Claude work with Surf on your Mac.">
+    <style>
+        :root {
+            --bg: #ffffff;
+            --fg: #1a1a1a;
+            --muted: #666666;
+            --accent: #0a84ff;
+            --card: #f5f5f7;
+            --border: #e5e5e7;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #121419;
+                --fg: #f5f5f7;
+                --muted: #9a9a9a;
+                --accent: #5eb0ff;
+                --card: #1c1f25;
+                --border: #2a2d34;
+            }
+        }
+        * { box-sizing: border-box; }
+        html { -webkit-text-size-adjust: 100%; }
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+            background: var(--bg);
+            color: var(--fg);
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+        }
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 48px 24px 96px;
+        }
+        .back {
+            display: inline-block;
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-bottom: 32px;
+        }
+        .back:hover { color: var(--accent); }
+        h1 {
+            font-size: 2rem;
+            margin: 0 0 8px;
+            letter-spacing: -0.02em;
+        }
+        .meta {
+            color: var(--muted);
+            margin: 0 0 40px;
+            font-size: 0.95rem;
+        }
+        h2 {
+            font-size: 1.2rem;
+            margin: 36px 0 12px;
+            letter-spacing: -0.01em;
+        }
+        p { color: var(--fg); }
+        ul { padding-left: 22px; }
+        li { margin-bottom: 6px; }
+        a { color: var(--accent); }
+        .callout {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-left: 3px solid var(--accent);
+            padding: 16px 20px;
+            border-radius: 8px;
+            margin: 24px 0;
+        }
+        .callout p { margin: 0; }
+        footer {
+            margin-top: 64px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
+            color: var(--muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a class="back" href="./">&larr; Surf Support</a>
+
+        <h1>Surf Connector</h1>
+        <p class="meta">For Surf on Mac &middot; Surf requires macOS 14 or later</p>
+
+        <div class="callout">
+            <p><strong>What this is:</strong> a small program that lets <strong>Claude</strong> work with Surf on your Mac — reading the page you point it at, clicking, typing, scrolling, and moving between pages. It costs nothing. It runs only while your Claude software is running, only on your own machine, and Surf will not connect to anything until you switch the feature on yourself.</p>
+            <p><strong>The Surf side needs Surf Pro</strong>, on a Mac. The connector itself is free and always will be — but installing it does not by itself switch the feature on.</p>
+        </div>
+
+        <h2>Why it is a separate download</h2>
+        <p>Claude talks to other programs over a standard called MCP, which means starting a small program of its own. An app from the Mac App Store is not the right thing to be writing programs onto your disk for something else to run, so we ship this one separately, signed and notarized by Apple in its own installer. It is also why Surf asks you to point at it rather than guessing where it is: a guess that is wrong produces a setup that looks finished and quietly does nothing.</p>
+
+        <h2>Install it</h2>
+        <ol>
+            <li><a href="SurfConnector.pkg"><strong>Download SurfConnector.pkg</strong></a> (126&nbsp;KB) and open it. macOS checks Apple's notarization before it runs.</li>
+            <li>Open <strong>Surf</strong>, then the <strong>&hellip;</strong> menu &rarr; <strong>Add-Ons</strong>.</li>
+            <li>Press <strong>Choose the Connector&hellip;</strong> and pick the program the installer placed at<br>
+                <code>/usr/local/lib/surf/surf-connector</code>.</li>
+            <li>Follow the setup for the Claude app or for Claude Code, whichever you use.</li>
+            <li>Quit Claude completely and open it again. Sessions already running will not see Surf.</li>
+        </ol>
+
+        <h2>What it can and cannot do</h2>
+        <p>While you have the feature switched on, Claude can read the address, visible text and elements of a page it is working with — including anything already typed into an ordinary form field on it — take a picture of it, and see the messages and network requests that page made. It can also click, type, scroll, go back and forward, open and close its own tabs, and resize the Surf window. Surf hands anything over only when asked.</p>
+        <p>Surf refuses some things in its own code, whatever it is asked. <strong>Private tabs are never exposed.</strong> Password fields are never filled, and Surf refuses any field it recognises as a card, security code or one-time code. What you typed into one is never read either — Claude is told only that the field is there and is off limits. Recognising a card field depends on how the site marks it up, so treat it as a strong safeguard rather than a guarantee. A session can only touch tabs it opened, or a tab you have handed to it deliberately.</p>
+        <p>What your assistant does with what it receives is between you and its provider — it will send that content on to be processed, and Surf can neither see nor limit that. A page's own text can also try to influence an assistant that is reading it. Surf is not immune to that, and no browser is. The feature is off every time Surf starts for exactly these reasons.</p>
+        <p>Full detail is in the <a href="privacy.html">privacy policy</a>, section 7.</p>
+
+        <h2>Check what you downloaded</h2>
+        <p>The installer is signed by MW Supply Limited and notarized by Apple, so macOS verifies it for you before it will open. The certificate reads <code>Developer ID Installer: Matthew Wong (6RZ8YV42XZ)</code> — that is us; Apple issues these in the account holder&rsquo;s name. If you would rather check it yourself:</p>
+        <p><code>shasum -a 256 SurfConnector.pkg</code></p>
+        <p><code>c331888dd54de2fcb432cddbd3b411a414089576b463cbaa1520e65b1eccdb7e</code></p>
+        <p><code>spctl --assess --type install -v SurfConnector.pkg</code> should answer <code>accepted &middot; source=Notarized Developer ID</code>.</p>
+
+        <h2>Remove it</h2>
+        <p>Delete <code>/usr/local/lib/surf/</code> and remove the <code>surf</code> entry from your Claude configuration. The installer adds nothing else and runs no scripts. While it is running the connector writes one small file inside Surf&rsquo;s own storage — the port Surf should call it back on — and removes it again when it exits.</p>
+
+        <h2>Not affiliated with Anthropic</h2>
+        <p>Surf and the Surf Connector are made by MW Supply Limited. Claude is a product of Anthropic, which does not sponsor or endorse Surf. You need your own Claude software and your own account; Surf has neither and never sees yours.</p>
+
+        <footer>
+            <p>MW Supply Limited &middot; <a href="mailto:mwsupplylimited@gmail.com?subject=Surf%20Connector">mwsupplylimited@gmail.com</a></p>
+        </footer>
+    </div>
+</body>
+</html>
