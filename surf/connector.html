@@ -75,6 +75,56 @@
             margin: 24px 0;
         }
         .callout p { margin: 0; }
+        pre {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 14px 16px;
+            /* Wide config blocks scroll inside their own box. Without this the whole page scrolls
+               sideways on a phone, which is how a support page becomes unreadable on the device
+               most people open a support link on. */
+            overflow-x: auto;
+            font-size: 0.85rem;
+            line-height: 1.5;
+        }
+        pre code { background: none; padding: 0; }
+        code {
+            background: var(--card);
+            padding: 1px 5px;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+        h3 {
+            font-size: 1rem;
+            margin: 28px 0 8px;
+        }
+        .tool {
+            border-top: 1px solid var(--border);
+            padding-top: 4px;
+            margin-top: 28px;
+        }
+        .toc {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 14px 20px;
+            margin: 20px 0;
+        }
+        .toc ul { margin: 6px 0 0; }
+        .toc li { margin-bottom: 3px; }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            font-size: 0.9rem;
+        }
+        th, td {
+            text-align: left;
+            padding: 8px 10px;
+            border-bottom: 1px solid var(--border);
+            vertical-align: top;
+        }
+        th { font-weight: 600; }
+        .scroller { overflow-x: auto; }
         footer {
             margin-top: 64px;
             padding-top: 24px;
@@ -92,7 +142,7 @@
         <p class="meta">For Surf on Mac &middot; Surf requires macOS 14 or later</p>
 
         <div class="callout">
-            <p><strong>What this is:</strong> a small program that lets <strong>Claude</strong> work with Surf on your Mac — reading the page you point it at, clicking, typing, scrolling, and moving between pages. It costs nothing. It runs only while your Claude software is running, only on your own machine, and Surf will not connect to anything until you switch the feature on yourself.</p>
+            <p><strong>What this is:</strong> a small program that lets <strong>Claude</strong> &mdash; or any other assistant that speaks MCP &mdash; work with Surf on your Mac: reading the page you point it at, clicking, typing, scrolling, and moving between pages. It costs nothing. It runs only while that software is running, only on your own machine, and Surf will not connect to anything until you switch the feature on yourself.</p>
             <p><strong>The Surf side needs Surf Pro</strong>, on a Mac. The connector itself is free and always will be — but installing it does not by itself switch the feature on.</p>
         </div>
 
@@ -105,16 +155,168 @@
             <li>Open <strong>Surf</strong>, then the <strong>&hellip;</strong> menu &rarr; <strong>Add-Ons</strong>.</li>
             <li>Press <strong>Choose the Connector&hellip;</strong> and pick the program the installer placed at<br>
                 <code>/usr/local/lib/surf/surf-connector</code>.</li>
-            <li>Follow the setup for the Claude app or for Claude Code, whichever you use.</li>
-            <li>Quit Claude completely and open it again. Sessions already running will not see Surf.</li>
+            <li>Follow the setup for whichever assistant you use &mdash; <a href="#claude-app">the walkthroughs are below</a>.</li>
+            <li>Quit that assistant completely and open it again. Sessions already running will not see Surf.</li>
         </ol>
         <p><strong>Already have it?</strong> Install this version over the top — same steps, and your existing setup is kept. Surf 1.9 needs it: the newer connector is what lets Surf refuse a click whose position was measured before you resized the window, and what makes full-page captures possible. Surf tells you in Add-Ons when a connected session is running an older one. As above, quit Claude and open it again afterwards, or the session will keep using the copy it already started.</p>
 
-        <h2>Other assistants</h2>
-        <p>The connector is an ordinary <strong>MCP server</strong> and nothing in it is specific to Claude, so any tool that speaks MCP can drive Surf the same way &mdash; OpenCode, Zed and others. Point that tool at <code>/usr/local/lib/surf/surf-connector</code> as a local <em>stdio</em> server with <strong>no arguments</strong>, then start it fresh. Surf&rsquo;s setup buttons write the config file Claude uses, so for anything else you add that one line to its own config yourself.</p>
-        <p><strong>Give it a generous request timeout.</strong> Some tools default to about five seconds, and that is shorter than real browsing takes &mdash; Surf will wait up to fifteen seconds for a page to finish loading before it answers. Too low a timeout gives up while Surf is still working and looks exactly like a broken connector. Sixty seconds is a safe setting. In OpenCode, for example, that whole entry is:</p>
-        <p><code>"mcp": { "surf": { "type": "local", "command": ["/usr/local/lib/surf/surf-connector"], "enabled": true, "timeout": 60000 } }</code></p>
-        <p>Everything below applies whichever assistant you use &mdash; the same refusals, the same switch, the same per-session tabs. Surf names each connected session by the project it is working in <em>and</em> by the tool, so two different assistants in the same project are told apart. If your tool lets you set a working directory for the server, pointing it at your project is what makes that name useful.</p>
+        <h2>Set it up in your assistant</h2>
+
+        <p>The connector is an ordinary <strong>MCP server</strong>, and nothing in it is specific to Claude &mdash; any tool that speaks MCP can drive Surf, with the same refusals, the same switch and the same per-session tabs. Surf&rsquo;s own buttons write the config file <em>Claude</em> uses, so for anything else you add one entry to that tool&rsquo;s own configuration. Below is a walkthrough for each.</p>
+
+        <div class="toc">
+            <strong>Jump to your tool</strong>
+            <ul>
+                <li><a href="#universal">The three facts every tool needs</a></li>
+                <li><a href="#claude-app">Claude app</a> &middot; <a href="#claude-code">Claude Code</a></li>
+                <li><a href="#opencode">OpenCode</a> &middot; <a href="#zed">Zed</a> &middot; <a href="#cursor">Cursor</a> &middot; <a href="#vscode">VS&nbsp;Code (Copilot)</a></li>
+                <li><a href="#anything-else">Anything else that speaks MCP</a></li>
+                <li><a href="#check">Check it worked</a> &middot; <a href="#trouble">When it doesn&rsquo;t</a></li>
+            </ul>
+        </div>
+
+        <h3 id="universal">The three facts every tool needs</h3>
+        <p>Whatever the tool calls its config file, it is asking for the same three things.</p>
+        <ol>
+            <li><strong>The program to run:</strong> <code>/usr/local/lib/surf/surf-connector</code><br>
+                If you installed the connector somewhere else, use that path instead &mdash; this is only where the installer puts it. (Newer versions of Surf can copy it for you: <strong>&hellip;</strong> menu &rarr; <strong>Add-Ons</strong> &rarr; <strong>Copy Connector Path</strong>.)</li>
+            <li><strong>No arguments</strong>, and a <strong>local / stdio</strong> server &mdash; not a URL, not a remote server. The connector is a program the tool launches, not a website it calls.</li>
+            <li><strong>A generous request timeout: 60 seconds.</strong> This is the one that will bite you, and it is a setting rather than a bug &mdash; see below.</li>
+        </ol>
+
+        <div class="callout">
+            <p><strong>About that timeout.</strong> Some tools default a request to about <em>five seconds</em>. Real browsing does not fit in five seconds: Surf waits up to fifteen for a page to finish loading before it answers, and up to six just to work out whether Surf is running at all. A five-second client gives up while Surf is still working, and what you see is a tool reporting that the server timed out or crashed &mdash; which looks exactly like a broken connector, so it sends you off fixing the one thing that is fine. Set 60 seconds and forget it.</p>
+        </div>
+
+        <p>One more thing worth doing if your tool offers it: give the server a <strong>working directory</strong> pointing at the project you are on. Surf names each connected session after that folder <em>and</em> the tool &mdash; <code>my-project &middot; opencode</code> &mdash; and that name is what labels its tabs in the tab strip. Without it, two sessions look identical.</p>
+
+        <div class="tool">
+        <h3 id="claude-app">Claude app</h3>
+        <p>No terminal needed.</p>
+        <ol>
+            <li>In Surf: <strong>&hellip;</strong> &rarr; <strong>Add-Ons</strong> &rarr; <strong>Copy Setup for Claude App</strong>.</li>
+            <li>In Claude: <strong>Settings &rsaquo; Developer &rsaquo; Edit Config</strong>.</li>
+            <li>If the file is empty, paste what you copied in as the whole file. If it already has an <code>mcpServers</code> block, paste just the <code>"surf"</code> entry inside it.</li>
+            <li>Quit Claude completely (&#8984;Q) and open it again. Closing the window is not enough &mdash; the config is read once, at launch.</li>
+        </ol>
+        <p>What gets pasted looks like this:</p>
+<pre><code>{
+  "mcpServers": {
+    "surf": {
+      "command": "/usr/local/lib/surf/surf-connector"
+    }
+  }
+}</code></pre>
+        </div>
+
+        <div class="tool">
+        <h3 id="claude-code">Claude Code</h3>
+        <p>One terminal command, once, and Surf works in every folder.</p>
+        <ol>
+            <li>In Surf: <strong>&hellip;</strong> &rarr; <strong>Add-Ons</strong> &rarr; <strong>Copy Command</strong>.</li>
+            <li>Paste it into Terminal and press Return:
+<pre><code>claude mcp add --scope user surf -- "/usr/local/lib/surf/surf-connector"</code></pre></li>
+            <li>Start a <strong>new</strong> <code>claude</code> session. Sessions already open will not see Surf.</li>
+        </ol>
+        <p>To set up a single folder instead, use <strong>Set Up One Folder&hellip;</strong> in Add-Ons &mdash; Surf writes a <code>.mcp.json</code> there and merges into anything already in it.</p>
+        </div>
+
+        <div class="tool">
+        <h3 id="opencode">OpenCode</h3>
+        <p>Edit <code>opencode.json</code> (or <code>opencode.jsonc</code>) &mdash; the global one in your config directory, or one in the project. The key is <code>mcp</code>, and the entry type is <code>local</code>:</p>
+<pre><code>{
+  "mcp": {
+    "surf": {
+      "type": "local",
+      "command": ["/usr/local/lib/surf/surf-connector"],
+      "enabled": true,
+      "timeout": 60000
+    }
+  }
+}</code></pre>
+        <p><strong>The <code>timeout</code> line is not optional in practice.</strong> OpenCode&rsquo;s own schema says it defaults to 5000&nbsp;ms, which is shorter than a page load. OpenCode also accepts <code>"cwd"</code>, and setting it to your project folder is what makes Surf&rsquo;s session label useful.</p>
+        <p>Then start a new OpenCode session.</p>
+        </div>
+
+        <div class="tool">
+        <h3 id="zed">Zed</h3>
+        <p>Open your Zed <code>settings.json</code> and add the server under <code>context_servers</code>. Zed asks for <code>command</code>, <code>args</code> and <code>env</code>, and the connector needs no arguments and no environment:</p>
+<pre><code>{
+  "context_servers": {
+    "surf": {
+      "command": "/usr/local/lib/surf/surf-connector",
+      "args": [],
+      "env": {}
+    }
+  }
+}</code></pre>
+        <p>Restart Zed afterwards.</p>
+        </div>
+
+        <div class="tool">
+        <h3 id="cursor">Cursor</h3>
+        <p>Cursor uses the same shape as the Claude app, in <code>~/.cursor/mcp.json</code> for everything, or <code>.cursor/mcp.json</code> inside a project:</p>
+<pre><code>{
+  "mcpServers": {
+    "surf": {
+      "command": "/usr/local/lib/surf/surf-connector",
+      "args": []
+    }
+  }
+}</code></pre>
+        <p>Restart Cursor, and check the MCP list in its settings shows <strong>surf</strong> as connected.</p>
+        </div>
+
+        <div class="tool">
+        <h3 id="vscode">VS Code (GitHub Copilot)</h3>
+        <p>VS Code uses <code>servers</code> rather than <code>mcpServers</code>, in <code>.vscode/mcp.json</code> for one workspace, or the user-level <code>mcp.json</code> you reach with the <strong>MCP: Open User Configuration</strong> command:</p>
+<pre><code>{
+  "servers": {
+    "surf": {
+      "type": "stdio",
+      "command": "/usr/local/lib/surf/surf-connector"
+    }
+  }
+}</code></pre>
+        <p>Surf&rsquo;s tools then appear in Copilot&rsquo;s tool list in agent mode.</p>
+        </div>
+
+        <div class="tool">
+        <h3 id="anything-else">Anything else that speaks MCP</h3>
+        <p>Copy any of the entries above and change the outer key to whatever your tool uses &mdash; the inside is the same three facts either way. (Newer versions of Surf have a <strong>Copy Setup</strong> button in Add-Ons that gives you a ready-made one.) Almost every tool uses one of these shapes:</p>
+        <div class="scroller">
+        <table>
+            <tr><th>Tool</th><th>Where</th><th>Key</th></tr>
+            <tr><td>Claude app</td><td><code>claude_desktop_config.json</code> (Settings &rsaquo; Developer &rsaquo; Edit Config)</td><td><code>mcpServers</code></td></tr>
+            <tr><td>Claude Code</td><td><code>~/.claude.json</code>, or <code>.mcp.json</code> in a folder</td><td><code>mcpServers</code></td></tr>
+            <tr><td>Cursor</td><td><code>~/.cursor/mcp.json</code> or <code>.cursor/mcp.json</code></td><td><code>mcpServers</code></td></tr>
+            <tr><td>Windsurf</td><td><code>~/.codeium/windsurf/mcp_config.json</code></td><td><code>mcpServers</code></td></tr>
+            <tr><td>VS Code</td><td><code>.vscode/mcp.json</code>, or the user <code>mcp.json</code></td><td><code>servers</code></td></tr>
+            <tr><td>Zed</td><td>Zed <code>settings.json</code></td><td><code>context_servers</code></td></tr>
+            <tr><td>OpenCode</td><td><code>opencode.json</code> / <code>opencode.jsonc</code></td><td><code>mcp</code></td></tr>
+        </table>
+        </div>
+        <p class="meta" style="margin-top:12px">These file locations belong to those tools, not to us, and they do move between versions. If one of them is wrong, that tool&rsquo;s own MCP documentation wins &mdash; the three facts at the top are what stay true.</p>
+        </div>
+
+        <h2 id="check">Check it worked</h2>
+        <ol>
+            <li>In Surf, open <strong>&hellip;</strong> &rarr; <strong>Add-Ons</strong> and turn the <strong>Claude</strong> switch on. It is off every time Surf starts, on purpose.</li>
+            <li>Start your assistant fresh and ask it: <em>&ldquo;Use Surf, not Chrome, to open example.com and tell me the heading.&rdquo;</em></li>
+            <li>Watch Surf. A tab opens, a coloured edge appears around the page, and a marker in the toolbar says how many tabs that session has.</li>
+        </ol>
+        <p><strong>Say Surf by name.</strong> If a Chrome extension is installed as well, &ldquo;use the browser&rdquo; is ambiguous and your assistant will usually reach for Chrome.</p>
+        <p>The Add-Ons panel lists every connected session by name, with its tab and request counts, so you can see the connection from Surf&rsquo;s side without asking the assistant anything.</p>
+
+        <h2 id="trouble">When it doesn&rsquo;t</h2>
+        <ul>
+            <li><strong>The tool doesn&rsquo;t list Surf at all.</strong> It did not reload its config. Quit it completely and start it again &mdash; a new window or a new chat is not a new session, and MCP servers are launched once at startup.</li>
+            <li><strong>&ldquo;Server failed to start&rdquo;.</strong> The path is wrong. Check the file is really there: <code>ls -l /usr/local/lib/surf/surf-connector</code>. If you installed it elsewhere, use that path.</li>
+            <li><strong>Requests time out, or the server looks like it crashed.</strong> The timeout is too short. Set 60 seconds. See the note above &mdash; this is the most common cause and the least obvious.</li>
+            <li><strong>&ldquo;Surf isn&rsquo;t running&rdquo; or nothing connects.</strong> Surf itself must be open, with the Add-Ons switch on, and signed in to Surf Pro. The connector is free; the Surf side is not.</li>
+            <li><strong>It connects but refuses to type a password or card number.</strong> That is deliberate and cannot be turned off. So is never exposing private tabs.</li>
+            <li><strong>A session says a safeguard is missing.</strong> Add-Ons will tell you when a connected session is running an older connector than this version of Surf. Install the current one over the top and start the tool again.</li>
+        </ul>
 
         <h2>What it can and cannot do</h2>
         <p>While you have the feature switched on, Claude can read the address, visible text and elements of a page it is working with — including anything already typed into an ordinary form field on it — take a picture of it, and see the messages and network requests that page made. It can also click, type, scroll, go back and forward, open and close its own tabs, and resize the Surf window. Surf hands anything over only when asked.</p>
