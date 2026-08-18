@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Corynx: Device Monitor for iPhone &amp; iPad — CPU, RAM, Battery &amp; Network</title>
+    <title>Corynx: Live System Monitor for iPhone &amp; iPad — CPU, RAM, Battery &amp; Network</title>
     <meta name="description" content="Corynx is a fast, private system monitor for iPhone &amp; iPad — live CPU, memory, storage, network speed, a battery power-flow view, thermal state, and full chip &amp; GPU details.">
     <meta name="keywords" content="iPhone system monitor, iOS system monitor, CPU monitor, RAM memory monitor, battery monitor, network speed, GPU, thermal, activity, Corynx">
-    <meta property="og:title" content="Corynx: Device Monitor">
+    <meta property="og:title" content="Corynx: Live System Monitor">
     <meta property="og:description" content="Live CPU, memory, storage, network, a battery power-flow view &amp; device details for iPhone and iPad. Fast, private, on-device.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://mwsupplylimited.github.io/corynxmobile/">
     <meta name="twitter:card" content="summary">
     <link rel="canonical" href="https://mwsupplylimited.github.io/corynxmobile/">
     <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"MobileApplication","name":"Corynx: Device Monitor","operatingSystem":"iOS, iPadOS","applicationCategory":"UtilitiesApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"url":"https://apps.apple.com/app/id6786768697","description":"Live CPU, memory, storage, network, battery power-flow and device details for iPhone and iPad."}
+    {"@context":"https://schema.org","@type":"MobileApplication","name":"Corynx: Live System Monitor","operatingSystem":"iOS, iPadOS","applicationCategory":"UtilitiesApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"url":"https://apps.apple.com/app/id6786768697","description":"Live CPU, memory, storage, network, battery power-flow and device details for iPhone and iPad."}
     </script>
     <style>
         :root {
@@ -47,13 +47,8 @@
     <div class="container">
         <a class="back" href="../">&larr; MW Supply Limited</a>
 
-        <h1>Corynx: Device Monitor</h1>
-        <p class="subtitle">A beautiful, native system monitor for iPhone and iPad. <span class="pill">Version 1.0</span></p>
-
-        <video controls loop muted playsinline preload="metadata" aria-label="Corynx for iPhone — app preview"
-               style="display:block;width:100%;max-width:300px;margin:8px auto 24px;border-radius:28px;border:1px solid var(--border);background:var(--card);">
-            <source src="corynx-ios-preview.mp4" type="video/mp4">
-        </video>
+        <h1>Corynx: Live System Monitor</h1>
+        <p class="subtitle">A beautiful, native system monitor for iPhone and iPad, in 46 languages. <span class="pill">Version 1.4</span></p>
 
         <h2>About</h2>
         <p>Corynx shows exactly what your iPhone or iPad is doing, in a clean, fast dashboard built entirely in SwiftUI. It tracks CPU load (with per-core detail), the memory breakdown (wired, active, inactive and compressed), storage, live network throughput, battery level and charging state, the system thermal state, and full device, chip and GPU information. Everything is measured on-device using Apple&rsquo;s public APIs &mdash; your metrics never leave your phone.</p>
@@ -62,13 +57,16 @@
         <ul>
             <li><strong>Overview</strong> gives you an at-a-glance dashboard: CPU, memory, storage and battery, plus thermal state, uptime and connection.</li>
             <li><strong>CPU, Memory, Network and Device</strong> tabs go deeper &mdash; usage rings, rolling history graphs, the full memory breakdown, connection details and your device&rsquo;s chip and Metal GPU specs.</li>
-            <li><strong>Refresh rate</strong> is yours to set in Settings (Fast / Balanced / Battery Saver) to trade smoothness against battery.</li>
+            <li><strong>Refresh rate</strong> is yours to set in Settings (Balanced / Battery Saver, with a 1-second Fast rate in Pro) to trade smoothness against battery.</li>
+            <li><strong>Outside the app:</strong> Home Screen widgets in every size, a Lock Screen Live Activity, threshold alerts for low battery, heat and low storage, and Siri shortcuts &mdash; ask for storage, battery, memory or thermal state by voice.</li>
         </ul>
 
         <h2>FAQ</h2>
 
         <h3>What&rsquo;s free, and what does Corynx Pro add?</h3>
-        <p>The core monitor &mdash; the Overview dashboard, aggregate CPU, the full memory and storage breakdown, connection details, and complete device, chip, GPU, battery and thermal information &mdash; is free. <strong>Corynx Pro</strong> adds per-core CPU utilization, live network throughput graphs (upload/download with rolling charts), extended performance history, the fastest 1-second refresh, and removes ads. Pro is available as a Monthly or Yearly subscription (the Yearly plan includes a free trial), or as a one-time Lifetime purchase. Current pricing is shown on the App Store and inside the app.</p>
+        <p><strong>Free</strong> gives you a real monitor: live CPU load with core counts, memory in use, storage, network type and speed, battery level and charging state, the thermal state explained in plain language, your device, chip, iOS version and display, the last hour of trends charted, and Home Screen widgets in every size.</p>
+        <p><strong>Corynx Pro</strong> adds the depth: per-core and performance/efficiency cluster CPU with load averages, the full memory breakdown with pressure, network graphs with per-interface throughput and packet counts, power analysis, GPU and advanced device specs, long-range history (7 days by minute, 90 days by hour) with CSV export, the Lock Screen Live Activity and Dynamic Island, threshold alerts, Siri shortcuts, the fastest 1-second refresh, and no ads.</p>
+        <p>Pro is a Monthly or Yearly subscription with a free trial for new subscribers, or a one-time Lifetime purchase that never renews. Current pricing is shown on the App Store and inside the app. You can also try any Pro section free for four hours by watching a short video &mdash; no purchase, no account.</p>
 
         <h3>Why can&rsquo;t Corynx show battery health, exact temperature, or GPU usage?</h3>
         <p>iOS deliberately does not expose these to third-party apps. There is no public API for battery health or cycle count, an exact temperature in degrees, live GPU utilization, disk I/O rate, or per-app energy use &mdash; those are private, system-only measurements. Corynx never invents numbers: it shows the thermal <em>state</em> (Nominal &rarr; Critical) that iOS does report, the battery level and charging state, and the GPU <em>specification</em> from Metal. Everything shown is real and measured.</p>
@@ -84,6 +82,9 @@
 
         <h3>I found a bug or have a feature request.</h3>
         <p>Please email <a href="mailto:mwsupplylimited@gmail.com?subject=Corynx%20iOS%20feedback">mwsupplylimited@gmail.com</a> with your iOS version, device model, and steps to reproduce. We read every message.</p>
+
+        <h2>Corynx for Mac</h2>
+        <p>There is a Mac version too. It reads everything iOS will not let an app see &mdash; real CPU and GPU temperatures, fan speeds and fan control, battery health and cycle count, SoC power draw, a full process table &mdash; and lives in your menu bar. <a href="https://mwsupplylimited.github.io/corynx/">Corynx: System Monitor for Mac</a>.</p>
 
         <h2>Contact</h2>
         <p>For support: <a href="mailto:mwsupplylimited@gmail.com?subject=Corynx%20iOS%20support">mwsupplylimited@gmail.com</a></p>

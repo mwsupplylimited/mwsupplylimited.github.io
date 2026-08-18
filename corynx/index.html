@@ -48,7 +48,7 @@
         <a class="back" href="../">&larr; MW Supply Limited</a>
 
         <h1>Corynx: System Monitor</h1>
-        <p class="subtitle">A beautiful, native system monitor for your Mac. <span class="pill">Version 1.0</span></p>
+        <p class="subtitle">A beautiful, native system monitor for your Mac. <span class="pill">Version 1.5</span></p>
 
         <video controls loop muted playsinline preload="metadata" aria-label="Corynx for Mac — app preview"
                style="width:100%;border-radius:12px;margin:8px 0 24px;border:1px solid var(--border);background:var(--card);">
@@ -68,7 +68,9 @@
         <h2>FAQ</h2>
 
         <h3>What&rsquo;s free, and what does Corynx Pro add?</h3>
-        <p>The live readouts &mdash; CPU, memory, disk, network, battery and thermal pressure &mdash; are free. <strong>Corynx Pro</strong> adds history &amp; trend graphs for every subsystem, the detailed GPU and advanced modules, full menu-bar customization, CSV export, and &mdash; together with the free <a href="helper.html">Corynx Sensor Helper</a> &mdash; real CPU/GPU temperatures and live fan speeds. Pro is a Monthly or Annual subscription, or a one-time Lifetime purchase.</p>
+        <p><strong>Free</strong> gives you the headline numbers: CPU load, memory pressure and installed memory, startup-disk capacity, network up and down, battery level and time remaining, thermal pressure explained in plain language, the top processes by CPU, one metric of your choice in the menu bar, and launch-at-login.</p>
+        <p><strong>Corynx Pro</strong> adds the depth: per-core and performance/efficiency cluster load, the memory breakdown and swap activity, every mounted volume including the purgeable space Finder hides, disk throughput and IOPS, per-interface network with link speed, battery health and cycle count and capacity, the live power-flow diagram, history and trend graphs, the full sortable process table, threshold alerts, CSV export, as many menu-bar metrics as you like, and &mdash; together with the free <a href="helper.html">Corynx Sensor Helper</a> &mdash; real CPU/GPU temperatures, live fan speeds, SoC power draw, fan control and Dust Guard.</p>
+        <p>The Helper itself is free; the readings it enables are Pro, so you need both. Pro is a Monthly or Annual subscription, or a one-time Lifetime purchase that never renews.</p>
 
         <h3>Why do exact temperatures and fan speeds need a separate helper?</h3>
         <p>macOS does not allow a sandboxed Mac App Store app to read the System Management Controller (SMC), which is where precise temperatures and fan RPM come from. On its own, Corynx shows the system <em>thermal-pressure level</em> (Nominal &rarr; Critical). To show exact &deg;C and fan RPM, install the free <a href="helper.html">Corynx Sensor Helper</a> &mdash; a small, notarized companion that reads the sensors locally and hands them to Corynx on your Mac. Nothing leaves your computer.</p>
@@ -84,6 +86,12 @@
 
         <h3>I found a bug or have a feature request.</h3>
         <p>Please email <a href="mailto:mwsupplylimited@gmail.com?subject=Corynx%20feedback">mwsupplylimited@gmail.com</a> with your macOS version, Mac model, and steps to reproduce. We read every message.</p>
+
+        <h2>Dust Guard</h2>
+        <p>Working somewhere dusty? A spinning fan is a pump, and it is pumping dust through your Mac. <strong>Dust Guard</strong> holds the fans still while you work, and hands them straight back to macOS the moment anything warms up &mdash; it will not start above 55&nbsp;&deg;C, returns control at 65&nbsp;&deg;C, gives up for the session at 75&nbsp;&deg;C, never runs longer than 30 minutes, and reverts by itself if Corynx quits or stops responding. Corynx reports the fans&rsquo; <em>measured</em> speed throughout, so you can see whether they actually stopped rather than take our word for it. See the <a href="fan-helper.html">fan control safety guide</a>.</p>
+
+        <h2>Corynx for iPhone &amp; iPad</h2>
+        <p>There is an iOS version too &mdash; live CPU, memory, storage, network, battery and thermal state, with Home Screen widgets, a Lock Screen Live Activity and Siri shortcuts, in 46 languages. <a href="https://mwsupplylimited.github.io/corynxmobile/">Corynx: Live System Monitor for iPhone &amp; iPad</a>.</p>
 
         <h2>Contact</h2>
         <p>For support: <a href="mailto:mwsupplylimited@gmail.com?subject=Corynx%20support">mwsupplylimited@gmail.com</a></p>
