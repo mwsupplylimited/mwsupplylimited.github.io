@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xiangqi — Support</title>
+    <meta name="description" content="Support page for Xiangqi: Chinese Chess on iOS — four AI levels, Coach Mode, lessons and puzzles.">
+    <style>
+        :root {
+            --bg: #ffffff;
+            --fg: #1a1a1a;
+            --muted: #666666;
+            --accent: #9E2B25;
+            --card: #f5f5f7;
+            --border: #e5e5e7;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #121419;
+                --fg: #f5f5f7;
+                --muted: #9a9a9a;
+                --accent: #E06A5C;
+                --card: #1c1f25;
+                --border: #2a2d34;
+            }
+        }
+        * { box-sizing: border-box; }
+        html { -webkit-text-size-adjust: 100%; }
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+            background: var(--bg);
+            color: var(--fg);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 48px 24px 96px;
+        }
+        .back {
+            display: inline-block;
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-bottom: 32px;
+        }
+        .back:hover { color: var(--accent); }
+        h1 {
+            font-size: 2.2rem;
+            margin: 0 0 8px;
+            letter-spacing: -0.02em;
+        }
+        .subtitle {
+            color: var(--muted);
+            margin: 0 0 40px;
+        }
+        h2 {
+            font-size: 1.3rem;
+            margin: 40px 0 12px;
+            letter-spacing: -0.01em;
+        }
+        h3 {
+            font-size: 1rem;
+            margin: 24px 0 6px;
+            font-weight: 600;
+        }
+        p, li { color: var(--fg); }
+        .muted { color: var(--muted); }
+        ul { padding-left: 22px; }
+        li { margin-bottom: 6px; }
+        a { color: var(--accent); }
+        .pill {
+            display: inline-block;
+            background: var(--card);
+            border: 1px solid var(--border);
+            padding: 3px 10px;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            color: var(--muted);
+        }
+        footer {
+            margin-top: 64px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
+            color: var(--muted);
+            font-size: 0.85rem;
+        }
+    </style></head>
+<body>
+    <div class="container">
+        <a class="back" href="../">&larr; MW Supply Limited</a>
+
+        <h1>Xiangqi</h1>
+        <p class="subtitle">Chinese Chess for iPhone &amp; iPad — taught properly. <span class="pill">Version 1.0</span></p>
+
+        <h2>About</h2>
+        <p>Xiangqi (象棋, c&#7901; t&#432;&#7899;ng) is a thousand years old. Most apps hand you a board and an opponent that either hangs a chariot on move four or crushes you in twenty. This one explains what happened, and then makes you better.</p>
+        <p>The whole app works offline. There is no account, no sign-in, and no server that ever sees your games.</p>
+
+        <h2>Getting started</h2>
+        <ul>
+            <li><strong>Tap a difficulty to start playing.</strong> Novice, Club, Expert and Master are all free, always — no level is locked behind a purchase.</li>
+            <li><strong>Tap a piece, then tap where it goes</strong> — or drag it. While you drag, the piece is drawn above your finger so it never covers the square you are aiming at.</li>
+            <li><strong>Legal moves are marked by shape, not colour.</strong> A filled dot is a quiet move; an open ring is a capture. That stays readable if you are colourblind.</li>
+            <li><strong>Undo takes back the whole exchange</strong> — your move and the computer's reply — because taking back only the computer's move would hand you a free turn.</li>
+            <li><strong>Hint gives three levels of help.</strong> A nudge points at the idea and is free and unlimited; the next two levels narrow it to three squares, then to the move and the reason.</li>
+            <li><strong>Settings &rarr; Rule set</strong> switches between the Asian Xiangqi Federation and Chinese Xiangqi Association rules.</li>
+        </ul>
+
+        <h2>Rules, done properly</h2>
+        <p>The parts most apps get wrong are the parts we tested hardest:</p>
+        <ul>
+            <li><strong>Stalemate is a loss</strong> (&#22256;&#26007;). If you have no legal move, you lose — this is not Western chess.</li>
+            <li><strong>Perpetual check loses for the checker</strong> (&#38263;&#23559;), and <strong>perpetual chase loses for the chaser</strong> (&#38263;&#25417;). If both sides force it, the game is drawn.</li>
+            <li>The <strong>flying general</strong> (&#30333;&#33218;&#23559;), the <strong>hobbled horse</strong> (&#34875;&#39340;&#33151;), the <strong>blocked elephant eye</strong> (&#22622;&#35937;&#30524;) and the <strong>cannon's screen</strong> are all exact.</li>
+        </ul>
+        <p>The move generator is checked against the published Xiangqi perft series — it reproduces 133,312,995 positions at depth five, matching an independently written reference implementation. That is the only way to be confident a rules engine is right.</p>
+
+        <h2>Coach Mode</h2>
+        <p>Coach Mode is a live second opinion, not a hint button.</p>
+        <ul>
+            <li><strong>Threat Radar</strong> quietly marks your pieces that are attacked and not adequately defended — not everything that is attacked, which would just teach you to panic.</li>
+            <li><strong>Blunder Guard</strong> catches a losing move <em>before</em> you commit it. The piece hovers, a card tells you what it hangs and to what, and you choose. It dismisses itself after three seconds so it never blocks a fast player.</li>
+            <li><strong>Coach Cards</strong> name the actual pattern in your own language — the Iron Bolt (&#37941;&#38272;&#26629;), the Nest Horse (&#33229;&#27133;&#39340;), Smothered Palace (&#24717;&#23470;) — rather than printing an engine number at you.</li>
+        </ul>
+
+        <h2>The Game Report</h2>
+        <p>Every game ends with an accuracy score out of 100 for both sides, an evaluation graph you can scrub, and each move labelled Brilliant, Best, Good, Inaccuracy, Mistake or Blunder. Accuracy is broken down by opening, middlegame and endgame, so the report diagnoses rather than just scores. Then it hands you the moments the game turned on and lets you <strong>replay them until you get them right</strong>.</p>
+
+        <h2>Xiangqi Pro</h2>
+        <p>Nothing that is <em>Xiangqi</em> is behind the paywall. Unlimited games at all four levels, pass-and-play, every rule set, both piece character sets, all four notation systems and the Daily Puzzle are free forever. Pro adds coaching, depth and convenience:</p>
+        <ul>
+            <li><strong>Live Coach Mode</strong> — Coach Cards on every move, Blunder Guard and Threat Radar, unlimited Ask the Coach.</li>
+            <li><strong>The full Game Report</strong> — every move graded, accuracy by phase, and every critical moment with unlimited Retry.</li>
+            <li><strong>All lessons and unlimited puzzles</strong>, plus the spaced-repetition drill queue.</li>
+            <li><strong>Every board and piece set</strong>, including Jade &amp; Lacquer.</li>
+            <li><strong>iCloud sync</strong> of progress and ratings, and <strong>no ads anywhere</strong>.</li>
+        </ul>
+        <p>Pro is an auto-renewable subscription — <strong>$4.99/month</strong> or <strong>$29.99/year</strong> with a 7-day free trial on the annual plan — or a one-time <strong>$59.99 lifetime</strong> purchase that never renews. There is also a <strong>$9.99 Remove Ads</strong> option that removes advertising without the Pro features. Prices vary by region. Manage or cancel any time in iOS Settings &rarr; Apple Account &rarr; Subscriptions, or from the Membership page in the app.</p>
+
+        <h2>Languages</h2>
+        <p>English, &#31616;&#20307;&#20013;&#25991;, &#32321;&#39636;&#20013;&#25991; and Ti&#7871;ng Vi&#7879;t — including the notation. Traditional Chinese is written, not machine-converted from Simplified.</p>
+
+        <h2>FAQ</h2>
+
+        <h3>Why did I lose when I had no moves left?</h3>
+        <p>In Xiangqi a player with no legal move loses (&#22256;&#26007;). This surprises people who come from Western chess, where it is a draw. It is not a bug.</p>
+
+        <h3>Why did the app say I lost after checking repeatedly?</h3>
+        <p>Repeatedly checking to force a repetition is &#38263;&#23559; and loses for the side giving the checks. The same applies to repeatedly chasing the same piece (&#38263;&#25417;). If both sides are doing it, the game is a draw.</p>
+
+        <h3>Master is too strong / Novice is too weak.</h3>
+        <p>That is what they are for, but the levels are meant to be a ladder rather than a cliff. If a level feels wrong for you, tell us which one and roughly how you play — we calibrate against real games.</p>
+
+        <h3>Is my progress backed up?</h3>
+        <p>Your games, ratings, streak and lesson progress are stored on your device. With Pro they also sync through your own private iCloud, so they follow you to a new device. We never receive them.</p>
+
+        <h3>Where is my data sent?</h3>
+        <p>We run no servers. The engine runs entirely on your device, so nothing about your games leaves it. In the free version, ads are served through Unity LevelPlay (ironSource), which collects limited device and ad-interaction data in order to do so; iOS asks for your tracking permission first, and declining costs you no features. Pro removes all ads. See the <a href="privacy.html">Privacy Policy</a>.</p>
+
+        <h3>I found a bug or have a feature request.</h3>
+        <p>Please email <a href="mailto:mwsupplylimited@gmail.com?subject=Xiangqi%20feedback">mwsupplylimited@gmail.com</a> with your iOS version, device, and what happened. If it is a rules question, a screenshot of the board settles it fastest. We read every message.</p>
+
+        <h2>Contact</h2>
+        <p>For support: <a href="mailto:mwsupplylimited@gmail.com?subject=Xiangqi%20support">mwsupplylimited@gmail.com</a></p>
+
+        <h2>Privacy</h2>
+        <p>See the <a href="privacy.html">Xiangqi Privacy Policy</a>.</p>
+
+        <footer>
+            &copy; 2026 MW Supply Limited
+        </footer>
+    </div>
+</body>
+</html>
