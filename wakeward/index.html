@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wakeward — Support</title>
+    <meta name="description" content="Support for Wakeward: a loud alarm clock for iPhone and iPad built on Apple's AlarmKit. Rings through Silent mode and Focus, adds a backup alarm, checks itself before you sleep, and keeps a receipt proving it rang.">
+<style>
+        :root {
+            --bg: #ffffff;
+            --fg: #17191d;
+            --muted: #5a626d;
+            --accent: #c25a12;
+            --card: #f7f5fa;
+            --border: #e4e0ea;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #0b0d10;
+                --fg: #f2f4f7;
+                --muted: #9aa3af;
+                --accent: #ffb03d;
+                --card: #16171f;
+                --border: #2b2d39;
+            }
+        }
+        * { box-sizing: border-box; }
+        html { -webkit-text-size-adjust: 100%; }
+        body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif; background: var(--bg); color: var(--fg); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+        .container { max-width: 720px; margin: 0 auto; padding: 48px 24px 96px; }
+        .back { display: inline-block; color: var(--muted); text-decoration: none; font-size: 0.9rem; margin-bottom: 32px; }
+        .back:hover { color: var(--accent); }
+        h1 { font-size: 2.2rem; margin: 0 0 8px; letter-spacing: -0.02em; }
+        .subtitle { color: var(--muted); margin: 0 0 40px; }
+        h2 { font-size: 1.3rem; margin: 40px 0 12px; letter-spacing: -0.01em; }
+        h3 { font-size: 1rem; margin: 24px 0 6px; font-weight: 600; }
+        p, li { color: var(--fg); }
+        ul { padding-left: 22px; }
+        li { margin-bottom: 6px; }
+        a { color: var(--accent); }
+        .pill { display: inline-block; background: var(--card); border: 1px solid var(--border); padding: 3px 10px; border-radius: 999px; font-size: 0.8rem; color: var(--muted); }
+        .callout { background: var(--card); border: 1px solid var(--border); border-left: 3px solid var(--accent); padding: 16px 20px; border-radius: 8px; margin: 24px 0; }
+        .callout p { margin: 0; }
+        .mark { color: var(--accent); font-weight: 700; letter-spacing: 0.02em; }
+        table { border-collapse: collapse; width: 100%; margin: 16px 0; font-size: 0.95rem; }
+        th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border); }
+        th { color: var(--muted); font-weight: 600; }
+        footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.85rem; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a class="back" href="../">&larr; MW Supply Limited</a>
+
+        <h1>Wakeward</h1>
+        <p class="subtitle"><span class="mark">&#9728;</span> &nbsp;The alarm that proves it rang. <span class="pill">Version 1.0</span></p>
+
+        <h2>What it does</h2>
+        <p>Wakeward is a wake-up alarm for iPhone and iPad built on <strong>AlarmKit</strong>, the framework Apple introduced in iOS&nbsp;26 that gives an app the same alerting path as the built-in Clock. That means a Wakeward alarm sounds at alarm volume <em>through Silent mode</em>, <em>through every Focus including Sleep</em>, over the Lock Screen, and after a restart &mdash; and it keeps working if you force-quit the app or never open it again, because iOS itself is holding the alarm, not Wakeward.</p>
+        <p>On top of that it adds the three things the built-in Clock has no answer for.</p>
+
+        <h2>The three differences</h2>
+        <h3>1. A backup alarm</h3>
+        <p>A second, completely independent system alarm a few minutes after the first, armed at the same moment and cancelled automatically the instant you properly stop the first one. If anything at all stops you hearing the primary, the backup still rings.</p>
+        <p>It is also the honest answer to alarm collisions. When two apps have an alarm set for the same minute, iOS picks a winner non-deterministically and a single press of a physical button silences <em>all</em> currently ringing alarms. A backup three minutes later has nothing to compete with.</p>
+
+        <h3>2. A bedtime check</h3>
+        <p>One screen that verifies everything iOS will actually report: that permission is granted, that <strong>every alarm you have switched on is genuinely present in the system's own list</strong> (and re-arms it if not), that your audio is not routed to headphones, your battery is not about to die, whether you have changed time zone, and whether a daylight-saving change lands tonight.</p>
+        <p>It also asks you about the four things iOS refuses to tell any app &mdash; ringer volume, &ldquo;Change with Buttons&rdquo;, Attention Aware Features, and whether the app is hidden. Wakeward asks rather than guessing, because an advisory that says &ldquo;you are muted&rdquo; when you are not would destroy the point of the whole feature.</p>
+
+        <h3>3. A receipt</h3>
+        <p>After every alarm: when it was scheduled, when it actually rang, the drift between the two, when you stopped it, and the iOS build it happened on. Where iOS does not report something, the receipt says so rather than inventing a number.</p>
+
+        <h2>Free vs Wakeward Pro</h2>
+        <p><strong>Every part of the reliability engine is free, forever.</strong> Charging for &ldquo;your alarm will actually ring&rdquo; would make the app's whole claim untrue for most of the people who install it. Pro sells the morning, not the ring.</p>
+        <table>
+            <tr><th>Feature</th><th>Free</th><th>Pro</th></tr>
+            <tr><td>Alarms, repeats, labels, snooze</td><td>Unlimited</td><td>Unlimited</td></tr>
+            <tr><td>Rings through Silent mode &amp; Focus</td><td>Yes</td><td>Yes</td></tr>
+            <tr><td>Backup alarm</td><td>Yes</td><td>Yes</td></tr>
+            <tr><td>Self-repairing alarm check</td><td>Yes</td><td>Yes</td></tr>
+            <tr><td>Bedtime pre-flight</td><td>Yes</td><td>Yes</td></tr>
+            <tr><td>&ldquo;Test my alarm in 10 seconds&rdquo;</td><td>Yes</td><td>Yes</td></tr>
+            <tr><td>Backup notifications</td><td>Yes</td><td>Yes</td></tr>
+            <tr><td>Widget, Lock Screen &amp; Siri</td><td>Yes</td><td>Yes</td></tr>
+            <tr><td>Alarm receipts</td><td>Last 7 days</td><td>Everything</td></tr>
+            <tr><td>Alarm tones</td><td>3</td><td>All 9 + gentle versions</td></tr>
+            <tr><td>Wake-up tasks</td><td>Maths only</td><td>Maths, typing, memory, steps, wake-up check</td></tr>
+            <tr><td>Wake-time consistency score</td><td>&mdash;</td><td>Yes</td></tr>
+            <tr><td>Bedtime schedule</td><td>&mdash;</td><td>Yes</td></tr>
+            <tr><td>Ads</td><td>Small banner</td><td>None</td></tr>
+        </table>
+        <p>Wakeward Pro is <strong>US$4.99/month</strong> or <strong>US$24.99/year</strong> (with a 7-day free trial on the yearly plan), or <strong>US$39.99 once</strong> for Lifetime. Prices in other regions are set by Apple. Payment is charged to your Apple Account; a subscription renews automatically unless cancelled at least 24 hours before the period ends. Manage or cancel anytime in Settings, or from <em>Settings &rsaquo; Membership</em> inside the app.</p>
+
+        <h2>Things worth knowing</h2>
+        <div class="callout">
+            <p><strong>Wakeward cannot control the alarm volume, and neither can any other app.</strong> iOS plays alarms at the system ringer volume and offers no API to change it. What Wakeward does control is how loudly its tones are mastered, and every one is built on the 520&nbsp;Hz low-frequency signal that fire-safety standards mandate for sleeping areas precisely because it wakes people who sleep through higher-pitched sounds.</p>
+        </div>
+        <h3>Do not hide Wakeward or lock it behind Face ID</h3>
+        <p>Apple states plainly that alarms scheduled by hidden or passcode-locked apps <em>silently fail</em>. No app can detect this, so it is genuinely down to you.</p>
+        <h3>Attention Aware Features lowers your alarm</h3>
+        <p>If your iPhone's front camera sees you glance at it, iOS quietly reduces the alarm volume. Apps cannot detect or prevent this. You can switch it off in <em>Settings &rsaquo; Face ID &amp; Passcode &rsaquo; Attention Aware Features</em>.</p>
+        <h3>A stuck bubble in the Dynamic Island</h3>
+        <p>There is a known iOS 26 bug where swiping an alarm away while the phone is unlocked can leave an empty Live Activity stuck in the Dynamic Island. It survives force-quitting and even deleting the app; restarting your iPhone clears it. This affects Apple's own sample code too &mdash; it is not something Wakeward can fix.</p>
+        <h3>Requires iOS 26.2 or later</h3>
+        <p>Earlier versions of iOS&nbsp;26 have bugs in AlarmKit that stop custom alarm sounds playing or looping correctly. Rather than ship a wake-up alarm on top of those, Wakeward requires 26.2.</p>
+
+        <h2>Common questions</h2>
+        <h3>Will it ring if I force-quit the app?</h3>
+        <p>Yes. iOS holds the alarm, not Wakeward. It also survives a restart.</p>
+        <h3>Will it ring if my phone is on silent?</h3>
+        <p>Yes. Alarms scheduled through AlarmKit sound through the Ring/Silent switch and through every Focus, including Sleep.</p>
+        <h3>Can I use it alongside the built-in Clock?</h3>
+        <p>You can, but avoid setting both for the same minute &mdash; iOS picks between them unpredictably. If you keep Clock alarms, Wakeward's backup alarm is the safety net.</p>
+        <h3>Do my alarms sync between my iPhone and iPad?</h3>
+        <p>The alarm list syncs through your own iCloud. Whether a given device actually <em>rings</em> is a separate per-device switch, off by default on iPad, so an iPad on the kitchen counter does not join in at 6:30.</p>
+        <h3>Does Wakeward track my sleep?</h3>
+        <p>No. It records when your alarms rang and when you stopped them, and computes how consistent your wake time is from that. It does not use the microphone or the accelerometer to guess at sleep stages, because phone-derived sleep stages do not stand up to the evidence.</p>
+
+        <h2>Contact</h2>
+        <p>Email <a href="mailto:mwsupplylimited@gmail.com">mwsupplylimited@gmail.com</a>. If an alarm has ever failed for you, please include the receipt from the Wake Log &mdash; it names the exact iOS build and the drift, which is usually enough to identify the cause.</p>
+
+        <footer>
+            <p>Wakeward is made by MW Supply Limited. &nbsp;<a href="privacy.html">Privacy Policy</a> &nbsp;&middot;&nbsp; <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms of Use</a></p>
+        </footer>
+    </div>
+</body>
+</html>
