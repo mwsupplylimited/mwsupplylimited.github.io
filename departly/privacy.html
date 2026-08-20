@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Departly — Privacy Policy</title>
-    <meta name="description" content="Privacy Policy for Departly — Hong Kong bus arrivals on iOS.">
+    <meta name="description" content="Privacy Policy for Departly — transit journey planning and live arrivals for Hong Kong, Macau and Singapore on iOS.">
     <style>
         :root { --bg:#fff; --fg:#1a1a1a; --muted:#666; --accent:#1788f0; --card:#f5f5f7; --border:#e5e5e7; }
         @media (prefers-color-scheme: dark) { :root { --bg:#0f1217; --fg:#f5f5f7; --muted:#9a9a9a; --accent:#5b8cff; --card:#1a1d24; --border:#2a2d34; } }
@@ -26,9 +26,9 @@
     <div class="container">
         <a class="back" href="index.html">&larr; Departly Support</a>
         <h1>Privacy Policy</h1>
-        <p class="updated">Last updated: 22 July 2026</p>
+        <p class="updated">Last updated: 20 August 2026</p>
 
-        <p>Departly is designed to need as little of your data as possible. Departly does not require an account. The only data that leaves your device is: the optional, anonymous “Live Bus” position you choose to share; the public route/stop you are viewing (to fetch arrivals); when you search for a place in Plan a Trip, the text you type (sent to Apple Maps to find the address); and, if you use the optional referral feature, an anonymous app-specific identifier used to credit invites. Each is explained below.</p>
+        <p>Departly is designed to need as little of your data as possible. Departly does not require an account. The only data that leaves your device is: the optional, anonymous “Live Bus” position you choose to share; the public route/stop you are viewing (to fetch arrivals); when you search for a place in Plan a Trip, the text you type (sent to Apple Maps to find the address); a small number of anonymous product-usage events; if you tap “Book” on a taxi estimate, the pickup and drop-off coordinates of that one trip (sent to Uber); and, if you use the optional referral feature, an anonymous app-specific identifier used to credit invites. Each is explained below.</p>
 
         <h2>Location</h2>
         <div class="card">
@@ -39,13 +39,18 @@
 
         <h2>Real-time transport data</h2>
         <div class="card">
-            <p>To show arrivals, Departly requests public route, stop and estimated-arrival data from Hong Kong government open-data services (DATA.GOV.HK). These requests contain only the route or stop you are viewing — <strong>no location, identifier, or personal information about you is sent.</strong></p>
+            <p>To show arrivals, Departly requests public route, stop and estimated-arrival data from Hong Kong government open-data services (DATA.GOV.HK) and, in Singapore, from the Land Transport Authority’s DataMall service (datamall2.mytransport.sg). These requests contain only the route or stop you are viewing, plus — for DataMall — an application key that identifies Departly, not you. <strong>No location, no account, and no identifier of you is sent.</strong> Macau has no live arrival feed, so Macau times come from the bundled timetable on your device and need no request at all.</p>
             <p>Departly also periodically downloads updated <strong>route, stop, station and fare reference files</strong> from our own server (mwsupplylimited.github.io) so the trip planner and fares stay current without an app update. These are plain public transit-data files — the download sends <strong>no information about you</strong>.</p>
         </div>
 
         <h2>Place search (Plan a Trip)</h2>
         <div class="card">
-            <p>When you type an address or place in Plan a Trip, Departly uses Apple’s Maps service to turn what you type into a location. The text you type, together with a coarse Hong Kong map region (to keep results local), is sent to Apple to return matching places; Apple handles this request under <a href="https://www.apple.com/legal/privacy/">Apple’s privacy policy</a>. Departly does not attach your name, account or identifier to the search. Places you save as <strong>Home</strong>, <strong>Office</strong> or recent destinations are kept on your device (and synced via your own iCloud, below); you can remove any of them at any time.</p>
+            <p>When you type an address or place in Plan a Trip, Departly uses Apple’s Maps service to turn what you type into a location. The text you type, together with a coarse map region for the area you are browsing — Hong Kong and Macau, or Singapore (to keep results local) — is sent to Apple to return matching places; Apple handles this request under <a href="https://www.apple.com/legal/privacy/">Apple’s privacy policy</a>. Departly does not attach your name, account or identifier to the search. Places you save as <strong>Home</strong>, <strong>Office</strong> or recent destinations are kept on your device (and synced via your own iCloud, below); you can remove any of them at any time.</p>
+        </div>
+
+        <h2>Booking a taxi (Uber)</h2>
+        <div class="card">
+            <p>The taxi comparison on a trip shows an optional <strong>Book</strong> button. If — and only if — you tap it, Departly opens an Uber link that carries that trip’s <strong>pickup and drop-off coordinates</strong> in the web address, so Uber can pre-fill the journey. Nothing is sent unless you tap Book; Departly attaches no name, account or identifier, uses no Uber SDK, and receives nothing back. Uber then handles the request under its own privacy policy.</p>
         </div>
 
         <h2>Favourites, saved places &amp; settings (iCloud)</h2>
@@ -55,7 +60,7 @@
 
         <h2>Advertising</h2>
         <div class="card">
-            <p>The free version of Departly shows ads through <strong>Unity LevelPlay</strong> (ironSource). Departly serves <strong>contextual ads only</strong>: it does not request Apple’s advertising identifier, does not show an App Tracking Transparency prompt, and does not signal consent to personalise ads — so the ads you see are based on the app and general context rather than on tracking you across other apps and websites. In the EEA, the UK and Switzerland Departly signals no consent to personalisation. Free users may also choose to watch optional <strong>rewarded ads</strong> to earn tokens, served by the same SDK. <strong>Departly Pro removes all ads.</strong> See Unity’s <a href="https://unity.com/legal/game-player-and-app-user-privacy-policy">privacy policy</a> for how LevelPlay handles data.</p>
+            <p>The free version of Departly shows ads through <strong>Unity LevelPlay</strong> (ironSource). Departly serves <strong>contextual ads only</strong>: it never requests tracking permission, shows no App Tracking Transparency prompt, and does not signal consent to personalise ads. The LevelPlay SDK does read Apple’s advertising identifier, but because tracking authorisation is never requested — and therefore can never be granted — iOS returns the all-zero identifier, so no advertising profile can be built and the ads you see are based on the app and general context rather than on tracking you across other apps and websites. In the EEA, the UK and Switzerland Departly signals no consent to personalisation. Free users may also choose to watch optional <strong>rewarded ads</strong> to earn tokens, served by the same SDK. <strong>Departly Pro removes all ads.</strong> See Unity’s <a href="https://unity.com/legal/game-player-and-app-user-privacy-policy">privacy policy</a> for how LevelPlay handles data.</p>
         </div>
 
         <h2>Analytics</h2>
@@ -86,7 +91,7 @@
         <div class="card"><p>Questions about this policy: <a href="mailto:mwsupplylimited@gmail.com">mwsupplylimited@gmail.com</a></p></div>
 
         <footer>
-            <p>Departly uses data obtained from <a href="https://data.gov.hk/">DATA.GOV.HK</a>, provided by the Transport Department, MTR Corporation (heavy rail, Light Rail and MTR Bus), KMB, Long Win Bus, Citybus, New Lantau Bus, the green minibus operators and Hong Kong Tramways, plus public weather warnings and territory-wide rainfall readings from the Hong Kong Observatory (used for service-status notices and, for Pro users, wet-weather trip re-ordering). Weather requests download territory-wide feeds only — they carry no location, account, or device identifier. The Apple Watch app, widgets and Live Activities use the same on-device location and transit data under this same policy. Departly is an independent app and is not affiliated with, endorsed by, or operated by any transport operator or the Government of the HKSAR.</p>
+            <p>Departly uses data obtained from <a href="https://data.gov.hk/">DATA.GOV.HK</a>, provided by the Transport Department, MTR Corporation (heavy rail, Light Rail and MTR Bus), KMB, Long Win Bus, Citybus, New Lantau Bus, the green minibus operators and Hong Kong Tramways, plus public weather warnings and territory-wide rainfall readings from the Hong Kong Observatory (used for service-status notices and, for Pro users, wet-weather trip re-ordering). Weather requests download territory-wide feeds only — they carry no location, account, or device identifier. Macau bus route and stop data comes from the Macao SAR Government Open Data Platform (DSAT bus-route dataset). Departly contains information from LTA DataMall (BusStops, BusRoutes, BusServices, GTFSScheduleTrain) accessed on 15 August 2026 from <a href="https://datamall.lta.gov.sg">https://datamall.lta.gov.sg</a>, made available under the terms of the <a href="https://datamall.lta.gov.sg/content/datamall/en/SingaporeOpenDataLicence.html">Singapore Open Data Licence version 1.0</a>; Singapore fares are the Public Transport Council’s published distance-band tables. Station entrance and exit locations, rail and tram stop coordinates, places of interest, and Macau bus service hours and frequencies are © OpenStreetMap contributors, used under the Open Database License (ODbL) 1.0. The Apple Watch app, widgets and Live Activities use the same on-device location and transit data under this same policy. Departly is an independent app and is not affiliated with, endorsed by, or operated by any transport operator, the Government of the HKSAR, the Macao SAR Government, or the Land Transport Authority of Singapore.</p>
             <p>© 2026 mwsupplylimited.</p>
         </footer>
     </div>

@@ -20,9 +20,11 @@
 #
 # Authorized sellers — Unity LevelPlay (ironSource) mediation
 # ----------------------------------------------------------
-# PDF Scanner 1.0.9+, Blackout Camera 1.5.3+, Money Flow 1.11+, Body Clock 1.0.5+
-# and Rostra 1.2.0+ are monetized through Unity LevelPlay mediating Unity Ads and
-# ironSource Ads. Money Flow 1.10 and earlier used the banned AdMob account above
+# PDF Scanner 1.0.9+, Blackout Camera 1.5.3+, Money Flow 1.11+, Body Clock 1.0.5+,
+# Rostra 1.2.0+ and Departly 1.9+ (app key 2784e03d5) are monetized through Unity
+# LevelPlay mediating Unity Ads and ironSource Ads. Departly 1.8.1 and earlier used
+# the banned AdMob account above; it migrated 2026-08-08 and its Marketing URL is
+# https://mwsupplylimited.github.io/departly/, on this domain. Money Flow 1.10 and earlier used the banned AdMob account above
 # and is superseded.
 #
 # This file is DOMAIN-level, so it already covered Body Clock and Rostra the moment
