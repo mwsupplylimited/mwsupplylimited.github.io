@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watch caliber reference &mdash; beat rates, power reserve, lift angles</title>
+    <meta name="description" content="Beat rate (bph), frequency, power reserve and lift angle for 29 common watch calibers &mdash; ETA, Sellita, Rolex, Seiko, Miyota, Omega and more.">
+    <link rel="canonical" href="https://mwsupplylimited.github.io/chronograde/calibers.html">
+    <meta property="og:title" content="Watch caliber reference &mdash; beat rates and lift angles">
+    <meta property="og:description" content="Beat rate, frequency, power reserve and lift angle for 29 common watch calibers.">
+    <meta property="og:type" content="article">
+    <style>
+        :root {
+            --bg: #ffffff;
+            --fg: #1a1a1a;
+            --muted: #666666;
+            --accent: #e66230;
+            --card: #f5f5f7;
+            --border: #e5e5e7;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #121419;
+                --fg: #f5f5f7;
+                --muted: #9a9a9a;
+                --accent: #ff7d45;
+                --card: #1c1f25;
+                --border: #2a2d34;
+            }
+        }
+        * { box-sizing: border-box; }
+        html { -webkit-text-size-adjust: 100%; }
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+            background: var(--bg);
+            color: var(--fg);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 48px 24px 96px;
+        }
+        .back {
+            display: inline-block;
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-bottom: 32px;
+        }
+        .back:hover { color: var(--accent); }
+        h1 {
+            font-size: 2.2rem;
+            margin: 0 0 8px;
+            letter-spacing: -0.02em;
+        }
+        .subtitle {
+            color: var(--muted);
+            margin: 0 0 40px;
+        }
+        h2 {
+            font-size: 1.3rem;
+            margin: 40px 0 12px;
+            letter-spacing: -0.01em;
+        }
+        h3 {
+            font-size: 1rem;
+            margin: 24px 0 6px;
+            font-weight: 600;
+        }
+        p, li { color: var(--fg); }
+        .muted { color: var(--muted); }
+        ul { padding-left: 22px; }
+        li { margin-bottom: 6px; }
+        a { color: var(--accent); }
+        code {
+            background: var(--card);
+            padding: 1px 6px;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+        .pill {
+            display: inline-block;
+            background: var(--card);
+            border: 1px solid var(--border);
+            padding: 3px 10px;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            color: var(--muted);
+        }
+        footer {
+            margin-top: 64px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
+            color: var(--muted);
+            font-size: 0.85rem;
+        }
+    
+        table { border-collapse: collapse; width: 100%; margin: 16px 0; font-size: 0.95rem; }
+        th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border); vertical-align: top; }
+        th { color: var(--muted); font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.04em; }
+        .table-wrap { overflow-x: auto; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a class="back" href="./">&larr; Chronograde</a>
+        <h1>Caliber reference</h1>
+        <p class="subtitle">Beat rate, frequency, power reserve and lift angle for 29 common movements.</p>
+
+        <h2>Why the beat rate matters</h2>
+        <p>To read a watch acoustically, a timegrapher has to know how many beats an hour the movement is <em>supposed</em> to make. Feed it the wrong figure and it will confidently report a rate that is wildly wrong &mdash; assume 21,600 for a 28,800 bph movement and you will be told the watch is losing hours a day.</p>
+        <p>Most software can detect the beat rate automatically, and Chronograde's AUTO mode does. But detection is a guess from a noisy signal, and setting the figure yourself is always more reliable if you know the caliber.</p>
+
+        <h2>Beat rates you will meet</h2>
+        <div class="table-wrap"><table>
+            <thead><tr><th>Beat rate</th><th>Frequency</th><th>Sound</th><th>In this list</th></tr></thead>
+            <tbody><tr><td>18,000 bph</td><td>2.5 Hz</td><td>5 ticks/sec</td><td>2 of 29</td></tr><tr><td>21,600 bph</td><td>3.0 Hz</td><td>6 ticks/sec</td><td>8 of 29</td></tr><tr><td>25,200 bph</td><td>3.5 Hz</td><td>7 ticks/sec</td><td>3 of 29</td></tr><tr><td>28,800 bph</td><td>4.0 Hz</td><td>8 ticks/sec</td><td>14 of 29</td></tr><tr><td>36,000 bph</td><td>5.0 Hz</td><td>10 ticks/sec</td><td>2 of 29</td></tr></tbody>
+        </table></div>
+        <p class="muted">Higher frequency generally means better resistance to positional error and shock, at the cost of more wear and a shorter power reserve &mdash; which is why 36,000 bph movements tend to advertise their reserve loudly.</p>
+
+        <h2>Common calibers</h2>
+        <p>Beat rate is authoritative. Power reserve is the manufacturer's figure for a healthy, fully wound movement &mdash; expect less from a watch that is due a service. Lift angle is the typical published figure used by timegrapher software to estimate amplitude, and is approximate; it is omitted where no standard figure is published, which is common for co-axial and some in-house escapements.</p>
+        <div class="table-wrap"><table>
+            <thead><tr><th>Caliber</th><th>Beat rate</th><th>Frequency</th><th>Reserve</th><th>Lift angle</th></tr></thead>
+            <tbody><tr><td><strong>Grand Seiko 9SA5</strong><br><span class="muted" style="font-size:0.85em">Hi-Beat 36,000, 80-hour reserve.</span></td><td>36,000</td><td>5.0&nbsp;Hz</td><td>80&nbsp;h</td><td><span class="muted">&mdash;</span></td></tr><tr><td><strong>Zenith El Primero</strong><br><span class="muted" style="font-size:0.85em">Hi-Beat 36,000 automatic chronograph.</span></td><td>36,000</td><td>5.0&nbsp;Hz</td><td>50&nbsp;h</td><td><span class="muted">&mdash;</span></td></tr><tr><td><strong>ETA 2801-2 / 2804</strong><br><span class="muted" style="font-size:0.85em">Hand-wound.</span></td><td>28,800</td><td>4.0&nbsp;Hz</td><td>42&nbsp;h</td><td>50&deg;</td></tr><tr><td><strong>ETA 2824-2</strong><br><span class="muted" style="font-size:0.85em">The workhorse Swiss automatic.</span></td><td>28,800</td><td>4.0&nbsp;Hz</td><td>38&nbsp;h</td><td>50&deg;</td></tr><tr><td><strong>ETA 2892-A2</strong><br><span class="muted" style="font-size:0.85em">Slim Swiss automatic.</span></td><td>28,800</td><td>4.0&nbsp;Hz</td><td>42&nbsp;h</td><td>50&deg;</td></tr><tr><td><strong>ETA/Valjoux 7750</strong><br><span class="muted" style="font-size:0.85em">Automatic chronograph.</span></td><td>28,800</td><td>4.0&nbsp;Hz</td><td>44&nbsp;h</td><td>47&deg;</td></tr><tr><td><strong>Grand Seiko 9S65</strong><br><span class="muted" style="font-size:0.85em">Automatic, 72-hour reserve.</span></td><td>28,800</td><td>4.0&nbsp;Hz</td><td>72&nbsp;h</td><td><span class="muted">&mdash;</span></td></tr><tr><td><strong>Miyota 9015</strong><br><span class="muted" style="font-size:0.85em">Slim automatic.</span></td><td>28,800</td><td>4.0&nbsp;Hz</td><td>42&nbsp;h</td><td>51&deg;</td></tr><tr><td><strong>Omega 1120</strong><br><span class="muted" style="font-size:0.85em">Based on ETA 2892.</span></td><td>28,800</td><td>4.0&nbsp;Hz</td><td>44&nbsp;h</td><td>50&deg;</td></tr><tr><td><strong>Rolex 3135</strong><br><span class="muted" style="font-size:0.85em">Classic Datejust/Submariner caliber.</span></td><td>28,800</td><td>4.0&nbsp;Hz</td><td>48&nbsp;h</td><td>50&deg;</td></tr><tr><td><strong>Rolex 3235</strong><br><span class="muted" style="font-size:0.85em">Chronergy escapement, 70-hour reserve.</span></td><td>28,800</td><td>4.0&nbsp;Hz</td><td>70&nbsp;h</td><td>50&deg;</td></tr><tr><td><strong>Rolex 3285</strong><br><span class="muted" style="font-size:0.85em">GMT caliber, 70-hour reserve.</span></td><td>28,800</td><td>4.0&nbsp;Hz</td><td>70&nbsp;h</td><td>50&deg;</td></tr><tr><td><strong>Sellita SW200-1</strong><br><span class="muted" style="font-size:0.85em">2824 equivalent.</span></td><td>28,800</td><td>4.0&nbsp;Hz</td><td>38&nbsp;h</td><td>50&deg;</td></tr><tr><td><strong>Sellita SW300-1</strong><br><span class="muted" style="font-size:0.85em">2892 equivalent.</span></td><td>28,800</td><td>4.0&nbsp;Hz</td><td>56&nbsp;h</td><td>50&deg;</td></tr><tr><td><strong>Sellita SW500</strong><br><span class="muted" style="font-size:0.85em">7750-type chronograph.</span></td><td>28,800</td><td>4.0&nbsp;Hz</td><td>48&nbsp;h</td><td>47&deg;</td></tr><tr><td><strong>Tudor MT56xx (Kenissi)</strong><br><span class="muted" style="font-size:0.85em">In-house, COSC-certified, 70-hour reserve.</span></td><td>28,800</td><td>4.0&nbsp;Hz</td><td>70&nbsp;h</td><td>50&deg;</td></tr><tr><td><strong>Omega 8500</strong><br><span class="muted" style="font-size:0.85em">Co-Axial automatic (3.5 Hz).</span></td><td>25,200</td><td>3.5&nbsp;Hz</td><td>60&nbsp;h</td><td><span class="muted">&mdash;</span></td></tr><tr><td><strong>Omega 8800</strong><br><span class="muted" style="font-size:0.85em">Co-Axial Master Chronometer.</span></td><td>25,200</td><td>3.5&nbsp;Hz</td><td>55&nbsp;h</td><td><span class="muted">&mdash;</span></td></tr><tr><td><strong>Omega 8900</strong><br><span class="muted" style="font-size:0.85em">Co-Axial Master Chronometer.</span></td><td>25,200</td><td>3.5&nbsp;Hz</td><td>60&nbsp;h</td><td><span class="muted">&mdash;</span></td></tr><tr><td><strong>ETA Powermatic 80 (C07)</strong><br><span class="muted" style="font-size:0.85em">80-hour reserve at 3 Hz.</span></td><td>21,600</td><td>3.0&nbsp;Hz</td><td>80&nbsp;h</td><td>50&deg;</td></tr><tr><td><strong>Hamilton H-10</strong><br><span class="muted" style="font-size:0.85em">ETA C07-based, 80-hour reserve.</span></td><td>21,600</td><td>3.0&nbsp;Hz</td><td>80&nbsp;h</td><td>50&deg;</td></tr><tr><td><strong>Miyota 8215</strong><br><span class="muted" style="font-size:0.85em">Automatic.</span></td><td>21,600</td><td>3.0&nbsp;Hz</td><td>42&nbsp;h</td><td>51&deg;</td></tr><tr><td><strong>Omega 1861</strong><br><span class="muted" style="font-size:0.85em">Speedmaster hand-wound (Lemania).</span></td><td>21,600</td><td>3.0&nbsp;Hz</td><td>48&nbsp;h</td><td>52&deg;</td></tr><tr><td><strong>Seiko 6R15</strong><br><span class="muted" style="font-size:0.85em">Automatic.</span></td><td>21,600</td><td>3.0&nbsp;Hz</td><td>50&nbsp;h</td><td>53&deg;</td></tr><tr><td><strong>Seiko 6R35</strong><br><span class="muted" style="font-size:0.85em">70-hour automatic.</span></td><td>21,600</td><td>3.0&nbsp;Hz</td><td>70&nbsp;h</td><td>53&deg;</td></tr><tr><td><strong>Seiko 7S26</strong><br><span class="muted" style="font-size:0.85em">Automatic (SKX era).</span></td><td>21,600</td><td>3.0&nbsp;Hz</td><td>41&nbsp;h</td><td>53&deg;</td></tr><tr><td><strong>Seiko NH35 / 4R35-36</strong><br><span class="muted" style="font-size:0.85em">Seiko/TMI automatic.</span></td><td>21,600</td><td>3.0&nbsp;Hz</td><td>41&nbsp;h</td><td>53&deg;</td></tr><tr><td><strong>ETA 6497 (Unitas)</strong><br><span class="muted" style="font-size:0.85em">Large hand-wound, sub-seconds at 9.</span></td><td>18,000</td><td>2.5&nbsp;Hz</td><td>46&nbsp;h</td><td>53&deg;</td></tr><tr><td><strong>ETA 6498</strong><br><span class="muted" style="font-size:0.85em">Large hand-wound, sub-seconds at 6.</span></td><td>18,000</td><td>2.5&nbsp;Hz</td><td>46&nbsp;h</td><td>53&deg;</td></tr></tbody>
+        </table></div>
+
+        <h2>What this table cannot tell you</h2>
+        <p>None of these figures is an accuracy specification. Two watches with the same caliber can run twenty seconds a day apart depending on regulation, service history, magnetism and how they are worn. The caliber tells you what the movement is capable of and what to set your timegrapher to &mdash; not how <em>your</em> watch is running. For that, <a href="accuracy.html">measure it</a>.</p>
+
+        <p>This table is the same reference data <a href="https://apps.apple.com/app/id6774091390">Chronograde</a> ships, where entering a caliber fills these specs in automatically. See also <a href="chronometer.html">COSC and METAS explained</a>.</p>
+
+        <footer>
+            &copy; 2026 MW Supply Limited &middot; <a href="./">Chronograde</a> &middot; <a href="privacy.html">Privacy</a>
+        </footer>
+    </div>
+</body>
+</html>

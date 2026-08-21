@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COSC and METAS chronometer standards, explained</title>
+    <meta name="description" content="What COSC and METAS Master Chronometer certification actually test, the exact criteria and tolerances, and how the other standards (Grand Seiko, Rolex Superlative, Patek Seal) compare.">
+    <link rel="canonical" href="https://mwsupplylimited.github.io/chronograde/chronometer.html">
+    <meta property="og:title" content="COSC and METAS chronometer standards, explained">
+    <meta property="og:description" content="What COSC and METAS Master Chronometer certification actually test, the exact criteria and tolerances, and how the other standards (Grand Seiko, Rolex Superlative, Patek Seal) compare.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://mwsupplylimited.github.io/chronograde/chronometer.html">
+    <style>
+        :root {
+            --bg: #ffffff;
+            --fg: #1a1a1a;
+            --muted: #666666;
+            --accent: #e66230;
+            --card: #f5f5f7;
+            --border: #e5e5e7;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #121419;
+                --fg: #f5f5f7;
+                --muted: #9a9a9a;
+                --accent: #ff7d45;
+                --card: #1c1f25;
+                --border: #2a2d34;
+            }
+        }
+        * { box-sizing: border-box; }
+        html { -webkit-text-size-adjust: 100%; }
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+            background: var(--bg);
+            color: var(--fg);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 48px 24px 96px;
+        }
+        .back {
+            display: inline-block;
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-bottom: 32px;
+        }
+        .back:hover { color: var(--accent); }
+        h1 {
+            font-size: 2.2rem;
+            margin: 0 0 8px;
+            letter-spacing: -0.02em;
+        }
+        .subtitle {
+            color: var(--muted);
+            margin: 0 0 40px;
+        }
+        h2 {
+            font-size: 1.3rem;
+            margin: 40px 0 12px;
+            letter-spacing: -0.01em;
+        }
+        h3 {
+            font-size: 1rem;
+            margin: 24px 0 6px;
+            font-weight: 600;
+        }
+        p, li { color: var(--fg); }
+        .muted { color: var(--muted); }
+        ul { padding-left: 22px; }
+        li { margin-bottom: 6px; }
+        a { color: var(--accent); }
+        code {
+            background: var(--card);
+            padding: 1px 6px;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+        .pill {
+            display: inline-block;
+            background: var(--card);
+            border: 1px solid var(--border);
+            padding: 3px 10px;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            color: var(--muted);
+        }
+        footer {
+            margin-top: 64px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
+            color: var(--muted);
+            font-size: 0.85rem;
+        }
+    
+        table { border-collapse: collapse; width: 100%; margin: 16px 0; font-size: 0.95rem; }
+        th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border); }
+        th { color: var(--muted); font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.04em; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a class="back" href="./">&larr; Chronograde</a>
+
+        <h1>Chronometer standards, explained</h1>
+        <p class="subtitle">What COSC and METAS actually certify &mdash; the real criteria, and what they leave out.</p>
+
+        <h2>"Chronometer" is a certification, not a compliment</h2>
+        <p>In watchmaking the word has a legal meaning. A <strong>chronometer</strong> is a watch whose movement has been individually tested by an independent body and passed. It is not a marketing adjective, and it is not the same word as <em>chronograph</em>, which is a stopwatch complication and says nothing about accuracy.</p>
+
+        <h2>COSC</h2>
+        <p>The Contr&ocirc;le Officiel Suisse des Chronom&egrave;tres tests <em>uncased movements</em> over 15 days, in 5 positions and at 3 temperatures. Seven criteria must all pass; the one everyone quotes is the first.</p>
+        <table>
+            <thead><tr><th>Criterion</th><th>Requirement</th></tr></thead>
+            <tbody>
+                <tr><td>Mean daily rate</td><td><strong>&minus;4 to +6 s/day</strong></td></tr>
+                <tr><td>Mean variation in rate</td><td>2 s/day max</td></tr>
+                <tr><td>Greatest variation in rate</td><td>5 s/day max</td></tr>
+                <tr><td>Difference, horizontal vs vertical</td><td>&minus;6 to +8 s/day</td></tr>
+                <tr><td>Largest variation from the mean</td><td>10 s/day max</td></tr>
+                <tr><td>Rate change per &deg;C</td><td>&plusmn;0.6 s/day max</td></tr>
+                <tr><td>Rate resumption</td><td>&plusmn;5 s/day max</td></tr>
+            </tbody>
+        </table>
+        <p class="muted">Note what this does <em>not</em> cover: the movement is tested before it goes into a case, and the certificate belongs to that movement, not to the watch you own today. A COSC movement that has been cased, knocked about for six years and never serviced is not running to COSC any more.</p>
+
+        <h2>METAS Master Chronometer</h2>
+        <p>Introduced by Omega with the Swiss Federal Institute of Metrology, METAS certification is applied to the <strong>fully cased watch</strong>, after COSC certification of the movement. Eight criteria, and two of them are the interesting ones.</p>
+        <table>
+            <thead><tr><th>Criterion</th><th>Requirement</th></tr></thead>
+            <tbody>
+                <tr><td>Average daily rate</td><td><strong>0 to +5 s/day</strong></td></tr>
+                <tr><td>Magnetic resistance</td><td>Functions in <strong>15,000 gauss</strong></td></tr>
+                <tr><td>Rate after magnetic exposure</td><td>Within tolerance, before and after</td></tr>
+                <tr><td>Water resistance, power reserve, deviation across positions and wind states</td><td>All to the stated spec</td></tr>
+            </tbody>
+        </table>
+        <p>The 15,000 gauss figure matters more in daily life than the extra second of rate does. Magnetism is the single most common cause of a suddenly and wildly inaccurate mechanical watch, and it comes from ordinary things &mdash; laptop speakers, magnetic clasps, tablet covers.</p>
+
+        <h2>The others you will see</h2>
+        <ul>
+            <li><strong>Grand Seiko Special / Standard</strong> &mdash; Seiko's own in-house standards, tested in more positions than COSC. The Special standard is tighter than COSC (+4/&minus;2 s/day static).</li>
+            <li><strong>Patek Philippe Seal</strong>, <strong>Rolex Superlative Chronometer</strong> &mdash; in-house standards applied to the cased watch after COSC, both quoting &minus;2/+2 s/day. In-house, so self-certified, but both are stricter numbers than COSC.</li>
+            <li><strong>Qualit&eacute; Fleurier</strong>, <strong>Geneva Seal</strong> &mdash; these certify finishing and origin as much as rate. Do not read them as accuracy claims.</li>
+        </ul>
+
+        <h2>Can I tell if my watch would pass?</h2>
+        <p>Not officially &mdash; certification requires the testing body, and for COSC it requires the movement out of the case. But you can get a well-founded estimate: measure your daily rate over several days, measure it in the standard positions, and compare against the windows above. That is exactly what Chronograde's Chronometer Score does &mdash; it grades your <em>actual</em> readings against the COSC and METAS windows and tells you which criterion is the one holding you back.</p>
+        <p>It is worth being clear that this is an estimate from your own measurements, not a certificate, and Chronograde says so in the app.</p>
+
+        <p>See also: <a href="accuracy.html">is my watch accurate?</a> &middot; <a href="calibers.html">common caliber specs</a> &middot; <a href="https://apps.apple.com/app/id6774091390">Chronograde on the App Store</a></p>
+
+        <footer>
+            &copy; 2026 MW Supply Limited &middot; <a href="./">Chronograde</a> &middot; <a href="privacy.html">Privacy</a>
+        </footer>
+    </div>
+</body>
+</html>
