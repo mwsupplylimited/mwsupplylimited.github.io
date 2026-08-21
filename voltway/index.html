@@ -3,11 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Voltway for Mac — Support</title>
-    <meta name="description" content="Support for Voltway: a live power-flow diagram, deep battery forensics and real charge control for Mac.">
+    <title>Voltway for Mac — live power-flow diagram and battery forensics</title>
+    <meta name="description" content="Voltway shows a live power-flow diagram of your Mac and the battery data macOS keeps to itself. With the optional helper it also holds a charge limit below 80%. Free to use; Pro from $2.99/month.">
+    <link rel="canonical" href="https://mwsupplylimited.github.io/voltway/">
+    <link rel="icon" href="voltway-icon.png" type="image/png">
+    <link rel="apple-touch-icon" href="voltway-icon.png">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="MW Supply Limited">
+    <meta property="og:url" content="https://mwsupplylimited.github.io/voltway/">
+    <meta property="og:title" content="Voltway for Mac — see exactly where your watts go">
+    <meta property="og:description" content="A live power-flow diagram of your Mac, plus learned capacity per cell, cell voltages, impedance and cycles. Optional helper adds charge limits below 80%.">
+    <meta property="og:image" content="https://mwsupplylimited.github.io/voltway/voltway-power-flow.png">
+    <meta property="og:image:width" content="2880">
+    <meta property="og:image:height" content="1800">
+    <meta property="og:image:alt" content="Voltway's Power Flow screen: Wall 40.0 W flowing to Mac 39.3 W, with the battery charging at +0.7 W.">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Voltway for Mac — see exactly where your watts go">
+    <meta name="twitter:description" content="A live power-flow diagram of your Mac, plus learned capacity per cell, cell voltages, impedance and cycles. Optional helper adds charge limits below 80%.">
+    <meta name="twitter:image" content="https://mwsupplylimited.github.io/voltway/voltway-power-flow.png">
     <style>
         :root {
-            --bg: #ffffff; --fg: #11181c; --muted: #5c6b73; --accent: #00857a;
+            --bg: #ffffff; --fg: #11181c; --muted: #5c6b73; --accent: #007a70;
             --card: #f2f7f6; --border: #dfe8e6;
         }
         @media (prefers-color-scheme: dark) {
@@ -40,6 +56,14 @@
         .callout p + p { margin-top: 10px; }
         ol { padding-left: 22px; }
         ol li { margin-bottom: 8px; }
+        figure { margin: 24px 0; }
+        figure img { display: block; width: 100%; max-width: 100%; height: auto; border: 1px solid var(--border); border-radius: 10px; }
+        figcaption { color: var(--muted); font-size: 0.88rem; margin-top: 8px; }
+        .price { margin: 20px 0; }
+        .price ul { list-style: none; padding-left: 0; }
+        .price li { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; margin-bottom: 8px; }
+        .price .amount { font-weight: 600; }
+        .price .note { color: var(--muted); font-size: 0.9rem; }
         footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.88rem; }
     </style>
 </head>
@@ -53,8 +77,20 @@
     <p><a class="cta" href="https://apps.apple.com/app/id6799611503?mt=12">Download on the Mac App Store</a></p>
 
     <h2>What Voltway does</h2>
-    <p>Voltway draws a live power-flow diagram of your Mac — how many watts are coming out of the wall, how many the Mac is using, and whether the battery is charging or supplying — and opens up the battery data macOS keeps to itself: learned capacity per cell, cell voltages, impedance trend, cycle count, and how long the pack has been sitting at a high state of charge.</p>
+    <p>Voltway draws a live power-flow diagram of your Mac — how many watts are coming out of the wall, how many the Mac is using, and whether the battery is charging or supplying — and opens up the battery data macOS keeps to itself: learned full-charge capacity per cell, cell voltages, a live per-cell impedance reading, cycle count, and how long the pack has been sitting at a high state of charge.</p>
     <p>With the optional helper it also controls charging: hold a limit below 80%, set separate stop and resume levels, or run from the adapter without charging at all.</p>
+
+    <figure>
+        <img src="voltway-power-flow.png" width="2880" height="1800" loading="lazy" decoding="async"
+             alt="Voltway's Power Flow screen. A diagram links three boxes: Wall, 40.0 watts from a 96 W USB-C adapter; Mac, 39.3 watts of system draw; and Battery, plus 0.7 watts, charging. A note underneath reads that the adapter is rated 94 W, which is its maximum and not what the Mac is drawing now.">
+        <figcaption>Every flow is measured independently, so Voltway says so rather than pretending the watts add up. The adapter's label rating is shown as a label rating, never as consumption.</figcaption>
+    </figure>
+
+    <figure>
+        <img src="voltway-battery-forensics.png" width="2880" height="1800" loading="lazy" decoding="async"
+             alt="Voltway's Battery screen. A Health card shows Maximum Capacity 100 percent, the number System Settings shows, with nominal divided by design at 99 percent and raw gauge divided by design at 97 percent underneath. Below it a Capacity card lists charge now 4,536 mAh, full charge measured 6,044 mAh, design when new 6,249 mAh, and Qmax learned full-charge capacity per cell.">
+        <figcaption>macOS reports three different health percentages for one pack. Voltway shows all three and explains why they disagree, instead of picking the flattering one.</figcaption>
+    </figure>
 
     <div class="callout">
         <p><strong>Voltway is a Mac app.</strong> There is no iPhone or iPad version, and that is deliberate: Apple provides no way for any third-party app to limit, stop or slow charging on iOS, and iOS exposes no battery health data to apps at all. An iPhone app could only have watched a 5%-rounded number and nagged you, so we did not ship one. Newer iPhones have a built-in charge limit in Settings &rsaquo; Battery &rsaquo; Charging.</p>
@@ -63,19 +99,30 @@
 
     <h2>Charge control on Mac <span class="pill">optional</span></h2>
     <p>Limiting charge means writing to your Mac's system power controller, which needs privileges a Mac App Store app is not allowed to have. Rather than ask for them, Voltway keeps that work in a small, separate, notarized helper that you install yourself. The App Store app never escalates and never installs anything.</p>
-    <p>See the <a href="helper.html">Voltway charge helper</a> page for the download and instructions.</p>
+    <p>The helper is a root background daemon that starts at every boot and listens only on your Mac's loopback interface. The <a href="helper.html">Voltway charge helper</a> page explains exactly what it installs, why it has to work that way, and how to remove it.</p>
+
+    <h2>What is free</h2>
+    <p>Voltway is free to use, and the entire read-only side is free forever: the live power-flow diagram, the full battery forensics, the charge-residency histogram, and CSV export of your charge log. No helper, no privileges, no nagging. Voltway Free keeps the last 7 days of charge history.</p>
 
     <h2>Voltway Pro</h2>
-    <p>Voltway is free to use. The entire read-only side &mdash; the power-flow diagram, the battery forensics, the charge-residency histogram and CSV export &mdash; is free forever. Voltway Free keeps the last 7 days of charge history. No helper, no privileges, no nagging.</p>
-    <p>Voltway Pro adds the charge-control tools &mdash; limits below 80%, separate stop and resume levels, and running on the adapter without charging &mdash; plus unlimited alert rules, quiet hours and repeat reminders, and it keeps your full charge history instead of 7 days. It is available monthly, annually with a 3-day free trial, or as a one-time lifetime purchase.</p>
+    <p>Voltway Pro adds the charge-control tools — hold a limit below 80%, set separate stop and resume levels, and run on the adapter without charging — and it keeps your full charge history instead of the last 7 days. The charge-control tools also need the free helper download; the history is unlocked by Pro alone.</p>
+
+    <div class="price">
+        <ul>
+            <li><span class="amount">$2.99 / month</span></li>
+            <li><span class="amount">$19.99 / year</span> &mdash; <span class="note">includes a 3-day free trial</span></li>
+            <li><span class="amount">$39.99 once</span> &mdash; <span class="note">lifetime, nothing renews</span></li>
+        </ul>
+    </div>
+    <p class="muted">Prices shown are US App Store prices; your own storefront may differ. Subscriptions renew automatically unless cancelled at least 24 hours before the period ends, and are billed to your Apple Account. All three plans unlock the same features.</p>
 
     <h3>Managing or cancelling</h3>
-    <p>App&nbsp;Store &rsaquo; your name &rsaquo; Account Settings &rsaquo; Subscriptions. You can also use <strong>Manage Subscription</strong> on Voltway's Membership screen. Subscriptions renew automatically unless cancelled at least 24 hours before the period ends.</p>
+    <p>App&nbsp;Store &rsaquo; your name &rsaquo; Account Settings &rsaquo; Subscriptions. You can also click <strong>Manage or Cancel Subscription</strong> on Voltway's Membership screen. Subscriptions renew automatically unless cancelled at least 24 hours before the period ends.</p>
 
     <h3>Restoring a purchase</h3>
-    <p>Open Voltway's Membership screen and tap <strong>Restore Purchases</strong>. Make sure you are signed in with the same Apple Account you bought with — a purchase cannot be moved between Apple Accounts.</p>
+    <p>Open Voltway's Membership screen and click <strong>Restore Purchases</strong>. Make sure you are signed in with the same Apple Account you bought with — a purchase cannot be moved between Apple Accounts.</p>
 
-    <h2>Common questions</h2>
+    <h2 id="support">Support &amp; common questions</h2>
 
     <h3>Why does my Mac show three different battery health numbers?</h3>
     <p>Because macOS genuinely reports three. Apple's figure is smoothed and rounded to a whole percent; the other two come straight from the fuel gauge. Voltway shows all three rather than hiding the ones that disagree — track the trend, not any single reading.</p>
@@ -86,11 +133,14 @@
     <h3>Does Voltway drain my battery?</h3>
     <p>It samples only while you are looking at it, and stops when its screens are off-screen. A battery app that costs you battery would be a poor trade.</p>
 
+    <h3>Can I see the impedance trend over months?</h3>
+    <p>Not in the app. Voltway reads per-cell impedance live and shows it every time you open the Battery screen, but it does not store those readings, so there is no chart of them. Write the numbers down if you want to compare them later — what matters is whether they drift upward over months, and whether one cell pulls away from the others.</p>
+
     <h2>Contact</h2>
     <p>Bug reports, questions and feature requests: <a href="mailto:mwsupplylimited@gmail.com">mwsupplylimited@gmail.com</a></p>
 
     <footer>
-        MW Supply Limited &middot; <a href="privacy.html">Privacy Policy</a> &middot; <a href="helper.html">Charge helper</a> &middot; <a href="../">All apps</a>
+        MW Supply Limited &middot; <a href="privacy.html">Privacy Policy</a> &middot; <a href="helper.html">Charge helper</a> &middot; <a href="#support">Support</a> &middot; <a href="../">All apps</a>
     </footer>
 </div>
 </body>

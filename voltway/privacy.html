@@ -4,10 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Voltway for Mac — Privacy Policy</title>
-    <meta name="description" content="Privacy policy for Voltway: battery charge management and power intelligence for Mac.">
+    <meta name="description" content="Privacy policy for Voltway, a Mac battery app: no data collection, no account, no server, no ads. What stays on your Mac, what the optional root helper logs, and how to delete all of it.">
+    <link rel="canonical" href="https://mwsupplylimited.github.io/voltway/privacy.html">
+    <link rel="icon" href="voltway-icon.png" type="image/png">
+    <link rel="apple-touch-icon" href="voltway-icon.png">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="MW Supply Limited">
+    <meta property="og:url" content="https://mwsupplylimited.github.io/voltway/privacy.html">
+    <meta property="og:title" content="Voltway Privacy Policy">
+    <meta property="og:description" content="Voltway does not collect your data. No account, no server, no analytics, no ads. Everything it measures about your battery stays on your Mac.">
+    <meta property="og:image" content="https://mwsupplylimited.github.io/voltway/voltway-power-flow.png">
+    <meta property="og:image:width" content="2880">
+    <meta property="og:image:height" content="1800">
+    <meta property="og:image:alt" content="Voltway's Power Flow screen: Wall 40.0 W flowing to Mac 39.3 W, with the battery charging at +0.7 W.">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Voltway Privacy Policy">
+    <meta name="twitter:description" content="Voltway does not collect your data. No account, no server, no analytics, no ads. Everything it measures about your battery stays on your Mac.">
+    <meta name="twitter:image" content="https://mwsupplylimited.github.io/voltway/voltway-power-flow.png">
     <style>
         :root {
-            --bg: #ffffff; --fg: #11181c; --muted: #5c6b73; --accent: #00857a;
+            --bg: #ffffff; --fg: #11181c; --muted: #5c6b73; --accent: #007a70;
             --card: #f2f7f6; --border: #dfe8e6;
         }
         @media (prefers-color-scheme: dark) {
@@ -32,8 +48,11 @@
         li { margin-bottom: 6px; }
         a { color: var(--accent); }
         code { background: var(--card); border: 1px solid var(--border); padding: 1px 6px; border-radius: 5px; font-size: 0.92em; }
+        pre { background: var(--card); border: 1px solid var(--border); padding: 12px 16px; border-radius: 8px; overflow-x: auto; margin: 12px 0; }
+        pre code { background: none; border: 0; padding: 0; font-size: 0.9rem; }
         .callout { background: var(--card); border: 1px solid var(--border); border-left: 3px solid var(--accent); padding: 16px 20px; border-radius: 8px; margin: 24px 0; }
         .callout p { margin: 0; }
+        .callout p + p { margin-top: 8px; }
         table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95rem; }
         th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
         th { color: var(--muted); font-weight: 600; }
@@ -46,39 +65,46 @@
     <a class="back" href="../">&larr; MW Supply Limited</a>
 
     <h1>Voltway Privacy Policy</h1>
-    <p class="subtitle">Last updated: 10 August 2026</p>
+    <p class="subtitle">Last updated: 21 August 2026</p>
 
     <div class="callout">
         <p class="big">Voltway does not collect your data.</p>
-        <p class="muted" style="margin-top:8px">Everything Voltway measures about your battery stays on your Mac. There is no Voltway account, no Voltway server, and no analytics SDK. We could not look at your battery history even if we wanted to.</p>
+        <p class="muted">Everything Voltway measures about your battery stays on your Mac. There is no Voltway account, no Voltway server, and no analytics SDK. We could not look at your battery history even if we wanted to.</p>
     </div>
 
-    <h2>What stays on your device</h2>
-    <p>Voltway records information about your own battery so it can show you a timeline and trends. All of it is written to your device's local storage and never leaves it.</p>
+    <p>Voltway is a Mac app. There is no iPhone, iPad or web version, and no companion app on any other platform — so everything below describes one program running on one Mac.</p>
+
+    <h2>What stays on your Mac</h2>
+    <p>Voltway records information about your own battery so it can show you a timeline and trends. All of it is written to storage on your Mac and never leaves it.</p>
     <ul>
-        <li>Charge level readings over time, and whether the device was plugged in</li>
+        <li>Charge level readings over time, and whether your Mac was plugged in</li>
         <li>Charge session history (when charging started and stopped)</li>
-        <li>Your alert rules and app settings</li>
-        <li>On Mac: battery telemetry read from the operating system — capacity, cycle count, cell voltages, temperature, adapter details and power flow</li>
+        <li>Your app settings, including any charge limit you have set</li>
+        <li>Battery telemetry read from macOS — capacity, cycle count, cell voltages, impedance, temperature, adapter details and power flow</li>
     </ul>
+    <p class="muted">Voltway Free keeps the last 7 days of charge history and discards anything older; Voltway Pro keeps all of it. Either way the file lives only on your Mac.</p>
 
     <h2>What we never collect</h2>
     <ul>
         <li>No name, email address, phone number or account of any kind</li>
         <li>No location data. Voltway never requests location permission</li>
         <li>No contacts, photos, calendars, messages or files</li>
-        <li>No advertising identifier, unless you use the free tier with ads and explicitly allow tracking (see below)</li>
+        <li>No advertising identifier</li>
         <li>No analytics, crash-reporting or telemetry SDK reporting your usage to us</li>
     </ul>
 
     <h2>Purchases</h2>
-    <p>Voltway Pro is sold through Apple's In-App Purchase. Apple processes the payment; we never see your payment details, card number or billing address. Voltway checks your purchase entitlement directly with Apple on your device to decide whether Pro features are unlocked.</p>
+    <p>Voltway Pro is sold through Apple's In-App Purchase. Apple processes the payment; we never see your payment details, card number or billing address. Voltway checks your purchase entitlement directly with Apple on your Mac to decide whether Pro features are unlocked.</p>
 
     <h2>Advertising</h2>
     <p>Voltway contains no advertising and no ad SDK.</p>
 
-    <h2>The Voltway charge helper (Mac)</h2>
-    <p>The optional Voltway charge helper is a small program you download and install yourself on your Mac. It runs locally and communicates with the Voltway app only over your Mac's own loopback interface (<code>127.0.0.1</code>) — that traffic never leaves your computer. The helper has no networking beyond that, sends nothing to us, and can be removed at any time.</p>
+    <h2>The Voltway charge helper (optional, separate download)</h2>
+    <p>The Voltway charge helper is a separate program you download and install yourself. It is not part of the Mac App Store app, and Voltway works without it. Only install it if you want Voltway to control charging.</p>
+    <p><strong>It runs as a root background daemon.</strong> Once installed, macOS starts it as <code>root</code> at every boot and keeps it running whether or not Voltway is open. That is not incidental: the charge limit it sets lives in registers on your Mac's power controller which are cleared by a power cycle, so something has to be running at boot to put your limit back. The <a href="helper.html">charge helper page</a> lists exactly what the installer places on your Mac.</p>
+    <p><strong>Networking.</strong> The helper talks to the Voltway app over your Mac's own loopback interface only (<code>127.0.0.1</code>, port <code>53845</code>). That traffic never leaves your computer. The helper has no other networking, contacts no server, and sends nothing to us.</p>
+    <p><strong>It writes a log.</strong> The helper keeps a plain-text log at <code>/Library/Logs/Voltway/helper.log</code>, owned by <code>root</code> and readable by anyone with administrator access to your Mac. It records what the helper did and why: your charge-limit settings, and the battery readings behind each decision — state of charge, whether the adapter is connected, whether the pack is charging, and pack temperature. It exists so a Mac that stopped charging can be diagnosed after the fact. It rotates at 512&nbsp;KB and keeps three older copies, so it does not grow without bound. Nothing in it is transmitted anywhere; if you ever want us to see it, you have to send it to us yourself.</p>
+    <p>Because the helper's files sit outside the app's sandbox, they are not removed by deleting Voltway. See <a href="#removing">Removing your data</a>.</p>
 
     <h2>Apple's App Privacy summary</h2>
     <table>
@@ -87,13 +113,25 @@
         <tr><td>Data linked to you</td><td>None</td></tr>
         <tr><td>Data not linked to you</td><td>None</td></tr>
     </table>
-    <p class="muted">Voltway 1.0 collects no data of any kind, on either platform.</p>
+    <p class="muted">Voltway 1.0 collects no data of any kind.</p>
 
     <h2>Children</h2>
     <p>Voltway is a Mac utility, is not directed at children under 13 and does not knowingly collect information from them.</p>
 
-    <h2>Your rights</h2>
-    <p>Because Voltway stores its data only on your device, you are in direct control of it. Deleting the app removes everything it stored locally. There is no server-side copy for us to delete, and no request you need to send us.</p>
+    <h2 id="removing">Removing your data</h2>
+    <p>Because Voltway stores its data only on your Mac, you are in direct control of it. There is no server-side copy for us to delete and no request you need to send us. But dragging the app to the Trash does <strong>not</strong> delete everything, so here is exactly where it all is.</p>
+
+    <h3>The app's own data</h3>
+    <p>Your charge log and settings live in Voltway's App Sandbox container, which macOS deliberately leaves behind when you delete an app:</p>
+    <pre><code>~/Library/Containers/com.mwsupplylimited.voltway/</code></pre>
+    <p>To remove it, delete Voltway, then delete that folder. In Finder, use Go &rsaquo; Go to Folder and paste the path above, or run <code>rm -rf ~/Library/Containers/com.mwsupplylimited.voltway</code> in Terminal. No administrator password is needed — it is your own folder.</p>
+
+    <h3>The charge helper's data</h3>
+    <p>If you installed the optional charge helper, its files are separate, root-owned, and not touched by deleting the app. Remove the helper first, which also restores normal charging:</p>
+    <pre><code>sudo voltway-helper-uninstall</code></pre>
+    <p>Then, to delete its log and your saved charge limit:</p>
+    <pre><code>sudo rm -rf /Library/Logs/Voltway "/Library/Application Support/Voltway"</code></pre>
+    <p class="muted">If you never installed the helper, none of these files exist on your Mac.</p>
 
     <h2>Changes</h2>
     <p>If this policy changes, the revised version will be posted on this page with a new date. Material changes will also be noted in the app's release notes.</p>
@@ -102,7 +140,7 @@
     <p>Questions about privacy in Voltway: <a href="mailto:mwsupplylimited@gmail.com">mwsupplylimited@gmail.com</a></p>
 
     <footer>
-        MW Supply Limited &middot; <a href="index.html">Voltway Support</a> &middot; <a href="../">All apps</a>
+        MW Supply Limited &middot; <a href="index.html">Voltway</a> &middot; <a href="helper.html">Charge helper</a> &middot; <a href="../">All apps</a>
     </footer>
 </div>
 </body>
