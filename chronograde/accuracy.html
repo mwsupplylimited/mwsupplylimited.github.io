@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Is my watch accurate? How to measure a mechanical watch's rate</title>
+    <meta name="description" content="What a good daily rate is for a mechanical watch, how to measure it properly against atomic time, what beat error means, and why your watch runs differently week to week.">
+    <link rel="canonical" href="https://mwsupplylimited.github.io/chronograde/accuracy.html">
+    <meta property="og:title" content="Is my watch accurate? How to measure a mechanical watch's rate">
+    <meta property="og:description" content="What a good daily rate is for a mechanical watch, how to measure it properly against atomic time, what beat error means, and why your watch runs differently week to week.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://mwsupplylimited.github.io/chronograde/accuracy.html">
+    <style>
+        :root {
+            --bg: #ffffff;
+            --fg: #1a1a1a;
+            --muted: #666666;
+            --accent: #e66230;
+            --card: #f5f5f7;
+            --border: #e5e5e7;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #121419;
+                --fg: #f5f5f7;
+                --muted: #9a9a9a;
+                --accent: #ff7d45;
+                --card: #1c1f25;
+                --border: #2a2d34;
+            }
+        }
+        * { box-sizing: border-box; }
+        html { -webkit-text-size-adjust: 100%; }
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+            background: var(--bg);
+            color: var(--fg);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 48px 24px 96px;
+        }
+        .back {
+            display: inline-block;
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-bottom: 32px;
+        }
+        .back:hover { color: var(--accent); }
+        h1 {
+            font-size: 2.2rem;
+            margin: 0 0 8px;
+            letter-spacing: -0.02em;
+        }
+        .subtitle {
+            color: var(--muted);
+            margin: 0 0 40px;
+        }
+        h2 {
+            font-size: 1.3rem;
+            margin: 40px 0 12px;
+            letter-spacing: -0.01em;
+        }
+        h3 {
+            font-size: 1rem;
+            margin: 24px 0 6px;
+            font-weight: 600;
+        }
+        p, li { color: var(--fg); }
+        .muted { color: var(--muted); }
+        ul { padding-left: 22px; }
+        li { margin-bottom: 6px; }
+        a { color: var(--accent); }
+        code {
+            background: var(--card);
+            padding: 1px 6px;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+        .pill {
+            display: inline-block;
+            background: var(--card);
+            border: 1px solid var(--border);
+            padding: 3px 10px;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            color: var(--muted);
+        }
+        footer {
+            margin-top: 64px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
+            color: var(--muted);
+            font-size: 0.85rem;
+        }
+    
+        table { border-collapse: collapse; width: 100%; margin: 16px 0; font-size: 0.95rem; }
+        th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border); }
+        th { color: var(--muted); font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.04em; }
+        .table-wrap { overflow-x: auto; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a class="back" href="./">&larr; Chronograde</a>
+
+        <h1>Is my watch accurate?</h1>
+        <p class="subtitle">What a good daily rate actually is, how to measure one properly, and what to do about a bad number.</p>
+
+        <h2>The short answer</h2>
+        <p>A mechanical watch is not a clock, and it is not supposed to keep clock time. What matters is not whether it is <em>right now</em> &mdash; it is whether it gains or loses the <strong>same amount every day</strong>. A watch that runs a steady +6 seconds a day is a good watch. A watch that runs +2 one day and &minus;9 the next is not, even though its average looks better.</p>
+        <p>So the number you want is the <strong>daily rate</strong>: seconds gained or lost per 24 hours, measured over several days, against a time source that is actually correct.</p>
+
+        <h2>What counts as good</h2>
+        <table>
+            <thead><tr><th>Daily rate</th><th>What it means</th></tr></thead>
+            <tbody>
+                <tr><td><strong>0 to +5 s/day</strong></td><td>METAS Master Chronometer territory. Excellent.</td></tr>
+                <tr><td><strong>&minus;4 to +6 s/day</strong></td><td>COSC chronometer territory. Excellent.</td></tr>
+                <tr><td><strong>within &plusmn;10 s/day</strong></td><td>Very good for an uncertified mechanical watch.</td></tr>
+                <tr><td><strong>within &plusmn;20 s/day</strong></td><td>Normal and perfectly serviceable. A regulation would tighten it.</td></tr>
+                <tr><td><strong>beyond &plusmn;30 s/day</strong></td><td>Worth a service or a regulation.</td></tr>
+            </tbody>
+        </table>
+        <p class="muted">A slightly <em>fast</em> watch is generally preferred to a slow one, which is why COSC's window is asymmetric: you would rather be early than late.</p>
+
+        <h2>How to measure it properly</h2>
+        <p>There are two different measurements and people constantly conflate them.</p>
+
+        <h3>1. Daily rate &mdash; what your watch actually does on your wrist</h3>
+        <p>Note the exact time your watch shows against a correct reference, wait a day or more, and note it again. The difference divided by the elapsed days is your rate. This is the number that matters, because it includes everything: your wrist, the temperature, how you set the watch down at night, the state of the mainspring.</p>
+        <p>The catch is the reference. Your phone's clock is <em>usually</em> right but drifts between network syncs, so a careful measurement queries a time server directly. Chronograde uses SNTP (RFC 4330) against public NTP servers, which is accurate to well under a tenth of a second &mdash; far better than your reaction time pressing a button, which is the real limit here. Press consistently and the error averages out over several readings.</p>
+
+        <h3>2. Instantaneous rate &mdash; what a timegrapher hears</h3>
+        <p>A timegrapher listens to the escapement and computes the rate from the interval between ticks. It gives you an answer in about ten seconds instead of a week, and it also gives you <strong>beat error</strong>, which a daily-rate measurement cannot. But it is a snapshot: it tells you how the watch is running <em>at that instant, in that position, at that state of wind</em>. It does not predict your wrist.</p>
+        <p>Use both. The timegrapher tells you whether the movement is healthy and points at what to adjust. The daily rate tells you whether the watch is any good to live with.</p>
+
+        <h2>Beat error, briefly</h2>
+        <p>The balance wheel swings both ways. Beat error is how unequal those two swings are, in milliseconds. Under about 0.5&nbsp;ms is good; much above 1.0&nbsp;ms and the watch loses amplitude and becomes position-sensitive, and it is worth having corrected. Unlike rate, you cannot fix beat error by turning a regulator arm &mdash; it needs the hairspring collet moved, which is a watchmaker's job.</p>
+
+        <h2>Why your watch is fast one week and slow the next</h2>
+        <ul>
+            <li><strong>Position.</strong> Gravity pulls on the balance differently depending on orientation. Dial up and dial down usually run fastest; the vertical (crown) positions usually run slower. The spread between them is <em>positional variation</em>, and on a healthy, well-adjusted movement it is small.</li>
+            <li><strong>State of wind.</strong> A nearly-unwound mainspring delivers less torque, amplitude drops, and the rate changes with it. Measure at a consistent state of wind.</li>
+            <li><strong>How you store it overnight.</strong> Eight hours in a chosen position is a genuinely useful regulator: if your watch gains on the wrist, resting it in a slow position overnight claws some of that back.</li>
+            <li><strong>Magnetism.</strong> A magnetised hairspring can make a watch gain wildly &mdash; minutes a day. It is cheap and instant to fix with a demagnetiser.</li>
+            <li><strong>Temperature and shocks</strong>, and simply being overdue a service.</li>
+        </ul>
+
+        <h2>What to do about a bad number</h2>
+        <p>If the rate is consistent but off &mdash; steadily +25 s/day, say &mdash; that is a <strong>regulation</strong>, and it is a small adjustment. If the rate is <em>inconsistent</em>, or positional variation is wide, or amplitude is low, regulating it only hides the problem: the movement wants servicing first, then regulating. And if the watch suddenly started gaining minutes, try a demagnetiser before you book anything.</p>
+
+        <h2>Measuring this with Chronograde</h2>
+        <p><a href="https://apps.apple.com/app/id6774091390">Chronograde</a> does both measurements on an iPhone or iPad. The acoustic <strong>Timegrapher is free</strong> &mdash; rest the phone on the caseback and read live rate and beat error. Drift tracking against atomic time, position analysis and chronometer grading are part of the app. See also <a href="chronometer.html">what COSC and METAS actually certify</a> and <a href="calibers.html">reference specs for common calibers</a>.</p>
+
+        <footer>
+            &copy; 2026 MW Supply Limited &middot; <a href="./">Chronograde</a> &middot; <a href="privacy.html">Privacy</a>
+        </footer>
+    </div>
+</body>
+</html>
