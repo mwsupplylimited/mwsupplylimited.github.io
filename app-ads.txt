@@ -5,6 +5,34 @@
 # THIS FILE IS DOMAIN-LEVEL. It authorizes sellers for EVERY MW Supply app whose
 # App Store listing points its Marketing URL at this domain — not for one app.
 #
+# HAND-CORRECTED 2026-08-22 — TWO malformed certification-authority IDs
+# ------------------------------------------------------------------------------
+# Field 4 is a TAG certification-authority ID, which the IAB spec fixes at exactly
+# 16 hex characters. Unity's emitted "missing authorized sellers" block contained
+# two records that are not, and strict validators drop a record whose field 4 is
+# malformed. Both were corrected by hand, but NOT the same way — the difference is
+# the point of this note:
+#
+#   sharethrough.com, uvcax8il  —  had 17 chars (`d53b998a7bd4ecd12`) against the
+#     16-char `d53b998a7bd4ecd2` carried by its THREE sharethrough.com siblings in
+#     this same file. The correct value was therefore knowable, so the stray
+#     trailing `1` was simply deleted.
+#
+#   dauup.com, 34222  —  had 15 chars (`4daba13e2b0dfd9`) and is the file's ONLY
+#     dauup.com record, so there is no sibling to check it against and no way to
+#     know WHICH character was dropped (a leading zero? a digit in the middle?).
+#     Field 4 is OPTIONAL per the spec, so the field was REMOVED rather than a
+#     sixteenth character invented. The record still matches on domain + seller id
+#     + relationship — exactly like the `rubiconproject.com, 25978, RESELLER` and
+#     `smartadserver.com, 3964, RESELLER` three-field records already in this file.
+#     Do not "restore" a guessed value here; if the true TAG ID is ever confirmed
+#     from Unity or dauup, add it back then.
+#
+# If a re-pull from the Unity dashboard reintroduces either form, correct it again
+# and report it upstream — do NOT assume the emitted value is the newer or truer
+# one. No demand path was ever de-authorized by either defect; this is file hygiene,
+# so that a future REAL invalid line is not lost in the noise.
+#
 # REMOVED 2026-07-24 — google.com, pub-9269785449468392, DIRECT, f08c47fec0942fa0
 # ------------------------------------------------------------------------------
 # That AdMob publisher account was BANNED ACCOUNT-WIDE for invalid traffic and the
@@ -64,7 +92,7 @@ brightmountainmedia.com, 2686958, RESELLER
 connekt.ai, 5585919044, RESELLER
 conversantmedia.com, 41024, RESELLER, 03113cd04947736d
 copper6.com, 766114, RESELLER
-dauup.com, 34222, RESELLER, 4daba13e2b0dfd9
+dauup.com, 34222, RESELLER
 e-planning.net, 6a7f877127485fdb, RESELLER, c1ba615865ed87b2
 google.com, pub-1682595508078257, RESELLER, f08c47fec0942fa0
 google.com, pub-2923085774557613, RESELLER, f08c47fec0942fa0
@@ -130,7 +158,7 @@ rubiconproject.com, 28341, RESELLER, 0bfd66d529a55807
 sharethrough.com, 3713, RESELLER, d53b998a7bd4ecd2
 sharethrough.com, 4568, RESELLER, d53b998a7bd4ecd2
 sharethrough.com, 5828, RESELLER, d53b998a7bd4ecd2
-sharethrough.com, uvcax8il, RESELLER, d53b998a7bd4ecd12
+sharethrough.com, uvcax8il, RESELLER, d53b998a7bd4ecd2
 smaato.com, 1100047589, RESELLER, 07bcf65f187117b4
 smaato.com, 1100058938, RESELLER, 07bcf65f187117b4
 smaato.com, 1100059563, RESELLER, 07bcf65f187117b4

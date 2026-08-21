@@ -41,7 +41,11 @@
             :root { --bg: #0f1217; --fg: #f5f5f7; --muted: #9a9a9a; --accent: #5b8cff; --card: #1a1d24; --border: #2a2d34; }
         }
         * { box-sizing: border-box; }
-        html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+        html { -webkit-text-size-adjust: 100%; }
+        /* Smooth scrolling is OPT-IN, not opt-out: a scripted scroll is a vestibular trigger and
+           `scroll-behavior: smooth` has no other escape hatch, so it is gated on the reader not
+           having asked the OS for reduced motion. WCAG 2.2 SC 2.3.3. */
+        @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
         body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif; background: var(--bg); color: var(--fg); line-height: 1.6; -webkit-font-smoothing: antialiased; }
         .container { max-width: 880px; margin: 0 auto; padding: 0 24px; }
         a { color: var(--accent); text-decoration: none; }
@@ -50,7 +54,10 @@
 
         .hero { background: linear-gradient(150deg, var(--brandA), var(--brandB)); color: #fff; padding: 64px 0 76px; text-align: center; }
         .hero .badge { display: inline-block; background: rgba(255,255,255,0.18); border-radius: 999px; padding: 4px 14px; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.02em; }
-        .hero h1 { font-size: 2.6rem; line-height: 1.1; margin: 18px 0 10px; font-weight: 800; }
+        /* clamp, not a flat 2.6rem: the h1 names three regions now, and at 375pt an unclamped
+           2.6rem wrapped it to four lines. The vw term only bites below ~394px, so desktop is
+           unchanged and every current iPhone width lands on the 1.95rem floor. */
+        .hero h1 { font-size: clamp(1.95rem, 6.6vw, 2.6rem); line-height: 1.1; margin: 18px 0 10px; font-weight: 800; }
         .hero p.lead { font-size: 1.2rem; max-width: 620px; margin: 0 auto 28px; color: rgba(255,255,255,0.94); }
         .store { display: inline-flex; align-items: center; gap: 9px; background: #000; color: #fff; border-radius: 13px; padding: 11px 22px; font-weight: 600; }
         .store:hover { text-decoration: none; opacity: 0.9; }
@@ -60,7 +67,13 @@
         .free { display: block; margin-top: 12px; font-size: 0.85rem; color: rgba(255,255,255,0.82); }
 
         .shots { display: flex; gap: 18px; justify-content: center; flex-wrap: wrap; margin: -44px 0 8px; }
-        .shots img { width: 220px; max-width: 42vw; border-radius: 22px; box-shadow: 0 14px 40px rgba(0,0,0,0.22); border: 1px solid var(--border); background: #fff; }
+        /* `height: auto` is load-bearing, not tidiness. The <img> tags carry width="552"
+           height="1200" (correct intrinsic size, and there so the browser reserves space
+           before the JPEG loads). Those attributes are presentational hints, so the CSS
+           `width: 220px` below overrides the WIDTH hint — but nothing was overriding the
+           HEIGHT hint, so each shot rendered 220x1200 instead of 220x478: stretched 2.5x
+           vertically. `height: auto` hands the height back to the aspect ratio. */
+        .shots img { width: 220px; height: auto; max-width: 42vw; border-radius: 22px; box-shadow: 0 14px 40px rgba(0,0,0,0.22); border: 1px solid var(--border); background: #fff; }
 
         section { padding: 40px 0; }
         h2 { font-size: 1.5rem; margin: 0 0 18px; }
@@ -75,8 +88,12 @@
     <div class="hero">
         <div class="container">
             <span class="badge">Departly</span>
-            <h1>One app for every Hong&nbsp;Kong commute</h1>
-            <p class="lead">Bus, minibus, rail, Light Rail, tram and ferry — live arrivals, door-to-door trip planning, and a get-off reminder that works even underground. Macau and the Hong&nbsp;Kong–Macau crossing too. In Singapore: live LTA bus arrivals, the published MRT and LRT timetable, and Public Transport Council distance-band fares.</p>
+            <h1>One app for every Hong&nbsp;Kong, Macau and Singapore commute</h1>
+            <!-- Kept short on purpose: the Singapore and Macau detail that used to live here now has
+                 its own card below, and at 375pt the long version ran to ten lines of hero text. What
+                 has to stay is the free/paid line — Macau is genuinely gated (StoreManager.gatedRegions)
+                 and this is the page a rider decides from. -->
+            <p class="lead">Bus, minibus, rail, MRT, Light Rail, tram and ferry — live arrivals, door-to-door planning, and a get-off reminder that works even underground. Free in Hong&nbsp;Kong and Singapore; Macau and the crossing need Departly&nbsp;Pro or the 7-day Macau Tourist Pass.</p>
             <!-- `ct` tags this as a web install in App Store Connect → App Analytics → Campaigns.
                  Without it every install from this page is indistinguishable from organic search,
                  so the page can never be shown to have worked. `pt` (provider token) is omitted
@@ -86,11 +103,11 @@
                 <svg viewBox="0 0 384 512" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C73.3 141.2 24 184.8 24 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
                 <span><small>Download on the</small><span class="big">App Store</span></span>
             </a>
-            <span class="free">Free, with optional Departly Pro · English · 繁體中文 · 简体中文</span>
+            <span class="free">Free, with optional Departly Pro · English · <span lang="zh-Hant">繁體中文</span> · <span lang="zh-Hans">简体中文</span> · <span lang="pt">Português</span> (Macau place names)</span>
         </div>
     </div>
 
-    <div class="container">
+    <main class="container">
         <div class="shots">
             <img src="assets/shot_home.jpg" alt="Departly Home with the Plan a Trip hero" loading="lazy" width="552" height="1200">
             <img src="assets/shot_train.jpg" alt="Nearest station with the next trains each direction" loading="lazy" width="552" height="1200">
@@ -100,11 +117,13 @@
         <section>
             <h2>Everything that moves Hong Kong, Macau and Singapore, in one place</h2>
             <div class="grid">
-                <div class="card"><h3>Plan a trip, door to door</h3><p>Enter where you are and where you're going. Departly compares franchised buses, New Lantau Bus, green minibuses, heavy rail, Light Rail and trams, and works out the transfers and fare for you.</p></div>
+                <div class="card"><h3>Plan a trip, door to door</h3><p>Enter where you are and where you're going. Departly compares franchised buses, New Lantau Bus, green minibuses, heavy rail, Light Rail, trams and ferries — and in Singapore, MRT, LRT and public buses — then works out the transfers and the fare for you.</p></div>
                 <div class="card"><h3>Live arrivals for every mode</h3><p>Real-time arrivals for buses, minibuses, rail and Light Rail, refreshed automatically — and the next several departures at each stop, not just one.</p></div>
                 <div class="card"><h3>Get off at the right stop</h3><p>Set a get-off reminder and relax. Departly alerts you as you approach your stop — even with the screen locked, and even underground.</p></div>
-                <div class="card"><h3>Fares up front</h3><p>See the fare for every leg <em>and</em> the whole trip before you go — for Adult, Child, Elderly or Student, with official rail concessions.</p></div>
+                <div class="card"><h3>Fares up front</h3><p>See the fare for every leg <em>and</em> the whole trip before you go — for Adult, Child, Elderly or Student, with official rail concessions. Singapore fares are estimated from the Public Transport Council's published distance bands.</p></div>
                 <div class="card"><h3>Nearby, at a glance</h3><p>Your nearest stops and stations with a live departure board, plus favourites for the routes you use most.</p></div>
+                <div class="card"><h3>Singapore, end to end</h3><p>Live LTA bus arrivals at every bus stop, the published MRT and LRT timetable, and a distance-band fare estimate for the whole journey.</p></div>
+                <div class="card"><h3>Macau and the crossing</h3><p>Plan inside Macau, and across the Hong&nbsp;Kong–Macau ferry and bridge-shuttle crossings. Macau planning needs Departly Pro or the one-off 7-day Macau Tourist Pass — everything else on this page is free.</p></div>
                 <div class="card"><h3>Widgets &amp; Apple&nbsp;Watch</h3><p>Home- and Lock-Screen widgets, Live Activities, and an Apple Watch app keep your next departure one glance away.</p></div>
             </div>
         </section>
@@ -119,7 +138,7 @@
         <section>
             <h2>Departly Pro</h2>
             <div class="card">
-                <p style="color:var(--fg)">Departly is free, with trip planning, live arrivals and the get-off reminder for everyone. <strong>Departly Pro</strong> (a monthly or yearly auto-renewable subscription) removes ads and unlocks extras; free users can also earn or buy tokens to unlock individual Pro features without subscribing. Subscriptions renew automatically unless cancelled at least 24 hours before the period ends — manage or cancel anytime in your account settings.</p>
+                <p style="color:var(--fg)">Departly is free, with trip planning, live arrivals and the get-off reminder for everyone. <strong>Departly Pro</strong> (a monthly or yearly auto-renewable subscription) removes ads and unlocks extras; free users can also earn or buy tokens to unlock individual Pro features without subscribing. Planning across Macau and the Hong&nbsp;Kong–Macau crossing needs Departly Pro or the one-off 7-day <strong>Macau Tourist Pass</strong> (a single 7-day purchase, not a subscription) — trip planning, live arrivals and the get-off reminder in Hong Kong and Singapore stay free. Subscriptions renew automatically unless cancelled at least 24 hours before the period ends — manage or cancel anytime in your account settings.</p>
             </div>
         </section>
 
@@ -132,7 +151,7 @@
                 <p style="color:var(--fg)"><strong>Are the times official?</strong><br>Departly shows the estimates operators publish — as Hong Kong public sector information, and in Singapore via LTA DataMall. Singapore bus arrivals are live; Singapore train times are the published timetable, because LTA does not publish real-time train arrivals. Macau times come from the published timetable too. Times and fares are estimates and can change with traffic.</p>
             </div>
             <div class="card">
-                <p style="color:var(--fg)"><strong>Is Departly affiliated with the transport operators?</strong><br>No. Departly is an independent app and is not affiliated with, endorsed by, or operated by any transport operator or the Government of the HKSAR.</p>
+                <p style="color:var(--fg)"><strong>Is Departly affiliated with the transport operators?</strong><br>No. Departly is an independent app and is not affiliated with, endorsed by, or operated by any transport operator, the Government of the HKSAR, the Macao SAR Government, or the Land Transport Authority of Singapore.</p>
             </div>
         </section>
 
@@ -141,6 +160,9 @@
             <div class="card"><p style="color:var(--fg)">Questions, bugs or feedback: <a href="mailto:mwsupplylimited@gmail.com">mwsupplylimited@gmail.com</a> &nbsp;·&nbsp; <a href="privacy.html">Privacy Policy</a></p></div>
         </section>
 
+    </main>
+
+    <div class="container">
         <footer>
             <p>Departly uses real-time and route data obtained from <a href="https://data.gov.hk/">DATA.GOV.HK</a>, provided by the Transport Department, MTR Corporation (heavy rail, Light Rail and MTR Bus), KMB, Long Win Bus, Citybus, New Lantau Bus, the green minibus operators and Hong Kong Tramways. Macau bus route and stop data comes from the Macao SAR Government Open Data Platform (DSAT bus-route dataset). Departly contains information from LTA DataMall (BusStops, BusRoutes, BusServices, GTFSScheduleTrain) accessed on 15 August 2026 from <a href="https://datamall.lta.gov.sg">https://datamall.lta.gov.sg</a>, made available under the terms of the <a href="https://datamall.lta.gov.sg/content/datamall/en/SingaporeOpenDataLicence.html">Singapore Open Data Licence version 1.0</a>. Intellectual property rights of the data belong to the respective providers.</p>
             <p>© 2026 mwsupplylimited. All rights reserved.</p>
