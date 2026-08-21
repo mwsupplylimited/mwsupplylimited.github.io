@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Corynx Fan Helper</title>
-    <meta name="description" content="Boost-only fan control for Corynx — run your Mac's fans harder under load, with automatic safety revert.">
+    <meta name="description" content="Supervised fan control for Corynx — set your Mac's fan speed, with temperature supervision and automatic revert.">
     <style>
         :root { --bg:#ffffff; --fg:#1a1a1a; --muted:#666; --accent:#129e88; --card:#f5f5f7; --border:#e5e5e7; --warn:#b25000; }
         @media (prefers-color-scheme: dark) { :root { --bg:#121419; --fg:#f5f5f7; --muted:#9a9a9a; --accent:#3ad9c0; --card:#1c1f25; --border:#2a2d34; --warn:#ffb37a; } }
@@ -33,7 +33,7 @@
     <div class="container">
         <a class="back" href="./">&larr; Corynx Support</a>
         <h1>Corynx Fan Helper</h1>
-        <p class="subtitle">Take manual control of your Mac's fans &mdash; <strong>boost-only</strong>, with automatic safety revert.</p>
+        <p class="subtitle">Take manual control of your Mac's fans &mdash; <strong>temperature-supervised</strong>, with automatic revert.</p>
 
         <div class="callout">
             <p><a class="dl" href="./CorynxFanHelper.pkg" download>Download Fan Helper</a></p>
@@ -41,7 +41,7 @@
         </div>
 
         <div class="callout warn">
-            <p><strong>Boost-only &amp; safe.</strong> The Fan Helper can only make your fans spin <em>faster</em> than macOS would &mdash; it never sets them below your Mac's minimum and never turns them off. macOS still forces full cooling if things get hot. Everything returns to automatic the moment you turn it off, quit Corynx, or restart your Mac.</p>
+            <p><strong>Supervised, not unrestricted.</strong> Speeds are clamped to each fan's own hardware range &mdash; but that range reaches lower than the speed macOS may have chosen under load, so a low setting can cool your Mac <em>less</em> than leaving it automatic. What keeps it safe is the supervision: the helper re-reads temperature every second and forces every fan to maximum above the ceiling, hands control back if Corynx stops checking in, and reverts if no temperature sensor answers. Everything returns to automatic the moment you turn it off, quit Corynx, or restart your Mac.</p>
         </div>
 
         <h2>Install</h2>
@@ -68,7 +68,7 @@
         <h2>Private &amp; safe by design</h2>
         <ul>
             <li>Runs entirely on your Mac with <strong>no network connections</strong>.</li>
-            <li>Boost-only: an error can only ever make your Mac <em>cooler</em>, never hotter.</li>
+            <li>Temperature-supervised: fans are forced to maximum above the safety ceiling, and handed back to macOS if supervision is ever lost.</li>
             <li>A built-in safety override forces fans to maximum if any sensor approaches a thermal limit.</li>
         </ul>
 
