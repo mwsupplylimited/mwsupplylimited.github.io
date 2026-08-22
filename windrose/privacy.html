@@ -34,7 +34,7 @@
     <div class="container">
         <a class="back" href="index.html">&larr; Windrose Support</a>
         <h1>Windrose Privacy Policy</h1>
-        <p class="updated">Last updated: 11 June 2026</p>
+        <p class="updated">Last updated: 22 August 2026</p>
 
         <div class="callout"><p><strong>In short:</strong> Windrose does not collect, store, or sell your personal information itself. There are no accounts, and your location is used only to fetch weather for you. Windrose uses a privacy-first analytics service (TelemetryDeck) to count anonymous, aggregated usage, and on the free plan a third-party advertising provider (Unity Ads) shows ads and may collect device and ad-interaction data as described in the Advertising section below. The optional <strong>Windrose Pro</strong> subscription removes all ads.</p></div>
 
@@ -48,12 +48,16 @@
         <p>Your saved places, app settings, and the most recent forecast (cached so the app works briefly offline) are stored only on your device. Removing the app deletes this data.</p>
 
         <h2>Weather data providers</h2>
-        <p>Windrose retrieves weather information from the following third-party services. Requests contain only the location and parameters needed to return weather data; they do not contain personal information about you. Each provider may log technical request metadata (such as IP address) under its own privacy policy:</p>
+        <p>Windrose retrieves weather information from the third-party services below &mdash; this is the complete list. Requests contain only the location and parameters needed to return weather data; they do not contain personal information about you, and there is no account to tie them to. Each provider may log technical request metadata (such as IP address) under its own privacy policy. Map and radar tiles are requested by tile coordinate, which describes a square of the map you are looking at rather than your device&rsquo;s position:</p>
         <ul>
-            <li><a href="https://open-meteo.com">Open-Meteo</a> — forecast, marine and air-quality data.</li>
-            <li><a href="https://www.rainviewer.com">RainViewer</a> — precipitation radar and satellite imagery.</li>
-            <li><a href="https://aviationweather.gov">NOAA Aviation Weather Center</a> — aviation reports (METAR/TAF/SIGMET).</li>
-            <li><a href="https://www.weather.gov">U.S. National Weather Service (NOAA)</a> — severe-weather alerts.</li>
+            <li><a href="https://open-meteo.com">Open-Meteo</a> &mdash; forecast, marine, air-quality and ensemble data, winds and temperatures aloft, and place-name search.</li>
+            <li><a href="https://www.rainviewer.com">RainViewer</a> &mdash; precipitation radar imagery.</li>
+            <li><a href="https://nasa-gibs.github.io/gibs-api-docs/">NASA GIBS</a> &mdash; satellite cloud imagery (NOAA GOES and JMA Himawari).</li>
+            <li><a href="https://aviationweather.gov">NOAA Aviation Weather Center</a> &mdash; aviation reports (METAR/TAF/SIGMET).</li>
+            <li><a href="https://www.weather.gov">U.S. National Weather Service (NOAA)</a> &mdash; severe-weather alerts.</li>
+            <li><a href="https://www.hko.gov.hk">Hong Kong Observatory</a> &mdash; Hong Kong warnings and typhoon signals.</li>
+            <li><a href="https://www.jma.go.jp">Japan Meteorological Agency</a> and the U.S. Navy&rsquo;s <a href="https://www.metoc.navy.mil/jtwc/jtwc.html">Joint Typhoon Warning Center</a> &mdash; tropical-cyclone tracks and forecast cones.</li>
+            <li><strong>GitHub Pages</strong> &mdash; the pressure map&rsquo;s surface-pressure grid (derived from NOAA GFS) is published as a static file on GitHub&rsquo;s hosting and downloaded once per session. GitHub may log the request under its own <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">privacy statement</a>.</li>
         </ul>
 
         <h2>Subscriptions</h2>

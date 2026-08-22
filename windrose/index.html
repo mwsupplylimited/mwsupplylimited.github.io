@@ -171,7 +171,7 @@
                 <tr><td>Saved places</td><td>2 + current</td><td>Unlimited</td></tr>
                 <tr><td>Ads</td><td>One banner on the weather screen</td><td class="yes">None</td></tr>
                 <tr><td>Rain forecast on the radar</td><td class="no">—</td><td class="yes">✓</td></tr>
-                <tr><td>Satellite cloud layers</td><td class="no">—</td><td class="yes">✓</td></tr>
+                <tr><td>Satellite cloud layers <small>(Americas, Pacific &amp; Asia)</small></td><td class="no">—</td><td class="yes">✓</td></tr>
                 <tr><td>Interactive pressure map</td><td class="no">—</td><td class="yes">✓</td></tr>
                 <tr><td>Marine mode</td><td class="no">—</td><td class="yes">✓</td></tr>
                 <tr><td>Aviation mode</td><td class="no">—</td><td class="yes">✓</td></tr>
@@ -201,10 +201,12 @@
         <p class="lede">No proprietary model, no invented precision — Windrose is honest about its sources.</p>
         <ul>
             <li>Forecasts, marine and air-quality data: <a href="https://open-meteo.com">Open-Meteo</a></li>
-            <li>Precipitation radar and satellite imagery: <a href="https://www.rainviewer.com">RainViewer</a></li>
+            <li>Precipitation radar: <a href="https://www.rainviewer.com">RainViewer</a></li>
+            <li>Satellite cloud imagery: NOAA <abbr title="Geostationary Operational Environmental Satellite">GOES</abbr> and JMA Himawari, via <a href="https://nasa-gibs.github.io/gibs-api-docs/">NASA GIBS</a></li>
             <li>Aviation reports (METAR/TAF/SIGMET): <a href="https://aviationweather.gov">NOAA Aviation Weather Center</a></li>
             <li>Warnings: the <a href="https://www.hko.gov.hk">Hong Kong Observatory</a> and the US <a href="https://www.weather.gov">National Weather Service</a></li>
             <li>Tropical-cyclone tracks: the Japan Meteorological Agency and the Joint Typhoon Warning Center</li>
+            <li>Surface-pressure analysis for the pressure map: <a href="https://www.ncei.noaa.gov">NOAA GFS</a></li>
         </ul>
         <div class="callout"><p><strong>Important:</strong> Windrose is an informational aid and a supplement to — not a replacement for — official sources. Do not use it as the primary means of weather decision-making for flight, marine navigation, or any safety-critical activity. Always consult certified briefings and official warnings.</p></div>
     </div>
@@ -228,6 +230,12 @@
 
         <h3>How accurate is the aviation data?</h3>
         <p>METARs, TAFs and SIGMETs come directly from the NOAA Aviation Weather Center; winds aloft are computed from numerical weather models. Windrose is for situational awareness only and is <strong>not</strong> a certified source for flight planning. Always obtain an official weather briefing.</p>
+
+        <h3>Where is satellite cloud imagery available?</h3>
+        <p>Satellite comes from the NOAA <strong>GOES</strong> pair and Japan's <strong>Himawari</strong>, delivered by NASA GIBS. Between them they see the <strong>Americas, the Pacific and Asia</strong>. There is no geostationary source wired up for Europe, Africa or the Middle East, so in those regions the satellite layer is unavailable and Windrose says so on the map rather than showing you an empty one. The precipitation radar is unaffected and stays global.</p>
+
+        <h3>Which countries have official warnings?</h3>
+        <p><strong>Hong Kong and the United States only.</strong> Windrose carries Hong Kong Observatory signals (rainstorm, typhoon, thunderstorm, landslip and the rest) and US National Weather Service watches and warnings. Everywhere else there is no government warning source connected, and the app tells you that on the weather screen instead of leaving the section empty — an empty warnings list would read as &ldquo;nothing is in force&rdquo;, which is the last thing a safety feature should imply. Warnings are free for everyone in both territories, permanently.</p>
 
         <h3>Which tropical cyclones does it track?</h3>
         <p>Storm tracks, forecast cones and development areas come from the Japan Meteorological Agency and the Joint Typhoon Warning Center, which cover the <strong>West Pacific basin</strong>. Storms in other basins are not currently tracked.</p>
