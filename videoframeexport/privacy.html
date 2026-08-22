@@ -89,7 +89,7 @@
         <a class="back" href="./">&larr; Video Frame Export Support</a>
 
         <h1>Video Frame Export Privacy Policy</h1>
-        <p class="meta">Effective 28 May 2026 · Last updated 15 August 2026</p>
+        <p class="meta">Effective 28 May 2026 · Last updated 21 August 2026</p>
 
         <div class="callout">
             <p><strong>Summary:</strong> Video Frame Export does not collect personal data &mdash; there is no account and no login. It does record anonymous product analytics (which screens are used, whether a purchase completed) tied to a random identifier that is not linked to you or your device, described in Section&nbsp;6. Your videos and exported frames stay on your device, or inside your own private iCloud database. The app is free with ads: on the free plan a third-party advertising provider (Unity LevelPlay, formerly ironSource) shows ads and may collect device and ad-interaction data as described in Section&nbsp;5. The optional <strong>Pro</strong> upgrade removes all ads.</p>
@@ -104,14 +104,16 @@
         <ul>
             <li><strong>Choosing a video</strong> uses Apple's system photo picker (PHPicker). The app receives only the single video you select for that session and has no other access to your photo library.</li>
             <li><strong>Saving an exported frame</strong> uses iOS's "Add Only" Photos authorization (NSPhotoLibraryAddUsageDescription). The app can add a photo to your library but cannot read existing photos.</li>
-            <li>Videos you pick are copied to a temporary location on your device only so the app can decode them, and are removed by iOS when the app no longer needs them.</li>
+            <li><strong>Videos you pick</strong> from Photos or the Files app are copied to a temporary location on your device only so the app can decode them. That copy is short-lived: the app clears leftovers each time it launches, and iOS reclaims the rest.</li>
+            <li><strong>Videos you share into the app</strong> &mdash; using the Share button in Photos, Files, Messages or any other app &mdash; are kept for longer, on purpose. A share hand-off cannot open the app for you, so the video is copied into the app's own storage and waits there until you come back to it. It stays until <em>you</em> delete it. You can see everything that is waiting, and its total size, on the app's Imported videos screen, and remove items individually or all at once; Settings shows the same total. Deleting removes the app's copy only &mdash; the original stays wherever you shared it from, untouched. These copies are working copies, so they are excluded from device backups.</li>
+            <li>Neither kind of copy leaves your device. The app never uploads a video anywhere, and never modifies or deletes your original.</li>
         </ul>
 
         <h2>3. iCloud sync (Pro feature)</h2>
         <p>If you subscribe to Pro, frames you export are also saved to an in-app Library that syncs across your own Apple devices via Apple CloudKit. This data is stored exclusively in <em>your</em> private CloudKit database, under your Apple ID. MW Supply Limited has no access to, and never receives a copy of, the contents of your Library. iCloud sync follows Apple's own privacy practices.</p>
 
-        <h2>4. Subscriptions</h2>
-        <p>Pro is sold as an auto-renewing subscription via Apple's In-App Purchase. All purchase and payment processing is handled entirely by Apple. We receive aggregated, anonymous sales reports from App Store Connect; we do not receive your name, email address, billing details, or any personally-identifying information about subscribers.</p>
+        <h2>4. Subscriptions and one-time purchases</h2>
+        <p>Pro is sold two ways, both through Apple's In-App Purchase: as an auto-renewing subscription (monthly or yearly), or as <strong>Lifetime</strong>, a single one-time purchase that is not a subscription and never renews. All purchase and payment processing is handled entirely by Apple. We receive aggregated, anonymous sales reports from App Store Connect; we do not receive your name, email address, billing details, or any personally-identifying information about subscribers or buyers.</p>
 
         <h2>5. Advertising (free plan) and App Tracking Transparency</h2>
         <p>On the free plan, Video Frame Export shows ads using <strong>Unity LevelPlay</strong> (the mediation platform formerly known as ironSource), which selects ads from Unity Ads, ironSource Ads and their demand partners. Three kinds of ad appear:</p>
