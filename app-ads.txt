@@ -52,8 +52,14 @@
 # Rostra 1.2.0+ and Departly 1.9+ (app key 2784e03d5) are monetized through Unity
 # LevelPlay mediating Unity Ads and ironSource Ads. Departly 1.8.1 and earlier used
 # the banned AdMob account above; it migrated 2026-08-08 and its Marketing URL is
-# https://mwsupplylimited.github.io/departly/, on this domain. Money Flow 1.10 and earlier used the banned AdMob account above
-# and is superseded.
+# https://mwsupplylimited.github.io/departly/, on this domain.
+#
+# Money Flow 1.10 and earlier (the version live on the App Store as of 2026-08-22)
+# still ships the banned AdMob account above and therefore has no fill; from Money
+# Flow 1.11 the Google Mobile Ads SDK and Google's UMP are removed from the app
+# entirely and its demand comes from Unity LevelPlay mediating Unity Ads ONLY.
+# AppLovin, Mintegral and Vungle adapters were trialled and REMOVED before 1.11
+# shipped, so do NOT add their seller lines here on Money Flow's account.
 #
 # This file is DOMAIN-level, so it already covered Body Clock and Rostra the moment
 # each app's Marketing URL pointed here — the lines above are documentation catching

@@ -3,8 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Money Flow: Budget &amp; Expenses — Support</title>
-    <meta name="description" content="Support page for Money Flow: Budget &amp; Expenses on iOS: scan receipts, track spending and budgets, subscriptions, charts, widgets, iCloud sync, and CSV/Excel import & export.">
+    <title>Money Flow: Budget &amp; Expenses — for iPhone, iPad and Mac</title>
+    <meta name="description" content="Money Flow is a private budget and expense tracker for iPhone, iPad and Mac. No bank logins and no Plaid — you enter or import your own data, and it stays on your device and your own iCloud. Budgets, recurring bills, Safe to Spend, charts, widgets and CSV/Excel import & export.">
+    <link rel="canonical" href="https://mwsupplylimited.github.io/financetracker/">
+    <!-- Smart App Banner: on iOS Safari this surfaces an install button above the page, which is the
+         single highest-converting thing a landing page can do for an app. Same pattern as /departly/. -->
+    <meta name="apple-itunes-app" content="app-id=6774435400">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="MW Supply Limited">
+    <meta property="og:url" content="https://mwsupplylimited.github.io/financetracker/">
+    <meta property="og:title" content="Money Flow — budget and expense tracking for iPhone, iPad and Mac">
+    <meta property="og:description" content="A private personal-finance tracker with no bank linking. Log expenses, income and transfers, set budgets and goals, and see Safe to Spend at a glance. Your data stays on your device and your own iCloud.">
+    <!-- No og:image / twitter:image: this page ships no screenshot asset, and pointing either tag at a
+         file that does not exist renders a broken card. `summary` (not `summary_large_image`) is the
+         correct card type for an image-less page. Upgrade both when a real screenshot lands here. -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Money Flow — budget and expense tracking for iPhone, iPad and Mac">
+    <meta name="twitter:description" content="A private personal-finance tracker with no bank linking. Your data stays on your device and your own iCloud.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%231f9d57'/><text y='72' x='50' font-size='62' text-anchor='middle' fill='white' font-family='Arial'>M</text></svg>">
     <style>
         :root {
             --bg: #ffffff;
@@ -48,6 +64,22 @@
         a { color: var(--accent); }
         code { background: var(--card); border: 1px solid var(--border); padding: 1px 5px; border-radius: 4px; font-size: 0.9em; }
         footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.85rem; }
+        /* App Store buttons. Same black-pill treatment as /departly/ so every MW Supply page reads as
+           one site; `flex-wrap` keeps the two of them from overflowing at 320pt. */
+        .stores { display: flex; flex-wrap: wrap; gap: 12px; margin: 20px 0 8px; }
+        .store { display: inline-flex; align-items: center; gap: 9px; background: #000; color: #fff; border-radius: 13px; padding: 11px 20px; font-weight: 600; text-decoration: none; }
+        .store:hover { opacity: 0.9; }
+        .store svg { width: 22px; height: 22px; fill: #fff; flex: none; }
+        .store small { display: block; font-size: 0.68rem; font-weight: 400; line-height: 1.1; opacity: 0.85; }
+        .store .big { font-size: 1.02rem; line-height: 1.15; }
+        .storenote { color: var(--muted); font-size: 0.88rem; margin: 0 0 8px; }
+        /* Platform comparison. `auto-fit` + `minmax` collapses to one column on a phone without a
+           media query, and a table would have scrolled horizontally there. */
+        .platforms { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 14px; margin: 18px 0 8px; }
+        .plat { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 16px 18px; }
+        .plat h3 { margin: 0 0 8px; font-size: 1.02rem; }
+        .plat ul { margin: 0; padding-left: 18px; font-size: 0.94rem; }
+        .plat li { margin-bottom: 5px; }
     </style>
 </head>
 <body>
@@ -55,10 +87,105 @@
         <a class="back" href="../">&larr; MW Supply Limited</a>
 
         <h1>Money Flow: Budget &amp; Expenses</h1>
-        <p class="subtitle">Scan receipts, track spending, and stay on top of your budget &mdash; fast and private, on your device and your own iCloud. <span class="pill">Version 1.5</span></p>
+        <p class="subtitle">Scan receipts, track spending, and know what&rsquo;s safe to spend &mdash; fast and private, on your device and your own iCloud. For iPhone, iPad and Mac. <span class="pill">Version 1.10</span></p>
+
+        <!-- `ct` tags this as a web install in App Store Connect -> App Analytics -> Campaigns.
+             Without it every install from this page is indistinguishable from organic search, so the
+             page can never be shown to have worked. `pt` (provider token) is omitted deliberately: it
+             must come from App Store Connect, and a wrong one is worse than none — `ct` alone still
+             reports. Money Flow is a Universal Purchase, so both buttons point at the SAME app id;
+             `mt=8` selects the iOS store and `mt=12` the Mac App Store. -->
+        <div class="stores">
+            <a class="store" href="https://apps.apple.com/app/id6774435400?ct=website&amp;mt=8" aria-label="Download Money Flow on the App Store for iPhone and iPad">
+                <svg viewBox="0 0 384 512" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C73.3 141.2 24 184.8 24 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+                <span><small>Download on the</small><span class="big">App Store</span></span>
+            </a>
+            <a class="store" href="https://apps.apple.com/app/id6774435400?ct=website&amp;mt=12" aria-label="Download Money Flow on the Mac App Store">
+                <svg viewBox="0 0 384 512" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C73.3 141.2 24 184.8 24 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+                <span><small>Download on the</small><span class="big">Mac App Store</span></span>
+            </a>
+        </div>
+        <p class="storenote">Free to download. One <strong>Money Flow Pro</strong> subscription covers iPhone, iPad and Mac (Universal Purchase).</p>
 
         <h2>About</h2>
-        <p>Money Flow is a fast, private personal-finance tracker for iPhone and iPad. Log expenses, income, and transfers in seconds, organize them with customizable categories and accounts, set budgets and savings goals, and understand your habits through dashboards and insights built with Swift Charts. There are no accounts to create, and your financial data stays on your device and your own private iCloud &mdash; we never see it. The free version is supported by ads; upgrading to <strong>Money Flow Pro</strong> removes all ads and unlocks advanced insights, custom themes, and alternate app icons.</p>
+        <p>Money Flow is a fast, private personal-finance tracker for <strong>iPhone, iPad and Mac</strong>. Log expenses, income, and transfers in seconds, organize them with customizable categories and accounts, set budgets and savings goals, and understand your habits through dashboards and insights built with Swift Charts.</p>
+        <p><strong>There is no bank linking.</strong> Money Flow never asks for a bank login and uses no aggregator such as Plaid &mdash; you enter transactions yourself or import a CSV your bank already gives you. There are no accounts to create, and your financial data stays on your device and your own private iCloud &mdash; we never see it.</p>
+
+        <h2>iPhone, iPad and Mac</h2>
+        <p>Money Flow is one app across all three, and it is not the same deal on each &mdash; here is exactly what you get before you download:</p>
+        <div class="platforms">
+            <div class="plat">
+                <h3>iPhone &amp; iPad</h3>
+                <ul>
+                    <li>Free, with <strong>no transaction limit</strong>.</li>
+                    <li>Every core feature: transactions, categories, accounts, budgets, goals, recurring bills, receipts, widgets, CSV import/export.</li>
+                    <li>The free tier is <strong>supported by ads</strong> (a banner and occasional full-screen ad). Money Flow Pro removes them.</li>
+                </ul>
+            </div>
+            <div class="plat">
+                <h3>Mac</h3>
+                <ul>
+                    <li><strong>Completely ad-free at every tier</strong> &mdash; the Mac app contains no advertising SDK at all.</li>
+                    <li>The free download is the <strong>full, navigable app limited to 10 transactions</strong>. Everything is there to explore; you just can&rsquo;t keep adding past ten.</li>
+                    <li><strong>Money Flow Pro lifts the limit</strong> for unlimited transactions.</li>
+                </ul>
+            </div>
+            <div class="plat">
+                <h3>Money Flow Pro</h3>
+                <ul>
+                    <li>The same premium features on every device.</li>
+                    <li><strong>$4.99/month or $29.99/year</strong>, with a <strong>14-day free trial on either plan</strong>.</li>
+                    <li>One subscription covers iPhone, iPad and Mac (Universal Purchase).</li>
+                    <li>Removes ads, unlocks advanced insights, multi-currency, net worth, forecasting, tags, custom themes and alternate app icons.</li>
+                </ul>
+            </div>
+        </div>
+        <p class="storenote">Prices are US App Store prices and may differ in your region; your local price and trial terms are always shown on the purchase screen before you confirm.</p>
+
+        <h2>What&rsquo;s new in version 1.10</h2>
+        <ul>
+            <li><strong>Safe to Spend.</strong> Right on your Dashboard: what&rsquo;s genuinely left this month after your bills, your goals and your buffer &mdash; plus what that works out to per day.</li>
+            <li><strong>Safe to Spend on your Lock Screen and in StandBy.</strong> A dedicated widget in circular, rectangular and inline sizes, so it&rsquo;s one glance with no unlocking.</li>
+            <li><strong>Keep a buffer.</strong> Hold back a cushion, and Safe to Spend will never tell you to spend it.</li>
+            <li><strong>Interactive Templates widget.</strong> Tap a saved quick-add template (Coffee, Lunch, Gas&hellip;) right on your Home Screen to log it instantly, without opening the app.</li>
+            <li><strong>Pay cadences that match real paydays.</strong> Twice a month (1st &amp; 15th) and every 2 weeks, alongside the existing schedules.</li>
+            <li><strong>Accuracy fixes.</strong> Quarterly and semi-annual charges are no longer detected as monthly; fortnightly bills post every 2 weeks instead of weekly; goal contributions are budgeted across the months you actually have left; a bill due later today no longer disappears from Safe to Spend before it&rsquo;s paid; and your cash buffer is now included in backups.</li>
+        </ul>
+
+        <h2>What&rsquo;s new in version 1.9</h2>
+        <ul>
+            <li><strong>Sharper Transactions list.</strong> Rows imported from CSV now show the merchant or payee as the title instead of a generic label.</li>
+            <li><strong>Safer cross-device sync for recurring transactions.</strong> When the same auto-posted bill arrives from two devices, your edits, receipt photos, and tags are always kept.</li>
+            <li><strong>A more accurate &ldquo;restored&rdquo; summary</strong> after importing a backup.</li>
+            <li><strong>Additional under-the-hood reliability fixes.</strong></li>
+        </ul>
+
+        <h2>What&rsquo;s new in version 1.8</h2>
+        <ul>
+            <li><strong>Full cross-device sync.</strong> iCloud now keeps <em>everything</em> in step across your iPhone, iPad and Mac &mdash; merchants, tags, quick-add templates, saved filters, and your net-worth history all carry over.</li>
+            <li><strong>More complete backups.</strong> Net-worth history, the Bin (recently deleted), and your notification settings are now included and restored.</li>
+            <li><strong>Merchant round-trips through CSV.</strong> It is now supported in both CSV import and export.</li>
+            <li><strong>Reliability fixes,</strong> including self-healing of duplicate recurring entries across devices.</li>
+        </ul>
+
+        <h2>What&rsquo;s new in version 1.7</h2>
+        <ul>
+            <li><strong>Quick-add templates.</strong> Save the things you log often (Coffee, Lunch, Gas) and add them in one tap.</li>
+            <li><strong>Upcoming Bills.</strong> A &ldquo;coming up&rdquo; card and agenda so you see what&rsquo;s about to post before it does.</li>
+            <li><strong>Top Merchants.</strong> See exactly where your money goes, not just which category. (Money Flow Pro)</li>
+            <li><strong>Saved filters.</strong> Keep go-to views like &ldquo;Reimbursable&rdquo; one tap away.</li>
+            <li><strong>Shareable PDF statement</strong> for any month. (Money Flow Pro)</li>
+            <li><strong>Plus polish and reliability fixes.</strong></li>
+        </ul>
+
+        <h2>What&rsquo;s new in version 1.6</h2>
+        <ul>
+            <li><strong>Redesigned Transactions screen.</strong> Record an Expense, Income, or Transfer in one tap.</li>
+            <li><strong>New cash-flow calendar view.</strong> See each day&rsquo;s income, spending, and transfers at a glance, and tap any day for the details.</li>
+            <li><strong>Easier categories.</strong> A searchable list where sub-categories tuck neatly under their parent.</li>
+            <li><strong>A smoother keyboard.</strong> &ldquo;Done&rdquo; now reliably closes it everywhere.</li>
+            <li><strong>Plus polish and reliability fixes.</strong></li>
+        </ul>
 
         <h2>What&rsquo;s new in version 1.5</h2>
         <ul>
@@ -103,6 +230,15 @@
             <li><strong>A fresh new look.</strong> A brand-new app icon, plus refined ad placement so nothing blocks your view.</li>
         </ul>
 
+        <h2>What&rsquo;s new in version 1.2</h2>
+        <ul>
+            <li><strong>Money Flow Pro arrives.</strong> Go ad-free and unlock premium features &mdash; advanced insights with spending forecasts and year-over-year comparisons, custom accent themes, and alternate app icons.</li>
+            <li><strong>Account transfers and live balances.</strong> Move money between accounts and see each account&rsquo;s current balance.</li>
+            <li><strong>Per-category budgets</strong> with progress and alerts.</li>
+            <li><strong>Recurring transactions</strong> logged automatically on schedule.</li>
+            <li><strong>Savings goals,</strong> Face ID / passcode app lock, advanced filters and sorting, receipt photos, and an optional daily logging reminder.</li>
+        </ul>
+
         <h2>What&rsquo;s new in version 1.1</h2>
         <ul>
             <li><strong>Account transfers &amp; live balances.</strong> Move money between accounts with a dedicated Transfer type, and see each account&rsquo;s current balance on the Dashboard and in Manage Accounts.</li>
@@ -120,17 +256,30 @@
             <li><strong>Add a transaction.</strong> Tap the <em>+</em> button, enter an amount, pick expense or income, and choose a category and account. Add an optional note and date.</li>
             <li><strong>Customize categories and accounts.</strong> The app starts with sensible defaults (Groceries, Dining, Rent, Salary, Checking, Savings, and more). Edit names, icons, and colors, or add your own in <em>Settings</em>.</li>
             <li><strong>See your insights.</strong> The Dashboard and Insights tabs break down spending by category and over time so you can spot trends at a glance.</li>
-            <li><strong>Add the widget.</strong> Long-press your Home or Lock Screen, tap <em>+</em>, and add the Money Flow widget to see your balance and recent activity without opening the app.</li>
+            <li><strong>Add a widget (iPhone &amp; iPad).</strong> Long-press your Home or Lock Screen, tap <em>+</em>, and add a Money Flow widget &mdash; your balance and recent activity, <em>Safe to Spend</em> on the Lock Screen and in StandBy, or the interactive Templates widget for one-tap logging.</li>
+            <li><strong>On the Mac,</strong> the same app runs in its own window with full keyboard and menu support. The free download lets you keep up to 10 transactions so you can try everything before subscribing.</li>
             <li><strong>Quick add with Siri &amp; Shortcuts.</strong> Money Flow supports "Add Expense" and "Add Income" actions you can run from Shortcuts.</li>
         </ul>
 
         <h2>iCloud sync</h2>
-        <p>When you are signed in to iCloud and the toggle in <em>Settings &rarr; iCloud</em> is on, your transactions, categories, accounts, budgets, savings goals, recurring items, and settings sync automatically across your iPhone and iPad through your own private iCloud account. Because the data lives in your iCloud, it also comes back if you reinstall the app on a new or reset device. If you prefer to keep everything on a single device, just leave iCloud sync off &mdash; the app works fully offline.</p>
+        <p>When you are signed in to iCloud and the toggle in <em>Settings &rarr; iCloud</em> is on, your transactions, categories, accounts, budgets, savings goals, recurring items, and settings sync automatically across your iPhone, iPad and Mac through your own private iCloud account &mdash; along with your merchants, tags, quick-add templates, saved filters and net-worth history. Because the data lives in your iCloud, it also comes back if you reinstall the app on a new or reset device. If you prefer to keep everything on a single device, just leave iCloud sync off &mdash; the app works fully offline.</p>
 
         <h2>Importing &amp; exporting</h2>
-        <p>You can bring existing records in from a <code>.csv</code> file and export your data as CSV or Excel at any time from <em>Settings</em>. Exports go wherever you choose through the standard iOS share sheet &mdash; Files, Mail, AirDrop, and so on.</p>
+        <p>You can bring existing records in from a <code>.csv</code> file and export your data as CSV or Excel at any time from <em>Settings</em>. Exports go wherever you choose through the standard system share sheet &mdash; Files, Mail, AirDrop, and so on &mdash; and the Mac app saves them straight to a folder you pick.</p>
 
         <h2>FAQ</h2>
+
+        <h3>Is Money Flow free? What is the limit on the Mac?</h3>
+        <p>On <strong>iPhone and iPad</strong> the app is free with <strong>no transaction limit</strong> &mdash; every core feature is included, and the free tier is supported by ads. On the <strong>Mac</strong> the app is <strong>completely ad-free</strong>, and the free download is instead a full preview <strong>limited to 10 transactions</strong>: you can navigate and try everything, but the eleventh transaction asks you to subscribe. <strong>Money Flow Pro</strong> lifts that limit and removes the ads on iPhone and iPad. Recurring bills the app posts for you and anything in the Bin do not count toward the ten.</p>
+
+        <h3>Does Money Flow connect to my bank?</h3>
+        <p>No &mdash; deliberately. Money Flow has <strong>no bank linking</strong> and uses no aggregator such as Plaid. It never asks for a bank login, so there is no credential to leak. You add transactions yourself, scan a receipt, or import a CSV your bank already gives you.</p>
+
+        <h3>How much is Money Flow Pro, and is there a trial?</h3>
+        <p><strong>$4.99 per month or $29.99 per year</strong>, each with a <strong>14-day free trial</strong>. It is a Universal Purchase, so one subscription covers your iPhone, iPad and Mac. Prices are US App Store prices and vary by region &mdash; your local price and trial terms are shown on the purchase screen before you confirm. You can cancel any time in the App Store under <em>Settings &rarr; [your name] &rarr; Subscriptions</em>.</p>
+
+        <h3>Does the app show ads?</h3>
+        <p>The free tier on <strong>iPhone and iPad</strong> shows a banner and occasional full-screen ads. The <strong>Mac app shows no ads at all, at any tier</strong> &mdash; it contains no advertising SDK. Money Flow Pro removes ads everywhere. Personalised ads are off by default and are opt-in only, under <em>Settings &rarr; Ad Privacy</em>. See the <a href="privacy.html">Privacy Policy</a> for the detail, including which ad network each version uses.</p>
 
         <h3>Where is my data stored?</h3>
         <p>On your device, in Apple&rsquo;s standard on-device database. If you enable iCloud sync, a copy is mirrored to your personal iCloud account so it stays in sync across your devices. We never receive or store your financial data.</p>
@@ -138,8 +287,8 @@
         <h3>Will my data survive if I delete and reinstall the app?</h3>
         <p>If iCloud sync was enabled, yes &mdash; your data is restored from your iCloud account when you reinstall and sign in to the same Apple Account. If iCloud sync was off, the data is stored only on the device and is removed when you delete the app, so export a backup first if you plan to delete it.</p>
 
-        <h3>Does it sync between my iPhone and iPad?</h3>
-        <p>Yes. With iCloud sync enabled on both devices and the same Apple Account signed in, changes flow between them automatically.</p>
+        <h3>Does it sync between my iPhone, iPad and Mac?</h3>
+        <p>Yes. With iCloud sync enabled on each device and the same Apple Account signed in, changes flow between them automatically.</p>
 
         <h3>Do I need an account or internet connection?</h3>
         <p>No. Money Flow has no sign-in and works completely offline. iCloud sync is the only feature that uses the network, and it is optional.</p>
@@ -148,7 +297,7 @@
         <p>Import accepts CSV files. Export produces CSV and Excel (.xlsx) files.</p>
 
         <h3>How do recurring transactions work?</h3>
-        <p>In <em>Settings &rarr; Recurring Transactions</em>, add an item with an amount, category, account, and how often it repeats (daily, weekly, monthly, or yearly). Money Flow posts each one automatically when it&rsquo;s due &mdash; including any that came due while the app was closed &mdash; and you can pause, edit, or delete a rule at any time.</p>
+        <p>In <em>Settings &rarr; Planning &rarr; Subscriptions &amp; Bills</em>, add an item with an amount, category, account, and how often it repeats (daily, weekly, every 2 weeks, twice a month on the 1st &amp; 15th, monthly, or yearly). Money Flow posts each one automatically when it&rsquo;s due &mdash; including any that came due while the app was closed &mdash; and you can pause, edit, or delete a rule at any time.</p>
 
         <h3>How do transfers and account balances work?</h3>
         <p>Choose <em>Transfer</em> when adding a transaction to move money from one account to another. Transfers don&rsquo;t count as income or expense; they simply adjust each account&rsquo;s balance. Current balances appear on the Dashboard and in <em>Settings &rarr; Manage Accounts</em>, calculated from each account&rsquo;s starting balance plus its activity.</p>
@@ -160,7 +309,7 @@
         <p>Receipt photos you attach are stored on your device alongside the transaction, and &mdash; if iCloud sync is on &mdash; in your own private iCloud. They are never sent to us or anyone else.</p>
 
         <h3>I found a bug or have a feature request.</h3>
-        <p>Email <a href="mailto:mwsupplylimited@gmail.com?subject=Money%20Flow%20feedback">mwsupplylimited@gmail.com</a> with your iOS version, device, and steps to reproduce.</p>
+        <p>Email <a href="mailto:mwsupplylimited@gmail.com?subject=Money%20Flow%20feedback">mwsupplylimited@gmail.com</a> with your device, your iOS or macOS version, the Money Flow version from <em>Settings &rarr; About</em>, and steps to reproduce.</p>
 
         <h2>Contact</h2>
         <p>For support: <a href="mailto:mwsupplylimited@gmail.com?subject=Money%20Flow%20support">mwsupplylimited@gmail.com</a></p>
