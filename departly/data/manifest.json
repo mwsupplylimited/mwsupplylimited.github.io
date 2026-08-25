@@ -1,44 +1,44 @@
 {
-  "version": "0c22712ccbd3",
+  "version": "7629e86992fc",
   "files": [
     {
       "name": "kmb_stops.json",
-      "sha": "75f29d20c03cd6e7eda688471b865f6a3e1d201b2242ddd05b6d6b8bc2614d05",
+      "sha": "96d8fde37a69e1a94a0db99ab7b293a46a5842b282ef54a7628feda5898eb923",
       "url": "https://mwsupplylimited.github.io/departly/data/kmb_stops.json"
     },
     {
       "name": "kmb_routes.json",
-      "sha": "33708eae19a8dc3cb7a65de63224fc5358f23a70a46830f9097705a5c849e61e",
+      "sha": "08df85c698f062c638df57b238346db130e1afdfb89c55601aebb1ce40dcd186",
       "url": "https://mwsupplylimited.github.io/departly/data/kmb_routes.json"
     },
     {
       "name": "ctb_stops.json",
-      "sha": "d62a87c9a87b834cccad005dd67cbbd5f98b8ed7212260e4b0111e85ec440e3a",
+      "sha": "2773800a21ebd8248f535975898694ffa8d49bce997045da8e157b48407ca5c1",
       "url": "https://mwsupplylimited.github.io/departly/data/ctb_stops.json"
     },
     {
       "name": "ctb_routes.json",
-      "sha": "a130f57dd00aa0eadffebe83f149080033fd50c096c8242efff78ed0943a49c0",
+      "sha": "705c37877a08e61da97af959d097a12098238fcc6a4d317745546966395af903",
       "url": "https://mwsupplylimited.github.io/departly/data/ctb_routes.json"
     },
     {
       "name": "gmb_stops.json",
-      "sha": "054ccc903b5e273ec6e20d8f8d440cff0633a6f208091d16ede2c8fa2ec64b84",
+      "sha": "2a31474df491746585827e549341fbe4bb8b813631ee48a54052a553af688e76",
       "url": "https://mwsupplylimited.github.io/departly/data/gmb_stops.json"
     },
     {
       "name": "gmb_routes.json",
-      "sha": "5207aa27497c66e73ac57341d695889ca3f1902bc3d2d6afab76da6a84d19c05",
+      "sha": "be5229a1f67e076196831d91308a28b1f8ac36cb1108225d2f630b33ad99a54c",
       "url": "https://mwsupplylimited.github.io/departly/data/gmb_routes.json"
     },
     {
       "name": "nlb_stops.json",
-      "sha": "f27368d28b50b6ed240ea8de808727682a970c74e1fcc5b823e62c870f9765e4",
+      "sha": "752bcc4ae455b50ad34e4b19f2f7fb536593ce61eeef477425a092ed36195752",
       "url": "https://mwsupplylimited.github.io/departly/data/nlb_stops.json"
     },
     {
       "name": "nlb_routes.json",
-      "sha": "a2b0c1cfac537c42c6225cc89100d94295e321f1a6c2c936fd27ff19dede8666",
+      "sha": "4fbf4afba0fd23ea4c0614a1024dcb923426045ef7232955a4e5df568f771d5e",
       "url": "https://mwsupplylimited.github.io/departly/data/nlb_routes.json"
     },
     {
@@ -73,27 +73,27 @@
     },
     {
       "name": "bus_schedule.json",
-      "sha": "5a69e9a09145481a39adf5d7b28ddf4209cbff140c9bc6bf568ab7b33808eec9",
+      "sha": "276caedac2f2e3af1416dec1996c566c61f210002d30d659f9c418d980720273",
       "url": "https://mwsupplylimited.github.io/departly/data/bus_schedule.json"
     },
     {
       "name": "departures.json",
-      "sha": "90045c71d34847cdd20152d7252c22202ae805055b48e69e12d04b1567635024",
+      "sha": "e455bc91ea89fe8afbaad685daca5b9c33eceb8baf44c04b44296aafc86de830",
       "url": "https://mwsupplylimited.github.io/departly/data/departures.json"
     },
     {
       "name": "stop_offsets.json",
-      "sha": "22b1e7a3dc4d1d19c1520d6a1b1d7aff3d822c124019f9e653e4ef9c84e513e0",
+      "sha": "445d9812a38cfeb667bcd03361b559a12f906d4828d853328ca6b31e5ff59ba3",
       "url": "https://mwsupplylimited.github.io/departly/data/stop_offsets.json"
     },
     {
       "name": "service_calendar.json",
-      "sha": "49bce12c32f377a30450f57dc75d76d9b79efc4ab35275f508512beed88188ff",
+      "sha": "1dd2160d3792fa0426d71da27659304a397f749c4d35e05c4df173e98643b1d9",
       "url": "https://mwsupplylimited.github.io/departly/data/service_calendar.json"
     },
     {
       "name": "fares_od.json",
-      "sha": "380e930eed30aa4245c780f5ed6fe75bdcc95d0601ebac19952453f1fbaa3df9",
+      "sha": "2bfb568bfc476eb83cf9bf6d5b3420a7e6a48db608f5c8a81df0e84271da480a",
       "url": "https://mwsupplylimited.github.io/departly/data/fares_od.json"
     },
     {
