@@ -18,20 +18,40 @@
 #     this same file. The correct value was therefore knowable, so the stray
 #     trailing `1` was simply deleted.
 #
-#   dauup.com, 34222  —  had 15 chars (`4daba13e2b0dfd9`) and is the file's ONLY
-#     dauup.com record, so there is no sibling to check it against and no way to
-#     know WHICH character was dropped (a leading zero? a digit in the middle?).
-#     Field 4 is OPTIONAL per the spec, so the field was REMOVED rather than a
-#     sixteenth character invented. The record still matches on domain + seller id
-#     + relationship — exactly like the `rubiconproject.com, 25978, RESELLER` and
-#     `smartadserver.com, 3964, RESELLER` three-field records already in this file.
-#     Do not "restore" a guessed value here; if the true TAG ID is ever confirmed
-#     from Unity or dauup, add it back then.
+#   dauup.com, 34222  —  had 15 chars (`4daba13e2b0dfd9`) and was, in this file,
+#     the ONLY dauup.com record, so there was no sibling to check it against and no
+#     way to know WHICH character had been dropped. Field 4 is OPTIONAL per the
+#     spec, so on 2026-08-22 the field was REMOVED rather than a sixteenth
+#     character invented, with a note to restore it if the true value was ever
+#     confirmed.
 #
-# If a re-pull from the Unity dashboard reintroduces either form, correct it again
-# and report it upstream — do NOT assume the emitted value is the newer or truer
-# one. No demand path was ever de-authorized by either defect; this is file hygiene,
-# so that a future REAL invalid line is not lost in the noise.
+# RESOLVED 2026-08-28 — the dauup.com TAG ID is `4daba13e2b0dfd92`
+# ------------------------------------------------------------------------------
+# Unity drops the TRAILING character. Confirmed against two independent sources
+# that have no relationship to this account, each carrying the id across MULTIPLE
+# dauup.com seller accounts (field 4 identifies the AD SYSTEM, so it is the same
+# value for every seller id):
+#
+#   • Digital Turbine's own canonical list, https://www.digitalturbine.com/dt-app-ads.txt
+#       dauup.com,34101,RESELLER,4daba13e2b0dfd92   (also 34105, 34115, 34138)
+#   • https://github.com/cleveradssolutions/App-ads.txt
+#       dauup.com, 34222, RESELLER, 4daba13e2b0dfd92   — same seller id as ours
+#
+# `4daba13e2b0dfd92` is 16 hex characters and validates. The record below has been
+# restored to four fields, which is exactly what the 2026-08-22 note said to do
+# once the value was known.
+#
+# The SAME check re-confirmed the sharethrough correction: both sources carry
+# `sharethrough.com, uvcax8il, RESELLER, d53b998a7bd4ecd2` — the 16-char value
+# already in this file, not Unity's 17-char one. Two malformations, one in each
+# direction, from the same emitter.
+#
+# THEREFORE: Unity's dashboard will keep reporting `dauup.com, 34222, RESELLER,
+# 4daba13e2b0dfd9` as a "missing authorized seller", because its checker compares
+# its own malformed string. That warning is now EXPECTED and must not be actioned.
+# Do not paste Unity's value back in. If a re-pull reintroduces either form,
+# correct it again and report it upstream — do NOT assume the emitted value is the
+# newer or truer one. No demand path was ever de-authorized by either defect.
 #
 # REMOVED 2026-07-24 — google.com, pub-9269785449468392, DIRECT, f08c47fec0942fa0
 # ------------------------------------------------------------------------------
@@ -98,7 +118,7 @@ brightmountainmedia.com, 2686958, RESELLER
 connekt.ai, 5585919044, RESELLER
 conversantmedia.com, 41024, RESELLER, 03113cd04947736d
 copper6.com, 766114, RESELLER
-dauup.com, 34222, RESELLER
+dauup.com, 34222, RESELLER, 4daba13e2b0dfd92
 e-planning.net, 6a7f877127485fdb, RESELLER, c1ba615865ed87b2
 google.com, pub-1682595508078257, RESELLER, f08c47fec0942fa0
 google.com, pub-2923085774557613, RESELLER, f08c47fec0942fa0
