@@ -140,6 +140,12 @@
 
         <h1>Surf Connector</h1>
         <p class="meta">For Surf on Mac &middot; Surf requires macOS 14 or later</p>
+        <p class="meta"><strong>This download is protocol 7.</strong> That number is how you tell
+           whether the copy on your Mac is current: Surf shows the one it speaks, and the one you
+           chose, side by side in <strong>Settings &rsaquo; Claude</strong> (and in
+           <strong>&hellip;</strong> &rarr; <strong>Add-Ons</strong>). If they differ, this page has
+           the newer one. The program itself will also tell you:
+           <code>surf-connector --version</code>.</p>
 
         <div class="callout">
             <p><strong>What this is:</strong> a small program that lets <strong>Claude</strong> &mdash; or any other assistant that speaks MCP &mdash; work with Surf on your Mac: reading the page you point it at, clicking, typing, scrolling, and moving between pages. It costs nothing. It runs only while that software is running, only on your own machine, and Surf will not connect to anything until you switch the feature on yourself.</p>
@@ -151,14 +157,32 @@
 
         <h2>Install it</h2>
         <ol>
-            <li><a href="SurfConnector.pkg"><strong>Download SurfConnector.pkg</strong></a> (162&nbsp;KB) and open it. macOS checks Apple's notarization before it runs.</li>
+            <li><a href="SurfConnector.pkg"><strong>Download SurfConnector.pkg</strong></a> (176&nbsp;KB) and open it. macOS checks Apple's notarization before it runs.</li>
             <li>Open <strong>Surf</strong>, then the <strong>&hellip;</strong> menu &rarr; <strong>Add-Ons</strong>.</li>
             <li>Press <strong>Choose the Connector&hellip;</strong> and pick the program the installer placed at<br>
-                <code>/usr/local/lib/surf/surf-connector</code>.</li>
+                <code>/usr/local/lib/surf/surf-connector</code>.<br>
+                <span class="meta">The open panel starts there. If you put the program somewhere
+                else &mdash; <code>~/.local/bin</code> is the usual choice when you would rather not
+                type an administrator password &mdash; press <strong>&#8984;&#8679;G</strong> in the
+                panel and type that path instead. Surf records whatever you pick; it never
+                guesses.</span></li>
             <li>Follow the setup for whichever assistant you use &mdash; <a href="#claude-app">the walkthroughs are below</a>.</li>
             <li>Quit that assistant completely and open it again. Sessions already running will not see Surf.</li>
         </ol>
-        <p><strong>Already have it? This one is newer, and the difference is not cosmetic.</strong> Install it over the top &mdash; same steps, and your existing setup is kept. Three things a connector from before this one cannot do: pick an option from a dropdown that is not a plain menu (the kind almost every dashboard is built from now), narrow a page description to the part you care about instead of paying for the whole page, and return a screenshot taken inside a several-step request as a picture rather than as a wall of text. It also cannot refuse a click whose position was measured before you resized the window, or take a full-page capture. Surf says so in Add-Ons when a connected session is running an older one, and from this version it tells the session directly as well &mdash; the assistant is the one that needs to know, and it never looks at a panel. As above, quit the assistant and open it again afterwards, or it will keep using the copy it already started.</p>
+        <p><strong>Already have it? This one is newer, and the difference is not cosmetic.</strong>
+           Install it over the top &mdash; same steps, and your existing setup is kept. The change
+           that matters most in protocol 7 is one you would otherwise never attribute correctly:
+           an older connector tells the assistant that a component which lays itself out in an
+           animation frame <em>cannot work</em> in a tab you are not looking at, and that no retry
+           will help. That was true, it is no longer true, and it is the kind of advice an assistant
+           acts on by giving up &mdash; on dropdowns and date pickers, which is most of what a
+           dashboard is made of. Alongside it: a way to run the rest of a multi-step request past one
+           failed step instead of losing all of it, and a way to go ahead on a page carrying typing
+           that could not be attributed to a person. Surf says so in Add-Ons when a connected session
+           is running an older connector, and tells the session directly on every reply &mdash; the
+           assistant is the one that needs to know, and it never looks at a panel. As above, quit the
+           assistant and open it again afterwards, or it will keep using the copy it already
+           started.</p>
 
         <h2>Set it up in your assistant</h2>
 
@@ -328,7 +352,7 @@
         <h2>Check what you downloaded</h2>
         <p>The installer is signed by MW Supply Limited and notarized by Apple, so macOS verifies it for you before it will open. The certificate reads <code>Developer ID Installer: Matthew Wong (6RZ8YV42XZ)</code> — that is us; Apple issues these in the account holder&rsquo;s name. If you would rather check it yourself:</p>
         <p><code>shasum -a 256 SurfConnector.pkg</code></p>
-        <p><code>aadf3262cb8c5db6ded63243df8b7bc5d16f07804965452c95d2f9f7a29c4324</code></p>
+        <p><code>7c5ba49af06849b5fdb3734ac43884b9e5efb26d45555be49d723caecaa7a0f1</code></p>
         <p><code>spctl --assess --type install -v SurfConnector.pkg</code> should answer <code>accepted &middot; source=Notarized Developer ID</code>.</p>
 
         <h2>Remove it</h2>
