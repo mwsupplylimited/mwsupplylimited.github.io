@@ -103,6 +103,48 @@
             padding-top: 4px;
             margin-top: 28px;
         }
+        /* The download card. Reported: "there is very little information about which version of the
+           connector I am downloading" — which was true of the button, and only half-true of the
+           page: the protocol number was in a muted paragraph four hundred pixels above the link.
+           A number that has to be hunted for is a number nobody checks, so it now travels WITH the
+           button and repeats every fact needed to answer "is this the one I was told to get?". */
+        .download {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-left: 3px solid var(--accent);
+            border-radius: 8px;
+            padding: 18px 20px;
+            margin: 20px 0 28px;
+        }
+        .download .version {
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin: 0 0 4px;
+        }
+        .download .facts {
+            color: var(--muted);
+            font-size: 0.9rem;
+            margin: 0 0 14px;
+        }
+        .download .get {
+            display: inline-block;
+            background: var(--accent);
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 10px 18px;
+            border-radius: 7px;
+        }
+        .download .get:hover { filter: brightness(1.1); }
+        .download .hash {
+            display: block;
+            margin-top: 14px;
+            color: var(--muted);
+            font-size: 0.8rem;
+            /* A 64-character hash has no spaces in it, so it will not wrap on its own and would
+               push the whole page sideways on a phone. */
+            overflow-wrap: anywhere;
+        }
         .toc {
             background: var(--card);
             border: 1px solid var(--border);
@@ -140,12 +182,29 @@
 
         <h1>Surf Connector</h1>
         <p class="meta">For Surf on Mac &middot; Surf requires macOS 14 or later</p>
-        <p class="meta"><strong>This download is protocol 8.</strong> That number is how you tell
-           whether the copy on your Mac is current: Surf shows the one it speaks, and the one you
-           chose, side by side in <strong>Settings &rsaquo; Claude</strong> (and in
-           <strong>&hellip;</strong> &rarr; <strong>Add-Ons</strong>). If they differ, this page has
-           the newer one. The program itself will also tell you:
-           <code>surf-connector --version</code>.</p>
+        <div class="download">
+            <p class="version">Surf Connector &mdash; <strong>protocol&nbsp;8</strong></p>
+            <p class="facts">SurfConnector.pkg &middot; 189&nbsp;KB &middot; installer version 1.8
+               &middot; universal (Apple&nbsp;silicon and Intel) &middot; macOS&nbsp;13 or later
+               &middot; signed and notarized by Apple</p>
+            <a class="get" href="SurfConnector.pkg">Download protocol&nbsp;8 &mdash; SurfConnector.pkg</a>
+            <code class="hash">SHA-256 f69669f44b8d770659ffe40a6c2cee8060454a7e1c4a973f0b5a9ab70e8b3483</code>
+        </div>
+
+        <p class="meta"><strong>Protocol 8 is the version number, and it is the only one worth
+           comparing.</strong> Three places tell you what you already have, and they should all say
+           the same thing:</p>
+        <ul>
+            <li><strong>The program itself:</strong> <code>/usr/local/lib/surf/surf-connector --version</code>
+                prints <code>surf-connector protocol 8</code>.</li>
+            <li><strong>Surf:</strong> <strong>Settings &rsaquo; Claude</strong> (or
+                <strong>&hellip;</strong> &rarr; <strong>Add-Ons</strong>) shows the protocol Surf
+                speaks and the one it has on this Mac, side by side. From Surf&nbsp;1.12 for Mac it
+                also raises a bar under the toolbar at launch when they differ, so you are told
+                without having to go and look.</li>
+            <li><strong>This page:</strong> the number on the button above is what the download
+                contains. If it is higher than what you have, this is the newer one.</li>
+        </ul>
 
         <div class="callout">
             <p><strong>What this is:</strong> a small program that lets <strong>Claude</strong> &mdash; or any other assistant that speaks MCP &mdash; work with Surf on your Mac: reading the page you point it at, clicking, typing, scrolling, and moving between pages. It costs nothing. It runs only while that software is running, only on your own machine, and Surf will not connect to anything until you switch the feature on yourself.</p>
@@ -157,7 +216,7 @@
 
         <h2>Install it</h2>
         <ol>
-            <li><a href="SurfConnector.pkg"><strong>Download SurfConnector.pkg</strong></a> (192&nbsp;KB) and open it. macOS checks Apple's notarization before it runs.</li>
+            <li><a href="SurfConnector.pkg"><strong>Download SurfConnector.pkg</strong></a> &mdash; protocol&nbsp;8, 189&nbsp;KB &mdash; and open it. macOS checks Apple's notarization before it runs.</li>
             <li>Open <strong>Surf</strong>, then the <strong>&hellip;</strong> menu &rarr; <strong>Add-Ons</strong>.</li>
             <li>Press <strong>Choose the Connector&hellip;</strong> and pick the program the installer placed at<br>
                 <code>/usr/local/lib/surf/surf-connector</code>.<br>
