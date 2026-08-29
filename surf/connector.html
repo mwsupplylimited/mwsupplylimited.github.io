@@ -140,7 +140,7 @@
 
         <h1>Surf Connector</h1>
         <p class="meta">For Surf on Mac &middot; Surf requires macOS 14 or later</p>
-        <p class="meta"><strong>This download is protocol 7.</strong> That number is how you tell
+        <p class="meta"><strong>This download is protocol 8.</strong> That number is how you tell
            whether the copy on your Mac is current: Surf shows the one it speaks, and the one you
            chose, side by side in <strong>Settings &rsaquo; Claude</strong> (and in
            <strong>&hellip;</strong> &rarr; <strong>Add-Ons</strong>). If they differ, this page has
@@ -171,15 +171,20 @@
         </ol>
         <p><strong>Already have it? This one is newer, and the difference is not cosmetic.</strong>
            Install it over the top &mdash; same steps, and your existing setup is kept. The change
-           that matters most in protocol 7 is one you would otherwise never attribute correctly:
-           an older connector tells the assistant that a component which lays itself out in an
-           animation frame <em>cannot work</em> in a tab you are not looking at, and that no retry
-           will help. That was true, it is no longer true, and it is the kind of advice an assistant
-           acts on by giving up &mdash; on dropdowns and date pickers, which is most of what a
-           dashboard is made of. Alongside it: a way to run the rest of a multi-step request past one
-           failed step instead of losing all of it, and a way to go ahead on a page carrying typing
-           that could not be attributed to a person. Surf says so in Add-Ons when a connected session
-           is running an older connector, and tells the session directly on every reply &mdash; the
+           that matters most in protocol 8 is not something an older connector cannot do &mdash; it
+           is something it describes wrongly. An older connector tells the assistant it can only see
+           the tabs it opened, and leaves it to conclude that it is browsing in a sandbox of its own.
+           It is not. Every tab it opens is an ordinary Surf tab using your ordinary cookies, so a
+           site you are signed into is signed in for it, and a sign-in or a sign-out it performs is
+           one your own browsing keeps afterwards. An assistant holding the older description will
+           switch an account or sign out of one believing it is tidying up after itself; this one is
+           told whose browser it is in, on every reply. Alongside it: it is now told when closing its
+           own tab moved which tab you are looking at, rather than asking you about something you did
+           not do; the key names it may send are the ones Surf actually accepts, and pressing a
+           shifted key now types the shifted character; and a full-page capture reports the
+           coordinates it was really taken in, which is the difference between a click that lands and
+           one several hundred pixels adrift. Surf says so in Add-Ons when a connected session is
+           running an older connector, and tells the session directly on every reply &mdash; the
            assistant is the one that needs to know, and it never looks at a panel. As above, quit the
            assistant and open it again afterwards, or it will keep using the copy it already
            started.</p>
@@ -345,6 +350,7 @@
         <h2>What it can and cannot do</h2>
         <p>While you have the feature switched on, Claude can read the address, visible text and elements of a page it is working with — including anything already typed into an ordinary form field on it — take a picture of it, and see the messages and network requests that page made. It can also click, type, scroll, go back and forward, open and close its own tabs, and resize the Surf window. Surf hands anything over only when asked.</p>
         <p>Surf refuses some things in its own code, whatever it is asked. <strong>Private tabs are never exposed.</strong> Password fields are never filled, and Surf refuses any field it recognises as a card, security code or one-time code. What you typed into one is never read either: it is left out of what Claude is told, and Surf hides it for the moment a screenshot is taken, so it is not in the picture either. Recognising a card field depends on how the site marks it up, so treat it as a strong safeguard rather than a guarantee. A session can only touch tabs it opened, or a tab you have handed to it deliberately.</p>
+        <p><strong>It browses as you, in your own browser.</strong> A tab a session opens is an ordinary Surf tab with your ordinary cookies — there is no separate, signed-out profile behind the feature. So a site you are signed into is a site the session is signed into: it can open your account there, read it, and act as you. That runs both ways — if a session signs in to a site, or signs out of one, that is what your own browsing finds the next time you go there. Tab ownership keeps a session out of your other tabs; it does not give it a browser of its own. Private tabs are the exception on both counts: they keep their own cookies in memory, and Surf never exposes them to a session at all.</p>
         <p><strong>You can see when it is happening.</strong> While a session is working, Surf draws a coloured edge around the page and shows a marker in the toolbar saying how many tabs that session has; clicking it takes you to the one being worked on. Each session gets its own colour, and the same colour marks its tabs in the tab strip. This matters because Claude usually works in a background tab — one you are not looking at — so the window itself has to tell you. Those signals need a window to appear in, though: Surf keeps running with its window closed so downloads finish, and nothing is drawn anywhere at that point. <strong>Automation &rsaquo; Stop Automation</strong> is in the menu bar the whole time, which is the switch to rely on.</p>
         <p>What your assistant does with what it receives is between you and its provider — it will send that content on to be processed, and Surf can neither see nor limit that. A page's own text can also try to influence an assistant that is reading it. Surf is not immune to that, and no browser is. The feature does nothing until you switch it on for exactly these reasons, and <strong>Automation &rsaquo; Stop Automation</strong> is in the menu bar the whole time it is running so that turning it off never requires finding a settings pane.</p>
         <p>Full detail is in the <a href="privacy.html">privacy policy</a>, section 7.</p>
