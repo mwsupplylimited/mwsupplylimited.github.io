@@ -89,10 +89,10 @@
         <a class="back" href="./">&larr; Accompanist Support</a>
 
         <h1>Accompanist Privacy Policy</h1>
-        <p class="meta">Effective 4 June 2026 · Last updated 4 June 2026</p>
+        <p class="meta">Effective 4 June 2026 · Last updated 1 September 2026</p>
 
         <div class="callout">
-            <p><strong>Summary:</strong> Accompanist has no ads, no accounts, no analytics, and no third-party tracking, and we (the developer) never receive your data. Your audio, folders, and dancer profiles stay on your device. If you turn on the optional iCloud sync (part of Accompanist Pro), that content is stored in <em>your own private iCloud</em> under your Apple ID so it can sync between your devices and be shared with people you choose &mdash; it is handled by Apple, not by us.</p>
+            <p><strong>Summary:</strong> Accompanist has no accounts and no analytics, we do not track you, and we (the developer) never receive your data. Your audio, folders, and dancer profiles stay on your device. <strong>The free version shows advertising</strong> &mdash; one small banner on the playlist and settings screens, never during playback &mdash; supplied through Unity LevelPlay. Those ads are non-personalized, and <strong>Accompanist Pro removes them entirely</strong> (see section 7). If you turn on the optional iCloud sync (part of Accompanist Pro), that content is stored in <em>your own private iCloud</em> under your Apple ID so it can sync between your devices and be shared with people you choose &mdash; it is handled by Apple, not by us.</p>
         </div>
 
         <h2>1. Who we are</h2>
@@ -100,6 +100,7 @@
 
         <h2>2. Information we collect</h2>
         <p><strong>None that reaches us.</strong> Accompanist does not ask for, collect, transmit to us, or store on our systems any personally identifiable information. We have no servers, no database, and no analytics. We cannot see your songs, your folders, your profiles, or how you use the app.</p>
+        <p>The one thing that does leave your device is described in <a href="#advertising">section 7</a>: to fill the free version&rsquo;s banner, the advertising SDKs bundled in the app send technical device and app information to their own servers. That goes to those providers, not to us, and it is not linked to you by name or account.</p>
 
         <h2>3. Audio files you add</h2>
         <p>When you add music, the app uses Apple&rsquo;s standard Files picker or accepts files shared to it from another app (for example Google Drive). The files you choose are copied into the app&rsquo;s private storage on your device and read locally for playback. They are never sent to us.</p>
@@ -119,22 +120,29 @@
         <h2>6. Apple Watch</h2>
         <p>The Apple Watch companion communicates only with your own iPhone over Apple&rsquo;s on-device Watch Connectivity link, to relay playback controls and what&rsquo;s currently playing. Nothing is sent to us or to any third party.</p>
 
-        <h2>7. Third-party services</h2>
-        <p>The app contains no third-party SDKs, no analytics frameworks, no advertising networks, and no third-party crash reporting. The only platform service used is Apple&rsquo;s own iCloud (above) and Apple&rsquo;s first-party crash reporting, which runs only if you have opted in under iOS Settings &rarr; Privacy &amp; Security &rarr; Analytics &amp; Improvements.</p>
+        <h2 id="advertising">7. Advertising</h2>
+        <p><strong>The free version of Accompanist shows ads.</strong> One small banner appears at the bottom of the <em>playlist</em> and <em>settings</em> screens only. There is no advertising on the player screen and none during playback, and there are no interstitials, no full-screen ads and no rewarded video. <strong>Accompanist Pro removes all advertising.</strong></p>
+        <p>Ads are supplied through <strong>Unity LevelPlay</strong> (ironSource), which acts as the mediation layer &mdash; it runs the auction and decides which network fills the banner. The advertising networks whose software is bundled in the app and can serve a banner through it are <strong>ironSource</strong>, <strong>Unity Ads</strong>, <strong>AppLovin</strong> and <strong>Vungle (Liftoff Monetize)</strong>. To select, display and measure an ad, those SDKs send technical device and app information to their own servers &mdash; for example device model, operating system version, language, IP address and the country derived from it, and whether an ad was shown or tapped. We never receive any of it.</p>
+        <p><strong>The ads are non-personalized, and the app does not track you.</strong> Accompanist never shows an App Tracking Transparency prompt and never asks for permission to track you across other companies&rsquo; apps and websites. Because that permission is never requested it can never be granted, so iOS hands the ad SDKs the all-zero advertising identifier (IDFA) and no cross-app advertising profile can be built from your use of this app. Before the ad software is allowed to request anything, the app also signals <em>no</em> consent to personalisation for the EEA, the UK and Switzerland, and sets the US &ldquo;do not sell&rdquo; flag. The ads you see are based on the app and general context, not on tracking.</p>
+        <p>Apple&rsquo;s <strong>SKAdNetwork</strong> is used for install measurement. It is Apple&rsquo;s privacy-preserving mechanism: the report is produced by Apple, identifies no individual, and tells an advertiser only that an install happened.</p>
+        <p>For how each provider handles data, see <a href="https://unity.com/legal/game-player-and-app-user-privacy-policy">Unity&rsquo;s privacy policy</a> (LevelPlay, ironSource and Unity Ads), <a href="https://www.applovin.com/privacy/">AppLovin&rsquo;s privacy policy</a>, and <a href="https://liftoff.io/privacy-policy/">Liftoff&rsquo;s privacy policy</a> (Vungle).</p>
 
-        <h2>8. Permissions</h2>
+        <h2>8. Other third-party services</h2>
+        <p>Apart from the advertising software named in section 7, Accompanist embeds no third-party code: there are no analytics frameworks, no attribution or marketing SDKs, and no third-party crash reporting. The only other platform services used are Apple&rsquo;s own &mdash; iCloud (above), StoreKit for purchases, and Apple&rsquo;s first-party crash reporting, which runs only if you have opted in under iOS Settings &rarr; Privacy &amp; Security &rarr; Analytics &amp; Improvements.</p>
+
+        <h2>9. Permissions</h2>
         <p>The app does not request access to your microphone, contacts, photos, or location. The Files picker shown when you import music is run by iOS itself and only returns the items you choose.</p>
 
-        <h2>9. Payments</h2>
+        <h2>10. Payments</h2>
         <p>Accompanist Pro is sold as an auto-renewing subscription through the App Store. Purchases are processed by Apple; we never see your payment details. Apple may share aggregate, non-identifying sales information with us.</p>
 
-        <h2>10. Children</h2>
-        <p>Accompanist collects no personal data, so it complies with the Children&rsquo;s Online Privacy Protection Act (COPPA) and similar regulations worldwide.</p>
+        <h2>11. Children</h2>
+        <p>Accompanist is a general-audience app. It is not directed to children under 13, we do not knowingly collect personal information from children, and the app tells its advertising provider that it is not child-directed. The advertising described in section 7 is non-personalized for every user.</p>
 
-        <h2>11. Changes to this policy</h2>
+        <h2>12. Changes to this policy</h2>
         <p>If we change how Accompanist handles data, we will update this page and the &ldquo;Last updated&rdquo; date above. Material changes will also be reflected in the App Store privacy labels for the affected version.</p>
 
-        <h2>12. Contact</h2>
+        <h2>13. Contact</h2>
         <p>Questions about this privacy policy can be sent to <a href="mailto:mwsupplylimited@gmail.com?subject=Accompanist%20privacy">mwsupplylimited@gmail.com</a>.</p>
 
         <footer>
