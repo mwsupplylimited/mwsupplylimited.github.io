@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ourglass — Support</title>
+    <meta name="description" content="Support for Ourglass: a shared calendar for a relationship. Keep photos, writing and drawings on the days that mattered, count down to what is coming, and map everywhere you have been — shared between two different Apple Accounts.">
+<style>
+        :root {
+            --bg: #ffffff;
+            --fg: #17191d;
+            --muted: #5a626d;
+            --accent: #a8456b;
+            --card: #f7f5fa;
+            --border: #e4e0ea;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #0b0d10;
+                --fg: #f2f4f7;
+                --muted: #9aa3af;
+                --accent: #f0a0bd;
+                --card: #16171f;
+                --border: #2b2d39;
+            }
+        }
+        * { box-sizing: border-box; }
+        html { -webkit-text-size-adjust: 100%; }
+        body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif; background: var(--bg); color: var(--fg); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+        .container { max-width: 720px; margin: 0 auto; padding: 48px 24px 96px; }
+        .back { display: inline-block; color: var(--muted); text-decoration: none; font-size: 0.9rem; margin-bottom: 32px; }
+        .back:hover { color: var(--accent); }
+        h1 { font-size: 2.2rem; margin: 0 0 8px; letter-spacing: -0.02em; }
+        .subtitle { color: var(--muted); margin: 0 0 40px; }
+        h2 { font-size: 1.3rem; margin: 40px 0 12px; letter-spacing: -0.01em; }
+        h3 { font-size: 1rem; margin: 24px 0 6px; font-weight: 600; }
+        p, li { color: var(--fg); }
+        ul { padding-left: 22px; }
+        li { margin-bottom: 6px; }
+        a { color: var(--accent); }
+        .pill { display: inline-block; background: var(--card); border: 1px solid var(--border); padding: 3px 10px; border-radius: 999px; font-size: 0.8rem; color: var(--muted); }
+        .callout { background: var(--card); border: 1px solid var(--border); border-left: 3px solid var(--accent); padding: 16px 20px; border-radius: 8px; margin: 24px 0; }
+        .callout p { margin: 0; }
+        .mark { color: var(--accent); font-weight: 700; letter-spacing: 0.02em; }
+        table { border-collapse: collapse; width: 100%; margin: 16px 0; font-size: 0.95rem; }
+        th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border); }
+        th { color: var(--muted); font-weight: 600; }
+        footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.85rem; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a class="back" href="../">&larr; MW Supply Limited</a>
+
+        <h1>Ourglass</h1>
+        <p class="subtitle"><span class="mark">&#8987;</span> &nbsp;A calendar for the two of you. <span class="pill">Version 1.0</span></p>
+
+        <h2>What it does</h2>
+        <p>Ourglass is a shared calendar for a relationship. You keep the days that mattered &mdash; a photo, a few words, a drawing on top of the photo &mdash; and both of you see the same calendar, on every device each of you owns, even though you sign in with <strong>different Apple Accounts</strong>.</p>
+        <p>It is not a chat app and it is not a social network. Nobody else can see any of it, there is no feed, and there is nothing to post.</p>
+
+        <h2>The four screens</h2>
+        <h3>Calendar</h3>
+        <p>The month, with a mark on every day you kept something. Open a day to add photos, write, or draw. A memory belongs to the <em>calendar day you chose</em> rather than to a timestamp, so a night out in Hong Kong and the same night read in London sit on the same square instead of drifting a day apart.</p>
+
+        <h3>Places</h3>
+        <p>Everywhere you have been together, as a globe you can spin or a flat map, with the journey drawn between them in order. Add a place by searching for it, by dropping it where you are, or from a photo that already knows where it was taken. Places you have not been to yet can be marked as planned.</p>
+
+        <h3>Milestones</h3>
+        <p>Count-downs to what is coming and count-ups from what has already happened, with reminders. Ourglass writes the obvious ones for you &mdash; 100 days, a year, 1000 days &mdash; so they appear without anybody having to think of them.</p>
+
+        <h3>Us</h3>
+        <p>The two of you, each with the local time where they are, so you can see at a glance whether it is a reasonable hour to call. This uses the <em>time zone</em> each device publishes, never a location it measured.</p>
+        <p>This is also where time capsules live: a letter you write today that neither of you can read again until a day you choose. Once it is sealed it cannot be edited, and once it is opened it cannot be rewritten.</p>
+
+        <h2>One calendar per partner</h2>
+        <p>Each relationship is its own calendar with its own memories, its own map and its own colour. They do not mix, and the person in one has no idea the others exist. This is a data-model fact rather than a setting: each one is a separate private store shared with exactly one person.</p>
+
+        <h2>How sharing works</h2>
+        <p>Ourglass has no accounts and no company servers. Each calendar lives in the <strong>creator's own iCloud</strong>, and the partner is invited to that specific calendar through Apple's own sharing. Your own devices reach it because it is yours; your partner's devices reach it because you shared it with them. MW Supply Limited is not in the middle and cannot read any of it.</p>
+        <div class="callout">
+            <p><strong>An invite expires after seven days,</strong> and once your partner has accepted, the link stops working for anybody else. A shared calendar link that stays live forever is how the wrong person ends up in a couple's private calendar.</p>
+        </div>
+
+        <h2>Free and Ourglass Pro</h2>
+        <p>Everything that makes the app worth having is free. There is no cap on memories, ever &mdash; a memory keeper that charges by the memory would fall hardest on the couples who use it most.</p>
+        <table>
+            <tr><th>Feature</th><th>Free</th><th>Pro</th></tr>
+            <tr><td>Memories, photos, writing</td><td>Unlimited</td><td>Unlimited</td></tr>
+            <tr><td>Calendars (one per partner)</td><td>1</td><td>Unlimited</td></tr>
+            <tr><td>Photos per memory</td><td>3</td><td>Unlimited</td></tr>
+            <tr><td>Drawing tools</td><td>5</td><td>5</td></tr>
+            <tr><td>Ink colours</td><td>3</td><td>12</td></tr>
+            <tr><td>Milestones &amp; reminders</td><td>3</td><td>Unlimited</td></tr>
+            <tr><td>Places, the globe and the journey</td><td>Yes</td><td>Yes</td></tr>
+            <tr><td>Time capsules</td><td>Unlimited</td><td>Unlimited</td></tr>
+            <tr><td>Sharing with your partner</td><td>Yes</td><td>Yes</td></tr>
+        </table>
+        <p>Ourglass Pro is <strong>US$4.99/month</strong> or <strong>US$29.99/year</strong>, or <strong>US$49.99 once</strong> for Lifetime. Prices in other regions are set by Apple. Payment is charged to your Apple Account; a subscription renews automatically unless cancelled at least 24&nbsp;hours before the period ends. Manage or cancel it any time in Settings, or from the membership screen inside the app. Lifetime is a one-time purchase and never renews.</p>
+        <p><strong>One subscription covers the calendar, not the person.</strong> If either of you has Pro, both of you get the unlocked features in the calendars you share.</p>
+
+        <h2>Things worth knowing</h2>
+        <h3>Both people need iCloud switched on</h3>
+        <p>Sharing runs entirely on Apple's iCloud. If either of you is signed out of iCloud, or has iCloud Drive off, that device keeps working on its own but nothing moves between you until it is signed back in.</p>
+        <h3>Deleting is reversible for thirty days</h3>
+        <p>A memory you delete goes to a bin rather than disappearing, and takes its photos and both people's drawings with it. Restoring it brings all of that back. After thirty days it is removed for good.</p>
+        <h3>Drawings belong to whoever drew them</h3>
+        <p>Each of you draws on your own layer of the same photo. You can erase your own ink and you cannot erase theirs, so two people drawing on the same picture at the same time cannot destroy each other's work.</p>
+        <h3>Your location is only ever read when you ask for it</h3>
+        <p>The only time Ourglass reads your location is the moment you tap &ldquo;use my current location&rdquo; while adding a place. There is no background location, and if a fix does not arrive within a few seconds it gives up and offers you the search field instead.</p>
+
+        <h2>Common questions</h2>
+        <h3>Can my partner and I use different Apple Accounts?</h3>
+        <p>Yes &mdash; that is the whole point. You do not need to share an Apple Account, a password, or anything else.</p>
+        <h3>Does it work on my iPad too?</h3>
+        <p>Yes. Every device signed into your own Apple Account sees your calendars.</p>
+        <h3>Can I keep more than one calendar?</h3>
+        <p>Yes, with Pro. Each is completely separate from the others.</p>
+        <h3>What happens if we break up?</h3>
+        <p>You can leave a shared calendar, which removes it from your devices, or the person who created it can stop sharing it. Either way nothing is silently deleted from the other person.</p>
+        <h3>Does anyone at MW Supply Limited see our photos?</h3>
+        <p>No. There is no server to see them with. See the <a href="privacy.html">privacy policy</a>.</p>
+
+        <h2>Contact</h2>
+        <p>Email <a href="mailto:mwsupplylimited@gmail.com">mwsupplylimited@gmail.com</a>. If something did not sync, it helps enormously to say which device, whether both of you are signed into iCloud, and roughly when you last saw it working.</p>
+
+        <footer>
+            <p>Ourglass is made by MW Supply Limited. &nbsp;<a href="privacy.html">Privacy Policy</a> &nbsp;&middot;&nbsp; <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms of Use</a></p>
+        </footer>
+    </div>
+</body>
+</html>
