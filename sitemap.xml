@@ -587,12 +587,37 @@
   </url>
   <url>
     <loc>https://mwsupplylimited.github.io/wakeward/</loc>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-08-28</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://mwsupplylimited.github.io/wakeward/privacy.html</loc>
     <lastmod>2026-08-18</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mwsupplylimited.github.io/wakeward/alarm-didnt-go-off.html</loc>
+    <lastmod>2026-08-28</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mwsupplylimited.github.io/wakeward/alarm-volume-keeps-going-down.html</loc>
+    <lastmod>2026-08-28</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mwsupplylimited.github.io/wakeward/alarm-going-off-but-no-sound.html</loc>
+    <lastmod>2026-08-28</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mwsupplylimited.github.io/wakeward/test-your-alarm-before-bed.html</loc>
+    <lastmod>2026-08-28</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mwsupplylimited.github.io/wakeward/backup-alarm-on-iphone.html</loc>
+    <lastmod>2026-08-28</lastmod>
     <priority>0.6</priority>
   </url>
 </urlset>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iPhone alarm going off but no sound &mdash; what silences it</title>
+    <meta name="description" content="Your alarm shows on screen but plays nothing. First work out whether it is a real alarm or a notification, then check the four settings that can silence one.">
+    <link rel="canonical" href="https://mwsupplylimited.github.io/wakeward/alarm-going-off-but-no-sound.html">
+    <meta property="og:title" content="iPhone alarm going off but no sound">
+    <meta property="og:description" content="Is it a real alarm or a notification? Then: ringer volume, Change with Buttons, Attention Aware Features, and the Accessibility switch that kills vibration.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://mwsupplylimited.github.io/wakeward/alarm-going-off-but-no-sound.html">
+    <meta name="twitter:card" content="summary">
+<style>
+        :root {
+            --bg: #ffffff;
+            --fg: #17191d;
+            --muted: #5a626d;
+            --accent: #c25a12;
+            --card: #f7f5fa;
+            --border: #e4e0ea;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #0b0d10;
+                --fg: #f2f4f7;
+                --muted: #9aa3af;
+                --accent: #ffb03d;
+                --card: #16171f;
+                --border: #2b2d39;
+            }
+        }
+        * { box-sizing: border-box; }
+        html { -webkit-text-size-adjust: 100%; }
+        body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif; background: var(--bg); color: var(--fg); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+        .container { max-width: 720px; margin: 0 auto; padding: 48px 24px 96px; }
+        .back { display: inline-block; color: var(--muted); text-decoration: none; font-size: 0.9rem; margin-bottom: 32px; }
+        .back:hover { color: var(--accent); }
+        h1 { font-size: 2.2rem; margin: 0 0 8px; letter-spacing: -0.02em; }
+        .subtitle { color: var(--muted); margin: 0 0 40px; }
+        .lead { font-size: 1.05rem; color: var(--muted); margin: 0 0 40px; }
+        h2 { font-size: 1.3rem; margin: 40px 0 12px; letter-spacing: -0.01em; }
+        h3 { font-size: 1rem; margin: 24px 0 6px; font-weight: 600; }
+        p, li { color: var(--fg); }
+        ul, ol { padding-left: 22px; }
+        li { margin-bottom: 6px; }
+        a { color: var(--accent); }
+        .pill { display: inline-block; background: var(--card); border: 1px solid var(--border); padding: 3px 10px; border-radius: 999px; font-size: 0.8rem; color: var(--muted); }
+        .callout { background: var(--card); border: 1px solid var(--border); border-left: 3px solid var(--accent); padding: 16px 20px; border-radius: 8px; margin: 24px 0; }
+        .callout p { margin: 0; }
+        .mark { color: var(--accent); font-weight: 700; letter-spacing: 0.02em; }
+        table { border-collapse: collapse; width: 100%; margin: 16px 0; font-size: 0.95rem; }
+        th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border); }
+        th { color: var(--muted); font-weight: 600; }
+        .related { background: var(--card); border: 1px solid var(--border); padding: 16px 20px 18px; border-radius: 8px; margin: 48px 0 0; }
+        .related p { margin: 0 0 8px; font-weight: 600; }
+        .related ul { margin: 0; }
+        footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.85rem; }
+        footer .appfoot { color: var(--fg); font-size: 0.95rem; margin: 0 0 18px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a class="back" href="./">&larr; Wakeward</a>
+
+        <h1>Alarm going off, but no sound</h1>
+        <p class="lead">An alarm that appears on screen with nothing coming out of the speaker narrows things down a long way: it was scheduled, it fired, and only the sound failed. That is a short list of causes.</p>
+
+        <h2>First: is it an alarm, or a notification?</h2>
+        <p>This is the fork that decides everything else, and it is easy to check.</p>
+        <ul>
+            <li>A <strong>system alarm</strong> &mdash; from the built-in Clock, or from an app using Apple&rsquo;s AlarmKit &mdash; draws a full-screen alert with Stop and usually Snooze, and it keeps sounding until you deal with it.</li>
+            <li>A <strong>notification</strong> is a banner. It arrives once, plays a short sound, and goes away by itself.</li>
+        </ul>
+        <p>It matters because a notification is silenced by a whole set of things a real alarm ignores: the Ring/Silent switch, the notification volume, any Focus, and Scheduled Summary. Until iOS&nbsp;26 no third-party app could schedule a real alarm at all, so an alarm app written before AlarmKit is sending you notifications &mdash; and &ldquo;going off but no sound&rdquo; is the normal behavior of a notification on a silenced device, not a bug.</p>
+        <p>If what you saw was a banner, fix it at the source: take the app out of every Focus&rsquo;s block list and out of Scheduled Summary, allow its sounds, and take the Ring/Silent switch off silent. Or move to something that schedules a real alarm.</p>
+
+        <h2>If it is a real alarm: the four things that can silence one</h2>
+        <h3>1. The ringer volume is at or near zero</h3>
+        <p>Alarms play at the ringer volume, which is a separate slider from media. Open <em>Settings &rsaquo; Sounds &amp; Haptics</em> (<em>Settings &rsaquo; Sounds</em> on iPad) and drag the Ringtone and Alerts slider: iOS plays a sample at the exact level your alarm will use. If that sample is silent, so was your alarm.</p>
+        <h3>2. &ldquo;Change with Buttons&rdquo; moved it</h3>
+        <p>In that same screen. With it on, the volume buttons change the ringer whenever nothing is playing, so the level can be pushed to zero at any point in the day without you noticing. <a href="alarm-volume-keeps-going-down.html">Full explanation here</a>.</p>
+        <h3>3. Attention Aware Features lowered it</h3>
+        <p>On a Face&nbsp;ID iPhone, iOS lowers the volume of some alerts when the front camera sees you looking at the screen. It does not take the alarm to zero, but on a phone across the room quieter and silent are the same outcome &mdash; and if you woke enough to look at it, you have already triggered it. <em>Settings &rsaquo; Face&nbsp;ID &amp; Passcode &rsaquo; Attention Aware Features</em>.</p>
+        <h3>4. Vibration is switched off</h3>
+        <p>With the ringer at zero, vibration is the entire alarm. <em>Accessibility &rsaquo; Touch &rsaquo; Vibration</em> switches off every vibration on the device, an alarm&rsquo;s included, and no app can read that switch or override it. A device on silent with that switch off produces a completely mute alarm that still looks perfectly normal on screen.</p>
+
+        <h2>Two ways the sound goes somewhere else</h2>
+        <ul>
+            <li><strong>Headphones or a Bluetooth speaker still connected</strong> from the night before. Worth disconnecting at bedtime rather than debugging at 6am.</li>
+            <li><strong>The device face-down in bedding.</strong> A speaker pressed into a mattress or a pillow is a real reduction, and it costs nothing to rule out.</li>
+        </ul>
+
+        <h2>The bubble that isn&rsquo;t ringing</h2>
+        <p>There is a known iOS&nbsp;26 bug worth knowing about here, because it produces exactly this symptom. Swiping an alarm away while the device is unlocked can leave an <em>empty Live Activity</em> stuck in the Dynamic Island. It looks like an alarm in progress, it makes no sound, and it survives force-quitting and even deleting the app that created it. Restarting the device clears it. It affects Apple&rsquo;s own sample code, so it is not specific to any one alarm app &mdash; and if what you are looking at is a stuck bubble rather than a ringing alarm, there is nothing wrong with tomorrow&rsquo;s alarm.</p>
+
+        <h2>What cannot be silencing it</h2>
+        <table>
+            <tr><th>Suspect</th><th>Reality</th></tr>
+            <tr><td>Silent mode</td><td>A system alarm sounds through the Ring&#8211;Silent switch.</td></tr>
+            <tr><td>Sleep Focus, Do Not Disturb, any Focus</td><td>Alarms break through all of them.</td></tr>
+            <tr><td>Media volume at zero</td><td>Different slider. It does not set the alarm level.</td></tr>
+            <tr><td>Force-quitting the app</td><td>iOS holds the alarm, not the app.</td></tr>
+            <tr><td>A restart</td><td>Alarms survive a reboot; iOS re-arms them.</td></tr>
+            <tr><td>Low Power Mode</td><td>Does not suppress or quiet alarms.</td></tr>
+        </table>
+
+        <h2>Prove it rather than guess</h2>
+        <p>Every item above can be settled in two minutes with a real alarm set for two minutes ahead, from where the device actually sleeps &mdash; <a href="test-your-alarm-before-bed.html">here is how to run that test properly</a>. If the cause turns out to be one of the ones nobody can control, <a href="backup-alarm-on-iphone.html">a second alarm a few minutes later</a> is the only real answer.</p>
+        <div class="related">
+            <p>Related</p>
+            <ul>
+                <li><a href="alarm-volume-keeps-going-down.html">Why your iPhone alarm volume keeps going down</a></li>
+                <li><a href="alarm-didnt-go-off.html">Why your iPhone alarm didn&rsquo;t go off &mdash; the full checklist</a></li>
+                <li><a href="test-your-alarm-before-bed.html">How to test your alarm before bed</a></li>
+                <li><a href="backup-alarm-on-iphone.html">How to set a backup alarm on iPhone</a></li>
+            </ul>
+        </div>
+
+        <footer>
+            <!-- CTA target: swap this href for https://apps.apple.com/app/id6803855656 once Wakeward is live on the App Store. -->
+            <p class="appfoot"><strong>Wakeward</strong> is the alarm app these notes come from &mdash; a wake-up alarm for iPhone and iPad built on Apple&rsquo;s AlarmKit. It can arm a second alarm that <em>cancels itself</em> the moment you properly stop the first, and it checks before you sleep that every alarm you switched on is genuinely armed in iOS. It cannot turn your ringer volume up, and it does not pretend to &mdash; no app on iOS can read or change that. <a class="appstore" href="index.html">More about Wakeward &rarr;</a></p>
+            <p><a href="privacy.html">Privacy Policy</a> &nbsp;&middot;&nbsp; <a href="mailto:mwsupplylimited@gmail.com">mwsupplylimited@gmail.com</a> &nbsp;&middot;&nbsp; Made by MW Supply Limited</p>
+        </footer>
+    </div>
+</body>
+</html>

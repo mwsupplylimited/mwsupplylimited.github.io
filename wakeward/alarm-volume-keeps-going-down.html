@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iPhone alarm volume keeps going down &mdash; what actually moves it</title>
+    <meta name="description" content="Two settings quietly lower your iPhone alarm volume: Attention Aware Features and Change with Buttons. Where both live, and why no app can read the level.">
+    <link rel="canonical" href="https://mwsupplylimited.github.io/wakeward/alarm-volume-keeps-going-down.html">
+    <meta property="og:title" content="Why your iPhone alarm volume keeps going down">
+    <meta property="og:description" content="Attention Aware Features lowers the alarm when it sees you look at the screen. Change with Buttons lets a pocket press move it. Neither announces itself.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://mwsupplylimited.github.io/wakeward/alarm-volume-keeps-going-down.html">
+    <meta name="twitter:card" content="summary">
+<style>
+        :root {
+            --bg: #ffffff;
+            --fg: #17191d;
+            --muted: #5a626d;
+            --accent: #c25a12;
+            --card: #f7f5fa;
+            --border: #e4e0ea;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #0b0d10;
+                --fg: #f2f4f7;
+                --muted: #9aa3af;
+                --accent: #ffb03d;
+                --card: #16171f;
+                --border: #2b2d39;
+            }
+        }
+        * { box-sizing: border-box; }
+        html { -webkit-text-size-adjust: 100%; }
+        body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif; background: var(--bg); color: var(--fg); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+        .container { max-width: 720px; margin: 0 auto; padding: 48px 24px 96px; }
+        .back { display: inline-block; color: var(--muted); text-decoration: none; font-size: 0.9rem; margin-bottom: 32px; }
+        .back:hover { color: var(--accent); }
+        h1 { font-size: 2.2rem; margin: 0 0 8px; letter-spacing: -0.02em; }
+        .subtitle { color: var(--muted); margin: 0 0 40px; }
+        .lead { font-size: 1.05rem; color: var(--muted); margin: 0 0 40px; }
+        h2 { font-size: 1.3rem; margin: 40px 0 12px; letter-spacing: -0.01em; }
+        h3 { font-size: 1rem; margin: 24px 0 6px; font-weight: 600; }
+        p, li { color: var(--fg); }
+        ul, ol { padding-left: 22px; }
+        li { margin-bottom: 6px; }
+        a { color: var(--accent); }
+        .pill { display: inline-block; background: var(--card); border: 1px solid var(--border); padding: 3px 10px; border-radius: 999px; font-size: 0.8rem; color: var(--muted); }
+        .callout { background: var(--card); border: 1px solid var(--border); border-left: 3px solid var(--accent); padding: 16px 20px; border-radius: 8px; margin: 24px 0; }
+        .callout p { margin: 0; }
+        .mark { color: var(--accent); font-weight: 700; letter-spacing: 0.02em; }
+        table { border-collapse: collapse; width: 100%; margin: 16px 0; font-size: 0.95rem; }
+        th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border); }
+        th { color: var(--muted); font-weight: 600; }
+        .related { background: var(--card); border: 1px solid var(--border); padding: 16px 20px 18px; border-radius: 8px; margin: 48px 0 0; }
+        .related p { margin: 0 0 8px; font-weight: 600; }
+        .related ul { margin: 0; }
+        footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.85rem; }
+        footer .appfoot { color: var(--fg); font-size: 0.95rem; margin: 0 0 18px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a class="back" href="./">&larr; Wakeward</a>
+
+        <h1>Your alarm volume keeps going down</h1>
+        <p class="lead">If your alarm is quieter than you set it &mdash; or quieter on some mornings than others &mdash; there are two settings that genuinely move it, and neither one tells you it did.</p>
+
+        <h2>1. Attention Aware Features</h2>
+        <p>This is the one almost nobody knows about, and it is the better explanation for &ldquo;my alarm was silent&rdquo; than any of the usual suspects.</p>
+        <p>On iPhones with Face&nbsp;ID, iOS checks whether you are looking at the screen before it does certain things: before dimming the display, before expanding a notification on the Lock Screen, and <strong>before lowering the volume of some alerts</strong>. That last one includes your alarm. If the front camera sees your face while the alarm is ringing, iOS reads that as &ldquo;I&rsquo;ve got it&rdquo; and turns the sound down.</p>
+        <p>The failure it produces is very specific, and it is the exact thing that happens to people who oversleep: you half-wake, you look at the phone, the alarm gets quieter, and you go back to sleep. It is quietest precisely when you needed it loudest.</p>
+        <div class="callout">
+            <p><strong>No app can detect this, prevent it, or work around it.</strong> It is not something your alarm app is doing to you, and no alarm app can undo it &mdash; not the built-in Clock either. The only fix is the switch.</p>
+        </div>
+        <h3>Where it is</h3>
+        <p><em>Settings &rsaquo; Face&nbsp;ID &amp; Passcode</em> &rarr; enter your passcode &rarr; <em>Attention Aware Features</em>.</p>
+        <h3>Only on Face ID hardware</h3>
+        <p>Attention Aware Features needs the TrueDepth camera. On a Touch&nbsp;ID device &mdash; iPhone&nbsp;SE, and most iPads &mdash; there is no such setting and no <em>Face&nbsp;ID &amp; Passcode</em> screen to find it in. If that is what you have, this is not what is lowering your alarm, and it is worth moving straight to the next section rather than hunting for a setting that does not exist.</p>
+        <h3>What you give up by turning it off</h3>
+        <p>Worth knowing before you flip it: your screen will no longer stay lit just because you are looking at it and will dim on its own schedule, and Lock Screen notification previews will no longer wait to see your face before expanding. For most people that is a fair trade for one reliable morning, but it is a trade.</p>
+
+        <h2>2. &ldquo;Change with Buttons&rdquo;</h2>
+        <p><em>Settings &rsaquo; Sounds &amp; Haptics</em> on iPhone, <em>Settings &rsaquo; Sounds</em> on iPad.</p>
+        <p>With it on, the physical volume buttons change the <strong>ringer</strong> volume whenever nothing is playing. Nothing is playing for most of your waking day, so a press in a pocket, in a bag, or in a child&rsquo;s hand sets the volume your alarm will use tomorrow morning &mdash; hours before you find out.</p>
+        <p>With it off, the volume buttons only move media volume, and the ringer stays exactly where you put it. The Ringtone and Alerts slider on that same screen becomes the only thing that can change it.</p>
+
+        <h2>The slider sample is the only honest readout</h2>
+        <p>Drag the Ringtone and Alerts slider and iOS plays a short sample at the exact volume your alarm will use. Do that rather than trusting a number, because <strong>no app can tell you your alarm volume</strong>. iOS exposes no public way to read the ringer volume, to set it, or to be notified when it changes. The one volume an app can read is the media volume, which is a different thing entirely. So an app that displays &ldquo;your alarm volume&rdquo; is either showing you the media volume under a wrong label, or inventing the number.</p>
+
+        <h2>Things that are <em>not</em> lowering your alarm</h2>
+        <ul>
+            <li><strong>Silent mode.</strong> A system alarm sounds through the Ring/Silent switch.</li>
+            <li><strong>Focus, including Sleep Focus and Do Not Disturb.</strong> Alarms break through every Focus.</li>
+            <li><strong>Media volume.</strong> The volume you set while music is playing is a separate slider from the one an alarm uses.</li>
+            <li><strong>Low Power Mode.</strong> iOS does not quiet alarms to save battery.</li>
+        </ul>
+
+        <h2>If it is still not loud enough</h2>
+        <p>Two more things are worth checking, because they change what &ldquo;loud&rdquo; means rather than the volume number itself.</p>
+        <ul>
+            <li><strong>Vibration switched off in <em>Accessibility &rsaquo; Touch &rsaquo; Vibration</em>.</strong> That switch kills every vibration on the device, including an alarm&rsquo;s. With a low ringer, it is the difference between something and nothing &mdash; and no app can read it or override it.</li>
+            <li><strong>Where the device sleeps.</strong> A speaker pressed into a mattress or under a pillow is a real reduction, and it is the cheapest thing on this page to fix.</li>
+        </ul>
+        <p>Once the settings are right, <a href="test-your-alarm-before-bed.html">test it from where your head actually is</a> &mdash; and do not look at the screen while it rings, for the reason at the top of this page.</p>
+        <div class="related">
+            <p>Related</p>
+            <ul>
+                <li><a href="alarm-didnt-go-off.html">Why your iPhone alarm didn&rsquo;t go off &mdash; the full checklist</a></li>
+                <li><a href="alarm-going-off-but-no-sound.html">Alarm going off but no sound</a></li>
+                <li><a href="test-your-alarm-before-bed.html">How to test your alarm before bed</a></li>
+                <li><a href="backup-alarm-on-iphone.html">How to set a backup alarm on iPhone</a></li>
+            </ul>
+        </div>
+
+        <footer>
+            <!-- CTA target: swap this href for https://apps.apple.com/app/id6803855656 once Wakeward is live on the App Store. -->
+            <p class="appfoot"><strong>Wakeward</strong> is the alarm app these notes come from &mdash; a wake-up alarm for iPhone and iPad built on Apple&rsquo;s AlarmKit. It can arm a second alarm that <em>cancels itself</em> the moment you properly stop the first, and it checks before you sleep that every alarm you switched on is genuinely armed in iOS. It cannot turn your ringer volume up, and it does not pretend to &mdash; no app on iOS can read or change that. <a class="appstore" href="index.html">More about Wakeward &rarr;</a></p>
+            <p><a href="privacy.html">Privacy Policy</a> &nbsp;&middot;&nbsp; <a href="mailto:mwsupplylimited@gmail.com">mwsupplylimited@gmail.com</a> &nbsp;&middot;&nbsp; Made by MW Supply Limited</p>
+        </footer>
+    </div>
+</body>
+</html>

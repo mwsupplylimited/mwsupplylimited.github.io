@@ -61,12 +61,12 @@
 
         <h2>The three differences</h2>
         <h3>1. A backup alarm</h3>
-        <p>A second, completely independent system alarm a few minutes after the first, armed at the same moment and canceled automatically the instant you properly stop the first one. If anything at all stops you hearing the primary, the backup still rings.</p>
+        <p>A second, completely independent system alarm a few minutes after the first, armed at the same moment and canceled automatically the instant you properly stop the first one. If you sleep through the first ring, or silence it without waking, the backup still rings. It cannot help with anything that silences every alarm on the device equally &mdash; a ringer turned all the way down, Attention Aware Features, vibration switched off device-wide, or a flat battery. <a href="alarm-didnt-go-off.html">Those are the ones to check</a>.</p>
         <p>It is also the honest answer to alarm collisions. When two apps have an alarm set for the same minute, iOS picks a winner non-deterministically and a single press of a physical button silences <em>all</em> currently ringing alarms. A backup three minutes later has nothing to compete with.</p>
 
         <h3>2. A bedtime check</h3>
-        <p>One screen that verifies everything iOS will actually report: that permission is granted, that <strong>every alarm you have switched on is genuinely present in the system's own list</strong> (and re-arms it if not), that your audio is not routed to headphones, your battery is not about to die, whether you have changed time zone, and whether a daylight-saving change lands tonight.</p>
-        <p>It also asks you about the four things iOS refuses to tell any app &mdash; ringer volume, &ldquo;Change with Buttons&rdquo;, Attention Aware Features, and whether the app is hidden. Wakeward asks rather than guessing, because an advisory that says &ldquo;you are muted&rdquo; when you are not would destroy the point of the whole feature.</p>
+        <p>One screen that verifies everything iOS will actually report: that permission is granted, that <strong>every alarm you have switched on is genuinely present in the system's own list</strong> (and re-arms it if not), whether anything is armed for the coming morning, whether your battery is about to die, whether Low Power Mode is on, and whether you have changed time zone.</p>
+        <p>It also asks you about the things iOS refuses to tell any app &mdash; ringer volume, &ldquo;Change with Buttons&rdquo;, Attention Aware Features, whether vibration is switched off device-wide, and whether the app is hidden. It asks about the ones your own device actually has, so an iPad without Face ID is not quizzed about Attention Aware Features. Wakeward asks rather than guessing, because an advisory that says &ldquo;you are muted&rdquo; when you are not would destroy the point of the whole feature.</p>
 
         <h3>3. A receipt</h3>
         <p>After every alarm: when it was scheduled, when it actually rang, the drift between the two, when you stopped it, and the iOS build it happened on. Where iOS does not report something, the receipt says so rather than inventing a number.</p>
@@ -82,9 +82,9 @@
             <tr><td>Bedtime pre-flight</td><td>Yes</td><td>Yes</td></tr>
             <tr><td>&ldquo;Test my alarm in 10 seconds&rdquo;</td><td>Yes</td><td>Yes</td></tr>
             <tr><td>Backup notifications</td><td>Yes</td><td>Yes</td></tr>
-            <tr><td>Widget, Lock Screen &amp; Siri</td><td>Yes</td><td>Yes</td></tr>
+            <tr><td>Widget &amp; Lock Screen</td><td>Yes</td><td>Yes</td></tr>
             <tr><td>Alarm receipts</td><td>Last 7 days</td><td>Everything</td></tr>
-            <tr><td>Alarm tones</td><td>3</td><td>All 9 + gentle versions</td></tr>
+            <tr><td>Alarm tones</td><td>3</td><td>All 8 + gentle versions</td></tr>
             <tr><td>Wake-up tasks</td><td>Maths only</td><td>Maths, typing, memory, steps, wake-up check</td></tr>
             <tr><td>Wake-time consistency score</td><td>&mdash;</td><td>Yes</td></tr>
             <tr><td>Wind-down reminder</td><td>&mdash;</td><td>Yes</td></tr>
@@ -94,7 +94,7 @@
 
         <h2>Things worth knowing</h2>
         <div class="callout">
-            <p><strong>Wakeward cannot control the alarm volume, and neither can any other app.</strong> iOS plays alarms at the system ringer volume and offers no API to change it. What Wakeward does control is how loudly its tones are mastered, and every one is built on the 520&nbsp;Hz low-frequency signal that fire-safety standards mandate for sleeping areas precisely because it wakes people who sleep through higher-pitched sounds.</p>
+            <p><strong>Wakeward cannot control the alarm volume, and neither can any other app.</strong> iOS plays alarms at the system ringer volume and offers no API to change it. What Wakeward does control is its tones. Seven of the eight are built on the 520&nbsp;Hz low-frequency signal that fire-safety standards specify for sleeping areas, precisely because it wakes people who sleep through higher-pitched sounds. The eighth, Klaxon, is deliberately dissonant instead, for people who sleep through even that.</p>
         </div>
         <h3>Do not hide Wakeward or lock it behind Face ID</h3>
         <p>Apple states plainly that alarms scheduled by hidden or passcode-locked apps <em>silently fail</em>. No app can detect this, so it is genuinely down to you.</p>
@@ -116,6 +116,16 @@
         <p>The alarm list syncs through your own iCloud. Whether a given device actually <em>rings</em> is a separate per-device switch, off by default on iPad, so an iPad on the kitchen counter does not join in at 6:30.</p>
         <h3>Does Wakeward track my sleep?</h3>
         <p>No. It records when your alarms rang and when you stopped them, and computes how consistent your wake time is from that. It does not use the microphone or the accelerometer to guess at sleep stages, because phone-derived sleep stages do not stand up to the evidence.</p>
+
+        <h2>If your alarm has just failed you</h2>
+        <p>These are written for the morning after, not as advertising. Each one explains a mechanism that is genuinely responsible for silent alarms on iPhone, including the two settings that lower an alarm&rsquo;s volume without telling you.</p>
+        <ul>
+            <li><a href="alarm-didnt-go-off.html">Why your iPhone alarm didn&rsquo;t go off</a> &mdash; the full checklist, in the order worth checking.</li>
+            <li><a href="alarm-volume-keeps-going-down.html">Why your alarm volume keeps going down</a> &mdash; Attention Aware Features and &ldquo;Change with Buttons&rdquo;, the two settings that move it on their own.</li>
+            <li><a href="alarm-going-off-but-no-sound.html">Alarm going off but no sound</a> &mdash; how the ringer, Silent mode, Focus and vibration actually interact.</li>
+            <li><a href="test-your-alarm-before-bed.html">How to test your alarm before bed</a> &mdash; a two-minute check by hand, and the four things it cannot prove.</li>
+            <li><a href="backup-alarm-on-iphone.html">How to set a backup alarm on iPhone</a> &mdash; the manual method, the spacing that works, and its one real drawback.</li>
+        </ul>
 
         <h2>Contact</h2>
         <p>Email <a href="mailto:mwsupplylimited@gmail.com">mwsupplylimited@gmail.com</a>. If an alarm has ever failed for you, please include the receipt from the Wake Log &mdash; it names the exact iOS build and the drift, which is usually enough to identify the cause.</p>
