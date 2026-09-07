@@ -255,8 +255,20 @@
             <li>Follow the setup for whichever assistant you use &mdash; <a href="#claude-app">the walkthroughs are below</a>.</li>
             <li>Quit that assistant completely and open it again. Sessions already running will not see Surf.</li>
         </ol>
-        <p><strong>Already have it? This one is newer, and the difference is not cosmetic.</strong>
-           Install it over the top &mdash; same steps, and your existing setup is kept. The change
+        <p><strong>Already have it? Check the build before reinstalling.</strong>
+           Surf 1.14 for Mac, build 137 and later, shows <strong>Up to date &mdash; no update needed</strong>
+           in AI Assistants when the selected connector or the last connected build matches the latest
+           download. <strong>Download Again</strong> remains available if you want to reinstall it.
+           Surf identifies which build it checked. If the installed file is current but an assistant
+           still uses a different build, restart that assistant&rsquo;s Surf connection or start a new session.
+           An offline check or an unreadable build is shown as unverified, never as up to date.</p>
+        <p>With update checks enabled and a connector on record, Surf checks at launch, when you open
+           AI Assistants in Settings or Add-Ons, after you choose a connector, and when you turn checks
+           back on. <strong>Check Now</strong> also requests a fresh comparison. You can turn these requests
+           off in Settings &rsaquo; AI Assistants. The comparison uses the static
+           <code>connector.json</code> described above; your installed build stays on your Mac.</p>
+        <p><strong>If your build differs from the latest download,</strong> install it over the top
+           &mdash; your existing setup is kept. The change
            that matters most in protocol 8 is not something an older connector cannot do &mdash; it
            is something it describes wrongly. An older connector tells the assistant it can only see
            the tabs it opened, and leaves it to conclude that it is browsing in a sandbox of its own.
