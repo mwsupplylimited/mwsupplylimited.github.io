@@ -234,7 +234,7 @@
         </ul>
 
         <div class="callout">
-            <p><strong>What this is:</strong> a small program that lets <strong>Claude</strong> &mdash; or any other assistant that speaks MCP &mdash; work with Surf on your Mac: reading the page you point it at, clicking, typing, scrolling, and moving between pages. It costs nothing. It runs only while that software is running, only on your own machine, and Surf will not connect to anything until you switch the feature on yourself.</p>
+            <p><strong>What this is:</strong> a small program that lets a <strong>compatible local MCP assistant</strong> work with Surf on your Mac: reading its own tabs or a tab you explicitly hand over, clicking, typing, scrolling, and moving between pages. It costs nothing. It runs only while that software is running, only on your own machine, and Surf will not connect to anything until you switch the feature on yourself.</p>
             <p><strong>The Surf side needs Surf Pro</strong>, on a Mac. The connector itself is free and always will be — but installing it does not by itself switch the feature on.</p>
         </div>
 
@@ -277,7 +277,7 @@
 
         <h2>Set it up in your assistant</h2>
 
-        <p>The connector is a <strong>local MCP server</strong> for compatible assistant clients, with the same refusals, the same switch and the same per-session tabs. Surf does not yet generate the OpenAI TOML setup shown below; configure ChatGPT desktop or Codex separately using those instructions. You need <strong>Surf Pro</strong>, the connector installed and selected in Surf, and automation enabled with the switch currently named <strong>Claude</strong> in <strong>Settings &rsaquo; Claude</strong> or <strong>&hellip; &rarr; Add-Ons</strong>.</p>
+        <p>The connector is a <strong>local MCP server</strong> for compatible assistant clients, with the same refusals, the same switch and the same per-session tabs. Surf 1.14 for Mac provides a ChatGPT &amp; Codex choice in <strong>Settings &rsaquo; AI Assistants</strong>, with connector-path, Codex-command and TOML copy buttons. On earlier versions, configure your assistant separately using the instructions below. You need <strong>Surf Pro</strong>, the connector installed and selected in Surf, and automation enabled in <strong>Settings &rsaquo; AI Assistants</strong> or <strong>&hellip; &rarr; Add-Ons</strong> (named <strong>Claude</strong> in earlier Surf versions).</p>
 
         <div class="toc">
             <strong>Jump to your tool</strong>
@@ -327,8 +327,9 @@ tool_timeout_sec = 60</code></pre>
         <p><strong>ChatGPT web is different:</strong> it does not read your Mac&rsquo;s local
            configuration. These steps do not connect Surf to a chat at chatgpt.com.
            See <a href="https://learn.chatgpt.com/docs/extend/mcp">OpenAI&rsquo;s MCP setup documentation</a>.</p>
-        <p class="meta"><strong>Compatibility checked 8 September 2026:</strong> a local
-           OpenAI-style MCP session opened, read, captured and closed a background Surf tab.
+        <p class="meta"><strong>Compatibility checked 8 September 2026:</strong> Codex CLI 0.153.4, using the signed connector available above and the Surf 1.14 release candidate,
+           opened a background fixture, read it, filled a field, clicked, resized it to 375 &times; 812,
+           captured the page and closed only its own tab. The user&rsquo;s window was not resized.
            Tool discovery inside the ChatGPT desktop interface has not yet been independently
            verified. Keep Surf open with Pro and its automation switch enabled, then follow
            <a href="#check">Check it worked</a> to confirm your client connects.</p>
@@ -464,7 +465,7 @@ tool_timeout_sec = 60</code></pre>
         </ul>
 
         <h2>What it can and cannot do</h2>
-        <p>While you have the feature switched on, your connected assistant can read the address, visible text and elements of a page it is working with — including anything already typed into an ordinary form field on it — take a picture of it, and see the messages and network requests that page made. It can also click, type, scroll and drag, go back and forward, open and close its own tabs, and resize the Surf window. <strong>Resizing affects the actual browser window you may be using.</strong> <strong>It can cause a file to be saved to your Mac</strong>, the same way following a download link yourself would; each one is reported back by name and path. Surf hands anything over only when asked.</p>
+        <p>While you have the feature switched on, your connected assistant can read the address, visible text and elements of a page it is working with — including anything already typed into an ordinary form field on it — take a picture of it, and see the messages and network requests that page made. It can also click, type, scroll and drag, go back and forward, open and close its own tabs, and resize its working page. <strong>In Surf 1.14 for Mac, resizing a detached background tab changes only its viewport.</strong> Resizing a visible assistant-owned tab changes that tab&rsquo;s window. Earlier Surf versions can resize the visible window during background work. <strong>It can cause a file to be saved to your Mac</strong>, the same way following a download link yourself would; each one is reported back by name and path. Surf hands anything over only when asked.</p>
         <p>Surf refuses some things in its own code, whatever it is asked. <strong>Private tabs are never exposed.</strong> Password fields are never filled, and Surf refuses any field it recognises as a card, security code or one-time code. What you typed into one is never read either: it is left out of what the assistant is told, and Surf hides it for the moment a screenshot is taken, so it is not in the picture either. Recognising a card field depends on how the site marks it up, so treat it as a strong safeguard rather than a guarantee. A session can only touch tabs it opened, or a tab you have handed to it deliberately.</p>
         <p><strong>It browses as you, in your own browser.</strong> A tab a session opens is an ordinary Surf tab with your ordinary cookies — there is no separate, signed-out profile behind the feature. So a site you are signed into is a site the session is signed into: it can open your account there, read it, and act as you. That runs both ways — if a session signs in to a site, or signs out of one, that is what your own browsing finds the next time you go there. Tab ownership keeps a session out of your other tabs; it does not give it a browser of its own. Private tabs are the exception on both counts: they keep their own cookies in memory, and Surf never exposes them to a session at all.</p>
         <p><strong>You can see when it is happening.</strong> While a session is working, Surf draws a coloured edge around the page and shows a marker in the toolbar saying how many tabs that session has; clicking it takes you to the one being worked on. Each session gets its own colour, and the same colour marks its tabs in the tab strip. This matters because the assistant can work in a background tab — one you are not looking at — so the window itself has to tell you. Those signals need a window to appear in, though: Surf keeps running with its window closed so downloads finish, and nothing is drawn anywhere at that point. <strong>Automation &rsaquo; Stop Automation</strong> is in the menu bar the whole time, which is the switch to rely on.</p>

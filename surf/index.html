@@ -146,24 +146,24 @@
             <li>A file manager with folders, tags, search, favourites, and Recently Deleted</li>
             <li>A private area locked behind Touch ID, Face ID, or your device passcode</li>
             <li>Compress and uncompress ZIP archives</li>
-            <li>Reader mode with themes and text size, plus a reading list you can read offline</li>
+            <li>Reader mode with themes and text size; save articles from Reader for offline reading (link-only entries still need the web)</li>
             <li>Your library on every device with iCloud sync — and in Finder on a Mac</li>
             <li>Per-site settings: text size, desktop mode, and ad-block exceptions</li>
             <li>Secure-connection (HTTPS) indicator in the address bar</li>
             <li>Choice of search engine: Google, DuckDuckGo, Bing, Yahoo, Ecosia, Brave Search, Startpage, Mojeek, Perplexity, Wikipedia or YouTube — or paste your own</li>
             <li>Clear Browsing Data to wipe your history, cookies, and cache, with a confirmation first</li>
-            <li><strong>On a Mac:</strong> let Claude read the page you are on, click and type — see the <a href="connector.html">Surf Connector</a></li>
+            <li><strong>On a Mac:</strong> connect Codex, Claude or another compatible local MCP assistant to its own browser tabs — see the <a href="connector.html">Surf Connector</a></li>
         </ul>
 
         <h2>Plans</h2>
         <p>Surf is free to download and use, and <strong>shows no advertising</strong>. The free plan is a complete browser: unlimited tabs, private tabs, ad &amp; tracker blocking, bookmarks, history, Reader, and the file manager.</p>
-        <p><strong>Surf Pro</strong> (<strong>$4.99/month</strong> or <strong>$29.99/year</strong>, with a <strong>3-day free trial</strong>) keeps your bookmarks, history, reading list and open tabs in step across your devices through your own iCloud account. It also lifts the free plan's limits: unlimited saved articles instead of 5, no daily cap on the files you save, several at once instead of one at a time, and per-site settings that persist. On a Mac it also lets <strong>Claude</strong> work with the page you are on, using the free <a href="connector.html">Surf Connector</a>. One subscription covers iPhone, iPad, and Mac.</p>
+        <p><strong>Surf Pro</strong> (<strong>US$4.99/month</strong> or <strong>US$29.99/year</strong> in the US storefront, with a <strong>3-day free trial for eligible subscribers</strong>) keeps your bookmarks, history, reading list and open tabs in step across your devices through your own iCloud account. It also lifts the free plan's limits: unlimited saved articles instead of 5, no daily cap on the files you save, several at once instead of one at a time, and per-site settings that persist. On a Mac it also lets a compatible local assistant work in its own background tabs, or a tab you explicitly hand over, using the free <a href="connector.html">Surf Connector</a>. One subscription covers iPhone, iPad, and Mac.</p>
         <p>On a Mac there is also a <strong>one-time purchase</strong>: buy Surf Pro once, with nothing to renew. Subscriptions are sold through Apple and renew automatically until cancelled; manage or cancel any time in <strong>Settings &rarr; [your name] &rarr; Subscriptions</strong> on iPhone or iPad, or <strong>App&nbsp;Store &rarr; your name &rarr; Account Settings</strong> on a Mac. Prices are always shown in the app in your local currency.</p>
 
         <h2>FAQ</h2>
 
         <h3>Is my browsing kept private?</h3>
-        <p>Yes. The pages you visit, your cookies, and anything you type are handled by Apple's WebKit and stay on your device. A sign-in you ask Surf to remember goes into your keychain, and reaches your other devices only if you switch on iCloud Keychain sync for it — never to us. They are never sent to us, and there is no account to sign in to. You can clear everything any time in Settings.</p>
+        <p>Surf stores browser data locally, with optional continuity through your own iCloud, and includes no developer analytics SDK. Websites and search engines receive the requests needed to browse. Saved sign-ins use your device keychain, with optional iCloud Keychain sync. If you connect an assistant on Mac, the page content it requests goes to that assistant&rsquo;s provider. MW Supply Limited does not operate a service that receives your browsing history. See the <a href="privacy.html">privacy policy</a> for these boundaries and data controls.</p>
 
         <h3>Does Surf block ads and trackers?</h3>
         <p>Yes, with an optional on-device content blocker that removes many ads and known trackers from the web pages you load, for a cleaner and faster web. It runs entirely on your device and reports nothing about the sites you visit. Surf itself shows no advertising on any plan.</p>
@@ -180,8 +180,8 @@
         <h3>How do I clear my browsing data?</h3>
         <p>Open Settings inside Surf and choose <strong>Clear Browsing Data</strong> to wipe your history, cookies, and cache. Surf asks you to confirm first, because it signs you out of every site you are signed in to. Bookmarks are kept unless you remove them.</p>
 
-        <h3>Can Claude use Surf on my Mac?</h3>
-        <p>Yes, with Surf Pro on a Mac. Turn it on in <strong>&hellip; &rarr; Add-Ons &rarr; Claude</strong>, and install the free <a href="connector.html">Surf Connector</a> — a small separate program that lets your Claude software talk to Surf on your own machine. Claude can then read the page you point it at — including anything typed into an ordinary form field on it — click, type, and move between pages. It is off until you switch it on — and from Surf 1.12 for Mac the switch is remembered, so it is on again next time until you turn it off, which you can do from the Automation menu at any moment. (In Surf 1.11 and earlier it was off at every launch and had to be switched on each time.) It never touches private tabs, and Surf refuses to fill password fields, plus any field it recognises as a card or security code — recognition beyond a password field depends on how the site marks it up. It is not available on iPhone or iPad. You need your own Claude software and account; Surf has neither and never sees yours.</p>
+        <h3>Can ChatGPT, Codex or Claude use Surf on my Mac?</h3>
+        <p>Yes, with Surf Pro, the free <a href="connector.html">Surf Connector</a>, and your own compatible assistant software and account. The <a href="connector.html#chatgpt-codex">connection guide</a> explains local ChatGPT desktop and Codex setup; these steps do not connect chatgpt.com. Surf 1.14 for Mac adds <strong>Settings &rsaquo; AI Assistants</strong> with ChatGPT &amp; Codex, Claude, and other-client instructions. Earlier versions call this page <strong>Claude</strong>. The assistant works in tabs it opens or you explicitly hand over; private tabs stay excluded. Ordinary assistant tabs share your website sign-ins, and requested page content goes to your assistant&rsquo;s provider. Turn access off with <strong>Automation &rsaquo; Stop Automation</strong>. Keep Surf open on the same Mac while using it. This feature is not available on iPhone or iPad.</p>
 
         <h3>I found a bug or have a feature request.</h3>
         <p>Please email <a href="mailto:mwsupplylimited@gmail.com?subject=Surf%20support">mwsupplylimited@gmail.com</a> with your device, your iOS or macOS version, and steps to reproduce. We read every message.</p>
@@ -190,10 +190,10 @@
         <p>For support: <a href="mailto:mwsupplylimited@gmail.com?subject=Surf%20support">mwsupplylimited@gmail.com</a></p>
 
         <h2>Downloads</h2>
-        <p><a href="connector.html">Surf Connector</a> — the free program that lets Claude work with Surf on a Mac. Signed and notarized by Apple. Not needed for anything else in Surf.</p>
+        <p><a href="connector.html">Surf Connector</a> — the free program that lets compatible local MCP assistants work with Surf on a Mac. Developer ID signed and notarized by Apple. Not needed for anything else in Surf.</p>
 
         <h2>Privacy</h2>
-        <p>See the <a href="privacy.html">Surf Privacy Policy</a>. The Claude integration is covered in section&nbsp;7.</p>
+        <p>See the <a href="privacy.html">Surf Privacy Policy</a>. Optional assistant integration is covered in section&nbsp;7.</p>
 
         <footer>
             &copy; 2026 MW Supply Limited
