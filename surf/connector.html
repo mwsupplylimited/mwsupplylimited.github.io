@@ -188,7 +188,7 @@
                &middot; universal (Apple&nbsp;silicon and Intel) &middot; macOS&nbsp;13 or later
                &middot; signed and notarized by Apple</p>
             <a class="get" href="SurfConnector.pkg">Download protocol&nbsp;8 &mdash; SurfConnector.pkg</a>
-            <code class="hash">SHA-256 afcfad711c1c0cefaa9fba1f356cc9ef014852cf6c14632b16ed89ac77ffa893</code>
+            <code class="hash">SHA-256 9245fc1c077a066ab665d2f1f59a1223f37082135cc1aa68501f8bd087e694db</code>
         </div>
 
         <p class="meta"><strong>It checks whether a newer connector has been published, and
@@ -442,7 +442,7 @@
         <h2>Check what you downloaded</h2>
         <p>The installer is signed by MW Supply Limited and notarized by Apple, so macOS verifies it for you before it will open. The certificate reads <code>Developer ID Installer: Matthew Wong (6RZ8YV42XZ)</code> — that is us; Apple issues these in the account holder&rsquo;s name. If you would rather check it yourself:</p>
         <p><code>shasum -a 256 SurfConnector.pkg</code></p>
-        <p><code>afcfad711c1c0cefaa9fba1f356cc9ef014852cf6c14632b16ed89ac77ffa893</code></p>
+        <p><code>9245fc1c077a066ab665d2f1f59a1223f37082135cc1aa68501f8bd087e694db</code></p>
         <p><code>spctl --assess --type install -v SurfConnector.pkg</code> should answer <code>accepted &middot; source=Notarized Developer ID</code>.</p>
 
         <h2>Remove it</h2>

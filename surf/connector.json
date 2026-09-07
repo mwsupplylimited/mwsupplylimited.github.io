@@ -1,10 +1,10 @@
 {
   "protocol": 8,
-  "build": "83651d9121bf",
-  "buildSha256": "83651d9121bf835cdb199d48e7225b0aa2825e9ae587f624753feabb46788bfa",
-  "pkgSha256": "afcfad711c1c0cefaa9fba1f356cc9ef014852cf6c14632b16ed89ac77ffa893",
-  "bytes": 232006,
+  "build": "94c8708553ea",
+  "buildSha256": "94c8708553eaad1ddfc2827d7cec9d95ca5bba97de61c50bd2bf556469721d3d",
+  "pkgSha256": "9245fc1c077a066ab665d2f1f59a1223f37082135cc1aa68501f8bd087e694db",
+  "bytes": 232253,
   "url": "https://mwsupplylimited.github.io/surf/connector.html",
   "pkg": "https://mwsupplylimited.github.io/surf/SurfConnector.pkg",
-  "notes": "smaller tool descriptions, clearer failures, and it can now tell you when it is out of date"
+  "notes": ""
 }
