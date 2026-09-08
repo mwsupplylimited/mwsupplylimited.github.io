@@ -255,13 +255,21 @@
             <li>Follow the setup for whichever assistant you use &mdash; <a href="#claude-app">the walkthroughs are below</a>.</li>
             <li>Quit that assistant completely and open it again. Sessions already running will not see Surf.</li>
         </ol>
-        <p><strong>Already have it? Check the build before reinstalling.</strong>
-           Surf 1.14 for Mac, build 137 and later, shows <strong>Up to date &mdash; no update needed</strong>
-           in AI Assistants when the selected connector or the last connected build matches the latest
-           download. <strong>Download Again</strong> remains available if you want to reinstall it.
-           Surf identifies which build it checked. If the installed file is current but an assistant
-           still uses a different build, restart that assistant&rsquo;s Surf connection or start a new session.
-           An offline check or an unreadable build is shown as unverified, never as up to date.</p>
+        <p><strong>Already have it? Verify it before reinstalling.</strong>
+           Surf 1.14 for Mac, build 138 and later, requests remembered read-only access to check the
+           selected connector after you relaunch Surf. If you chose it in an earlier build, press
+           <strong>Verify Installed Connector&hellip;</strong> in Settings &rsaquo; AI Assistants or
+           Add-Ons &rsaquo; AI Assistants when prompted, and select the already installed
+           <code>surf-connector</code>. This is a one-time permission step when access is missing,
+           not another installation. Verification only reads the selected file, never writes it,
+           does not request parent-folder permission and does not run the connector to inspect it.</p>
+        <p><strong>Up to date &mdash; no update needed</strong> means the readable selected file matches
+           the latest download or, when Surf cannot read that file, a currently connected session does.
+           Surf identifies the evidence it used. <strong>Download Again</strong> is optional.
+           Older sessions get a separate instruction to restart their Surf connection or start a new
+           session; they do not hide another current session. An older session or saved history alone
+           does not prove the installed file needs an update. When Surf cannot verify the file or a
+           current connection, it says so. Failed or disabled update checks remain explicit.</p>
         <p>With update checks enabled and a connector on record, Surf checks at launch, when you open
            AI Assistants in Settings or Add-Ons, after you choose a connector, and when you turn checks
            back on. <strong>Check Now</strong> also requests a fresh comparison. You can turn these requests
