@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Windrose — Privacy Policy</title>
-    <meta name="description" content="Privacy Policy for Windrose: Weather Radar.">
+    <meta name="description" content="Privacy policies for the current Windrose 1.4 App Store release and the separately labelled Windrose 1.5 internal TestFlight beta.">
     <style>
         :root {
             --bg: #ffffff; --fg: #1a1a1a; --muted: #666666; --accent: #2e76d6;
@@ -27,6 +27,13 @@
         a { color: var(--accent); }
         .callout { background: var(--card); border: 1px solid var(--border); border-left: 3px solid var(--accent); padding: 16px 20px; border-radius: 8px; margin: 22px 0; }
         .callout p { margin: 0; }
+        a:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+        .version-guide nav { display: flex; flex-wrap: wrap; gap: 4px 20px; margin-top: 12px; }
+        .version-guide nav a { display: inline-flex; align-items: center; min-height: 44px; padding: 8px 0; }
+        .version-heading { font-size: 1.55rem; line-height: 1.3; }
+        .beta-policy { border-top: 2px solid var(--border); margin-top: 48px; padding-top: 12px; }
+        .beta-policy h3 { font-size: 1.2rem; margin: 34px 0 10px; }
+        article { scroll-margin-top: 20px; }
         footer { margin-top: 56px; padding-top: 22px; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.85rem; }
     </style>
 </head>
@@ -34,6 +41,11 @@
     <div class="container">
         <a class="back" href="index.html">&larr; Windrose Support</a>
         <h1>Windrose Privacy Policy</h1>
+        <div class="callout version-guide"><p><strong>Choose the policy for your installed version.</strong> Windrose <strong>1.4.0 (build 83)</strong> is the current public App Store release. Windrose <strong>1.5.0 (build 84)</strong> is an internal TestFlight beta and is not the public App Store release. Use the beta section if you install that build.</p>
+            <nav aria-label="Privacy policy versions"><a href="#privacy-1-4">App Store 1.4 policy</a><a href="#privacy-1-5-beta">Internal TestFlight 1.5 beta policy</a></nav>
+        </div>
+        <article id="privacy-1-4" aria-labelledby="version-1-4">
+        <h2 class="version-heading" id="version-1-4">Current App Store release — Windrose 1.4</h2>
         <p class="updated">Windrose 1.4 &middot; Last updated: 10 September 2026</p>
 
         <div class="callout"><p><strong>Summary:</strong> This policy describes Windrose 1.4. Windrose has no app account system. It uses your location to fetch weather and stores settings and places on your device, with iCloud syncing when available. TelemetryDeck receives app-usage, subscription and advertising events for analytics. The free plan uses Unity Ads, which may collect device and ad-interaction data. The optional <strong>Windrose Pro</strong> subscription removes ad placements when the app recognizes the active subscription; advertising startup and previously transmitted data are explained below.</p></div>
@@ -95,6 +107,63 @@
 
         <h2>Contact</h2>
         <p>Questions about privacy? Email <a href="mailto:mwsupplylimited@gmail.com?subject=Windrose%20Privacy">mwsupplylimited@gmail.com</a>.</p>
+
+        </article>
+
+        <article id="privacy-1-5-beta" aria-labelledby="version-1-5-beta" class="beta-policy">
+        <h2 class="version-heading" id="version-1-5-beta">Internal TestFlight beta — Windrose 1.5</h2>
+        <p class="updated">Beta 1.5.0 (build 84) &middot; Last updated: 10 September 2026</p>
+        <p>These disclosures apply to the 1.5 beta only. Version 1.4 continues to use the storage, analytics and advertising integrations described in its own policy above.</p>
+<div class="callout"><p>Windrose has no app account system. Weather requests go to the services needed to return your chosen forecast or map. Places and preferences are stored locally, with private iCloud syncing when available. This beta does not request real ads. Its optional advertising choices both start off; the advertising section explains the candidate integration and distribution limits.</p></div>
+<section aria-labelledby="beta-location"><h3 id="beta-location">Location and weather requests</h3>
+<p>When you grant location permission, Windrose uses your coordinates to request nearby weather. Coordinates can be precise when Precise Location is enabled. If you search for or save a place, requests use that place’s coordinates. You can use manual place search without granting device-location access. Optional background following requires separate permission; you can change it in iOS Settings.</p>
+<p>Requests can include latitude and longitude, place-search text, an airport or region, map tiles, time and model parameters. Providers receive ordinary connection information such as your IP address and may retain request logs. Open-Meteo describes IP and URL logging, potentially including coordinates, and its retention practices in its <a href="https://open-meteo.com/en/terms">terms and privacy information</a>. Windrose does not attach an advertising identifier to weather requests and does not send saved places or weather coordinates to its advertising service.</p>
+</section>
+<section aria-labelledby="beta-storage"><h3 id="beta-storage">Your device, iCloud and backups</h3>
+<p>Windrose stores saved and recent places, Home and Work labels, preferences, permission and advertising choices, earned perks and weather caches on your device. The widget uses a local shared snapshot. Windrose does not operate a developer server that stores your place collection.</p>
+<p>When iCloud is available, saved places and Home/Work use encrypted place fields in a private CloudKit database belonging to your Apple Account. These records include names, coordinates, ordering, revisions and deletion state. They remain associated with the Apple Account used for syncing; encryption does not make them anonymous. Selected display, unit, forecast-model and radar preferences sync separately through Apple’s iCloud key-value storage. Current permission choices, advertising consent, recent places and earned perk status are not newly synced by version 1.5. Pro access is verified through the App Store.</p>
+<p>Switching iCloud accounts pauses place uploads until you choose whether to keep the collection locally or import it into the current account. Earlier versions stored places and additional settings in iCloud key-value storage; version 1.5 preserves recovery information while migrating this legacy data. Older installations and other devices can still retain their copies.</p>
+<p><strong>Settings → Backup &amp; Sync</strong> offers export, import and available local recovery controls. Exports contain place names, exact coordinates, Home/Work and selected preferences. Windrose does not password-encrypt exported JSON files. Store and share them carefully.</p>
+<p>Deleting a place removes it from the active collection and syncs that deletion when synchronization succeeds. Protected local recovery snapshots and sync deletion records can retain previous information. Removing the app does not erase every iCloud copy, other-device copy, provider log or file you exported. Synced places can return after reinstalling. Apple handles its services under <a href="https://www.apple.com/legal/privacy/">Apple’s Privacy Policy</a>.</p>
+</section>
+<section aria-labelledby="beta-providers"><h3 id="beta-providers">Services used for weather and maps</h3>
+<ul>
+<li><a href="https://open-meteo.com/">Open-Meteo</a>: forecasts, marine and air-quality models, ensemble rain estimates, upper-air fields and place search.</li>
+<li><a href="https://www.rainviewer.com/">RainViewer</a>: precipitation radar imagery.</li>
+<li><a href="https://nasa-gibs.github.io/gibs-api-docs/">NASA GIBS</a> and <a href="https://view.eumetsat.int/">EUMETSAT</a>: infrared satellite imagery.</li>
+<li><a href="https://aviationweather.gov/">NOAA Aviation Weather Center</a>: aviation reports and advisories.</li>
+<li><a href="https://www.weather.gov/">U.S. National Weather Service</a>, <a href="https://www.hko.gov.hk/">Hong Kong Observatory</a> and <a href="https://meteoalarm.org/">MeteoAlarm / EUMETNET</a>: supported official warnings.</li>
+<li><a href="https://www.nhc.noaa.gov/">NOAA National Hurricane Center</a>, <a href="https://www.jma.go.jp/">Japan Meteorological Agency</a> and the Joint Typhoon Warning Center: supported tropical-cyclone information.</li>
+<li>Apple MapKit and geocoding services: base maps and conversion of coordinates into a place name. Reverse geocoding can send your coordinates to Apple’s network service; it is not guaranteed to happen only on your device. Map requests describe the area you view. Apple handles these services under <a href="https://www.apple.com/legal/privacy/">Apple’s Privacy Policy</a>.</li>
+<li>GitHub-hosted public files: the NOAA GFS-derived pressure grid and airport catalogue. Hosting requests are subject to <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub’s privacy statement</a>.</li>
+</ul>
+<p>A viewed map area does not necessarily indicate your device’s location. A provider may process request metadata under its own policy; an app display or cache does not make those requests on-device processing.</p>
+</section>
+<section aria-labelledby="beta-advertising"><h3 id="beta-advertising">Optional advertising and tracking</h3>
+<p><strong>Internal TestFlight builds do not initialize an advertising SDK or request real ads.</strong> Any test ad layout is a local, noninteractive placeholder. The optional LevelPlay integration and choices described below are implemented in the 1.5 candidate for eligible App Store distribution; they do not mean that this beta has served production ads or transmitted advertising data.</p>
+<p>The free plan supports an inline weather-dashboard banner and optional video rewards using <strong>Unity LevelPlay with ironSource advertising</strong> and its included Ad Quality service. To deliver and measure ads, protect against fraud and diagnose service performance, these services may process device identifiers, IP address, ad interactions, ad information and diagnostics.</p>
+<p>The provider may infer an approximate city, state or country from IP. Its privacy policy describes geolocation sharing with ad networks for cross-context advertising. This is separate from Windrose’s precise weather-coordinate requests. See the <a href="https://unity.com/legal/game-player-and-app-user-privacy-policy">Unity Game Player and App User Privacy Policy</a> for its processing and privacy-rights controls.</p>
+<p>In <strong>Settings → Ad Privacy</strong>, <strong>Allow device data for advertising</strong> and <strong>Allow personalized advertising</strong> both start off. The first is permission for advertising device-data access; the second is a separate choice about using and sharing advertising data to select ads based on interests. Apple’s App Tracking Transparency permission is also required before Windrose starts advertising. If it is denied, restricted or undecided, Windrose requests no ads. Weather and navigation remain usable.</p>
+<p>You can change the app choices at any time. If advertising is eligible to start and personalization is off, Windrose sends the provider a no-consent and do-not-sell-or-share signal. Turning off device data stops new ad requests and removes displayed banners. Change Apple’s tracking permission in iOS Settings → Privacy &amp; Security → Tracking.</p>
+<p><strong>Windrose Pro removes ads.</strong> When Pro is verified, Windrose stops requesting and showing ads. If an advertising service was already started before a purchase or consent change, stopping new ads cannot retract data previously transmitted or guarantee that every in-progress vendor diagnostic operation is recalled. Use the provider’s privacy controls for requests about data it already holds.</p>
+</section>
+<section aria-labelledby="beta-analytics"><h3 id="beta-analytics">Analytics and diagnostics</h3>
+<p>Version 1.5 removes the standalone TelemetryDeck app-usage analytics integration and its outgoing event path. It deletes the known local pending-event cache when accessible. It does not send a replacement stream of app-usage or purchase events to a developer analytics server.</p>
+<p>Advertising measurement and Ad Quality diagnostics remain part of the optional advertising service described above. Weather providers also receive technical request data. Version 1.4 used TelemetryDeck on free and Pro plans for app-usage, subscription-lifecycle and advertising-interaction events, with technical metadata, session identifiers and a hashed device-derived identifier. It also used standalone Unity Ads; an advertising startup already in progress could continue while Pro status was being resolved. Data already transmitted by earlier versions remains subject to the providers’ policies, including <a href="https://telemetrydeck.com/privacy/">TelemetryDeck’s Privacy Policy</a>.</p>
+</section>
+<section aria-labelledby="beta-purchases"><h3 id="beta-purchases">Purchases and subscriptions</h3>
+<p>Apple processes Windrose Pro purchases. Windrose reads product prices, verified subscription transactions and renewal information to show your plan and unlock features. It does not receive your payment-card details, Apple Account password or Apple Account email. Version 1.5 does not send purchase transaction identifiers to a developer analytics server.</p>
+<p>Manage billing and cancellation through the App Store or <strong>Settings → Windrose Pro → Manage/Cancel Subscription</strong>. Purchases are governed by the <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">standard Apple terms of use</a>.</p>
+</section>
+<section aria-labelledby="beta-sharing"><h3 id="beta-sharing">Support and sharing</h3>
+<p>If you email support, we receive the sender address and whatever content you choose to include, and use it to handle your request. An ad report is optional and includes basic app/ad context, not weather coordinates or purchase credentials. System sharing sends the chosen forecast image or backup to the recipient or service you select; it is not an automatic upload to us.</p>
+<p>Windrose is a general-audience weather app and is not designed specifically for children. Please contact us if you believe a child supplied personal information through a support request.</p>
+</section>
+<section aria-labelledby="beta-choices"><h3 id="beta-choices">Questions, requests and changes</h3>
+<p>You can manage location and notification permissions in iOS Settings, advertising choices in Windrose, and subscriptions through Apple. For questions about this policy or requests concerning correspondence held by MW Supply Limited, email <a href="mailto:mwsupplylimited@gmail.com?subject=Windrose%20Privacy">mwsupplylimited@gmail.com</a>. For data processed by Apple or an advertising or weather provider, its linked policy explains available rights and contact methods.</p>
+<p>We will update this page when the app’s data practices change. This section describes the Windrose 1.5 beta; the separate version 1.4 section above continues to describe the current App Store release. Installing the beta does not erase data previously sent by an earlier version.</p>
+</section>
+        </article>
 
         <footer>&copy; 2026 MW Supply Limited</footer>
     </div>
