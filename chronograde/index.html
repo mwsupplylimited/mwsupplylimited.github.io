@@ -3,14 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chronograde — Support</title>
-    <meta name="description" content="Support page for Chronograde — turn your iPhone or iPad into a timegrapher and track your watch's accuracy against atomic time.">
+    <title>Chronograde — Watch Accuracy &amp; Support</title>
+    <meta name="description" content="Understand how your mechanical watch runs. Try the free acoustic Timegrapher, track daily drift, and explore Chronograde Pro for iPhone and iPad.">
+    <link rel="canonical" href="https://mwsupplylimited.github.io/chronograde/">
+    <meta property="og:title" content="Chronograde — Understand how your watch runs">
+    <meta property="og:description" content="A free acoustic Timegrapher, manual accuracy tracking, and a home for your watch collection on iPhone and iPad.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mwsupplylimited.github.io/chronograde/">
     <style>
         :root {
             --bg: #ffffff;
             --fg: #1a1a1a;
             --muted: #666666;
             --accent: #e66230;
+            --link: #b53f17;
             --card: #f5f5f7;
             --border: #e5e5e7;
         }
@@ -20,6 +26,7 @@
                 --fg: #f5f5f7;
                 --muted: #9a9a9a;
                 --accent: #ff7d45;
+                --link: #ff7d45;
                 --card: #1c1f25;
                 --border: #2a2d34;
             }
@@ -46,7 +53,7 @@
             font-size: 0.9rem;
             margin-bottom: 32px;
         }
-        .back:hover { color: var(--accent); }
+        .back:hover { color: var(--link); }
         h1 {
             font-size: 2.2rem;
             margin: 0 0 8px;
@@ -70,7 +77,7 @@
         .muted { color: var(--muted); }
         ul { padding-left: 22px; }
         li { margin-bottom: 6px; }
-        a { color: var(--accent); }
+        a { color: var(--link); }
         code {
             background: var(--card);
             padding: 1px 6px;
@@ -86,6 +93,23 @@
             font-size: 0.8rem;
             color: var(--muted);
         }
+        .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; margin: 24px 0; }
+        .download {
+            display: inline-block;
+            background: var(--accent);
+            color: #1a1a1a;
+            padding: 12px 18px;
+            border-radius: 12px;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        .download:hover { text-decoration: underline; }
+        a:focus-visible { outline: 3px solid var(--fg); outline-offset: 4px; }
+        .feature-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+        .feature-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 20px; }
+        .feature-card h3 { margin-top: 0; }
+        .feature-card ul { margin-bottom: 0; }
+        @media (max-width: 560px) { .feature-grid { grid-template-columns: 1fr; } }
         footer {
             margin-top: 64px;
             padding-top: 24px;
@@ -96,57 +120,93 @@
     </style>
 </head>
 <body>
-    <div class="container">
+    <main class="container">
         <a class="back" href="../">&larr; MW Supply Limited</a>
 
         <h1>Chronograde</h1>
-        <p class="subtitle">Turn your iPhone or iPad into a timegrapher and track your watch's accuracy against atomic time. <span class="pill">Version 1.7.1</span> <span class="pill">20 languages</span></p>
+        <p class="subtitle">Understand how your watch runs &mdash; from a quick acoustic reading to its daily gain or loss over time.</p>
+        <p><span class="pill">iPhone &amp; iPad</span> <span class="pill">Free acoustic Timegrapher</span></p>
+        <div class="actions">
+            <a class="download" href="https://apps.apple.com/app/id6774091390">Download on the App Store</a>
+            <a href="first-readings.html">Take your first readings &rarr;</a>
+        </div>
+
+        <h2>Two ways to understand your watch</h2>
+        <p><strong>Hear how it is running now.</strong> The Timegrapher uses your device's microphone to estimate a mechanical watch's rate and beat error. A quiet room and a clear ticking signal matter; some watches and device combinations are harder to measure.</p>
+        <p><strong>See how it keeps time in everyday use.</strong> Save manual readings against the app's time reference, then return later for another reading in the same session. The change in offset shows the watch's average gain or loss across that interval. Network time correction, consistent timing and longer intervals help make those comparisons useful.</p>
+        <p class="muted">An acoustic estimate is a snapshot. A manual drift trend covers the time between readings. Neither is a chronometer certification or a replacement for a watchmaker's assessment.</p>
+
+        <h2>Start free. Add Pro when you need more.</h2>
+        <div class="feature-grid">
+            <section class="feature-card" aria-labelledby="free-heading">
+                <h3 id="free-heading">Free: get to know your collection</h3>
+                <ul>
+                    <li>Use the acoustic Timegrapher without a measurement limit.</li>
+                    <li>Add your whole collection and save up to 10 manual accuracy measurements across it.</li>
+                    <li>Try one complete Regulation Coach run.</li>
+                    <li>Use iCloud sync and backup/restore without Pro.</li>
+                    <li>Share accuracy cards and choose from two included themes.</li>
+                </ul>
+            </section>
+            <section class="feature-card" aria-labelledby="pro-heading">
+                <h3 id="pro-heading">Pro: follow your watches over time</h3>
+                <ul>
+                    <li>Keep unlimited manual measurements and start additional sessions.</li>
+                    <li>Repeat the Regulation Coach's guided positional test.</li>
+                    <li>Explore Accuracy by Position and the app's Chronometer Score.</li>
+                    <li>Use the large reference clock with visible sync status.</li>
+                    <li>Keep wear and service logs; import CSV and export CSV or Excel.</li>
+                    <li>Remove app advertising while Pro is active.</li>
+                </ul>
+            </section>
+        </div>
+        <p>Choose a <strong>monthly</strong> or <strong>annual</strong> auto-renewable subscription, or a one-time <strong>Lifetime</strong> unlock. Settings &rarr; Membership shows the available plans and localized App Store prices. An introductory free trial may be available to eligible subscribers; check the offer and billing terms shown before confirming. Lifetime is a separate one-time purchase, without a subscription trial.</p>
+        <p class="muted">Premium color themes are optional, separate one-time purchases; they are not included with Pro.</p>
 
         <h2>Guides</h2>
         <ul>
+            <li><a href="first-readings.html"><strong>Your first readings</strong></a> &mdash; a practical guide to microphone placement, manual measurements and sessions.</li>
             <li><a href="accuracy.html"><strong>Is my watch accurate?</strong></a> &mdash; what a good daily rate is, how to measure one properly, and what to do about a bad number.</li>
             <li><a href="chronometer.html"><strong>Chronometer standards, explained</strong></a> &mdash; what COSC and METAS actually test, with the real criteria.</li>
             <li><a href="calibers.html"><strong>Caliber reference</strong></a> &mdash; beat rate, frequency, power reserve and lift angle for 29 common movements.</li>
         </ul>
 
-        <h2>About</h2>
-        <p>Chronograde measures how a mechanical watch is running &mdash; live rate and beat error read acoustically through your device's microphone &mdash; and tracks each watch's daily drift against true atomic time over days and weeks. It runs on both <strong>iPhone and iPad</strong>. Add as many watches as you like, see how each grades against COSC and METAS chronometer standards, compare accuracy by position across sessions, log wear and service history, set your watch against an NTP-corrected clock, and export everything to CSV or Excel. Chronograde is free to use, supported by ads on the free tier; an optional <strong>Chronograde Pro</strong> upgrade (subscription or a one-time Lifetime unlock) removes every ad and adds unlimited measurements, Regulation Coach, Accuracy by Position, your Chronometer Score, the Atomic Clock, wear &amp; service logs and export. Your watch data stays on your device and, if you choose, your own iCloud.</p>
-
         <h2>Getting started</h2>
         <ul>
             <li><strong>Add a watch</strong> with the + button. Brand and model are required; everything else (reference, serial, caliber, purchase price, photo) is optional.</li>
-            <li><strong>Measure the rate (Timegrapher tab).</strong> Rest the phone on the caseback so it can hear the balance wheel, and watch the live rate and beat error settle. Use AUTO beat-rate detection or set the BPH yourself.</li>
-            <li><strong>Track drift over time.</strong> Tap <em>Record Measurement</em>, pick the time your watch is about to show &mdash; down to the exact second (e.g. <code>14:30:20</code>) &mdash; and press RECORD the instant the second hand touches it. After your second reading the drift chart and average rate per day fill in automatically.</li>
-            <li><strong>Pull-to-sync</strong> atomic time from the toolbar. Chronograde talks to public NTP servers (time.apple.com, time.google.com, pool.ntp.org) to correct for device-clock drift.</li>
-            <li><strong>Log wear</strong> with one tap, and <strong>log service</strong> with type, provider, cost, and notes &mdash; set a service interval and the detail screen shows when the next one is due.</li>
+            <li><strong>Try the Timegrapher.</strong> In a quiet room, keep the watch and device steady on a soft, stable surface. Bring the microphone close to the watch without pressing or dragging either object against the other. Start listening and let the signal settle. Use AUTO beat-rate detection or select the movement's known BPH.</li>
+            <li><strong>Save a manual reading.</strong> Open the watch and tap <em>Record Measurement</em>. Choose the time its hands will show, tap RECORD when they reach it, then review and Save.</li>
+            <li><strong>Return for a second reading.</strong> Leave time between readings &mdash; for example, return the next day. Keep the watch running without resetting it, and record into the same session. One reading shows an offset; two separated readings can show a rate.</li>
+            <li><strong>Check the time reference.</strong> Tap the sync icon on the Watches tab to request network time. The recording screen indicates when it is using the device clock instead.</li>
+            <li><strong>Keep resets separate.</strong> If the watch stops or you change its time, the old and new offsets do not form one continuous trend. Pro's <em>Watch was reset &mdash; start new session</em> action keeps those runs separate. See the <a href="first-readings.html#sessions">session guide</a>.</li>
             <li><strong>Personalize</strong> under Settings &rarr; Theme Shop. Two themes are free; premium themes can be unlocked with a one-time purchase.</li>
         </ul>
 
         <h2>FAQ</h2>
 
         <h3>Does Chronograde show ads?</h3>
-        <p><strong>On the free tier, yes &mdash; and Chronograde Pro removes them entirely.</strong> The free tier carries a banner at the bottom of the screen and an occasional full-screen ad when you return to the Watches list. Ads never cover the controls, and never appear during a measurement or a Timegrapher session. Advertising is supplied by Unity Ads; see the <a href="privacy.html">privacy policy</a> for what it collects and how to opt out of personalised ads.</p>
+        <p>The free tier includes a bottom banner and occasional full-screen advertising when returning to the Watches list. Pro removes app advertising while your subscription is active, or with a Lifetime unlock. The current app uses Unity Ads; see the <a href="privacy.html">privacy policy</a> for advertising data and privacy choices.</p>
 
         <h3>What is free, and what needs Pro?</h3>
-        <p>The <strong>Timegrapher is free for everyone</strong> &mdash; measure any watch's rate and beat error at no cost, with no account. You can also add your whole collection and record up to 10 accuracy measurements free. <strong>Chronograde Pro</strong> adds unlimited measurements and sessions, Regulation Coach, Accuracy by Position, your Chronometer Score, the Atomic Clock, wear &amp; service logs, and export to CSV &amp; Excel.</p>
+        <p>The free features and Pro benefits are listed above. In particular, <strong>the acoustic Timegrapher, one complete Coach run, iCloud sync and backup/restore do not require Pro</strong>. The ten-reading free allowance applies to manual accuracy measurements across your collection, including readings in the Recycle Bin. Premium themes are separate purchases.</p>
 
         <h3>How does Chronograde Pro work?</h3>
-        <p>You can record up to 10 measurements across all watches for free. <strong>Chronograde Pro</strong> unlocks unlimited measurements and the full Pro feature set. It's available as a <strong>monthly</strong> or <strong>annual</strong> auto-renewable subscription (each with a <strong>14-day free trial</strong> for new subscribers), or as a one-time <strong>Lifetime</strong> unlock &mdash; pay once and own Pro forever, with no subscription. Subscriptions renew automatically until cancelled; manage or cancel anytime from iOS Settings &rarr; [your name] &rarr; Subscriptions. Tap <em>Restore Purchases</em> on the membership screen if you've bought Pro before on the same Apple ID.</p>
+        <p>Subscriptions renew automatically unless cancelled under the terms shown by the App Store. Open Settings &rarr; Membership in Chronograde to view your plan, restore purchases, or open <em>Manage or Cancel Subscription</em>. You can also manage subscriptions in your device's Settings &rarr; [your name] &rarr; Subscriptions. Use the same Apple Account that made the purchase when restoring. Theme purchases have their own Restore Purchases button in Theme Shop. See Apple's <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">standard license agreement</a> and our <a href="privacy.html">privacy policy</a>.</p>
 
         <h3>What counts as an "accurate" measurement?</h3>
-        <p>For drift tracking, Chronograde uses SNTP (RFC 4330) to query a public time service and applies the offset to your device's clock &mdash; accurate to well under a tenth of a second. The bottleneck is your reaction time pressing RECORD as the second hand touches the target; press it consistently and the math averages out over multiple readings. For the acoustic Timegrapher, rest the phone firmly on the caseback in a quiet room and let the reading stabilize for a few seconds.</p>
+        <p>A useful manual comparison needs separated readings from one uninterrupted session, a usable time reference and consistent button timing. Network conditions and reaction time affect the result. Acoustic estimates also depend on the ticking signal, background noise, device placement and beat-rate setting. A stable-looking number alone does not establish accuracy; repeat the reading and compare it with the watch's longer-term drift. The <a href="first-readings.html">first-readings guide</a> walks through both methods.</p>
 
         <h3>What's a good rate?</h3>
-        <p>It depends on the watch. COSC chronometer-certified mechanical watches must run within &minus;4/+6 seconds per day. ETA standard movements typically run &plusmn;10&ndash;30 s/day. Quartz watches usually run &plusmn;0.5 s/day or better. Chronograde colors the rate green up to &plusmn;10 s/day, orange up to &plusmn;30, and red beyond that.</p>
+        <p>Start with the manufacturer's specification for your watch and compare repeated readings under similar conditions. Position, winding state and everyday use can change what you observe. Chronograde's colors and Chronometer Score are app summaries, not a certification or diagnosis. Keep useful history to discuss with a watchmaker if a persistent change concerns you.</p>
 
         <h3>The sync button shows "Could not reach a time server."</h3>
-        <p>Chronograde uses UDP on port 123 for SNTP queries. Some corporate, hotel, or captive Wi-Fi networks block outbound UDP. Try a different network or use cellular, then tap the sync icon in the top-right of the Watches tab. Without a successful sync, measurements fall back to the device clock and are marked accordingly.</p>
+        <p>Chronograde queries public time servers using UDP port 123, which some Wi-Fi networks block. Complete any Wi-Fi sign-in, try another connection, then tap the sync icon on the Watches tab. A failed refresh can retain a still-usable earlier correction; without a usable correction, the app uses the device clock and labels the reading accordingly.</p>
 
         <h3>Does it sync between my iPhone and iPad?</h3>
         <p>If iCloud (CloudKit) is enabled for Chronograde and you're signed in with the same Apple ID on both devices, your watches, measurements, wear log, and service history sync automatically. Settings &rarr; iCloud shows the current status.</p>
 
         <h3>Can I export my data?</h3>
-        <p>Yes. From the Watches tab menu, choose <em>Export to Excel</em> (a workbook with Watches, Measurements, Wear, and Service sheets) or <em>Export to CSV</em>. You can also import a watches CSV the same way; Chronograde detects duplicates by serial number or brand + model + nickname.</p>
+        <p><strong>Backup and restore are free:</strong> use the Watches tab menu to save a backup file or restore one. With Pro, that menu also offers <em>Export to Excel</em>, <em>Export to CSV</em>, and <em>Import from CSV</em>. A backup and a spreadsheet export serve different purposes; use the backup feature when you want an archive for restoration.</p>
 
         <h3>I found a bug or have a feature request.</h3>
         <p>Please email <a href="mailto:mwsupplylimited@gmail.com?subject=Chronograde%20feedback">mwsupplylimited@gmail.com</a> with your iOS version, device, and steps to reproduce. We read every message.</p>
@@ -160,6 +220,6 @@
         <footer>
             &copy; 2026 MW Supply Limited
         </footer>
-    </div>
+    </main>
 </body>
 </html>

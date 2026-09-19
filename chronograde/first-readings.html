@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your first watch readings — Chronograde</title>
+    <meta name="description" content="Take your first Chronograde readings: microphone placement, manual watch offsets, daily drift and when to start a new session.">
+    <link rel="canonical" href="https://mwsupplylimited.github.io/chronograde/first-readings.html">
+    <meta property="og:title" content="Your first watch readings — Chronograde">
+    <meta property="og:description" content="A practical guide to acoustic estimates, two manual readings and useful watch accuracy history.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://mwsupplylimited.github.io/chronograde/first-readings.html">
+    <style>
+        :root {
+            --bg: #ffffff;
+            --fg: #1a1a1a;
+            --muted: #666666;
+            --accent: #e66230;
+            --link: #b53f17;
+            --card: #f5f5f7;
+            --border: #e5e5e7;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #121419;
+                --fg: #f5f5f7;
+                --muted: #9a9a9a;
+                --accent: #ff7d45;
+                --link: #ff7d45;
+                --card: #1c1f25;
+                --border: #2a2d34;
+            }
+        }
+        * { box-sizing: border-box; }
+        html { -webkit-text-size-adjust: 100%; }
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+            background: var(--bg);
+            color: var(--fg);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 48px 24px 96px;
+        }
+        .back {
+            display: inline-block;
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-bottom: 32px;
+        }
+        .back:hover { color: var(--link); }
+        h1 {
+            font-size: 2.2rem;
+            margin: 0 0 8px;
+            letter-spacing: -0.02em;
+        }
+        .subtitle {
+            color: var(--muted);
+            margin: 0 0 40px;
+        }
+        h2 {
+            font-size: 1.3rem;
+            margin: 40px 0 12px;
+            letter-spacing: -0.01em;
+        }
+        h3 {
+            font-size: 1rem;
+            margin: 24px 0 6px;
+            font-weight: 600;
+        }
+        p, li { color: var(--fg); }
+        .muted { color: var(--muted); }
+        ul { padding-left: 22px; }
+        li { margin-bottom: 6px; }
+        a { color: var(--link); }
+        code {
+            background: var(--card);
+            padding: 1px 6px;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+        .pill {
+            display: inline-block;
+            background: var(--card);
+            border: 1px solid var(--border);
+            padding: 3px 10px;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            color: var(--muted);
+        }
+        .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; margin: 24px 0; }
+        .download {
+            display: inline-block;
+            background: var(--accent);
+            color: #1a1a1a;
+            padding: 12px 18px;
+            border-radius: 12px;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        .download:hover { text-decoration: underline; }
+        a:focus-visible { outline: 3px solid var(--fg); outline-offset: 4px; }
+        .feature-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+        .feature-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 20px; }
+        .feature-card h3 { margin-top: 0; }
+        .feature-card ul { margin-bottom: 0; }
+        @media (max-width: 560px) { .feature-grid { grid-template-columns: 1fr; } }
+        footer {
+            margin-top: 64px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
+            color: var(--muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <a class="back" href="./">&larr; Chronograde support &amp; features</a>
+        <h1>Your first watch readings</h1>
+        <p class="subtitle">Start with a quick acoustic estimate, then build a useful picture of how your watch keeps time between readings.</p>
+        <div class="actions">
+            <a class="download" href="https://apps.apple.com/app/id6774091390">Download on the App Store</a>
+            <a href="./">See free &amp; Pro features</a>
+        </div>
+        <nav aria-label="Guide sections">
+            <ul>
+                <li><a href="#acoustic">Try an acoustic reading</a></li>
+                <li><a href="#manual">Record your first two manual readings</a></li>
+                <li><a href="#sessions">Keep resets in separate sessions</a></li>
+                <li><a href="#troubleshooting">If the result looks wrong</a></li>
+            </ul>
+        </nav>
+
+        <h2>Choose the question you want to answer</h2>
+        <p><strong>How is the movement running right now?</strong> The acoustic Timegrapher listens through your device's microphone and estimates rate and beat error from a mechanical watch's ticking. It is a snapshot in one position, under the conditions of that recording.</p>
+        <p><strong>How much time does the watch gain or lose as I use it?</strong> Manual accuracy measurements compare the time shown by its hands with the app's time reference. Two readings, separated by time in the same uninterrupted session, show an average rate across that interval.</p>
+        <p>These methods answer different questions. Their results can differ without either one establishing a fault. Phone microphone readings are estimates, not a bench-instrument certification or a watchmaker's diagnosis.</p>
+
+        <h2 id="acoustic">1. Try an acoustic reading</h2>
+        <ol>
+            <li><strong>Make room for a quiet signal.</strong> Choose a quiet place away from conversation, music and vibration. Keep the running watch and your iPhone or iPad steady on a soft, stable surface.</li>
+            <li><strong>Position the microphone gently.</strong> Bring the microphone indicated by the app close to the watch. Avoid pressure, dragging or hard contact that could scratch the watch or device. Small changes in placement may help; forcing the objects together does not make a reading reliable.</li>
+            <li><strong>Open Timegrapher and tap the microphone control.</strong> Allow microphone access when prompted. Leave BPH on AUTO, or select the correct beat rate if you know it from the movement's specifications.</li>
+            <li><strong>Let the signal settle.</strong> Watch the signal and rate display. If the values keep jumping or no reading appears, reduce noise and gently adjust placement before trying again. Some watches and device combinations do not provide a usable signal.</li>
+            <li><strong>Repeat under similar conditions.</strong> Note the position and winding state when comparing results. If you want the reading in a watch's history, open its detail page, use its Timegrapher action and save the reading there.</li>
+        </ol>
+        <p>The Timegrapher is free. Everyone can also try one complete <strong>Regulation Coach</strong> run for a guided positional test; repeating the Coach requires Pro. The app does not perform physical regulation or certify a movement.</p>
+
+        <h2 id="manual">2. Record your first two manual readings</h2>
+        <h3>First reading: establish an offset</h3>
+        <ol>
+            <li><strong>Add your watch.</strong> Use the + button on the Watches tab. If you want to set its time first, do that before starting this series of readings.</li>
+            <li><strong>Check the reference.</strong> Tap the Watches tab's sync icon to request network time. On the recording screen, check whether the app has a usable network correction or is using the device clock. Network conditions affect the time reference.</li>
+            <li><strong>Choose a target on the watch.</strong> Open the watch, tap <em>Record Measurement</em>, and set the hour, minute and second wheels to a time its hands are about to show. Check AM/PM if your device uses a 12-hour clock.</li>
+            <li><strong>Tap RECORD at that moment.</strong> Press as consistently as you can when the hands reach the chosen time. Review the result; use <em>Redo</em> if you missed it, or <em>Save</em> to keep the reading. You can add a note.</li>
+        </ol>
+        <p>This first reading tells you how far ahead or behind the watch is at that moment. It does not yet tell you how fast it is gaining or losing time.</p>
+
+        <h3>Second reading: measure the change</h3>
+        <ol>
+            <li><strong>Let time pass.</strong> Returning the next day is a practical starting point. Readings only moments apart make small timing errors dominate the comparison.</li>
+            <li><strong>Keep the same session continuous.</strong> Leave the watch running without changing its displayed time. If it stops or you reset it, follow the session guidance below.</li>
+            <li><strong>Repeat and Save.</strong> Use the same watch and session, check the time-reference status, and take another manual reading. Tag how the watch was kept and add notes that help explain the interval.</li>
+            <li><strong>Look at the trend.</strong> The change between offsets over elapsed time gives a daily rate. More consistent, separated readings help you distinguish a repeated pattern from a missed tap.</li>
+        </ol>
+        <p><strong>Offset and rate are different:</strong> a watch that is five seconds ahead in one reading and nine seconds ahead exactly one day later gained four seconds during that day. Being ahead does not necessarily mean it is currently gaining; it could be losing time from a larger earlier offset.</p>
+
+        <h2 id="sessions">3. Keep resets in separate sessions</h2>
+        <p>A session represents one uninterrupted run. If the watch stops, is serviced, or you change the time shown by its hands, comparing the old offset with a new one would mix a reset with the watch's actual drift.</p>
+        <p>With Pro, open the watch's <strong>Sessions</strong> section and choose <em>Watch was reset &mdash; start new session</em>. Confirm <em>Start New Session</em>, then save a fresh baseline and a later reading. The previous session remains in your history with its own chart.</p>
+        <p><strong>Additional sessions are a Pro feature.</strong> For your first free series, set the watch before the baseline and take the following readings while it keeps running. If it has already stopped or been reset, preserve your history and do not interpret a comparison across that interruption as its daily rate.</p>
+
+        <h2 id="troubleshooting">If the result looks wrong</h2>
+        <h3>No acoustic reading, or a number that keeps changing</h3>
+        <p>Check microphone permission, reduce background noise, keep the device steady and confirm the BPH setting. Gently try a different microphone position. A weak signal is a reason to try again, not evidence that the watch needs repair. Manual drift tracking remains an alternative when acoustic pickup is unreliable.</p>
+        <h3>A surprising manual rate</h3>
+        <p>Check the selected hour, seconds and AM/PM, whether the watch was reset, and whether the readings belong to the same session. Review the time-reference labels and the interval between readings. A rushed tap or a short interval can produce a misleading daily-rate estimate.</p>
+        <h3>The time server cannot be reached</h3>
+        <p>Complete any Wi-Fi sign-in and try another connection. Some networks block the time-server requests. The app can keep a still-usable earlier correction after a failed refresh; otherwise it labels readings made from the device clock. Do not assume an unsynced reference has the same accuracy as a successful network correction.</p>
+        <h3>I want to keep the results</h3>
+        <p>Your whole collection, up to ten manual accuracy measurements, iCloud sync and backup/restore are available free. Use the Watches tab menu for backup files. Pro adds unlimited manual measurements, additional sessions and spreadsheet import/export, alongside the other <a href="./">Pro features</a>. Premium themes are separate purchases.</p>
+
+        <h2>Keep useful history, then decide what you need</h2>
+        <p>Start with readings you can repeat. The free tools let you try both acoustic estimates and manual drift tracking before deciding whether longer history and Pro analysis fit your collection. Membership offers monthly or annual subscriptions and a one-time Lifetime unlock; localized prices and any eligible subscription trial are shown in the app and App Store purchase flow.</p>
+        <p>For help, email <a href="mailto:mwsupplylimited@gmail.com?subject=Chronograde%20support">mwsupplylimited@gmail.com</a> with your device, iOS version and the steps you tried. You do not need to send serial numbers or other private collection details.</p>
+        <footer>
+            &copy; 2026 MW Supply Limited &middot; <a href="./">Chronograde support</a> &middot; <a href="privacy.html">Privacy</a>
+        </footer>
+    </main>
+</body>
+</html>
