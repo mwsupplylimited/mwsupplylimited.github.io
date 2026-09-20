@@ -1,107 +1,65 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Corynx: System Monitor for Mac — CPU, GPU, RAM, Temps &amp; Fans</title>
-    <meta name="description" content="Corynx is a native Mac system monitor: live CPU, GPU, RAM, disk and network, plus real CPU/GPU temperatures, fan speeds and SoC power via a free notarized helper. Menu-bar readout included.">
-    <meta name="keywords" content="Mac system monitor, macOS CPU monitor, GPU monitor, temperature, fan speed, menu bar, SoC power, RAM, network, Corynx">
-    <meta property="og:title" content="Corynx: System Monitor">
-    <meta property="og:description" content="Live CPU, GPU, RAM, disk &amp; network for Mac — plus real temperatures, fan speeds and SoC power, right in your menu bar.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://mwsupplylimited.github.io/corynx/">
-    <meta name="twitter:card" content="summary">
-    <link rel="canonical" href="https://mwsupplylimited.github.io/corynx/">
-    <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Corynx: System Monitor","operatingSystem":"macOS","applicationCategory":"UtilitiesApplication","url":"https://apps.apple.com/app/id6782399581","description":"Native Mac system monitor with CPU, GPU, RAM, disk, network, real temperatures, fan speeds and SoC power."}
-    </script>
-    <style>
-        :root {
-            --bg: #ffffff; --fg: #1a1a1a; --muted: #666666;
-            --accent: #129e88; --card: #f5f5f7; --border: #e5e5e7;
-        }
-        @media (prefers-color-scheme: dark) {
-            :root { --bg: #121419; --fg: #f5f5f7; --muted: #9a9a9a;
-                --accent: #3ad9c0; --card: #1c1f25; --border: #2a2d34; }
-        }
-        * { box-sizing: border-box; }
-        html { -webkit-text-size-adjust: 100%; }
-        body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
-            background: var(--bg); color: var(--fg); line-height: 1.6; -webkit-font-smoothing: antialiased; }
-        .container { max-width: 720px; margin: 0 auto; padding: 48px 24px 96px; }
-        .back { display: inline-block; color: var(--muted); text-decoration: none; font-size: 0.9rem; margin-bottom: 32px; }
-        .back:hover { color: var(--accent); }
-        h1 { font-size: 2.2rem; margin: 0 0 8px; letter-spacing: -0.02em; }
-        .subtitle { color: var(--muted); margin: 0 0 40px; }
-        h2 { font-size: 1.3rem; margin: 40px 0 12px; letter-spacing: -0.01em; }
-        h3 { font-size: 1rem; margin: 24px 0 6px; font-weight: 600; }
-        p, li { color: var(--fg); }
-        ul { padding-left: 22px; }
-        li { margin-bottom: 6px; }
-        a { color: var(--accent); }
-        .pill { display: inline-block; background: var(--card); border: 1px solid var(--border); padding: 3px 10px; border-radius: 999px; font-size: 0.8rem; color: var(--muted); margin-left: 6px; }
-        footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.85rem; }
-    </style>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Corynx: System Monitor for Mac | CPU, Memory &amp; Menu Bar</title>
+<meta name="description" content="See CPU, memory, network and battery at a glance. Download Corynx for Mac free. Pro adds deeper readings, history, alerts and more menu-bar metrics.">
+<link rel="canonical" href="https://mwsupplylimited.github.io/corynx/">
+<meta property="og:type" content="website"><meta property="og:url" content="https://mwsupplylimited.github.io/corynx/">
+<meta property="og:title" content="Your Mac, at a glance. — Corynx">
+<meta property="og:description" content="A native Mac system monitor. Start free with the essentials; go deeper with Corynx Pro. Monthly, Annual and Lifetime options.">
+<meta property="og:image" content="https://mwsupplylimited.github.io/corynx/assets/overview.png">
+<meta property="og:image:alt" content="Corynx for Mac dashboard, including Pro graphs and readings">
+<meta name="twitter:card" content="summary_large_image"><meta name="theme-color" content="#101917">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Corynx: System Monitor","operatingSystem":"macOS 14 or later","applicationCategory":"UtilitiesApplication","url":"https://mwsupplylimited.github.io/corynx/","downloadUrl":"https://apps.apple.com/app/id6782399581","image":"https://mwsupplylimited.github.io/corynx/assets/overview.png","description":"Native Mac system monitor with free headline readings and optional Pro features including history, alerts and detailed metrics.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD","description":"Free download with optional in-app purchases for Corynx Pro."}}</script>
 </head>
 <body>
-    <div class="container">
-        <a class="back" href="../">&larr; MW Supply Limited</a>
-
-        <h1>Corynx: System Monitor</h1>
-        <p class="subtitle">A beautiful, native system monitor for your Mac. <span class="pill">Version 1.5</span></p>
-
-        <video controls loop muted playsinline preload="metadata" aria-label="Corynx for Mac — app preview"
-               style="width:100%;border-radius:12px;margin:8px 0 24px;border:1px solid var(--border);background:var(--card);">
-            <source src="corynx-mac-preview.mp4" type="video/mp4">
-        </video>
-
-        <h2>About</h2>
-        <p>Corynx shows exactly what your Mac is doing &mdash; at a glance in the menu bar, and in depth in a clean dashboard. It tracks CPU load, memory pressure, disk capacity, network throughput, battery level and thermal pressure, with the top processes by CPU. Corynx&nbsp;Pro goes deeper &mdash; per-core load, the memory and disk breakdowns, battery health, the GPU module, and real temperatures and fan control. Built entirely in SwiftUI for macOS, Corynx is fast, light, and private: everything stays on your Mac. No account, no tracking, no ads.</p>
-
-        <h2>Getting started</h2>
-        <ul>
-            <li><strong>Open the dashboard.</strong> The sidebar switches between Overview and each subsystem &mdash; CPU, GPU, Memory, Disk, Network, Battery and Sensors.</li>
-            <li><strong>Use the menu bar.</strong> Corynx lives in your menu bar with a live readout. Click it for a quick popover; open Settings &rarr; Menu Bar to choose which numbers appear.</li>
-            <li><strong>Tune the refresh rate</strong> in Settings &rarr; General, and turn on <em>Launch at login</em> to keep Corynx watching from startup.</li>
-        </ul>
-
-        <h2>FAQ</h2>
-
-        <h3>What&rsquo;s free, and what does Corynx Pro add?</h3>
-        <p><strong>Free</strong> gives you the headline numbers: CPU load, memory pressure and installed memory, startup-disk capacity, network up and down, battery level and time remaining, thermal pressure explained in plain language, the top processes by CPU, one metric of your choice in the menu bar, and launch-at-login.</p>
-        <p><strong>Corynx Pro</strong> adds the depth: per-core and performance/efficiency cluster load, the memory breakdown and swap activity, every mounted volume including the purgeable space Finder hides, disk throughput and IOPS, per-interface network with link speed, battery health and cycle count and capacity, the live power-flow diagram, history and trend graphs, the full sortable process table, threshold alerts, CSV export, as many menu-bar metrics as you like, and &mdash; together with the free <a href="helper.html">Corynx Sensor Helper</a> &mdash; real CPU/GPU temperatures, live fan speeds, SoC power draw, fan control and Dust Guard.</p>
-        <p>The Helper itself is free; the readings it enables are Pro, so you need both. Pro is a Monthly or Annual subscription, or a one-time Lifetime purchase that never renews.</p>
-
-        <h3>Why do exact temperatures and fan speeds need a separate helper?</h3>
-        <p>macOS does not allow a sandboxed Mac App Store app to read the System Management Controller (SMC), which is where precise temperatures and fan RPM come from. On its own, Corynx shows the system <em>thermal-pressure level</em> (Nominal &rarr; Critical). To show exact &deg;C and fan RPM, install the free <a href="helper.html">Corynx Sensor Helper</a> &mdash; a small, notarized companion that reads the sensors locally and hands them to Corynx on your Mac. Nothing leaves your computer.</p>
-
-        <h3>How do I manage, cancel, or restore my subscription?</h3>
-        <p>Open the membership screen (the crown button in the toolbar, or &ldquo;Upgrade to Pro&rdquo; in the sidebar) to see your plan, price and renewal date, and to manage or cancel. Subscriptions are billed by Apple and can also be managed in <em>System Settings &rarr; your Apple Account &rarr; Subscriptions</em>. On a new Mac or after reinstalling, click <em>Restore Purchases</em>.</p>
-
-        <h3>Does Corynx slow down my Mac?</h3>
-        <p>No. Corynx samples lightweight system counters on a timer you control and uses a tiny fraction of CPU. Increase the refresh interval in Settings if you want it even lighter.</p>
-
-        <h3>Is my data collected?</h3>
-        <p>No. Corynx reads system metrics locally and never transmits them. There are no accounts, no analytics and no ads. See the <a href="privacy.html">Privacy Policy</a> for details.</p>
-
-        <h3>I found a bug or have a feature request.</h3>
-        <p>Please email <a href="mailto:mwsupplylimited@gmail.com?subject=Corynx%20feedback">mwsupplylimited@gmail.com</a> with your macOS version, Mac model, and steps to reproduce. We read every message.</p>
-
-        <h2>Dust Guard</h2>
-        <p>Working somewhere dusty? A spinning fan is a pump, and it is pumping dust through your Mac. <strong>Dust Guard</strong> holds the fans still while you work, and hands them straight back to macOS the moment anything warms up &mdash; it will not start above 55&nbsp;&deg;C, returns control at 65&nbsp;&deg;C, gives up for the session at 75&nbsp;&deg;C, never runs longer than 30 minutes, and reverts by itself if Corynx quits or stops responding. Corynx reports the fans&rsquo; <em>measured</em> speed throughout, so you can see whether they actually stopped rather than take our word for it. See the <a href="fan-helper.html">fan control safety guide</a>.</p>
-
-        <h2>Corynx for iPhone &amp; iPad</h2>
-        <p>There is an iOS version too &mdash; live CPU, memory, storage, network, battery and thermal state, with Home Screen widgets, a Lock Screen Live Activity and Siri shortcuts, in 46 languages. <a href="https://mwsupplylimited.github.io/corynxmobile/">Corynx: Live System Monitor for iPhone &amp; iPad</a>.</p>
-
-        <h2>Contact</h2>
-        <p>For support: <a href="mailto:mwsupplylimited@gmail.com?subject=Corynx%20support">mwsupplylimited@gmail.com</a></p>
-
-        <h2>Privacy</h2>
-        <p>See the <a href="privacy.html">Corynx Privacy Policy</a>.</p>
-
-        <footer>
-            &copy; 2026 MW Supply Limited
-        </footer>
-    </div>
-</body>
-</html>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header wrap"><a class="brand" href="./" aria-label="Corynx home"><span class="brand-mark" aria-hidden="true">C</span>Corynx<span class="platform">FOR MAC</span></a><nav aria-label="Main navigation"><a href="#pro">Free &amp; Pro</a><a href="#setup">Get started</a><a href="#help">Support</a><a class="nav-download" href="https://apps.apple.com/app/id6782399581">Download ↗</a></nav></header>
+<main id="main">
+<section class="hero wrap">
+<div class="eyebrow"><span class="live-dot" aria-hidden="true"></span>NATIVE macOS SYSTEM MONITOR</div>
+<h1>Your Mac,<br><span>at a glance.</span></h1>
+<p class="hero-copy">See what’s busy, what’s running low, and what’s changing. Live system readings in your menu bar, with a dashboard when you want a closer look.</p>
+<div class="actions"><a class="button" href="https://apps.apple.com/app/id6782399581">Download on the Mac App Store ↗</a><a class="text-link" href="#pro">Explore Corynx Pro ↓</a></div>
+<p class="fine-print">Free download · Optional Pro purchases · macOS 14 or later</p>
+<figure class="hero-shot"><img src="assets/overview.png" width="2560" height="1600" alt="Corynx Overview dashboard with CPU, GPU, memory, network, disk, battery and thermal readings" fetchpriority="high"><figcaption>Actual Corynx app capture. Pro features shown, including graphs and GPU detail. Readings vary by Mac.</figcaption></figure>
+<div class="trust-line"><span>No account needed</span><span>No ads</span><span>System readings stay on your Mac</span></div>
+</section>
+<section class="section wrap" aria-labelledby="use-heading">
+<div class="section-heading"><p class="eyebrow">LESS GUESSING. MORE CONTEXT.</p><h2 id="use-heading">A useful view of<br>your everyday Mac.</h2></div>
+<div class="use-grid">
+<article><span class="number">01 / WORKLOAD</span><h3>See where the work is.</h3><p>Check CPU load and memory pressure while you build, edit or browse. Pro adds per-core load, memory breakdowns and a searchable process table.</p></article>
+<article><span class="number">02 / MENU BAR</span><h3>Keep a number in sight.</h3><p>Choose CPU, memory or battery for your free menu-bar readout. Pro lets you show more metrics and set their order.</p></article>
+<article><span class="number">03 / POWER</span><h3>Look beyond the percentage.</h3><p>See battery level and charging state for free. On supported Macs, Pro adds battery health, cycle count and the live power-flow diagram.</p></article>
+</div></section>
+<section class="pro-section" id="pro"><div class="wrap section">
+<div class="section-heading"><p class="eyebrow">START WITH THE ESSENTIALS</p><h2>Go deeper when<br>you need to.</h2><p>Try the everyday readings for free. Choose Pro when detailed monitoring becomes part of your workflow.</p></div>
+<div class="plans">
+<article class="plan"><span class="plan-label">CORYNX FREE</span><h3>The essentials,<br>always in view.</h3><ul><li>Total CPU load and memory pressure</li><li>Startup-disk capacity and network up/down</li><li>Battery level, charging and thermal pressure</li><li>Top three processes by CPU</li><li>One menu-bar metric: CPU, memory or battery</li><li>Refresh every two seconds or slower; launch at login</li></ul><a class="button secondary" href="https://apps.apple.com/app/id6782399581">Start with the free app ↗</a></article>
+<article class="plan featured"><span class="plan-label">CORYNX PRO</span><h3>More detail.<br>A clearer picture.</h3><ul><li>Per-core CPU, memory breakdowns and GPU detail</li><li>Disk activity, mounted volumes and network interfaces</li><li>Battery health, cycle count and power flow</li><li>Rolling history graphs and CSV export</li><li>Full process table and threshold alerts</li><li>More menu-bar metrics, ordering and faster refresh</li><li>Temperatures, fan speeds and SoC power with the free Sensor Helper</li></ul><p class="plan-options">Monthly · Annual · Lifetime</p><p class="plan-note">Lifetime is a one-time purchase. Subscriptions renew automatically until cancelled. Your local price and any eligible trial appear in the app before purchase.</p><a class="button" href="https://apps.apple.com/app/id6782399581">Download, then explore Pro ↗</a></article>
+</div><p class="helper-note">CPU/GPU temperatures, fan readings and SoC power need <strong>both Pro and the free <a href="helper.html">Corynx Sensor Helper</a></strong>. Available readings depend on your hardware. Fan control also requires the separate <a href="fan-helper.html">Fan Helper</a>.</p>
+</div></section>
+<section class="section wrap" aria-labelledby="detail-heading"><div class="section-heading"><p class="eyebrow">INSIDE CORYNX PRO</p><h2 id="detail-heading">From a quick check<br>to the finer details.</h2></div>
+<div class="screens"><figure><img src="assets/cpu.png" width="2560" height="1600" alt="Corynx CPU screen showing per-core load and performance and efficiency clusters" loading="lazy"><figcaption><strong>Understand your CPU workload.</strong> Pro breaks total load into individual cores and clusters.</figcaption></figure><figure><img src="assets/power.png" width="2560" height="1600" alt="Corynx battery screen with battery health and power-flow readings" loading="lazy"><figcaption><strong>Follow the power.</strong> Pro adds battery detail and power flow where supported by your Mac. SoC power also requires the Sensor Helper.</figcaption></figure></div>
+<details class="video-details"><summary>Watch the Mac app preview</summary><video controls playsinline preload="none" aria-label="Corynx Mac app preview, including Pro features"><source src="corynx-mac-preview.mp4" type="video/mp4"></video><p class="fine-print">Includes Pro features. Sensor and fan features require the relevant helpers.</p></details></section>
+<section class="section wrap setup" id="setup"><div class="section-heading"><p class="eyebrow">YOUR FIRST USEFUL CHECK</p><h2>Open. Look. Keep working.</h2></div><ol class="steps">
+<li><h3>Open the free dashboard.</h3><p>Check CPU load and memory pressure while doing your usual work. No account or helper is needed for these readings.</p></li>
+<li><h3>Choose your menu-bar metric.</h3><p>Open Settings → Menu Bar and pick CPU, memory or battery. The readout keeps updating when you close the dashboard.</p></li>
+<li><h3>Explore the detail you need.</h3><p>Open a module to see its Pro features. Use the membership screen to compare Monthly, Annual and Lifetime.</p></li>
+</ol></section>
+<section class="section wrap help" id="help"><div class="section-heading"><p class="eyebrow">A FEW GOOD QUESTIONS</p><h2>Before you download.</h2></div>
+<details><summary>Can I use Corynx without subscribing?</summary><p>Yes. The free readings and one menu-bar metric work without a subscription. For Pro, choose Monthly, Annual or a one-time Lifetime purchase. You can close the upgrade screen and keep using the free app.</p></details>
+<details><summary>Do I need a helper?</summary><p>Not for CPU, memory, disk, network, battery or thermal-pressure readings. CPU/GPU temperatures, fan speeds and SoC power require Pro and the separately installed, free <a href="helper.html">Sensor Helper</a>. Sensor availability varies by Mac.</p></details>
+<details><summary>Does it clean memory or make my Mac faster?</summary><p>Corynx shows readings so you can investigate your workload. Its own resource use varies with your Mac and refresh settings; use a slower refresh interval if you want less frequent sampling. It does not automatically clean memory or guarantee a performance improvement.</p></details>
+<details><summary>How do I restore or manage Pro?</summary><p>Open the membership screen using the crown button or Upgrade to Pro. Choose Restore Purchases when using the Apple Account that bought Pro. Manage subscriptions there or in your Apple Account’s subscription settings. Lifetime does not renew.</p></details>
+<details><summary>What about fan control and Dust Guard?</summary><p>These Pro tools require compatible hardware and the separate Fan Helper. Dust Guard is a supervised attempt to keep fans stopped while conditions allow; Corynx reports measured speed, and a stop is not guaranteed. Read the <a href="fan-helper.html">fan-control setup and safety guide</a> before use.</p></details>
+<details><summary>Does Corynx collect my system readings?</summary><p>System metrics are read locally and are not sent to a server. There is no Corynx account and no advertising. Local diagnostic counters can be exported by you for support. See our <a href="privacy.html">privacy policy</a>.</p></details>
+<details><summary>Can I use it on iPhone or iPad?</summary><p>There is a separate <a href="../corynxmobile/">Corynx app for iPhone and iPad</a>, with features suited to those platforms. The Mac and iOS apps have separate Pro purchases.</p></details>
+<details><summary>Where can I get help?</summary><p>Email <a href="mailto:mwsupplylimited@gmail.com?subject=Corynx%20Mac%20support">mwsupplylimited@gmail.com</a> with your Mac model, macOS version, Corynx version and what happened. Please leave out passwords and other private information.</p></details>
+</section>
+<section class="closing wrap"><p class="eyebrow">A LITTLE MORE VISIBILITY</p><h2>Get to know your Mac.</h2><a class="button" href="https://apps.apple.com/app/id6782399581">Download Corynx for Mac ↗</a><p class="fine-print">Free download. Pro is optional.</p></section>
+</main>
+<footer class="wrap"><a class="brand" href="../">MW Supply Limited</a><div><a href="privacy.html">Privacy</a><a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms</a><a href="helper.html">Sensor Helper</a><a href="mailto:mwsupplylimited@gmail.com?subject=Corynx%20Mac%20support">Contact</a></div><p>© 2026 MW Supply Limited</p></footer>
+</body></html>
