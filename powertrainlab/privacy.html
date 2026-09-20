@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <title>Powertrain Lab — Privacy Policy</title>
+    <meta name="description" content="How Powertrain Lab handles local motion, optional location, saved setups, Apple subscriptions, support email and GitHub Pages visits.">
+    <style>
+        :root { color-scheme: light dark; --bg: #ffffff; --fg: #1a1a1a; --muted: #595959; --accent: #855209; --card: #f5f5f7; --border: #d9d9de; }
+        @media (prefers-color-scheme: dark) {
+            :root { --bg: #121419; --fg: #f5f5f7; --muted: #b9bcc4; --accent: #e8ad56; --card: #1c1f25; --border: #343741; }
+        }
+        * { box-sizing: border-box; }
+        html { -webkit-text-size-adjust: 100%; }
+        body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif; background: var(--bg); color: var(--fg); line-height: 1.65; -webkit-font-smoothing: antialiased; }
+        .container { max-width: 760px; margin: 0 auto; padding: 40px 24px 72px; }
+        .back { display: inline-block; color: var(--muted); font-size: .95rem; margin-bottom: 24px; }
+        h1 { font-size: clamp(2rem, 7vw, 2.6rem); line-height: 1.15; margin: 0 0 12px; letter-spacing: -.025em; }
+        h2 { font-size: 1.3rem; line-height: 1.3; margin: 36px 0 12px; }
+        h3 { font-size: 1.08rem; margin: 24px 0 6px; }
+        p, ol, ul { margin: 12px 0; }
+        ol, ul { padding-left: 24px; }
+        li { margin-bottom: 8px; }
+        a { color: var(--accent); text-underline-offset: .2em; }
+        a:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; border-radius: 2px; }
+        .subtitle, .muted, footer { color: var(--muted); }
+        .subtitle { margin-bottom: 20px; }
+        .intro { font-size: 1.1rem; }
+        .pill { display: inline-block; background: var(--card); border: 1px solid var(--border); border-radius: 999px; padding: 3px 10px; font-size: .85rem; color: var(--muted); }
+        nav { display: flex; flex-wrap: wrap; gap: 12px 24px; margin: 20px 0 28px; }
+        nav a { padding: 6px 0; }
+        .card { background: var(--card); border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: 10px; padding: 16px 20px; margin: 24px 0; }
+        .card p { margin: 0; }
+        .email { overflow-wrap: anywhere; }
+        footer { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--border); font-size: .9rem; }
+        .skip { position: absolute; left: 16px; top: -100px; }
+        .skip:focus { top: 12px; padding: 8px; background: var(--bg); }
+        @media (max-width: 380px) { .container { padding-left: 18px; padding-right: 18px; } }
+    </style>
+</head>
+<body>
+    <a class="skip" href="#main">Skip to content</a>
+    <div class="container">
+        <header>
+            <a class="back" href="../">&larr; MW Supply Limited</a>
+            <h1>Powertrain Lab Privacy Policy</h1>
+            <p class="subtitle">Last updated September 20, 2026 · <span class="pill">App in development</span></p>
+            <nav aria-label="Powertrain Lab pages"><a href="index.html">Support</a><a href="privacy.html" aria-current="page">Privacy policy</a></nav>
+        </header>
+        <main id="main">
+    <p class="intro">Powertrain Lab processes motion and generates sound on your iPhone. There is no app account, advertising or analytics SDK, and the app does not upload your driving inputs to a developer server.</p>
+    <div class="card"><p><strong>Your sessions stay local.</strong> The consumer app does not create drive recordings or expose engineering raw-log export. Apple handles optional subscription purchases.</p></div>
+    <h2>Motion and optional location</h2>
+    <p>Motion sensors provide acceleration, rotation and orientation for the simulated engine and gearbox. Motion is required for a live driving session. Sound previews work without starting sensors.</p>
+    <p>If you enable location, Apple's location services provide observations that can include coordinates. Powertrain Lab discards coordinates, altitude and heading and uses only speed, accuracy and timestamps to help its estimate. These inputs are processed locally and are not uploaded by the app.</p>
+    <p>Location is optional. Turn it off before a session or change permission in iPhone Settings. Without usable location, estimates can drift or become unavailable. Stop session ends motion and location updates. Active audible sessions can request background location; setup does not continue as a silent background recording.</p>
+    <h2>Sound choices and saved setups</h2>
+    <p>The app saves sound and character choices, transmission mode, engine volume and optional-location preference locally. Named setups include a name you enter, a local identifier and the selected sound, character, mode and volume. Active and archived setups remain on your iPhone when Pro ends. There is no developer-hosted storage or synchronization.</p>
+    <p>Calibration is per session and is not saved as a trusted vehicle setup. Internal timing supports simulation and stale-input checks; it is not sent to a server. Device backup settings can affect whether local preferences and setups are backed up and restored.</p>
+    <h2>Exporting setups</h2>
+    <p>Export all setups creates a JSON file with your active and archived setup names and settings. It does not include motion, location, calibration or purchase data. Export remains available without Pro. Choose the destination yourself using iOS; that destination's privacy practices apply. The app does not automatically send the file to support or a server.</p>
+    <h2>Subscriptions and Apple</h2>
+    <p>Apple handles purchase, billing and subscription management through your Apple Account. Powertrain Lab receives StoreKit product information and signed transaction information, including product and transaction identifiers and subscription status, to check Pro access on your device. The app does not receive payment-card details or send purchase records to a developer server.</p>
+    <p>Restore purchases asks Apple to synchronize your purchases. It can require Apple Account authentication. App Store, location, permission and backup services operate under Apple's policies and your device settings. Turning off renewal preserves access for its remaining valid period.</p>
+    <h2>Development testing builds</h2>
+    <p>Separately identified Debug builds can optionally record raw motion, inferred speed and drivetrain state in local engineering logs. They do not record coordinates or upload automatically. A tester can choose to export a completed log through iOS; the destination then has its own privacy practices. The consumer Release version disables engineering recording and hides log export.</p>
+    <h2>Removing data</h2>
+    <p>Deleting the app removes local settings, saved setups and other app files from the device. It does not delete a file you exported elsewhere, change your device backups, cancel a subscription or delete Apple's transaction records. Manage or cancel your subscription using Manage subscription in the Pro screen or Apple's subscription settings.</p>
+    <p>If you previously installed a development build, old engineering logs may remain in app storage until deletion. The consumer Release version does not create, display or export those logs.</p>
+    <h2>When you contact support</h2>
+    <p>If you choose to email support, your email provider delivers your address, message and any attachments you include. That correspondence is used to respond and investigate the issue. Do not send passwords, payment-card details, precise routes or unrelated sensitive information. The app never automatically attaches driving data.</p>
+    <p>Support correspondence is retained only as needed to handle the request and applicable recordkeeping obligations. You can ask about or request deletion of correspondence at <a class="email" href="mailto:mwsupplylimited@gmail.com">mwsupplylimited@gmail.com</a>.</p>
+    <h2>This website</h2>
+    <p>These support and privacy pages are hosted by GitHub Pages. We add no analytics scripts, tracking pixels, cookies, remote fonts or external assets to these pages. Visiting them still sends connection information to GitHub. GitHub states that it logs and stores visitors' IP addresses for security, including visits without signing in. This website processing is separate from the app's local motion and sound processing.</p>
+    <p>See <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages#data-collection">GitHub Pages data collection</a> and the <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub Privacy Statement</a> for its handling of connection and usage information. Email and any destination you choose for an exported file are separate services with their own practices.</p>
+    <p class="muted">Last updated September 20, 2026. Changes to app data handling will be reflected here.</p>
+        </main>
+        <footer>Powertrain Lab · <a href="index.html">Support</a> · <a href="privacy.html">Privacy policy</a> · <a href="../">MW Supply Limited</a></footer>
+    </div>
+</body>
+</html>
