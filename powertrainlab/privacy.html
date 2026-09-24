@@ -45,7 +45,7 @@
         <header>
             <a class="back" href="../">&larr; MW Supply Limited</a>
             <h1>Powertrain Lab Privacy Policy</h1>
-            <p class="subtitle">Last updated September 20, 2026 · <span class="pill">App in development</span></p>
+            <p class="subtitle">Last updated September 24, 2026 · <span class="pill">App in development</span></p>
             <nav aria-label="Powertrain Lab pages"><a href="index.html">Support</a><a href="privacy.html" aria-current="page">Privacy policy</a></nav>
         </header>
         <main id="main">
@@ -53,11 +53,15 @@
     <div class="card"><p><strong>Your sessions stay local.</strong> The consumer app does not create drive recordings or expose engineering raw-log export. Apple handles optional subscription purchases.</p></div>
     <h2>Motion and optional location</h2>
     <p>Motion sensors provide acceleration, rotation and orientation for the simulated engine and gearbox. Motion is required for a live driving session. Sound previews work without starting sensors.</p>
-    <p>If you enable location, Apple's location services provide observations that can include coordinates. Powertrain Lab discards coordinates, altitude and heading and uses only speed, accuracy and timestamps to help its estimate. These inputs are processed locally and are not uploaded by the app.</p>
+    <p>If you enable location, Apple's location services provide observations that can include coordinates. The consumer Release app discards coordinates, altitude and heading and uses only speed, accuracy and timestamps to help its estimate. These inputs are processed locally and are not uploaded by the app.</p>
     <p>Location is optional. Turn it off before a session or change permission in iPhone Settings. Without usable location, estimates can drift or become unavailable. Stop session ends motion and location updates. Active audible sessions can request background location; setup does not continue as a silent background recording.</p>
+    <p>Development builds may additionally process device orientation relative to north and travel direction to test alignment. When engineering recording is enabled, these direction values and quality estimates stay in the local log alongside motion and speed. They contain no coordinates or altitude and are shared only through an export you choose. Optional parked direction setup can also add an operator-supplied mounted direction and its declared uncertainty to that local engineering log. Completion does not measure its accuracy, and the reference is not reused as a trusted calibration in a later session. These experimental direction features are not enabled in the consumer Release app.</p>
     <h2>Sound choices and saved setups</h2>
     <p>The app saves sound and character choices, transmission mode, engine volume and optional-location preference locally. Named setups include a name you enter, a local identifier and the selected sound, character, mode and volume. Active and archived setups remain on your iPhone when Pro ends. There is no developer-hosted storage or synchronization.</p>
     <p>Calibration is per session and is not saved as a trusted vehicle setup. Internal timing supports simulation and stale-input checks; it is not sent to a server. Device backup settings can affect whether local preferences and setups are backed up and restored.</p>
+    <h2>Optional Vivace music controls</h2>
+    <p>If you connect a compatible Vivace version, Powertrain Lab sends your chosen playback command and a random connection credential directly to Vivace on this iPhone. Vivace asks for your permission and returns the command result. No music files, library details or account information are shared by this integration. The connection credential is stored in each app’s device-only Keychain; Vivace keeps a short local request history to prevent duplicate commands. Use Disconnect in Powertrain Lab and wait for confirmation to remove the connection. If the other app does not reply, check it before retrying; a timeout does not confirm removal.</p>
+
     <h2>Exporting setups</h2>
     <p>Export all setups creates a JSON file with your active and archived setup names and settings. It does not include motion, location, calibration or purchase data. Export remains available without Pro. Choose the destination yourself using iOS; that destination's privacy practices apply. The app does not automatically send the file to support or a server.</p>
     <h2>Subscriptions and Apple</h2>
@@ -74,7 +78,7 @@
     <h2>This website</h2>
     <p>These support and privacy pages are hosted by GitHub Pages. We add no analytics scripts, tracking pixels, cookies, remote fonts or external assets to these pages. Visiting them still sends connection information to GitHub. GitHub states that it logs and stores visitors' IP addresses for security, including visits without signing in. This website processing is separate from the app's local motion and sound processing.</p>
     <p>See <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages#data-collection">GitHub Pages data collection</a> and the <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub Privacy Statement</a> for its handling of connection and usage information. Email and any destination you choose for an exported file are separate services with their own practices.</p>
-    <p class="muted">Last updated September 20, 2026. Changes to app data handling will be reflected here.</p>
+    <p class="muted">Last updated September 24, 2026. Changes to app data handling will be reflected here.</p>
         </main>
         <footer>Powertrain Lab · <a href="index.html">Support</a> · <a href="privacy.html">Privacy policy</a> · <a href="../">MW Supply Limited</a></footer>
     </div>
