@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="light dark">
     <title>Powertrain Lab — Support</title>
-    <meta name="description" content="Support for Powertrain Lab, an iPhone engine-sound app in development. Setup, free previews, Pro, local setups and privacy.">
+    <meta name="description" content="Support for Powertrain Lab, an iPhone engine-sound app. Setup, sound previews, Pro, local setups and privacy.">
     <style>
         :root { color-scheme: light dark; --bg: #ffffff; --fg: #1a1a1a; --muted: #595959; --accent: #855209; --card: #f5f5f7; --border: #d9d9de; }
         @media (prefers-color-scheme: dark) {
@@ -45,26 +45,25 @@
         <header>
             <a class="back" href="../">&larr; MW Supply Limited</a>
             <h1>Powertrain Lab</h1>
-            <p class="subtitle">Original synthesized engine sounds for iPhone. <span class="pill">In development</span></p>
+            <p class="subtitle">Original synthesized engine sounds for iPhone.</p>
             <nav aria-label="Powertrain Lab pages"><a href="index.html" aria-current="page">Support</a><a href="privacy.html">Privacy policy</a></nav>
         </header>
         <main id="main">
-    <div class="card"><p><strong>Not yet available on the App Store.</strong> Powertrain Lab is in testing. Real driving response, Bluetooth delay and locked-screen operation are still being verified. There is no public release date.</p></div>
     <p class="intro">Powertrain Lab shapes original synthesized sounds from iPhone motion and preset-specific simulated gearboxes. Apex V10, Torque V8 and Pulse Electric use six speeds; the 1969 Mustang-inspired V8 uses three. It does not connect to vehicle controls, pedals or a diagnostic port.</p>
+    <p>Powertrain Lab is in testing and not yet available on the App Store.</p>
     <div class="card"><p><strong>Set up and make changes while parked.</strong> The driver must not read or operate the screen while moving. Use a secure mount and a volume that lets you hear your surroundings.</p></div>
     <h2>Listen before choosing</h2>
     <p>Open Engines &amp; setups before starting a session. Select Apex V10, Torque V8, Pulse Electric or 1969 Mustang V8, then tap Hear. Every voice can be previewed for up to 30 seconds without Pro, including brightness and texture adjustments. Move the Throttle slider to rev, then tap Idle to hear the virtual engine settle. The displayed RPM comes from this sound model; the preview does not read motion, sense your pedals or control a driving session. Changing a voice or character, leaving the screen or making the app inactive stops the preview.</p>
-    <h2>How the current session setup works</h2>
-    <p>Live driving behavior still needs physical verification. The steps below explain the implemented setup; they are not an invitation to perform a road test.</p>
+    <h2>How a session works</h2>
     <ol>
       <li>Park safely and mount your iPhone without blocking your view, airbags or vehicle controls.</li>
-      <li>In Engines &amp; setups, choose your sound, Economy, Normal or Sport, and a comfortable volume; tap Use this sound. A passenger can operate Manual shifts. Select your audio output while parked. Optional location helps speed estimation.</li>
+      <li>In Engines &amp; setups, choose your sound, Economy, Normal or Sport, and a comfortable volume; tap Use this sound. A passenger can operate Manual shifts. Select your audio output while parked. On the setup screen, Use optional location speed is on by default: iOS asks for location permission the first time you calibrate, and speed needs Precise Location. Turn the switch off before calibrating if you prefer not to use location.</li>
       <li>Return to setup, tap <strong>I’m parked · Calibrate</strong> and remain still for about two seconds. When the baseline is ready, tap <strong>Start engine</strong> before moving.</li>
-      <li>Begin with a normal forward, straight departure so the app can learn the vehicle's direction. Reverse-first departure is unsupported. Do not make unusual maneuvers to test the app.</li>
+      <li>Drive normally. With location speed on, pulling away, speed changes and turns teach the phone which way the car points, so the engine keeps responding through corners, and reversing out of a space first is fine. Once a drive has locked the direction precisely, the next drive with the phone seated the same way in the same mount starts from that direction and checks it as you go. With location off, pull away forward first and corners respond more cautiously. The 3D alignment card shows how precisely the direction is known. Do not make unusual maneuvers to test the app.</li>
       <li>Tap <strong>Stop session</strong> while safely parked. Calibrate again for each new session.</li>
     </ol>
-    <h2>Free and Pro</h2>
-    <p>Standard Apex V10, all transmission modes and sound previews are free. Monthly and yearly Pro unlock the same features: Torque V8, Pulse Electric, 1969 Mustang V8, brightness and texture customization for sessions, and up to 12 active named setups. The Mustang voice is original 428-inspired synthesis with a period three-speed gearbox, not a recording, an exact factory recreation or a manufacturer endorsement. No app account is needed.</p>
+    <h2>Included sounds and Pro</h2>
+    <p>Standard Apex V10, all transmission modes and sound previews are included without a subscription. Monthly and yearly Pro unlock the same features: Torque V8, Pulse Electric, 1969 Mustang V8, brightness and texture customization for sessions, and up to 12 active named setups. The Mustang voice is original 428-inspired synthesis with a period three-speed gearbox, not a recording, an exact factory recreation or a manufacturer endorsement. No app account is needed.</p>
     <p>When subscription products are available, Explore Pro in Engines &amp; setups shows Apple's localized prices and billing periods before you choose a plan. No public price or launch date is announced here. Payment is charged to your Apple Account and the selected plan renews automatically unless cancelled. <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Apple's Standard Terms of Use</a> apply.</p>
     <h2>Restore, manage or cancel</h2>
     <p>Use Restore purchases in the Pro screen with the Apple Account used for the subscription. A pending purchase unlocks after Apple confirms it. If plans or access cannot be checked, keep using Free, check your connection and try again. Support does not need your password.</p>
@@ -74,17 +73,17 @@
     <p>If Pro ends, saved and archived setups remain viewable, archivable, restorable and exportable. Applying a saved setup requires Pro. The next setup uses standard Apex V10 when paid choices are unavailable; the app does not switch an active session's sound because subscription status changed.</p>
     <p>Export all setups writes names and settings as JSON to a destination you choose. It includes no motion, location or purchase data. There is no import or cloud-sync feature. Restoring purchases restores eligible Pro access, not deleted setup files. If stored data cannot be read, the app preserves it and offers an export when possible; contact support before deleting it.</p>
     <h2>Engine level and music</h2>
-    <p>Engine level ranges from 0% to 200%. Above 100% boosts the engine relative to other audio, with peak protection that may sound compressed. It does not change the phone’s system volume or promise twice the perceived loudness. Start low and adjust while parked. Sound previews keep their own lower volume.</p>
-    <p>Optional Music · Vivace controls require a compatible Vivace update; that paired integration is still being qualified. In supported versions, connect and approve locally, choose a queue in Vivace, then use Play, Pause, Previous or Next while the engine session is stopped. The controls briefly open Vivace and return. Start music before starting the engine session. A timeout is not confirmation that playback changed; check Vivace before retrying.</p>
+    <p>Engine level ranges from 0% to 200%. Above 100% boosts the engine relative to other audio, with peak protection that may sound compressed. It does not change the phone’s system volume or promise twice the perceived loudness. Start low and adjust while parked. Sound previews play at their own fixed, lower level, separate from Engine level.</p>
+    <p>Start your music before starting the engine session; the engine mixes with it.</p>
     <h2>Common questions</h2>
     <h3>Why won't calibration finish?</h3>
-    <p>The phone and vehicle must stay still. Follow the status message and check permissions in iPhone Settings. A physical iPhone with device-motion support is required for live calibration; stationary sound previews do not need it.</p>
+    <p>Keep the phone and vehicle completely still for about two seconds; any movement or vibration, or location speed showing the car moving, restarts the count. Follow the status message. Location permission is not needed to calibrate. A physical iPhone with device-motion support is required for live calibration; stationary sound previews do not need it.</p>
     <h3>Why did sound pause?</h3>
-    <p>An interruption, output change, stale motion or changed mount can pause sound. Wait until safely parked, check route and volume, and follow the message. Use Start engine when available or stop and recalibrate if requested. After an interruption, playback can resume if iOS permits it, the output is unchanged and motion remains ready. Stop session cancels this recovery. Output loss or change requires a parked check. Do not adjust the mount or troubleshoot while moving.</p>
+    <p>An interruption, output change, stale motion or changed mount can pause sound. Wait until safely parked, check route and volume, and follow the message. Use Start engine when available or stop and recalibrate if requested. After an interruption, playback can resume if iOS permits it, the output is unchanged and motion remains ready. Stop session cancels this recovery. Output loss or change requires a parked check. If sound pauses while Powertrain Lab is in the background or the screen is locked (for example, the car's Bluetooth disconnects when you park), or you leave the app while sound is paused, the session stops by itself so motion and location stop. If a phone call or other interruption paused the sound, the app first waits up to 15 minutes for iOS to hand sound back. Calibrate again while parked before your next drive. Do not adjust the mount or troubleshoot while moving.</p>
     <h3>Why is speed approximate or hidden?</h3>
-    <p>Speed is an estimate, not vehicle data. Without usable location it can drift; low confidence can hide the reading. Quiet motion cannot prove a stop. Corner filtering can reduce acceleration response. Do not use the app for navigation, speed-limit compliance or other driving decisions. It does not recognize traction, drifting or road elevation.</p>
+    <p>Speed is an estimate, not vehicle data. Location speed requires Precise Location; with Approximate Location, iOS reports no usable speed and the setup screen offers Open Settings. Without usable location it can drift; low confidence can hide the reading. Quiet motion cannot prove a stop. Without location, response through corners is more cautious. Do not use the app for navigation, speed-limit compliance or other driving decisions. It does not recognize traction loss, drifting or road elevation.</p>
     <h3>Can I use a car speaker or lock the screen?</h3>
-    <p>Select an output using iOS while parked. Delay and behavior depend on your phone and sound system; low Bluetooth latency is not guaranteed. Active audible sessions use iOS audio and optional location services, but continuous locked-screen motion is not guaranteed. Setup ends when the app backgrounds before the engine is running.</p>
+    <p>Select an output using iOS while parked. Delay and behavior depend on your phone and sound system; low Bluetooth latency is not guaranteed. Active audible sessions use iOS audio and optional location services, but continuous locked-screen motion is not guaranteed. Setup ends when the app goes to the background before the engine is running, and a session whose sound is paused stops in the background as described above. The app does not keep the screen awake, so Auto-Lock can lock the phone; if it locks during calibration or before you tap Start engine, calibrate again.</p>
     <h2>Contact support</h2>
     <p>Email <a class="email" href="mailto:mwsupplylimited@gmail.com">mwsupplylimited@gmail.com</a>. Include app version, iPhone model, iOS version, audio output and what happened. A screenshot taken while safely parked can help. Share only relevant details; do not send passwords, payment-card information or precise routes.</p>
     <p class="muted">Read the <a href="privacy.html">privacy policy</a> for permissions, Apple purchase handling, local data and support correspondence.</p>
