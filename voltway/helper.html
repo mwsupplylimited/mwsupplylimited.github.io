@@ -80,7 +80,7 @@
 
     <h2>What it does</h2>
     <ul>
-        <li>Holds your battery at a limit you choose, including limits below 80%</li>
+        <li>Lets Voltway Pro select any whole-percentage stop level from 50% to 100%, with a separate resume level at least five points lower</li>
         <li>Separate upper and lower thresholds, so the pack is not constantly topped up</li>
         <li>Runs your Mac from the adapter without charging, or from the battery while plugged in</li>
     </ul>
@@ -97,7 +97,7 @@
     <p>The launchd job is a <em>system</em> daemon marked <code>RunAtLoad</code> and <code>KeepAlive</code>. In plain terms: macOS starts the helper as <code>root</code> when your Mac boots, before anyone logs in, keeps it running whether or not Voltway is open, and restarts it if it ever exits. Installing it is not a one-time elevation that ends when the installer closes — it is a permanent, privileged background process, and it stays until you remove it.</p>
 
     <h3>It listens on 127.0.0.1</h3>
-    <p>The helper runs a small HTTP control server bound to <code>127.0.0.1</code> port <code>53845</code> — your Mac's own loopback interface, and nothing else. It is never bound to a network-facing address, so nothing outside your Mac can reach it. This is how a sandboxed App Store app, which has no privileges of its own, asks a privileged process to change a setting. The trade-off is stated plainly: any program already running as you on this Mac can also talk to that socket and change the charge limit. It cannot do anything else through it, and the safety limits below still apply.</p>
+    <p>The helper runs a small HTTP control server bound to <code>127.0.0.1</code> port <code>53845</code> — your Mac's own loopback interface, and nothing else. It is never bound to a network-facing address, so nothing outside your Mac can reach it. This is how a sandboxed App Store app, which has no privileges of its own, asks a privileged process to change a setting. The helper verifies the connecting app’s code signature before accepting policy changes. Status reads and restoring normal charging remain available without that authorization.</p>
 
     <h3>Why it has to be that way</h3>
     <p>The charge limit lives in registers on your Mac's power controller, and <strong>those registers do not survive a power cycle</strong>. If the helper only ran while Voltway was open, your limit would quietly vanish every time you shut down, and would not come back until you next launched the app — which is exactly the failure people report with charge limiters that do not run at boot. Running at boot is what makes the limit mean anything. Running as root is what makes writing to the power controller possible at all: there is no unprivileged API for it, on any Mac.</p>
@@ -105,11 +105,11 @@
     <h2>How it keeps your Mac safe</h2>
     <p>This program can stop a Mac charging, so it is built to fail in the safe direction:</p>
     <ul>
-        <li>It writes the <strong>safe state first</strong> every time it starts, before reading any of your settings. A crash and restart can never leave you unable to charge.</li>
+        <li>It writes the <strong>safe state first</strong> every time it starts, before reading any of your settings. It verifies charger writes and retries restoration when needed.</li>
         <li>If Voltway stops talking to it for more than a few seconds, it <strong>releases the limit by itself</strong>.</li>
         <li>If the battery falls below 20%, or the pack goes outside 0–45&nbsp;°C, it <strong>opens the gate regardless of your settings</strong>.</li>
-        <li>It restores normal charging on quit, on shutdown, and even if it crashes.</li>
-        <li>If it cannot reach Voltway at all, it leaves charging <strong>on</strong> rather than holding a limit nobody can release.</li>
+        <li>It attempts to restore normal charging on quit, shutdown and process termination; the watchdog restores charging after the connected app stops responding.</li>
+        <li>If its local control server cannot start, it leaves charging <strong>on</strong>. Before any app connects after launch, it can enforce a previously saved policy.</li>
     </ul>
 
     <h2>Requirements</h2>
@@ -121,21 +121,21 @@
     <p class="muted">Some Macs do not expose a charge-control interface at all. Voltway detects this and tells you plainly rather than pretending the setting worked.</p>
 
     <h2 id="install">Install</h2>
-    <p><a class="cta" href="VoltwayChargeHelper.pkg">Download Voltway Charge Helper 1.1</a></p>
+    <p><a class="cta" href="VoltwayChargeHelper.pkg">Download Voltway Charge Helper 1.2.1</a></p>
     <p class="muted">161&nbsp;KB &middot; macOS 14 or later, Apple silicon</p>
     <p>Open the downloaded <code>.pkg</code> and follow the installer. macOS will ask for your administrator password &mdash; that prompt comes from the system installer, not from Voltway, and it is what allows the helper to be installed as a root daemon.</p>
     <p>Signed with a Developer ID certificate and notarized by Apple, so Gatekeeper will open it without warnings. If you want to confirm you got the same file we published, check its SHA-256 before opening it:</p>
     <pre><code>shasum -a 256 ~/Downloads/VoltwayChargeHelper.pkg</code></pre>
-    <p class="muted">It should print:<br><code>ad6f18aedec9a1925c6d18c3b0e6a54532f39178625434614099057a69adb255</code></p>
+    <p class="muted">It should print:<br><code>c1789e4eee3a30c66221d7f8a6d12836c2a8f5d554a9d7487f4c61a5bce2e897</code></p>
 
-    <h3>What changed in 1.1</h3>
+    <h3>What changed in 1.2.1</h3>
     <ul>
-        <li><strong>Running on the adapter without charging no longer cycles the charger.</strong> Once it reached your lower limit it would let the pack charge again, then immediately drain it &mdash; on and off every few minutes, indefinitely. It now holds steady at the limit.</li>
-        <li><strong>It no longer keeps draining while your Mac is asleep.</strong> The safety checks that stop a discharge at 20% cannot run while the machine is asleep, so the helper now hands charging back before sleeping instead of continuing to run the Mac off its battery.</li>
-        <li><strong>Uninstalling can no longer remove the helper before charging is confirmed normal.</strong> If it cannot verify that the charger was released, it now stops and leaves everything in place instead of deleting itself.</li>
-        <li><strong>Only Voltway can change your charge settings.</strong> The helper now verifies the code signature of whatever is talking to it, so another program on your Mac cannot alter your charge limit. Releasing the charger is still unrestricted &mdash; that direction can only ever help.</li>
+        <li>Charge limits use the percentage displayed by macOS and honor your selected resume threshold.</li>
+        <li>The adapter stays enabled throughout sleep preparation, including the window before the Mac actually sleeps.</li>
+        <li>Voltway 1.0.2 adds exact 1% controls and asks you to update older helpers before changing a limit.</li>
     </ul>
-    <p class="muted">If you already have 1.0 installed, download and open the new package &mdash; it upgrades in place and keeps your settings.</p>
+    <p>Open the new package to upgrade. The installer restores normal charging first; after upgrading, reopen Voltway and re-enable your preferred limit.</p>
+    <p class="muted">Charge control requires Voltway Pro and supported firmware. The displayed percentage is an estimate, and macOS, sleep and safety recovery may allow charging above the selected level. This is a software charge policy, not a hardware guarantee. Version 1.2.1 was checked on an M5 Max MacBook Pro running macOS 26.6.2; other hardware and firmware may behave differently.</p>
 
     <h2>Remove it</h2>
     <p>Run this in Terminal:</p>
