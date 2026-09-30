@@ -94,6 +94,12 @@
             color: var(--muted);
             font-size: 0.85rem;
         }
+        .journey-intro { background: #071e2c; color: #f6fcff; padding: 26px; border-radius: 20px; margin: 28px 0; }
+        .journey-intro h2 { color: #a5f6e5; font-size: 1.65rem; line-height: 1.2; margin: 0 0 16px; }
+        .journey-intro p { color: #c7dce4; }
+        .journey-button { display: inline-block; background: #b2ffec; color: #083b42; padding: 12px 18px; border-radius: 12px; font-weight: 700; text-decoration: none; margin: 8px 14px 8px 0; }
+        .journey-more { color: #b2ffec; display: inline-block; padding: 12px 0; }
+        .journey-intro a:focus-visible { outline: 3px solid white; outline-offset: 4px; }
     </style>
 </head>
 <body>
@@ -102,6 +108,13 @@
 
         <h1>RoadBook</h1>
         <p class="subtitle">A simple, private GPS trip &amp; mileage logger. <span class="pill">Version 1.2</span></p>
+
+        <section class="journey-intro" aria-labelledby="journey-title">
+            <h2 id="journey-title">Keep the drives worth remembering.</h2>
+            <p>Record the route. Name the journey. Find your favorites again. Start free with manual recording; choose Pro for automatic recording, iCloud sync and more.</p>
+            <a class="journey-button" href="journey/">Explore RoadBook</a>
+            <a class="journey-more" href="https://apps.apple.com/app/id6774244290">Get RoadBook for iPhone</a>
+        </section>
 
         <h2>About</h2>
         <p>RoadBook is a personal trip logger for your drives. It records the route, distance, duration, speed and elevation of every drive, can start and stop itself automatically when you set off and arrive, and keeps a bird's-eye view of everywhere you've ever driven. Your trips stay on your device, or in your own iCloud account &mdash; we never receive them.</p>
