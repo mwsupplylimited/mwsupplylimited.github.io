@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ourglass — Privacy Policy</title>
-    <meta name="description" content="Ourglass privacy policy. No accounts, no company servers. Your memories stay on your device and in your own iCloud.">
+    <meta name="description" content="Ourglass privacy policy. No separate Ourglass account. Calendar data stays on your devices and in the creator's iCloud, shared with accepted participants.">
 <style>
         :root {
             --bg: #ffffff;
@@ -53,33 +53,33 @@
         <a class="back" href="../">&larr; MW Supply Limited</a>
 
         <h1>Ourglass</h1>
-        <p class="subtitle">Privacy Policy <span class="pill">Updated 5 September 2026</span></p>
+        <p class="subtitle">Privacy Policy <span class="pill">Updated 1 October 2026</span></p>
 
         <div class="callout">
-            <p><strong>There are no accounts and there is no company server.</strong> Everything you put into Ourglass stays on your device and in your own iCloud. MW Supply Limited never receives it and could not read it if we wanted to.</p>
+            <p><strong>There is no separate Ourglass account.</strong> Calendar data is stored on your devices and in the creator's iCloud, shared with accepted participants. The app does not send that data to a server operated by MW Supply Limited.</p>
         </div>
 
         <h2>What Ourglass stores</h2>
-        <p>All of it on your device, and in your own iCloud so it reaches your other devices and the partner you shared a calendar with:</p>
+        <p>Ourglass stores the following on your devices and, while shared access is available, in the calendar creator's iCloud:</p>
         <ul>
             <li>The memories you write: the day, a title, your words, and the photos you add.</li>
             <li>Drawings you make, kept as your own layer on each photo or page.</li>
             <li>Places you add: the name, the coordinate, and whether you have been or plan to go.</li>
             <li>Milestones and their reminder times.</li>
-            <li>Time capsules: their title, their letter, and the day they open.</li>
+            <li>Existing capsule records, if present: their title, letter and scheduled opening day.</li>
             <li>The display name you chose for yourself in each calendar, and the time zone your device is in.</li>
         </ul>
 
         <h2>Where it goes</h2>
-        <p>Each calendar is stored in the iCloud account of whoever created it, in a private area of that account, and shared with the one partner they invited. Apple's iCloud carries it between your devices. This is the same mechanism Apple's own apps use, and it is covered by <a href="https://www.apple.com/legal/privacy/">Apple's privacy policy</a>.</p>
-        <p>Coordinates and the text of your memories are marked for <strong>encryption in iCloud</strong>, which means they are unreadable without your own keys. A list of everywhere a couple has been is exactly the kind of thing that should need them.</p>
+        <p>Each calendar is stored in the iCloud account of whoever created it and shared with the people who have accepted its invitation. Send invitations only to your intended partner. New invitations use a private invitation link; unused invitations can be withdrawn without removing someone who already joined through a private invitation. Older public links may remain open after someone joins; Ourglass leaves them unchanged to preserve that person's access. Apple's iCloud carries calendar data between devices and is covered by <a href="https://www.apple.com/legal/privacy/">Apple's privacy policy</a>.</p>
+        <p>The app writes memory text and coordinates using CloudKit's encrypted-field support. It does not provide a separate password or encryption-key service.</p>
 
         <h2>What Ourglass does not do</h2>
         <ul>
-            <li>No account, no sign-up, no email address, no password.</li>
+            <li>No separate Ourglass sign-up, email address or password. iCloud sharing uses your Apple Account.</li>
             <li>No analytics, no crash reporting to us, no usage tracking, no advertising identifier.</li>
-            <li>Nothing is ever sent to a server belonging to MW Supply Limited, because there is not one.</li>
-            <li>Nothing is sold or shared with anybody. There is nobody to sell it to.</li>
+            <li>The app does not send calendar data to a server operated by MW Supply Limited.</li>
+            <li>MW Supply Limited does not sell your calendar data. Calendar data is shared through iCloud with people who have access to that calendar.</li>
         </ul>
 
         <h2>Permissions, and exactly when they are used</h2>
@@ -88,13 +88,17 @@
         <h3>Location</h3>
         <p>Asked for only at the moment you tap &ldquo;use my current location&rdquo; while adding a place, and read exactly once, in the foreground, to place that pin. There is no background location and no tracking of where you go. If you say no, the other ways of adding a place all still work.</p>
         <h3>Notifications</h3>
-        <p>Used only for the reminders you set yourself on your own milestones. They are scheduled on your device by your device; nothing is pushed from anywhere.</p>
+        <p>Milestone reminders are scheduled locally on your device. iCloud also sends silent notifications so Ourglass can fetch calendar changes; these do not display an alert or message.</p>
 
         <h2>Purchases</h2>
-        <p>Ourglass Pro is sold through Apple. Apple handles the payment and tells the app only whether the purchase is currently valid. We never see your name, your card, or your address.</p>
+        <p>When purchases become available, Apple will handle payment and provide the app with purchase and subscription status, including plan and transaction dates. The app does not receive your payment-card details or billing address.</p>
 
         <h2>Deleting things</h2>
-        <p>A memory you delete goes to a bin for thirty days and can be restored, together with its photos and drawings; after that it is gone. Leaving a shared calendar removes it from your devices. Deleting the app removes everything it kept on that device, and you can remove the iCloud copy from <em>Settings &rsaquo; [your name] &rsaquo; iCloud &rsaquo; Manage Account Storage</em>.</p>
+        <p>A deleted memory can be restored from the bin for thirty days, together with its photos and drawings. After that it becomes eligible for permanent deletion during a later successful synchronization.</p>
+        <p>Leaving someone else's shared calendar ends your account's shared access once iCloud confirms the operation. On the device where you leave, its downloaded copy goes to Deleted calendars for thirty days and can be kept as a read-only copy. Your other devices may retain their downloaded memories as a read-only copy. Leaving does not erase the creator's calendar.</p>
+        <p>The creator can delete a calendar and restore it during a thirty-day window. It can then be deleted from iCloud after synchronization. Copies already downloaded on another person's devices may remain read-only, and independent copies that person saved are not recalled.</p>
+        <p>If Apple reports that the affected iCloud data was explicitly purged or its encrypted data was reset, Ourglass removes the affected downloaded content, including local photos, without a thirty-day bin. The app does not upload that removed copy again.</p>
+        <p>Deleting the app removes the data stored by that app installation; it does not by itself delete the calendar from iCloud. You can manage Ourglass iCloud storage through Apple's iCloud settings. Device backups and independent copies are managed separately.</p>
 
         <h2>Children</h2>
         <p>Ourglass is not directed at children and does not knowingly collect anything from anyone under 13.</p>
