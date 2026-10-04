@@ -45,12 +45,12 @@
         <header>
             <a class="back" href="../">&larr; MW Supply Limited</a>
             <h1>Powertrain Lab Privacy Policy</h1>
-            <p class="subtitle">Last updated October 4, 2026 · <span class="pill">App Store release pending</span></p>
+            <p class="subtitle">Last updated October 5, 2026 · <span class="pill">App Store release pending</span></p>
             <nav aria-label="Powertrain Lab pages"><a href="index.html">Support</a><a href="privacy.html" aria-current="page">Privacy policy</a></nav>
         </header>
         <main id="main">
     <p class="intro">Powertrain Lab processes motion and generates sound on your iPhone. There is no app account, advertising or analytics SDK, and the app does not upload your driving inputs to a developer server.</p>
-    <div class="card"><p><strong>Your sessions stay local.</strong> The consumer app does not create drive recordings or expose engineering raw-log export. Apple handles optional subscription purchases.</p></div>
+    <div class="card"><p><strong>Your sessions stay local.</strong> Optional local drive diagnostics are off by default and export only when you choose. Apple handles optional subscription purchases.</p></div>
     <h2>Motion and optional location</h2>
     <p>Motion sensors provide acceleration, rotation and orientation for the simulated engine and gearbox. Motion is required for a live driving session. Sound previews work without starting sensors.</p>
     <p>Location speed is on by default and can be turned off before calibration. At first use, the app requests While Using the App permission. When enabled and allowed, Apple's location services provide observations that can include coordinates. The consumer Release app discards coordinates, altitude and heading and uses only speed, accuracy and timestamps to help its estimate. These inputs are processed locally and are not uploaded by the app.</p>
@@ -67,18 +67,18 @@
     <h2>Subscriptions and Apple</h2>
     <p>Apple handles purchase, billing and subscription management through your Apple Account. Powertrain Lab receives StoreKit product information and signed transaction information, including product and transaction identifiers and subscription status, to check Pro access on your device. The app does not receive payment-card details or send purchase records to a developer server.</p>
     <p>Restore purchases asks Apple to synchronize your purchases. It can require Apple Account authentication. App Store, location, permission and backup services operate under Apple's policies and your device settings. Turning off renewal preserves access for its remaining valid period.</p>
-    <h2>Development testing builds</h2>
-    <p>Separately identified Debug builds can optionally record raw motion, inferred speed and drivetrain state in local engineering logs. They do not record coordinates or upload automatically. A tester can choose to export a completed log through iOS; the destination then has its own privacy practices. The consumer Release version disables engineering recording and hides log export.</p>
+    <h2>Optional local drive diagnostics</h2>
+    <p>The optional developer menu can record raw motion, inferred speed, calibration, drivetrain state and device/build diagnostics in local engineering logs. While stopped, tap the vehicle name five times to open it and enable recording before calibration. Recording is off after each new app launch. Stop session finishes a log; the menu can export saved logs through the iOS share sheet. Exiting the menu does not change an active recording. Logs contain no coordinates or microphone audio, are excluded from device backup and never upload automatically. Each log is limited to 2 GB; storage errors or the size limit end recording, and incomplete files remain marked incomplete. An export destination has its own privacy practices.</p>
     <h2>Removing data</h2>
     <p>Deleting the app removes local settings, saved setups and other app files from the device. It does not delete a file you exported elsewhere, change your device backups, cancel a subscription or delete Apple's transaction records. Manage or cancel your subscription using Manage subscription in the Pro screen or Apple's subscription settings.</p>
-    <p>If you previously installed a development build, old engineering logs may remain in app storage until deletion. The consumer Release version does not create, display or export those logs.</p>
+    <p>Previously recorded engineering logs may remain in app storage after an update and can appear in the developer menu for export. No log is shared automatically. Removing the app deletes its local logs; copies you exported remain at their chosen destination.</p>
     <h2>When you contact support</h2>
     <p>If you choose to email support, your email provider delivers your address, message and any attachments you include. That correspondence is used to respond and investigate the issue. Do not send passwords, payment-card details, precise routes or unrelated sensitive information. The app never automatically attaches driving data.</p>
     <p>Support correspondence is retained only as needed to handle the request and applicable recordkeeping obligations. You can ask about or request deletion of correspondence at <a class="email" href="mailto:mwsupplylimited@gmail.com">mwsupplylimited@gmail.com</a>.</p>
     <h2>This website</h2>
     <p>These support and privacy pages are hosted by GitHub Pages. We add no analytics scripts, tracking pixels, cookies, remote fonts or external assets to these pages. Visiting them still sends connection information to GitHub. GitHub states that it logs and stores visitors' IP addresses for security, including visits without signing in. This website processing is separate from the app's local motion and sound processing.</p>
     <p>See <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages#data-collection">GitHub Pages data collection</a> and the <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub Privacy Statement</a> for its handling of connection and usage information. Email and any destination you choose for an exported file are separate services with their own practices.</p>
-    <p class="muted">Last updated October 4, 2026. Changes to app data handling will be reflected here.</p>
+    <p class="muted">Last updated October 5, 2026. Changes to app data handling will be reflected here.</p>
         </main>
         <footer>Powertrain Lab · <a href="index.html">Support</a> · <a href="privacy.html">Privacy policy</a> · <a href="../">MW Supply Limited</a></footer>
     </div>
