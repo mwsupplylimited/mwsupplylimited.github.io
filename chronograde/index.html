@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chronograde — Watch Accuracy &amp; Support</title>
-    <meta name="description" content="Understand how your mechanical watch runs. Try the free acoustic Timegrapher, track daily drift, and explore Chronograde Pro for iPhone and iPad.">
+    <title>Chronograde — Understand Your Watches Over Time</title>
+    <meta name="description" content="Track how your watches run and build useful collection history. Start free; Pro adds session comparisons, wear insights and PDF reports on iPhone and iPad.">
     <link rel="canonical" href="https://mwsupplylimited.github.io/chronograde/">
-    <meta property="og:title" content="Chronograde — Understand how your watch runs">
-    <meta property="og:description" content="A free acoustic Timegrapher, manual accuracy tracking, and a home for your watch collection on iPhone and iPad.">
+    <meta property="og:title" content="Chronograde — Understand your watches over time">
+    <meta property="og:description" content="Start with free microphone estimates and manual readings. Pro adds session comparisons, wear insights and PDF reports you control.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://mwsupplylimited.github.io/chronograde/">
     <style>
@@ -63,6 +63,12 @@
             color: var(--muted);
             margin: 0 0 40px;
         }
+        .eyebrow { color: var(--muted); font-size: 0.9rem; font-weight: 600; margin: 0 0 12px; }
+        .hero h1 { font-size: clamp(2.2rem, 6vw, 3.4rem); line-height: 1.12; max-width: 620px; }
+        .hero .subtitle { font-size: 1.1rem; margin: 20px 0; }
+        .benefits { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+        .benefits .feature-card { padding: 18px; }
+        .benefits p { margin-bottom: 0; }
         h2 {
             font-size: 1.3rem;
             margin: 40px 0 12px;
@@ -109,7 +115,7 @@
         .feature-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 20px; }
         .feature-card h3 { margin-top: 0; }
         .feature-card ul { margin-bottom: 0; }
-        @media (max-width: 560px) { .feature-grid { grid-template-columns: 1fr; } }
+        @media (max-width: 560px) { .feature-grid, .benefits { grid-template-columns: 1fr; } }
         footer {
             margin-top: 64px;
             padding-top: 24px;
@@ -123,20 +129,40 @@
     <main class="container">
         <a class="back" href="../">&larr; MW Supply Limited</a>
 
-        <h1>Chronograde</h1>
-        <p class="subtitle">Understand how your watch runs &mdash; from a quick acoustic reading to its daily gain or loss over time.</p>
-        <p><span class="pill">iPhone &amp; iPad</span> <span class="pill">Free acoustic Timegrapher</span></p>
-        <div class="actions">
-            <a class="download" href="https://apps.apple.com/app/id6774091390">Download on the App Store</a>
-            <a href="first-readings.html">Take your first readings &rarr;</a>
-        </div>
+        <header class="hero">
+            <p class="eyebrow">CHRONOGRADE &middot; IPHONE &amp; IPAD</p>
+            <h1>Understand how your watches run over time.</h1>
+            <p class="subtitle">A quick microphone estimate is a starting point. Keep everyday readings, logged wear and service records together, then see the history behind each watch.</p>
+            <p><span class="pill">Free to start</span> <span class="pill">Unlimited watch collection</span></p>
+            <div class="actions">
+                <a class="download" href="https://apps.apple.com/app/id6774091390">Start free on the App Store</a>
+                <a href="first-readings.html">Take your first readings &rarr;</a>
+            </div>
+        </header>
 
         <h2>Two ways to understand your watch</h2>
         <p><strong>Hear how it is running now.</strong> The Timegrapher uses your device's microphone to estimate a mechanical watch's rate and beat error. A quiet room and a clear ticking signal matter; some watches and device combinations are harder to measure.</p>
         <p><strong>See how it keeps time in everyday use.</strong> Save manual readings against the app's time reference, then return later for another reading in the same session. The change in offset shows the watch's average gain or loss across that interval. Network time correction, consistent timing and longer intervals help make those comparisons useful.</p>
         <p class="muted">An acoustic estimate is a snapshot. A manual drift trend covers the time between readings. Neither is a chronometer certification or a replacement for a watchmaker's assessment.</p>
 
-        <h2>Start free. Add Pro when you need more.</h2>
+        <h2 id="pro">Put your watch history to work with Pro</h2>
+        <div class="benefits">
+            <section class="feature-card" aria-labelledby="compare-heading">
+                <h3 id="compare-heading">Compare recorded sessions</h3>
+                <p>See daily rates, reading counts, elapsed coverage and positions side by side. Keep separate runs in context when you reset a watch.</p>
+            </section>
+            <section class="feature-card" aria-labelledby="wear-heading">
+                <h3 id="wear-heading">See what you actually log</h3>
+                <p>Explore logged wear over 30, 90 or 365 days. Bring the watches you wear and their service history into one collection.</p>
+            </section>
+            <section class="feature-card" aria-labelledby="report-heading">
+                <h3 id="report-heading">Share a useful history</h3>
+                <p>Choose watches and records, preview a PDF, then share it. Serial numbers, notes, amounts and photos start off.</p>
+            </section>
+        </div>
+        <p><a href="compare-sessions.html">Learn how to compare sessions and choose what you share &rarr;</a></p>
+
+        <h2 id="features">Start free. Add Pro when you need more.</h2>
         <div class="feature-grid">
             <section class="feature-card" aria-labelledby="free-heading">
                 <h3 id="free-heading">Free: get to know your collection</h3>
@@ -152,6 +178,9 @@
                 <h3 id="pro-heading">Pro: follow your watches over time</h3>
                 <ul>
                     <li>Keep unlimited manual measurements and start additional sessions.</li>
+                    <li>Compare two manual sessions and share their comparison PDF.</li>
+                    <li>Explore collection wear insights over 30, 90 or 365 days.</li>
+                    <li>Preview and share PDF reports of selected watches and records.</li>
                     <li>Repeat the Regulation Coach's guided positional test.</li>
                     <li>Explore Accuracy by Position and the app's Chronometer Score.</li>
                     <li>Use the large reference clock with visible sync status.</li>
@@ -166,6 +195,7 @@
         <h2>Guides</h2>
         <ul>
             <li><a href="first-readings.html"><strong>Your first readings</strong></a> &mdash; a practical guide to microphone placement, manual measurements and sessions.</li>
+            <li><a href="compare-sessions.html"><strong>Compare sessions and share your watch history</strong></a> &mdash; interpret separate recorded runs and choose the contents of a Pro PDF report.</li>
             <li><a href="accuracy.html"><strong>Is my watch accurate?</strong></a> &mdash; what a good daily rate is, how to measure one properly, and what to do about a bad number.</li>
             <li><a href="chronometer.html"><strong>Chronometer standards, explained</strong></a> &mdash; what COSC and METAS actually test, with the real criteria.</li>
             <li><a href="calibers.html"><strong>Caliber reference</strong></a> &mdash; beat rate, frequency, power reserve and lift angle for 29 common movements.</li>
@@ -185,7 +215,7 @@
         <h2>FAQ</h2>
 
         <h3>Does Chronograde show ads?</h3>
-        <p>The free tier includes a bottom banner and occasional full-screen advertising when returning to the Watches list. Pro removes app advertising while your subscription is active, or with a Lifetime unlock. The current app uses Unity Ads; see the <a href="privacy.html">privacy policy</a> for advertising data and privacy choices.</p>
+        <p>The free tier can show a bottom banner and occasional full-screen advertising at navigation breaks. The current app uses Unity LevelPlay and Ad Quality only after you allow advertising data use and authorize Apple tracking permission. Pro removes app advertising while your subscription is active, or with a Lifetime unlock. See the <a href="privacy.html">privacy policy</a> for advertising data and privacy choices.</p>
 
         <h3>What is free, and what needs Pro?</h3>
         <p>The free features and Pro benefits are listed above. In particular, <strong>the acoustic Timegrapher, one complete Coach run, iCloud sync and backup/restore do not require Pro</strong>. The ten-reading free allowance applies to manual accuracy measurements across your collection, including readings in the Recycle Bin. Premium themes are separate purchases.</p>
@@ -206,7 +236,10 @@
         <p>If iCloud (CloudKit) is enabled for Chronograde and you're signed in with the same Apple ID on both devices, your watches, measurements, wear log, and service history sync automatically. Settings &rarr; iCloud shows the current status.</p>
 
         <h3>Can I export my data?</h3>
-        <p><strong>Backup and restore are free:</strong> use the Watches tab menu to save a backup file or restore one. With Pro, that menu also offers <em>Export to Excel</em>, <em>Export to CSV</em>, and <em>Import from CSV</em>. A backup and a spreadsheet export serve different purposes; use the backup feature when you want an archive for restoration.</p>
+        <p><strong>Backup and restore are free:</strong> use the Watches tab menu to save a backup file or restore one. With Pro, that menu also offers <em>Export to Excel</em>, <em>Export to CSV</em>, <em>Import from CSV</em>, and <em>Watch report</em>. A PDF presents your selected records; use the backup feature when you want an archive for restoration. Read the <a href="compare-sessions.html#reports">PDF sharing guide</a> before including private details.</p>
+
+        <h3>Does a comparison show that a service improved my watch?</h3>
+        <p>It shows the difference between two recorded manual-session rates. Time spans, positions, winding state, wearing conditions and timing errors can differ, so that difference alone does not establish improvement or a service effect. Reports are records to review, not an appraisal, diagnosis or certification.</p>
 
         <h3>I found a bug or have a feature request.</h3>
         <p>Please email <a href="mailto:mwsupplylimited@gmail.com?subject=Chronograde%20feedback">mwsupplylimited@gmail.com</a> with your iOS version, device, and steps to reproduce. We read every message.</p>
