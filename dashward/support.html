@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashward — Help &amp; Support</title>
+    <meta name="description" content="Help with Dashward camera and monitor setup, connection codes, live-viewing controls, snapshots and purchase restoration. Contact Dashward support.">
+    <style>
+        :root {
+            --bg: #ffffff;
+            --fg: #1a1a1a;
+            --muted: #666666;
+            --accent: #13b3ab;
+            --card: #f5f5f7;
+            --border: #e5e5e7;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #121419;
+                --fg: #f5f5f7;
+                --muted: #9a9a9a;
+                --accent: #2ee0d6;
+                --card: #1c1f25;
+                --border: #2a2d34;
+            }
+        }
+        * { box-sizing: border-box; }
+        html { -webkit-text-size-adjust: 100%; }
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+            background: var(--bg);
+            color: var(--fg);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 48px 24px 96px;
+        }
+        .back {
+            display: inline-block;
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-bottom: 32px;
+        }
+        .back:hover { color: var(--accent); }
+        h1 {
+            font-size: 2.2rem;
+            margin: 0 0 8px;
+            letter-spacing: -0.02em;
+        }
+        .subtitle {
+            color: var(--muted);
+            margin: 0 0 40px;
+        }
+        h2 {
+            font-size: 1.3rem;
+            margin: 40px 0 12px;
+            letter-spacing: -0.01em;
+        }
+        h3 {
+            font-size: 1rem;
+            margin: 24px 0 6px;
+            font-weight: 600;
+        }
+        p, li { color: var(--fg); }
+        .muted { color: var(--muted); }
+        ul { padding-left: 22px; }
+        li { margin-bottom: 6px; }
+        a { color: var(--accent); }
+        .pill {
+            display: inline-block;
+            background: var(--card);
+            border: 1px solid var(--border);
+            padding: 3px 10px;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            color: var(--muted);
+        }
+        .callout {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-left: 3px solid var(--accent);
+            padding: 16px 20px;
+            border-radius: 8px;
+            margin: 24px 0;
+        }
+        .callout h2 { margin: 0 0 12px; }
+        .callout p { margin: 0; }
+        .callout p + p { margin-top: 12px; }
+        footer {
+            margin-top: 64px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
+            color: var(--muted);
+            font-size: 0.85rem;
+        }
+        ol { padding-left: 22px; }
+        nav ul { display: flex; flex-wrap: wrap; gap: 8px 20px; list-style: none; padding: 0; }
+        a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <a class="back" href="./">&larr; Dashward</a>
+        <h1>Help &amp; support</h1>
+        <p class="subtitle">Set up your dashcam, connect a monitor and understand what each camera is showing.</p>
+
+        <section class="callout" aria-labelledby="version-note">
+            <h2 id="version-note">Choose the instructions for your app</h2>
+            <p>The Connections and viewing controls below apply to <strong>version 1.4</strong>, including TestFlight. Its public launch is pending Apple review and manual release. For earlier versions, including version 1.1 and its original same-Apple-Account Live View, see the <a href="./">Dashward guide</a>.</p>
+        </section>
+        <nav aria-label="Support topics">
+            <ul>
+                <li><a href="#roles">Dashcam or Monitor</a></li>
+                <li><a href="#connect">Connect devices</a></li>
+                <li><a href="#viewing">Viewing controls</a></li>
+                <li><a href="#troubleshooting">Troubleshooting</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <h2 id="roles">Dashcam or Monitor?</h2>
+        <p>An <strong>iPhone or iPad in Dashcam mode</strong> records and can share its cameras. Keep it mounted securely, powered and online, with Dashward open on its screen while using its cameras. Set up sharing while safely parked.</p>
+        <p>A <strong>Monitor</strong> watches a shared vehicle. iPhone and iPad can use Monitor mode; the Mac app is a viewer and does not record a camera. Settings separates Dashcam and Monitor controls. Camera access for scanning a connection code does not start recording or sharing.</p>
+
+        <h2 id="connect">Connect devices with a code</h2>
+        <h3>Add a monitor</h3>
+        <ol>
+            <li>On the new monitor, open <strong>Connections &rarr; Connect this monitor</strong>.</li>
+            <li>Follow the numbered instructions beside its code. They specify whether the owner should use Apple's Camera or the scanner in Dashward. On a Mac, follow the displayed copy-and-paste instructions.</li>
+            <li>Compare the match code, account and device, then review and allow the connection. The new monitor must also accept when prompted. Keep both screens open until setup shows <strong>Monitor connected</strong>; no second scan is needed.</li>
+        </ol>
+        <p>Codes expire after ten minutes. Scanning alone never grants access. Each person uses their own Apple Account; an invitation does not require sharing an Apple Account password.</p>
+        <h3>Add a dashcam and start sharing</h3>
+        <p>Use <strong>Connections &rarr; Add a dashcam</strong> on the owner's device and the source's sharing controls to connect the dashcam to the plan. Follow the numbered steps on both screens and use the scanner specified there. A dashcam connection is separate from adding a monitor.</p>
+        <p>The driver must separately choose <strong>Review and start</strong> on the source and personally review the audience and information being shared. Connecting a device never starts sharing or accepts consent for the driver. Audience or content changes require a fresh driver review.</p>
+        <p><strong>Stop sharing</strong> stops sharing while keeping connections. <strong>Disconnect everyone</strong> is separate. Removing approval in Connections revokes live access; removing a person in Team/Manage People controls their iCloud access separately. Already received copies cannot be recalled.</p>
+
+        <h2 id="viewing">Understand the viewing controls</h2>
+        <ul>
+            <li><strong>Watch for 5 min:</strong> starts a timed viewing session on that monitor. The visible countdown ends live viewing. <strong>Reset to 5 min</strong> starts a new five-minute countdown from now.</li>
+            <li><strong>Continuous mode:</strong> has no countdown. It still needs available sharing, live access and a connection. Closing or hiding the app stops that monitor's live viewing. Service or access limits can interrupt it; continuous playback is not guaranteed.</li>
+            <li><strong>Stop:</strong> ends that monitor's live request. It does not stop the dashcam's local recording or another monitor's separate session.</li>
+            <li><strong>LIVE VIDEO:</strong> marks arriving video. <strong>SNAPSHOT</strong> is a still image; check its age. Road snapshots can update separately after live viewing stops, so a visible picture is not proof that live video is running.</li>
+            <li><strong>STOPPED, CONNECTING, WAITING or UNAVAILABLE:</strong> describes that camera's current viewing state. Read the explanation and available action below the picture. Road and Cabin may be in different states.</li>
+        </ul>
+        <p>Personal Pro's time allowance is shared across overlapping Road, Cabin and multiple-monitor viewing of the source. Spending limits can pause video before that allowance is used. Follow the service notice in the app; TestFlight and App Review use a separate finite test pool, and Sandbox purchases do not refill it. There are no automatic extra charges. Basic local recording remains available.</p>
+
+        <h2 id="troubleshooting">If something is not working</h2>
+        <h3>A camera is waiting or unavailable</h3>
+        <p>Check that the source is online with Dashward open, the driver has reviewed and started sharing, and the requested camera is shared. Check the monitor's connection approval and the plan status in Membership. A snapshot or map update can arrive independently of live video. Follow the displayed reason; use Retry when it is offered. Do not recreate connections or buy again solely because a connection is taking time.</p>
+        <h3>A purchase or plan looks out of date</h3>
+        <p>Open <strong>Membership</strong> to refresh the current plan. Use <strong>Restore Purchases</strong> for a purchase on your Apple Account, and check expiry or renewal in <a href="https://apps.apple.com/account/subscriptions">Apple's subscription settings</a>. The original Personal monthly and yearly plans are closed to new subscriptions and will not renew; existing paid terms end on their Apple expiry date. There is no automatic switch to another plan.</p>
+        <h3>Recording stops or storage is full</h3>
+        <p>Camera recording needs the iPhone or iPad app open. Check available storage and temperature. Locked clips are not automatically deleted, so they can fill the storage allowance. Export important recordings, then remove unneeded clips. Do not test incident detection by creating an impact.</p>
+
+        <h2 id="contact">Contact Dashward support</h2>
+        <p>Email <a href="mailto:mwsupplylimited@gmail.com?subject=Dashward%20support">mwsupplylimited@gmail.com</a> with the app version/build, iOS or macOS version, device model, approximate time and the steps that led to the problem. Mention whether you were using Dashcam or Monitor and include the status text you saw.</p>
+        <p class="muted">Do not send passwords, verification codes, active connection codes or private recordings. If you include a screenshot, hide personal details first.</p>
+        <footer>
+            <a href="./">Dashward guide</a> &middot; <a href="privacy.html">Privacy Policy</a><br>
+            &copy; 2026 MW Supply Limited
+        </footer>
+    </main>
+</body>
+</html>
