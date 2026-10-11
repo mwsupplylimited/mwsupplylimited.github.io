@@ -119,6 +119,18 @@
             color: var(--muted);
             font-size: 0.85rem;
         }
+        .comparison-scroll { overflow-x: auto; margin: 1.5rem 0; }
+        .plan-comparison { table-layout: fixed; width: 100%; border-collapse: collapse; font-size: .95rem; }
+        .plan-comparison caption { text-align: left; font-weight: 700; margin-bottom: .8rem; }
+        .plan-comparison th, .plan-comparison td { padding: .85rem .6rem; text-align: left; vertical-align: top; border-bottom: 1px solid var(--border); overflow-wrap: anywhere; }
+        .plan-comparison thead th { font-weight: 700; }
+        .plan-comparison thead th:first-child { width: 38%; }
+        @media (max-width: 440px) {
+            .plan-comparison { font-size: .85rem; }
+            .plan-comparison th, .plan-comparison td { padding: .8rem .35rem; }
+        }
+        .plan-comparison tbody th { font-weight: 500; width: 40%; }
+        .plan-comparison td:last-child { font-weight: 600; }
     </style>
 </head>
 <body>
@@ -154,14 +166,24 @@
 
         <h2>Free vs Pro</h2>
         <p>Video to Photo: Frame Grab is free to use, with ads. <strong>Full native-resolution single-frame exports</strong> work on the free plan; the free plan exports as JPEG and is ad-supported: a banner on the Home screen, a short opt-in video you watch to unlock exports for a while, and occasionally a full-screen ad when you come back to the Home screen after being away for a few minutes.</p>
-        <p>The optional <strong>Pro</strong> upgrade unlocks:</p>
-        <ul>
-            <li><strong>Batch grabs</strong> of up to 60 frames in a single run, packaged as a ZIP or a contact-sheet PDF (the free plan grabs 3 at a time).</li>
-            <li><strong>Sharpest</strong> on every frame rather than one scan per video.</li>
-            <li>Lossless <strong>PNG</strong> and efficient <strong>HEIC</strong> export formats (the free plan exports JPEG).</li>
-            <li>An in-app <strong>Frame Library</strong> that stores every exported frame and syncs across your iPhone and iPad via iCloud.</li>
-            <li><strong>No ads</strong> — removes every ad and lets you export instantly, without watching a video.</li>
-        </ul>
+        <p>Choose the same Pro features with Monthly, Yearly, or Lifetime.</p>
+        <div class="comparison-scroll" role="region" aria-label="Free and Pro feature comparison" tabindex="0">
+            <table class="plan-comparison">
+                <caption>What you get with Pro</caption>
+                <thead><tr><th scope="col">Feature</th><th scope="col">Free</th><th scope="col">Pro</th></tr></thead>
+                <tbody>
+                    <tr><th scope="row">Frames per batch</th><td>Up to 3</td><td>Up to 60</td></tr>
+                    <tr><th scope="row">Sharpest finder</th><td>One successful selection per opened video</td><td>Use repeatedly</td></tr>
+                    <tr><th scope="row">Export formats</th><td>JPEG</td><td>JPEG, lossless PNG, HEIC</td></tr>
+                    <tr><th scope="row">ZIP and contact-sheet PDF</th><td>Not included</td><td>Included</td></tr>
+                    <tr><th scope="row">Frame Library with iCloud sync</th><td>Not included</td><td>Included</td></tr>
+                    <tr><th scope="row">Ads</th><td>Ad-supported</td><td>No ads</td></tr>
+                    <tr><th scope="row">Full native resolution</th><td>Included</td><td>Included</td></tr>
+                    <tr><th scope="row">Frame stepping and precision selection</th><td>Included</td><td>Included</td></tr>
+                    <tr><th scope="row">Save to Photos and share</th><td>Included</td><td>Included</td></tr>
+                </tbody>
+            </table>
+        </div>
         <p>Pro is sold as an auto-renewing subscription, or as a one-time purchase:</p>
         <ul>
             <li>Pro Monthly &mdash; $2.99 / month</li>
