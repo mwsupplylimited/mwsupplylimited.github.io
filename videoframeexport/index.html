@@ -5,12 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Video to Photo: Frame Grab — find the sharp frame, in bulk</title>
     <meta name="description" content="Find the frame that is actually in focus, grab up to 60 at once, and package them as a ZIP or contact-sheet PDF. iPhone and iPad. Support and FAQ.">
+    <link rel="canonical" href="https://mwsupplylimited.github.io/videoframeexport/">
+    <meta name="apple-itunes-app" content="app-id=6774273813">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mwsupplylimited.github.io/videoframeexport/">
+    <meta property="og:title" content="Video to Photo: Frame Grab">
+    <meta property="og:description" content="Find sharper moments. Extract up to 60 frames with Pro, step frame by frame, and share a ZIP or contact-sheet PDF.">
+    <meta property="og:image" content="https://mwsupplylimited.github.io/videoframeexport/app-icon.png">
+    <meta property="og:image:alt" content="Video to Photo: Frame Grab app icon">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Video to Photo: Frame Grab">
+    <meta name="twitter:description" content="Precise frame stepping, Sharpest finder, and batch exports for iPhone and iPad.">
+    <meta name="twitter:image" content="https://mwsupplylimited.github.io/videoframeexport/app-icon.png">
     <style>
         :root {
             --bg: #ffffff;
             --fg: #1a1a1a;
             --muted: #666666;
             --accent: #f28a26;
+            --link: #9a4300;
             --card: #f5f5f7;
             --border: #e5e5e7;
         }
@@ -20,6 +33,7 @@
                 --fg: #f5f5f7;
                 --muted: #9a9a9a;
                 --accent: #ff9a3a;
+                --link: #ff9a3a;
                 --card: #1c1f25;
                 --border: #2a2d34;
             }
@@ -82,7 +96,13 @@
         .muted { color: var(--muted); }
         ul { padding-left: 22px; }
         li { margin-bottom: 6px; }
-        a { color: var(--accent); }
+        a { color: var(--link); }
+        a:focus-visible { outline: 3px solid var(--link); outline-offset: 4px; }
+        .screens { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+        .screens figure { margin: 0; }
+        .screens img { width: 100%; height: auto; border-radius: 14px; display: block; }
+        .screens figcaption { font-size: 0.9rem; margin-top: 8px; }
+        @media (max-width: 540px) { .screens { grid-template-columns: 1fr; max-width: 320px; margin: auto; } }
         .pill {
             display: inline-block;
             background: var(--card);
@@ -106,13 +126,22 @@
         <a class="back" href="../">&larr; MW Supply Limited</a>
 
         <h1>Video to Photo: Frame Grab</h1>
-        <p class="subtitle">Pull a pixel-perfect photo from any video. iPhone &amp; iPad. <span class="pill">Version 1.0.5</span></p>
+        <p class="subtitle">Find sharper moments and turn a video into a set of photos. iPhone &amp; iPad. <span class="pill">Version 1.0.5</span></p>
         <p class="cta"><a class="appstore" href="https://apps.apple.com/app/id6774273813">Download on the App Store</a></p>
 
         <h2>About</h2>
-        <p>Saving one frame is easy. Finding the one that is actually in focus is not. <strong>Sharpest</strong> scores the frames around the playhead and lands on the crispest, and a <strong>batch</strong> run takes up to 60 in one pass and packages them as a ZIP or a contact-sheet PDF you can hand to someone. Scrub a filmstrip, step by ±1 and ±10 frames, or jump straight to a timecode.</p>
+        <p>Finding a useful still means comparing the moments around it. <strong>Sharpest</strong> scores nearby frames and selects the highest-scoring candidate, and a <strong>batch</strong> run takes up to 60 in one pass and packages them as a ZIP or a contact-sheet PDF you can hand to someone. Scrub a filmstrip, step by ±1 and ±10 frames, or jump straight to a timecode.</p>
         <p>Built for the moments a screenshot cannot serve — sports finishes, a dog mid-leap, kids' first steps, product stills pulled from a walkthrough, a clean frame off a screen recording. Send a video in from any app&rsquo;s share sheet, or open one straight from Files: Frame Grab never reads your photo library, and only ever asks to add the frames you save.</p>
 
+        <h2>See the workflow</h2>
+        <div class="screens">
+            <figure><img src="screenshots/precision.png" width="1290" height="2796" loading="lazy" alt="Frame selector with filmstrip, Sharpest, and single-frame step controls, using an illustrated demo clip"><figcaption>Inspect a frame and compare nearby moments.</figcaption></figure>
+            <figure><img src="screenshots/batch.png" width="1290" height="2796" loading="lazy" alt="Batch extraction controls in Frame Grab"><figcaption>Choose how many frames and where to sample.</figcaption></figure>
+            <figure><img src="screenshots/output.png" width="1290" height="2796" loading="lazy" alt="Completed batch with ZIP and contact-sheet PDF export options"><figcaption>Package a selection for review with Pro.</figcaption></figure>
+        </div>
+        <h2>Find it, compare it, export it</h2>
+        <p>Use <strong>Sharpest</strong> to compare nearby frames by measured sharpness. It does not repair blur or guarantee that a moving subject is in focus. Use the preview and zoom to check the result.</p>
+        <p>Try a batch of 3 JPEG frames, then use Pro for up to 60 frames and ZIP or contact-sheet PDF packaging. For client selections, sports technique, or product walkthroughs, a contact sheet puts the candidates together for review.</p>
         <h2>Getting started</h2>
         <ul>
             <li><strong>Tap Select Video</strong> and pick any video from your library.</li>
@@ -123,7 +152,7 @@
         </ul>
 
         <h2>Free vs Pro</h2>
-        <p>Video to Photo: Frame Grab is free to use, with ads. Every core capability — including <strong>full native-resolution exports</strong> — works on the free plan; the free plan exports as JPEG and is ad-supported: a banner on the Home screen, a short opt-in video you watch to unlock exports for a while, and occasionally a full-screen ad when you come back to the Home screen after being away for a few minutes.</p>
+        <p>Video to Photo: Frame Grab is free to use, with ads. <strong>Full native-resolution single-frame exports</strong> work on the free plan; the free plan exports as JPEG and is ad-supported: a banner on the Home screen, a short opt-in video you watch to unlock exports for a while, and occasionally a full-screen ad when you come back to the Home screen after being away for a few minutes.</p>
         <p>The optional <strong>Pro</strong> upgrade unlocks:</p>
         <ul>
             <li><strong>Batch grabs</strong> of up to 60 frames in a single run, packaged as a ZIP or a contact-sheet PDF (the free plan grabs 3 at a time).</li>
@@ -137,7 +166,7 @@
             <li>Pro Monthly &mdash; $2.99 / month</li>
             <li>Pro Yearly &mdash; $17.99 / year</li>
             <li>Pro Lifetime &mdash; $34.99 once (no subscription, no renewal)</li>
-            <li>Both subscription plans include a 7-day free trial for new subscribers.</li>
+            <li>Both subscription plans offer a 7-day free trial to eligible first-time subscribers. Prices above are in US dollars; your local price and eligibility are shown in the app before purchase.</li>
             <li>Existing subscribers keep the price they signed up at: from before 19 July 2026, $1.99 / month; from before 21 August 2026, $10.99 / year.</li>
         </ul>
 
@@ -152,13 +181,13 @@
         <p>Yes. The preview and the export are both decoded with zero time tolerance, so the on-screen image is the same frame that gets saved.</p>
 
         <h3>What resolutions are supported?</h3>
-        <p>Up to the full native resolution of the source video — including 4K and above. Full resolution is free; Pro adds lossless PNG and HEIC output formats alongside JPEG.</p>
+        <p>Up to the full native resolution of the source video — including 4K and above. Full resolution is free; Pro adds lossless PNG and efficient HEIC output formats alongside JPEG.</p>
 
         <h3>Does it work with portrait video?</h3>
         <p>Yes. Orientation and aspect ratio are preserved for all orientations, including iPhone portrait footage stored with a 90° rotation transform.</p>
 
         <h3>What happens to my exported frames if I cancel Pro?</h3>
-        <p>Frames you previously saved to your Photo Library are unaffected — those are normal photos in your library. The in-app Library remains visible, but new exports won't be added to it until Pro is reactivated.</p>
+        <p>Frames you previously saved to your Photo Library are unaffected — those are normal photos in your library. The in-app Frame Library requires an active Pro entitlement. Photos you saved or shared outside the app remain available without Pro.</p>
 
         <h3>I found a bug or have a feature request.</h3>
         <p>Please email <a href="mailto:mwsupplylimited@gmail.com?subject=Video%20Frame%20Export%20feedback">mwsupplylimited@gmail.com</a> with your iOS version, device, and steps to reproduce. We read every message.</p>
