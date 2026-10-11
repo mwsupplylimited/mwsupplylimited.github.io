@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video to Photo: Frame Grab — find the sharp frame, in bulk</title>
-    <meta name="description" content="Find the frame that is actually in focus, grab up to 60 at once, and package them as a ZIP or contact-sheet PDF. iPhone and iPad. Support and FAQ.">
+    <title>Video to Photo: Frame Grab — precise video frame selection</title>
+    <meta name="description" content="Pick a moment from your video, step through nearby frames, and zoom to inspect detail. Export full-resolution photos on iPhone and iPad.">
     <link rel="canonical" href="https://mwsupplylimited.github.io/videoframeexport/">
     <meta name="apple-itunes-app" content="app-id=6774273813">
     <meta property="og:type" content="website">
@@ -126,16 +126,17 @@
         <a class="back" href="../">&larr; MW Supply Limited</a>
 
         <h1>Video to Photo: Frame Grab</h1>
-        <p class="subtitle">Find sharper moments and turn a video into a set of photos. iPhone &amp; iPad. <span class="pill">Version 1.0.5</span></p>
+        <p class="subtitle">Pick the moment you meant. Keep the detail. iPhone &amp; iPad. <span class="pill">Version 1.0.5</span></p>
         <p class="cta"><a class="appstore" href="https://apps.apple.com/app/id6774273813">Download on the App Store</a></p>
 
-        <h2>About</h2>
-        <p>Finding a useful still means comparing the moments around it. <strong>Sharpest</strong> scores nearby frames and selects the highest-scoring candidate, and a <strong>batch</strong> run takes up to 60 in one pass and packages them as a ZIP or a contact-sheet PDF you can hand to someone. Scrub a filmstrip, step by ±1 and ±10 frames, or jump straight to a timecode.</p>
+        <h2>Find your moment, frame by frame</h2>
+        <p>Pause near a sports finish, a smile, or the clearest view of a product. Drag the filmstrip for finer control, step through nearby frames with the ±1 and ±10 buttons, and zoom in to inspect detail before exporting a full-resolution photo.</p>
+        <p>Finding a useful still means comparing the moments around it. <strong>Sharpest</strong> scores nearby frames and selects the highest-scoring candidate, and a <strong>Pro batch</strong> run takes up to 60 in one pass and packages them as a ZIP or a contact-sheet PDF you can hand to someone. You can also jump straight to a timecode or frame number.</p>
         <p>Built for the moments a screenshot cannot serve — sports finishes, a dog mid-leap, kids' first steps, product stills pulled from a walkthrough, a clean frame off a screen recording. Send a video in from any app&rsquo;s share sheet, or open one straight from Files: Frame Grab never reads your photo library, and only ever asks to add the frames you save.</p>
 
         <h2>See the workflow</h2>
         <div class="screens">
-            <figure><img src="screenshots/precision.webp" width="860" height="1864" loading="lazy" alt="Frame selector with filmstrip, Sharpest, and single-frame step controls, using an illustrated demo clip"><figcaption>Inspect a frame and compare nearby moments.</figcaption></figure>
+            <figure><img src="screenshots/precision.webp" width="860" height="1864" loading="lazy" alt="Frame selector with filmstrip, Sharpest, and single-frame step controls, using an illustrated demo clip"><figcaption>Step through the moment. Zoom in. Choose your frame.</figcaption></figure>
             <figure><img src="screenshots/batch.webp" width="860" height="1864" loading="lazy" alt="Batch extraction controls in Frame Grab"><figcaption>Choose how many frames and where to sample.</figcaption></figure>
             <figure><img src="screenshots/output.webp" width="860" height="1864" loading="lazy" alt="Completed batch with ZIP and contact-sheet PDF export options"><figcaption>Package a selection for review with Pro.</figcaption></figure>
         </div>
@@ -178,7 +179,7 @@
         <h2>FAQ</h2>
 
         <h3>Is the exported frame the exact frame I see in the preview?</h3>
-        <p>Yes. The preview and the export are both decoded with zero time tolerance, so the on-screen image is the same frame that gets saved.</p>
+        <p>After you stop scrubbing, the settled preview and export use the same position with zero time tolerance. While dragging, the preview uses faster approximate decoding. Frame-number navigation can depend on the video’s timing metadata. Variable-frame-rate recordings have unevenly spaced frames, so a frame number is not always a fixed time interval.</p>
 
         <h3>What resolutions are supported?</h3>
         <p>Up to the full native resolution of the source video — including 4K and above. Full resolution is free; Pro adds lossless PNG and efficient HEIC output formats alongside JPEG.</p>
