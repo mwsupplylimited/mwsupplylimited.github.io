@@ -226,3 +226,7 @@ voisetech.com, 1066, RESELLER
 xandr.com, 17779, RESELLER
 zetaglobal.net, 525, RESELLER
 zmaticoo.com, 5135195, RESELLER
+
+# ironSource direct relationship verified in LevelPlay Account > API, 2026-09-29.
+OWNERDOMAIN=mwsupplylimited.github.io
+ironsrc.com, 672769, DIRECT

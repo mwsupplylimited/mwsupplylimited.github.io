@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashward — Support</title>
-    <meta name="description" content="Support page for Dashward, an always-on dash cam for iPhone with loop recording, GPS-stamped clips, and a parking sentry.">
+    <meta name="description" content="Support for Dashward 1.1 on iPhone and iPad: loop recording, GPS-stamped clips, parking sentry and same-Apple-Account near-live camera snapshots.">
     <style>
         :root {
             --bg: #ffffff;
@@ -88,7 +88,9 @@
             border-radius: 8px;
             margin: 24px 0;
         }
+        .callout h2 { margin: 0 0 12px; }
         .callout p { margin: 0; }
+        .callout p + p { margin-top: 12px; }
         footer {
             margin-top: 64px;
             padding-top: 24px;
@@ -103,10 +105,30 @@
         <a class="back" href="../">&larr; MW Supply Limited</a>
 
         <h1>Dashward</h1>
-        <p class="subtitle">A dash cam that watches the road — and your car. <span class="pill">Version 1.1</span></p>
+        <p class="subtitle">A dash cam that watches the road — and your car. <span class="pill">Current public version: 1.1</span></p>
+
+        <section class="callout" aria-labelledby="personal-retirement">
+            <h2 id="personal-retirement">Original Personal subscriptions are closed</h2>
+            <p>As of <time datetime="2026-10-06">6 October 2026</time>, the original <strong>Dashward Pro monthly and yearly subscriptions</strong> are no longer available to buy and will not renew. Removing them from sale does not immediately end an already-paid subscription: access continues through your existing paid term, then ends.</p>
+            <p>Check your expiry date in <a href="https://apps.apple.com/account/subscriptions">Apple Account &rarr; Subscriptions</a>. You will not be moved to another plan automatically. If you need help with access during your paid term, <a href="#contact">contact support</a>.</p>
+        </section>
+
+        <section class="callout" aria-labelledby="launch-pending">
+            <h2 id="launch-pending">Version 1.4 — public launch pending</h2>
+            <p>Version 1.4 for iOS is waiting for App Review. The Mac update is being prepared for submission. Public release follows Apple approval and our manual release. The version 1.1 instructions below still apply to the current public app.</p>
+            <p>The upcoming release offers these <strong>monthly plans</strong> at the following US App Store prices. Other storefronts use local prices shown in the app before purchase:</p>
+            <ul>
+                <li><strong>Personal Pro — US$29.99/month:</strong> one vehicle, one person and up to 60 live-viewing hours per subscription month. Road and cabin viewing share that time allowance.</li>
+                <li><strong>Personal Live — US$129.99/month:</strong> one vehicle and one person, with no fixed monthly live-viewing hour allowance.</li>
+                <li><strong>Business 5 — US$349.99/month:</strong> up to five vehicles and two people.</li>
+            </ul>
+            <p>All three plans have a live-viewing spending limit. The version 1.4 public service uses Low Data at 55% and pauses live viewing at 70% of conservative estimated net subscription revenue — the estimated amount left after Apple's commission, taxes, refunds and currency reserves. Viewing may pause before an hour allowance is used; continuous viewing is not guaranteed. There are no automatic extra charges. Basic local recording remains available.</p>
+            <p>New annual plans, larger Business plans and additional-person packs are not part of this launch. Original Personal subscriptions remain closed; there is no automatic move to a new plan.</p>
+            <p>TestFlight and App Review use a separate test service with its own limits. A connected session's notices show the limits reported by that service. Test availability does not mean version 1.4 has been publicly released.</p>
+        </section>
 
         <h2>About</h2>
-        <p>Dashward turns your iPhone into an always-on dash cam: it records the rear and/or front camera — or <strong>both the front and rear cameras at the same time, free</strong> — loop-records into short segments, automatically manages storage, and stamps every clip with your GPS location. <strong>Dashward Pro</strong> adds up to <strong>4K/60fps</strong>, a <strong>parking sentry</strong> that keeps watching your car while you're away, <strong>Emergency SOS</strong> crash detection, <strong>Driving Reports</strong>, and <strong>Cloud Backup</strong> of your incident clips.</p>
+        <p>Dashward turns your iPhone into an always-on dash cam: it records the rear and/or front camera — or <strong>both the front and rear cameras at the same time, free</strong> — loop-records into short segments, automatically manages storage, and stamps every clip with your GPS location. During an existing paid term, <strong>Dashward Pro</strong> includes up to <strong>4K/60fps</strong>, a <strong>parking sentry</strong> while Dashward stays open on the mounted phone, <strong>Emergency SOS</strong>, <strong>Driving Reports</strong>, and a <strong>cloud evidence vault</strong> for your incident clips.</p>
 
         <h2>Getting started</h2>
         <ul>
@@ -117,48 +139,62 @@
         </ul>
 
         <h2>Recording &amp; storage</h2>
-        <p>Dashward records continuously using <strong>loop recording</strong>: the drive is broken into short, fixed-length <strong>segments</strong> so clips stay easy to find, save, and share. You set a <strong>storage cap</strong>, and once it's reached Dashward automatically deletes the <strong>oldest</strong> clips to make room for new ones, so it can run indefinitely without filling up your phone.</p>
-        <p>You can <strong>lock</strong> any clip you want to keep — locked clips (and event clips from the parking sentry) are protected from the automatic deletion and stay until you remove them yourself. You can also optionally <strong>save clips to Apple Photos</strong> to keep them in your main library or back them up with iCloud Photos.</p>
+        <p>Dashward records continuously using <strong>loop recording</strong>: the drive is broken into short, fixed-length <strong>segments</strong> so clips stay easy to find, save, and share. You set a <strong>storage cap</strong>, and Dashward deletes the <strong>oldest unlocked clips</strong> to make room. Locked clips are protected, so storage can still fill up and recording can stop. Export clips you want to keep, then remove unneeded clips from Dashward to free space.</p>
+        <p>You can <strong>lock</strong> any clip you want to keep — locked clips (and event clips from the parking sentry) are protected from the automatic deletion and stay until you remove them yourself. You can also <strong>save clips to Apple Photos</strong> (free), or with Pro back locked clips up to your own private iCloud <strong>evidence vault</strong>.</p>
 
         <h2>Parking sentry <span class="pill">Pro</span></h2>
         <p>When you park and leave the phone mounted, Dashward Pro can switch into <strong>parking sentry</strong> mode and keep an eye on your car:</p>
         <ul>
             <li><strong>Detects motion or impact</strong> around the vehicle and automatically <strong>saves and locks</strong> an event clip so it won't be overwritten.</li>
             <li><strong>Alerts you on the device</strong> when you come back, so you can see what happened while you were away.</li>
-            <li><strong>Notifies your other devices</strong> signed in to the same Apple ID, so you can get a heads-up even before you reach the car.</li>
+            <li><strong>Notifies your other devices</strong> signed in to the same Apple Account, so you can get a heads-up even before you reach the car.</li>
+            <li>An optional <strong>timelapse</strong> shows the whole time you were away.</li>
         </ul>
 
+        <h2>Live View on your own devices <span class="pill">Pro</span></h2>
+        <p>Version 1.1 lets existing Pro subscribers see <strong>near-live camera snapshots</strong> from another of their devices signed in to the <strong>same Apple Account</strong>. Snapshots and remote commands use your private iCloud database. Keep both devices online and Dashward open on the mounted device.</p>
+        <ul>
+            <li>On the device you want to watch, open <strong>Settings &rarr; Live View</strong> and turn on <strong>Allow live view of this device</strong>.</li>
+            <li>On your other device, open <strong>Settings &rarr; Live View &rarr; View &amp; control another device</strong>, then select the device.</li>
+            <li>Choose the front or rear camera when available. The view also shows recording and sentry status, storage, temperature and recent sentry events.</li>
+            <li>You can remotely start or stop recording and arm or disarm the sentry. Synced sentry clips can be played from the event list; syncing needs <strong>Alert my other devices</strong> enabled on the recording device.</li>
+            <li>To stop allowing this device to be watched, turn off <strong>Allow live view of this device</strong> on it.</li>
+        </ul>
+        <p>Updates depend on the devices and iCloud connection. A recent snapshot is not a guarantee of current conditions; Live View and alerts do not replace emergency services.</p>
+
         <h2>Plans &amp; ads</h2>
-        <p>Dashward is free to download. The <strong>free tier records both the front and rear cameras at once</strong>, with GPS-stamped clips, a route map, and a G-force meter — supported by ads.</p>
-        <p><strong>Dashward Pro</strong> (<strong>$2.99/month</strong> or <strong>$19.99/year</strong>, with a <strong>3-day free trial</strong>) unlocks:</p>
+        <p>Dashward is free to download. The <strong>free tier records both the front and rear cameras at once</strong>, with GPS-stamped clips, a route map, a G-force meter, and saving to Apple Photos — supported by ads.</p>
+        <p>During an existing paid term, <strong>Dashward Pro</strong> includes:</p>
         <ul>
             <li>Capture up to <strong>4K at 60 fps</strong></li>
             <li>The <strong>parking sentry</strong> — motion &amp; impact detection while parked, with <strong>timelapse</strong></li>
-            <li><strong>Emergency SOS</strong> — automatic crash detection that alerts your emergency contact with your location</li>
-            <li><strong>Driving Reports</strong> with a 0–100 safety score</li>
-            <li><strong>Cloud Backup</strong> — locked incident clips saved to your private iCloud evidence vault</li>
-            <li><strong>Auto-highlight</strong> of hard braking, acceleration, and swerves</li>
-            <li><strong>Cross-device alerts</strong> and <strong>remote live view</strong> across your Apple ID devices</li>
-            <li><strong>Apple Photos backup</strong></li>
+            <li><strong>Emergency SOS</strong> — after a hard impact, Dashward checks you're OK and can alert your emergency contact</li>
+            <li><strong>Driving Reports</strong> with a 0–100 score</li>
+            <li>The <strong>cloud evidence vault</strong> — locked incident clips saved to your private iCloud</li>
+            <li><strong>Auto-highlights</strong> of hard braking, acceleration, and swerves</li>
+            <li><strong>Alerts</strong> and <strong>Live View</strong> across your own devices</li>
             <li>A completely <strong>ad-free</strong> app</li>
         </ul>
-        <p>Subscriptions are sold through Apple and renew automatically until cancelled; manage or cancel any time in <strong>iOS Settings &rarr; [your name] &rarr; Subscriptions</strong>. Prices are always shown in the app in your local currency.</p>
+        <p>Subscriptions are managed by Apple. Your <a href="https://apps.apple.com/account/subscriptions">Apple Account's Subscriptions settings</a> show your current expiry and renewal status. The original Personal monthly and yearly plans are no longer sold and will not renew. Use Restore Purchases in the app to check an existing purchase on your Apple Account.</p>
 
         <h2>FAQ</h2>
 
         <h3>Does it record in the background?</h3>
-        <p>iOS only allows camera recording while the app is open, so Dashward can't record from the background like a built-in dash cam. Instead, Dashward keeps the screen awake so it records for the whole drive while it's mounted. To save power and reduce heat, you can <strong>dim the screen independently</strong> from the iOS brightness — the camera keeps recording at full quality while the display stays dark.</p>
+        <p>iOS only allows camera recording while the app is open, so Dashward can't record from the background like a built-in dash cam. Instead, Dashward keeps the screen awake so it records for the whole drive while it's mounted. To save power and reduce heat, you can <strong>dim the screen independently</strong> from the iOS brightness — the camera keeps recording at full quality while the display stays dark. Live View likewise needs Dashward open on the device being watched.</p>
 
         <h3>How is storage managed?</h3>
-        <p>Dashward loop-records into short segments and enforces a storage cap you choose. When the cap is reached it automatically deletes the oldest clips to make room, so it never fills up your phone. Clips you <strong>lock</strong>, and event clips saved by the parking sentry, are kept safe from automatic deletion.</p>
+        <p>Dashward loop-records into short segments and enforces a storage cap you choose. It deletes the oldest unlocked clips when space is needed. Clips you <strong>lock</strong>, and event clips saved by the parking sentry, are protected from automatic deletion. If protected clips fill the available space, recording can stop. Export important clips and remove unneeded clips yourself.</p>
 
         <h3>Will it overheat my phone?</h3>
-        <p>Dashward monitors your device's temperature and warns you if it's getting too hot. To cool things down it can automatically lower the frame rate or resolution, or reduce charging. The best fix is physical: keep the phone in airflow and out of direct sun — a shaded spot near a vent stays much cooler than a phone baking on the dash.</p>
+        <p>Dashward monitors your device's temperature and warns you if it's getting too hot. To cool things down it can automatically lower the recording frame rate or resolution. The best fix is physical: keep the phone in airflow and out of direct sun — a shaded spot near a vent stays much cooler than a phone baking on the dash.</p>
+
+        <h3>Live View is waiting for a camera.</h3>
+        <p>Check that both devices are online and signed in to the same Apple Account for iCloud. The device being watched needs Dashward open and <strong>Allow live view of this device</strong> enabled. An old snapshot may remain visible when updates stop; check its age before relying on it.</p>
 
         <h3>I found a bug or have a feature request.</h3>
-        <p>Please email <a href="mailto:mwsupplylimited@gmail.com?subject=Dashward%20support">mwsupplylimited@gmail.com</a> with your iOS version, device, and steps to reproduce. We read every message.</p>
+        <p>Please email <a href="mailto:mwsupplylimited@gmail.com?subject=Dashward%20support">mwsupplylimited@gmail.com</a> with your iOS or macOS version, device, and steps to reproduce. We read every message.</p>
 
-        <h2>Contact</h2>
+        <h2 id="contact">Contact</h2>
         <p>For support: <a href="mailto:mwsupplylimited@gmail.com?subject=Dashward%20support">mwsupplylimited@gmail.com</a></p>
 
         <h2>Privacy</h2>

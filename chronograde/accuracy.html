@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Is my watch accurate? How to measure a mechanical watch's rate</title>
-    <meta name="description" content="What a good daily rate is for a mechanical watch, how to measure it properly against atomic time, what beat error means, and why your watch runs differently week to week.">
+    <meta name="description" content="Understand a mechanical watch's daily rate, compare manual drift with acoustic estimates, and collect useful readings in Chronograde.">
     <link rel="canonical" href="https://mwsupplylimited.github.io/chronograde/accuracy.html">
     <meta property="og:title" content="Is my watch accurate? How to measure a mechanical watch's rate">
-    <meta property="og:description" content="What a good daily rate is for a mechanical watch, how to measure it properly against atomic time, what beat error means, and why your watch runs differently week to week.">
+    <meta property="og:description" content="Understand a mechanical watch's daily rate, compare manual drift with acoustic estimates, and collect useful readings in Chronograde.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://mwsupplylimited.github.io/chronograde/accuracy.html">
     <style>
@@ -16,6 +16,7 @@
             --fg: #1a1a1a;
             --muted: #666666;
             --accent: #e66230;
+            --link: #b53f17;
             --card: #f5f5f7;
             --border: #e5e5e7;
         }
@@ -25,6 +26,7 @@
                 --fg: #f5f5f7;
                 --muted: #9a9a9a;
                 --accent: #ff7d45;
+                --link: #ff7d45;
                 --card: #1c1f25;
                 --border: #2a2d34;
             }
@@ -51,7 +53,7 @@
             font-size: 0.9rem;
             margin-bottom: 32px;
         }
-        .back:hover { color: var(--accent); }
+        .back:hover { color: var(--link); }
         h1 {
             font-size: 2.2rem;
             margin: 0 0 8px;
@@ -75,7 +77,7 @@
         .muted { color: var(--muted); }
         ul { padding-left: 22px; }
         li { margin-bottom: 6px; }
-        a { color: var(--accent); }
+        a { color: var(--link); }
         code {
             background: var(--card);
             padding: 1px 6px;
@@ -110,53 +112,54 @@
         <a class="back" href="./">&larr; Chronograde</a>
 
         <h1>Is my watch accurate?</h1>
-        <p class="subtitle">What a good daily rate actually is, how to measure one properly, and what to do about a bad number.</p>
+        <p class="subtitle">What daily rate tells you, how to collect useful readings, and how to put a surprising number in context.</p>
 
         <h2>The short answer</h2>
-        <p>A mechanical watch is not a clock, and it is not supposed to keep clock time. What matters is not whether it is <em>right now</em> &mdash; it is whether it gains or loses the <strong>same amount every day</strong>. A watch that runs a steady +6 seconds a day is a good watch. A watch that runs +2 one day and &minus;9 the next is not, even though its average looks better.</p>
-        <p>So the number you want is the <strong>daily rate</strong>: seconds gained or lost per 24 hours, measured over several days, against a time source that is actually correct.</p>
+        <p>Look at both <strong>how much time your watch gains or loses</strong> and how consistently it does so. A single reading tells you how far ahead or behind it is. Repeated readings tell you whether that offset is growing or shrinking.</p>
+        <p>The <strong>daily rate</strong> expresses that gain or loss in seconds per 24 hours. Compare it with the manufacturer's specification for your watch, while keeping track of the conditions and uncertainty of your measurements.</p>
 
-        <h2>What counts as good</h2>
+        <h2>Put the number in context</h2>
         <table>
-            <thead><tr><th>Daily rate</th><th>What it means</th></tr></thead>
+            <thead><tr><th>Look at</th><th>What it helps you understand</th></tr></thead>
             <tbody>
-                <tr><td><strong>0 to +5 s/day</strong></td><td>METAS Master Chronometer territory. Excellent.</td></tr>
-                <tr><td><strong>&minus;4 to +6 s/day</strong></td><td>COSC chronometer territory. Excellent.</td></tr>
-                <tr><td><strong>within &plusmn;10 s/day</strong></td><td>Very good for an uncertified mechanical watch.</td></tr>
-                <tr><td><strong>within &plusmn;20 s/day</strong></td><td>Normal and perfectly serviceable. A regulation would tighten it.</td></tr>
-                <tr><td><strong>beyond &plusmn;30 s/day</strong></td><td>Worth a service or a regulation.</td></tr>
+                <tr><td><strong>Daily gain or loss</strong></td><td>How the watch kept time across the measured interval, compared with its specification.</td></tr>
+                <tr><td><strong>Repeated readings</strong></td><td>Whether a pattern persists rather than depending on one observation.</td></tr>
+                <tr><td><strong>Measurement conditions</strong></td><td>Whether differences could reflect position, winding state, the reference or your recording method.</td></tr>
             </tbody>
         </table>
-        <p class="muted">A slightly <em>fast</em> watch is generally preferred to a slow one, which is why COSC's window is asymmetric: you would rather be early than late.</p>
+        <p class="muted">A number inside a published chronometer range does not certify a watch. Certification involves defined testing; the app's colors and Chronometer Score are summaries of your readings, not certification results.</p>
 
         <h2>How to measure it properly</h2>
-        <p>There are two different measurements and people constantly conflate them.</p>
+        <p>Manual drift tracking and acoustic measurement answer different questions. Knowing which one you are looking at makes the result more useful.</p>
 
         <h3>1. Daily rate &mdash; what your watch actually does on your wrist</h3>
-        <p>Note the exact time your watch shows against a correct reference, wait a day or more, and note it again. The difference divided by the elapsed days is your rate. This is the number that matters, because it includes everything: your wrist, the temperature, how you set the watch down at night, the state of the mainspring.</p>
-        <p>The catch is the reference. Your phone's clock is <em>usually</em> right but drifts between network syncs, so a careful measurement queries a time server directly. Chronograde uses SNTP (RFC 4330) against public NTP servers, which is accurate to well under a tenth of a second &mdash; far better than your reaction time pressing a button, which is the real limit here. Press consistently and the error averages out over several readings.</p>
+        <p>Save the offset between the watch's hands and your reference, let time pass, then save another reading. The <strong>change in offset divided by elapsed days</strong> gives the average daily rate across that interval. For example, returning the next day provides a more useful interval than tapping twice a few moments apart.</p>
+        <p>Both readings must belong to the <strong>same uninterrupted session</strong>. If the watch stops, is serviced or you reset its hands, begin a new session before comparing subsequent readings. In Chronograde, starting additional sessions is a Pro feature; plan your first free series while the watch keeps running.</p>
+        <p>Chronograde queries public time servers and uses a network correction when one is available and usable. It otherwise labels readings made from the device clock. Network conditions, reference quality and the timing of your RECORD tap all affect the result; there is no guaranteed fraction-of-a-second accuracy. Repeat the method consistently and review several separated readings rather than assuming errors will cancel out.</p>
 
         <h3>2. Instantaneous rate &mdash; what a timegrapher hears</h3>
-        <p>A timegrapher listens to the escapement and computes the rate from the interval between ticks. It gives you an answer in about ten seconds instead of a week, and it also gives you <strong>beat error</strong>, which a daily-rate measurement cannot. But it is a snapshot: it tells you how the watch is running <em>at that instant, in that position, at that state of wind</em>. It does not predict your wrist.</p>
-        <p>Use both. The timegrapher tells you whether the movement is healthy and points at what to adjust. The daily rate tells you whether the watch is any good to live with.</p>
+        <p>A timegrapher analyzes a mechanical watch's ticking to estimate rate and <strong>beat error</strong>. This is a snapshot in one position and at one state of wind; it does not measure the watch's entire day on your wrist.</p>
+        <p>A phone microphone needs a usable signal. Background noise, movement, placement and an incorrect BPH setting can affect the estimate, and some watch/device combinations may not yield a reading. There is no fixed time in which a reliable result is guaranteed.</p>
+        <p>Use the acoustic snapshot alongside the longer-term drift history. Neither result alone establishes that a movement is healthy or tells you which physical repair it needs.</p>
 
         <h2>Beat error, briefly</h2>
-        <p>The balance wheel swings both ways. Beat error is how unequal those two swings are, in milliseconds. Under about 0.5&nbsp;ms is good; much above 1.0&nbsp;ms and the watch loses amplitude and becomes position-sensitive, and it is worth having corrected. Unlike rate, you cannot fix beat error by turning a regulator arm &mdash; it needs the hairspring collet moved, which is a watchmaker's job.</p>
+        <p>Beat error describes an asymmetry in the timing of alternating beats, expressed in milliseconds. It is different from a watch's daily gain or loss. A noisy phone recording can produce an unreliable estimate, so repeat a surprising result before drawing conclusions. A watchmaker can assess a persistent concern using equipment and procedures suited to the movement.</p>
 
         <h2>Why your watch is fast one week and slow the next</h2>
         <ul>
-            <li><strong>Position.</strong> Gravity pulls on the balance differently depending on orientation. Dial up and dial down usually run fastest; the vertical (crown) positions usually run slower. The spread between them is <em>positional variation</em>, and on a healthy, well-adjusted movement it is small.</li>
-            <li><strong>State of wind.</strong> A nearly-unwound mainspring delivers less torque, amplitude drops, and the rate changes with it. Measure at a consistent state of wind.</li>
-            <li><strong>How you store it overnight.</strong> Eight hours in a chosen position is a genuinely useful regulator: if your watch gains on the wrist, resting it in a slow position overnight claws some of that back.</li>
-            <li><strong>Magnetism.</strong> A magnetised hairspring can make a watch gain wildly &mdash; minutes a day. It is cheap and instant to fix with a demagnetiser.</li>
-            <li><strong>Temperature and shocks</strong>, and simply being overdue a service.</li>
+            <li><strong>Position.</strong> Compare repeated readings with the watch in the same orientation. Differences between positions are positional variation; do not assume one position will always be fastest for every watch.</li>
+            <li><strong>State of wind.</strong> Note when you wound or wore the watch so comparisons have useful context.</li>
+            <li><strong>Overnight storage.</strong> Record how the watch was kept. A change of resting position may change the observed rate, but it does not guarantee a correction.</li>
+            <li><strong>Changes in use or conditions.</strong> Note relevant changes alongside the readings rather than diagnosing a cause from the daily-rate number alone.</li>
         </ul>
 
         <h2>What to do about a bad number</h2>
-        <p>If the rate is consistent but off &mdash; steadily +25 s/day, say &mdash; that is a <strong>regulation</strong>, and it is a small adjustment. If the rate is <em>inconsistent</em>, or positional variation is wide, or amplitude is low, regulating it only hides the problem: the movement wants servicing first, then regulating. And if the watch suddenly started gaining minutes, try a demagnetiser before you book anything.</p>
+        <p>First check the measurement: a clear acoustic signal and correct BPH, or separated manual readings with the right time, reference and session. Repeat under similar conditions. If a large or persistent change remains, bring the history and your observations to a watchmaker; a phone estimate cannot decide whether regulation, service or another intervention is appropriate.</p>
 
         <h2>Measuring this with Chronograde</h2>
-        <p><a href="https://apps.apple.com/app/id6774091390">Chronograde</a> does both measurements on an iPhone or iPad. The acoustic <strong>Timegrapher is free</strong> &mdash; rest the phone on the caseback and read live rate and beat error. Drift tracking against atomic time, position analysis and chronometer grading are part of the app. See also <a href="chronometer.html">what COSC and METAS actually certify</a> and <a href="calibers.html">reference specs for common calibers</a>.</p>
+        <p><a href="https://apps.apple.com/app/id6774091390">Download Chronograde on the App Store</a> for iPhone and iPad. The acoustic <strong>Timegrapher is free</strong>, as are your whole collection, up to ten manual accuracy measurements, one complete Regulation Coach run, iCloud sync and backup/restore.</p>
+        <p>For acoustic readings, use a quiet room and keep the watch and device steady on a soft, stable surface. Bring the microphone close gently; do not press, drag or force the device against the watch. Follow the <a href="first-readings.html">first-readings guide</a> for both measurement methods.</p>
+        <p>Pro adds unlimited manual measurements, additional sessions, repeat Coach runs, Accuracy by Position, the app's Chronometer Score, the Atomic Clock display, wear/service logs and spreadsheet import/export. It also removes advertising while Pro is active. Monthly and annual subscriptions and a one-time Lifetime unlock are available; see in-app localized pricing and any eligible subscription trial before buying. Premium themes are separate purchases. See the <a href="./">full free/Pro comparison</a>, <a href="chronometer.html">chronometer standards guide</a> and <a href="calibers.html">caliber reference</a>.</p>
 
         <footer>
             &copy; 2026 MW Supply Limited &middot; <a href="./">Chronograde</a> &middot; <a href="privacy.html">Privacy</a>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="color-scheme" content="light dark"><title>SoundBrief — Support</title><meta name="description" content="SoundBrief support from MW Supply Limited."><link rel="canonical" href="https://mwsupplylimited.github.io/soundbrief/index.html"><style>
+        :root {
+            --bg: #ffffff;
+            --fg: #1a1a1a;
+            --muted: #666666;
+            --accent: #994600;
+            --card: #f5f5f7;
+            --border: #e5e5e7;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #121419;
+                --fg: #f5f5f7;
+                --muted: #9a9a9a;
+                --accent: #ff9a3a;
+                --card: #1c1f25;
+                --border: #2a2d34;
+            }
+        }
+        * { box-sizing: border-box; }
+        html { -webkit-text-size-adjust: 100%; }
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+            background: var(--bg);
+            color: var(--fg);
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+        }
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 48px 24px 96px;
+        }
+        .back {
+            display: inline-block;
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-bottom: 32px;
+        }
+        .back:hover { color: var(--accent); }
+        h1 {
+            font-size: 2rem;
+            margin: 0 0 8px;
+            letter-spacing: -0.02em;
+        }
+        .meta {
+            color: var(--muted);
+            margin: 0 0 40px;
+            font-size: 0.95rem;
+        }
+        h2 {
+            font-size: 1.2rem;
+            margin: 36px 0 12px;
+            letter-spacing: -0.01em;
+        }
+        p { color: var(--fg); }
+        ul { padding-left: 22px; }
+        li { margin-bottom: 6px; }
+        a { color: var(--accent); }
+        .callout {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-left: 3px solid var(--accent);
+            padding: 16px 20px;
+            border-radius: 8px;
+            margin: 24px 0;
+        }
+        .callout p { margin: 0; }
+        footer {
+            margin-top: 64px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
+            color: var(--muted);
+            font-size: 0.85rem;
+        }
+    
+        a { text-underline-offset: 3px; overflow-wrap: anywhere; }
+        a:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+        .back { min-height: 44px; padding: 10px 0; }
+        .contact { display: inline-block; min-height: 44px; padding: 10px 0; }
+        footer nav { display: flex; flex-wrap: wrap; gap: 8px 24px; }
+        footer nav a { display: inline-block; min-height: 44px; padding: 10px 0; }
+        @media (max-width: 400px) { .container { padding: 28px 20px 56px; } }
+    </style></head><body><main class="container"><section><h2>Offline AI development update · 11 October 2026</h2><p>The newer development source adds Gemma 4 E2B minutes generated on the device after an explicit model import. This minutes path does not upload transcripts or switch to a cloud service. Model files can be removed without deleting projects and are excluded from device backup. Opening the external model download link is a separate network action.</p><p>The uploaded Build 21 predates this change. Other legacy AI and export workflows still use the approved service paths described below; full offline conversion and mobile validation are incomplete. Short-selection and summary-length limitations remain. This is not a claim that every AI feature is offline or ready for release.</p></section><a class="back" href="../">← MW Supply Limited</a><h1>SoundBrief · Support</h1><p class="meta">MW Supply Limited<br>Updated 11 October 2026</p>
+<div class="callout"><p><strong>In development.</strong> SoundBrief is being tested for iPhone and iPad. It is not yet released to clients. AI accuracy, production online processing and physical-device verification remain under review.</p></div>
+<h2>Your recording, connected to its words</h2><p>SoundBrief brings imported or recorded audio, a waveform editor, speaker-labelled transcripts and evidence-linked minutes into one workspace. Review automated results against the recording before relying on or sharing them.</p>
+<h2>Getting started</h2><ol><li>Import a recording through Files, Photos or the system share sheet, or record with microphone permission.</li><li>Select an audio track where needed, then extract and review the audio.</li><li>Choose available private transcription or explicitly approve an online operation. Private mode never silently switches to an upload.</li><li>Correct the transcript and speaker labels. Review cited minutes against their source passages.</li><li>Choose an export format and save or share the generated copy.</li></ol>
+<h2>Local and online features</h2><p>Local import, extraction and editing do not require a SoundBrief account. The current build targets iOS and iPadOS 17 or later. Private speech recognition depends on Apple's on-device recognizer and language availability; it does not provide automatic speaker diarization.</p><p>Speaker transcription, AI minutes, collection questions, stem separation and MP3 encoding use a configured online service and require approval. Free model weights running on a server still require an upload; they are not on-device processing. Public production service availability has not been established.</p>
+<h2>Formats and accuracy</h2><p>The app supports native AAC/M4A, WAV, AIFF and FLAC export, with server MP3 export when available. Input compatibility depends on the actual codec and audio track, not just the filename. DRM and unsupported media may be rejected. Increasing sample rate or converting lossy audio to a lossless file cannot restore missing detail.</p><p>Transcript exports include SRT, WebVTT, TXT and JSON. Minutes can be exported locally as PDF, DOCX, Markdown and text. Review subtitle timings after edits. English, Mandarin, Cantonese and mixed-language processing are under evaluation; conversational Cantonese and overlapping-speaker accuracy are known limitations. Speaker numbers do not identify real people. Names are supplied by you.</p><p>Music recognition may return no match. Separation can introduce artifacts and does not reliably isolate every overlapping speaker. A song match does not grant reuse rights.</p>
+<h2>Troubleshooting</h2><ul><li><strong>No audio:</strong> check that the video contains an audio track and select the intended track.</li><li><strong>Recording unavailable:</strong> review SoundBrief's microphone permission in system Settings.</li><li><strong>Not enough space:</strong> save needed exports to Files, then use Settings → Storage → Remove temporary share copies. This preserves project originals.</li><li><strong>Interrupted processing:</strong> reopen the project and review its saved progress. Retry or resume only after checking the operation and allowance shown.</li><li><strong>Private transcription unavailable:</strong> the selected recognizer may lack an on-device model. The app stops instead of silently uploading.</li></ul>
+<h2>Privacy, deletion and purchases</h2><p>Project deletion and cloud account deletion are separate. See the <a href="privacy.html">Privacy Policy</a> for controls and limits. Privacy share copies preserve the private original; review the generated audio and text for anything else you need to remove.</p><p>Where purchases are available, review Apple's displayed price and renewal terms before buying. Use Restore purchases in the app for eligible purchases. Manage or cancel subscriptions in your Apple account settings; deleting the app or its cloud account does not cancel them. Prices, allowances and commercial availability are not announced on this page.</p>
+<h2>Contact support</h2><p>Email <a class="contact" href="mailto:mwsupplylimited@gmail.com?subject=SoundBrief%20support">mwsupplylimited@gmail.com</a>. Include the app version, iOS version, operation and error message. Do not send private recordings, transcripts, passwords or payment details. We can request a small, non-sensitive reproduction if needed.</p><footer><nav aria-label="Footer"><a href="index.html">Support</a><a href="privacy.html">Privacy Policy</a><a href="app-privacy.html">App Privacy disclosure</a><a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms of Use</a></nav><p>© 2026 MW Supply Limited</p></footer></main></body></html>

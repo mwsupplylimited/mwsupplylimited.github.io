@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compare Watch Sessions & Share Reports — Chronograde</title>
+    <meta name="description" content="Compare recorded manual sessions in Chronograde Pro, understand daily rates and reading coverage, and choose the private details in a PDF watch report.">
+    <link rel="canonical" href="https://mwsupplylimited.github.io/chronograde/compare-sessions.html">
+    <meta property="og:title" content="Compare Watch Sessions & Share Reports — Chronograde">
+    <meta property="og:description" content="A practical guide to separate watch runs, useful comparisons and PDF reports you control.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://mwsupplylimited.github.io/chronograde/compare-sessions.html">
+    <style>
+        :root {
+            --bg: #ffffff;
+            --fg: #1a1a1a;
+            --muted: #666666;
+            --accent: #e66230;
+            --link: #b53f17;
+            --card: #f5f5f7;
+            --border: #e5e5e7;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #121419;
+                --fg: #f5f5f7;
+                --muted: #9a9a9a;
+                --accent: #ff7d45;
+                --link: #ff7d45;
+                --card: #1c1f25;
+                --border: #2a2d34;
+            }
+        }
+        * { box-sizing: border-box; }
+        html { -webkit-text-size-adjust: 100%; }
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+            background: var(--bg);
+            color: var(--fg);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 48px 24px 96px;
+        }
+        .back {
+            display: inline-block;
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-bottom: 32px;
+        }
+        .back:hover { color: var(--link); }
+        h1 {
+            font-size: 2.2rem;
+            line-height: 1.18;
+            margin: 0 0 8px;
+            letter-spacing: -0.02em;
+        }
+        .subtitle {
+            color: var(--muted);
+            margin: 0 0 40px;
+        }
+        h2 {
+            font-size: 1.3rem;
+            margin: 40px 0 12px;
+            letter-spacing: -0.01em;
+        }
+        h3 {
+            font-size: 1rem;
+            margin: 24px 0 6px;
+            font-weight: 600;
+        }
+        p, li { color: var(--fg); }
+        .muted { color: var(--muted); }
+        ul, ol { padding-left: 22px; }
+        .callout { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 18px 20px; margin: 24px 0; }
+        .callout p { margin: 0; }
+        .toc { display: flex; flex-wrap: wrap; gap: 12px 20px; margin: 24px 0; }
+        li { margin-bottom: 6px; }
+        a { color: var(--link); }
+        code {
+            background: var(--card);
+            padding: 1px 6px;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+        .pill {
+            display: inline-block;
+            background: var(--card);
+            border: 1px solid var(--border);
+            padding: 3px 10px;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            color: var(--muted);
+        }
+        .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; margin: 24px 0; }
+        .download {
+            display: inline-block;
+            background: var(--accent);
+            color: #1a1a1a;
+            padding: 12px 18px;
+            border-radius: 12px;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        .download:hover { text-decoration: underline; }
+        a:focus-visible { outline: 3px solid var(--fg); outline-offset: 4px; }
+        .feature-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+        .feature-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 20px; }
+        .feature-card h3 { margin-top: 0; }
+        .feature-card ul { margin-bottom: 0; }
+        @media (max-width: 560px) { .feature-grid { grid-template-columns: 1fr; } }
+        footer {
+            margin-top: 64px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
+            color: var(--muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <a class="back" href="./">&larr; Chronograde support &amp; features</a>
+        <h1>Compare sessions. Keep the context.</h1>
+        <p class="subtitle">Learn what your recorded watch history can tell you, then choose what to include in a PDF you share.</p>
+        <p><strong>Chronograde Pro guide</strong> &middot; For the session comparisons, wear insights and reports available in version 1.9.1.</p>
+        <div class="actions">
+            <a class="download" href="https://apps.apple.com/app/id6774091390">Start free on the App Store</a>
+            <a href="./#features">See free &amp; Pro features</a>
+        </div>
+        <nav class="toc" aria-label="On this page">
+            <a href="#sessions">Separate watch runs</a>
+            <a href="#comparison">Read a comparison</a>
+            <a href="#wear">Add wear context</a>
+            <a href="#reports">Choose your PDF</a>
+        </nav>
+
+        <h2 id="sessions">Start with uninterrupted sessions</h2>
+        <p>A manual reading records the offset between your watch's displayed time and the app's reference at that moment. A session groups readings from one uninterrupted run. When the watch stops or you reset its hands, start a new session so the change in displayed time is kept separate from ordinary drift.</p>
+        <ol>
+            <li><strong>Save a baseline.</strong> Check the reference status and record the watch's offset. If you want to set the watch first, do that before the baseline.</li>
+            <li><strong>Return later.</strong> Record another reading while it is still running without a reset. Returning the next day is a practical starting point; consistent timing and longer intervals help reduce the effect of a missed tap.</li>
+            <li><strong>Begin a fresh session after a reset.</strong> With Pro, open the watch's Sessions section and choose <em>Watch was reset &mdash; start new session</em>. Save a fresh baseline and another reading later. Keep the previous session as history.</li>
+        </ol>
+        <p>You can try manual tracking with up to ten readings across your collection for free. Additional sessions and unlimited manual history require Pro. The <a href="first-readings.html#manual">first-readings guide</a> explains the capture steps.</p>
+
+        <h2 id="comparison">Read a comparison, not just a difference</h2>
+        <p>Open a watch and select <strong>Compare sessions</strong>. Choose two distinct sessions outside the Recycle Bin. The comparison shows their recorded daily rates, reading counts, elapsed coverage and recorded positions. Acoustic estimates are excluded.</p>
+        <p>Each session's rate uses the offset change from its first to last included reading, divided by elapsed time. The interval must be at least one hour. A longer span reduces the effect of manual timing error; it does not mean the watch was continuously monitored.</p>
+        <div class="callout">
+            <p><strong>Illustrative example:</strong> a watch recorded five seconds ahead, then nine seconds ahead exactly one day later, gained four seconds over that interval: +4 seconds per day. If a different session recorded +2 seconds per day, its B &minus; A rate difference would be &minus;2 seconds per day. These invented numbers explain the calculation; they are not results from a tested watch.</p>
+        </div>
+        <p>Before drawing a conclusion, review both sessions:</p>
+        <ul>
+            <li><strong>Coverage:</strong> compare the dates, elapsed span and reading count. Two rates from very different windows deserve more context.</li>
+            <li><strong>Conditions:</strong> consider recorded positions, winding state and whether the watch was worn or resting. Missing context stays unknown.</li>
+            <li><strong>Reference:</strong> review the recorded reference flags. A saved network-reference flag is not an independent audit of the clock at that historical moment; device-clock readings can include clock changes or sync error.</li>
+            <li><strong>Continuity:</strong> verify that neither session crosses a stop or reset. Readings without a session cannot form a comparison.</li>
+        </ul>
+        <p>A difference alone does not prove improvement, a service effect or certification. If a rate is unavailable, check the selected sessions and their reading coverage rather than interpreting the placeholder as zero.</p>
+        <p>Choose <strong>Preview report</strong> in the comparison to create a PDF of those two sessions. It keeps the recorded rates and context together and excludes serial numbers, notes, recorded amounts, watch photos and acoustic estimates.</p>
+
+        <h2 id="wear">Add the context of logged wear</h2>
+        <p>Open the Watches tab's More Actions menu and choose <strong>Wear insights</strong>. Pro shows logged wear over 30, 90 or 365 days, so you can explore which watches appear in your records.</p>
+        <p>One watch logged on one day is one watch-day. Two watches on the same day are two watch-days but one calendar day. Days without entries mean <em>not logged</em>, not necessarily unworn. The app does not detect wearing automatically.</p>
+        <p>Wear logs and service records help explain the history you keep. They do not establish the cause of a change in a measured rate.</p>
+
+        <h2 id="reports">Choose the records in your PDF</h2>
+        <p>For a broader selected-record PDF, open <strong>Watch report</strong> from the Watches tab's More Actions menu, or from a watch's detail page. This is a Pro feature.</p>
+        <ol>
+            <li><strong>Select the watches.</strong> Include only the collection records you intend to share.</li>
+            <li><strong>Choose the contents.</strong> Select Details, Service History and Measurements as needed. Turn on <em>Limit history dates</em> if you want a particular period, then check From and Through.</li>
+            <li><strong>Review private details.</strong> Serial numbers, notes, recorded amounts and watch photos are off by default. Include each only if it serves your purpose and you intend the recipient to receive it.</li>
+            <li><strong>Preview every page.</strong> Tap <em>Preview report</em>, check the selected watches, dates, histories and charts, then use Share. You can close the preview or cancel the share sheet without changing your collection records.</li>
+        </ol>
+        <p>Leaving private options off still includes the watch details and records you selected; it does not make a report anonymous. Check the preview before choosing a recipient. The app presents the system sharing options and does not guarantee that a recipient saved the file.</p>
+        <p>A PDF is a presentation of selected records. It is not a backup, appraisal, diagnosis, certification or guarantee of insurance acceptance. For an archive you can restore in Chronograde, use the free <strong>Back Up All Data</strong> action instead.</p>
+
+        <h2>Build a history worth returning to</h2>
+        <p>Start with one watch and two useful manual readings. Keep resets separate, add context when you have it, and compare recorded sessions when the history is ready. Pro also includes unlimited manual readings, wear and service logs, spreadsheet import/export and repeated Regulation Coach runs.</p>
+        <p>Membership offers monthly and annual auto-renewable subscriptions and a one-time Lifetime unlock. The app shows localized prices and any eligible subscription trial before purchase. Optional paid themes are separate.</p>
+        <div class="actions">
+            <a class="download" href="https://apps.apple.com/app/id6774091390">Get Chronograde</a>
+            <a href="first-readings.html">Take your first readings</a>
+        </div>
+        <p>For help, email <a href="mailto:mwsupplylimited@gmail.com?subject=Chronograde%20support">mwsupplylimited@gmail.com</a> with your device, iOS version and the steps you tried. You do not need to send serial numbers or private collection records.</p>
+        <footer>
+            &copy; 2026 MW Supply Limited &middot; <a href="./">Chronograde support</a> &middot; <a href="privacy.html">Privacy</a>
+        </footer>
+    </main>
+</body>
+</html>
