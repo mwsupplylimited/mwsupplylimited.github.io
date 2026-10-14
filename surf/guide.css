@@ -1,0 +1,162 @@
+:root {
+    --accent:#006e69;
+    --bg:#f9fcfa;
+    --fg:#102e36;
+    --muted:#526b70;
+    --card:#eef4f0;
+    --border:#dbe5df;
+    scroll-behavior:smooth;
+    scroll-padding-top:24px;
+}
+body {
+    font-size:16px;
+}
+a {
+    text-underline-offset:3px;
+}
+a:focus-visible,summary:focus-visible {
+    outline:3px solid var(--accent);
+    outline-offset:4px;
+    border-radius:3px;
+}
+.container {
+    max-width:800px;
+    padding-top:26px;
+}
+.guide-nav {
+    display:flex;
+    align-items:center;
+    gap:25px;
+    font-size:.85rem;
+    margin-bottom:45px;
+    border-bottom:1px solid var(--border);
+    padding-bottom:18px;
+}
+.guide-nav a {
+    text-decoration:none;
+}
+.guide-brand {
+    display:flex;
+    align-items:center;
+    gap:8px;
+    font-size:1.4rem;
+    font-weight:700;
+    color:var(--fg);
+    margin-right:auto;
+}
+.guide-brand img {
+    display:block;
+}
+.skip-link {
+    position:absolute;
+    left:16px;
+    top:-90px;
+    background:var(--bg);
+    padding:12px;
+    z-index:10;
+}
+.skip-link:focus {
+    top:12px;
+}
+.guide-intro {
+    font-size:1.1rem;
+}
+.requirements {
+    padding:18px 20px;
+    border:1px solid #bad7ce;
+    background:#e8f3ed;
+    border-radius:10px;
+    font-size:.92rem;
+}
+.quick-links {
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px 22px;
+    margin-block:24px;
+    font-size:.87rem;
+    font-weight:600;
+}
+.advanced {
+    border:1px solid var(--border);
+    border-radius:9px;
+    padding:16px 20px;
+    margin-bottom:32px;
+}
+.advanced summary {
+    cursor:pointer;
+    font-weight:600;
+    font-size:.94rem;
+}
+.advanced[open] summary {
+    margin-bottom:22px;
+}
+.advanced .meta {
+    margin-bottom:22px;
+}
+.advanced ul {
+    font-size:.94rem;
+}
+.download .get {
+    background:#102e36;
+    min-height:44px;
+    line-height:1.5;
+}
+.download .facts {
+    line-height:1.7;
+}
+p,li {
+    overflow-wrap:break-word;
+}
+footer {
+    line-height:2.2;
+}
+@media(prefers-color-scheme:dark) {
+    :root {
+        --bg:#121f24;
+        --fg:#eff7f3;
+        --muted:#b1c5c4;
+        --accent:#68d9cd;
+        --card:#1b3035;
+        --border:#344d52;
+    }
+    .requirements {
+        background:#1b383b;
+        border-color:#3a6360;
+    }
+    .download .get {
+        background:#74e3d8;
+        color:#102e36;
+    }
+}
+@media(max-width:500px) {
+    .container {
+        padding:20px 20px 65px;
+    }
+    .guide-nav {
+        gap:18px;
+        margin-bottom:32px;
+    }
+    .guide-nav a {
+        font-size:.8rem;
+    }
+    .guide-nav .guide-brand {
+        font-size:1.3rem;
+    }
+    .requirements,.advanced {
+        padding:15px;
+    }
+    .quick-links {
+        gap:10px 18px;
+    }
+    .download .get {
+        font-size:.85rem;
+    }
+    .download {
+        padding:18px 16px;
+    }
+}
+@media(prefers-reduced-motion:reduce) {
+    :root {
+        scroll-behavior:auto;
+    }
+}

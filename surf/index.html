@@ -2,202 +2,126 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Surf — Support</title>
-    <meta name="description" content="Support page for Surf, a private web browser with a file manager built in, for iPhone, iPad and Mac — tabs, ad & tracker blocking, Reader, and a Touch ID-locked private area.">
-    <!-- Shows Safari's Smart App Banner to anyone reaching this page on iOS. The page had no link to
-         the App Store at all, so someone arriving from a search result — or from the "Developer
-         Website" link on the product page — could not get to the app. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Surf — Private Browser &amp; File Library for iPhone, iPad &amp; Mac</title>
+    <meta name="description" content="Browse privately, save articles offline and organise files with Surf. Surf Pro keeps bookmarks, history and tabs in sync across iPhone, iPad and Mac.">
+    <link rel="canonical" href="https://mwsupplylimited.github.io/surf/">
     <meta name="apple-itunes-app" content="app-id=6789680426">
-    <style>
-        :root {
-            --bg: #ffffff;
-            --fg: #1a1a1a;
-            --muted: #666666;
-            --accent: #0a84ff;
-            --card: #f5f5f7;
-            --border: #e5e5e7;
-        }
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --bg: #121419;
-                --fg: #f5f5f7;
-                --muted: #9a9a9a;
-                --accent: #5eb0ff;
-                --card: #1c1f25;
-                --border: #2a2d34;
-            }
-        }
-        * { box-sizing: border-box; }
-        html { -webkit-text-size-adjust: 100%; }
-        body {
-            margin: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
-            background: var(--bg);
-            color: var(--fg);
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-        }
-        .container {
-            max-width: 720px;
-            margin: 0 auto;
-            padding: 48px 24px 96px;
-        }
-        .back {
-            display: inline-block;
-            color: var(--muted);
-            text-decoration: none;
-            font-size: 0.9rem;
-            margin-bottom: 32px;
-        }
-        .back:hover { color: var(--accent); }
-        h1 {
-            font-size: 2.2rem;
-            margin: 0 0 8px;
-            letter-spacing: -0.02em;
-        }
-        .subtitle {
-            color: var(--muted);
-            margin: 0 0 40px;
-        }
-        h2 {
-            font-size: 1.3rem;
-            margin: 40px 0 12px;
-            letter-spacing: -0.01em;
-        }
-        h3 {
-            font-size: 1rem;
-            margin: 24px 0 6px;
-            font-weight: 600;
-        }
-        p, li { color: var(--fg); }
-        .muted { color: var(--muted); }
-        ul { padding-left: 22px; }
-        li { margin-bottom: 6px; }
-        a { color: var(--accent); }
-        .pill {
-            display: inline-block;
-            background: var(--card);
-            border: 1px solid var(--border);
-            padding: 3px 10px;
-            border-radius: 999px;
-            font-size: 0.8rem;
-            color: var(--muted);
-        }
-        .appstore {
-            display: inline-block;
-            background: var(--accent);
-            color: #fff;
-            text-decoration: none;
-            font-weight: 600;
-            padding: 11px 22px;
-            border-radius: 10px;
-            margin: 4px 0 8px;
-        }
-        .appstore:hover { opacity: 0.9; }
-        .callout {
-            background: var(--card);
-            border: 1px solid var(--border);
-            border-left: 3px solid var(--accent);
-            padding: 16px 20px;
-            border-radius: 8px;
-            margin: 24px 0;
-        }
-        .callout p { margin: 0; }
-        footer {
-            margin-top: 64px;
-            padding-top: 24px;
-            border-top: 1px solid var(--border);
-            color: var(--muted);
-            font-size: 0.85rem;
-        }
-    </style>
+    <meta name="theme-color" content="#102e36">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Surf">
+    <meta property="og:title" content="Surf — Browse. Keep. Pick up where you left off.">
+    <meta property="og:description" content="A native browser and file library for iPhone, iPad and Mac. Go further with Surf Pro continuity across your Apple devices.">
+    <meta property="og:url" content="https://mwsupplylimited.github.io/surf/">
+    <meta property="og:image" content="https://mwsupplylimited.github.io/surf/assets/surf-icon.png">
+    <meta property="og:image:alt" content="Surf's teal wave app icon">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Surf — Private browser for your Apple devices">
+    <meta name="twitter:description" content="Private tabs, Reader and a file library. Surf Pro keeps your browsing in step across iPhone, iPad and Mac.">
+    <meta name="twitter:image" content="https://mwsupplylimited.github.io/surf/assets/surf-icon.png">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="apple-touch-icon" href="assets/surf-icon.png">
+    <link rel="stylesheet" href="site.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Surf",
+      "url": "https://mwsupplylimited.github.io/surf/",
+      "downloadUrl": "https://apps.apple.com/app/id6789680426",
+      "image": "https://mwsupplylimited.github.io/surf/assets/surf-icon.png",
+      "description": "A native private web browser with Reader, a file library and optional Surf Pro continuity across Apple devices.",
+      "applicationCategory": "BrowserApplication",
+      "operatingSystem": "iOS 17 or later, iPadOS 17 or later, macOS 14 or later",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD", "description": "Free download with optional Surf Pro in-app purchases."},
+      "author": {"@type": "Organization", "name": "MW Supply Limited", "url": "https://mwsupplylimited.github.io/"},
+      "featureList": ["Private browsing", "Webpage ad and tracker blocking", "Reader and saved articles", "File library with folders and tags", "Optional iCloud continuity with Surf Pro"]
+    }
+    </script>
 </head>
 <body>
-    <div class="container">
-        <a class="back" href="../">&larr; MW Supply Limited</a>
-
-        <h1>Surf</h1>
-        <p class="subtitle">A private web browser with a file manager built in, for iPhone, iPad &amp; Mac. <span class="pill">Version 1.13</span></p>
-
-        <p><a class="appstore" href="https://apps.apple.com/app/id6789680426">Download Surf on the App Store</a></p>
-
-        <h2>About</h2>
-        <p>Surf is a private web browser for iPhone, iPad, and Mac, with a real file manager inside it. Browse with multiple tabs, block ads and trackers, read articles without the clutter, and keep your files in folders with tags and search — including a private area locked behind Touch ID or Face ID. A secure-connection indicator shows when a site is encrypted, and <strong>Clear Browsing Data</strong> wipes it whenever you want — after asking first, so it is never a slip. There is no account and no sign-up, and nothing you browse is sent to MW Supply Limited.</p>
-
-        <div class="callout">
-            <p>Surf keeps your browsing in your own hands. On the free plan your tabs, bookmarks, history, and Top Sites stay on your iPhone, iPad, or Mac; with Surf Pro they are kept in step across your devices through <strong>your own iCloud account</strong>. Either way MW Supply Limited runs no servers that receive them, there is no account to sign in to, and we cannot see any of it. Cookies and anything you type into a website are never synced, on any plan.</p>
-        </div>
-
-        <h2>Getting started</h2>
-        <ul>
-            <li><strong>Open a new tab</strong> and type a search term or a web address to start browsing.</li>
-            <li><strong>Use the star</strong> to bookmark pages you want to keep, and organise them into folders.</li>
-            <li><strong>Ad &amp; tracker blocking is on by default</strong> for a cleaner, faster, more private web — adjust it any time in Settings.</li>
-            <li><strong>Choose your search engine</strong> in Settings — Google, DuckDuckGo, Bing, Yahoo, Ecosia, Brave Search, Startpage, Mojeek, Perplexity, Wikipedia or YouTube — or paste your own.</li>
-        </ul>
-
-        <h2>Features</h2>
-        <ul>
-            <li>Private web browser with multiple tabs and a grid tab switcher</li>
-            <li>Private tabs that keep no history and clear their session when you close them</li>
-            <li>Bookmarks and folders, plus history and Top Sites — on your device, or in step across them with Surf Pro</li>
-            <li>Optional ad &amp; tracker blocking for a cleaner, faster web, with per-site exceptions</li>
-            <li>A file manager with folders, tags, search, favourites, and Recently Deleted</li>
-            <li>A private area locked behind Touch ID, Face ID, or your device passcode</li>
-            <li>Compress and uncompress ZIP archives</li>
-            <li>Reader mode with themes and text size; save articles from Reader for offline reading (link-only entries still need the web)</li>
-            <li>Your library on every device with iCloud sync — and in Finder on a Mac</li>
-            <li>Per-site settings: text size, desktop mode, and ad-block exceptions</li>
-            <li>Secure-connection (HTTPS) indicator in the address bar</li>
-            <li>Choice of search engine: Google, DuckDuckGo, Bing, Yahoo, Ecosia, Brave Search, Startpage, Mojeek, Perplexity, Wikipedia or YouTube — or paste your own</li>
-            <li>Clear Browsing Data to wipe your history, cookies, and cache, with a confirmation first</li>
-            <li><strong>On a Mac:</strong> connect Codex, Claude or another compatible local MCP assistant to its own browser tabs — see the <a href="connector.html">Surf Connector</a></li>
-        </ul>
-
-        <h2>Plans</h2>
-        <p>Surf is free to download and use, and <strong>shows no advertising</strong>. The free plan is a complete browser: unlimited tabs, private tabs, ad &amp; tracker blocking, bookmarks, history, Reader, and the file manager.</p>
-        <p><strong>Surf Pro</strong> (<strong>US$4.99/month</strong> or <strong>US$29.99/year</strong> in the US storefront, with a <strong>3-day free trial for eligible subscribers</strong>) keeps your bookmarks, history, reading list and open tabs in step across your devices through your own iCloud account. It also lifts the free plan's limits: unlimited saved articles instead of 5, no daily cap on the files you save, several at once instead of one at a time, and per-site settings that persist. On a Mac it also lets a compatible local assistant work in its own background tabs, or a tab you explicitly hand over, using the free <a href="connector.html">Surf Connector</a>. One subscription covers iPhone, iPad, and Mac.</p>
-        <p>On a Mac there is also a <strong>one-time purchase</strong>: buy Surf Pro once, with nothing to renew. Subscriptions are sold through Apple and renew automatically until cancelled; manage or cancel any time in <strong>Settings &rarr; [your name] &rarr; Subscriptions</strong> on iPhone or iPad, or <strong>App&nbsp;Store &rarr; your name &rarr; Account Settings</strong> on a Mac. Prices are always shown in the app in your local currency.</p>
-
-        <h2>FAQ</h2>
-
-        <h3>Is my browsing kept private?</h3>
-        <p>Surf stores browser data locally, with optional continuity through your own iCloud, and includes no developer analytics SDK. Websites and search engines receive the requests needed to browse. Saved sign-ins use your device keychain, with optional iCloud Keychain sync. If you connect an assistant on Mac, the page content it requests goes to that assistant&rsquo;s provider. MW Supply Limited does not operate a service that receives your browsing history. See the <a href="privacy.html">privacy policy</a> for these boundaries and data controls.</p>
-
-        <h3>Does Surf block ads and trackers?</h3>
-        <p>Yes, with an optional on-device content blocker that removes many ads and known trackers from the web pages you load, for a cleaner and faster web. It runs entirely on your device and reports nothing about the sites you visit. Surf itself shows no advertising on any plan.</p>
-
-        <h3>What is a private tab?</h3>
-        <p>A private tab keeps no history, and its cookies and site data are held only in memory and cleared when you close your private tabs — so it leaves nothing behind on your device. Open one from the tab switcher or the browser menu. Private browsing keeps this activity off your device, but it doesn't make you anonymous to the sites you visit, your network, or your internet provider.</p>
-
-        <h3>Can I choose my search engine?</h3>
-        <p>Yes. In Settings you can pick Google, DuckDuckGo, Bing, Yahoo, Ecosia, Brave Search, Startpage, Mojeek, Perplexity, Wikipedia or YouTube as the engine used when you type a search into the address bar, or paste the address of any search you use and Surf will use that.</p>
-
-        <h3>Do I need an account?</h3>
-        <p>No. Surf has no account and no sign-up. If a website you visit requires a login, you log in to that site in the browser — those credentials stay in your own hands — on your device, or in your own iCloud Keychain if you switch that on — and are never sent to us.</p>
-
-        <h3>How do I clear my browsing data?</h3>
-        <p>Open Settings inside Surf and choose <strong>Clear Browsing Data</strong> to wipe your history, cookies, and cache. Surf asks you to confirm first, because it signs you out of every site you are signed in to. Bookmarks are kept unless you remove them.</p>
-
-        <h3>Can ChatGPT, Codex or Claude use Surf on my Mac?</h3>
-        <p>Yes, with Surf Pro, the free <a href="connector.html">Surf Connector</a>, and your own compatible assistant software and account. The <a href="connector.html#chatgpt-codex">connection guide</a> explains local ChatGPT desktop and Codex setup; these steps do not connect chatgpt.com. Surf 1.14 for Mac adds <strong>Settings &rsaquo; AI Assistants</strong> with ChatGPT &amp; Codex, Claude, and other-client instructions. Earlier versions call this page <strong>Claude</strong>. From Mac build 138, AI Assistants remembers permission to read the selected connector across relaunches and distinguishes current and older connected sessions. If you selected the connector in an earlier build, use <strong>Verify Installed Connector&hellip;</strong> when prompted and choose the program already installed. This requests remembered read-only access; Surf only reads the selected file to verify it, and no reinstall is needed. A verified current connector shows <strong>Up to date &mdash; no update needed</strong>, with an optional <strong>Download Again</strong> action. The assistant works in tabs it opens or you explicitly hand over; private tabs stay excluded. Ordinary assistant tabs share your website sign-ins, and requested page content goes to your assistant&rsquo;s provider. Turn access off with <strong>Automation &rsaquo; Stop Automation</strong>. Keep Surf open on the same Mac while using it. This feature is not available on iPhone or iPad.</p>
-
-        <h3>I found a bug or have a feature request.</h3>
-        <p>Please email <a href="mailto:mwsupplylimited@gmail.com?subject=Surf%20support">mwsupplylimited@gmail.com</a> with your device, your iOS or macOS version, and steps to reproduce. We read every message.</p>
-
-        <h2>Contact</h2>
-        <p>For support: <a href="mailto:mwsupplylimited@gmail.com?subject=Surf%20support">mwsupplylimited@gmail.com</a></p>
-
-        <h2>Downloads</h2>
-        <p><a href="connector.html">Surf Connector</a> — the free program that lets compatible local MCP assistants work with Surf on a Mac. Developer ID signed and notarized by Apple. Not needed for anything else in Surf.</p>
-
-        <h2>Privacy</h2>
-        <p>See the <a href="privacy.html">Surf Privacy Policy</a>. Optional assistant integration is covered in section&nbsp;7.</p>
-
-        <footer>
-            &copy; 2026 MW Supply Limited
-        </footer>
-    </div>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+        <nav class="nav shell" aria-label="Main navigation">
+            <a class="brand" href="./" aria-label="Surf home"><img src="assets/surf-icon.png" width="42" height="42" alt=""><span>Surf</span></a>
+            <div class="nav-links"><a href="#pro">Surf Pro</a><a href="connector.html">Mac assistants</a><a href="#support">Support</a></div>
+            <a class="button button-small" href="https://apps.apple.com/app/id6789680426">Get Surf <span aria-hidden="true">↗</span></a>
+        </nav>
+    </header>
+    <main id="main">
+        <section class="hero shell" aria-labelledby="hero-title">
+            <div class="hero-copy">
+                <p class="eyebrow">For iPhone, iPad &amp; Mac</p>
+                <h1 id="hero-title">Browse.<br>Keep.<br><span>Carry on.</span></h1>
+                <p class="hero-lead">A browser for everything you want to keep. Private tabs, calmer reading and a proper home for your files, together in one native app.</p>
+                <div class="actions"><a class="button" href="https://apps.apple.com/app/id6789680426">Download on the App Store <span aria-hidden="true">↗</span></a><a class="text-link" href="#pro">Explore Surf Pro <span aria-hidden="true">↓</span></a></div>
+                <p class="small muted">Free to download. Optional Pro purchases. No Surf account required.</p>
+            </div>
+            <div class="hero-visual">
+                <div class="visual-heading"><img src="assets/surf-icon.png" width="100" height="100" alt="Surf's teal wave icon"><div><span class="eyebrow">A little more organised</span><p>The web.<br>With a place for your things.</p></div></div>
+                <figure class="app-capture"><img src="assets/files-library.png" width="1810" height="700" alt="Surf's Mac file library showing folders, documents, a Private area and Recently Deleted" fetchpriority="high"><figcaption>Surf’s file library on Mac</figcaption></figure>
+                <div class="visual-foot"><span>Private tabs</span><span>Reader</span><span>Files &amp; folders</span></div>
+            </div>
+        </section>
+        <div class="trust-strip"><div class="shell"><span>No app advertising</span><span>No developer analytics SDK</span><span>Your own iCloud</span></div></div>
+        <section class="section shell" id="features" aria-labelledby="features-title">
+            <div class="section-heading"><p class="eyebrow">Start with the everyday</p><h2 id="features-title">A complete browser.<br>Useful things built in.</h2><p>Browse for free with the tools you reach for every day.</p></div>
+            <div class="feature-grid">
+                <article><span class="feature-number" aria-hidden="true">01</span><h3>Make room to read.</h3><p>Open an article in Reader, choose your theme and type size, then save its article archive for offline reading. Free keeps up to five saved articles.</p><p class="small muted">Entries saved only as links still need the web.</p></article>
+                <article><span class="feature-number" aria-hidden="true">02</span><h3>Give files a home.</h3><p>Keep documents in folders, add tags and favourites, open ZIP archives, and recover files from Recently Deleted. File-library iCloud storage is included on every plan when available.</p></article>
+                <article><span class="feature-number" aria-hidden="true">03</span><h3>Browse on your terms.</h3><p>Use private tabs, block many webpage ads and known trackers, choose your search engine, and find pages in your bookmarks and history.</p><p class="small muted">Private browsing does not make you anonymous to websites or your network.</p></article>
+            </div>
+        </section>
+        <section class="pro-section" id="pro" aria-labelledby="pro-title">
+            <div class="shell">
+                <div class="section-heading"><p class="eyebrow">Surf Pro</p><h2 id="pro-title">Keep your place.<br>On every device you use.</h2><p>One subscription covers iPhone, iPad and Mac. Keep bookmarks, history and Reading List in step through your own iCloud, and open tabs from your other devices.</p></div>
+                <div class="pro-benefits">
+                    <article><h3>Start here. Continue there.</h3><p>Keep your bookmark folders and reading list close, whether you reach for your phone, iPad or Mac.</p></article>
+                    <article><h3>Keep more of what matters.</h3><p>Save unlimited articles and sign-ins, save more files, and remember each site’s layout and text size.</p></article>
+                    <article><h3>Put your assistant to work.</h3><p>On Mac, let a compatible local assistant work in background tabs with the free, separately installed Surf Connector.</p></article>
+                </div>
+                <div class="comparison-wrap" tabindex="0" role="region" aria-label="Free and Pro feature comparison">
+                    <table class="comparison"><caption>Choose what fits your browsing</caption><thead><tr><th scope="col">Included</th><th scope="col">Surf Free</th><th scope="col">Surf Pro</th></tr></thead><tbody>
+                        <tr><th scope="row">Tabs, private browsing &amp; webpage blocking</th><td>Included</td><td>Included</td></tr>
+                        <tr><th scope="row">File library &amp; iCloud file storage</th><td>Included</td><td>Included</td></tr>
+                        <tr><th scope="row">Bookmarks, history &amp; Reading List continuity</th><td>On this device</td><td>Across your devices</td></tr>
+                        <tr><th scope="row">Tabs from your other devices</th><td>—<span class="sr-only"> Not included</span></td><td>Included</td></tr>
+                        <tr><th scope="row">Saved articles</th><td>5</td><td>Unlimited</td></tr>
+                        <tr><th scope="row">Remembered sign-ins</th><td>5</td><td>Unlimited</td></tr>
+                        <tr><th scope="row">Files saved per day</th><td>5, one at a time</td><td>Unlimited, several at once</td></tr>
+                        <tr><th scope="row">Remember text size &amp; desktop mode per site</th><td>—<span class="sr-only"> Not included</span></td><td>Included</td></tr>
+                        <tr><th scope="row">Assistant control on Mac</th><td>—<span class="sr-only"> Not included</span></td><td>With Surf Connector</td></tr>
+                    </tbody></table>
+                </div>
+                <p class="comparison-note">Browser continuity needs Pro, iCloud enabled in Surf, and available iCloud storage. Private tabs, cookies and form contents do not sync. Saved sign-ins use optional iCloud Keychain separately.</p>
+                <div class="plans" id="plans">
+                    <article><p class="eyebrow">Surf Pro Monthly</p><h3>A month at a time.</h3><p>All Pro features across your Apple devices, billed monthly.</p></article>
+                    <article class="yearly"><p class="eyebrow">Surf Pro Yearly</p><h3>Make Surf your everyday.</h3><p>All Pro features across your Apple devices, billed annually.</p></article>
+                </div>
+                <div class="pro-action"><div><h3>Try Surf. Upgrade when it fits.</h3><p>Eligible new subscribers can try Pro free for 3 days. Open Settings in Surf and choose Surf Pro to see your local prices and offer terms. Mac also offers a one-time Lifetime purchase.</p></div><a class="button" href="https://apps.apple.com/app/id6789680426">Get Surf on the App Store <span aria-hidden="true">↗</span></a></div>
+                <p class="terms small">Purchases are handled by Apple. Subscriptions renew automatically unless cancelled at least 24 hours before the current period ends. Manage or cancel in your Apple Account settings. Introductory offers depend on eligibility. <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms of Use</a>.</p>
+            </div>
+        </section>
+        <section class="section shell assistant-section" id="assistants" aria-labelledby="assistant-title">
+            <div><p class="eyebrow">Mac + Surf Pro</p><h2 id="assistant-title">You browse.<br>Your assistant gets to work.</h2><p>Connect Codex, Claude or another compatible local MCP assistant. It can open pages, read, click, type and scroll in its own background tabs, or a tab you explicitly hand over.</p><p>The Surf Connector is free. Surf Pro and your own compatible assistant software and account are required; assistant provider charges are separate.</p><a class="text-link" href="connector.html">See compatibility and setup <span aria-hidden="true">→</span></a><p class="small muted boundary">Assistant tabs share your website sign-ins. Requested page content goes to your assistant’s provider. Private tabs stay excluded, and <strong>Automation → Stop Automation</strong> stays available in the menu bar. Mac only; local setup does not connect chatgpt.com.</p></div>
+            <figure class="assistant-capture"><img src="assets/assistant-setup.jpg" width="560" height="640" loading="lazy" alt="Surf's Mac Add-Ons panel with assistant setup instructions and connector copy controls"><figcaption>Assistant setup in Surf for Mac</figcaption></figure>
+        </section>
+        <section class="privacy-section"><div class="shell privacy-layout"><div><p class="eyebrow">Privacy, plainly explained</p><h2>Your browsing.<br>Your choices.</h2></div><div><p>Surf has no account to create and no developer analytics SDK. Optional sync uses your own iCloud. Both Free and Pro have no app advertising.</p><p>Websites and search engines receive the requests needed to browse. If you connect an assistant on Mac, requested content goes to its provider.</p><a class="text-link" href="privacy.html">Read the privacy policy <span aria-hidden="true">→</span></a></div></div></section>
+        <section class="section shell support-section" id="support" aria-labelledby="support-title">
+            <div class="section-heading"><p class="eyebrow">Support</p><h2 id="support-title">A few useful answers.</h2><p>Need a hand? <a href="mailto:mwsupplylimited@gmail.com?subject=Surf%20support">Email Surf support</a> with your device, app version and what happened.</p></div>
+            <div class="faq">
+                <details><summary>How do I get started?</summary><p>Open a new tab and enter a web address or search. Use the star to bookmark a page. Open Reader on a supported article to adjust its appearance or save an offline archive. Use the folder button to open your file library.</p></details>
+                <details><summary>What does Surf Pro add?</summary><p>Pro adds browser-data continuity through your own iCloud, tabs from other devices, unlimited saved articles and remembered sign-ins, higher file-saving capacity, persistent site settings and assistant access on Mac. One subscription covers iPhone, iPad and Mac. The free browser and file library remain available without a subscription.</p></details>
+                <details><summary>Why is file sync free, while browser continuity is Pro?</summary><p>Your file library can live in your own iCloud storage on every plan. Bookmarks, history, Reading List and tabs are browser data; Pro keeps that data in step across your devices. You control iCloud sync in Surf’s Settings.</p></details>
+                <details><summary>How do I restore or manage a purchase?</summary><p>Open Surf’s Settings, then the Surf Pro membership page. Use <strong>Restore Purchases</strong> with the Apple Account used for the purchase. Use <strong>Manage Subscription</strong> to review renewal or cancel through Apple. Your membership page shows verified plan details and renewal information when available.</p></details>
+                <details><summary>Can I read saved articles offline?</summary><p>Yes. Save the article from <strong>Reader</strong> to keep its archived content, then open it from Reading List. An entry saved only as a link still needs a connection. Free keeps five saved articles; Pro removes that limit.</p></details>
+                <details><summary>How private are private tabs?</summary><p>Private tabs keep no browsing history. Their cookies and site data are held in memory and cleared when you close the private session. They are excluded from browser-data sync and assistant access. Private browsing does not hide you from websites, your network or your internet provider.</p></details>
+                <details><summary>How do I clear browsing data or change my search engine?</summary><p>Both are in Surf’s Settings. <strong>Clear Browsing Data</strong> removes history, cookies and cache after confirmation and signs you out of websites; bookmarks remain unless you remove them. Choose a search engine from the list or enter your own search URL.</p></details>
+                <details><summary>Can I use an AI assistant on iPhone or iPad?</summary><p>Assistant control is available only in Surf for Mac, with Pro, the separately installed free connector, and compatible local assistant software. See the <a href="connector.html">connection guide</a> for requirements, setup and verification limits.</p></details>
+            </div>
+        </section>
+        <section class="final-cta shell"><img src="assets/surf-icon.png" alt="" width="72" height="72" loading="lazy"><h2>Make room for what’s next.</h2><p>Surf for iPhone, iPad and Mac.</p><a class="button" href="https://apps.apple.com/app/id6789680426">Download Surf <span aria-hidden="true">↗</span></a><p class="small muted">iOS 17+, iPadOS 17+ and macOS 14+.</p></section>
+    </main>
+    <footer class="footer shell"><span>© 2026 MW Supply Limited</span><nav aria-label="Footer navigation"><a href="privacy.html">Privacy</a><a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms</a><a href="connector.html">Surf Connector</a><a href="mailto:mwsupplylimited@gmail.com?subject=Surf%20support">Contact</a><a href="../">More apps</a></nav></footer>
 </body>
 </html>
