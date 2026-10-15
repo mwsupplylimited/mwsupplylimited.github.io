@@ -11,6 +11,7 @@
             --fg: #1a1a1a;
             --muted: #666666;
             --accent: #f28a26;
+            --link: #9a4300;
             --card: #f5f5f7;
             --border: #e5e5e7;
         }
@@ -20,6 +21,7 @@
                 --fg: #f5f5f7;
                 --muted: #9a9a9a;
                 --accent: #ff9a3a;
+                --link: #ff9a3a;
                 --card: #1c1f25;
                 --border: #2a2d34;
             }
@@ -65,7 +67,8 @@
         p { color: var(--fg); }
         ul { padding-left: 22px; }
         li { margin-bottom: 6px; }
-        a { color: var(--accent); }
+        a { color: var(--link); }
+        a:focus-visible { outline: 3px solid var(--link); outline-offset: 4px; }
         .callout {
             background: var(--card);
             border: 1px solid var(--border);
@@ -89,16 +92,18 @@
         <a class="back" href="./">&larr; Video to Photo: Frame Grab Support</a>
 
         <h1>Video to Photo: Frame Grab Privacy Policy</h1>
-        <p class="meta">Effective 28 May 2026 · Last updated 21 August 2026</p>
+        <p class="meta">Effective 28 May 2026 · Last updated 11 October 2026</p>
 
         <div class="callout">
-            <p><strong>Summary:</strong> Video to Photo: Frame Grab does not collect personal data &mdash; there is no account and no login. It does record anonymous product analytics (which screens are used, whether a purchase completed) tied to a random identifier that is not linked to you or your device, described in Section&nbsp;6. Your videos and exported frames stay on your device, or inside your own private iCloud database. The app is free with ads: on the free plan a third-party advertising provider (Unity LevelPlay, formerly ironSource) shows ads and may collect device and ad-interaction data as described in Section&nbsp;5. The optional <strong>Pro</strong> upgrade removes all ads.</p>
+            <p><strong>Summary:</strong> Video to Photo: Frame Grab has no account or login and does not ask for your name or email address. It does record anonymous product analytics (which screens are used, whether a purchase completed) tied to a random identifier that is not linked to you or your device, described in Section&nbsp;6. Your videos and exported frames stay on your device, or inside your own private iCloud database. The app is free with ads: on the free plan a third-party advertising provider (Unity LevelPlay, formerly ironSource) shows ads and may collect device and ad-interaction data as described in Section&nbsp;5. The optional <strong>Pro</strong> upgrade removes all ads.</p>
         </div>
 
         <h2>1. Information we collect</h2>
-        <p><strong>No personal data.</strong> Video to Photo: Frame Grab does not ask for, collect, transmit, or store any personally identifiable information. The app has no account system, no login, and no user profile.</p>
-        <p>Two things do leave the device, and neither identifies you: anonymous product analytics that we collect ourselves (Section&nbsp;6), and, on the free plan only, data collected by the third-party advertising provider under Unity&rsquo;s control rather than ours (Section&nbsp;5).</p>
+        <p>Video to Photo: Frame Grab has no account system, login, or user profile, and does not ask for your name or email address. Advertising, analytics, and allowance verification involve the network data described below.</p>
+        <p>The app sends anonymous product analytics that we collect ourselves (Section&nbsp;6), and, on the free plan only, data collected by the third-party advertising provider under Unity&rsquo;s control rather than ours (Section&nbsp;5). Free exports also verify the date through the support website, as described below.</p>
 
+        <h2>Daily free allowance</h2>
+        <p>All free users can export one frame per UTC day. Before a free export, the app requests the date over HTTPS from our support website hosted by GitHub Pages. The request includes a fresh random cache-bypass value, but no media, filenames, advertising identifier, or persistent installation identifier. The hosting provider receives ordinary connection information such as your IP address. The last used allowance is stored locally in this device’s Keychain; we do not maintain an account-based usage ledger. Internet verification is required for free exports. Pro exports do not perform this allowance check.</p>
         <h2>2. Photos &amp; videos</h2>
         <p>The app reads videos and writes photos with the minimum permissions iOS provides:</p>
         <ul>
@@ -119,7 +124,7 @@
         <p>On the free plan, Video to Photo: Frame Grab shows ads using <strong>Unity LevelPlay</strong> (the mediation platform formerly known as ironSource), which selects ads from Unity Ads, ironSource Ads and their demand partners. Three kinds of ad appear:</p>
         <ul>
             <li>A <strong>banner</strong> on the Home screen only. It never covers a control, and it disappears entirely if no ad is available.</li>
-            <li>An <strong>opt-in rewarded video</strong> you watch to unlock frame exports for a short window. You choose to watch one (or upgrade to Pro) to export; if no ad can be loaded (for example, offline), your export proceeds without one.</li>
+            <li>An <strong>opt-in rewarded video</strong> you watch to unlock an export within the daily allowance. You choose to watch one (or upgrade to Pro) to export; if no ad can be loaded, your export can proceed without one after the daily allowance has been verified.</li>
             <li>A <strong>full-screen ad</strong> shown at most once when you return to the Home screen after the app has been in the background for several minutes, limited to a few times per day. It never appears while you are choosing a frame, and never on top of another screen.</li>
         </ul>
         <p>To select, deliver, measure and cap the frequency of these ads and to prevent fraud, the advertising SDK may collect device and usage information &mdash; including a device advertising identifier (IDFA, only with your consent), an IP address (and the coarse region derived from it), and information about your interaction with the ads.</p>
