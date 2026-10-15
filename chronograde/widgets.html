@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Watch Accuracy Widgets on iPhone — Chronograde</title>
+    <meta name="description" content="Add the free Chronograde Watch Accuracy widget to your iPhone Home Screen or Lock Screen. Understand empty states, daily rates and refresh timing.">
+    <link rel="canonical" href="https://mwsupplylimited.github.io/chronograde/widgets.html">
+    <meta property="og:title" content="Add Watch Accuracy Widgets on iPhone — Chronograde">
+    <meta property="og:description" content="Set up free watch accuracy widgets and see the most recently measured watch at a glance.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://mwsupplylimited.github.io/chronograde/widgets.html">
+    <style>
+        :root {
+            --bg: #ffffff;
+            --fg: #1a1a1a;
+            --muted: #666666;
+            --accent: #e66230;
+            --link: #b53f17;
+            --card: #f5f5f7;
+            --border: #e5e5e7;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #121419;
+                --fg: #f5f5f7;
+                --muted: #9a9a9a;
+                --accent: #ff7d45;
+                --link: #ff7d45;
+                --card: #1c1f25;
+                --border: #2a2d34;
+            }
+        }
+        * { box-sizing: border-box; }
+        html { -webkit-text-size-adjust: 100%; }
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+            background: var(--bg);
+            color: var(--fg);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 48px 24px 96px;
+        }
+        .back {
+            display: inline-block;
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-bottom: 32px;
+        }
+        .back:hover { color: var(--link); }
+        h1 {
+            font-size: 2.2rem;
+            margin: 0 0 8px;
+            letter-spacing: -0.02em;
+        }
+        .subtitle {
+            color: var(--muted);
+            margin: 0 0 40px;
+        }
+        h2 {
+            font-size: 1.3rem;
+            margin: 40px 0 12px;
+            letter-spacing: -0.01em;
+        }
+        h3 {
+            font-size: 1rem;
+            margin: 24px 0 6px;
+            font-weight: 600;
+        }
+        p, li { color: var(--fg); }
+        .muted { color: var(--muted); }
+        ul { padding-left: 22px; }
+        li { margin-bottom: 6px; }
+        a { color: var(--link); }
+        code {
+            background: var(--card);
+            padding: 1px 6px;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+        .pill {
+            display: inline-block;
+            background: var(--card);
+            border: 1px solid var(--border);
+            padding: 3px 10px;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            color: var(--muted);
+        }
+        .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; margin: 24px 0; }
+        .download {
+            display: inline-block;
+            background: var(--accent);
+            color: #1a1a1a;
+            padding: 12px 18px;
+            border-radius: 12px;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        .download:hover { text-decoration: underline; }
+        a:focus-visible { outline: 3px solid var(--fg); outline-offset: 4px; }
+        .feature-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+        .feature-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 20px; }
+        .feature-card h3 { margin-top: 0; }
+        .feature-card ul { margin-bottom: 0; }
+        @media (max-width: 560px) { .feature-grid { grid-template-columns: 1fr; } }
+        footer {
+            margin-top: 64px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
+            color: var(--muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <a class="back" href="./">&larr; Chronograde support &amp; features</a>
+        <h1>Your watch accuracy, at a glance</h1>
+        <p class="subtitle">Add the free Watch Accuracy widget to your iPhone Home Screen or Lock Screen. No Pro purchase or in-app enable switch is needed.</p>
+        <div class="actions">
+            <a class="download" href="https://apps.apple.com/app/id6774091390">Download on the App Store</a>
+            <a href="first-readings.html">Take your first readings</a>
+        </div>
+        <nav aria-label="Guide sections"><ul>
+            <li><a href="#home-screen">Add a Home Screen widget</a></li>
+            <li><a href="#lock-screen">Add a Lock Screen widget</a></li>
+            <li><a href="#your-data">Show your watch and daily rate</a></li>
+            <li><a href="#troubleshooting">If the widget looks empty or out of date</a></li>
+        </ul></nav>
+
+        <h2 id="home-screen">Add a Home Screen widget</h2>
+        <ol>
+            <li>Open Chronograde once and finish or skip onboarding.</li>
+            <li>Return to your Home Screen. Touch and hold an empty area, then choose <strong>Edit &rarr; Add Widget</strong>, or the <strong>+</strong> button on older iOS versions.</li>
+            <li>Search for <strong>Chronograde</strong> and choose <strong>Watch Accuracy</strong>.</li>
+            <li>Swipe to choose the small or medium size, tap <strong>Add Widget</strong>, then finish editing.</li>
+        </ol>
+        <p>The small widget gives a compact rate view. The medium widget adds context, including the offset at the last reading and the reading date.</p>
+
+        <h2 id="lock-screen">Add a Lock Screen widget</h2>
+        <ol>
+            <li>Touch and hold the Lock Screen, choose <strong>Customize</strong>, then <strong>Lock Screen</strong>.</li>
+            <li>Tap the widget area below the clock, choose <strong>Chronograde</strong> and add the circular or rectangular widget. For the inline widget, tap the date area above the clock and select Chronograde.</li>
+            <li>Finish editing. iOS manages these widgets; there is no separate switch inside Chronograde.</li>
+        </ol>
+
+        <h2 id="your-data">Show your watch and daily rate</h2>
+        <p>In Chronograde, add a watch, open it and save a manual reading. The widget automatically follows the watch with the most recent manual measurement activity; it does not have a watch selector.</p>
+        <p>A daily rate needs at least two valid manual readings at least one hour apart in the same uninterrupted session. Readings across days are more useful. Keep the watch running without resetting it between readings. One reading supplies an offset, not a daily rate.</p>
+        <p>Adding watches and the first ten manual readings across your collection are free. See the <a href="first-readings.html#manual">manual reading steps</a> before your first capture. If you stop or reset the watch, the old and new readings should not be treated as one continuous run.</p>
+
+        <h2 id="troubleshooting">If the widget looks empty or out of date</h2>
+        <h3>&ldquo;Add a watch in Chronograde&rdquo; or &ldquo;No watches yet&rdquo;</h3>
+        <p>These are the intended empty states. Open the app, add a watch and save a manual reading. A microphone-only acoustic estimate does not supply the manual history used by this widget.</p>
+        <h3>&ldquo;Add a few readings&rdquo;</h3>
+        <p>The active session does not yet have enough valid, separated manual readings for a rate. Return for another reading after an hour or more, ideally the next day. Buying Pro does not make a rate available from a single reading.</p>
+        <h3>A rate or offset has not changed yet</h3>
+        <p>The widget shows saved measurement information, not a live acoustic measurement. The medium widget dates its offset at the last reading. Changes in the app request a refresh, but iOS controls when the widget updates; an immediate refresh is not guaranteed.</p>
+        <h3>Chronograde does not appear in the widget gallery</h3>
+        <p>Check that Chronograde is installed and open it once. Then return to the appropriate Home Screen or Lock Screen widget gallery and search again. If it still does not appear, <a href="mailto:mwsupplylimited@gmail.com?subject=Chronograde%20widget%20support">contact support</a> with your device, iOS version and the steps you tried.</p>
+
+        <h2>Make the next reading useful</h2>
+        <p>A widget helps you keep an eye on saved history. For a deeper look, <a href="compare-sessions.html">Pro compares separate manual sessions and builds selected-record PDF reports</a>. Start with the free readings, then choose the tools you need. Acoustic and manual results remain estimates, not a certification or a watchmaker&rsquo;s diagnosis.</p>
+        <p><a href="./#features">Compare free and Pro features</a> &middot; <a href="privacy.html">Privacy policy</a></p>
+        <footer>&copy; 2026 MW Supply Limited</footer>
+    </main>
+</body>
+</html>
