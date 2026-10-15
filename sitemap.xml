@@ -102,7 +102,34 @@
   </url>
   <url>
     <loc>https://mwsupplylimited.github.io/chronograde/</loc>
-    <lastmod>2026-07-29</lastmod>
+    <lastmod>2026-10-16</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mwsupplylimited.github.io/chronograde/first-readings.html</loc>
+    <lastmod>2026-10-16</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mwsupplylimited.github.io/chronograde/compare-sessions.html</loc>
+    <lastmod>2026-10-05</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mwsupplylimited.github.io/chronograde/widgets.html</loc>
+    <lastmod>2026-10-16</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mwsupplylimited.github.io/chronograde/accuracy.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mwsupplylimited.github.io/chronograde/chronometer.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mwsupplylimited.github.io/chronograde/calibers.html</loc>
     <priority>0.6</priority>
   </url>
   <url>
