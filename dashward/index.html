@@ -70,6 +70,13 @@
         .muted { color: var(--muted); }
         ul { padding-left: 22px; }
         li { margin-bottom: 6px; }
+        .plan-table { overflow-x: auto; margin: 20px 0; }
+        .plan-table:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+        table { width: 100%; min-width: 600px; border-collapse: collapse; font-size: 0.9rem; }
+        caption { text-align: left; font-weight: 600; margin-bottom: 10px; }
+        th, td { text-align: left; vertical-align: top; padding: 12px 10px; border-bottom: 1px solid var(--border); }
+        thead th { color: var(--accent); }
+        tbody th { font-weight: 500; }
         a { color: var(--accent); }
         .pill {
             display: inline-block;
@@ -107,24 +114,40 @@
         <h1>Dashward</h1>
         <p class="subtitle">A dash cam that watches the road — and your car. <span class="pill">Current public version: 1.1</span></p>
 
+
+
+        <section class="callout" aria-labelledby="launch-pending">
+            <h2 id="launch-pending">Version 1.4 — public launch pending</h2>
+            <p>The iOS and Mac updates are being prepared for coordinated App Review. Public release follows Apple approval and our manual release. Version 1.4 is available to our internal TestFlight testers; it has not been publicly released. The version 1.1 instructions below still apply to the current public app.</p>
+            <p>Choose a plan for the person monitoring the vehicles. A supported iPhone or iPad can record and share as a dashcam without buying its own viewing subscription. Mac is a monitor. These are the upcoming <strong>monthly US App Store prices</strong>; your storefront's local price and renewal terms appear before purchase.</p>
+            <p class="muted">Scroll sideways to compare all plans on a small screen.</p>
+            <div class="plan-table" role="region" aria-label="Version 1.4 plan comparison; scroll horizontally on a small screen" tabindex="0">
+                <table>
+                    <caption>Version 1.4 plan comparison — public launch pending</caption>
+                    <thead><tr><th scope="col">Included</th><th scope="col">Free</th><th scope="col">Personal Pro</th><th scope="col">Personal Live</th><th scope="col">Business 5</th></tr></thead>
+                    <tbody>
+                        <tr><th scope="row">Monthly US price</th><td>Free</td><td>US$24.99</td><td>US$109.99</td><td>US$299.99</td></tr>
+                        <tr><th scope="row">Local Road and Cabin recording</th><td>Included</td><td>Included</td><td>Included</td><td>Included</td></tr>
+                        <tr><th scope="row">Vehicles you can monitor</th><td>Sample vehicle; Business coverage may apply</td><td>1</td><td>1</td><td>Up to 5</td></tr>
+                        <tr><th scope="row">People included</th><td>—</td><td>1</td><td>1</td><td>2, using their own Apple Accounts</td></tr>
+                        <tr><th scope="row">Approved monitors per person</th><td>—</td><td>2</td><td>2</td><td>2</td></tr>
+                        <tr><th scope="row">Live source time per subscription month</th><td>—</td><td>60 hours</td><td>No fixed hour quota*</td><td>No fixed hour quota*</td></tr>
+                        <tr><th scope="row">Road and Cabin together on a monitor</th><td>—</td><td>Included</td><td>Included</td><td>Included</td></tr>
+                        <tr><th scope="row">Shared recordings and event links</th><td>—</td><td>With driver permission</td><td>With driver permission</td><td>With driver permission</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>A person included in an active Business team can monitor with the owner’s plan after approval; they do not need a separate viewing subscription. Personal Pro counts overlapping Road, Cabin and monitor sessions of the same source once. Business includes four live vehicle tiles per person, shared across that person's devices and windows; Road and Cabin together use one tile. Approved Business dashcams receive local Pro capture while their plan coverage is verified online, without a separate driver subscription.</p>
+            <p><strong>*All live plans have spending controls and depend on service availability.</strong> No fixed hour quota does not mean guaranteed uninterrupted viewing.</p>
+            <p>All three plans have a live-viewing spending limit. The version 1.4 public service uses Low Data at 55% and pauses live viewing at 70% of conservative estimated net subscription revenue — the estimated amount left after Apple's commission, taxes, refunds and currency reserves. Viewing may pause before an hour allowance is used; continuous viewing is not guaranteed. There are no automatic extra charges. Basic local recording remains available.</p>
+            <p>New annual plans, larger Business plans and additional-person packs are not part of this launch. Original Personal subscriptions remain closed; there is no automatic move to a new plan.</p>
+            <p>TestFlight and App Review use a separate test service with its own limits. A connected session's notices show the limits reported by that service. Test availability does not mean version 1.4 has been publicly released.</p>
+        </section>
+
         <section class="callout" aria-labelledby="personal-retirement">
             <h2 id="personal-retirement">Original Personal subscriptions are closed</h2>
             <p>As of <time datetime="2026-10-06">6 October 2026</time>, the original <strong>Dashward Pro monthly and yearly subscriptions</strong> are no longer available to buy and will not renew. Removing them from sale does not immediately end an already-paid subscription: access continues through your existing paid term, then ends.</p>
             <p>Check your expiry date in <a href="https://apps.apple.com/account/subscriptions">Apple Account &rarr; Subscriptions</a>. You will not be moved to another plan automatically. If you need help with access during your paid term, <a href="#contact">contact support</a>.</p>
-        </section>
-
-        <section class="callout" aria-labelledby="launch-pending">
-            <h2 id="launch-pending">Version 1.4 — public launch pending</h2>
-            <p>Version 1.4 for iOS is waiting for App Review. The Mac update is being prepared for submission. Public release follows Apple approval and our manual release. The version 1.1 instructions below still apply to the current public app.</p>
-            <p>The upcoming release offers these <strong>monthly plans</strong> at the following US App Store prices. Other storefronts use local prices shown in the app before purchase:</p>
-            <ul>
-                <li><strong>Personal Pro — US$29.99/month:</strong> one vehicle, one person and up to 60 live-viewing hours per subscription month. Road and cabin viewing share that time allowance.</li>
-                <li><strong>Personal Live — US$129.99/month:</strong> one vehicle and one person, with no fixed monthly live-viewing hour allowance.</li>
-                <li><strong>Business 5 — US$349.99/month:</strong> up to five vehicles and two people.</li>
-            </ul>
-            <p>All three plans have a live-viewing spending limit. The version 1.4 public service uses Low Data at 55% and pauses live viewing at 70% of conservative estimated net subscription revenue — the estimated amount left after Apple's commission, taxes, refunds and currency reserves. Viewing may pause before an hour allowance is used; continuous viewing is not guaranteed. There are no automatic extra charges. Basic local recording remains available.</p>
-            <p>New annual plans, larger Business plans and additional-person packs are not part of this launch. Original Personal subscriptions remain closed; there is no automatic move to a new plan.</p>
-            <p>TestFlight and App Review use a separate test service with its own limits. A connected session's notices show the limits reported by that service. Test availability does not mean version 1.4 has been publicly released.</p>
         </section>
 
         <h2>About</h2>
