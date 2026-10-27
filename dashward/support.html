@@ -10,7 +10,8 @@
             --bg: #ffffff;
             --fg: #1a1a1a;
             --muted: #666666;
-            --accent: #13b3ab;
+            --accent: #087770;
+            --button-fg: #ffffff;
             --card: #f5f5f7;
             --border: #e5e5e7;
         }
@@ -20,6 +21,7 @@
                 --fg: #f5f5f7;
                 --muted: #9a9a9a;
                 --accent: #2ee0d6;
+                --button-fg: #081d1b;
                 --card: #1c1f25;
                 --border: #2a2d34;
             }
@@ -111,7 +113,7 @@
 
         <section class="callout" aria-labelledby="version-note">
             <h2 id="version-note">Choose the instructions for your app</h2>
-            <p>The Connections and viewing controls below apply to <strong>version 1.4</strong>, including TestFlight. Its public launch is pending Apple review and manual release. For earlier versions, including version 1.1 and its original same-Apple-Account Live View, see the <a href="./">Dashward guide</a>.</p>
+            <p>These instructions apply to <strong>Dashward 1.4</strong>, available for iPhone, iPad and Mac. Check that both the dashcam and monitor use the current version. Earlier versions use different controls; <a href="#contact">contact support</a> if you need help updating.</p>
         </section>
         <nav aria-label="Support topics">
             <ul>
@@ -119,6 +121,7 @@
                 <li><a href="#connect">Connect devices</a></li>
                 <li><a href="#viewing">Viewing controls</a></li>
                 <li><a href="#troubleshooting">Troubleshooting</a></li>
+                <li><a href="#crashes">App crashes</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -143,7 +146,7 @@
         <h2 id="viewing">Understand the viewing controls</h2>
         <ul>
             <li><strong>Watch for 5 min:</strong> starts a timed viewing session on that monitor. The visible countdown ends live viewing. <strong>Reset to 5 min</strong> starts a new five-minute countdown from now.</li>
-            <li><strong>Continuous mode:</strong> has no countdown. It still needs available sharing, live access and a connection. Closing or hiding the app stops that monitor's live viewing. Service or access limits can interrupt it; continuous playback is not guaranteed.</li>
+            <li><strong>Continuous mode:</strong> has no countdown. It still needs available sharing, live access and a connection. Leaving the app on iPhone or iPad, or fully hiding the Mac monitor window, stops its live request. Service or access limits can interrupt it; continuous playback is not guaranteed.</li>
             <li><strong>Stop:</strong> ends that monitor's live request. It does not stop the dashcam's local recording or another monitor's separate session.</li>
             <li><strong>LIVE VIDEO:</strong> marks arriving video. <strong>SNAPSHOT</strong> is a still image; check its age. Road snapshots can update separately after live viewing stops, so a visible picture is not proof that live video is running.</li>
             <li><strong>STOPPED, CONNECTING, WAITING or UNAVAILABLE:</strong> describes that camera's current viewing state. Read the explanation and available action below the picture. Road and Cabin may be in different states.</li>
@@ -157,6 +160,15 @@
         <p>Open <strong>Membership</strong> to refresh the current plan. Use <strong>Restore Purchases</strong> for a purchase on your Apple Account, and check expiry or renewal in <a href="https://apps.apple.com/account/subscriptions">Apple's subscription settings</a>. The original Personal monthly and yearly plans are closed to new subscriptions and will not renew; existing paid terms end on their Apple expiry date. There is no automatic switch to another plan.</p>
         <h3>Recording stops or storage is full</h3>
         <p>Camera recording needs the iPhone or iPad app open. Check available storage and temperature. Locked clips are not automatically deleted, so they can fill the storage allowance. Export important recordings, then remove unneeded clips. Do not test incident detection by creating an impact.</p>
+
+        <h2 id="crashes">If Dashward closes unexpectedly</h2>
+        <p>Please keep the app installed while we investigate: deleting it can remove local recordings. Reopen it once and note the last action before it closes. If it repeatedly closes, stop retrying and contact us.</p>
+        <ol>
+            <li>Send the <strong>device model, iOS/iPadOS or macOS version, and Dashward version</strong> if visible. On iPhone or iPad, find the model and OS in Settings &rarr; General &rarr; About.</li>
+            <li>Tell us whether this happened on launch, in Dashcam or Monitor, during setup, or after another action. Include the approximate time and any error text. Say whether the app closed, froze or showed black cameras.</li>
+            <li>If available on iPhone or iPad, open Settings &rarr; Privacy &amp; Security &rarr; Analytics &amp; Improvements &rarr; Analytics Data. Find the recent report beginning <strong>Dashward</strong> that matches the time, then use Share to email that specific report to support. On Mac, the matching report may be listed in Console &rarr; Crash Reports.</li>
+        </ol>
+        <p>A crash report is optional; the device details and steps are still useful. Review it before sharing because diagnostic reports can contain device or account information. Do not send unrelated analytics, passwords, verification codes or recordings.</p>
 
         <h2 id="contact">Contact Dashward support</h2>
         <p>Email <a href="mailto:mwsupplylimited@gmail.com?subject=Dashward%20support">mwsupplylimited@gmail.com</a> with the app version/build, iOS or macOS version, device model, approximate time and the steps that led to the problem. Mention whether you were using Dashcam or Monitor and include the status text you saw.</p>
