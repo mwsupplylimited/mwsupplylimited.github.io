@@ -4,3 +4,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://mwsupplylimited.github.io/sitemap.xml
+Sitemap: https://mwsupplylimited.github.io/powertrainlab/sitemap.xml
