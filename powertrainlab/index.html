@@ -4,8 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <title>Powertrain Lab — Motion-driven engine sound</title>
-    <meta name="description" content="Engine sound that follows your driving. Explore 26 engine characters in Drive Lab, personalize your setup with Pro, and get help with Powertrain Lab for iPhone.">
+    <title>Powertrain Lab | Engine Sound App for iPhone &amp; Apple Watch</title>
+    <meta name="description" content="Engine sound that responds to your driving. Compare 26 cars, tune cabin and exhaust sound with Pro, and shift the app’s gears with Apple Watch. Free download.">
+    <link rel="canonical" href="https://mwsupplylimited.github.io/powertrainlab/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Powertrain Lab">
+    <meta property="og:title" content="Your drive. Your engine sound. | Powertrain Lab">
+    <meta property="og:description" content="Explore 26 engine characters for iPhone, compare setups in Drive Lab, and control the app’s manual gears with Apple Watch.">
+    <meta property="og:url" content="https://mwsupplylimited.github.io/powertrainlab/">
+    <meta name="twitter:card" content="summary">
+    <meta name="apple-itunes-app" content="app-id=6825215698">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"MobileApplication","name":"Powertrain Lab","url":"https://mwsupplylimited.github.io/powertrainlab/","downloadUrl":"https://apps.apple.com/app/id6825215698","operatingSystem":"iOS 17 or later; optional Apple Watch companion","applicationCategory":"EntertainmentApplication","description":"Motion-responsive engine sound and a simulated gearbox for iPhone. Compare 26 engine characters in Drive Lab. Optional Pro adds unlimited engine-session sound and custom sound and gear ratios.","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD","description":"Free download with optional auto-renewable Pro subscriptions."},"featureList":["Motion-responsive engine sound","26 engine characters","Free parked sound previews","Drive Lab setup comparison","Economy, Normal, Sport and Manual modes","Optional Apple Watch shift controls","Pro cabin and exterior sound adjustments","Pro custom gear ratios"]}</script>
     <style>
         :root { color-scheme: light dark; --bg: #ffffff; --fg: #1a1a1a; --muted: #595959; --accent: #855209; --card: #f5f5f7; --border: #d9d9de; }
         @media (prefers-color-scheme: dark) {
@@ -33,6 +42,11 @@
         .card { background: var(--card); border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: 10px; padding: 16px 20px; margin: 24px 0; }
         .card p { margin: 0; }
         .download { display: inline-block; background: var(--accent); color: var(--bg); padding: 12px 20px; border-radius: 12px; font-weight: 650; text-decoration: none; }
+        .screens { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; margin: 32px 0; align-items: start; }
+        .screens figure { margin: 0; min-width: 0; }
+        .screens img { display: block; width: 100%; height: auto; border: 1px solid var(--border); border-radius: 22px; }
+        .screens figcaption { font-size: .95rem; color: var(--muted); margin-top: 12px; }
+        @media (max-width: 520px) { .screens { grid-template-columns: 1fr; } .screens figure { max-width: 300px; margin-inline: auto; } }
         dl dt { margin-top: 16px; }
         dl dd { margin: 4px 0 12px; }
         .email { overflow-wrap: anywhere; }
@@ -49,15 +63,19 @@
             <a class="back" href="../">&larr; MW Supply Limited</a>
             <h1>Powertrain Lab</h1>
             <p class="subtitle">Engine sound that follows your driving. <span class="pill">iPhone + Apple Watch</span></p>
-            <nav aria-label="Powertrain Lab pages"><a href="index.html" aria-current="page">Support</a><a href="privacy.html">Privacy policy</a></nav>
+            <nav aria-label="Powertrain Lab pages"><a href="#features">Features</a><a href="#get-started">Get started</a><a href="#questions">Questions</a><a href="privacy.html">Privacy policy</a></nav>
         </header>
         <main id="main">
-    <p><a class="download" href="https://apps.apple.com/us/app/powertrain-lab/id6825215698">Download on the App Store</a></p>
+    <p><a class="download" href="https://apps.apple.com/app/id6825215698">Download on the App Store</a></p>
     <p class="muted">Free to download, with optional Pro subscriptions. iOS 17 or later; paired Apple Watch optional.</p>
     <p class="intro">Hear revs, shifts and lift-off sound respond to your driving. Powertrain Lab uses iPhone motion to drive a simulated engine and gearbox. Compare your options while parked, then keep the sound and gearing you enjoy. No vehicle adapter or app account needed. It does not read pedals or control the car.</p>
     <div class="card"><p><strong>Set up and make changes while parked.</strong> The driver must not read or operate the screen while moving. Use a secure mount and a volume that lets you hear your surroundings.</p></div>
-    <h2>Your garage. Your soundstage.</h2>
+    <h2 id="features">Your garage. Your soundstage.</h2>
     <p>Explore 26 engine characters. For recorded cars, choose the front, rear or either side, adjust exterior angle and distance, and blend in the cabin sound. Compare your mix before committing to a setup. Spatial sound follows each source event; available lift-off and shift detail vary by car.</p>
+    <div class="screens" aria-label="Actual app screens">
+      <figure><img src="images/soundstage.png" width="1206" height="2622" loading="lazy" decoding="async" alt="Powertrain Lab Sound workspace showing rear listening position, cabin blend and exterior distance controls."><figcaption><strong>Choose your listening position.</strong> Preview the difference from around the car. Pro lets you use custom mixes in a session.</figcaption></figure>
+      <figure><img src="images/drive-lab.png" width="1320" height="2868" loading="lazy" decoding="async" alt="Drive Lab playing the 488 V8 Stock over an example drive, with simulated RPM, gear and load."><figcaption><strong>Compare before you drive.</strong> Hear acceleration, shifts and coasting in free Drive Lab comparisons.</figcaption></figure>
+    </div>
     <h2>Same drive. Two setups.</h2>
     <p><strong>Drive Lab</strong> lets you hear your current and draft setups over the same 28-second example drive. Compare acceleration, shifts, coasting and braking, with live simulated RPM, gear and load. All 26 engine characters can be auditioned without Pro.</p>
     <ol>
@@ -67,7 +85,7 @@
       <li>Return to the library and tap Done to apply a choice, or Cancel to keep your original setup. Recorded 488 has a daily driving allowance; Pro unlocks unlimited 488, other Pro engines, and customized sound and ratios.</li>
     </ol>
     <p class="muted">Drive Lab uses example motion, not sensors or a recording of your trip. Comparing a setup does not apply it.</p>
-    <h2>Listen before choosing</h2>
+    <h2 id="get-started">Listen before choosing</h2>
     <p>Open Garage before starting a session. Search or filter 26 engine characters, from V8s and V12s to flat-sixes and a rotary, then select a car and tap Hear. Every voice can be previewed for up to 30 seconds without Pro. Recorded stock voices blend exterior exhaust and driver-seat perspectives, with supported lift and gearshift detail; synthesized voices have their own character controls. Move the Throttle slider to rev, then tap Idle to hear the virtual engine settle. The displayed RPM comes from this sound model; the preview does not read motion, sense your pedals or control a driving session. Changing a voice or character, leaving the screen or making the app inactive stops the preview. Hear and Drive Lab do not use the daily driving allowance.</p>
     <h2>How the current session setup works</h2>
     <p>Set up before moving. The app estimates motion; it is not a vehicle instrument or safety system.</p>
@@ -105,7 +123,14 @@
     <h2>Engine level and music</h2>
     <p>Engine level ranges from 0% to 200%. Above 100% boosts the engine relative to other audio, with peak protection that may sound compressed. It does not change the phone’s system volume or promise twice the perceived loudness. Start low and adjust while parked. Previews use the engine level selected in Garage. Tap Done to apply that level to your next session; Cancel discards unapplied choices.</p>
     <p>Start music in your music app before starting the engine session. Optional Lower other audio asks iOS to reduce other audio while the engine plays; changes apply the next time the engine starts. The consumer app does not provide app-to-app playback controls.</p>
-    <h2>Common questions</h2>
+    <h2 id="questions">Common questions</h2>
+      <h3>How does the sound follow my driving?</h3>
+      <p>After a parked calibration, iPhone motion and optional location speed feed a simulated engine and gearbox. Revs and shifts respond to the estimated motion. Powertrain Lab does not connect to the vehicle’s pedals, engine computer or controls.</p>
+      <h3>Do I need a vehicle adapter?</h3>
+      <p>No OBD adapter or account is required. Secure the iPhone in a stable mount, choose your audio output and calibrate before moving. Keep the phone fixed throughout the session.</p>
+      <h3>Can I try the sounds without driving?</h3>
+      <p>Yes. Every engine has a free parked preview. Drive Lab also compares two setups over the same example drive, including acceleration, shifts and coasting. It uses example motion and does not start a driving session.</p>
+
     <h3>I paid, but Pro has not appeared. What should I do?</h3>
     <p>Open Explore Pro and check the displayed purchase status. A pending purchase needs Apple's approval; it is not a completed subscription. If you already have an active subscription, use Restore purchases with the same Apple Account. You do not need to purchase again. If access still cannot be verified, contact support with the app version and the displayed message. Do not send passwords, card information or raw receipts.</p>
     <h3>Why did my previewed engine not change my drive?</h3>
@@ -121,6 +146,7 @@
     <h2>Contact support</h2>
     <p>Email <a class="email" href="mailto:mwsupplylimited@gmail.com">mwsupplylimited@gmail.com</a>. Include app version, iPhone model, iOS version, audio output and what happened. A screenshot taken while safely parked can help. Share only relevant details; do not send passwords, payment-card information or precise routes.</p>
     <p class="muted">Read the <a href="privacy.html">privacy policy</a> for permissions, Apple purchase handling, local data and support correspondence.</p>
+
         </main>
         <footer>Powertrain Lab · <a href="index.html">Support</a> · <a href="privacy.html">Privacy policy</a> · <a href="../">MW Supply Limited</a></footer>
     </div>
