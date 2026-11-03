@@ -1,0 +1,34 @@
+name: Chronograde guide browser checks
+on:
+  pull_request:
+    paths:
+      - 'chronograde/chronometer.html'
+      - 'chronograde/calibers.html'
+      - '.github/scripts/chronograde-guide-render.mjs'
+      - '.github/workflows/chronograde-guides.yml'
+permissions:
+  contents: read
+concurrency:
+  group: chronograde-guides-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  render:
+    runs-on: macos-26
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Render desktop and mobile in both color schemes
+        run: node .github/scripts/chronograde-guide-render.mjs
+      - name: Retain screenshots and verification records
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: chronograde-guide-renders
+          path: |
+            artifacts/chronograde-guides/*.png
+            artifacts/chronograde-guides/*.json
+            artifacts/chronograde-guides/*.log
+          if-no-files-found: error
+          retention-days: 1
