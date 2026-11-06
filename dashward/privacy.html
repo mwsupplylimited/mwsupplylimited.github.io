@@ -90,10 +90,10 @@
         <a class="back" href="./">&larr; Dashward Support</a>
 
         <h1>Dashward Privacy Policy</h1>
-        <p class="meta">Effective 21 June 2026 &middot; Last updated 3 November 2026</p>
+        <p class="meta">Effective 21 June 2026 &middot; Last updated 6 November 2026</p>
 
         <div class="callout">
-            <p><strong>Summary:</strong> Dashward keeps recordings on your device unless you enable a sharing, backup or export feature. Shared live video is encrypted before passing through our Cloudflare relay; MW Supply Limited does not hold its decryption key. To authorize live viewing, protect access and operate the service, we also process the account, device, subscription and aggregate usage metadata described in <a href="#live-service-data">section 6</a>. Newer free-tier builds show ads from Unity LevelPlay; legacy version&nbsp;1.1 uses Google AdMob. See <a href="#advertising">section 8</a>.</p>
+            <p><strong>Summary:</strong> Dashward keeps recordings on your device unless you enable a sharing, backup or export feature. Shared live video is encrypted before passing through our Cloudflare relay; MW Supply Limited does not hold its decryption key. To authorize live viewing, protect access and operate the service, we also process the account, device, subscription and aggregate usage metadata described in <a href="#live-service-data">section 6</a>. Starting with the upcoming Dashward&nbsp;1.4.2 update, every plan will have no third-party advertising and the app will include no advertising SDK. Earlier releases, including version&nbsp;1.4.1, may show ads; their disclosures remain in <a href="#advertising">section 8</a>.</p>
         </div>
 
         <h2>1. What leaves your device, and when</h2>
@@ -106,7 +106,7 @@
             <li><strong>Sharing sentry clips with another person (Pro)</strong> &mdash; if you invite someone, parking-sentry event clips (which can include audio and, if &ldquo;Stamp location on clips&rdquo; is on, location) are shared with them through iCloud sharing.</li>
             <li><strong>Remote Viewing</strong> (sharing is free; viewing needs Dashward Pro or Business Pro) &mdash; if you share a vehicle, the information you choose, including live video if you allow it, is sent to the people you invite. See <a href="#remote-viewing">section 6</a>.</li>
             <li><strong>Live-viewing authorization and usage</strong> &mdash; devices send verification proofs and viewing requests to our service, which retains access-control records and aggregate reservation totals. See <a href="#live-service-data">section 6</a>.</li>
-            <li><strong>Advertising (free tier)</strong> &mdash; see <a href="#advertising">section 8</a>.</li>
+            <li><strong>Advertising in earlier releases</strong> &mdash; versions before&nbsp;1.4.2 may process advertising data as described in <a href="#advertising">section 8</a>.</li>
         </ul>
 
         <p><strong>Dashward for Mac</strong> is a viewer for vehicles shared with you. It has no camera, microphone or location access and records nothing. It reads and plays the Remote Viewing updates and recordings described in section&nbsp;6, checks subscription status with Apple, and sends the authorization proofs and viewing requests needed to use those features.</p>
@@ -164,17 +164,21 @@
         </ul>
         <p>Crash detection is best-effort and does not replace emergency services.</p>
 
+        <h3 id="service-diagnostics">Test diagnostics</h3>
+        <p>During time-limited testing of TestFlight and App Review builds, we may record limited technical status and error categories from the viewing service to diagnose failures. These diagnostic records contain only the service name, collection time and predefined status or error labels. We retain captured results for troubleshooting and validation. Ordinary relay request logging remains disabled.</p>
+
         <h2>7. Subscriptions &amp; payments</h2>
         <p>Dashward Pro and Dashward Business Pro are auto-renewable subscriptions sold through Apple&rsquo;s In-App Purchase and shared by your iPhone, iPad and Mac under one Apple Account. Business Pro also covers invited team members for the team&rsquo;s vehicles. Optional Team Seats packs are separate auto-renewable subscriptions and require an active Business Pro plan. Purchases and renewals are handled by Apple under your Apple Account. MW Supply Limited processes the purchase-verification information described in section&nbsp;6, but does not receive your Apple Account email address, password or payment-card details through that verification. Manage or cancel any time in your Apple Account settings.</p>
 
-        <h2 id="advertising">8. Advertising (free tier only)</h2>
-        <p>In version&nbsp;1.4 and other Unity-based builds, the free tier shows advertising through Unity LevelPlay (ironSource, a Unity Technologies company) and Unity Ads. Dashward Pro shows no ads and the ad SDK is not started. Advertising SDKs are also not started in TestFlight or local development installs.</p>
+        <h2 id="advertising">8. Advertising and earlier releases</h2>
+        <p><strong>Starting with the upcoming Dashward 1.4.2 update:</strong> all plans will have no third-party ads. The app will include no advertising SDK, will not use the advertising identifier (IDFA), and will not request App Tracking Transparency permission. Optional paid plans fund additional recording, account and viewing features; an ad-free experience will not require a subscription. These changes apply after installing version&nbsp;1.4.2; the earlier-release disclosures below still apply to older installations. The functional service data described in section&nbsp;6 is still processed when you use those features.</p>
+        <p><strong>Earlier Unity-based releases, including versions 1.4 and 1.4.1:</strong> the free tier may show advertising through Unity LevelPlay (ironSource, a Unity Technologies company) and Unity Ads. Dashward Pro shows no ads and the ad SDK is not started. Advertising SDKs are also not started in TestFlight or local development installs.</p>
         <ul>
-            <li><strong>What these partners may process</strong>: device and SDK user identifiers, IP-derived country information, purchase information, ad impressions and interactions, other usage data, SDK performance and diagnostic information, and device characteristics such as language, model, screen size and connection type. A report you choose to submit about an ad can include customer-support information. These data are used for advertising, measurement, SDK operation and fraud prevention according to the partner&rsquo;s practices; device advertising identifiers are used for tracking only with the required permission.</li>
-            <li><strong>Your consent</strong>: the app asks for Apple&rsquo;s App Tracking Transparency permission before any identifier is used for personalised ads, and has a personalised-ads switch in Settings. If you decline, ads are not personalised.</li>
-            <li><strong>Your choices</strong>: iOS Settings &rarr; Privacy &amp; Security &rarr; Tracking, and the personalised-ads switch in the app&rsquo;s Settings.</li>
+            <li><strong>What these partners may process in earlier releases</strong>: device and SDK user identifiers, IP-derived country information, purchase information, ad impressions and interactions, other usage data, SDK performance and diagnostic information, and device characteristics such as language, model, screen size and connection type. A report you choose to submit about an ad can include customer-support information. These data are used for advertising, measurement, SDK operation and fraud prevention according to the partner&rsquo;s practices; device advertising identifiers are used for tracking only with the required permission.</li>
+            <li><strong>Your consent in earlier releases</strong>: these versions ask for Apple&rsquo;s App Tracking Transparency permission before any identifier is used for personalised ads, and have a personalised-ads switch in Settings. If you decline, ads are not personalised.</li>
+            <li><strong>Your choices in earlier releases</strong>: iOS Settings &rarr; Privacy &amp; Security &rarr; Tracking, and the personalised-ads switch in that version&rsquo;s Settings. The upcoming Dashward&nbsp;1.4.2 update will remove these advertising controls.</li>
         </ul>
-        <p>This advertising data is processed by Unity Technologies (ironSource) and its mediated networks as independent controllers, not by MW Supply Limited. Unity&rsquo;s practices are described in <a href="https://unity.com/legal/privacy-policy" rel="noopener">Unity&rsquo;s privacy policy</a>.</p>
+        <p>Advertising data from these earlier releases is processed by Unity Technologies (ironSource) and its mediated networks as independent controllers, not by MW Supply Limited. Unity&rsquo;s practices are described in <a href="https://unity.com/legal/privacy-policy" rel="noopener">Unity&rsquo;s privacy policy</a>.</p>
         <p><strong>Legacy version 1.1:</strong> this earlier App Store version uses Google Mobile Ads (AdMob) and Google&rsquo;s User Messaging Platform, rather than the Unity integration above. Their SDKs may process device identifiers, coarse location inferred from IP, advertising and interaction data, performance data, crash data and other diagnostics for advertising, analytics and consent functionality. The privacy manifest packaged with that version also declares developer advertising and marketing purposes for several advertising-related categories. Its advertising disclosures remain applicable while that version is in use; the new relay-device collection described above is not a feature of version&nbsp;1.1. See <a href="https://policies.google.com/privacy" rel="noopener">Google&rsquo;s privacy policy</a>.</p>
 
         <h2>9. Children</h2>
@@ -187,7 +191,9 @@
         <h2>11. Changes to this policy</h2>
         <p>If we change how Dashward handles data, we will update this page and the &ldquo;Last updated&rdquo; date, and the App Store privacy details for the affected version.</p>
 
-        <h2 id="contact">12. Contact</h2>
+        <h2 id="contact">12. Contact and support correspondence</h2>
+        <p id="support-data">If you choose to contact support, we receive the sender information shown in your email and the message or files you include. These may include your app and operating-system versions, device model, steps to reproduce a problem and an optional matching crash report. We use this material to investigate your request and provide support. It can be linked to you through your email. Correspondence and troubleshooting records may be retained after a request is resolved; you can request review or deletion as described in <a href="#deleting-data">section 10</a>.</p>
+        <p>Review information before sending it. Do not send passwords, verification codes, active connection codes, unrelated analytics or private recordings. Hide personal details in screenshots. A crash report is optional.</p>
         <p>Questions about this policy: <a href="mailto:mwsupplylimited@gmail.com">mwsupplylimited@gmail.com</a>.</p>
         <footer>
             &copy; 2026 MW Supply Limited
