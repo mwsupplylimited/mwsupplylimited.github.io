@@ -12,6 +12,7 @@ import time
 import urllib.error
 import urllib.request
 import zipfile
+import hkmap_tls
 
 GMB = "https://data.etagmb.gov.hk/"
 GMB_PATHS = (
@@ -82,7 +83,8 @@ def collect(include_lrt=False, *, open_url=urllib.request.urlopen, sleep=time.sl
         try:
             request = urllib.request.Request(url, method="GET", headers={"User-Agent": agent})
             try:
-                response = open_url(request, timeout=20, context=context)
+                response = open_url(request, timeout=20,
+                                    context=hkmap_tls.verified_context() if kind == "lrt_geojson" else context)
             except urllib.error.HTTPError as error:
                 response = error
             with response:
