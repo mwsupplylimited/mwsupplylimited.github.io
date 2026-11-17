@@ -101,9 +101,9 @@ class GMBFetchTests(unittest.TestCase):
         self.assertEqual(self.mod.FETCH_FAILURES, 2)
 
     def test_http_diagnostic_escapes_commands_bounds_body_and_excludes_private_headers(self):
-        body = b"blocked\n::error::not a workflow command\n" + b"x" * 600
+        body = b"blocked\n::error::not a workflow command\n##[error]legacy command\n" + b"x" * 600
         error = urllib.error.HTTPError(self.url, 403, "Fixture", {
-            "Date": "Tue, 17 Nov 2026 12:00:00 GMT", "Server": "fixture\n::error::fake",
+            "Date": "Tue, 17 Nov 2026 12:00:00 GMT", "Server": "fixture\n::error::fake ##[error]legacy",
             "X-Cache": "Error from cloudfront", "Set-Cookie": "secret-cookie",
             "Authorization": "secret-authorization"}, io.BytesIO(body))
         output = io.StringIO()
@@ -114,11 +114,13 @@ class GMBFetchTests(unittest.TestCase):
         diagnostic_lines = [line for line in lines if line.startswith("GMB_HTTP_ERROR ")]
         self.assertEqual(len(diagnostic_lines), 1)
         self.assertFalse(any(line.startswith("::") for line in lines))
+        self.assertNotIn("##[", output.getvalue())
         self.assertNotIn("secret-cookie", output.getvalue())
         self.assertNotIn("secret-authorization", output.getvalue())
         diagnostic = json.loads(diagnostic_lines[0].split(" ", 1)[1])
         self.assertEqual(diagnostic["bodyPrefix"], body[:350].decode())
         self.assertEqual(set(diagnostic["headers"]), {"Date", "Server", "X-Cache"})
+        self.assertEqual(diagnostic["headers"]["Server"], "fixture\n::error::fake ##[error]legacy")
 
     def test_network_server_and_429_retries_share_global_start_pace(self):
         sequence = [urllib.error.URLError("fixture network outage"), self.error(503), self.error(429, "5"), stop(), stop()]

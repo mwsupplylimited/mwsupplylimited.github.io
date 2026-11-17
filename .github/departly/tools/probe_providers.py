@@ -29,6 +29,12 @@ HEADERS = frozenset(("date", "content-type", "content-length", "server", "via", 
                      "x-ratelimit-reset", "cache-control", "age"))
 
 
+def diagnostic_json(record):
+    # Legacy Actions commands match ##[ anywhere, including inside a JSON string.
+    # Unicode escapes preserve the decoded evidence while removing the raw marker.
+    return json.dumps(record, ensure_ascii=True, sort_keys=True).replace("##[", r"\u0023\u0023[")
+
+
 def summarize(body, kind):
     if kind == "gmb":
         data = json.loads(body)
@@ -73,7 +79,7 @@ def collect(include_lrt=False, *, open_url=urllib.request.urlopen, sleep=time.sl
         if kind == "gmb" and gmb_stop_reason:
             record.update({"attempts": 0, "skippedReason": gmb_stop_reason})
             results.append(record)
-            print(json.dumps(record, ensure_ascii=True, sort_keys=True), flush=True)
+            print(diagnostic_json(record), flush=True)
             continue
         if attempted:
             sleep(3)
@@ -105,13 +111,13 @@ def collect(include_lrt=False, *, open_url=urllib.request.urlopen, sleep=time.sl
             if record["status"] == 200:
                 record["summary"] = summarize(body, kind)
             else:
-                # JSON escaping prevents a provider body from injecting workflow commands.
+                # diagnostic_json safely encodes both modern and legacy workflow markers.
                 record["errorBodyPrefix"] = body[:700].decode("utf-8", errors="replace")
         except Exception as error:
             record["error"] = type(error).__name__ + ": " + str(error)
         record["elapsedSeconds"] = round(time.monotonic() - start, 3)
         results.append(record)
-        print(json.dumps(record, ensure_ascii=True, sort_keys=True), flush=True)
+        print(diagnostic_json(record), flush=True)
     return results
 
 
@@ -121,10 +127,10 @@ def main():
     args = parser.parse_args()
     results = collect(args.include_lrt)
     passed = all(row.get("status") == 200 and "error" not in row for row in results)
-    print(json.dumps({"result": "PASS" if passed else "PROVIDER_FAILURE_OBSERVED",
+    print(diagnostic_json({"result": "PASS" if passed else "PROVIDER_FAILURE_OBSERVED",
                       "requests": sum(row["attempts"] for row in results), "targets": len(results),
                       "python": platform.python_version(), "scope": "Single-attempt sparse diagnostics, no persistence or publication",
-                      "limitations": "Sparse success does not establish sustained request limits or full source coverage"}, sort_keys=True))
+                      "limitations": "Sparse success does not establish sustained request limits or full source coverage"}))
     return 0 if passed else 1
 
 

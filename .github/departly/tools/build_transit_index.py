@@ -207,8 +207,9 @@ def get_gmb(url, tries=4):
                 diagnostic["bodyReadError"] = type(body_error).__name__
             finally:
                 error.close()
-            # Escape external newlines/control characters so a provider cannot inject log commands.
-            print("GMB_HTTP_ERROR " + json.dumps(diagnostic, ensure_ascii=True, sort_keys=True), flush=True)
+            # JSON escapes newlines; legacy Actions commands also match ##[ anywhere in a line.
+            encoded = json.dumps(diagnostic, ensure_ascii=True, sort_keys=True).replace("##[", r"\u0023\u0023[")
+            print("GMB_HTTP_ERROR " + encoded, flush=True)
             if header is not None:
                 try:
                     cooldown = _gmb_retry_after(header)
