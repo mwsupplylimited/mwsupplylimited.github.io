@@ -92,7 +92,9 @@ def main():
     if len(out) < MIN_STATIONS:
         print(f"\n!! ABORT: only matched {len(out)}/{len(stations)} LRT stops (< {MIN_STATIONS}) — "
               f"Overpass likely unavailable. KEEPING the existing {OUT} unchanged (not blanking it).")
-        return
+        # A bare return kept the file safe but exited 0, hiding this outage from the nightly's
+        # degraded-generator count (observed 2026-11-17). Preserve the baseline and report failure.
+        raise SystemExit(1)
     tmp = OUT + ".tmp"; json.dump(out, open(tmp, "w"), ensure_ascii=False); os.replace(tmp, OUT)
     print(f"\n== matched {len(out)}/{len(stations)} -> {OUT}")
     if missing:

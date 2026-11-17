@@ -221,7 +221,9 @@ def build_nlb():
             stops[sid]={"id":sid,"nameEn":s.get("stopName_e",""),"nameTc":s.get("stopName_c",""),"lat":lat,"lng":lng}
             seq.append(sid)
         # routeName "A > B"; one entry per direction already
-        return {"route":r.get("routeNo",""),"dir":str(rid),"service":"","stops":seq}
+        # Omit an empty sequence so a failed fetch can retain the previous route through
+        # save()'s existing merge. With no fetch failures, an authoritative removal stays removed.
+        return {"route":r.get("routeNo",""),"dir":str(rid),"service":"","stops":seq} if seq else None
     routes=pmap(one, routes_in)
     save("nlb", list(stops.values()), routes)
 
@@ -351,11 +353,16 @@ if __name__=="__main__":
         FETCH_FAILURES = 0          # per-operator: one operator's outage must not taint the next
         try:
             jobs[t]()
+            if FETCH_FAILURES:
+                # save() may successfully write fresh rows plus retained baseline rows. That
+                # preserves availability, but must not hide an upstream outage as a clean run.
+                print(f"  ! {t} DEGRADED: {FETCH_FAILURES} fetch failure(s); last-good rows retained where available")
+                failed.append(t)
         except SystemExit as e:
             print(f"  ! {t} REFUSED: {e}"); failed.append(t)
         except Exception as e:
             print(f"  ! {t} FAILED: {e.__class__.__name__}: {e}"); failed.append(t)
     if failed:
-        print(f"DONE with {len(failed)} operator(s) kept at last-good: {', '.join(failed)}")
+        print(f"DONE with {len(failed)} degraded operator(s) (failed or retained last-good data): {', '.join(failed)}")
         sys.exit(1)
     print("DONE")

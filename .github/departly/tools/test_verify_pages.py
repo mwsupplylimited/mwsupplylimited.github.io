@@ -7,6 +7,7 @@ import os
 from pathlib import Path
 import shutil
 import subprocess
+import sys
 import tempfile
 import unittest
 import urllib.error
@@ -28,6 +29,168 @@ def package():
     manifest = {"version": version, "files": rows}
     bodies[pages.BASE + "manifest.json"] = json.dumps(manifest).encode()
     return manifest, bodies
+
+
+class LRTGeneratorTests(unittest.TestCase):
+    """Run the real generator entry point with all HTTP mocked and a sentinel baseline."""
+    def generate(self, matched):
+        temp = tempfile.TemporaryDirectory()
+        self.addCleanup(temp.cleanup)
+        root = Path(temp.name)
+        tools = root / "tools"
+        resources = root / "Departly/Resources"
+        tools.mkdir()
+        resources.mkdir(parents=True)
+        script = tools / "build_lrt_stations.py"
+        shutil.copy2(Path(__file__).with_name(script.name), script)
+        csv = "Line Code,Direction,Code,Unused,Unused,English,Chinese\n" + "".join(
+            f"LRT,1,{index:03},,,Synthetic {index},Fixture\n" for index in range(68))
+        (resources / "light_rail_routes_and_stops.csv").write_text(csv)
+        output = resources / "lrt_stations.json"
+        sentinel = b'[ {"sentinel": "preserve last-good bytes"} ]\n'
+        output.write_bytes(sentinel)
+        previous_mtime = output.stat().st_mtime_ns
+        runner = r'''
+import io,json,runpy,sys,urllib.error
+from unittest.mock import patch
+script, matched = sys.argv[1], int(sys.argv[2])
+elements = [{"lat": 22.4 + i/10000, "lon": 114.0 + i/10000,
+             "tags": {"name:en": "Synthetic " + str(i)}} for i in range(max(0, matched))]
+def response(*args, **kwargs):
+    if matched < 0:
+        raise urllib.error.HTTPError("https://fixture.invalid", 502, "Synthetic provider outage", {}, None)
+    return io.BytesIO(json.dumps({"elements": elements}).encode())
+with patch("urllib.request.urlopen", side_effect=response) as request:
+    try:
+        runpy.run_path(script, run_name="__main__")
+    finally:
+        print("MOCK_HTTP_CALLS=" + str(request.call_count))
+'''
+        result = subprocess.run([sys.executable, "-c", runner, str(script), str(matched)],
+                                capture_output=True, text=True, timeout=10)
+        return result, output, sentinel, previous_mtime
+
+    def test_upstream_outage_fails_and_preserves_existing_lrt_bytes(self):
+        result, output, sentinel, previous_mtime = self.generate(-1)
+        self.assertEqual(output.read_bytes(), sentinel)
+        self.assertEqual(output.stat().st_mtime_ns, previous_mtime)
+        self.assertFalse(output.with_suffix(".json.tmp").exists())
+        self.assertIn("only matched 0/68", result.stdout)
+        self.assertIn("MOCK_HTTP_CALLS=2", result.stdout)
+        self.assertNotEqual(result.returncode, 0, result.stdout)
+
+    def test_below_floor_fails_and_preserves_existing_lrt_bytes(self):
+        result, output, sentinel, previous_mtime = self.generate(49)
+        self.assertEqual(output.read_bytes(), sentinel)
+        self.assertEqual(output.stat().st_mtime_ns, previous_mtime)
+        self.assertFalse(output.with_suffix(".json.tmp").exists())
+        self.assertIn("only matched 49/68", result.stdout)
+        self.assertNotEqual(result.returncode, 0, result.stdout)
+
+    def test_floor_boundary_and_healthy_run_publish_successfully(self):
+        for count in (50, 68):
+            with self.subTest(matched=count):
+                result, output, sentinel, _ = self.generate(count)
+                self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+                rows = json.loads(output.read_bytes())
+                self.assertEqual(len(rows), count)
+                self.assertEqual([row["code"] for row in rows], [f"{i:03}" for i in range(count)])
+                self.assertEqual(rows[-1]["lat"], 22.4 + (count-1)/10000)
+                self.assertNotEqual(output.read_bytes(), sentinel)
+                self.assertFalse(output.with_suffix(".json.tmp").exists())
+                self.assertIn("MOCK_HTTP_CALLS=1", result.stdout)
+
+
+class TransitIndexReportingTests(unittest.TestCase):
+    def generate(self, mode):
+        temp = tempfile.TemporaryDirectory()
+        self.addCleanup(temp.cleanup)
+        root = Path(temp.name)
+        tools = root / "tools"
+        resources = root / "Departly/Resources/transit_index"
+        tools.mkdir()
+        resources.mkdir(parents=True)
+        script = tools / "build_transit_index.py"
+        shutil.copy2(Path(__file__).with_name(script.name), script)
+        previous = {"known_partial": "AC", "known_empty": "ABCD"}.get(mode, "AB")
+        previous_stops = [{"id": letter+str(i), "nameEn": "old " + letter+str(i), "nameTc": "fixture",
+                           "lat": 22.4, "lng": 114.0} for letter in previous for i in (1, 2)]
+        previous_routes = [{"route": letter, "dir": number, "service": "", "stops": [letter+"1", letter+"2"]}
+                           for letter, number in ((letter, str("ABCD".index(letter)+1)) for letter in previous)]
+        (resources / "nlb_stops.json").write_text(json.dumps(previous_stops))
+        (resources / "nlb_routes.json").write_text(json.dumps(previous_routes))
+        runner = r'''
+import io,json,runpy,sys,urllib.error
+from unittest.mock import patch
+script, mode = sys.argv[1], sys.argv[2]
+def response(request, **kwargs):
+    url = request.full_url
+    if url.endswith("route.php?action=list"):
+        letters = "ABCD" if mode == "known_empty" else "AC"
+        payload = {"routes": [{"routeId":str("ABCD".index(letter)+1),"routeNo":letter} for letter in letters]}
+    elif any(url.endswith("routeId="+str(i)) for i in (1,2,3,4)):
+        letter = "ABCD"[int(url[-1])-1]
+        if mode in ("partial", "known_partial") and letter == "C":
+            raise urllib.error.HTTPError("https://fixture.invalid",502,"Synthetic partial outage",{},None)
+        payload = {"stops":[{"stopId":letter+str(i),"stopName_e":"fresh "+letter+str(i),
+                            "stopName_c":"fixture","latitude":"22.4","longitude":"114.0"}
+                           for i in (() if mode == "known_empty" and letter == "C" else (1,2))]}
+    else:
+        raise AssertionError("Unexpected provider URL in fixture")
+    return io.BytesIO(json.dumps(payload).encode())
+sys.argv = [script, "nlb"]
+with patch("urllib.request.urlopen",side_effect=response) as request, patch("time.sleep"):
+    try:
+        runpy.run_path(script,run_name="__main__")
+    finally:
+        print("MOCK_HTTP_CALLS="+str(request.call_count))
+'''
+        result = subprocess.run([sys.executable, "-c", runner, str(script), mode],
+                                capture_output=True, text=True, timeout=10)
+        return result, json.loads((resources / "nlb_stops.json").read_text()), json.loads((resources / "nlb_routes.json").read_text())
+
+    def test_partial_fetch_reports_failure_after_preserving_missing_baseline_rows(self):
+        result, stops, routes = self.generate("partial")
+        by_id = {row["id"]: row for row in stops}
+        by_route = {row["route"]: row for row in routes}
+        self.assertEqual(set(by_id), {"A1", "A2", "B1", "B2"})
+        self.assertEqual(by_id["A1"]["nameEn"], "fresh A1")
+        self.assertEqual(by_id["B1"]["nameEn"], "old B1")
+        self.assertEqual(by_route["B"]["stops"], ["B1", "B2"])
+        # A failed new route has no previous sequence to restore; never publish an empty one.
+        self.assertNotIn("C", by_route)
+        self.assertIn("1 fetch failure(s)", result.stdout)
+        self.assertIn("carried 2 stop(s) and 1 route(s)", result.stdout)
+        self.assertIn("MOCK_HTTP_CALLS=6", result.stdout)
+        self.assertNotEqual(result.returncode, 0, result.stdout)
+
+    def test_fresh_operator_stays_successful_and_allows_authoritative_removal(self):
+        result, stops, routes = self.generate("fresh")
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertEqual({row["id"] for row in stops}, {"A1", "A2", "C1", "C2"})
+        self.assertEqual({row["route"] for row in routes}, {"A", "C"})
+        self.assertTrue(all(len(row["stops"]) == 2 for row in routes))
+        self.assertNotIn("fetch failure(s)", result.stdout)
+        self.assertIn("MOCK_HTTP_CALLS=3", result.stdout)
+
+    def test_failed_nlb_stop_request_restores_known_sequence_and_keeps_fresh_rows(self):
+        result, stops, routes = self.generate("known_partial")
+        by_id = {row["id"]: row for row in stops}
+        by_route = {row["route"]: row for row in routes}
+        self.assertNotEqual(result.returncode, 0, result.stdout)
+        self.assertEqual(by_id["A1"]["nameEn"], "fresh A1")
+        self.assertEqual(by_id["C1"]["nameEn"], "old C1")
+        self.assertEqual(by_route["A"]["stops"], ["A1", "A2"])
+        self.assertEqual(by_route["C"]["stops"], ["C1", "C2"])
+        self.assertIn("carried 2 stop(s) and 1 route(s)", result.stdout)
+
+    def test_authoritative_empty_nlb_route_is_not_resurrected(self):
+        result, stops, routes = self.generate("known_empty")
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertEqual({row["route"] for row in routes}, {"A", "B", "D"})
+        self.assertEqual({row["id"] for row in stops}, {"A1", "A2", "B1", "B2", "D1", "D2"})
+        self.assertNotIn("fetch failure(s)", result.stdout)
+        self.assertTrue(all(row["nameEn"].startswith("fresh") for row in stops))
 
 
 class PagesTests(unittest.TestCase):
