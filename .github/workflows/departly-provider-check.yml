@@ -1,0 +1,39 @@
+name: Departly provider check
+
+"on":
+  workflow_dispatch:
+    inputs:
+      include_lrt:
+        description: Include two official Light Rail source checks
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: departly-provider-check
+  cancel-in-progress: false
+
+jobs:
+  probe:
+    if: github.repository == 'mwsupplylimited/mwsupplylimited.github.io' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Observe bounded official provider responses
+        env:
+          INCLUDE_LRT: ${{ inputs.include_lrt }}
+        run: |
+          if [ "$INCLUDE_LRT" = "true" ]; then
+            python3 .github/departly/tools/probe_providers.py --include-lrt
+          else
+            python3 .github/departly/tools/probe_providers.py
+          fi
