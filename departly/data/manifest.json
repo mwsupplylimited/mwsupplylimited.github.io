@@ -1,5 +1,5 @@
 {
-  "version": "10d9151ced6f",
+  "version": "a47f4bb08133",
   "files": [
     {
       "name": "kmb_stops.json",
@@ -8,37 +8,37 @@
     },
     {
       "name": "kmb_routes.json",
-      "sha": "5ebf1fdfca9d8675d1814ee175309cc4f06afb585b56a52f2d538b2956cda62b",
+      "sha": "d11da5c7c9e43b81aa0bb975dc6494c416c1a9c2efbf58862b99f004b4e2b19f",
       "url": "https://mwsupplylimited.github.io/departly/data/kmb_routes.json"
     },
     {
       "name": "ctb_stops.json",
-      "sha": "76ce5d22a4d9aa8ae7b9f118dc879471d5733d68efe8d872af9f87039e065537",
+      "sha": "0e467317ffbba2720d22e588564f087d8dc6aacfc3865d7befabc6eb51e176a6",
       "url": "https://mwsupplylimited.github.io/departly/data/ctb_stops.json"
     },
     {
       "name": "ctb_routes.json",
-      "sha": "60d92af606871d6c8b29f059aac14aa8d2dfde588059ed7783551dcdd1360c16",
+      "sha": "fcbaadc7252ba55c89a0d0d1b66d4fbe5beac6db17ff5903c1662f8b90364513",
       "url": "https://mwsupplylimited.github.io/departly/data/ctb_routes.json"
     },
     {
       "name": "gmb_stops.json",
-      "sha": "fa7d4c82317158476104adf773e4eb8ea0edac921b7a6fe28f3f443565ed60fb",
+      "sha": "f5b6e11969128eb056b6b68763feb7fae34df83c26c2fcc11fab0b758c232776",
       "url": "https://mwsupplylimited.github.io/departly/data/gmb_stops.json"
     },
     {
       "name": "gmb_routes.json",
-      "sha": "de5a9eb284c713ddc6f91e76d9acca038029389700e9b43ef8bbb1271143081a",
+      "sha": "c7f4a8f63579e28e6dd0d7af7ed593dd71800657c44ecbdbace8a5315a78af05",
       "url": "https://mwsupplylimited.github.io/departly/data/gmb_routes.json"
     },
     {
       "name": "nlb_stops.json",
-      "sha": "5db8dcd02ecdddda327fafe5d5021cf54a508c3720cbf58ca831aaddc981b57e",
+      "sha": "2b7a4e9386f5babf511ce47f6e1b0506488c9ffe9222155f23eeeab21eb724b3",
       "url": "https://mwsupplylimited.github.io/departly/data/nlb_stops.json"
     },
     {
       "name": "nlb_routes.json",
-      "sha": "cfa494c4526d074574fd962ec6a70fb3882c080ec728a476e36aa156006e0bd8",
+      "sha": "a38bae0f4baba8c1eb2c108b09033578ea6a9906735de3cfbe3d9ff16ab88f04",
       "url": "https://mwsupplylimited.github.io/departly/data/nlb_routes.json"
     },
     {
@@ -73,17 +73,17 @@
     },
     {
       "name": "bus_schedule.json",
-      "sha": "150c1311dfc42ce2e9541f7a1942e4d8853bdab0d9f8f2f1cb2e62b4938c684f",
+      "sha": "127dffb6a44479d6fa4236127414fd58de8b6393830cabc5782ddaacc003ca33",
       "url": "https://mwsupplylimited.github.io/departly/data/bus_schedule.json"
     },
     {
       "name": "departures.json",
-      "sha": "ca86b1606f780274b258126885e27383e5931a15b27328440e6951cb0420ed9e",
+      "sha": "50ac792924686759c10110604d27c071c32e2352ea512c45a3620838056f3156",
       "url": "https://mwsupplylimited.github.io/departly/data/departures.json"
     },
     {
       "name": "stop_offsets.json",
-      "sha": "f08f010f15ae42a53e0f3524f6347e8bcfd6de891dda9fa1f87a1f6579632544",
+      "sha": "1fba383221a68eed4a5d0001b6fbb1b3f8166df267b95fafa895a4aee6893eda",
       "url": "https://mwsupplylimited.github.io/departly/data/stop_offsets.json"
     },
     {
@@ -93,7 +93,7 @@
     },
     {
       "name": "fares_od.json",
-      "sha": "ce5031c422791f6835e070167ab76a5d3d036c4c5dd491630527bbe6c57a50bb",
+      "sha": "89eb86057026b82d0c09364eb801836f967d135cff31c6e7feea4b9f4378d089",
       "url": "https://mwsupplylimited.github.io/departly/data/fares_od.json"
     },
     {
@@ -103,7 +103,7 @@
     },
     {
       "name": "lrt_stations.json",
-      "sha": "5769188be726e5fefdfc85b706b82f5a5a5a8d3787c8dbe738d06429ad019e77",
+      "sha": "1b1f8f4a031da1aac375e90ac80b28cd4587c17b4b29a8c4845d66d0a3747b4c",
       "url": "https://mwsupplylimited.github.io/departly/data/lrt_stations.json"
     },
     {
@@ -118,7 +118,7 @@
     },
     {
       "name": "light_rail_routes_and_stops.csv",
-      "sha": "2b80c45e8ae5ec56f3f8ff431a25fa05317b4bb3257d035597c02dca5c159860",
+      "sha": "f2fec60de38b72f38d3478fcdeecea4e3332b300b73c23bf41b22d412a2c2066",
       "url": "https://mwsupplylimited.github.io/departly/data/light_rail_routes_and_stops.csv"
     }
   ]
