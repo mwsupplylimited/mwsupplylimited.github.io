@@ -52,6 +52,7 @@ jobs:
       - name: Regenerate and publish data only
         id: publish
         env:
+          PYTHONUNBUFFERED: "1"
           DEPARTLY_SITE_REPO: ${{ github.workspace }}
           DEPARTLY_PUBLISHED_COMMIT_FILE: ${{ runner.temp }}/departly-published-commit
           IDX_CACHE_TTL_DAYS: "7"
