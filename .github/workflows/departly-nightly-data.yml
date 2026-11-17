@@ -1,0 +1,96 @@
+name: Departly nightly data
+
+"on":
+  schedule:
+    - cron: "30 19 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: departly-nightly-data
+  cancel-in-progress: false
+
+jobs:
+  regenerate:
+    if: github.repository == 'mwsupplylimited/mwsupplylimited.github.io' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    permissions:
+      contents: write
+      pages: write
+      actions: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Verify cache is limited to the free allowance
+        id: cache_policy
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          limit="$(gh api repos/mwsupplylimited/mwsupplylimited.github.io/actions/cache/storage-limit --jq '.max_cache_size_gb' 2>/dev/null)" || limit=""
+          case "$limit" in
+            [1-9]|10) echo "enabled=true" >> "$GITHUB_OUTPUT" ;;
+            *) echo "enabled=false" >> "$GITHUB_OUTPUT"; echo "Cache limit unverified or above free allowance; running without cache." ;;
+          esac
+      - name: Restore public API JSON cache
+        if: steps.cache_policy.outputs.enabled == 'true'
+        uses: actions/cache@v4
+        with:
+          # Keep API responses and crosswalk statistics, but fetch a fresh TD GTFS ZIP every run.
+          # The former whole-directory cache retained td_gtfs.zip indefinitely.
+          path: .github/departly/tools/.transit_cache/*.json
+          key: departly-public-transit-json-${{ github.run_id }}
+          restore-keys: departly-public-transit-json-
+      - name: Hydrate working data from the verified current public package
+        run: python3 .github/departly/tools/hydrate_resources.py
+      - name: Regenerate and publish data only
+        id: publish
+        env:
+          DEPARTLY_SITE_REPO: ${{ github.workspace }}
+          DEPARTLY_PUBLISHED_COMMIT_FILE: ${{ runner.temp }}/departly-published-commit
+          IDX_CACHE_TTL_DAYS: "7"
+        run: |
+          git config user.name "departly-data-bot"
+          git config user.email "actions@users.noreply.github.com"
+          set +e
+          bash .github/departly/tools/regenerate_and_publish.sh
+          rc=$?
+          set -e
+          echo "rc=$rc" >> "$GITHUB_OUTPUT"
+          case "$rc" in
+            0) echo "::notice::Data generation and git publication succeeded; Pages verification follows." ;;
+            3) echo "::warning::DEGRADED — some generators failed; retained baseline data published. Pages verification follows." ;;
+            2) echo "::error::REFUSED — data guards rejected publication."; exit 2 ;;
+            4) echo "::error::PUBLISH FAILED — remote state may be uncertain. Inspect before retrying."; exit 4 ;;
+            *) echo "::error::Unexpected publication exit code $rc"; exit "$rc" ;;
+          esac
+      - name: Rebuild existing Pages site and verify all 24 served datasets
+        id: pages
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python3 .github/departly/tools/verify_pages.py \
+            --commit-file "$RUNNER_TEMP/departly-published-commit"
+      - name: Summary
+        if: always()
+        env:
+          PUBLISH_RC: ${{ steps.publish.outputs.rc }}
+          PAGES_OUTCOME: ${{ steps.pages.outcome }}
+        run: |
+          {
+            echo "### Departly nightly data"
+            if [ "$PAGES_OUTCOME" = "success" ] && [ "$PUBLISH_RC" = "0" ]; then
+              echo "OK — all generators succeeded and all 24 served dataset hashes verified."
+            elif [ "$PAGES_OUTCOME" = "success" ] && [ "$PUBLISH_RC" = "3" ]; then
+              echo "DEGRADED — baseline retained for failed generators; all 24 served hashes verified."
+            else
+              echo "FAILED — publication or served-data verification incomplete. Inspect remote state before retrying."
+            fi
+            echo "Publisher exit: $PUBLISH_RC; Pages verification: $PAGES_OUTCOME"
+          } >> "$GITHUB_STEP_SUMMARY"
