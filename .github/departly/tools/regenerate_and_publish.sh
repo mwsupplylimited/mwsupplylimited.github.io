@@ -10,7 +10,21 @@ cd "$(dirname "$0")" || exit 1
 # they must still be COUNTED, because "some generators failed" and "all generators succeeded" are very
 # different nights and the exit code is the only thing a scheduler sees.
 GEN_FAILS=0
-run() { echo "→ $1"; if ! python3 "$1"; then echo "  WARN: $1 failed (keeping previous data)"; GEN_FAILS=$((GEN_FAILS + 1)); fi; }
+run() {
+  echo "→ $1"
+  python3 "$1"
+  local rc=$?
+  if [ "$1" = "build_lrt_stations.py" ] && [ "$rc" -eq 2 ]; then
+    # A failed two-file rollback means the working pair cannot be called last-good.
+    # Refuse before any site worktree, commit or push; retained backups permit recovery.
+    echo "RESULT: FAILED — Light Rail rollback incomplete; publish refused. Live data unchanged."
+    exit 2
+  fi
+  if [ "$rc" -ne 0 ]; then
+    echo "  WARN: $1 failed (keeping previous data)"
+    GEN_FAILS=$((GEN_FAILS + 1))
+  fi
+}
 
 run build_transit_index.py     # KMB / CTB / GMB / NLB + MTR Bus
 

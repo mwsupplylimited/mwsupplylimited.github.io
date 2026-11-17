@@ -14,6 +14,9 @@ Output (Departly/Resources/transit_index/):
 Polite: capped concurrency, retries w/ backoff, on-disk cache of every raw GET.
 """
 import json, os, sys, time, ssl, hashlib, urllib.request, urllib.error
+import math, threading
+from email.utils import parsedate_to_datetime
+from urllib.parse import urlsplit, unquote
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -22,11 +25,10 @@ CACHE = os.path.join(ROOT, ".transit_cache")
 os.makedirs(OUT, exist_ok=True); os.makedirs(CACHE, exist_ok=True)
 _ctx = ssl.create_default_context(); _ctx.check_hostname=False; _ctx.verify_mode=ssl.CERT_NONE
 WORKERS = int(os.environ.get("IDX_WORKERS", "8"))
-# etagmb.gov.hk rate-limits hard. That was previously a COMMENT telling a human to pass
-# IDX_WORKERS=3 by hand — and the first CI run, at the default 8, duly got throttled into writing
-# 790 of 4,743 GMB stops (83% lost). A rule that only works when someone remembers it is not a rule,
-# so GMB now clamps its own concurrency regardless of caller.
-GMB_WORKERS = int(os.environ.get("IDX_GMB_WORKERS", "3"))
+# Earlier cold CI runs received many HTTP403 responses and lost GMB rows before fallback guards.
+# Those denials do not establish a documented rate limit. Clamp worker count and pace request
+# starts separately so a cold rebuild cannot issue an unbounded burst against the public API.
+GMB_WORKERS = max(1, min(3, int(os.environ.get("IDX_GMB_WORKERS", "3"))))
 
 # Cache entries older than this are re-fetched. WITHOUT a TTL the cache was permanent, and it showed:
 # all 11,531 cached responses were dated 2026-06-19, so the "nightly regeneration" had been replaying
@@ -57,8 +59,192 @@ def _ttl_for(digest):
 FETCH_FAILURES = 0
 
 
+class GMBRequestGate:
+    """One request-start pace across GMB workers, including retries and server cooldowns."""
+    def __init__(self, clock=time.monotonic, sleep=time.sleep):
+        self.clock, self.sleep = clock, sleep
+        self.lock = threading.Lock()
+        self.next_start = 0.0
+        self.stopped = None
+
+    def wait(self):
+        while True:
+            with self.lock:
+                if self.stopped:
+                    raise RuntimeError(self.stopped)
+                now = self.clock()
+                delay = self.next_start - now
+                if delay <= 0:
+                    self.next_start = now + 1.0
+                    return now
+            # A worker receiving Retry-After must be able to extend this wait immediately.
+            self.sleep(delay)
+
+    def defer(self, seconds):
+        with self.lock:
+            self.next_start = max(self.next_start, self.clock() + seconds)
+
+    def stop(self, reason):
+        with self.lock:
+            self.stopped = reason
+
+
+GMB_GATE = GMBRequestGate()
+GMB_TLS = ssl.create_default_context()
+GMB_MAX_COOLDOWN = 60.0
+
+
+def _positive_int(value):
+    return isinstance(value, int) and not isinstance(value, bool) and value > 0
+
+
+def validate_gmb(url, value):
+    """Reject unexpected successful bodies before they can replace cached or last-good data."""
+    parts = [unquote(p) for p in urlsplit(url).path.strip("/").split("/")]
+    if not isinstance(value, dict):
+        raise ValueError("GMB response must be an object")
+    data, kind = value.get("data"), value.get("type")
+    if parts == ["route"]:
+        regions = data.get("routes") if isinstance(data, dict) else None
+        if kind != "Routes-All" or not isinstance(regions, dict) or set(regions) != {"HKI", "KLN", "NT"}:
+            raise ValueError("Invalid GMB regional route listing")
+        for codes in regions.values():
+            if not isinstance(codes, list) or not codes or any(
+                not isinstance(code, str) or not code.strip() or any(c in code for c in "/?#") for code in codes
+            ) or len(set(codes)) != len(codes):
+                raise ValueError("Invalid GMB route codes")
+    elif len(parts) == 3 and parts[0] == "route" and parts[1] in {"HKI", "KLN", "NT"}:
+        if kind != "Route" or not isinstance(data, list) or not data:
+            raise ValueError("Invalid GMB route metadata")
+        ids = set()
+        for route in data:
+            if not isinstance(route, dict) or not _positive_int(route.get("route_id")) or route["route_id"] in ids:
+                raise ValueError("Invalid or duplicate GMB route ID")
+            ids.add(route["route_id"])
+            directions = route.get("directions")
+            if route.get("region") != parts[1] or route.get("route_code") != parts[2] or not isinstance(directions, list) or not directions:
+                raise ValueError("GMB route identity/directions mismatch")
+            seqs = [d.get("route_seq") if isinstance(d, dict) else None for d in directions]
+            if any(not _positive_int(s) or s not in (1, 2) for s in seqs) or len(set(seqs)) != len(seqs):
+                raise ValueError("Invalid GMB route directions")
+    elif len(parts) == 3 and parts[0] == "route-stop" and parts[1].isdigit() and parts[2] in ("1", "2"):
+        stops = data.get("route_stops") if isinstance(data, dict) else None
+        if kind != "Route-Stop" or not isinstance(stops, list) or len(stops) < 2:
+            raise ValueError("Invalid/empty GMB route-stop sequence")
+        for sequence, stop in enumerate(stops, 1):
+            if not isinstance(stop, dict) or not _positive_int(stop.get("stop_id")) or not _positive_int(stop.get("stop_seq")) or stop["stop_seq"] != sequence:
+                raise ValueError("GMB stop IDs or sequence are invalid")
+            if not all(isinstance(stop.get(k), str) for k in ("name_en", "name_tc")) or not (stop["name_en"].strip() or stop["name_tc"].strip()):
+                raise ValueError("Invalid GMB stop names")
+    elif len(parts) == 2 and parts[0] == "stop" and parts[1].isdigit():
+        coordinates = data.get("coordinates") if isinstance(data, dict) else None
+        point = coordinates.get("wgs84") if isinstance(coordinates, dict) else None
+        if kind != "Stop" or not isinstance(point, dict):
+            raise ValueError("Invalid GMB stop coordinates")
+        for key, bound in (("latitude", 90), ("longitude", 180)):
+            number = point.get(key)
+            if isinstance(number, bool) or not isinstance(number, (int, float)) or not math.isfinite(number) or number == 0 or not -bound <= number <= bound:
+                raise ValueError("Non-finite/out-of-range GMB coordinate")
+    else:
+        raise ValueError("Unsupported GMB metadata endpoint")
+    return value
+
+
+def _gmb_retry_after(header):
+    try:
+        text = header.strip()
+        if text.isdigit():
+            seconds = float(text)
+        else:
+            date = parsedate_to_datetime(text)
+            if date.tzinfo is None:
+                raise ValueError("Cooldown date needs an explicit timezone")
+            seconds = date.timestamp() - time.time()
+        if not math.isfinite(seconds):
+            raise ValueError("non-finite cooldown")
+        return max(0.0, seconds)
+    except (TypeError, ValueError, OverflowError) as error:
+        raise ValueError("Invalid GMB Retry-After") from error
+
+
+def get_gmb(url, tries=4):
+    """Verified TLS, one global pace, permanent-denial handling and validated atomic cache."""
+    global FETCH_FAILURES
+    digest = hashlib.sha1(url.encode()).hexdigest()
+    key = os.path.join(CACHE, digest + ".json")
+    if os.path.exists(key) and time.time() - os.path.getmtime(key) < _ttl_for(digest):
+        try:
+            with open(key) as stream:
+                return validate_gmb(url, json.load(stream))
+        except (OSError, ValueError, TypeError):
+            pass  # Invalid cached bodies are never reused, even while their TTL is fresh.
+    last = "GMB request not attempted"
+    for attempt in range(max(1, min(4, tries))):
+        value = None
+        try:
+            GMB_GATE.wait()
+            request = urllib.request.Request(url, headers={"User-Agent": "Departly-index/1.0"})
+            with urllib.request.urlopen(request, timeout=30, context=GMB_TLS) as response:
+                value = validate_gmb(url, json.loads(response.read().decode()))
+            tmp = key + ".tmp"
+            try:
+                with open(tmp, "w") as stream:
+                    json.dump(value, stream)
+                os.replace(tmp, key)
+            finally:
+                if os.path.exists(tmp):
+                    os.unlink(tmp)
+            return value
+        except urllib.error.HTTPError as error:
+            last = f"HTTP {error.code}"
+            header = error.headers.get("Retry-After") if error.headers else None
+            diagnostic = {"url": url, "status": error.code, "headers": {
+                key: str(value)[:200] for key, value in (error.headers.items() if error.headers else [])
+                if key.lower() in {"date", "server", "x-cache", "retry-after"}}}
+            try:
+                diagnostic["bodyPrefix"] = (error.read(350) or b"").decode("utf-8", errors="replace")
+            except Exception as body_error:
+                diagnostic["bodyReadError"] = type(body_error).__name__
+            finally:
+                error.close()
+            # Escape external newlines/control characters so a provider cannot inject log commands.
+            print("GMB_HTTP_ERROR " + json.dumps(diagnostic, ensure_ascii=True, sort_keys=True), flush=True)
+            if header is not None:
+                try:
+                    cooldown = _gmb_retry_after(header)
+                    if cooldown > GMB_MAX_COOLDOWN:
+                        raise ValueError("GMB Retry-After exceeds bounded 60s cooldown")
+                    GMB_GATE.defer(cooldown)
+                except ValueError as invalid:
+                    last += "; " + str(invalid)
+                    GMB_GATE.stop(last)
+                    break
+            # A 403 is a denial, not evidence of a transient server error. Never retry it.
+            if error.code != 429 and not 500 <= error.code <= 599:
+                break
+            if header is None:
+                GMB_GATE.defer(1.5 * (attempt + 1))
+        except (urllib.error.URLError, TimeoutError, OSError) as error:
+            last = f"{type(error).__name__}: {error}"
+            if value is not None:
+                break  # A local cache write error is not a reason to refetch valid provider data.
+            reason = getattr(error, "reason", error)
+            if isinstance(reason, ssl.SSLCertVerificationError):
+                break
+            GMB_GATE.defer(1.5 * (attempt + 1))
+        except (ValueError, TypeError, RuntimeError) as error:
+            last = f"{type(error).__name__}: {error}"
+            break
+    with GMB_GATE.lock:
+        FETCH_FAILURES += 1
+    print("  ! fail", url[:90], last)
+    return None
+
+
 def get(url, tries=4):
     global FETCH_FAILURES
+    if urlsplit(url).scheme == "https" and urlsplit(url).netloc == "data.etagmb.gov.hk":
+        return get_gmb(url, tries)
     digest = hashlib.sha1(url.encode()).hexdigest()
     key = os.path.join(CACHE, digest+".json")
     if os.path.exists(key):

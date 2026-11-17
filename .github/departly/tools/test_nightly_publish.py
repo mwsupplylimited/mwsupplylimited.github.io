@@ -34,6 +34,8 @@ elif kind == "python3":
     name = pathlib.Path(args[0]).name
     if name == "publish_data.py":
         rc = 1 if case == "guard_refusal" else 0
+    elif name == "build_lrt_stations.py" and case in ("lrt_source_failure", "lrt_rollback_failure"):
+        rc = 2 if case == "lrt_rollback_failure" else 1
     elif (case == "generator_failure" and name == "build_mtr_stations.py") or (
             case == "crosswalk_failure" and name == "build_gtfs_crosswalk.py"):
         rc = 1
@@ -135,6 +137,22 @@ class NightlyPublishTests(unittest.TestCase):
         self.assertNotIn("build_timetable.py", generators)
         self.assertNotIn("build_fares_od.py", generators)
         self.assertIn("build_bus_schedule.py", generators)
+
+    def test_lrt_source_failure_can_publish_retained_baseline(self):
+        result, calls = self.run_case("lrt_source_failure")
+        self.assertEqual(result.returncode, 3)
+        self.assertIn("RESULT: DEGRADED", result.stdout)
+        self.assertTrue(any(c["command"] == "git" and c["args"][0] == "push" for c in calls))
+
+    def test_lrt_incomplete_rollback_refuses_before_any_publication(self):
+        result, calls = self.run_case("lrt_rollback_failure", record=True)
+        self.assertEqual(result.returncode, 2)
+        self.assertIn("Light Rail rollback incomplete; publish refused", result.stdout)
+        self.assertIsNone(result.recorded_commit)
+        self.assertFalse(any(c["command"] == "git" for c in calls))
+        self.assertFalse(any(c["command"] == "python3" and Path(c["args"][0]).name == "publish_data.py" for c in calls))
+        self.assertNotIn("RESULT: DEGRADED", result.stdout)
+        self.assertNotIn("RESULT: OK", result.stdout)
 
     def test_guard_refusal_never_stages_or_pushes(self):
         result, calls = self.run_case("guard_refusal")

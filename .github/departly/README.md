@@ -1,13 +1,13 @@
-# Departly public transit data publisher — review candidate
+# Departly public transit data publisher
 
-This folder contains standalone data tooling and 26 explicitly selected open-transit data inputs:
+This folder contains standalone data tooling and 26 selected open-transit data inputs:
 the 24 OTA baseline files plus the English and Traditional Chinese tram CSV inputs. It contains no
-Swift/app source, app configuration, credentials, user data or private repository checkout. The exact
-reviewed file inventory and hashes accompany this candidate. No new blanket software license is
+Swift/app source, app configuration, credentials, user data or private repository checkout. The initial
+44-file migration inventory is retained in the private validation record. No new blanket software license is
 assigned by this migration; existing source attribution is preserved in the generator headers.
 
-Sources include Hong Kong Transport Department data.gov.hk feeds, MTR Open Data, operator public
-APIs and OpenStreetMap Overpass. Generator headers retain the exact endpoint and source context.
+Sources include Hong Kong Transport Department data.gov.hk feeds, MTR Open Data, Lands Department
+iGeoCom, operator public APIs and OpenStreetMap Overpass. Generator headers retain the exact endpoint and source context.
 Output remains at the existing `https://mwsupplylimited.github.io/departly/data/` URLs and formats.
 
 The dedicated workflow belongs in the existing public `mwsupplylimited.github.io` repository. It uses
@@ -42,12 +42,27 @@ site commit is tolerated while waiting for the expected commit, then fails at th
 if it never appears; it never forces or rolls back another app's changes. A Pages or
 CDN verification failure does not claim the already committed data remained unchanged.
 
-Before publishing this currently local-only candidate, obtain the owner's approval to make this
-explicit tooling/data subset public. Cutover requires disabling the private Departly nightly before
-the new public schedule can publish, then one manual public verification and independent live
-manifest/hash readback. Keep the Mac LaunchAgent unloaded. Do not run both publishers. Preserve the
-existing ETA harvester and its URLs/assets unchanged. If verification fails, stop the new publisher
-and investigate; do not enable a paid private retry or raise any budget.
+The owner approved and completed the free public cutover on 2026-11-17. The first public run
+`44058904354` published data and verified all 24 served hashes, but GMB and Light Rail source refreshes
+were degraded. Successful byte verification alone does not establish source freshness. Keep the
+private Departly nightly disabled and the Mac LaunchAgent unloaded. Preserve the existing ETA
+harvester and its URLs/assets unchanged; do not enable a paid private retry or raise any budget.
 
-Local stub tests do not establish that the ephemeral token can build this site's Pages deployment.
-That supported API path and the first real generation/publication remain NOT RUN until approved.
+Use Python 3.12 for this tooling, matching the public Ubuntu workflow. Light Rail joins the current
+MTR route CSV to Lands Department's WGS84 iGeoCom points, requiring complete unique station coverage
+and matching English and Chinese names. It preserves alphabetic station codes and North/South
+distinctions. `hkmap_tls.py` supplies the official 2025 Hongkong Post intermediate omitted by the
+source server, pinned by DER SHA256; system roots, hostname and certificate checks remain required.
+The certificate is public chain material, not a private key or a new root trust anchor.
+An incomplete two-file rollback exits distinctly and stops the publisher before any site mutation.
+
+GMB requests share a one-second start interval across workers and retries. Permanent HTTP denials
+are not retried; transient failures have bounded retries and provider cooldowns apply to every GMB
+worker. Invalid source JSON is rejected before caching or replacing data. The existing last-good
+merge remains explicitly degraded. A cold rebuild still needs thousands of requests; no new cache
+storage is enabled, and the 180-minute workflow ceiling remains in effect.
+
+`departly-provider-check.yml` is a manual, read-only, bounded diagnostic on a standard public Ubuntu
+runner. It uses no cache, uploaded artifact, publication or credentials and stops further GMB probes
+when the provider requests a cooldown. Sparse HTTP success cannot prove sustained full-refresh
+success. Complete a full nightly run and its served-data checks after changing the generators.
