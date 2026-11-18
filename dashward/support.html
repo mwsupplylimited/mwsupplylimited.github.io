@@ -115,11 +115,12 @@
 
         <section class="callout" aria-labelledby="version-note">
             <h2 id="version-note">Choose the instructions for your app</h2>
-            <p>These instructions apply to <strong>Dashward 1.4.1</strong>, available for iPhone, iPad and Mac. Check that both the dashcam and monitor use the current version. Earlier versions use different controls; <a href="#contact">contact support</a> if you need help updating.</p>
+            <p>These instructions apply to the public <strong>Dashward 1.4.2</strong> app for iPhone, iPad and Mac. Compatible versions can connect without matching build numbers. TestFlight and App Store purchases use separate test and production services; use the same installation source for a test setup. If your screens differ, <a href="#contact">contact support</a> and include each app version.</p>
         </section>
         <nav aria-label="Support topics">
             <ul>
                 <li><a href="#roles">Dashcam or Monitor</a></li>
+                <li><a href="#live-view">Open live view</a></li>
                 <li><a href="#connect">Connect devices</a></li>
                 <li><a href="#viewing">Viewing controls</a></li>
                 <li><a href="#troubleshooting">Troubleshooting</a></li>
@@ -133,16 +134,43 @@
         <p>An <strong>iPhone or iPad in Dashcam mode</strong> records and can share its cameras. Keep it mounted securely, powered and online, with Dashward open on its screen while using its cameras. Set up sharing while safely parked.</p>
         <p>A <strong>Monitor</strong> watches a shared vehicle. iPhone and iPad can use Monitor mode; the Mac app is a viewer and does not record a camera. Settings separates Dashcam and Monitor controls. Camera access for scanning a connection code does not start recording or sharing.</p>
 
+        <h2 id="live-view">Phones already connected? Open live view</h2>
+        <p>Use one phone as the <strong>dashcam</strong> and the other as the <strong>monitor</strong>. A list of two approved monitors is not a connected camera. If your vehicle already appears on the Monitor screen, start here; you do not need to pair it again.</p>
+        <h3>1. On the phone that will show the road</h3>
+        <ol>
+            <li>Open Dashward in <strong>Dashcam</strong> mode. If you see the Monitor screen, tap <strong>Use as Dashcam</strong> at the upper right.</li>
+            <li>On the camera screen, tap the <strong>gear</strong> at the top. In Settings, find the first <strong>Sharing &amp; access</strong> group and tap <strong>Dashcam sharing</strong>.</li>
+            <li>Turn on <strong>Road camera</strong> and <strong>Live video</strong>. Turn on <strong>Cabin camera</strong> too if you want the front camera shared.</li>
+            <li>If sharing is paused or has not started, tap <strong>Start sharing</strong> or <strong>Review and start</strong>, review the audience and selected information, then tap <strong>Continue</strong>. If sharing is already on, keep it on.</li>
+            <li>Keep Dashward open and this phone online. You do not need to start local recording to watch live video.</li>
+        </ol>
+        <h3>2. On the phone you will watch</h3>
+        <ol>
+            <li>If you see camera previews, tap the <strong>Monitor/display icon</strong> at the top (the third top button in 1.4.2). If Dashward asks to stop dashcam activity and start monitoring, review and confirm that role change on this phone.</li>
+            <li>On the <strong>Monitor</strong> screen, swipe upward outside the map to scroll down past <strong>Add a dashcam</strong>, <strong>Connections</strong> and any map. Tap your <strong>named vehicle card</strong> when it appears. Do not choose the sample vehicle.</li>
+            <li>The vehicle screen starts a five-minute viewing request. Select <strong>Both cameras</strong> if you want Road and Cabin. Wait for the connection and check the status for each camera.</li>
+            <li>Scroll <strong>below the camera pictures</strong> to find the viewing controls. Tap <strong>Watch for 5 min</strong> if the session has stopped, or <strong>Watch continuously</strong> for no countdown. <strong>Reset to 5 min</strong> restarts a running countdown; <strong>Stop live view</strong> ends this monitor's request.</li>
+        </ol>
+        <p><strong>LIVE VIDEO</strong> and an updating picture indicate arriving video. <strong>SNAPSHOT</strong> is a still image. If there is no named vehicle card, follow <a href="#add-dashcam">Add a dashcam</a> below. If the card is present but waiting, follow <a href="#troubleshooting">the status checks</a> rather than deleting the app or buying again.</p>
+        <p><a href="guides/dashward-live-view-1.4.2-step-by-step.pdf">Download the illustrated five-page live-view guide (PDF)</a>. It identifies the device for every step. Camera and settings screenshots use 1.4.2; the guide discloses where matching Monitor layouts were captured from the update candidate.</p>
+
         <h2 id="connect">Connect devices with a code</h2>
-        <h3>Add a monitor</h3>
+        <h3>Add another viewing device</h3>
+        <p>Use this only to approve an additional monitor. It does not add a camera. On iPhone or iPad, open <strong>Monitor &rarr; Connections</strong>. From the camera screen, the longer route is the top <strong>gear &rarr; Monitor &rarr; Connections</strong>. On Mac, use <strong>Connections</strong> in the viewer.</p>
         <ol>
             <li>On the new monitor, open <strong>Connections &rarr; Connect this monitor</strong>.</li>
             <li>Follow the numbered instructions beside its code. They specify whether the owner should use Apple's Camera or the scanner in Dashward. On a Mac, follow the displayed copy-and-paste instructions.</li>
             <li>Compare the match code, account and device, then review and allow the connection. The new monitor must also accept when prompted. Keep both screens open until setup shows <strong>Monitor connected</strong>; no second scan is needed.</li>
         </ol>
         <p>Codes expire after ten minutes. Scanning alone never grants access. Each person uses their own Apple Account; an invitation does not require sharing an Apple Account password.</p>
-        <h3>Add a dashcam and start sharing</h3>
-        <p>Use <strong>Connections &rarr; Add a dashcam</strong> on the owner's device and the source's sharing controls to connect the dashcam to the plan. Follow the numbered steps on both screens and use the scanner specified there. A dashcam connection is separate from adding a monitor.</p>
+        <h3 id="add-dashcam">Add a dashcam and start sharing</h3>
+        <ol>
+            <li>On the plan owner's approved monitor, open <strong>Monitor &rarr; Add a dashcam</strong> (also available from Connections) and display its code.</li>
+            <li>On the camera phone, open the top <strong>gear &rarr; Dashcam sharing &rarr; Connect to a plan</strong>. This is the wording in 1.4.2. Scan the monitor's code <strong>inside Dashward</strong>.</li>
+            <li>Compare the details on both devices. On the camera phone, choose <strong>Connect this dashcam</strong>; on the monitor, choose <strong>Join this dashcam</strong> when the invitation arrives.</li>
+            <li>On the camera phone, select <strong>Review and start</strong>, review the audience and shared content, then choose <strong>Continue</strong>. Return to the <a href="#live-view">live-view steps above</a>.</li>
+        </ol>
+        <p>The driver can use the same or a different Apple Account. Personal plans provide viewing for the plan owner's Apple Account; additional viewing people need the applicable Business coverage. Each person keeps their own password.</p>
         <p>The driver must separately choose <strong>Review and start</strong> on the source and personally review the audience and information being shared. Connecting a device never starts sharing or accepts consent for the driver. Audience or content changes require a fresh driver review.</p>
         <p><strong>Stop sharing</strong> stops sharing while keeping connections. <strong>Disconnect everyone</strong> is separate. Removing approval in Connections revokes live access; removing a person in Team/Manage People controls their iCloud access separately. Already received copies cannot be recalled.</p>
 
