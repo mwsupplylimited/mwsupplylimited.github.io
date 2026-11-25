@@ -1,10 +1,10 @@
 {
   "protocol": 8,
-  "build": "94c8708553ea",
-  "buildSha256": "94c8708553eaad1ddfc2827d7cec9d95ca5bba97de61c50bd2bf556469721d3d",
-  "pkgSha256": "9245fc1c077a066ab665d2f1f59a1223f37082135cc1aa68501f8bd087e694db",
-  "bytes": 232253,
+  "build": "8576e0f0ab8b",
+  "buildSha256": "8576e0f0ab8b7d9f00fffb68103c2e5162010ca2074b2dffe7719d8965db1651",
+  "pkgSha256": "2e2eeb6ea73d7c1626f2070178f25f158fba0ce1235c8d598e2770cae8dae317",
+  "bytes": 234889,
   "url": "https://mwsupplylimited.github.io/surf/connector.html",
   "pkg": "https://mwsupplylimited.github.io/surf/SurfConnector.pkg",
-  "notes": ""
+  "notes": "Updated tool descriptions: waiting on clicks, main-content snapshots and download locations. The new options need Surf for Mac 1.21 or later."
 }
