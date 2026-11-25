@@ -194,7 +194,7 @@
         <nav class="guide-nav" aria-label="Surf navigation"><a class="guide-brand" href="./"><img src="assets/surf-icon.png" width="40" height="40" alt="">Surf</a><a href="./#pro">Surf Pro</a><a href="./#support">Support</a></nav>
 
         <h1>Surf Connector</h1>
-        <p class="meta">For Surf on Mac &middot; Surf requires macOS 14 or later &middot; Guide updated 15 October 2026</p>
+        <p class="meta">For Surf on Mac &middot; Surf requires macOS 14 or later &middot; Guide updated 25 November 2026</p>
         <p class="guide-intro">Give your assistant a browser to work in. A compatible local MCP client can read and act in its own Surf tabs while you continue browsing.</p>
         <div class="requirements"><strong>You need:</strong> Surf Pro on Mac, this free connector, and compatible assistant software with your own account. Provider charges are separate. Assistant tabs share your website sign-ins; requested content goes to your assistant’s provider. Private tabs stay excluded. <a href="privacy.html#assistant-access">Privacy details</a>.</div>
         <nav class="quick-links" aria-label="Connector guide"><a href="#install">Install</a><a href="#setup">Choose your assistant</a><a href="#check">Check connection</a><a href="#trouble">Troubleshooting</a></nav>
@@ -212,8 +212,11 @@
            here is exactly what that means.</strong> A few seconds after it starts, the connector
            fetches this one file &mdash;
            <a href="connector.json">connector.json</a> &mdash; and compares the build number in it
-           against its own. That is the only network request it ever makes; everything else it does
-           is on your own machine, over the loopback. It <strong>sends nothing</strong>: no build
+           against its own. In connectors older than build <code>6eb17caaef9f</code> (25&nbsp;November&nbsp;2026) that is the only
+           network request it ever makes. From that build on there can be one more, and only after you
+           press <strong>Update</strong> in Surf: a download of the newer connector from this site,
+           described under <a href="#updating">Updating</a> below. Everything else it does is on your
+           own machine, over the loopback. Either request <strong>sends nothing</strong>: no build
            number, no identifier, no telemetry, no query string. It is the same plain GET your
            browser just made to read this page, and the comparison happens on your Mac, on what
            came back. If a newer build exists, it tells the assistant so the assistant can tell
@@ -221,6 +224,7 @@
 
         <p class="meta">To turn off the update check, set
            <code>SURF_CONNECTOR_NO_UPDATE_CHECK=1</code> in your assistant&rsquo;s MCP configuration.
+           The same setting stops the connector downloading an update of itself.
            For Claude Code&rsquo;s <code>.mcp.json</code>, the entry looks like this
            (<a href="#chatgpt-codex">ChatGPT desktop and Codex use TOML instead</a>):</p>
         <pre class="code">"surf": {
@@ -257,7 +261,7 @@
 
         <h2 id="install">Install it</h2>
         <ol>
-            <li><a href="SurfConnector.pkg"><strong>Download SurfConnector.pkg</strong></a> &mdash; protocol&nbsp;8, 229&nbsp;KB &mdash; and open it. macOS checks Apple's notarization before it runs.</li>
+            <li><a href="SurfConnector.pkg"><strong>Download SurfConnector.pkg</strong></a> &mdash; protocol&nbsp;8, 229&nbsp;KB &mdash; and open it. macOS checks Apple's notarization before it runs. It installs on your startup disk and asks for your Mac password.</li>
             <li>Open <strong>Surf</strong>, then the <strong>&hellip;</strong> menu &rarr; <strong>Add-Ons</strong>.</li>
             <li>Press <strong>Choose the Connector&hellip;</strong> and pick the program the installer placed at<br>
                 <code>/usr/local/lib/surf/surf-connector</code>.<br>
@@ -289,6 +293,18 @@
            back on. <strong>Check Now</strong> also requests a fresh comparison. You can turn these requests
            off in Settings &rsaquo; AI Assistants. The comparison uses the static
            <code>connector.json</code> described above; your installed build stays on your Mac.</p>
+        <p id="updating"><strong>Updating.</strong> The installer above always works: open it and it replaces
+           the connector on your startup disk, after asking for your Mac password. Connector build
+           <code>6eb17caaef9f</code> and later can also update themselves. When a version of Surf for Mac newer than 1.21
+           shows that an update is available and you press <strong>Update Now</strong>, the connector
+           downloads the new connector from this site. It checks that the download is signed by
+           Surf&rsquo;s developer (Developer&nbsp;ID team <code>6RZ8YV42XZ</code>), matches the published
+           checksum and is newer than the one you have, and keeps it in
+           <code>~/Library/Application Support/SurfConnector</code>. Your next assistant session uses
+           it; nothing that is running is replaced, and no password is asked for. The connector the
+           installer placed stays where it is and starts the newer copy. If any check fails, the
+           download is deleted and your installed connector carries on. Surf&nbsp;1.21 and earlier, and
+           connectors older than that build, update through the installer.</p>
         <p><strong>If your build differs from the latest download,</strong> install it over the top
            &mdash; your existing setup is kept. The change
            that matters most in protocol 8 is not something an older connector cannot do &mdash; it
@@ -513,7 +529,9 @@ tool_timeout_sec = 60</code></pre>
         <p><code>spctl --assess --type install -v SurfConnector.pkg</code> should answer <code>accepted &middot; source=Notarized Developer ID</code>.</p>
 
         <h2>Remove it</h2>
-        <p>Remove the <code>surf</code> entry from each assistant you configured, then delete the connector from its installed location (<code>/usr/local/lib/surf/</code> for the installer above). The installer adds nothing else and runs no scripts. While it is running the connector writes one small file inside Surf&rsquo;s own storage — the port Surf should call it back on — and removes it again when it exits.</p>
+        <p>Remove the <code>surf</code> entry from each assistant you configured, then delete the connector from its installed location (<code>/usr/local/lib/surf/</code> for the installer above). The installer adds nothing else and runs no scripts. While it is running the connector writes one small file inside Surf&rsquo;s own storage — the port Surf should call it back on — and removes it again when it exits. If the connector has ever updated itself, also delete
+           <code>~/Library/Application Support/SurfConnector</code>, where it keeps the downloaded copy;
+           a one-line record of the last update sits in Surf&rsquo;s own storage beside the first file.</p>
 
         <h2>Independent of your assistant provider</h2>
         <p>Surf and the Surf Connector are made by MW Supply Limited. Claude is a product of Anthropic; ChatGPT and Codex are products of OpenAI. Neither company sponsors or endorses Surf. You use your own assistant software and account. Surf provides no AI account and does not receive your assistant account credentials.</p>
