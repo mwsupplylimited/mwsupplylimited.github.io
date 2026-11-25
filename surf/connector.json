@@ -1,10 +1,11 @@
 {
   "protocol": 8,
-  "build": "8576e0f0ab8b",
-  "buildSha256": "8576e0f0ab8b7d9f00fffb68103c2e5162010ca2074b2dffe7719d8965db1651",
-  "pkgSha256": "2e2eeb6ea73d7c1626f2070178f25f158fba0ce1235c8d598e2770cae8dae317",
-  "bytes": 234889,
+  "build": "6eb17caaef9f",
+  "buildSha256": "6eb17caaef9f7e3e43f78966bcea4d7b2cdc50dfdeaa6b4ca2255a7efb7fa600",
+  "pkgSha256": "8f98a25de684ca0bf991a94ec25fd77df2446ef5669ad75fc6dc724016af2ce2",
+  "bytes": 315472,
   "url": "https://mwsupplylimited.github.io/surf/connector.html",
   "pkg": "https://mwsupplylimited.github.io/surf/SurfConnector.pkg",
-  "notes": "Updated tool descriptions: waiting on clicks, main-content snapshots and download locations. The new options need Surf for Mac 1.21 or later."
+  "payload": "https://mwsupplylimited.github.io/surf/surf-connector",
+  "notes": "The installer no longer asks you to choose a disk, and this connector can update itself when a newer Surf for Mac asks it to. Includes the earlier tool updates (waiting on clicks, main-content snapshots, download locations)"
 }
